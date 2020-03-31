@@ -13,7 +13,7 @@
 <h4>Communities</h4>
 </div>
 <div class="col-md-2">
-  <a type="button" data-toggle="modal" onclick="Addcommunity()"  data-target="#communityModal" style="font-size: 15px;" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-success">Add New</a> 
+  <a type="button" data-toggle="modal" onclick="Addcommunity()"  data-target="#AddcommunityModal" style="font-size: 15px;" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-success">Add New</a> 
 
 </div>
 </div>

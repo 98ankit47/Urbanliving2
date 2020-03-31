@@ -818,7 +818,7 @@ $(document).ready(function() {
                      
                   },
                   success: function () {
-                    $('#communityModal').modal('hide');
+                    $('#AddcommunityModal').modal('hide');
                     $('.modal-backdrop').css('display','none');
                     loadCommunityList();
                   }
