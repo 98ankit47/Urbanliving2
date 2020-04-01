@@ -20,12 +20,17 @@ Route::resources([
     'page'              => 'Admin\PageController',
     'admin/home'        => 'Admin\HomeController',
     'admin/community'   => 'Admin\CommunityController',
+    'admin/floor'       => 'Admin\FloorController',
 ]);
 
 Route::post('admin/home/{id}','admin\HomeController@update');
+
 Route::get('admin/communityList','admin\CommunityController@data');
 Route::post('admin/community/{id}','admin\CommunityController@update');
+
 Route::get( 'admin/home-status', 'CommonController@status');
+
+Route::post( 'admin/floor/{id}', 'admin\FloorController@update');
 
 
 Route::get( 'admin/home-feature/{id}', 'CommonController@features');
