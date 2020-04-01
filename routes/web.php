@@ -18,9 +18,16 @@ Route::get('/', function () {
 Route::get('/admin',function(){
     return view('admin.dashboard');
 });    
+
+Route::get('/admin/floor',function(){
+    return view('admin.floor.floor');
+}); 
+
 Route::get('/admin/pages',function(){
     return view('admin.page');
 })->name('pages'); 
+
+
 Route::get('/admin/pages/edit/{id}',function(){
     return view('admin.edit');
 })->name('edit-page');
@@ -55,6 +62,9 @@ Route::get('/availsold', function () {
     return view('admin.availsold');
 });
 
+Route::get('admin/floor', function () {
+    return view('admin.floor.floor');
+});
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 Route::post( 'admin/home/feature', 'admin\HomeFeatureController@store')->name('feature-create');

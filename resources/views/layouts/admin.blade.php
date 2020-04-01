@@ -221,7 +221,7 @@
               </li>
               
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/admin/floor" class="nav-link">
                 <i class="fa fa-terminal"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Floor</p></span>
                 </a>
               </li>
