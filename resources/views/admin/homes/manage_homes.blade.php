@@ -235,7 +235,7 @@
 
  
 
-<div class="modal fade bd-example-modal-xl" id="deletefeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl" id="deleteFeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -250,7 +250,7 @@
           <div class="clearfix"></div>
           <div class="m-auto">
             <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
-            <button type="submit" id="ys-home-btn" class="btn btn-danger"> Yes</button>
+            <button type="submit" id="ys-btn" class="btn btn-danger"> Yes</button>
            </div>  
           </div>    
         </div>
