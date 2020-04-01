@@ -150,7 +150,6 @@
 
     </div>
  
-
     <div class="modal fade" id="Editfeature" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -171,18 +170,18 @@
           @endforeach
             </div>
             <div class="form-group">
-              <form action="/action_page.php">
-            <label for="img">Select image:</label><br>
+            <div class="row">
+             
+              <div class="col-md-6">
+            <label for="img">Select image:</label>
             <input type="file" id="img" name="featured-image" accept="image/*">
-            </form>
             </div>
+          </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
-          </form>
-
         </div>
       </div>
     </div>
@@ -234,66 +233,30 @@
 <!-- Modal -->
  <!--delet Moadal-->
 
-<div class="modal fade" id="deleteHome" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+ 
+
+<div class="modal fade bd-example-modal-xl" id="deletefeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true"><i class="fa fa-times"></i></span>
         </button>
       </div>
-      <div class="modal-body" style="text-align: center;">
-        Do you want to Delete ?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Ok</button>
-        bower install bootstrap-sweetalert   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="Editfeature" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Features</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-          <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-              @csrf
-              <label for="inputProperty">Feature Name</label>
-              <input type="text" class="form-control" id="title" name="title" placeholder="">
-              @foreach($homes as $home)
-              <input type="hidden" class="form-control" id="home_id" name="home_id" placeholder="" value="{{$home->id}}">
-          @endforeach
-            </div>
-            <div class="form-group">
-            <div class="row">
-            <div class="col-md-6">
-              <label for="inputProperty">Feature Image</label>
-              <div class="card" style="width: 150px;">
-                <img class="card-img-top" style="height: 150px;" src="" alt="">
-              </div>
-              </div>
-              <div class="col-md-6">
-            <label for="img">Select image:</label>
-            <input type="file" id="img" name="featured-image" accept="image/*">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-          </div>
+      <div class="modal-body">
+        <div class="row">
+          <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
+          <div class="clearfix"></div>
+          <div class="m-auto">
+            <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
+            <button type="submit" id="ys-home-btn" class="btn btn-danger"> Yes</button>
+           </div>  
+          </div>    
         </div>
-        </form>
-      </div>
-    </div>
-    </div>
-  </div>
+     </div>
+   </div>
+ </div>
 <script>
 // Tabs
 $('#deleteFeature').on('show.bs.modal', function (e) {

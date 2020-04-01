@@ -561,7 +561,6 @@ $(document).ready(function() {
             });
             $(function () {
               $('form').on('submit', function (e) {
-                alert();
                 var title,home_id ;
                 e.preventDefault();
                     title              =  document.getElementById("title").value;         

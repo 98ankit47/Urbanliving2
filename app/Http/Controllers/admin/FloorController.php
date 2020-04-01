@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Floors;
+use App\Models\FloorComponent;
 
 class FloorController extends Controller
 {
@@ -53,6 +54,28 @@ class FloorController extends Controller
         return ['success'=>'floor created Successfully'];
     }
 
+    public function Componentstore(Request $request)
+    {
+        $image = $request->file('image');
+        $name = $image->getClientOriginalName();
+        $destinationPath = public_path('/uploads');
+        $image->move($destinationPath, $name);
+        $this->validate($request,[
+            'floor_id'=>'required',
+            'name'=>'required',
+            'type'=>'required',
+            ]);
+
+        FloorComponent::create([
+            'floor_id'=>$request['floor_id'],
+            'name'=>$request['name'],
+            'type'=>$request['type'],
+            'bathroom'=>$request['bathroom'],
+            'image'=>$name,
+        ]);
+        return ['success'=>'floor Component created Successfully'];
+    }
+
     /**
      * 
      * Display the specified resource.
@@ -97,8 +120,29 @@ class FloorController extends Controller
             'dining'=>$request['dining'],
             'image'=>$name,
         ]);
+        return ['success'=>'floor updated Successfully'];
     }
 
+    public function Componentupdate(Request $request, $id)
+    {
+        $image = $request->file('image');
+        $name = $image->getClientOriginalName();
+        $destinationPath = public_path('/uploads');
+        $image->move($destinationPath, $name);
+        
+        $this->validate($request,[
+            'floor_id'=>'required',
+            'name'=>'required',
+            'type'=>'required',
+            ]);
+        FloorComponent::where('id',$id)->update([
+            'floor_id'=>$request['floor_id'],
+            'name'=>$request['name'],
+            'type'=>$request['type'],
+            'image'=>$name,
+        ]);
+        return ['success'=>'floor Component updated Successfully'];
+    }
     /**
      * Remove the specified resource from storage.
      *

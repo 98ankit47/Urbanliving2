@@ -31,6 +31,8 @@ Route::post('admin/community/{id}','admin\CommunityController@update');
 Route::get( 'admin/home-status', 'CommonController@status');
 
 Route::post( 'admin/floor/{id}', 'admin\FloorController@update');
+Route::post( 'admin/floor-component', 'admin\FloorController@componentstore');
+Route::post( 'admin/floor-component/{id}', 'admin\FloorController@componentupdate');
 
 
 Route::get( 'admin/home-feature/{id}', 'CommonController@features');
