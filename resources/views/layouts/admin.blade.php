@@ -806,7 +806,7 @@ $(document).ready(function() {
  @endif
  
   
- @if(Route::currentRouteName() == 'create-home' )
+ @if(Route::currentRouteName() == 'floorView' )
  <script>
  $(document).ready(function() {
    var APP_URL = "{{ url('/') }}";
@@ -827,45 +827,104 @@ $(document).ready(function() {
          });
          $(function () {
            $('form').on('submit', function (e) {
-             var title,description,bedroom,bathroom,garage,community,stories,mls,status,area,builder;
+             var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
              e.preventDefault();
-                 title            =  document.getElementById("title").value;         
-                 description      =  document.getElementById("description").value;         
+                 home_id            =  document.getElementById("home_id").value;         
+                 floor_no      =  document.getElementById("floor_no").value;         
                  bedroom          =  document.getElementById("bedroom").value;         
                  bathroom         =  document.getElementById("bathroom").value;         
                  garage           =  document.getElementById("garage").value;         
-                 stories          =  document.getElementById("stories").value;         
-                 mls              =  document.getElementById("mls").value;         
-                 area             =  document.getElementById("area").value;         
-                 community        =  document.getElementById("community_list").value;         
-                 builder          =  document.getElementById("builder").value;         
-                 status       =  document.getElementById("status").value;         
+                 dinning          =  document.getElementById("dinning").value;         
+                 kitchen              =  document.getElementById("kitchen").value;         
                  $.ajax({
                    type: 'post',
-                   url: '/api/admin/home/',
+                   url: '/api/admin/floor/',
                    data:{
-                     'title'               : title,
-                     'description'         : description,
+                     'home_id'             : home_id,
+                     'floor_no'            : floor_no,
                      'bedroom'             : bedroom,
                      'bathroom'            : bathroom,
                      'garage'              : garage,
-                     'stories'             : stories,
-                     'mls'                 : mls,
-                     'area'                : area,
-                     'community'           : community,
-                     'status'              : status,
-                     'builder'             : builder,
-                     'featured-image'      : image,
-                     'featured-image-name' : image_name,
+                     'dinning'             : dinning,
+                     'kitchen'             : kitchen,
+                     'image'      : image,
+                     'image-name' : image_name,
                    },
                    success: function ( ) {
-                     window.location.href = "/admin/homes";
+                     window.location.href = "/admin/floors";
                    }
                  });
  
            });
  
        });
+
+       function editfloor(fid)
+      {     
+        $.ajax({
+      type: 'GET',
+      url: APP_URL+'/api/admin/floor/'+fid,
+
+      success: function(result){    
+        $('#floorModal').modal('show');
+
+          document.getElementById("home_id").value = result.home_id;         
+          document.getElementById("floor_no").value = result.floor_no;         
+          document.getElementById("bedroom").value = result.bedroom;         
+          document.getElementById("bathroom").value = result.;         
+          document.getElementById("garage").value = result.garage;         
+          document.getElementById("dinning").value = result.dinning;         
+          document.getElementById("kitchen").value = result.kitchen; 
+      }
+      });    
+        $('input[type=file]').on('change',function(e){
+             let files = e.target.files[0];
+             let reader = new FileReader();
+             if(files){
+               reader.onloadend = ()=>{
+                 $('#chosen_feature_img').attr('src',reader.result);
+                 image = reader.result;
+                 image_name = files.name;
+                // document.getElementById("featured_img").value  = reader.result;
+               }
+               reader.readAsDataURL(files); 
+           }
+         });
+         $(function () {
+           $('form').on('submit', function (e) {
+             var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
+             e.preventDefault();
+                 home_id            =  document.getElementById("home_id").value;         
+                 floor_no      =  document.getElementById("floor_no").value;         
+                 bedroom          =  document.getElementById("bedroom").value;         
+                 bathroom         =  document.getElementById("bathroom").value;         
+                 garage           =  document.getElementById("garage").value;         
+                 dinning          =  document.getElementById("dinning").value;         
+                 kitchen              =  document.getElementById("kitchen").value;         
+                 $.ajax({
+                   type: 'post',
+                   url: '/api/admin/floor/',
+                   data:{
+                     'home_id'             : home_id,
+                     'floor_no'            : floor_no,
+                     'bedroom'             : bedroom,
+                     'bathroom'            : bathroom,
+                     'garage'              : garage,
+                     'dinning'             : dinning,
+                     'kitchen'             : kitchen,
+                     'image'      : image,
+                     'image-name' : image_name,
+                   },
+                   success: function ( ) {
+                     window.location.href = "/admin/floors";
+                   }
+                 });
+ 
+           });
+ 
+       });
+
+      }
  });
  </script>
  @endif

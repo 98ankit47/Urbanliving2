@@ -195,6 +195,7 @@ class HomeController extends Controller
     {  
         $home = Homes::findOrFail($id);
         $home->delete(); 
+        
         return ['success'=>'Home Successfully Deleted'];
     }
 }
