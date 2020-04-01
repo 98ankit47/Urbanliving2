@@ -24,19 +24,14 @@ class HomeController extends Controller
         {
             $data .=' <div class="col-md-4" >
             <div class="card">
-              <img class="card-img-top"style="height:200px;"  src="/uploads/homes/'.$home->featured_image.'">
+              <img class="card-img-top"style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
               <h5 class="card-title" style="font-size: 15px;">'.$home->title.'</h5>
                  <br><br>
-                 <div class="row">
-                <div class="col-md-6">
-                <a type="button" href="/admin/home/manage/'.$home->id.'" style="font-size: 15px;text-align:center" class="btn btn-success">Manage</a>
-                 </div>
-                 <div class="col-md-6">   
-                 <button type ="button"  data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome"  style="font-size: 15px;text-align:center" class="btn btn-danger">Delete</button>
-                </div>
-                </div>
-                </div>
+                 
+                 <a type="button" href="/admin/home/manage/'.$home->id.'" class="btn btn-success">Manage</a> 
+                 <button type ="button"  data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn btn-danger">Delete</button>  
+               </div>
             </div>
           </div>';
         } 

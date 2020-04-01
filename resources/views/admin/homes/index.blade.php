@@ -1,17 +1,27 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+.home-list-contain {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.homes-contain {
+  margin-left: 20px;
+}
+</style>
 <div class="container">
 <br>
 <div class="row">
-<div class="col-md-10">
+<div class="col-md-9 homes-contain">
 <h4>Homes</h4>
 </div>
 <div class="col-md-2">
 <a type="button" href="/admin/home/create" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-Success">Add New</a>
 </div>
 </div>
-<br>
-    <div class="row" id="home_list">
+<hr>
+<br><br>
+    <div class="row home-list-contain" id="home_list">
     
   </div>
   </div>

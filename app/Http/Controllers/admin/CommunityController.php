@@ -26,14 +26,10 @@ class CommunityController extends Controller
               <div class="card-body">
               <h5 class="card-title" style="font-size: 15px;">'.$community->title.'</h5>
                  <br><br>
-                 <div class="row">
-                <div class="col-md-3">
-                <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="font-size: 15px;" class="btn btn-success">Edit</a> 
-                </div>
-                 <div class="col-md-4">   
+                 
+                <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="font-size: 15px;" class="btn btn-success">Edit</a>    
                  <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity"   style="font-size: 15px;" class="btn btn-danger">Delete</button>
-                </div>
-                </div>
+                     
                 </div>
             </div>
           </div>';

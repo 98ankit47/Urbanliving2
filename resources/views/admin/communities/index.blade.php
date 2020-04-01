@@ -16,7 +16,7 @@
   <a type="button" data-toggle="modal" onclick="Addcommunity()"  data-target="#AddcommunityModal" style="font-size: 15px;" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-success">Add New</a> 
 
 </div>
-</div>
+</div><hr>
 <br>
     <div class="row" id="community_list">
      
