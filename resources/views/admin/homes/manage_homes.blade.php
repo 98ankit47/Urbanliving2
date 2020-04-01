@@ -53,9 +53,16 @@
         <div class="col-md-5">
           <div class="container details"><br><br>
           <h6><strong id=''>{{$home->title}}</strong></h6>
-            <h6 style="font-size: 12px;" id='description'>{{$home->description}}</h6>
-            <h6 style="font-size: 12px;" id='area'>{{$home->area}}</h6>
-            <h6 style="font-size: 12px;" id='builder'>{{$home->builder}}</h6>
+            <h6 style="font-size: 12px;" id='description'>DESCRIPTION---{{$home->description}}</h6>
+            <h6 style="font-size: 12px;" id='area'>AREA---{{$home->area}}</h6>
+            <h6 style="font-size: 12px;" id='builder'>BUILDER---{{$home->builder}}</h6>
+            <h6 style="font-size: 12px;" id='builder'>NO OF BEDROOM---{{$home->bedroom}}</h6>
+            <h6 style="font-size: 12px;" id='builder'>NO OF BATHROOM---{{$home->bathroom}}</h6>
+            <h6 style="font-size: 12px;" id='builder'>NO OF GARAGE---{{$home->garage}}</h6>
+            <h6 style="font-size: 12px;" id='builder'>NO OF STORIES---{{$home->stories}}</h6>
+            @foreach($statuses as $status)
+            <h6 style="font-size: 12px;" id='builder'>Status---{{$status->status}}</h6>
+            @endforeach
           </div>
         </div>
         <div class="col-md-2"><br><br><br>
