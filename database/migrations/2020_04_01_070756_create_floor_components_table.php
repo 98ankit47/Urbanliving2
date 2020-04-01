@@ -17,6 +17,7 @@ class CreateFloorComponentsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('floor_id');
             $table->integer('name');
+            $table->integer('type');
             $table->integer('image');
             $table->timestamps();
         });
