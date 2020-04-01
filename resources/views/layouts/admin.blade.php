@@ -385,8 +385,6 @@ $(document).ready(function() {
         document.getElementById("area").value = result.area;
         document.getElementById("community_list").value = result.community;
         document.getElementById("builder").value = result.builder;
-        document.getElementById("meta_title").value = result.meta_title;
-        document.getElementById("meta_description").value = result.meta_description;
         document.getElementById("file").value = result.featured_image;
       }
       
@@ -419,8 +417,6 @@ $(document).ready(function() {
                 status               =  document.getElementById("status").value;         
                 builder            =  document.getElementById("builder").value;         
                 community          =  document.getElementById("community_list").value;         
-                meta_description   =  document.getElementById("meta_description").value;         
-                meta_title         =  document.getElementById("meta_title").value;         
                 $.ajax({
                   type: 'post',
                   url: '/api/admin/home/'+id,
@@ -436,8 +432,6 @@ $(document).ready(function() {
                     'builder'             : builder,
                     'community'           : community,
                     'status'              : status,
-                    'meta-title'          : meta_title,
-                    'meta-description'    : meta_description,
                     'featured-image'      : image,
                     'featured-image-name' : image_name,
                   },
@@ -473,7 +467,7 @@ $(document).ready(function() {
         });
         $(function () {
           $('form').on('submit', function (e) {
-            var title,description,bedroom,bathroom,garage,community,stories,mls,status,area,builder,meta_description,meta_title;
+            var title,description,bedroom,bathroom,garage,community,stories,mls,status,area,builder;
             e.preventDefault();
                 title            =  document.getElementById("title").value;         
                 description      =  document.getElementById("description").value;         
@@ -485,8 +479,6 @@ $(document).ready(function() {
                 area             =  document.getElementById("area").value;         
                 community        =  document.getElementById("community_list").value;         
                 builder          =  document.getElementById("builder").value;         
-                meta_description =  document.getElementById("meta_description").value;         
-                meta_title       =  document.getElementById("meta_title").value;         
                 status       =  document.getElementById("status").value;         
                 $.ajax({
                   type: 'post',
@@ -503,8 +495,6 @@ $(document).ready(function() {
                     'community'           : community,
                     'status'              : status,
                     'builder'             : builder,
-                    'meta-title'          : meta_title,
-                    'meta-description'    : meta_description,
                     'featured-image'      : image,
                     'featured-image-name' : image_name,
                   },

@@ -70,9 +70,6 @@ class HomeController extends Controller
             'stories'=>'required',
             'mls'=>'required',
             'area'=>'required',
-            'meta-description'=>'required',
-            'status'=>'required',
-            'meta-title'=>'required',
             ]);
         Homes::create([
             'title'=>$request['title'],
@@ -89,8 +86,6 @@ class HomeController extends Controller
             // 'gallery'=>implode(',', $gallery),
             'slug'=>Str::slug($request['title'], '-'),
             'status_id'=> $request['status'],
-            'meta_description'=>$request['meta-description'],
-            'meta_title'=>$request['meta-title'],
         ]);
         $home=Homes::where('slug',Str::slug($request['title'], '-'))->get()->first();
         HomeCommunity::create([
@@ -164,8 +159,6 @@ class HomeController extends Controller
             'area'=>'required',
             'builder'=>'required',
             'status'=>'required',
-            'meta-description'=>'required',
-            'meta-title'=>'required',
 
             ]);
         Homes::where('id',$id)->update([
@@ -182,8 +175,6 @@ class HomeController extends Controller
             'featured_image'=>$featured_img,
             'gallery'=>'anjkfd.jpg',
             'slug'=>Str::slug($request['title'], '-'),
-            'meta_description'=>$request['meta-description'],
-            'meta_title'=>$request['meta-title'],
         ]);
 
         $home=Homes::where('slug',Str::slug($request['title'], '-'))->get()->first();
