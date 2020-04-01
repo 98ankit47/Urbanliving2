@@ -511,7 +511,6 @@ $(document).ready(function() {
 @endif
 
 
-
 <script>
     var APP_URL = "{{ url('/') }}";
     var id = window.location.href.split('/').pop();
@@ -807,5 +806,70 @@ $(document).ready(function() {
  @endif
  
   
+ @if(Route::currentRouteName() == 'create-home' )
+ <script>
+ $(document).ready(function() {
+   var APP_URL = "{{ url('/') }}";
+   var id = window.location.href.split('/').pop();
+   
+     $('input[type=file]').on('change',function(e){
+             let files = e.target.files[0];
+             let reader = new FileReader();
+             if(files){
+               reader.onloadend = ()=>{
+                 $('#chosen_feature_img').attr('src',reader.result);
+                 image = reader.result;
+                 image_name = files.name;
+                // document.getElementById("featured_img").value  = reader.result;
+               }
+               reader.readAsDataURL(files); 
+           }
+         });
+         $(function () {
+           $('form').on('submit', function (e) {
+             var title,description,bedroom,bathroom,garage,community,stories,mls,status,area,builder;
+             e.preventDefault();
+                 title            =  document.getElementById("title").value;         
+                 description      =  document.getElementById("description").value;         
+                 bedroom          =  document.getElementById("bedroom").value;         
+                 bathroom         =  document.getElementById("bathroom").value;         
+                 garage           =  document.getElementById("garage").value;         
+                 stories          =  document.getElementById("stories").value;         
+                 mls              =  document.getElementById("mls").value;         
+                 area             =  document.getElementById("area").value;         
+                 community        =  document.getElementById("community_list").value;         
+                 builder          =  document.getElementById("builder").value;         
+                 status       =  document.getElementById("status").value;         
+                 $.ajax({
+                   type: 'post',
+                   url: '/api/admin/home/',
+                   data:{
+                     'title'               : title,
+                     'description'         : description,
+                     'bedroom'             : bedroom,
+                     'bathroom'            : bathroom,
+                     'garage'              : garage,
+                     'stories'             : stories,
+                     'mls'                 : mls,
+                     'area'                : area,
+                     'community'           : community,
+                     'status'              : status,
+                     'builder'             : builder,
+                     'featured-image'      : image,
+                     'featured-image-name' : image_name,
+                   },
+                   success: function ( ) {
+                     window.location.href = "/admin/homes";
+                   }
+                 });
+ 
+           });
+ 
+       });
+ });
+ </script>
+ @endif
+
+
 </body>
 </html>
