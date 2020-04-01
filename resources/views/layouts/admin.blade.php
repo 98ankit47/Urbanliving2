@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+.main-sidebar {
+  position: absolute !important;
+}
+
+@media (min-width: 768px) {
+        .control-sidebar {
+               .tab-content {
+                       height: calc(100vh - 85px);
+                }
+        }
+}
+</style>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -192,35 +205,35 @@
           
               <li class="nav-item">
                 <a href="/admin" class="nav-link">
-                <i class="fa fa-fire"></i><span><p>Dashboard</p></span>
+                <i class="fa fa-fire"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Dashboard</p></span>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/admin/homes" class="nav-link">
-                <i class="fa fa-home"></i><span><p>Homes</p></span>
+                <i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Homes</p></span>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="/admin/community" class="nav-link">
-                <i class="fa fa-home"></i><span><p>Communities</p></span>
+                <i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Communities</p></span>
                 </a>
               </li>
               
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                <i class="fa fa-terminal"></i><span><p>Floor</p></span>
+                <i class="fa fa-terminal"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Floor</p></span>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="/components" class="nav-link">
-                <i class="fa fa-square"></i><span><p>Components</p></span>
+                <i class="fa fa-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Components</p></span>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/admin/pages" class="nav-link">
-                <i class="fa fa-square"></i><span><p>Page</p></span>
+                <i class="fa fa-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Page</p></span>
                 </a>
               </li>
 
@@ -236,36 +249,8 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Urban Copy</li>
-              
-            </ol>
-        
-          </div><!-- /.col -->
-          @include('inc.message')
           @yield('content')
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
         
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -586,6 +571,7 @@ $(document).ready(function() {
             });
             $(function () {
               $('form').on('submit', function (e) {
+                alert();
                 var title,home_id ;
                 e.preventDefault();
                     title              =  document.getElementById("title").value;         
