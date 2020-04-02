@@ -688,6 +688,33 @@ $(document).ready(function() {
           }   
       });
   } 
+    loadHomeListDrop();
+      function loadHomeListDrop(){
+        var display;
+          $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/homelist',
+          success: function(result){
+            $.each(result,function(k){
+              display +='<a class="tablinks" onclick="openHome(event,'+result[k].id+')">'+result[k].title+'</a>';
+            })
+          $('#myDropdown').html(display);
+          }   
+      });
+  } 
+
+
+      function floorinfo(fid){
+        var display;
+        $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/floor-data/'+fid,
+          success: function(result){
+            $('#floorContent').html(result);
+             $('#viewFloor').modal('show');    
+          }   
+      });
+  } 
   function addFloor()
   {
     var APP_URL = "{{ url('/') }}";

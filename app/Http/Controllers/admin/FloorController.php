@@ -83,9 +83,98 @@ class FloorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id) 
     {
         return Floors::where('id',$id)->get()->first();
+    }
+
+    public function showModelFloor($id)
+    {
+        $floors = Floors::where('id',$id)->get();
+        $data ='';
+        foreach($floors as $ky => $floor )
+        {
+            $data .='<div class="row">
+            <div class="col-md-6">
+              <span><strong>NO. OF BEDROOMS   :</strong></span>
+            </div>
+            <div class="col-md-2">
+              <span>'.$floor->bedroom.'</span>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-success">CLICK HERE</button> 
+            </div>
+          </div><br>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <span><strong>NO. OF BATHROOMS   :</strong></span>
+            </div>
+            <div class="col-md-2">
+              <span>'.$floor->bathroom.'</span>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-success">CLICK HERE</button> 
+            </div>
+          </div><br>
+        
+          <div class="row">
+            <div class="col-md-6">
+              <span><strong>NO. OF GARAGE   :</strong></span>
+            </div>
+            <div class="col-md-2">
+              <span>'.$floor->garage.'</span>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-success">CLICK HERE</button> 
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <span><strong>NO. OF DINING   :</strong></span>
+            </div>
+            <div class="col-md-2">
+              <span>'.$floor->dining.'</span>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-success">CLICK HERE</button> 
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <span><strong>NO. OF KITCHEN :</strong></span>
+            </div>
+            <div class="col-md-2">
+              <span>'.$floor->kitchen.'</span>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-success">CLICK HERE</button> 
+            </div>
+          </div>';
+        } 
+        return $data ;
+    }
+    
+    public function showHomeFloor($id)
+    {
+        $floors = Floors::where('home_id',$id)->get();
+        $data ='';
+        foreach($floors as $ky => $floor )
+        {
+            $data .='
+            <div class="col-md-4">
+              <div class="card floor-card">
+                <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
+                  <div class="card-body">
+                    <button type="button" onclick="editfloor('.$floor->id.')" class="btn btn-warning">Edit</button> 
+                    <button type="button" class="btn btn-danger">Delete</button> 
+                  </div>
+              </div>
+            </div>';
+        } 
+        return $data ;
     }
 
     /**

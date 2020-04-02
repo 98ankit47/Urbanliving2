@@ -20,13 +20,12 @@
 }
 
 .dropbtn {
-  display: block;
   width: 100%;
   border: none;
   background-color: #4CAF50;
   color: white;
-  padding: 14px 28px;
   font-size: 16px;
+  font-weight:bolder;
   cursor: pointer;
   text-align: center;
 }
@@ -83,119 +82,21 @@
     </div>
 <hr>
 
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Select Floor</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a class="tablinks" onclick="openHome(event, 'home1')">Home 1</a>
-    <a class="tablinks" onclick="openHome(event, 'home2')">Home 2</a>
-    <a class="tablinks" onclick="openHome(event, 'home3')">Home 3</a>
+<div class="dropdown" style="width:100%">
+  <button onclick="myFunction()" class="dropbtn " style="height:30px;">Select Home</button>
+  <div id="myDropdown" class="dropdown-content" style="width:100%">
   </div>
 </div>
 
 <br><br>
 
-<div id="home1" class="tabcontent"><br>
-<span class="floor-card"><strong>HOME 1</strong></span><br><br>
-<div class="row">
-<div class="col-md-4">
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-      <div class="card-body">
-        <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editFloor">Edit</button>  -->
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button> 
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-</div>
-</div>
+  <div id="homeFloor" class="row">
 
-<div id="home2" class="tabcontent"><br>
-<span class="floor-card"><strong>HOME 2</strong></span><br><br>
-<div class="row">
-<div class="col-md-4">
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-      <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
   </div>
-</div>
-<div class="col-md-4" >
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-</div>
-</div>
+ 
 
-<div id="home3" class="tabcontent"><br>
-<span class="floor-card"><strong>HOME 3</strong></span><br><br>
-<div class="row">
-<div class="col-md-4">
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-</div>
-</div>
-
-<br>
-<hr>
+ 
+ 
 
 
 <!-- Add NEW FLOOR MODAL -->
@@ -372,49 +273,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-            <div class="row">
-              <div class="col-md-6">
-                <span><strong>NO. OF BEDROOMS   :</strong></span>
-              </div>
-              <div class="col-md-2">
-                <span>&nbsp;4</span>
-              </div>
-              <div class="col-md-4">
-                <button type="button" class="btn btn-success">CLICK HERE</button> 
-              </div>
-            </div><br>
-            
-            <div class="row">
-              <div class="col-md-6">
-                <span><strong>NO. OF BATHROOMS   :</strong></span>
-              </div>
-              <div class="col-md-2">
-                <span>&nbsp;4</span>
-              </div>
-              <div class="col-md-4">
-                <button type="button" class="btn btn-success">CLICK HERE</button> 
-              </div>
-            </div><br>
-
-            <div class="row">
-              <div class="col-md-6">
-                <span><strong>NO. OF GARAGE   :</strong></span>
-              </div>
-              <div class="col-md-2">
-                <span>&nbsp;4</span>
-              </div>
-              <div class="col-md-4">
-                <button type="button" class="btn btn-success">CLICK HERE</button> 
-              </div>
-            </div>
-            <br>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-body" id="floorContent">
+         
       </div>
-    </div>
+
+      
   </div>
 </div> 
 
@@ -449,7 +312,6 @@ function handleFileSelect(evt) {
   }
 }
 
-document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
 
 
@@ -477,17 +339,19 @@ window.onclick = function(event) {
     }
   }
 }
-function openHome(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+function openHome(evt, homeid) {
+  var APP_URL = "{{ url('/') }}";
+    var id = window.location.href.split('/').pop();
+    loadFloorList();
+      function loadFloorList(){
+    $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/floor-home/'+homeid,
+          success: function(result){
+          $('#homeFloor').html(result);
+          }   
+      });
   }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 </script>
