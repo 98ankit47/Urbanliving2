@@ -63,8 +63,8 @@ Route::get('/availsold', function () {
 });
 
 Route::get('admin/floor', function () {
-    return view('admin.floor.floor');
-});
+    return view('admin.floor.index');
+})->name('floorView');
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 Route::post( 'admin/home/feature', 'admin\HomeFeatureController@store')->name('feature-create');

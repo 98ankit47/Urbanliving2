@@ -37,6 +37,11 @@ class HomeController extends Controller
         } 
         return $data ;
     }
+
+    public function data()
+    {
+        return Homes::get();
+    }
      
 
     /**

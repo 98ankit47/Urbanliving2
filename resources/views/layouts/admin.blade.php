@@ -510,7 +510,6 @@ $(document).ready(function() {
 </script>
 @endif
 
-
 <script>
     var APP_URL = "{{ url('/') }}";
     var id = window.location.href.split('/').pop();
@@ -584,7 +583,6 @@ $(document).ready(function() {
           });
       }
 </script>
- 
    
     {{-- // $.ajax({
     //     type: 'GET',
@@ -672,6 +670,145 @@ $(document).ready(function() {
   }
 </script>
 @endif
+
+@if(Route::currentRouteName() == 'floorView')
+<script> 
+    loadHomeList();
+      function loadHomeList(){
+        var display;
+    $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/homelist',
+          success: function(result){
+            $.each(result,function(k){
+              display += '<option value="'+result[k].id+'">'+result[k].title+'</option>';
+            })
+          $('#home_id').html(display);
+          $('#Edit_home_id').html(display);
+          }   
+      });
+  } 
+  function addFloor()
+  {
+    var APP_URL = "{{ url('/') }}";
+    var id = window.location.href.split('/').pop();
+    $('#AddNewFloor').modal('show');
+   $('input[type=file]').on('change',function(e){
+           let files = e.target.files[0];
+           let reader = new FileReader();
+           if(files){
+             reader.onloadend = ()=>{
+               $('#image').attr('src',reader.result);
+               image = reader.result;
+               image_name = files.name;
+              // document.getElementById("featured_img").value  = reader.result;
+             }
+             reader.readAsDataURL(files); 
+         }
+       });
+       $(function () {
+         $('#FloorAddForm').on('submit', function (e) {
+           var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
+           e.preventDefault();
+               home_id            =  document.getElementById("home_id").value;         
+               floor_no      =  document.getElementById("floor_no").value;         
+               bedroom          =  document.getElementById("bedroom").value;         
+               bathroom         =  document.getElementById("bathroom").value;         
+               garage           =  document.getElementById("garage").value;         
+               dining          =  document.getElementById("dining").value;         
+               kitchen              =  document.getElementById("kitchen").value;         
+               $.ajax({
+                 type: 'post',
+                 url: '/api/admin/floor/',
+                 data:{
+                   'home_id'             : home_id,
+                   'floor_no'            : floor_no,
+                   'bedroom'             : bedroom,
+                   'bathroom'            : bathroom,
+                   'garage'              : garage,
+                   'dining'             : dining,
+                   'kitchen'             : kitchen,
+                   'image'               : image,
+                   'image-name'          : image_name,
+                 },
+                 success: function ( ) {
+                   window.location.href = "/admin/floor";
+                 }
+               });
+
+         });
+
+     });
+  }
+
+     function editfloor(fid)
+    {     
+      $.ajax({
+    type: 'GET',
+    url: APP_URL+'/api/admin/floor/'+fid,
+
+    success: function(result){    
+      $('#EditFloor').modal('show');
+
+        document.getElementById("Edit_floor_no").value = result.floor_no;         
+        document.getElementById("Edit_bedroom").value = result.bedroom;         
+        document.getElementById("Edit_bathroom").value = result.bathroom;         
+        document.getElementById("Edit_garage").value = result.garage;         
+        document.getElementById("Edit_dining").value = result.dining;         
+        document.getElementById("Edit_kitchen").value = result.kitchen; 
+        document.getElementById("Edit_image").value = result.image; 
+    }
+    });    
+      $('input[type=file]').on('change',function(e){
+           let files = e.target.files[0];
+           let reader = new FileReader();
+           if(files){
+             reader.onloadend = ()=>{
+               $('#Edit_image').attr('src',reader.result);
+               image = reader.result;
+               image_name = files.name;
+             }
+             reader.readAsDataURL(files); 
+         }
+       });
+       $(function () {
+         $('#EditForm').on('submit', function (e) {
+           var home_id,floor_no,bedroom,bathroom,garage,dining,kitchen;
+           e.preventDefault();
+               home_id            =  document.getElementById("Edit_home_id").value;         
+               floor_no           =  document.getElementById("Edit_floor_no").value;         
+               bedroom            =  document.getElementById("Edit_bedroom").value;         
+               bathroom           =  document.getElementById("Edit_bathroom").value;         
+               garage             =  document.getElementById("Edit_garage").value;         
+               dining            =  document.getElementById("Edit_dining").value;         
+               kitchen            =  document.getElementById("Edit_kitchen").value;         
+               $.ajax({
+                 type: 'post',
+                 url: '/api/admin/floor/'+fid,
+                 data:{
+                   'home_id'             : home_id,
+                   'floor_no'            : floor_no,
+                   'bedroom'             : bedroom,
+                   'bathroom'            : bathroom,
+                   'garage'              : garage,
+                   'dining'             : dining,
+                   'kitchen'             : kitchen,
+                   'image'               : image,
+                   'image-name'          : image_name,
+                 },
+                 success: function ( ) {
+                   window.location.href = "/admin/floor";
+                 }
+               });
+
+         });
+
+     });
+
+    }
+</script>
+@endif
+
 
  @if(Route::currentRouteName() == 'communities')
   <script>
@@ -806,129 +943,7 @@ $(document).ready(function() {
  @endif
  
   
- @if(Route::currentRouteName() == 'floorView' )
- <script>
- $(document).ready(function() {
-   var APP_URL = "{{ url('/') }}";
-   var id = window.location.href.split('/').pop();
-   
-     $('input[type=file]').on('change',function(e){
-             let files = e.target.files[0];
-             let reader = new FileReader();
-             if(files){
-               reader.onloadend = ()=>{
-                 $('#chosen_feature_img').attr('src',reader.result);
-                 image = reader.result;
-                 image_name = files.name;
-                // document.getElementById("featured_img").value  = reader.result;
-               }
-               reader.readAsDataURL(files); 
-           }
-         });
-         $(function () {
-           $('form').on('submit', function (e) {
-             var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
-             e.preventDefault();
-                 home_id            =  document.getElementById("home_id").value;         
-                 floor_no      =  document.getElementById("floor_no").value;         
-                 bedroom          =  document.getElementById("bedroom").value;         
-                 bathroom         =  document.getElementById("bathroom").value;         
-                 garage           =  document.getElementById("garage").value;         
-                 dinning          =  document.getElementById("dinning").value;         
-                 kitchen              =  document.getElementById("kitchen").value;         
-                 $.ajax({
-                   type: 'post',
-                   url: '/api/admin/floor/',
-                   data:{
-                     'home_id'             : home_id,
-                     'floor_no'            : floor_no,
-                     'bedroom'             : bedroom,
-                     'bathroom'            : bathroom,
-                     'garage'              : garage,
-                     'dinning'             : dinning,
-                     'kitchen'             : kitchen,
-                     'image'      : image,
-                     'image-name' : image_name,
-                   },
-                   success: function ( ) {
-                     window.location.href = "/admin/floors";
-                   }
-                 });
  
-           });
- 
-       });
-
-       function editfloor(fid)
-      {     
-        $.ajax({
-      type: 'GET',
-      url: APP_URL+'/api/admin/floor/'+fid,
-
-      success: function(result){    
-        $('#floorModal').modal('show');
-
-          document.getElementById("home_id").value = result.home_id;         
-          document.getElementById("floor_no").value = result.floor_no;         
-          document.getElementById("bedroom").value = result.bedroom;         
-          document.getElementById("bathroom").value = result.;         
-          document.getElementById("garage").value = result.garage;         
-          document.getElementById("dinning").value = result.dinning;         
-          document.getElementById("kitchen").value = result.kitchen; 
-      }
-      });    
-        $('input[type=file]').on('change',function(e){
-             let files = e.target.files[0];
-             let reader = new FileReader();
-             if(files){
-               reader.onloadend = ()=>{
-                 $('#chosen_feature_img').attr('src',reader.result);
-                 image = reader.result;
-                 image_name = files.name;
-                // document.getElementById("featured_img").value  = reader.result;
-               }
-               reader.readAsDataURL(files); 
-           }
-         });
-         $(function () {
-           $('form').on('submit', function (e) {
-             var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
-             e.preventDefault();
-                 home_id            =  document.getElementById("home_id").value;         
-                 floor_no      =  document.getElementById("floor_no").value;         
-                 bedroom          =  document.getElementById("bedroom").value;         
-                 bathroom         =  document.getElementById("bathroom").value;         
-                 garage           =  document.getElementById("garage").value;         
-                 dinning          =  document.getElementById("dinning").value;         
-                 kitchen              =  document.getElementById("kitchen").value;         
-                 $.ajax({
-                   type: 'post',
-                   url: '/api/admin/floor/',
-                   data:{
-                     'home_id'             : home_id,
-                     'floor_no'            : floor_no,
-                     'bedroom'             : bedroom,
-                     'bathroom'            : bathroom,
-                     'garage'              : garage,
-                     'dinning'             : dinning,
-                     'kitchen'             : kitchen,
-                     'image'      : image,
-                     'image-name' : image_name,
-                   },
-                   success: function ( ) {
-                     window.location.href = "/admin/floors";
-                   }
-                 });
- 
-           });
- 
-       });
-
-      }
- });
- </script>
- @endif
-
 
 </body>
 </html>

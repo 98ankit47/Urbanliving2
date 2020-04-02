@@ -66,14 +66,14 @@
   </div>
   </div>
 <div class="row">
-<div class="col-md-6">
-  <div class="image-upload">
-  <p>Featured Image</p>
-  <p><input type="file"  name="image" id="file"  onchange="loadFile(event)" ></p>
-<p><label for="file" style="cursor: pointer;">Choose File</label></p>
-<p><img id="output" width="200px" height="200px" /></p>
+  <div class="col-md-6">
+    <div class="image-upload">
+      <p>Featured Image</p>
+      <p><input type="file"  name="image" id="file"  onchange="loadFile(event)" ></p>
+      <p><label for="file" style="cursor: pointer;">Choose File</label></p>
+      <p><img id="output" width="200px" height="200px" /></p>
+    </div>
   </div>
-</div>
 <div class="col-md-6">
 <div class="image-upload">
 <p>Image Gallery</p>

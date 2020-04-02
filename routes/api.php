@@ -24,6 +24,7 @@ Route::resources([
 ]);
 
 Route::post('admin/home/{id}','admin\HomeController@update');
+Route::get('admin/homelist','admin\HomeController@data');
 
 Route::get('admin/communityList','admin\CommunityController@data');
 Route::post('admin/community/{id}','admin\CommunityController@update');

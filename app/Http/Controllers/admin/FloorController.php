@@ -27,11 +27,11 @@ class FloorController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('image');
-        $name = $image->getClientOriginalName();
-        $destinationPath = public_path('/uploads');
-        $image->move($destinationPath, $name);
-        
+        $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+            $request['image'],';')))[1])[1];  
+
+        \Image::make($request['image'])->save(public_path('uploads\homes\\').$img);
+       
         $this->validate($request,[
             'home_id'=>'required',
             'floor_no'=>'required',
@@ -49,7 +49,7 @@ class FloorController extends Controller
             'garage'=>$request['garage'],
             'kitchen'=>$request['kitchen'],
             'dining'=>$request['dining'],
-            'image'=>$name,
+            'image'=>$img,
         ]);
         return ['success'=>'floor created Successfully'];
     }
@@ -85,7 +85,7 @@ class FloorController extends Controller
      */
     public function show($id)
     {
-        //
+        return Floors::where('id',$id)->get()->first();
     }
 
     /**
@@ -97,10 +97,11 @@ class FloorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $image = $request->file('image');
-        $name = $image->getClientOriginalName();
-        $destinationPath = public_path('/uploads');
-        $image->move($destinationPath, $name);
+        $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+            $request['image'],';')))[1])[1];  
+
+        \Image::make($request['image'])->save(public_path('uploads\homes\\').$img);
+     
         $this->validate($request,[
             'home_id'=>'required',
             'floor_no'=>'required',
@@ -118,7 +119,7 @@ class FloorController extends Controller
             'garage'=>$request['garage'],
             'kitchen'=>$request['kitchen'],
             'dining'=>$request['dining'],
-            'image'=>$name,
+            'image'=>$img,
         ]);
         return ['success'=>'floor updated Successfully'];
     }
