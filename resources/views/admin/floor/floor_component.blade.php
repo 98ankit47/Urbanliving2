@@ -8,7 +8,7 @@
 }
 
 .card-body{
-  height: 80px;
+  height: 100px;
 }
 
 .card-img-top {
@@ -24,78 +24,43 @@
 <div class="container contain-bath">
 <br>
     <div class="row">
-        <div class="col-md-9 floor-contain">
-            <h4>Bathroom</h4>
+        <div class="col-md-10 floor-contain">
+            <h4 style="text-align: center">Floor Component</h4>
         </div>
         <div class="col-md-2">
-        <button type="button" data-toggle="modal"  data-target="#editComponentModal" class="btn btn-info">Add New</button> 
+        <button onclick="addFloorComponent()" class="btn btn-info">Add New</button> 
         </div>
     </div>
     </div>
 <hr>
 
-<div class="row">
-<div class="col-md-4">
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-      <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div class="card floor-card">
-    <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
-    <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
-      </div>
-  </div>
-</div>
+<div class="row" id="floorComponent_list">
+ 
 </div>
 
 
 <!--MODAL-->
 
-<div class="modal fade" id="editComponentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddNewFloorComponent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Bathroom</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Floor Component</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <form id="Communityform">
-<div class="form-group">
+      <form id="ComponentAddForm">
+        <div class="form-group">
       <label for="inputEmail4">Name</label>
       <input type="text" class="form-control" id="name" placeholder="title">
     </div>
-  <div class="form-group">
-  <label for="inputState">Type</label>
-      <select id="country" class="form-control">
-        <option selected>Choose...</option>
-        <option>Bedroom</option>
-        <option>Bathroom</option>
-        <option>Kitchen</option>
-        <option>Garage</option>
-      </select>
-  </div>
+   
   <div class="form-group">
   <div class="image-upload">
 <p><strong>Image</strong></p>
-  <input type="file" id="files" name="files[]" multiple />
+  <input type="file" id="image" name="files[]" multiple />
   <br><br>
 <output id="list" width="200px" height="200px"></output>
   </div>
@@ -111,7 +76,68 @@
      
     </div>
   </div>
-</div>
+
+
+  
+
+  <div class="modal fade" id="editfloorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Floor Component</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <form id="EditComponentForm">
+          <div class="form-group">
+        <label for="inputEmail4">Name</label>
+        <input type="text" class="form-control" id="edit_name" placeholder="title">
+      </div>
+     
+    <div class="form-group">
+    <div class="image-upload">
+  <p><strong>Image</strong></p>
+    <input type="file" id="image" name="files[]" multiple />
+    <br><br>
+  <output id="list" width="200px" height="200px"></output>
+    </div>
+     </div>
+  
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+  </form>
+        </div>
+       
+      </div>
+    </div>
+
+  <div class="modal fade bd-example-modal-xl" id="deleteFloorComponent" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>Delete Confirm Action</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fa fa-times"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
+            <div class="clearfix"></div>
+            <div class="m-auto">
+              <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
+              <button type="submit" id="ys-floor-component-btn" class="btn btn-danger"> Yes</button>
+             </div>  
+            </div>    
+          </div>
+       </div>
+     </div>
+   </div>
 
 <script>
 function handleFileSelect(evt) {

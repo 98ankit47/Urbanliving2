@@ -56,10 +56,10 @@ class FloorController extends Controller
 
     public function Componentstore(Request $request)
     {
-        $image = $request->file('image');
-        $name = $image->getClientOriginalName();
-        $destinationPath = public_path('/uploads');
-        $image->move($destinationPath, $name);
+          $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+            $request['image'],';')))[1])[1];  
+
+        \Image::make($request['image'])->save(public_path('uploads\floorcomponent\\').$img);
         $this->validate($request,[
             'floor_id'=>'required',
             'name'=>'required',
@@ -71,7 +71,7 @@ class FloorController extends Controller
             'name'=>$request['name'],
             'type'=>$request['type'],
             'bathroom'=>$request['bathroom'],
-            'image'=>$name,
+            'image'=>$img,
         ]);
         return ['success'=>'floor Component created Successfully'];
     }
@@ -87,10 +87,29 @@ class FloorController extends Controller
     {
       return Floors::where('id',$id)->get()->first();
     }
+    public function componentshow($id) 
+    {
+      return FloorComponent::where('id',$id)->get()->first();
+    }
 
     public function showFloorComponent(Request $request, $type, $id)
     {
-      return FloorComponent::where('floor_id',$id)->where('type',$type)->get();
+      $data='';
+      $components = FloorComponent::where('floor_id',$id)->where('type',$type)->get();
+      foreach($components as $ky => $component )
+      {
+          $data .='<div class="col-md-4">
+          <div class="card floor-card">
+            <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="/uploads/floorcomponent/'.$component->image.'" alt="">
+              <div class="card-body">
+                <h5 style="text-align:center">'.$component->name.'</h5>
+                <button type="button" onclick="editfloorcomponent('.$component->id.')" class="btn btn-warning">Edit</button>  
+                <button type="button" data-toggle="modal" data-id="'.$component->id.'"  data-target="#deleteFloorComponent" class="btn btn-danger">Delete</button> 
+              </div>
+          </div>
+        </div> ';
+      } 
+      return $data ;
     }
 
     public function showModelFloor($id)
@@ -180,7 +199,7 @@ class FloorController extends Controller
                 <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">
                   <div class="card-body">
                     <button type="button" onclick="editfloor('.$floor->id.')" class="btn btn-warning">Edit</button> 
-                    <button type="button" class="btn btn-danger">Delete</button> 
+                    <button type="button" data-toggle="modal" data-id="'.$floor->id.'"  data-target="#deleteFloor"class="btn btn-danger">Delete</button> 
                   </div>
               </div>
             </div>';
@@ -226,11 +245,11 @@ class FloorController extends Controller
 
     public function Componentupdate(Request $request, $id)
     {
-        $image = $request->file('image');
-        $name = $image->getClientOriginalName();
-        $destinationPath = public_path('/uploads');
-        $image->move($destinationPath, $name);
-        
+        $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+          $request['image'],';')))[1])[1];  
+
+      \Image::make($request['image'])->save(public_path('uploads\floorcomponent\\').$img);
+          
         $this->validate($request,[
             'floor_id'=>'required',
             'name'=>'required',
@@ -240,7 +259,7 @@ class FloorController extends Controller
             'floor_id'=>$request['floor_id'],
             'name'=>$request['name'],
             'type'=>$request['type'],
-            'image'=>$name,
+            'image'=>$img,
         ]);
         return ['success'=>'floor Component updated Successfully'];
     }
@@ -252,6 +271,12 @@ class FloorController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $floors = Floors::findOrFail($id);
+      $floors->delete();
+    }
+    public function deleteFloorComponent($id)
+    {
+      $component = FloorComponent::findOrFail($id);
+      $component->delete();
     }
 }

@@ -47,7 +47,6 @@ Route::get('admin/home/manage/{id}', function(){
 Route::get('admin/home/create', function(){
     return view('admin.homes.homeForm');
 })->name('create-home');
-Route::get( 'admin/home/status', 'HomeStatusController@index');
 
 
 Route::get('admin/community',function(){
@@ -67,7 +66,7 @@ Route::get('admin/floor', function () {
 })->name('floorView');
 Route::get('admin/floor-component-gallery/{type}/{id}', function () {
     return view('admin.floor.floor_component');
-});
+})->name('FloorComponent');
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 Route::post( 'admin/home/feature', 'admin\HomeFeatureController@store')->name('feature-create');

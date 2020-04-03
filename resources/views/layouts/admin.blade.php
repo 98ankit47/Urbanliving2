@@ -351,6 +351,29 @@
  });
 });
 
+$('#deleteFloorComponent').on('show.bs.modal', function (e) {
+
+var $trigger = $(e.relatedTarget);
+var id=$trigger.data('id');
+$('#ys-floor-component-btn').click(function()
+{
+  $('#deleteFloorComponent').modal('hide');
+  deletefloorcomponent(id);
+});
+});
+
+$('#deleteFloor').on('show.bs.modal', function (e) {
+
+var $trigger = $(e.relatedTarget);
+var id=$trigger.data('id');
+
+$('#ys-floor-btn').click(function()
+{
+  $('#deleteFloor').modal('hide');
+  deleteFloor(id);
+});
+});
+
 $('#deleteCommunity').on('show.bs.modal', function (e) {
 
 var $trigger = $(e.relatedTarget);
@@ -671,6 +694,127 @@ $(document).ready(function() {
 </script>
 @endif
 
+@if(Route::currentRouteName() == 'FloorComponent')
+  <script>
+    loadFloorComponent();
+    function loadFloorComponent()
+    {
+      var data = window.location.href.split('/');
+      var id = window.location.href.split('/').pop();
+      var type = data[5];
+      $.ajax({
+            type: 'GET',
+            url: APP_URL+'/api/admin/floor-component-gallery/'+type+'/'+id,
+            success: function(result){     
+              $('#floorComponent_list').html(result);
+            }   
+        });
+      }  
+      function deletefloorcomponent(fc_id)
+      {
+        $.ajax({
+            type: 'DELETE',
+            url: APP_URL+'/api/admin/floor-component/delete/'+fc_id,
+            success: function(result){  
+              loadFloorComponent();
+            }   
+        });
+      }
+        function addFloorComponent()
+        {
+          var data = window.location.href.split('/');
+          var id = window.location.href.split('/').pop();
+          var type = data[5];
+          $('#AddNewFloorComponent').modal('show');
+          $('input[type=file]').on('change',function(e){
+                let files = e.target.files[0];
+                let reader = new FileReader();
+                if(files){
+                  reader.onloadend = ()=>{
+                    $('#image').attr('src',reader.result);
+                    image = reader.result;
+                    image_name = files.name;
+                  }
+                  reader.readAsDataURL(files); 
+              }
+            });
+            $(function () {
+              $('#ComponentAddForm').on('submit', function (e) {
+                var name;
+                e.preventDefault();
+                    name      =  document.getElementById("name").value;         
+                    $.ajax({
+                      type: 'post',
+                      url: '/api/admin/floor-component/',
+                      data:{
+                        'name'                : name,
+                        'floor_id'            : id,
+                        'type'                : type,
+                        'image'               : image,
+                        'image-name'          : image_name,
+                      },
+                      success: function ( ) {
+                          $('#AddNewFloorComponent').modal('hide');
+                          loadFloorComponent();
+                      }
+                    });
+              });
+            });
+        }
+
+    function editfloorcomponent(fid)
+          {  
+            var data = window.location.href.split('/');
+            var id = window.location.href.split('/').pop();
+            var type = data[5];
+            $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/floor-component/'+fid,
+
+          success: function(result){    
+            $('#editfloorModal').modal('show');
+              document.getElementById("edit_name").value = result.name;         
+          }
+          });    
+            $('input[type=file]').on('change',function(e){
+                let files = e.target.files[0];
+                let reader = new FileReader();
+                if(files){
+                  reader.onloadend = ()=>{
+                    $('#Edit_image').attr('src',reader.result);
+                    image = reader.result;
+                    image_name = files.name;
+                  }
+                  reader.readAsDataURL(files); 
+              }
+            });
+            $(function () {
+              $('#EditComponentForm').on('submit', function (e) {
+                e.preventDefault();
+                      name =  document.getElementById("edit_name").value; 
+                    $.ajax({
+                      type: 'post',
+                      url: '/api/admin/floor-component/'+fid,
+                      data:{
+                        'name'                : name,
+                        'floor_id'            : id,
+                        'type'                : type,
+                        'image'               : image,
+                        'image-name'          : image_name,
+                      },
+                      success: function ( ) {
+                        $('#editfloorModal').modal('hide');
+                        loadFloorComponent();
+                      }
+                    });
+
+              });
+
+          });
+    }        
+  </script>
+@endif
+
 @if(Route::currentRouteName() == 'floorView')
 <script> 
     loadHomeList();
@@ -705,14 +849,10 @@ $(document).ready(function() {
 
       function floorComponent(type,home_id)
       {
-        $.ajax({
-          type: 'GET',
-          url: APP_URL+'/api/admin/floor-component-gallery/'+type+'/'+home_id,
-          success: function(result){
             window.location.href='/admin/floor-component-gallery/'+type+'/'+home_id;
-          }   
-      });
+  
       }
+
       function floorinfo(fid){
         $.ajax({
           type: 'GET',
@@ -723,6 +863,16 @@ $(document).ready(function() {
           }   
       });
   } 
+      function deleteFloor(f_id)
+      {
+        $.ajax({
+            type: 'DELETE',
+            url: APP_URL+'/api/admin/floor/'+f_id,
+            success: function(result){  
+              window.location.href='/admin/floor';
+            }   
+        });
+      }
   function addFloor()
   {
     var APP_URL = "{{ url('/') }}";
