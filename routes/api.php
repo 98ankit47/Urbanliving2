@@ -34,6 +34,7 @@ Route::get( 'admin/home-status', 'CommonController@status');
 Route::post( 'admin/floor/{id}', 'admin\FloorController@update');
 Route::get( 'admin/floor-home/{id}', 'admin\FloorController@showHomeFloor');
 Route::get( 'admin/floor-data/{id}', 'admin\FloorController@showModelFloor');
+Route::get( 'admin/floor-component-gallery/{type}/{home_id}', 'admin\FloorController@showFloorComponent');
 Route::post( 'admin/floor-component', 'admin\FloorController@componentstore');
 Route::post( 'admin/floor-component/{id}', 'admin\FloorController@componentupdate');
 

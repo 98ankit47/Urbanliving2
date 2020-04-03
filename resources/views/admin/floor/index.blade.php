@@ -101,6 +101,7 @@
 
 <!-- Add NEW FLOOR MODAL -->
 
+
 <div class="modal fade" id="AddNewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -157,16 +158,14 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="form-grroup col-md-6">
+          <div class="form-group col-md-6">
             <div class="image-upload">
-              <p>Floor Image</p>
+              <p><strong>Floor Image</strong></p>
               <p><input type="file"  name="image" id="image"  onchange="loadFile(event)" ></p>
             </div>
-          </div>
-            <div class="form-group col-md-6">  
-              <p><label for="file" style="cursor: pointer;">Choose File</label></p>
-              <p><img id="output"/></p>
-            </div>
+          </div>            
+              <!-- <p><label for="file" style="cursor: pointer;">Choose File</label></p> -->
+              <p><img id="output" width="130px" height="130px" /></p>
           </div>
         </div>
         <div class="modal-footer">
@@ -178,7 +177,6 @@
      
     </div>
   </div>
-
 <!--EDIT FLOOR MODAL-->
 
   <div class="modal fade" id="EditFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

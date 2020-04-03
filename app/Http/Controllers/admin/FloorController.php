@@ -30,7 +30,7 @@ class FloorController extends Controller
         $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
             $request['image'],';')))[1])[1];  
 
-        \Image::make($request['image'])->save(public_path('uploads\homes\\').$img);
+        \Image::make($request['image'])->save(public_path('uploads\floor\\').$img);
        
         $this->validate($request,[
             'home_id'=>'required',
@@ -85,13 +85,23 @@ class FloorController extends Controller
      */
     public function show($id) 
     {
-        return Floors::where('id',$id)->get()->first();
+      return Floors::where('id',$id)->get()->first();
+    }
+
+    public function showFloorComponent(Request $request, $type, $id)
+    {
+      return FloorComponent::where('floor_id',$id)->where('type',$type)->get();
     }
 
     public function showModelFloor($id)
     {
         $floors = Floors::where('id',$id)->get();
         $data ='';
+        $bedroom = 'bedroom';
+        $bathroom = "bathroom";
+        $garage = "garage";
+        $kitchen = "kitchen";
+        $dining = "dining";
         foreach($floors as $ky => $floor )
         {
             $data .='<div class="row">
@@ -102,7 +112,7 @@ class FloorController extends Controller
               <span>'.$floor->bedroom.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $bedroom . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
             </div>
           </div><br>
           
@@ -114,7 +124,7 @@ class FloorController extends Controller
               <span>'.$floor->bathroom.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $bathroom . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
             </div>
           </div><br>
         
@@ -126,7 +136,7 @@ class FloorController extends Controller
               <span>'.$floor->garage.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $garage . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
             </div>
           </div>
           <br>
@@ -138,7 +148,7 @@ class FloorController extends Controller
               <span>'.$floor->dining.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $dining . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
             </div>
           </div>
           <br>
@@ -150,7 +160,7 @@ class FloorController extends Controller
               <span>'.$floor->kitchen.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $kitchen . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
             </div>
           </div>';
         } 
@@ -166,7 +176,8 @@ class FloorController extends Controller
             $data .='
             <div class="col-md-4">
               <div class="card floor-card">
-                <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
+                <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4>
+                <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">
                   <div class="card-body">
                     <button type="button" onclick="editfloor('.$floor->id.')" class="btn btn-warning">Edit</button> 
                     <button type="button" class="btn btn-danger">Delete</button> 
@@ -189,7 +200,7 @@ class FloorController extends Controller
         $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
             $request['image'],';')))[1])[1];  
 
-        \Image::make($request['image'])->save(public_path('uploads\homes\\').$img);
+        \Image::make($request['image'])->save(public_path('uploads\floor\\').$img);
      
         $this->validate($request,[
             'home_id'=>'required',

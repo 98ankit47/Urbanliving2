@@ -199,7 +199,9 @@ class HomeController extends Controller
     public function destroy($id)
     {  
         $home = Homes::findOrFail($id);
-        $home->delete(); 
+        $home->delete();
+        $feature = Features::where('home_id',$id)->get();
+        $feature->delete(); 
         
         return ['success'=>'Home Successfully Deleted'];
     }

@@ -701,11 +701,19 @@ $(document).ready(function() {
           $('#myDropdown').html(display);
           }   
       });
-  } 
+    } 
 
-
+      function floorComponent(type,home_id)
+      {
+        $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/floor-component-gallery/'+type+'/'+home_id,
+          success: function(result){
+            window.location.href='/admin/floor-component-gallery/'+type+'/'+home_id;
+          }   
+      });
+      }
       function floorinfo(fid){
-        var display;
         $.ajax({
           type: 'GET',
           url: APP_URL+'/api/admin/floor-data/'+fid,
