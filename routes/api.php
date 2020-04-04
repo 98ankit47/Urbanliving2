@@ -42,6 +42,7 @@ Route::get( 'admin/floor-component/{id}', 'admin\FloorController@componentshow')
 
 
 Route::get( 'admin/home-feature/{id}', 'CommonController@features');
+Route::post( 'admin/home-feature', 'admin\HomeFeatureController@store');
 Route::post( 'admin/home-feature/{id}', 'admin\HomeFeatureController@update');
 Route::get( 'admin/home-feature-data/{id}', 'CommonController@featureData');
 Route::get( 'admin/home/feature/{id}', 'admin\HomeFeatureController@show');

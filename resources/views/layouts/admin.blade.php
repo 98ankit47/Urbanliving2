@@ -552,27 +552,19 @@ $(document).ready(function() {
               url: APP_URL + '/api/admin/home-feature/'+ id,
               type: 'DELETE'
             });
-            loadFeatureList();
-           
+            loadFeatureList();        
     }
-    function editfeature(id)
-      {     
-        
-        var APP_URL = "{{ url('/') }}";
-        $.ajax({
-      type: 'GET',
-      url: APP_URL+'/api/admin/home-feature-data/'+id,
-      success: function(result){    
-        document.getElementById("title").value = result.title;
-        $('#Editfeature').modal('show');
-      }
-      }); 
+
+    function addFeature(id)
+      {      
+        $('#AddFeatureModal').modal('show');
+       
       $('input[type=file]').on('change',function(e){
                 let files = e.target.files[0];
                 let reader = new FileReader();
                 if(files){
                   reader.onloadend = ()=>{
-                    $('#chosen_feature_img').attr('src',reader.result);
+                    $('#image').attr('src',reader.result);
                     image = reader.result;
                     image_name = files.name;
                   // document.getElementById("featured_img").value  = reader.result;
@@ -581,10 +573,61 @@ $(document).ready(function() {
               }
             });
             $(function () {
-              $('form').on('submit', function (e) {
+              $('#addFeature').on('submit', function (e) {
                 var title,home_id ;
                 e.preventDefault();
                     title              =  document.getElementById("title").value;         
+                    home_id              =  document.getElementById("home_id").value;   
+                    $.ajax({
+                      type: 'post',
+                      url: '/api/admin/home-feature/',
+                      data:{
+                        'title'               : title,
+                        'home_id'             : home_id,
+                        'image'      : image,
+                        'image-name' : image_name,
+                      },
+                      success: function () {
+                        $('#AddFeatureModal').modal('hide');
+                          loadFeatureList();
+                      }
+                    });
+
+              });
+
+          });
+      }
+
+    function editfeature(id)
+      {     
+        
+        var APP_URL = "{{ url('/') }}";
+        $.ajax({
+      type: 'GET',
+      url: APP_URL+'/api/admin/home-feature-data/'+id,
+      success: function(result){    
+        document.getElementById("edit_title").value = result.title;
+        $('#Editfeature').modal('show');
+      }
+      }); 
+      $('input[type=file]').on('change',function(e){
+                let files = e.target.files[0];
+                let reader = new FileReader();
+                if(files){
+                  reader.onloadend = ()=>{
+                    $('#image').attr('src',reader.result);
+                    image = reader.result;
+                    image_name = files.name;
+                  // document.getElementById("featured_img").value  = reader.result;
+                  }
+                  reader.readAsDataURL(files); 
+              }
+            });
+            $(function () {
+              $('#editFeature').on('submit', function (e) {
+                var title,home_id ;
+                e.preventDefault();
+                    title              =  document.getElementById("edit_title").value;         
                     home_id              =  document.getElementById("home_id").value;         
                     $.ajax({
                       type: 'post',

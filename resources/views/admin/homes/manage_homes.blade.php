@@ -81,7 +81,7 @@
           <div class="container details">
           <div class="row">
           <div class="col-md-4">
-          <span><strong>NAME    :</strong></span>
+          <span><strong>NAME :</strong></span>
           </div>
           <div class="col-md-6">
           <span><strong id=''>&nbsp;{{$home->title}}</strong></span>
@@ -105,11 +105,48 @@
           <span style="font-size: 12px;" id='builder'>&nbsp;{{$home->builder}}</span>
           </div><br>
           <div class="col-md-4">
+            <span><strong>No Of Bedroom :</strong></span>
+            </div>
+            <div class="col-md-6">
+            <span style="font-size: 12px;" id='builder'>&nbsp;{{$home->bedroom}}</span>
+            </div><br>
+            <div class="col-md-4">
+              <span><strong>No Of Bathroom :</strong></span>
+              </div>
+              <div class="col-md-6">
+              <span style="font-size: 12px;" id='builder'>&nbsp;{{$home->bathroom}}</span>
+            </div><br>
+              <div class="col-md-4">
+                <span><strong>No Of Garage :</strong></span>
+                </div>
+                <div class="col-md-6">
+                <span style="font-size: 12px;" id='builder'>&nbsp;{{$home->garage}}</span>
+              </div><br>
+          <div class="col-md-4">
           <span><strong>STATUS :</strong></span>
           </div>
           <div class="col-md-6">
             @foreach($statuses as $status)
-          <span style="font-size: 12px;" id='builder'>&nbsp;{{$status->status}}</span>
+            <?php
+            $color;
+            if($status->status=="Available")
+            {
+              $color="green";
+            }
+            else if($status->status=="Hold")
+            {
+              $color="Pink";
+            }
+            else if($status->status=="Sold")
+            {
+              $color="Red";
+            }
+            else if($status->status=="Under Construction")
+            {
+              $color="Yellow";
+            }
+            ?>
+          <span style="font-size: 15px;font-weight:bolder;color:<?php echo $color ?>" id='builder'>&nbsp;{{$status->status}}</span>
           @endforeach
           </div>
           </div>
@@ -126,7 +163,7 @@
 <div id="features" class="w3-container city" style="display:none"><br>
   <div class="container">
       <div class="col">
-      <a type="button" data-toggle="modal" data-target="#Addfeature" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-Success add-new">Add New Feature</a>
+      <a type="button" onclick="addFeature()" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-Success add-new">Add New Feature</a>
       </div>
     <br>
     <div class="row">
@@ -160,11 +197,11 @@
             </button>
           </div>
           <div class="modal-body">
-          <form action="" method="post" enctype="multipart/form-data">
+          <form id="editFeature">
             <div class="form-group">
               @csrf
               <label for="inputProperty">Feature Name</label>
-              <input type="text" class="form-control" id="title" name="title" placeholder="">
+              <input type="text" class="form-control" id="edit_title" name="title" placeholder="">
               @foreach($homes as $home)
               <input type="hidden" class="form-control" id="home_id" name="home_id" placeholder="" value="{{$home->id}}">
           @endforeach
@@ -174,7 +211,7 @@
              
               <div class="col-md-6">
             <label for="img">Select image:</label>
-            <input type="file" id="img" name="featured-image" accept="image/*">
+            <input type="file" id="image" name="featured-image" accept="image/*">
             </div>
           </form>
           </div>
@@ -191,7 +228,7 @@
 
 
 <!-- Modal -->
-  <div class="modal fade" id="Addfeature" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="AddFeatureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -201,11 +238,11 @@
           </button>
         </div>
         <div class="modal-body">
-        <form action="{{route('feature-create')}}" method="post" enctype="multipart/form-data">
+        <form id="addFeature">
           <div class="form-group">
             @csrf
             <label for="inputProperty">Feature Name</label>
-            <input type="text" class="form-control" id="inputtitle" name="title" placeholder="">
+            <input type="text" class="form-control" id="title" name="title" placeholder="">
             @foreach($homes as $home)
             <input type="hidden" class="form-control" id="home_id" name="home_id" placeholder="" value="{{$home->id}}">
         @endforeach
@@ -215,7 +252,7 @@
             <div class="col-md-6">
             <form action="/action_page.php">
           <label for="img">Select image:</label>
-          <input type="file" id="img" name="featured-image" accept="image/*">
+          <input type="file" id="image" name="featured-image" accept="image/*">
           </form>
           </div>
         </form>

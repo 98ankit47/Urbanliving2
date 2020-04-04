@@ -26,7 +26,7 @@ class CommonController extends Controller
             $data.=' 
                     <div class="row">
                         <div class="col-md-4">
-                        <img class="card-img-top" style="height:100px; width:150px;" src="/uploads/'.$feature->image.'">
+                        <img class="card-img-top" style="height:100px; width:150px;" src="/uploads/homeFeature/'.$feature->image.'">
                         </div> 
                         <div class="col-md-4">
                         <span class="card-title" style="font-size: 15px;">'.$feature->title.'</span>

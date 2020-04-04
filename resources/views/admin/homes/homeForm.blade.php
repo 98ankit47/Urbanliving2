@@ -33,7 +33,6 @@
   <div class="form-group col-md-4">
     <label for="community">Community</label>
     <select id="community_list" class="form-control">
-     
     </select>
   </div>
   </div>

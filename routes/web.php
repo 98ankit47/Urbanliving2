@@ -69,7 +69,6 @@ Route::get('admin/floor-component-gallery/{type}/{id}', function () {
 })->name('FloorComponent');
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
-Route::post( 'admin/home/feature', 'admin\HomeFeatureController@store')->name('feature-create');
 
 
 // end of admin section
