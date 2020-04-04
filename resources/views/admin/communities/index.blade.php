@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+.comm-contain {
+  margin-left:45%;
+}
+</style>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -9,11 +14,11 @@
 <div class="container">
 <br>
 <div class="row">
-<div class="col-md-10">
-<h4>Communities</h4>
+<div class="col-md-4 comm-contain">
+<h4 style="font-family: Times New Roman;"><strong>Communities</strong></h4>
 </div>
 <div class="col-md-2">
-  <a type="button" data-toggle="modal" onclick="Addcommunity()"  data-target="#AddcommunityModal" style="font-size: 15px;" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-success">Add New</a> 
+  <a type="button" data-toggle="modal" style="font-family: Times New Roman;" onclick="Addcommunity()"  data-target="#AddcommunityModal" style="font-size: 15px;" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-success">Add New</a> 
 
 </div>
 </div><hr>
@@ -30,13 +35,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Community Name</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="font-family: Times New Roman;">Community Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <form id="Communityform">
+      <form id="Communityform" style="font-family: Times New Roman;">
 <div class="form-group">
       <label for="inputEmail4">Title</label>
       <input type="text" class="form-control" id="title" placeholder="title">
@@ -79,7 +84,7 @@
     </div>
    
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer" style="font-family: Times New Roman;">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     <button type="submit" class="btn btn-primary">Save changes</button>
   </div>
@@ -98,13 +103,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Community Name</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="font-family: Times New Roman;">Community Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <form id="Communityaddform">
+      <form id="Communityaddform" style="font-family: Times New Roman;">
 <div class="form-group">
       <label for="inputEmail4">Title</label>
       <input type="text" class="form-control" id="addtitle" placeholder="title">
@@ -147,7 +152,7 @@
     </div>
    
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer" style="font-family: Times New Roman;">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     <button type="submit" class="btn btn-primary">Save changes</button>
   </div>
@@ -161,13 +166,13 @@
 <div class="modal fade bd-example-modal-xl" id="deleteCommunity" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="font-family: Times New Roman;">
         <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true"><i class="fa fa-times"></i></span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="font-family: Times New Roman;">
         <div class="row">
           <h6 class="delete_heading">Are you sure, you want to delete this Community ?</h6>
           <div class="clearfix"></div>

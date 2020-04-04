@@ -225,12 +225,7 @@
                 <i class="fa fa-terminal"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Floor</p></span>
                 </a>
               </li>
-
-              <li class="nav-item">
-                <a href="/components" class="nav-link">
-                <i class="fa fa-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Components</p></span>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a href="/admin/pages" class="nav-link">
                 <i class="fa fa-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Page</p></span>

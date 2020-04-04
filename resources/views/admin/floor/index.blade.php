@@ -6,7 +6,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <style>
 .floor-contain {
-    margin-left:20px;
+    margin-left:45%;
+    font-family: "Times New Roman";
 }
 .floor-card {
   margin-left: 30px;
@@ -73,18 +74,18 @@
 <div class="container">
 <br>
     <div class="row">
-        <div class="col-md-9 floor-contain">
-            <h4>Floor</h4>
+        <div class="col-md-4 floor-contain">
+            <h4><strong>Floor</strong></h4>
         </div>
         <div class="col-md-2">
-            <button onclick="addFloor()" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-Success">Add New</button>
+            <button onclick="addFloor()" style="font-size: 15px; background-color:#18BDB0; font-family: Times New Roman;" class="btn btn-Success">Add New</button>
         </div>
     </div>
 <hr>
 
-<div class="dropdown" style="width:100%">
+<div class="dropdown" style="width:100%; font-family: Times New Roman;">
   <button onclick="myFunction()" class="dropbtn " style="height:30px;">Select Home</button>
-  <div id="myDropdown" class="dropdown-content" style="width:100%">
+  <div id="myDropdown" class="dropdown-content" style="width:100%; font-family: Times New Roman;">
   </div>
 </div>
 
@@ -104,7 +105,7 @@
 
 <div class="modal fade" id="AddNewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="font-family: Times New Roman;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add New Floor</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -181,7 +182,7 @@
 
   <div class="modal fade" id="EditFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content" style="font-family: Times New Roman;">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Add New Floor</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -264,7 +265,7 @@
 
 <div class="modal fade" id="viewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="font-family: Times New Roman;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">FLOOR DETAILS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

@@ -18,14 +18,21 @@
 .contain-bath {
     margin-left: 20px;
 }
+
+/* .floor-contain {
+  margin-left: 20%;
+} */
 </style>
 <br>
 
 <div class="container contain-bath">
 <br>
-    <div class="row">
-        <div class="col-md-10 floor-contain">
-            <h4 style="text-align: center">Floor Component</h4>
+    <div class="row" style="font-family: Times New Roman;">
+        <div class="col-md-2">
+          <a href="http://127.0.0.1:8000/admin/floor" class="btn btn-info">Back</a> 
+        </div>
+        <div class="col-md-8 floor-contain">
+            <h4 style="text-align: center"><strong>Floor Component</strong></h4>
         </div>
         <div class="col-md-2">
         <button onclick="addFloorComponent()" class="btn btn-info">Add New</button> 
@@ -43,7 +50,7 @@
 
 <div class="modal fade" id="AddNewFloorComponent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="font-family: Times New Roman;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Floor Component</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -67,7 +74,7 @@
    </div>
 
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer" style="font-family: Times New Roman;">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     <button type="submit" class="btn btn-primary">Save changes</button>
   </div>
@@ -82,7 +89,7 @@
 
   <div class="modal fade" id="editfloorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content" style="font-family: Times New Roman;">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Floor Component</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -106,7 +113,7 @@
      </div>
   
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer" style="font-family: Times New Roman;">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       <button type="submit" class="btn btn-primary">Save changes</button>
     </div>
@@ -118,7 +125,7 @@
 
   <div class="modal fade bd-example-modal-xl" id="deleteFloorComponent" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
-      <div class="modal-content">
+      <div class="modal-content" style="font-family: Times New Roman;">
         <div class="modal-header">
           <h5>Delete Confirm Action</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -129,7 +136,7 @@
           <div class="row">
             <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
             <div class="clearfix"></div>
-            <div class="m-auto">
+            <div class="m-auto" style="font-family: Times New Roman;">
               <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
               <button type="submit" id="ys-floor-component-btn" class="btn btn-danger"> Yes</button>
              </div>  

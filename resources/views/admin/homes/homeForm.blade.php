@@ -5,12 +5,16 @@
   margin-left: 25px;
   margin-right: 25px;
 }
+
+.hm-contain {
+  margin-left: 45%;
+}
 </style>
 
 <div class="container details-container" >
 <br>
-  <div class="row">
-  <div class="col-md-9">
+  <div class="row" style="font-family: Times New Roman;">
+  <div class="col-md-4 hm-contain">
   <h4 style="color: black;"><strong>Home</strong></h4>
   </div>
   <div class="col-md-2">
@@ -20,7 +24,7 @@
   <br>
   <div class="card">
   <br>
-<form class="details-containerr">
+<form class="details-containerr" style="font-family: Times New Roman;">
   <div class="form-row "> 
     <div class="form-group col-md-4">
       <label for="inputTitle">Title</label>
@@ -104,7 +108,7 @@
       </select>
     </div>
   </div>
-  <div class="row">
+  <div class="row" style="font-family: Times New Roman;">
   <div class="col-md-2">
   <button type="submit" class="btn btn-primary">Save</button>
 </div>

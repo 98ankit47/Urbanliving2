@@ -7,14 +7,15 @@
 }
 
 .a_dash {
-   margin-left: 20px;
+   margin-left: 40%;
+   font-family: "Times New Roman";
 }
 </style>
       <div class="d-sm-flex align-items-center justify-content-between mb-2">
-         <h4 class="a_dash"><br>Admin Dashboard</h4>
+         <h4 class="a_dash"><br><strong>Admin Dashboard</strong></h4>
       </div>
 <hr><br>
-      <div id="crypto-stats-3" class="row">
+      <div id="crypto-stats-3" class="row" style="font-family: Times New Roman;">
          
          <div class="col-xl-4 col-lg-6 col-6"> 
             <div class="card pull-up">
@@ -24,7 +25,7 @@
                         <div class="media d-flex">
                               <div class="media-body text-left">
                                  <h6 class="info" style="color:black;"><strong>counts</strong></h6><br>
-                                 <h5 style="color:green;"><strong>Homes</strong></h5>
+                                 <h5 style="color:black;"><strong>Homes</strong></h5>
                               </div>
                               <div>
                                  <i class="icon-user info font-large-2 float-right"></i>
@@ -47,7 +48,7 @@
                         <div class="media d-flex">
                               <div class="media-body text-left">
                                  <h6 class="danger" style="color:black;"><strong>counts</strong></h6><br>
-                                 <h5 style="color:green;"><strong>Enquiry</strong></h5>
+                                 <h5 style="color:black;"><strong>Enquiry</strong></h5>
                               </div>
                               <div>
                                  <i class="icon-home danger font-large-2 float-right"></i>
@@ -69,7 +70,7 @@
                         <div class="media d-flex">
                               <div class="media-body text-left">
                                  <h6 class="success" style="color:black;"><strong>counts</strong></h6><br>
-                                 <h5 style="color:green;"><strong>Selling Requests</strong></h5>
+                                 <h5 style="color:black;"><strong>Selling Requests</strong></h5>
                               </div>
                               <div>
                                  <i class="icon-home success font-large-2 float-right"></i>
@@ -91,7 +92,7 @@
                         <div class="media d-flex">
                               <div class="media-body text-left">
                                  <h6 class="danger" style="color:black;"><strong>counts</strong></h6><br>
-                                 <h5 style="color:green;"><strong>Lending Requests</strong></h5>
+                                 <h5 style="color:black;"><strong>Lending Requests</strong></h5>
                               </div>
                               <div>
                                  <i class="icon-home danger font-large-2 float-right"></i>

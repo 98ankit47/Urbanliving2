@@ -6,17 +6,18 @@
   margin-right: 20px;
 }
 .homes-contain {
-  margin-left: 20px;
+  margin-left: 45%;
+  font-family: "Times New Roman";
 }
 </style>
 <div class="container">
 <br>
 <div class="row">
-<div class="col-md-9 homes-contain">
-<h4>Homes</h4>
+<div class="col-md-4 homes-contain">
+<h4><strong>Homes</strong></h4>
 </div>
 <div class="col-md-2">
-<a type="button" href="/admin/home/create" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-Success">Add New</a>
+<a type="button" href="/admin/home/create" style="font-size: 15px; background-color:#18BDB0; font-family: Times New Roman;" class="btn btn-Success">Add New</a>
 </div>
 </div>
 <hr>
@@ -30,14 +31,14 @@
     <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5>Delete Confirm Action</h5>
+          <h5 style="font-family: Times New Roman;">Delete Confirm Action</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true"><i class="fa fa-times"></i></span>
           </button>
         </div>
         <div class="modal-body">
           <div class="row">
-            <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
+            <h6 class="delete_heading" style="font-family: Times New Roman;">Are you sure, you want to delete this Home ?</h6>
             <div class="clearfix"></div>
             <div class="m-auto">
               <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>

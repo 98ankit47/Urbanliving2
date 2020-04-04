@@ -26,11 +26,11 @@ class HomeController extends Controller
             <div class="card">
               <img class="card-img-top"style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
-              <h5 class="card-title" style="font-size: 15px;">'.$home->title.'</h5>
+              <h5 class="card-title" style="font-size: 15px; font-family: Times New Roman;">'.$home->title.'</h5>
                  <br><br>
                  
-                 <a type="button" href="/admin/home/manage/'.$home->id.'" class="btn btn-success">Manage</a> 
-                 <button type ="button"  data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn btn-danger">Delete</button>  
+                 <a type="button" style="font-family: Times New Roman;" href="/admin/home/manage/'.$home->id.'" class="btn btn-success">Manage</a> 
+                 <button type ="button" style="font-family: Times New Roman;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn btn-danger">Delete</button>  
                </div>
             </div>
           </div>';

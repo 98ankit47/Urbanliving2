@@ -39,6 +39,10 @@
     .add-new {
       margin-left: 80%;
     }
+
+    .tabsss {
+      margin-left: 45%;
+    }
     /* .w3-bottombar {
       width: 500px;
     } */
@@ -47,8 +51,8 @@
 
 <div class="w3-container">
 <br>
-<div class="row">
-<div class="col-md-9 tabss">
+<div class="row" style="font-family: Times New Roman;">
+<div class="col-md-4 tabsss">
 <h4 style="color: black;"><strong>Home Detail</strong></h4>
 </div>
 <div class="col-md-2">
@@ -69,7 +73,7 @@
  <br><br>
  <div class="card">
  <br>
- <div class="row card-details">
+ <div class="row card-details" style="font-family: Times New Roman;">
    @foreach($homes as $home)
       <div class="col-md-3 card-img">
         <div class="card ">
@@ -149,7 +153,7 @@
           <span style="font-size: 15px;font-weight:bolder;color:<?php echo $color ?>" id='builder'>&nbsp;{{$status->status}}</span>
           @endforeach
           </div>
-          </div>
+          </div><br>
           </div>
         </div>
         <div class="col-md-2"><br><br><br>
@@ -160,7 +164,7 @@
 </div>
 </div><br>
 
-<div id="features" class="w3-container city" style="display:none"><br>
+<div id="features" class="w3-container city" style="display:none; font-family: Times New Roman;"><br>
   <div class="container">
       <div class="col">
       <a type="button" onclick="addFeature()" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-Success add-new">Add New Feature</a>
@@ -189,7 +193,7 @@
  
     <div class="modal fade" id="Editfeature" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="font-family: Times New Roman;">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Features</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -215,7 +219,7 @@
             </div>
           </form>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer" style="font-family: Times New Roman;">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
@@ -230,7 +234,7 @@
 <!-- Modal -->
   <div class="modal fade" id="AddFeatureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content" style="font-family: Times New Roman;">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Features</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -257,7 +261,7 @@
           </div>
         </form>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" style="font-family: Times New Roman;">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
@@ -274,7 +278,7 @@
 
 <div class="modal fade bd-example-modal-xl" id="deleteFeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="font-family: Times New Roman;">
       <div class="modal-header">
         <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -285,7 +289,7 @@
         <div class="row">
           <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
           <div class="clearfix"></div>
-          <div class="m-auto">
+          <div class="m-auto" style="font-family: Times New Roman;">
             <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
             <button type="submit" id="ys-btn" class="btn btn-danger"> Yes</button>
            </div>  
