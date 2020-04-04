@@ -28,10 +28,15 @@ class HomeController extends Controller
               <div class="card-body">
               <h5 class="card-title" style="font-size: 15px; font-family: Times New Roman;">'.$home->title.'</h5>
                  <br><br>
-                 
+                 <div class="row">
+                 <div class ="column" style="text-align: left; width:50%;">
                  <a type="button" style="font-family: Times New Roman;" href="/admin/home/manage/'.$home->id.'" class="btn btn-success">Manage</a> 
+                 </div>
+                 <div class ="column" style="text-align: right; width:50%;">
                  <button type ="button" style="font-family: Times New Roman;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn btn-danger">Delete</button>  
-               </div>
+                </div>
+                </div>
+                 </div>
             </div>
           </div>';
         } 

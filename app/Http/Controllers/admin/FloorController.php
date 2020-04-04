@@ -56,24 +56,35 @@ class FloorController extends Controller
 
     public function Componentstore(Request $request)
     {
-          $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
-            $request['image'],';')))[1])[1];  
+      $type=$request['type'];
+      $id=$request['floor_id'];
+      $floor=Floors::where("id",$request['floor_id'])->get($type)->first();
+      $count=FloorComponent::where('floor_id',$id)->where('type',$type)->get()->count();
+      if($floor->$type > $count)
+      {
+        $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+          $request['image'],';')))[1])[1];  
 
-        \Image::make($request['image'])->save(public_path('uploads\floorcomponent\\').$img);
-        $this->validate($request,[
-            'floor_id'=>'required',
-            'name'=>'required',
-            'type'=>'required',
-            ]);
+      \Image::make($request['image'])->save(public_path('uploads\floorcomponent\\').$img);
+      $this->validate($request,[
+          'floor_id'=>'required',
+          'name'=>'required',
+          'type'=>'required',
+          ]);
 
-        FloorComponent::create([
-            'floor_id'=>$request['floor_id'],
-            'name'=>$request['name'],
-            'type'=>$request['type'],
-            'bathroom'=>$request['bathroom'],
-            'image'=>$img,
-        ]);
-        return ['success'=>'floor Component created Successfully'];
+      FloorComponent::create([
+          'floor_id'=>$request['floor_id'],
+          'name'=>$request['name'],
+          'type'=>$request['type'],
+          'bathroom'=>$request['bathroom'],
+          'image'=>$img,
+      ]);
+      return ['success'=>'floor Component created Successfully'];
+      }
+      else
+      {
+        return ['success'=>'Limit exceed'];
+      }
     }
 
     /**

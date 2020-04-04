@@ -84,7 +84,7 @@
 <hr>
 
 <div class="dropdown" style="width:100%; font-family: Times New Roman;">
-  <button onclick="myFunction()" class="dropbtn " style="height:30px;">Select Home</button>
+  <button onclick="myFunction()" class="dropbtn " style="height:30px;">Select Home&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></button>
   <div id="myDropdown" class="dropdown-content" style="width:100%; font-family: Times New Roman;">
   </div>
 </div>
