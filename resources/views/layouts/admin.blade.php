@@ -204,7 +204,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           
               <li class="nav-item">
-                <a href="/admin" class="nav-link">
+                <a href="/admin/dashboard" class="nav-link">
                 <i class="fa fa-fire"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Dashboard</p></span>
                 </a>
               </li>
