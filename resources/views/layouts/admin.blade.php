@@ -711,6 +711,7 @@ $(document).ready(function() {
             type: 'DELETE',
             url: APP_URL+'/api/admin/floor-component/delete/'+fc_id,
             success: function(result){  
+              $('.modal-backdrop').css('display','none');
               loadFloorComponent();
             }   
         });
