@@ -201,7 +201,9 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-          @yield('content')
+    <div id="success" style="text-align:center; color:green; font-size:25px ;font-weight:bold;background:grey;"></div>
+    <div id="danger" style="text-align:center; color:red; font-size:25px ;font-weight:bold;background:grey;"></div>
+    @yield('content')
         
 
   <!-- Control Sidebar -->
@@ -412,6 +414,7 @@ $(document).ready(function() {
                   },
                   success: function () {
                     window.location.href = "/admin/home/manage/"+id;
+                    $('#success').html('Home Edited').delay(2000).fadeOut();
                   }
                 });
 
@@ -475,6 +478,7 @@ $(document).ready(function() {
                   },
                   success: function ( ) {
                     window.location.href = "/admin/homes";
+                    $('#success').html('New Home Added').delay(2000).fadeOut();
                   }
                 });
 
@@ -504,7 +508,8 @@ $(document).ready(function() {
               url: APP_URL + '/api/admin/home-feature/'+ id,
               type: 'DELETE'
             });
-            loadFeatureList();        
+            loadFeatureList();    
+            $('#danger').html('Feature deleted').delay(2000).fadeOut();
     }
 
     function addFeature(id)
@@ -542,6 +547,8 @@ $(document).ready(function() {
                       success: function () {
                         $('#AddFeatureModal').modal('hide');
                           loadFeatureList();
+                        $('#success').html('New Feature Added').delay(2000).fadeOut();
+
                       }
                     });
 
@@ -593,6 +600,7 @@ $(document).ready(function() {
                       success: function () {
                         $('#Editfeature').modal('hide');
                           loadFeatureList();
+                        $('#success').html('Feature Edited').delay(2000).fadeOut();
                       }
                     });
 
@@ -713,6 +721,7 @@ $(document).ready(function() {
             success: function(result){  
               $('.modal-backdrop').css('display','none');
               loadFloorComponent();
+              $('#danger').html('Floor Component Deleted').delay(2000).fadeOut();
             }   
         });
       }
@@ -752,6 +761,7 @@ $(document).ready(function() {
                       success: function ( ) {
                           $('#AddNewFloorComponent').modal('hide');
                           loadFloorComponent();
+                          $('#success').html('Add New Floor Component').delay(2000).fadeOut();
                       }
                     });
               });
@@ -801,6 +811,7 @@ $(document).ready(function() {
                       success: function ( ) {
                         $('#editfloorModal').modal('hide');
                         loadFloorComponent();
+                      $('#success').html('Floor Component edited').delay(2000).fadeOut();
                       }
                     });
 
@@ -866,6 +877,7 @@ $(document).ready(function() {
             url: APP_URL+'/api/admin/floor/'+f_id,
             success: function(result){  
               window.location.href='/admin/floor';
+              $('#danger').html('Floor Deleted').delay(2000).fadeOut();
             }   
         });
       }
@@ -914,6 +926,7 @@ $(document).ready(function() {
                  },
                  success: function ( ) {
                    window.location.href = "/admin/floor";
+                   $('#success').html('New Floor Added').delay(2000).fadeOut();
                  }
                });
 
@@ -979,6 +992,7 @@ $(document).ready(function() {
                  },
                  success: function ( ) {
                    window.location.href = "/admin/floor";
+                   $('#success').html('Floor Edited').delay(2000).fadeOut();
                  }
                });
 
@@ -1012,6 +1026,7 @@ $(document).ready(function() {
                 type: 'DELETE',
             });
             loadCommunityList();
+            $('#danger').html('Community Delete').delay(2000).fadeOut();
       }
 
       function editcommunity(cid)
@@ -1067,7 +1082,7 @@ $(document).ready(function() {
                   success: function () {
                     $('#communityModal').modal('hide');
                     loadCommunityList();
-                    
+                    $('#success').html('Community Edit').delay(2000).fadeOut();
                   }
                 });
 
@@ -1113,18 +1128,13 @@ $(document).ready(function() {
                     $('#AddcommunityModal').modal('hide');
                     $('.modal-backdrop').css('display','none');
                     loadCommunityList();
+                    $('#success').html('New Community Added').delay(2000).fadeOut();
                   }
                 });
-
           });
-
       });
     }
  </script> 
  @endif
- 
-  
- 
-
 </body>
 </html>
