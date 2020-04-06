@@ -24,6 +24,10 @@ Route::get('/admin/floor',function(){
     return view('admin.floor.floor');
 }); 
 
+Route::get('/admin/settings',function(){
+    return view('admin.settings.index');
+}); 
+
 Route::get('/admin/pages',function(){
     return view('admin.page');
 })->name('pages'); 

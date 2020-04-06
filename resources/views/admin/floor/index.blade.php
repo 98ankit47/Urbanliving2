@@ -134,11 +134,11 @@
             </div>
             <div class="form-group col-md-4">
               <label for="inputEmail4">Bedroom</label>
-              <input type="text" class="form-control" id="bedroom" placeholder="No Of Bedroom">
+              <input type="text" class="form-control" id="bedroom" placeholder="No Of Bedroom" required>
             </div>
             <div class="form-group col-md-4">
               <label for="inputAddress">Bathroom</label>
-              <input type="text" class="form-control" id="bathroom" placeholder="No Of Bedroom">
+              <input type="text" class="form-control" id="bathroom" placeholder="No Of Bedroom" required>
             </div>
             
           </div>
@@ -147,22 +147,22 @@
           
           <div class="form-group col-md-4">
             <label for="inputDivision">Dinning</label>
-            <input type="text" class="form-control" id="dining" placeholder="No Of Dining">
+            <input type="text" class="form-control" id="dining" placeholder="No Of Dining" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputCity">Kitchen</label>
-            <input type="text" class="form-control" id="kitchen" placeholder="No Of Kitchen">
+            <input type="text" class="form-control" id="kitchen" placeholder="No Of Kitchen" required>
           </div>
           <div class="form-group col-md-4">
             <label for="inputArea">Garage</label>
-            <input type="text" class="form-control" id="garage" placeholder="No Of Garage">
+            <input type="text" class="form-control" id="garage" placeholder="No Of Garage" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <div class="image-upload">
               <p><strong>Floor Image</strong></p>
-              <p><input type="file"  name="image" id="image"  onchange="loadFile(event)" ></p>
+              <p><input type="file"  name="image" id="image"  onchange="loadFile(event)" required></p>
             </div>
           </div>            
               <!-- <p><label for="file" style="cursor: pointer;">Choose File</label></p> -->
@@ -211,11 +211,11 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="inputEmail4">Bedroom</label>
-                <input type="text" class="form-control" id="Edit_bedroom" placeholder="No Of Bedroom">
+                <input type="text" class="form-control" id="Edit_bedroom" placeholder="No Of Bedroom" required>
               </div>
               <div class="form-group col-md-4">
                 <label for="inputAddress">Bathroom</label>
-                <input type="text" class="form-control" id="Edit_bathroom" placeholder="No Of Bedroom">
+                <input type="text" class="form-control" id="Edit_bathroom" placeholder="No Of Bedroom" required>
               </div>
               
             </div>
@@ -224,22 +224,22 @@
             
             <div class="form-group col-md-4">
               <label for="inputDivision">Dinning</label>
-              <input type="text" class="form-control" id="Edit_dining" placeholder="No Of Dining">
+              <input type="text" class="form-control" id="Edit_dining" placeholder="No Of Dining" required>
             </div>
             <div class="form-group col-md-4">
               <label for="inputCity">Kitchen</label>
-              <input type="text" class="form-control" id="Edit_kitchen" placeholder="No Of Kitchen">
+              <input type="text" class="form-control" id="Edit_kitchen" placeholder="No Of Kitchen" required>
             </div>
             <div class="form-group col-md-4">
               <label for="inputArea">Garage</label>
-              <input type="text" class="form-control" id="Edit_garage" placeholder="No Of Garage">
+              <input type="text" class="form-control" id="Edit_garage" placeholder="No Of Garage" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-grroup col-md-6">
               <div class="image-upload">
                 <p>Floor Image</p>
-                <p><input type="file"  name="image" id="Edit_image"  onchange="loadFile(event)" ></p>
+                <p><input type="file"  name="image" id="Edit_image"  onchange="loadFile(event)" required></p>
               </div>
             </div>
               <div class="form-group col-md-6">  

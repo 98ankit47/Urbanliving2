@@ -44,31 +44,31 @@
       <form id="Communityform" style="font-family: Times New Roman;">
 <div class="form-group">
       <label for="inputEmail4">Title</label>
-      <input type="text" class="form-control" id="title" placeholder="title">
+      <input type="text" class="form-control" id="title" placeholder="title" required>
     </div>
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="address" placeholder="Address">
+    <input type="text" class="form-control" id="address" placeholder="Address" required>
   </div>
 
   <div class="form-row">
   <div class="form-group col-md-4">
     <label for="inputArea">Area</label>
-    <input type="text" class="form-control" id="area" placeholder="Area">
+    <input type="text" class="form-control" id="area" placeholder="Area" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputDivision">Subdivision</label>
-    <input type="text" class="form-control" id="subdivission" placeholder="Subdivision">
+    <input type="text" class="form-control" id="subdivission" placeholder="Subdivision" required>
   </div>
     <div class="form-group col-md-4">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="city">
+      <input type="text" class="form-control" id="city" required>
     </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="inputCity">state</label>
-        <input type="text" class="form-control" id="state">
+        <input type="text" class="form-control" id="state" required>
       </div>
     <div class="form-group col-md-4">
       <label for="inputState">Country</label>
@@ -80,7 +80,7 @@
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="zipcode">
+      <input type="text" class="form-control" id="zipcode" required>
     </div>
    
   </div>
@@ -112,31 +112,31 @@
       <form id="Communityaddform" style="font-family: Times New Roman;">
 <div class="form-group">
       <label for="inputEmail4">Title</label>
-      <input type="text" class="form-control" id="addtitle" placeholder="title">
+      <input type="text" class="form-control" id="addtitle" placeholder="title" required>
     </div>
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="addaddress" placeholder="Address">
+    <input type="text" class="form-control" id="addaddress" placeholder="Address" required>
   </div>
 
   <div class="form-row">
   <div class="form-group col-md-4">
     <label for="inputArea">Area</label>
-    <input type="text" class="form-control" id="addarea" placeholder="Area">
+    <input type="text" class="form-control" id="addarea" placeholder="Area" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputDivision">Subdivision</label>
-    <input type="text" class="form-control" id="addsubdivission" placeholder="Subdivision">
+    <input type="text" class="form-control" id="addsubdivission" placeholder="Subdivision" required>
   </div>
     <div class="form-group col-md-4">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="addcity">
+      <input type="text" class="form-control" id="addcity" required>
     </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="inputCity">state</label>
-        <input type="text" class="form-control" id="addstate">
+        <input type="text" class="form-control" id="addstate" required>
       </div>
     <div class="form-group col-md-4">
       <label for="inputState">Country</label>
@@ -148,7 +148,7 @@
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="addzipcode">
+      <input type="text" class="form-control" id="addzipcode" required>
     </div>
    
   </div>

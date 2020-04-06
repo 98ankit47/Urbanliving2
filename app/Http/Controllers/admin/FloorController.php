@@ -114,8 +114,14 @@ class FloorController extends Controller
             <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="/uploads/floorcomponent/'.$component->image.'" alt="">
               <div class="card-body">
                 <h5 style="text-align:center">'.$component->name.'</h5>
-                <button type="button" onclick="editfloorcomponent('.$component->id.')" class="btn btn-warning">Edit</button>  
-                <button type="button" data-toggle="modal" data-id="'.$component->id.'"  data-target="#deleteFloorComponent" class="btn btn-danger">Delete</button> 
+                 <div class="row">
+                  <div class="column" style="text-align:left; width:50%; padding-left:10px;">
+                   <button type="button" onclick="editfloorcomponent('.$component->id.')" class="btn btn-warning">Edit</button>  
+                  </div>
+                  <div class="column" style="text-align:right; width:50%; padding-right:10px;">
+                   <button type="button" data-toggle="modal" data-id="'.$component->id.'"  data-target="#deleteFloorComponent" class="btn btn-danger">Delete</button> 
+                  </div>               
+                 </div>
               </div>
           </div>
         </div> ';
@@ -209,9 +215,16 @@ class FloorController extends Controller
                 <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4>
                 <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">
                   <div class="card-body">
-                    <button type="button" onclick="editfloor('.$floor->id.')" class="btn btn-warning">Edit</button> 
-                    <button type="button" data-toggle="modal" data-id="'.$floor->id.'"  data-target="#deleteFloor"class="btn btn-danger">Delete</button> 
-                  </div>
+                   <div class="row">
+                    <div class="column" style="text-align:left; width:50%; padding-left:10px;">
+                     <button type="button" onclick="editfloor('.$floor->id.')" class="btn btn-warning">Edit</button> 
+                    </div>
+                    <div class="column" style="text-align:right; width:50%; padding-right:10px;"> 
+                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'"  data-target="#deleteFloor"class="btn btn-danger">Delete</button> 
+                    </div>
+                   </div>
+                    </div>
+                   
               </div>
             </div>';
         } 

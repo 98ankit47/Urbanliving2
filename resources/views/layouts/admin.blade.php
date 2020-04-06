@@ -189,6 +189,12 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a href="/admin/settings" class="nav-link">
+                <i class="fa fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Settings</p></span>
+                </a>
+              </li>
+
             </ul>
           </li>
           

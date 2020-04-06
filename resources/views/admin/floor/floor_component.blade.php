@@ -61,13 +61,13 @@
       <form id="ComponentAddForm">
         <div class="form-group">
       <label for="inputEmail4">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="title">
+      <input type="text" class="form-control" id="name" placeholder="title" required>
     </div>
    
   <div class="form-group">
   <div class="image-upload">
 <p><strong>Image</strong></p>
-  <input type="file" id="image" name="files[]" multiple />
+  <input type="file" id="image" name="files[]" multiple required/>
   <br><br>
 <output id="list" width="200px" height="200px"></output>
   </div>
@@ -100,13 +100,13 @@
         <form id="EditComponentForm">
           <div class="form-group">
         <label for="inputEmail4">Name</label>
-        <input type="text" class="form-control" id="edit_name" placeholder="title">
+        <input type="text" class="form-control" id="edit_name" placeholder="title" required>
       </div>
      
     <div class="form-group">
     <div class="image-upload">
   <p><strong>Image</strong></p>
-    <input type="file" id="image" name="files[]" multiple />
+    <input type="file" id="image" name="files[]" multiple required/>
     <br><br>
   <output id="list" width="200px" height="200px"></output>
     </div>

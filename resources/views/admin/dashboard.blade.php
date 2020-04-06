@@ -123,8 +123,8 @@
       </div>   <br>
 
 
-      <div class="card mb-4">
-         <div class="card-body">
+      <div class="card" style="margin-left:10px; margin-right:10px;">
+         
             <div class="table-responsive" id="custom_table">
                   
                   <!-- <div class="alert alert-success alert-dismissible" style="margin-top:18px;">
@@ -146,10 +146,8 @@
                   </tbody>
                </table>
             </div>
-         </div>
+         
       </div>
-
-   </div>
 
 
    @endsection

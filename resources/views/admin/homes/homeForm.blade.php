@@ -28,11 +28,11 @@
   <div class="form-row "> 
     <div class="form-group col-md-4">
       <label for="inputTitle">Title</label>
-      <input type="text" class="form-control" id="title"  >
+      <input type="text" class="form-control" id="title" required>
     </div>
   <div class="form-group col-md-4">
     <label for="inputDescription">Description</label>
-    <input type="text" class="form-control" id="description"  >
+    <input type="text" class="form-control" id="description" required>
   </div>
   <div class="form-group col-md-4">
     <label for="community">Community</label>
@@ -43,36 +43,36 @@
   <div class="form-row">
   <div class="form-group col-md-4">
     <label for="inputBedroom">Bedroom</label>
-    <input type="text" class="form-control" id="bedroom" >
+    <input type="text" class="form-control" id="bedroom" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputBathroom">bathroom</label>
-    <input type="text" class="form-control" id="bathroom" >
+    <input type="text" class="form-control" id="bathroom" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputGarage">Garage</label>
-    <input type="text" class="form-control" id="garage" >
+    <input type="text" class="form-control" id="garage" required>
   </div>
   </div>
   <div class="form-row">
   <div class="form-group col-md-4">
     <label for="inputStories">Stories</label>
-    <input type="text" class="form-control" id="stories">
+    <input type="text" class="form-control" id="stories" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputMls">Mls</label>
-    <input type="text" class="form-control" id="mls" >
+    <input type="text" class="form-control" id="mls" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputArea">Area</label>
-    <input type="text" class="form-control" id="area" >
+    <input type="text" class="form-control" id="area" required>
   </div>
   </div>
 <div class="row">
   <div class="col-md-6">
     <div class="image-upload">
       <p>Featured Image</p>
-      <p><input type="file"  name="image" id="file"  onchange="loadFile(event)" ></p>
+      <p><input type="file"  name="image" id="file"  onchange="loadFile(event)" required></p>
       <p><label for="file" style="cursor: pointer;">Choose File</label></p>
       <p><img id="output" width="200px" height="200px" /></p>
     </div>
@@ -80,7 +80,7 @@
 <div class="col-md-6">
 <div class="image-upload">
 <p>Image Gallery</p>
-  <input type="file" id="files" name="files[]" multiple />
+  <input type="file" id="files" name="files[]" multiple required/>
   <br><br><br><br>
 <output id="list" width="200px" height="200px"></output>
   </div>
@@ -90,7 +90,7 @@
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="inputCity">Builder</label>
-      <input type="text" class="form-control" id="builder">
+      <input type="text" class="form-control" id="builder" required>
     </div>
     <!-- <div class="form-group col-md-3">
     <label for="inputDescription">Meta Description</label>

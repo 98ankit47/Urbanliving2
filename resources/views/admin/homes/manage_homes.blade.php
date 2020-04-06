@@ -205,9 +205,9 @@
             <div class="form-group">
               @csrf
               <label for="inputProperty">Feature Name</label>
-              <input type="text" class="form-control" id="edit_title" name="title" placeholder="">
+              <input type="text" class="form-control" id="edit_title" name="title" placeholder="" required>
               @foreach($homes as $home)
-              <input type="hidden" class="form-control" id="home_id" name="home_id" placeholder="" value="{{$home->id}}">
+              <input type="hidden" class="form-control" id="home_id" name="home_id" placeholder="" value="{{$home->id}}" required>
           @endforeach
             </div>
             <div class="form-group">
