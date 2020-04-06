@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\status;
 use App\Models\Features;
+use App\User;
 use Illuminate\Http\Request;
 
 class CommonController extends Controller
@@ -36,6 +37,34 @@ class CommonController extends Controller
                         <button class="btn btn-danger" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature"  style="font-size: 10px;" >Delete</button>
                         </div>
                     </div>  <br><br> ';
+            
+        }
+        return $data;        
+    }
+
+    public function DashboardUser(Request $request)
+    {
+        $data ='';
+        $id=$request['id'];
+        $users= User::get();
+        foreach($users as $user)
+        {
+            $data.=' <tr>
+                        <td>'.$user->id.'</td>
+                        <td>'.$user->name.'</td>
+                        <td>'.$user->email.'</td>
+                        <td>
+                        <select id="community_list" class="form-control">
+                            <option>Active</option>
+                            <option>Deactive</option>
+                        </select>
+                        </td>
+                        <td>
+                        <span><a class="a1 click_edit" title="Edit" href="#">
+                            <i class="fa fa-edit"></i></a></span>&nbsp;&nbsp;
+                        <span><a href="#" class="a1" data-toggle="modal" data-target="#modal-delete" id=""><i class="fa fa-trash"></i></a></span>
+                        </td>
+                    </tr>';
             
         }
         return $data;        

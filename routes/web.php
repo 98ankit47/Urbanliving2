@@ -18,7 +18,7 @@ Route::get('/', function () {
     // admin section
 Route::get('/admin/dashboard',function(){
     return view('admin.dashboard');
-});    
+})->name('dashboard');    
 
 Route::get('/admin/floor',function(){
     return view('admin.floor.floor');

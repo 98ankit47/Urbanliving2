@@ -30,6 +30,7 @@ Route::get('admin/communityList','admin\CommunityController@data');
 Route::post('admin/community/{id}','admin\CommunityController@update');
 
 Route::get( 'admin/home-status', 'CommonController@status');
+Route::get( 'admin/dashboard/user', 'CommonController@DashboardUser');
 
 Route::post( 'admin/floor/{id}', 'admin\FloorController@update');
 Route::get( 'admin/floor-home/{id}', 'admin\FloorController@showHomeFloor');

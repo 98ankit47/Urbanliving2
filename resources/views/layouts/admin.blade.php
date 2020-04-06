@@ -642,13 +642,13 @@ $(document).ready(function() {
     var APP_URL = "{{ url('/') }}";
     loadHomeList();
       function loadHomeList(){
-    $.ajax({
-          type: 'GET',
-          url: APP_URL+'/api/admin/home',
-          success: function(result){   
-          $('#home_list').html(result);
-          }   
-      });
+        $.ajax({
+              type: 'GET',
+              url: APP_URL+'/api/admin/home',
+              success: function(result){   
+              $('#home_list').html(result);
+              }   
+          });
   }  
       function deleteHome(id)
       {       $.ajax({
@@ -695,6 +695,22 @@ $(document).ready(function() {
       });
   }
 </script>
+@endif
+
+@if(Route::currentRouteName() == 'dashboard')
+  <script>
+    LoadUserList();
+    function LoadUserList()
+    {
+      $.ajax({
+              type: 'GET',
+              url: APP_URL+'/api/admin/dashboard/user',
+              success: function(result){   
+              $('#userdash').html(result);
+              }   
+          });
+    }
+  </script>
 @endif
 
 @if(Route::currentRouteName() == 'FloorComponent')

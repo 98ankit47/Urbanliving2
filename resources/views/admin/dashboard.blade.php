@@ -137,29 +137,12 @@
                         <th style="width:40px">S.No.</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Mobile Number</th>
                         <th>Status</th>
                         <th style="width:60px">Action</th>
                      </tr>
                   </thead>
-                  <tbody>
-                     <tr>
-                        <td>1</td>
-                        <td>user@urban.com</td>
-                        <td>93789398</td>
-                        <td>Active</td>
-                        <td>
-                           <select id="community_list" class="form-control">
-                              <option>Active</option>
-                              <option>Deactive</option>
-                           </select>
-                        </td>
-                        <td>
-                           <span><a class="a1 click_edit" title="Edit" href="#">
-                              <i class="fa fa-edit"></i></a></span>&nbsp;&nbsp;
-                           <span><a href="#" class="a1" data-toggle="modal" data-target="#modal-delete" id=""><i class="fa fa-trash"></i></a></span>
-                        </td>
-                     </tr>
+                  <tbody id="userdash">
+                    
                   </tbody>
                </table>
             </div>
