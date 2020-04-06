@@ -42,7 +42,7 @@
                                  <h5 style="color:black;"><strong>Homes</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-home float-right" style="font-size: 50px; color: green;"></i>
+                                 <i class="fa fa-home float-right" style="font-size: 50px; color: #80D6BB;"></i>
                               </div>
                         </div>
                         <div class="progress">
@@ -65,7 +65,7 @@
                                  <h5 style="color:black;"><strong>Enquiry</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-bell float-right" style="font-size: 50px; color: #DC143C;"></i>
+                                 <i class="fa fa-bell float-right" style="font-size: 50px; color: #E2778B;"></i>
                               </div>
                         </div>
                         <div class="progress">
@@ -87,7 +87,7 @@
                                  <h5 style="color:black;"><strong>Selling Requests</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-check-square float-right" style="font-size: 50px; color:#4e4eff;"></i>
+                                 <i class="fa fa-check-square float-right" style="font-size: 50px; color:#61A6F1;"></i>
                               </div>
                         </div>
                         <div class="progress">
@@ -109,7 +109,7 @@
                                  <h5 style="color:black;"><strong>Lending Requests</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-inbox float-right" style="font-size: 50px; color:#0080ff;"></i>
+                                 <i class="fa fa-inbox float-right" style="font-size: 50px; color:#F2C077;"></i>
                               </div>
                         </div>
                         <div class="progress">

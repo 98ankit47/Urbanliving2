@@ -8,16 +8,27 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
 }
-.card-img {
+/* .card-img {
   margin-left: 20px;
-  margin-right:5px;
-}
+} */
 .tabss {
   margin-left: 20px;
 }
 .feature-row {
   margin-left: 0px;
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
 </style>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -46,6 +57,14 @@
     /* .w3-bottombar {
       width: 500px;
     } */
+    .card-details {
+      margin-left:10px;
+      margin-right:10px;
+      margin-top:20px;
+    }
+    .w3-third:hover {
+      background-color:#347AB8;
+    }
 </style>
 </head>
 
@@ -56,82 +75,77 @@
 <h4 style="color: black;"><strong>Home Detail</strong></h4>
 </div>
 <div class="col-md-2">
-<a type="button" href="/admin/homes" style="color: white;" class="btn btn-info">Go Back</a>
+<a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;" class="btn">Go Back</a>
 </div>
 </div><hr>
 <br>
 <div class="w3-row tabss">
     <a href="javascript:void(0)" class="tablinks active" onclick="openCity(event, 'homes');">
-      <div class="w3-third tablink w3-bottombar w3-hover-blue-grey w3-padding" style="text-align: center; color:black;"><b>Home</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Home</b></div>
     </a>
     <a href="javascript:void(0)" class="tavlinks" onclick="openCity(event, 'features');">
-      <div class="w3-third tablink w3-bottombar w3-hover-blue-grey w3-padding" style="text-align: center; color:black;"><b>Features</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Features</b></div>
     </a>
   </div>
 
   <div id="homes" class="w3-container city active" style="display:block">
  <br><br>
  <div class="card">
- <br>
  <div class="row card-details" style="font-family: Times New Roman;">
    @foreach($homes as $home)
-      <div class="col-md-3 card-img">
+      <div class="col-md-6 card-img">
         <div class="card ">
         <img class="card-img-top" src="/uploads/homes/{{$home->featured_image}}" alt="">
         </div>
       </div>
  
         <div class="col-md-6">
-          <div class="container details">
-          <div class="row">
-          <div class="col-md-4">
-          <span><strong>NAME :</strong></span>
-          </div>
-          <div class="col-md-6">
-          <span><strong id=''>&nbsp;{{$home->title}}</strong></span>
-          </div><br>
-          <div class="col-md-4">
-          <span><strong>DESCRIPTION :</strong></span>
-          </div>
-          <div class="col-md-6">
-          <span style="font-size: 12px;" id='description'>&nbsp;{{$home->description}}</span>
-          </div><br>
-          <div class="col-md-4">
-          <span><strong>AREA :</strong></span>
-          </div>
-          <div class="col-md-6">
-          <span style="font-size: 12px;" id='area'>&nbsp;{{$home->area}}</span>
-          </div><br>
-          <div class="col-md-4">
-          <span><strong>BUILDER :</strong></span>
-          </div>
-          <div class="col-md-6">
-          <span style="font-size: 12px;" id='builder'>&nbsp;{{$home->builder}}</span>
-          </div><br>
-          <div class="col-md-4">
-            <span><strong>No Of Bedroom :</strong></span>
-            </div>
-            <div class="col-md-6">
-            <span style="font-size: 12px;" id='builder'>&nbsp;{{$home->bedroom}}</span>
-            </div><br>
-            <div class="col-md-4">
-              <span><strong>No Of Bathroom :</strong></span>
-              </div>
-              <div class="col-md-6">
-              <span style="font-size: 12px;" id='builder'>&nbsp;{{$home->bathroom}}</span>
-            </div><br>
-              <div class="col-md-4">
-                <span><strong>No Of Garage :</strong></span>
-                </div>
-                <div class="col-md-6">
-                <span style="font-size: 12px;" id='builder'>&nbsp;{{$home->garage}}</span>
-              </div><br>
-          <div class="col-md-4">
-          <span><strong>STATUS :</strong></span>
-          </div>
-          <div class="col-md-6">
-            @foreach($statuses as $status)
-            <?php
+
+        <table>
+  <!-- <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr> -->
+  <tr>
+    <td><strong>NAME</strong></td>
+    <td id=''>{{$home->title}}</td>
+    
+  </tr>
+  <tr>
+    <td><strong>DESCRIPTION</strong></td>
+    <td id="description">{{$home->description}}</td>
+    
+  </tr>
+  <tr>
+    <td><strong>AREA</strong></td>
+    <td id="area">{{$home->area}}</td>
+    
+  </tr>
+  <tr>
+    <td><strong>BUILDER</strong></td>
+    <td id="builder">{{$home->builder}}</td>
+    
+  </tr>
+  <tr>
+    <td><strong>NO. OF BEDROOM</strong></td>
+    <td id="bedroom">{{$home->bedroom}}</td>
+    
+  </tr>
+  <tr>
+    <td><strong>NO. OF BATHROOM</strong></td>
+    <td id="bathroom">{{$home->bathroom}}</td>
+    
+  </tr>
+  <tr>
+    <td><strong>NO. OF GARAGE</strong></td>
+    <td id="garage">{{$home->garage}}</td>
+    
+  </tr>
+  <tr>
+    <td><strong>STATUS</strong></td>
+    @foreach($statuses as $status)
+    <?php
             $color;
             if($status->status=="Available")
             {
@@ -150,24 +164,27 @@
               $color="Yellow";
             }
             ?>
-          <span style="font-size: 15px;font-weight:bolder;color:<?php echo $color ?>" id='builder'>&nbsp;{{$status->status}}</span>
-          @endforeach
-          </div>
-          </div><br>
-          </div>
+    <td style="font-size: 15px;font-weight:bolder;color:<?php echo $color ?>" id='status'>
+    {{$status->status}}
+    </td>
+    @endforeach
+  </tr>
+</table>
+         <br>         
         </div>
-        <div class="col-md-2"><br><br><br>
-        <a type="button" href="/admin/home/edit/{{$home->id}}" style="font-size: 15px;" class="btn btn-success edit-hm-detail">Edit</a>
         </div>
         @endforeach
+        
+          <div class="column" style="text-align:center; margin-bottom: 20px;">
+            <a type="button" href="/admin/home/edit/{{$home->id}}" style="width: 40%; background-color:#7AAB41" class="btn edit-hm-detail">Edit</a>
+          </div>
       </div>
-</div>
 </div><br>
 
 <div id="features" class="w3-container city" style="display:none; font-family: Times New Roman;"><br>
   <div class="container">
       <div class="col">
-      <a type="button" onclick="addFeature()" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-Success add-new">Add New Feature</a>
+      <a type="button" onclick="addFeature()" style="font-size: 15px; background-color:#00BCD4;" class="btn add-new">Add New Feature</a>
       </div>
     <br>
     <div class="row">
@@ -220,8 +237,8 @@
           </form>
           </div>
           <div class="modal-footer" style="font-family: Times New Roman;">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
+            <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
           </div>
         </div>
       </div>
@@ -262,8 +279,8 @@
         </form>
         </div>
         <div class="modal-footer" style="font-family: Times New Roman;">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button"  style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
+          <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
         </div>
       </div>
     </div>
@@ -290,8 +307,8 @@
           <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto" style="font-family: Times New Roman;">
-            <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
-            <button type="submit" id="ys-btn" class="btn btn-danger"> Yes</button>
+            <button type="button" style="background-color:#00BCD4;" data-dismiss="modal" class="btn"> No </button>
+            <button type="submit"  style="background-color:  #F44336;" id="ys-btn" class="btn"> Yes</button>
            </div>  
           </div>    
         </div>

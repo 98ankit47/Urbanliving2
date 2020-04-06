@@ -8,6 +8,7 @@ use App\Models\Homes;
 use App\Models\HomeCommunity;
 use App\Models\Communities;
 use Illuminate\Support\Str;
+use App\Models\status;
 
 class HomeController extends Controller
 {
@@ -30,10 +31,10 @@ class HomeController extends Controller
                  <br><br>
                  <div class="row">
                  <div class ="column" style="text-align: left; width:50%;">
-                 <a type="button" style="font-family: Times New Roman;" href="/admin/home/manage/'.$home->id.'" class="btn btn-success">Manage</a> 
+                 <a type="button" style="font-family: Times New Roman; background-color: #009688;" href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
                  </div>
                  <div class ="column" style="text-align: right; width:50%;">
-                 <button type ="button" style="font-family: Times New Roman;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn btn-danger">Delete</button>  
+                 <button type ="button" style="font-family: Times New Roman; background-color:#F44336;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
                 </div>
                 </div>
                  </div>
@@ -113,8 +114,22 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-       $home= Homes::where('id',$id)->get()->first();
-       return $home;
+        $home= Homes::where('id',$id)->get()->first();
+        $community=HomeCommunity::where('home_id',$id)->orderBy('updated_at','desc')->get()->first();
+           $temp = array(
+                "title" =>$home->title,
+                "description" =>$home->description,
+                "bedroom" =>$home->bedroom,
+                "bathroom" =>$home->bathroom,
+                "garage" =>$home->garage,
+                "stories" =>$home->stories,
+                "mls" =>$home->mls,
+                "area" =>$home->area,
+                "builder" =>$home->builder,
+                "status" =>$home->status_id,
+                "community_list"=>$community->community_id,
+             );
+                return $temp;
     }
 
     

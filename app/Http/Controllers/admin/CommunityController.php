@@ -28,10 +28,10 @@ class CommunityController extends Controller
                  <br><br>
                  <div class="row">
                  <div class ="column" style="text-align: left; width:50%; padding-left:10px">
-                 <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="font-size: 15px;" class="btn btn-success">Edit</a>    
+                 <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="font-size: 15px; background-color: #7AAB41;" class="btn">Edit</a>    
                 </div>
                 <div class ="column" style="text-align: right; width:50%; padding-right:10px"">
-                 <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity"   style="font-size: 15px;" class="btn btn-danger">Delete</button>
+                 <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity"   style="font-size: 15px; background-color:#F44336;" class="btn">Delete</button>
                   </div>
                   </div>   
                 </div>

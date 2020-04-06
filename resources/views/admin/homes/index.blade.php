@@ -17,7 +17,7 @@
 <h4><strong>Homes</strong></h4>
 </div>
 <div class="col-md-2">
-<a type="button" href="/admin/home/create" style="font-size: 15px; background-color:#18BDB0; font-family: Times New Roman;" class="btn btn-Success">Add New</a>
+<a type="button" href="/admin/home/create" style="font-size: 15px; background-color:#00BCD4; font-family: Times New Roman;" class="btn">Add New</a>
 </div>
 </div>
 <hr>

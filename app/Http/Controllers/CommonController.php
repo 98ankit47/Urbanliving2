@@ -24,8 +24,8 @@ class CommonController extends Controller
         $features= Features::where('home_id',$id)->get();
         foreach($features as $feature)
         {
-            $data.=' 
-                    <div class="row">
+            $data.=' <div class="card">
+                    <div class="row" style="margin-left:5px; margin-right:5px; margin-top:15px; margin-bottom:15px;">
                         <div class="col-md-4">
                         <img class="card-img-top" style="height:100px; width:150px;" src="/uploads/homeFeature/'.$feature->image.'">
                         </div> 
@@ -33,8 +33,9 @@ class CommonController extends Controller
                         <span class="card-title" style="font-size: 15px;">'.$feature->title.'</span>
                         </div>
                         <div class="col-md-4">
-                        <button  onclick="editfeature('.$feature->id.')" style="font-size: 10px;" class="btn btn-success">Edit</button>  
-                        <button class="btn btn-danger" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature"  style="font-size: 10px;" >Delete</button>
+                        <button  onclick="editfeature('.$feature->id.')" style="font-size: 10px; background-color: #7AAB41;" class="btn">Edit</button>  
+                        <button class="btn" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature"  style="font-size: 10px; background-color:#F44336;" >Delete</button>
+                        </div>
                         </div>
                     </div>  <br><br> ';
             

@@ -18,8 +18,7 @@
 <h4 style="font-family: Times New Roman;"><strong>Communities</strong></h4>
 </div>
 <div class="col-md-2">
-  <a type="button" data-toggle="modal" style="font-family: Times New Roman;" onclick="Addcommunity()"  data-target="#AddcommunityModal" style="font-size: 15px;" style="font-size: 15px; background-color:#18BDB0;" class="btn btn-success">Add New</a> 
-
+  <a type="button" data-toggle="modal" style="font-family: Times New Roman;" onclick="Addcommunity()"  data-target="#AddcommunityModal" style="font-size: 15px; background-color:#00BCD4;" class="btn btn-info">Add New</a> 
 </div>
 </div><hr>
 <br>
@@ -85,8 +84,8 @@
    
   </div>
   <div class="modal-footer" style="font-family: Times New Roman;">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Save changes</button>
+    <button type="button" class="btn" style="background-color:#00BCD4;" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn" style="background-color:  #F44336;">Save changes</button>
   </div>
 </form>
       </div>
@@ -153,8 +152,8 @@
    
   </div>
   <div class="modal-footer" style="font-family: Times New Roman;">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Save changes</button>
+    <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
+    <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
   </div>
 </form>
       </div>

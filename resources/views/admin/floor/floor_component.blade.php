@@ -29,13 +29,13 @@
 <br>
     <div class="row" style="font-family: Times New Roman;">
         <div class="col-md-2">
-          <a href="http://127.0.0.1:8000/admin/floor" class="btn btn-info">Back</a> 
+          <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4;" class="btn">Back</a> 
         </div>
         <div class="col-md-8 floor-contain">
             <h4 style="text-align: center"><strong>Floor Component</strong></h4>
         </div>
         <div class="col-md-2">
-        <button onclick="addFloorComponent()" class="btn btn-info">Add New</button> 
+        <button onclick="addFloorComponent()" style="background-color:#00BCD4;" class="btn">Add New</button> 
         </div>
     </div>
     </div>
@@ -75,8 +75,8 @@
 
   </div>
   <div class="modal-footer" style="font-family: Times New Roman;">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Save changes</button>
+    <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
+    <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
   </div>
 </form>
       </div>
@@ -114,8 +114,8 @@
   
     </div>
     <div class="modal-footer" style="font-family: Times New Roman;">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary">Save changes</button>
+      <button type="button"  style="background-color:  #F44336;"  class="btn" data-dismiss="modal">Close</button>
+      <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
     </div>
   </form>
         </div>
@@ -137,8 +137,8 @@
             <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
             <div class="clearfix"></div>
             <div class="m-auto" style="font-family: Times New Roman;">
-              <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
-              <button type="submit" id="ys-floor-component-btn" class="btn btn-danger"> Yes</button>
+              <button type="button" style="background-color:  #F44336;" data-dismiss="modal" class="btn"> No </button>
+              <button type="submit" style="background-color:#00BCD4;" id="ys-floor-component-btn" class="btn"> Yes</button>
              </div>  
             </div>    
           </div>

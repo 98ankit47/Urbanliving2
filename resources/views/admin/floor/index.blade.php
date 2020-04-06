@@ -78,13 +78,13 @@
             <h4><strong>Floor</strong></h4>
         </div>
         <div class="col-md-2">
-            <button onclick="addFloor()" style="font-size: 15px; background-color:#18BDB0; font-family: Times New Roman;" class="btn btn-Success">Add New</button>
+            <button onclick="addFloor()" style="font-size: 15px; background-color:#00BCD4; font-family: Times New Roman;" class="btn btn-Success">Add New</button>
         </div>
     </div>
 <hr>
 
 <div class="dropdown" style="width:100%; font-family: Times New Roman;">
-  <button onclick="myFunction()" class="dropbtn " style="height:30px;">Select Home&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></button>
+  <button onclick="myFunction()" class="dropbtn " style="height:30px; background-color:#009688;">Select Home&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></button>
   <div id="myDropdown" class="dropdown-content" style="width:100%; font-family: Times New Roman;">
   </div>
 </div>
@@ -170,8 +170,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
+          <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
         </div>
       </form>
       </div>
@@ -249,8 +249,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
+            <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
           </div>
         </form>
         </div>
@@ -295,8 +295,8 @@
           <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
-            <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
-            <button type="submit" id="ys-floor-btn" class="btn btn-danger"> Yes</button>
+            <button type="button"  style="background-color:  #F44336;" data-dismiss="modal" class="btn"> No </button>
+            <button type="submit" style="background-color:#00BCD4;" id="ys-floor-btn" class="btn"> Yes</button>
            </div>  
           </div>    
         </div>

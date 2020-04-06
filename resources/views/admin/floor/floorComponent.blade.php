@@ -39,7 +39,7 @@
   <div class="card floor-card">
     <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
       <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
+        <button type="button" onclick="editfloor(1)" style="background-color: #7AAB41;" class="btn">Edit</button>  
         <button type="button" class="btn btn-danger">Delete</button> 
       </div>
   </div>
@@ -48,7 +48,7 @@
   <div class="card floor-card">
     <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
     <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
+        <button type="button" onclick="editfloor(1)" style="background-color: #7AAB41;" class="btn">Edit</button>  
         <button type="button" class="btn btn-danger">Delete</button> 
       </div>
   </div>
@@ -57,8 +57,8 @@
   <div class="card floor-card">
     <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="https://nydsgn.com/images/interiors/work_13.jpg" alt="">
     <div class="card-body">
-        <button type="button" onclick="editfloor(1)" class="btn btn-warning">Edit</button>  
-        <button type="button" class="btn btn-danger">Delete</button> 
+        <button type="button" onclick="editfloor(1)" style="background-color: #7AAB41;" class="btn">Edit</button>  
+        <button type="button" style="background-color:  #F44336;" class="btn">Delete</button> 
       </div>
   </div>
 </div>
@@ -103,8 +103,8 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Save changes</button>
+    <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
+    <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
   </div>
 </form>
       </div>

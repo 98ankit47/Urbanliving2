@@ -18,7 +18,7 @@
   <h4 style="color: black;"><strong>Home</strong></h4>
   </div>
   <div class="col-md-2">
-  <a type="button" href="/admin/homes" style="color: white;" class="btn btn-info">Go Back</a>
+  <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;" class="btn">Go Back</a>
   </div>
   </div><hr>
   <br>
@@ -110,10 +110,10 @@
   </div>
   <div class="row" style="font-family: Times New Roman;">
   <div class="col-md-2">
-  <button type="submit" class="btn btn-primary">Save</button>
+  <button type="submit" style="background-color:#00BCD4;" class="btn">Save</button>
 </div>
 <div class="col-md-2">
-  <button type="submit" class="btn btn-primary">Cancel</button>
+  <button type="submit" style="background-color:  #F44336;" class="btn">Cancel</button>
 </div>
 </div>
 </form>

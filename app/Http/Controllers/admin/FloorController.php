@@ -116,10 +116,10 @@ class FloorController extends Controller
                 <h5 style="text-align:center">'.$component->name.'</h5>
                  <div class="row">
                   <div class="column" style="text-align:left; width:50%; padding-left:10px;">
-                   <button type="button" onclick="editfloorcomponent('.$component->id.')" class="btn btn-warning">Edit</button>  
+                   <button type="button" onclick="editfloorcomponent('.$component->id.')" style="background-color:  #7AAB41;" class="btn">Edit</button>  
                   </div>
                   <div class="column" style="text-align:right; width:50%; padding-right:10px;">
-                   <button type="button" data-toggle="modal" data-id="'.$component->id.'"  data-target="#deleteFloorComponent" class="btn btn-danger">Delete</button> 
+                   <button type="button" data-toggle="modal" data-id="'.$component->id.'" style="background-color:  #F44336;" data-target="#deleteFloorComponent" class="btn">Delete</button> 
                   </div>               
                  </div>
               </div>
@@ -148,7 +148,7 @@ class FloorController extends Controller
               <span>'.$floor->bedroom.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $bedroom . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $bedroom . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
             </div>
           </div><br>
           
@@ -160,7 +160,7 @@ class FloorController extends Controller
               <span>'.$floor->bathroom.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $bathroom . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $bathroom . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
             </div>
           </div><br>
         
@@ -172,7 +172,7 @@ class FloorController extends Controller
               <span>'.$floor->garage.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $garage . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $garage . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
             </div>
           </div>
           <br>
@@ -184,7 +184,7 @@ class FloorController extends Controller
               <span>'.$floor->dining.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $dining . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $dining . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
             </div>
           </div>
           <br>
@@ -196,7 +196,7 @@ class FloorController extends Controller
               <span>'.$floor->kitchen.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $kitchen . '\','.$floor->id.')" class="btn btn-success">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $kitchen . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
             </div>
           </div>';
         } 
@@ -217,10 +217,10 @@ class FloorController extends Controller
                   <div class="card-body">
                    <div class="row">
                     <div class="column" style="text-align:left; width:50%; padding-left:10px;">
-                     <button type="button" onclick="editfloor('.$floor->id.')" class="btn btn-warning">Edit</button> 
+                     <button type="button" onclick="editfloor('.$floor->id.')" style="background-color: #7AAB41;" class="btn">Edit</button> 
                     </div>
                     <div class="column" style="text-align:right; width:50%; padding-right:10px;"> 
-                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'"  data-target="#deleteFloor"class="btn btn-danger">Delete</button> 
+                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="background-color:#F44336;" data-target="#deleteFloor"class="btn">Delete</button> 
                     </div>
                    </div>
                     </div>
