@@ -306,6 +306,7 @@
  $('#ys-home-btn').click(function()
  {
    $('#deleteHome').modal('hide');
+  $('.modal-backdrop').css('display','none');
      deleteHome(id);
 
  });
@@ -368,7 +369,8 @@ $(document).ready(function() {
         document.getElementById("area").value = result.area;
         document.getElementById("community_list").value = result.community;
         document.getElementById("builder").value = result.builder;
-        document.getElementById("file").value = result.featured_image;
+        document.getElementById("status").value = result.status;
+        document.getElementById("community_list").value = result.community_list;
       }
       
     }); 
@@ -521,6 +523,7 @@ $(document).ready(function() {
     function addFeature(id)
       {      
         $('#AddFeatureModal').modal('show');
+        
        
       $('input[type=file]').on('change',function(e){
                 let files = e.target.files[0];
@@ -662,6 +665,7 @@ $(document).ready(function() {
               type: 'DELETE'
             });
            loadHomeList();
+           $('#danger').html('Home deleted').delay(2000).fadeOut();
 
       }
       
