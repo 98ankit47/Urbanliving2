@@ -970,13 +970,13 @@ $(document).ready(function() {
     success: function(result){    
       $('#EditFloor').modal('show');
 
+        document.getElementById("Edit_home_id").value = result.home_id;         
         document.getElementById("Edit_floor_no").value = result.floor_no;         
         document.getElementById("Edit_bedroom").value = result.bedroom;         
         document.getElementById("Edit_bathroom").value = result.bathroom;         
         document.getElementById("Edit_garage").value = result.garage;         
         document.getElementById("Edit_dining").value = result.dining;         
         document.getElementById("Edit_kitchen").value = result.kitchen; 
-        document.getElementById("Edit_image").value = result.image; 
     }
     });    
       $('input[type=file]').on('change',function(e){
