@@ -51,7 +51,7 @@ class CommonController extends Controller
     {
         $data ='';
         $logo= Logos::orderBy('created_at','desc')->get()->first();
-        $data.='<img src="/bower_components/admin-lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        $data.='<img src="/uploads/logo/'.$logo->image.'"  class="brand-image img-circle elevation-3"
                 style="opacity: .8">
                 <span class="brand-text font-weight-light">Urban Living</span>';     
         return $data;        
@@ -85,4 +85,16 @@ class CommonController extends Controller
         }
         return $data;        
     }
+    public function addLogo(Request $request)
+    {
+            $name =  time().explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+                $request['image'],';')))[1])[1];  
+    
+            \Image::make($request['image'])->save(public_path('uploads\logo\\').$name);
+
+        Logos::where('id',1)->update([
+             'image'=>$name
+        ]);
+    }
+    
 }

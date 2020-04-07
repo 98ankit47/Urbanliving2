@@ -263,7 +263,7 @@
               }
             });
             $(function () {
-              $('#changeLogo').on('submit', function (e) {
+              $('#Logo').on('submit', function (e) {
                 e.preventDefault();
                     $.ajax({
                       type: 'post',
@@ -273,8 +273,9 @@
                         'image-name' : image_name,
                       },
                       success: function () {
-                        $('#AddFeatureModal').modal('hide');
-                          loadFeatureList();
+                        $('#logoModal').modal('hide');
+                        $('.modal-backdrop').css('display','none'); 
+                         loadLogo();
                         $('#success').html('Logo Updated').delay(2000).fadeOut();
 
                       }
