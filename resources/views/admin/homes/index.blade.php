@@ -2,8 +2,8 @@
 @section('content')
 <style>
 .home-list-contain {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .homes-contain {
   margin-left: 45%;
@@ -17,7 +17,7 @@
 <h4><strong>Homes</strong></h4>
 </div>
 <div class="col-md-2">
-<a type="button" href="/admin/home/create" style="font-size: 15px; background-color:#00BCD4; font-family: Times New Roman;" class="btn">Add New</a>
+<a type="button" class="btn" href="/admin/home/create" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn">Add New</a>
 </div>
 </div>
 <hr>

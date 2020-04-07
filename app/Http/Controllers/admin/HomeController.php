@@ -27,14 +27,16 @@ class HomeController extends Controller
             <div class="card">
               <img class="card-img-top"style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
-              <h5 class="card-title" style="font-size: 15px; font-family: Times New Roman;">'.$home->title.'</h5>
-                 <br><br>
+                <h5  style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>
+                 <br>
                  <div class="row">
-                 <div class ="column" style="text-align: left; width:50%;">
-                 <a type="button" style="font-family: Times New Roman; background-color: #009688;" href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
+                 <div class="col-md-1"></div>
+                 <div class ="col-md-4">
+                 <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" href="/admin/home/manage/'.$home->id.'" class="btn w-100">Manage</button> 
                  </div>
-                 <div class ="column" style="text-align: right; width:50%;">
-                 <button type ="button" style="font-family: Times New Roman; background-color:#F44336;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
+                 <div class="col-md-2"></div>
+                 <div class ="col-md-4">
+                 <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn w-100">Delete</button>  
                 </div>
                 </div>
                  </div>

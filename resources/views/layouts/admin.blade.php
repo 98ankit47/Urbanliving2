@@ -21,6 +21,7 @@
   <title>Admin | Urban</title>
 
   <!-- Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/bower_components/admin-lte/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/bower_components/admin-lte/dist/css/adminlte.min.css">
@@ -35,11 +36,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   
-  <style>
-    .card-body{
-       height: 150px;
-    }
-    </style>
+   
      <!-- custom style sheet -->
   <link rel="stylesheet" href="/css/style.css" class="rel">
   <!-- Font Awesome Icons -->
