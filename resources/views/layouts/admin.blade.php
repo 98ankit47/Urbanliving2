@@ -77,7 +77,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/admin/home" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -140,11 +140,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed;">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="/bower_components/admin-lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">Urban</span>
-    </a>
+    <div  class="brand-link" id="logo">
+      
+    </div>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -232,6 +230,61 @@
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/dist/js/adminlte.min.js"></script>
+
+<script>
+  loadLogo();
+  function loadLogo(){
+    var APP_URL = "{{ url('/') }}";
+    $.ajax({
+      type: 'GET',
+      url: APP_URL+'/api/admin/logo',
+      success: function(result){   
+        $('#logo').html(result);
+      }   
+    });
+  }
+</script>
+
+@if(Route::currentRouteName() == 'settings')
+<script>
+  var image_name,image;
+   $('#AddLogoModal').modal('show'); 
+        $('input[type=file]').on('change',function(e){
+                let files = e.target.files[0];
+                let reader = new FileReader();
+                if(files){
+                  reader.onloadend = ()=>{
+                    $('#image').attr('src',reader.result);
+                    image = reader.result;
+                    image_name = files.name;
+                  // document.getElementById("featured_img").value  = reader.result;
+                  }
+                  reader.readAsDataURL(files); 
+              }
+            });
+            $(function () {
+              $('#changeLogo').on('submit', function (e) {
+                e.preventDefault();
+                    $.ajax({
+                      type: 'post',
+                      url: '/api/admin/logo/',
+                      data:{
+                        'image'      : image,
+                        'image-name' : image_name,
+                      },
+                      success: function () {
+                        $('#AddFeatureModal').modal('hide');
+                          loadFeatureList();
+                        $('#success').html('Logo Updated').delay(2000).fadeOut();
+
+                      }
+                    });
+
+              });
+
+          });
+</script>
+@endif
 
 @if(Route::currentRouteName() == 'edit-page')
 <script src="/summernote/summernote.min.js"></script>
@@ -519,10 +572,8 @@ $(document).ready(function() {
 
     function addFeature(id)
       {      
-        $('#AddFeatureModal').modal('show');
-        
-       
-      $('input[type=file]').on('change',function(e){
+        $('#AddFeatureModal').modal('show'); 
+        $('input[type=file]').on('change',function(e){
                 let files = e.target.files[0];
                 let reader = new FileReader();
                 if(files){

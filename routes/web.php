@@ -26,7 +26,7 @@ Route::get('/admin/floor',function(){
 
 Route::get('/admin/settings',function(){
     return view('admin.settings.index');
-}); 
+})->name('settings'); 
 
 Route::get('/admin/pages',function(){
     return view('admin.page');

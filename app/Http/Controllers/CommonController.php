@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\status;
 use App\Models\Features;
+use App\Models\Logos;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -45,6 +46,17 @@ class CommonController extends Controller
         }
         return $data;        
     }
+
+    public function logo()
+    {
+        $data ='';
+        $logo= Logos::orderBy('created_at','desc')->get()->first();
+        $data.='<img src="/bower_components/admin-lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                style="opacity: .8">
+                <span class="brand-text font-weight-light">Urban Living</span>';     
+        return $data;        
+    }
+
 
     public function DashboardUser(Request $request)
     {
