@@ -50,7 +50,7 @@ class CommonController extends Controller
     public function logo()
     {
         $data ='';
-        $logo= Logos::orderBy('created_at','desc')->get()->first();
+        $logo= Logos::get()->first();
         $data.='<img src="/uploads/logo/'.$logo->image.'"  class="brand-image img-circle elevation-3"
                 style="opacity: .8">
                 <span class="brand-text font-weight-light">Urban Living</span>';     

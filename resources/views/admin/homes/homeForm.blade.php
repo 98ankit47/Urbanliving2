@@ -109,13 +109,13 @@
     </div>
   </div>
   <div class="row" style="font-family: Times New Roman;">
-  <div class="col-md-2">
-  <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F#2DCC70;" class="btn w3-100" class="btn">Save</button>
-</div>
-<div class="col-md-2">
-  <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:;" class="btn w3-100">Cancel</button>
-</div>
-</div>
+    <div class="col-md-2">
+      <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" class="btn">Save</button>
+    </div>
+    <div class="col-md-2">
+      <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Cancel</button>
+    </div>
+  </div>
 </form>
 <br>
 </div>

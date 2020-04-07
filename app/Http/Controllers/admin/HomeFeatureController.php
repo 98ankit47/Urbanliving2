@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 Use App\Models\Features;
 Use App\Models\Homes;
+Use App\Models\HomeCommunity;
 Use App\Models\status;
+Use App\Models\Communities;
 use App\Http\Controllers\Controller;
 use Redirect;
 
@@ -16,9 +18,10 @@ class HomeFeatureController extends Controller
        $id= $request['id'];
        $features = Features::where('home_id',$id)->get(); 
        $homes = Homes::where('id',$id)->get(); 
-       $home = Homes::where('id',$id)->get()->first(); 
-       $status = status::where('id',$home->status_id)->get();     
-       return view('admin.homes.manage_homes')->with('features',$features)->with('homes',$homes)->with('statuses',$status) ;
+       $status = status::where('id',$homes[0]->status_id)->get();     
+       $rel = HomeCommunity::where('home_id',$id)->get()->first(); 
+       $community=Communities::where('id',$rel->community_id)->get();
+       return view('admin.homes.manage_homes')->with('community',$community)->with('features',$features)->with('homes',$homes)->with('statuses',$status) ;
    }
     
    /**

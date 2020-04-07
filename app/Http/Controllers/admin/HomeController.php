@@ -9,6 +9,7 @@ use App\Models\HomeCommunity;
 use App\Models\Communities;
 use Illuminate\Support\Str;
 use App\Models\status;
+Use DB;
 
 class HomeController extends Controller
 {
@@ -221,10 +222,10 @@ class HomeController extends Controller
     public function destroy($id)
     {  
         $home = Homes::findOrFail($id);
-        $home->delete();
-        $feature = Features::where('home_id',$id)->get();
-        $feature->delete(); 
-        
+        $home->delete();   
+        DB::table('home_communities')->where('home_id',$id)->delete();
+        DB::table('features')->where('home_id',$id)->delete();   
+        DB::table('floors')->where('home_id',$id)->delete();   
         return ['success'=>'Home Successfully Deleted'];
     }
 }

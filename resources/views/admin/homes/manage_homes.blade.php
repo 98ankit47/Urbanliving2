@@ -143,6 +143,13 @@ td, th {
     
   </tr>
   <tr>
+    <td><strong>Community Name</strong></td>
+    @foreach ($community as $com)
+      <td id="garage">{{$com->title}}</td>
+    @endforeach
+    
+  </tr>
+  <tr>
     <td><strong>STATUS</strong></td>
     @foreach($statuses as $status)
     <?php
