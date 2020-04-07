@@ -80,7 +80,7 @@
 <div class="col-md-6">
 <div class="image-upload">
 <p>Image Gallery</p>
-  <input type="file" id="files" name="files[]" multiple required/>
+  <input type="file" id="files" name="files[]" multiple />
   <br><br><br><br>
 <output id="list" width="200px" height="200px"></output>
   </div>
