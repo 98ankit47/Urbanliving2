@@ -41,8 +41,8 @@
             <h6 class="delete_heading" style="font-family: Times New Roman;">Are you sure, you want to delete this Home ?</h6>
             <div class="clearfix"></div>
             <div class="m-auto">
-              <button type="button" data-dismiss="modal" class="btn btn-primary"> No </button>
-              <button type="submit" id="ys-home-btn" class="btn btn-danger"> Yes</button>
+              <button type="button" data-dismiss="modal" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100"> No </button>
+              <button type="submit" id="ys-home-btn" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100"> Yes</button>
              </div>  
             </div>    
           </div>

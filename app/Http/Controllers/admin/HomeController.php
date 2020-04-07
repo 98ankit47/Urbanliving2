@@ -25,14 +25,14 @@ class HomeController extends Controller
         {
             $data .=' <div class="col-md-4" >
             <div class="card">
-              <img class="card-img-top"style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
+              <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
-                <h5  style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>
+                <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>
                  <br>
                  <div class="row">
                  <div class="col-md-1"></div>
                  <div class ="col-md-4">
-                 <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" href="/admin/home/manage/'.$home->id.'" class="btn w-100">Manage</button> 
+                 <a style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn w-100">Manage</a> 
                  </div>
                  <div class="col-md-2"></div>
                  <div class ="col-md-4">

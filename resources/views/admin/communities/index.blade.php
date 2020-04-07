@@ -18,7 +18,7 @@
 <h4 style="font-family: Times New Roman;"><strong>Communities</strong></h4>
 </div>
 <div class="col-md-2">
-  <a type="button" data-toggle="modal" style="font-family: Times New Roman;" onclick="Addcommunity()"  data-target="#AddcommunityModal" style="font-size: 15px; background-color:#00BCD4;" class="btn btn-info">Add New</a> 
+  <a type="button" data-toggle="modal" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" onclick="Addcommunity()"  data-target="#AddcommunityModal" class="btn btn-info">Add New</a> 
 </div>
 </div><hr>
 <br>
