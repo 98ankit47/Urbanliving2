@@ -35,7 +35,7 @@
             <h4 style="text-align: center"><strong>Floor Component</strong></h4>
         </div>
         <div class="col-md-2">
-        <button onclick="addFloorComponent()" style="background-color:#00BCD4;" class="btn">Add New</button> 
+        <button onclick="addFloorComponent()" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn">Add New</button> 
         </div>
     </div>
     </div>
@@ -75,8 +75,8 @@
 
   </div>
   <div class="modal-footer" style="font-family: Times New Roman;">
-    <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
-    <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
+    <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+    <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
   </div>
 </form>
       </div>
@@ -114,8 +114,8 @@
   
     </div>
     <div class="modal-footer" style="font-family: Times New Roman;">
-      <button type="button"  style="background-color:  #F44336;"  class="btn" data-dismiss="modal">Close</button>
-      <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
+      <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+      <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
     </div>
   </form>
         </div>
@@ -137,8 +137,8 @@
             <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
             <div class="clearfix"></div>
             <div class="m-auto" style="font-family: Times New Roman;">
-              <button type="button" style="background-color:  #F44336;" data-dismiss="modal" class="btn"> No </button>
-              <button type="submit" style="background-color:#00BCD4;" id="ys-floor-component-btn" class="btn"> Yes</button>
+              <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+              <button type="submit" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-floor-component-btn"> Yes</button>
              </div>  
             </div>    
           </div>

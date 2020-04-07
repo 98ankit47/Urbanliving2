@@ -25,9 +25,9 @@ class HomeController extends Controller
         {
             $data .=' <div class="col-md-4" >
             <div class="card">
-              <img class="card-img-top"style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
+              <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
-                <h5  style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>
+                <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>
                  <br>
                  <div class="row">
                  <div class="col-md-1"></div>

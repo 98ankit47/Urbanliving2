@@ -27,14 +27,17 @@ class CommonController extends Controller
             $data.=' <div class="card">
                     <div class="row" style="margin-left:5px; margin-right:5px; margin-top:15px; margin-bottom:15px;">
                         <div class="col-md-4">
-                        <img class="card-img-top" style="height:100px; width:150px;" src="/uploads/homeFeature/'.$feature->image.'">
+                        <img class="card-img-top" style="height:150px; width:200px;" src="/uploads/homeFeature/'.$feature->image.'">
                         </div> 
                         <div class="col-md-4">
-                        <span class="card-title" style="font-size: 15px;">'.$feature->title.'</span>
+                        <span class="card-title" style="font-size: 20px;">'.$feature->title.'</span>
                         </div>
                         <div class="col-md-4">
-                        <button  onclick="editfeature('.$feature->id.')" style="font-size: 10px; background-color: #7AAB41;" class="btn">Edit</button>  
-                        <button class="btn" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature"  style="font-size: 10px; background-color:#F44336;" >Delete</button>
+                        <div class="wrapper" style="margin-top:50px;">
+                        <button onclick="editfeature('.$feature->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button>  
+                        
+                        <button class="btn" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                        </div>
                         </div>
                         </div>
                     </div>  <br><br> ';

@@ -48,7 +48,7 @@ td, th {
     }
 
     .add-new {
-      margin-left: 80%;
+      margin-left: 65%;
     }
 
     .tabsss {
@@ -176,7 +176,7 @@ td, th {
         @endforeach
         
           <div class="column" style="text-align:center; margin-bottom: 20px;">
-            <a type="button" href="/admin/home/edit/{{$home->id}}" style="width: 40%; background-color:#7AAB41" class="btn edit-hm-detail">Edit</a>
+            <a type="button" href="/admin/home/edit/{{$home->id}}" style="width: 40%; font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</a>
           </div>
       </div>
 </div><br>
@@ -184,7 +184,7 @@ td, th {
 <div id="features" class="w3-container city" style="display:none; font-family: Times New Roman;"><br>
   <div class="container">
       <div class="col">
-      <a type="button" onclick="addFeature()" style="font-size: 15px; background-color:#00BCD4;" class="btn add-new">Add New Feature</a>
+      <a type="button" onclick="addFeature()" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn add-new">Add New Feature</a>
       </div>
     <br>
     <div class="row">
@@ -237,8 +237,8 @@ td, th {
           </form>
           </div>
           <div class="modal-footer" style="font-family: Times New Roman;">
-            <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
-            <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
+            <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+            <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
           </div>
         </div>
       </div>
@@ -279,8 +279,8 @@ td, th {
         </form>
         </div>
         <div class="modal-footer" style="font-family: Times New Roman;">
-          <button type="button"  style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
-          <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
+          <button type="button"  style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" data-dismiss="modal">Close</button>
+          <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
         </div>
       </div>
     </div>
@@ -307,8 +307,8 @@ td, th {
           <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto" style="font-family: Times New Roman;">
-            <button type="button" style="background-color:#00BCD4;" data-dismiss="modal" class="btn"> No </button>
-            <button type="submit"  style="background-color:  #F44336;" id="ys-btn" class="btn"> Yes</button>
+            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-btn"> Yes</button>
            </div>  
           </div>    
         </div>

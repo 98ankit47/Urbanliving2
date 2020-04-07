@@ -5,20 +5,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <style>
-.floor-contain {
+ .floor-contain {
     margin-left:45%;
-    font-family: "Times New Roman";
 }
-.floor-card {
+/* .floor-card {
   margin-left: 30px;
   margin-right: 30px;
-}
-.card-body{
+}  */
+/* .card-body{
   height: 80px;
-}
-.home-contain {
+} */
+/* .home-contain {
   margin-left: 40%;
-}
+} */
 
 .dropbtn {
   width: 100%;
@@ -78,7 +77,7 @@
             <h4><strong>Floor</strong></h4>
         </div>
         <div class="col-md-2">
-            <button onclick="addFloor()" style="font-size: 15px; background-color:#00BCD4; font-family: Times New Roman;" class="btn btn-Success">Add New</button>
+            <button onclick="addFloor()"  style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn btn-Success">Add New</button>
         </div>
     </div>
 <hr>
@@ -170,8 +169,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
-          <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
+          <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+          <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
         </div>
       </form>
       </div>
@@ -249,8 +248,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
-            <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
+            <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" class="btn" data-dismiss="modal">Close</button>
+            <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
           </div>
         </form>
         </div>
@@ -295,8 +294,8 @@
           <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
-            <button type="button"  style="background-color:  #F44336;" data-dismiss="modal" class="btn"> No </button>
-            <button type="submit" style="background-color:#00BCD4;" id="ys-floor-btn" class="btn"> Yes</button>
+            <button type="button"  style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-floor-btn"> Yes</button>
            </div>  
           </div>    
         </div>
