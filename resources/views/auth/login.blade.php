@@ -5,8 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="text-align: center;">{{ __('Login') }}</div>
-
+                <!-- <div class="card-header" style="text-align: center;">{{ __('Login') }}</div> -->
+                <div class="card-header" style="text-align: center;">
+                    <img class="img-logo" style="width: 20%;" src="https://tse2.mm.bing.net/th?id=OIP.gLvusKNMaUX6mKffVBKhbgAAAA&pid=Api&P=0&w=300&h=300"/>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -40,7 +42,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6" style="text-align:center;">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -49,19 +51,26 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
+                            <div class="col-md-6" style="text-align:center;">
+                            @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-outline-primary" style="width: 60%;">
+                                    {{ __('Login') }}
+                                </button>
+
+                                <!-- @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif -->
                             </div>
                         </div>
                     </form>
@@ -71,5 +80,3 @@
     </div>
 </div>
 @endsection
-
-

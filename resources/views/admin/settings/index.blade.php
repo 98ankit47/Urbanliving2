@@ -6,22 +6,24 @@
     }
     .tabs {
         margin-left:20px;
+        width:90%;
     }
     .tablink {
-  background-color: #347AB8;
-  color: white;
+  background-color: white;
+  color: black;
   float: left;
-  border: none;
-  outline: none;
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: 25%;
+  width:100%; 
+  text-align:left;
+  border:1px solid;
+  border-color: gray;
 }
 
-.tablink:hover {
-  background-color: #00BCD4;
-}
+/* .tablink:hover {
+  background-color: #347AB8;
+} */
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
@@ -38,11 +40,33 @@
       </div>
 <hr><br>
 
-<div class="container tabs">
-    <button class="tablink" type="button" data-toggle="modal" data-target="#logoModal">Change Logo</button>
-    <button class="tablink" type="button" data-toggle="modal" data-target="#passwordModal" id="defaultOpen">Change Password</button>
+<div class="container tabs"> 
+    <a class="tablink" type="button" data-toggle="modal" data-target="#logoModal">
+      <div class="row">
+        <div class="column" style="width:98%;">
+          <strong>Change Logo</strong>
+          <p style="font-size: 14px; color: gray;">Change your Logo, and set new Logo.</p>  
+        </div>
+        <div class="column" style="width:2%; padding-top: 20px;">
+          <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
+        </div>
+      </div>
+    </a>
 </div>
 
+<div class="container tabs"> 
+    <a class="tablink" type="button" data-toggle="modal" data-target="#passwordModal">
+      <div class="row">
+        <div class="column" style="width:98%;">
+          <strong>Change Password</strong>
+          <p style="font-size: 14px; color: gray;">Change your Password, and set new password.</p>  
+        </div>
+        <div class="column" style="width:2%; padding-top: 20px;">
+          <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
+        </div>
+      </div>
+    </a>
+</div>
 
 <!--Change Logo Modal-->
 <div class="modal fade" id="logoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -59,7 +83,7 @@
         <div class="card">
             <div class="image-upload">
                 <p style="text-align:center; margin-top:10px;"><input type="file" name="files[]" id="files"  onchange="loadFile(event)" required></p><br>
-                <p style="text-align:center;"><img id="output" width="400px" height="400px" /></p>
+                <p style="text-align:center;"><img id="output" width="400px" height="300px" /></p>
             </div>
         </div>
       </div>
