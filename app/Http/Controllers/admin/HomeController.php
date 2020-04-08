@@ -62,20 +62,22 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        // $gallery=[];
+        $data=[];
         $featured_img =  time().explode('.',$request['featured-image-name'])[0].'.' . explode('/', explode(':',substr($request['featured-image'],0,strpos(
             $request['featured-image'],';')))[1])[1];  
 
         \Image::make($request['featured-image'])->save(public_path('uploads\homes\\').$featured_img);
        
-        // $files = $request->file('gallery');
-        // foreach($files as $file)
-        // {
-        //     $extension = $file->getClientOriginalExtension(); 
-        //     $filename =time().'.'.$extension;
-        //     $file->move(public_path('uploads'), $filename);
-        //     array_push($gallery, $filename);
-        // }
+        $gallery=$request['gallery'];
+        $gallery_name=$request['gallery_name'];
+        foreach($gallery as $key => $gal)
+        {
+            $gal_img =  time().explode('.',$gallery_name[$key])[0].'.' . explode('/', explode(':',substr($gal,0,strpos(
+                $gal,';')))[1])[1];  
+    
+            \Image::make($request['featured-image'])->save(public_path('uploads\gallery\\').$gal_img);
+            array_push($data,$gal_img);
+        }
         $this->validate($request,[
             'title'=>'required',
             'description'=>'required',
@@ -97,8 +99,7 @@ class HomeController extends Controller
             'builder'=>$request['builder'],
             'area'=>$request['area'],
             'featured_image'=>$featured_img,
-            'gallery'=>'a.jpg',
-            // 'gallery'=>implode(',', $gallery),
+            'gallery'=>implode(',', $data),
             'slug'=>Str::slug($request['title'], '-'),
             'status_id'=> $request['status'],
         ]);
@@ -159,23 +160,19 @@ class HomeController extends Controller
         //     $featured_image_name=$home->featured_image;
         // }
         
-        // $gallery = explode(',', $home->gallery);
-        // if($request->file('gallery'))
-        // {
-        //     $files = $request->file('gallery');
-        //     foreach($files as $file)
-        //     {
-        //         $extension = $file->getClientOriginalExtension(); 
-        //         $filename =time().'.'.$extension;
-        //         $file->move(public_path('uploads'), $filename);
-        //         array_push($gallery, $filename);
-        //     }
-        //     $gname=implode(',', $gallery);
-        // }
-        // else
-        // {
-        //     $gname=$home->gallery;
-        // }
+        $data = explode(',', $home->gallery);
+        $gallery=$request['gallery'];
+        $gallery_name=$request['gallery_name'];
+        foreach($gallery as $key => $gal)
+        {
+            $gal_img =  time().explode('.',$gallery_name[$key])[0].'.' . explode('/', explode(':',substr($gal,0,strpos(
+                $gal,';')))[1])[1];  
+    
+            \Image::make($request['featured-image'])->save(public_path('uploads\gallery\\').$gal_img);
+            array_push($data,$gal_img);
+        }
+            $gname=implode(',', $gallery);
+         
 
         $this->validate($request,[
             'title'=>'required',

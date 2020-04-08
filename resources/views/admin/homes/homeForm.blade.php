@@ -92,15 +92,7 @@
       <label for="inputCity">Builder</label>
       <input type="text" class="form-control" id="builder" required>
     </div>
-    <!-- <div class="form-group col-md-3">
-    <label for="inputDescription">Meta Description</label>
-      <input type="text" class="form-control" id="meta_description">
-      </select>
-    </div>
-    <div class="form-group col-md-3">
-      <label for="inputMetatitle">Meta Title</label>
-      <input type="text" class="form-control" id="meta_title">
-    </div> -->
+     
     <div class="form-group col-md-3">
       <label for="inputState">Status</label>
       <select id="status" class="form-control">

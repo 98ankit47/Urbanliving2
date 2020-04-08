@@ -490,8 +490,10 @@ $(document).ready(function() {
 $(document).ready(function() {
   var APP_URL = "{{ url('/') }}";
   var id = window.location.href.split('/').pop();
-  
-    $('input[type=file]').on('change',function(e){
+  var image,image_name;
+  var gal=[];
+  var gal_name=[];
+    $('#file').on('change',function(e){
             let files = e.target.files[0];
             let reader = new FileReader();
             if(files){
@@ -499,10 +501,32 @@ $(document).ready(function() {
                 $('#chosen_feature_img').attr('src',reader.result);
                 image = reader.result;
                 image_name = files.name;
-               // document.getElementById("featured_img").value  = reader.result;
               }
               reader.readAsDataURL(files); 
           }
+        });
+
+        $('#files').on('change',function(evt){
+          var files = evt.target.files; 
+          for (var i = 0, f; f = files[i]; i++) {
+              // Only process image files.
+              if (!f.type.match('image.*')) {
+                continue;
+              }
+
+            var reader = new FileReader();
+              // Closure to capture the file information.
+                reader.onload = (function(theFile) {
+                  return function(e) {
+                    // Render thumbnail.
+                    gal.push(e.target.result);
+                    gal_name.push(theFile.name);
+                  };
+                })(f);
+
+            // Read in the image file as a data URL.
+              reader.readAsDataURL(f);
+        }
         });
         $(function () {
           $('form').on('submit', function (e) {
@@ -536,9 +560,10 @@ $(document).ready(function() {
                     'builder'             : builder,
                     'featured-image'      : image,
                     'featured-image-name' : image_name,
+                    'gallery'             : gal,
+                    'gallery_name'        : gal_name,
                   },
                   success: function ( ) {
-                    window.location.href = "/admin/homes";
                     $('#success').html('New Home Added').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
                   }
                 });
