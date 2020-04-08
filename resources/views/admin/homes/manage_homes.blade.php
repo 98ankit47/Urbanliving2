@@ -145,7 +145,7 @@ td, th {
   <tr>
     <td><strong>Community Name</strong></td>
     @foreach ($community as $com)
-      <td id="garage">{{$com->title}}</td>
+      <td id="community">{{$com->title}}</td>
     @endforeach
     
   </tr>
