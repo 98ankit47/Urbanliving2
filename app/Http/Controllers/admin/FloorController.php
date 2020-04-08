@@ -14,6 +14,7 @@ class FloorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
     public function index()
     {
         return "ankit";

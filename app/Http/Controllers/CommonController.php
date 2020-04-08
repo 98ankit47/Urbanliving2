@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class CommonController extends Controller
 {
+ 
+
     public function status()
     {
         return status::all();

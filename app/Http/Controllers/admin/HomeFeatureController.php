@@ -13,6 +13,8 @@ use Redirect;
 
 class HomeFeatureController extends Controller
 { 
+    
+
    public function index(Request $request)
    {
        $id= $request['id'];
