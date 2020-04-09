@@ -171,9 +171,7 @@ class HomeController extends Controller
             \Image::make($request['featured-image'])->save(public_path('uploads\gallery\\').$gal_img);
             array_push($data,$gal_img);
         }
-            $gname=implode(',', $gallery);
          
-
         $this->validate($request,[
             'title'=>'required',
             'description'=>'required',
@@ -199,7 +197,7 @@ class HomeController extends Controller
             'builder'=>$request['builder'],
             'status_id'=>$request['status'],
             'featured_image'=>$featured_img,
-            'gallery'=>'anjkfd.jpg',
+            'gallery'=>implode(',', $data),
             'slug'=>Str::slug($request['title'], '-'),
         ]);
 

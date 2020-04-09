@@ -402,11 +402,14 @@ $('#ys-comm-btn').click(function()
 });
 </script>
 
-@if(Route::currentRouteName() == 'edit-home' )
+@if(Route::currentRouteName() == 'edit-home')
 <script>
 $(document).ready(function() {
   var APP_URL = "{{ url('/') }}";
   var id = window.location.href.split('/').pop();
+  var image,image_name;
+  var gal=[];
+  var gal_name=[];
   $.ajax({
       type: 'GET',
       url: APP_URL+'/api/admin/home/'+id,
@@ -427,7 +430,7 @@ $(document).ready(function() {
       }
       
     }); 
-    $('input[type=file]').on('change',function(e){
+    $('#file').on('change',function(e){
             let files = e.target.files[0];
             let reader = new FileReader();
             if(files){
@@ -435,10 +438,32 @@ $(document).ready(function() {
                 $('#chosen_feature_img').attr('src',reader.result);
                 image = reader.result;
                 image_name = files.name;
-               // document.getElementById("featured_img").value  = reader.result;
               }
               reader.readAsDataURL(files); 
           }
+        });
+
+        $('#files').on('change',function(evt){
+          var files = evt.target.files; 
+          for (var i = 0, f; f = files[i]; i++) {
+              // Only process image files.
+              if (!f.type.match('image.*')) {
+                continue;
+              }
+
+            var reader = new FileReader();
+              // Closure to capture the file information.
+                reader.onload = (function(theFile) {
+                  return function(e) {
+                    // Render thumbnail.
+                    gal.push(e.target.result);
+                    gal_name.push(theFile.name);
+                  };
+                })(f);
+
+            // Read in the image file as a data URL.
+              reader.readAsDataURL(f);
+        }
         });
         $(function () {
           $('form').on('submit', function (e) {
@@ -452,7 +477,7 @@ $(document).ready(function() {
                 stories            =  document.getElementById("stories").value;         
                 mls                =  document.getElementById("mls").value;         
                 area               =  document.getElementById("area").value;         
-                status               =  document.getElementById("status").value;         
+                status             =  document.getElementById("status").value;         
                 builder            =  document.getElementById("builder").value;         
                 community          =  document.getElementById("community_list").value;         
                 $.ajax({
@@ -472,6 +497,8 @@ $(document).ready(function() {
                     'status'              : status,
                     'featured-image'      : image,
                     'featured-image-name' : image_name,
+                    'gallery'             : gal,
+                    'gallery_name'        : gal_name,
                   },
                   success: function () {
                     window.location.href = "/admin/home/manage/"+id;
@@ -564,6 +591,7 @@ $(document).ready(function() {
                     'gallery_name'        : gal_name,
                   },
                   success: function ( ) {
+                    window.location.href = "/admin/homes";
                     $('#success').html('New Home Added').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
                   }
                 });
