@@ -101,14 +101,22 @@ class CommonController extends Controller
     }
     public function showGallery(Request $request ,$id)
     {
-        $data =[];
+        $data ='';
+        $gallery =[];
         $homes= Homes::where('id',$id)->get('gallery')->first();
-        $data=explode(',', $homes->gallery);
-        foreach($data as $feature)
+        $gallery=explode(',', $homes->gallery);
+        foreach($gallery as $key=> $gal)
         {
-            echo "----".$feature;
+            $data.='<div class="col-md-4" >
+            <div class="card">
+              <img class="card-img-top" style="height:200px;" src="/uploads/gallery/'.$gal.'">
+                <div class="card-body">
+                  <button data-id="'.$key.'" data-toggle="modal" data-target="#deleteGallery" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w-100">Delete</button>  
+                </div>
+            </div> 
+          </div>';
         }
-        return ; 
+        return $data; 
     }
     
 }

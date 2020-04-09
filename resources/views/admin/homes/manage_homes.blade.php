@@ -189,15 +189,8 @@ td, th {
 <!-- Gallery -->
 
 
-<div id="gallery" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
-    <div class="col-md-4" >
-      <div class="card">
-        <img class="card-img-top" style="height:200px;" src="https://lh3.googleusercontent.com/proxy/RLb4sUdR-aNkcRhKxG_6k3cO3PNSCq6mVSsrdEypmuG_YrO2b__K1atKe3Be0b-uwCd-nMGU0mAdP_tK9ktmX3JFGarIJOI95CIsCPj6Rxn5vyuIKG0GEYtSWQKzGXwcI0Rqr7SgvWMXT72A5e3pnCOYhK8s9iwCvP7vit9MDQ">
-          <div class="card-body">
-            <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w-100">Delete</button>  
-          </div>
-      </div> 
-    </div>
+<div id="gallery" class="w3-container city row" style="display:none; font-family: Open Sans, sans-serif;"><br>
+    
 </div> 
 
 
@@ -327,7 +320,7 @@ td, th {
       </div>
       <div class="modal-body">
         <div class="row" style="margin-left:10px;">
-          <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
+          <h6 class="delete_heading">Are you sure, you want to delete this Feature ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto" style="font-family: Times New Roman;">
             <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
@@ -338,6 +331,32 @@ td, th {
      </div>
    </div>
  </div>
+
+
+ <div class="modal fade bd-example-modal-xl" id="deleteGallery" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+      <div class="modal-header">
+        <h5>Delete Confirm Action</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"><i class="fa fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="margin-left:10px;">
+          <h6 class="delete_heading">Are you sure, you want to delete this Gallery image ?</h6>
+          <div class="clearfix"></div>
+          <div class="m-auto" style="font-family: Times New Roman;">
+            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-btn"> Yes</button>
+           </div>  
+          </div>    
+        </div>
+     </div>
+   </div>
+ </div>
+
+
 <script>
 // Tabs
 $('#deleteFeature').on('show.bs.modal', function (e) {
@@ -361,7 +380,7 @@ function openCity(evt, cityName) {
   for (i = 0; i < x.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
   }
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(cityName).style.display = "";
   evt.currentTarget.firstElementChild.className += " w3-border-red";
 }
 

@@ -392,6 +392,18 @@ $('#ys-comm-btn').click(function()
 
 });
 });
+
+$('#deleteGallery').on('show.bs.modal', function (e) {
+
+var $trigger = $(e.relatedTarget);
+var id=$trigger.data('id');
+$('#ys-gal-btn').click(function()
+{
+  $('#deleteGallery').modal('hide');
+    // deleteCommunity(id);
+
+});
+});
 </script>
 
 @if(Route::currentRouteName() == 'edit-home')
@@ -613,7 +625,8 @@ $(document).ready(function() {
         $.ajax({
           type: 'GET',
           url: APP_URL+'/api/admin/home-gallery/'+id,
-          success: function(result){   
+          success: function(result){  
+            $('#gallery').html(result);
           }   
         });
       }

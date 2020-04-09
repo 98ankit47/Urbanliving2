@@ -75,7 +75,7 @@ class HomeController extends Controller
             $gal_img =  time().explode('.',$gallery_name[$key])[0].'.' . explode('/', explode(':',substr($gal,0,strpos(
                 $gal,';')))[1])[1];  
     
-            \Image::make($request['featured-image'])->save(public_path('uploads\gallery\\').$gal_img);
+            \Image::make($gal)->save(public_path('uploads\gallery\\').$gal_img);
             array_push($data,$gal_img);
         }
         $this->validate($request,[
@@ -165,10 +165,11 @@ class HomeController extends Controller
         $gallery_name=$request['gallery_name'];
         foreach($gallery as $key => $gal)
         {
+            echo $key;
             $gal_img =  time().explode('.',$gallery_name[$key])[0].'.' . explode('/', explode(':',substr($gal,0,strpos(
                 $gal,';')))[1])[1];  
     
-            \Image::make($request['featured-image'])->save(public_path('uploads\gallery\\').$gal_img);
+            \Image::make($gal)->save(public_path('uploads\gallery\\').$gal_img);
             array_push($data,$gal_img);
         }
          
