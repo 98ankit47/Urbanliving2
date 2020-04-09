@@ -18,7 +18,7 @@
   margin-left: 0px;
 }
 table {
-  font-family: arial, sans-serif;
+  font-family: Open Sans, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -48,7 +48,7 @@ td, th {
     }
 
     .add-new {
-      margin-left: 65%;
+      margin-left: 70%;
     }
 
     .tabsss {
@@ -70,43 +70,40 @@ td, th {
 
 <div class="w3-container">
 <br>
-<div class="row" style="font-family: Times New Roman;">
+<div class="row" style="font-family: Open Sans, sans-serif;">
 <div class="col-md-4 tabsss">
 <h4 style="color: black;"><strong>Home Detail</strong></h4>
 </div>
 <div class="col-md-2">
-<a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;" class="btn">Go Back</a>
+<a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4; font-family: Open Sans, sans-serif;" class="btn">Go Back</a>
 </div>
 </div><hr>
 <br>
 <div class="w3-row tabss">
     <a href="javascript:void(0)" class="tablinks active" onclick="openCity(event, 'homes');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Home</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Home</b></div>
     </a>
-    <a href="javascript:void(0)" class="tavlinks" onclick="openCity(event, 'features');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Features</b></div>
+    <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'features');">
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Features</b></div>
+    </a>
+    <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'gallery');">
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Gallery</b></div>
     </a>
   </div>
 
   <div id="homes" class="w3-container city active" style="display:block">
  <br><br>
  <div class="card">
- <div class="row card-details" style="font-family: Times New Roman;">
+ <div class="row card-details" style="font-family: Open Sans, sans-serif;">
    @foreach($homes as $home)
       <div class="col-md-6 card-img">
         <div class="card ">
-        <img class="card-img-top" src="/uploads/homes/{{$home->featured_image}}" alt="">
+        <img class="card-img-top" style="height: 350px;" src="/uploads/homes/{{$home->featured_image}}" alt="">
         </div>
       </div>
  
         <div class="col-md-6">
-
         <table>
-  <!-- <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr> -->
   <tr>
     <td><strong>NAME</strong></td>
     <td id=''>{{$home->title}}</td>
@@ -188,13 +185,29 @@ td, th {
       </div>
 </div><br>
 
-<div id="features" class="w3-container city" style="display:none; font-family: Times New Roman;"><br>
+
+<!-- Gallery -->
+
+
+<div id="gallery" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
+    <div class="col-md-4" >
+      <div class="card">
+        <img class="card-img-top" style="height:200px;" src="https://lh3.googleusercontent.com/proxy/RLb4sUdR-aNkcRhKxG_6k3cO3PNSCq6mVSsrdEypmuG_YrO2b__K1atKe3Be0b-uwCd-nMGU0mAdP_tK9ktmX3JFGarIJOI95CIsCPj6Rxn5vyuIKG0GEYtSWQKzGXwcI0Rqr7SgvWMXT72A5e3pnCOYhK8s9iwCvP7vit9MDQ">
+          <div class="card-body">
+            <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w-100">Delete</button>  
+          </div>
+      </div> 
+    </div>
+</div> 
+
+
+<div id="features" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
   <div class="container">
       <div class="col">
-      <a type="button" onclick="addFeature()" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn add-new">Add New Feature</a>
+      <a type="button" onclick="addFeature()" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn add-new">Add New Feature</a>
       </div>
     <br>
-    <div class="row">
+    <div class="row" style="text-align: center; font-family: Open Sans, sans-serif;">
                         <div class="col-md-4">
                             <span><strong>FEATURE IMAGE</strong></span><br>
                             <hr>
@@ -215,9 +228,12 @@ td, th {
 
     </div>
  
+   
+          
+
     <div class="modal fade" id="Editfeature" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content" style="font-family: Times New Roman;">
+        <div class="modal-content" style="font-family: Open Sans, sans-serif;">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Features</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -243,7 +259,7 @@ td, th {
             </div>
           </form>
           </div>
-          <div class="modal-footer" style="font-family: Times New Roman;">
+          <div class="modal-footer" style="font-family: Open Sans, sans-serif;">
             <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
             <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
           </div>
@@ -258,7 +274,7 @@ td, th {
 <!-- Modal -->
   <div class="modal fade" id="AddFeatureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content" style="font-family: Times New Roman;">
+      <div class="modal-content" style="font-family: Open Sans, sans-serif;">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Features</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -284,7 +300,7 @@ td, th {
           </form>
           </div>
         </form>
-        </div>
+        </div><br>
         <div class="modal-footer" style="font-family: Times New Roman;">
           <button type="button"  style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" data-dismiss="modal">Close</button>
           <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
@@ -296,13 +312,13 @@ td, th {
 </div>
 
 <!-- Modal -->
- <!--delet Moadal-->
+ <!--delet Modal-->
 
  
 
 <div class="modal fade bd-example-modal-xl" id="deleteFeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content" style="font-family: Times New Roman;">
+  <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
         <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -310,7 +326,7 @@ td, th {
         </button>
       </div>
       <div class="modal-body">
-        <div class="row">
+        <div class="row" style="margin-left:10px;">
           <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto" style="font-family: Times New Roman;">

@@ -3,6 +3,7 @@
 <style>
     .a_dash {
         margin-left:20px;
+        font-family: Open Sans, sans-serif;
     }
     .tabs {
         margin-left:20px;
@@ -43,9 +44,9 @@
 <div class="container tabs"> 
     <a class="tablink" type="button" data-toggle="modal" data-target="#logoModal">
       <div class="row">
-        <div class="column" style="width:98%;">
+        <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
           <strong>Change Logo</strong>
-          <p style="font-size: 14px; color: gray;">Change your Logo, and set new Logo.</p>  
+          <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Change your Logo, and set new Logo.</p>  
         </div>
         <div class="column" style="width:2%; padding-top: 20px;">
           <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
@@ -57,9 +58,9 @@
 <div class="container tabs"> 
     <a class="tablink" type="button" data-toggle="modal" data-target="#passwordModal">
       <div class="row">
-        <div class="column" style="width:98%;">
+        <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
           <strong>Change Password</strong>
-          <p style="font-size: 14px; color: gray;">Change your Password, and set new password.</p>  
+          <p style="font-size: 14px; color: gray;font-family: Open Sans, sans-serif;">Change your Password, and set new password.</p>  
         </div>
         <div class="column" style="width:2%; padding-top: 20px;">
           <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
@@ -71,7 +72,7 @@
 <!--Change Logo Modal-->
 <div class="modal fade" id="logoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"><strong>Add Logo</strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -88,8 +89,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+        <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
       </div>
     </form>
     </div>
@@ -101,7 +102,7 @@
 
 <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"><strong>Reset Password</strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -109,7 +110,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="details-containerr">
+        <form class="details-containerr" style="font-family: Open Sans, sans-serif;">
             <div class="form-group">
                 <label for="inputTitle">Current Password</label>
                 <input type="text" class="form-control" id="title" required>
@@ -124,8 +125,8 @@
             </div>
       </form>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+        <button type="button" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
       </div>
     </div>
   </div>

@@ -13,18 +13,18 @@
 
 <div class="container details-container" >
 <br>
-  <div class="row" style="font-family: Times New Roman;">
+  <div class="row" style="font-family: Open Sans, sans-serif;">
   <div class="col-md-4 hm-contain">
   <h4 style="color: black;"><strong>Home</strong></h4>
   </div>
   <div class="col-md-2">
-  <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;" class="btn">Go Back</a>
+  <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;font-family: Open Sans, sans-serif;" class="btn">Go Back</a>
   </div>
   </div><hr>
   <br>
   <div class="card">
   <br>
-<form class="details-containerr" style="font-family: Times New Roman;">
+<form class="details-containerr" style="font-family: Open Sans, sans-serif;">
   <div class="form-row "> 
     <div class="form-group col-md-4">
       <label for="inputTitle">Title</label>
@@ -100,12 +100,12 @@
       </select>
     </div>
   </div>
-  <div class="row" style="font-family: Times New Roman;">
+  <div class="row" style="font-family: Open Sans, sans-serif;">
     <div class="col-md-2">
-      <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" class="btn">Save</button>
+      <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save</button>
     </div>
     <div class="col-md-2">
-      <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Cancel</button>
+      <button style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Cancel</button>
     </div>
   </div>
 </form>

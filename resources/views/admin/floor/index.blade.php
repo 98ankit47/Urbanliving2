@@ -7,6 +7,7 @@
 <style>
  .floor-contain {
     margin-left:45%;
+    font-family: Open Sans, sans-serif;
 }
 /* .floor-card {
   margin-left: 30px;
@@ -77,14 +78,14 @@
             <h4><strong>Floor</strong></h4>
         </div>
         <div class="col-md-2">
-            <button onclick="addFloor()"  style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn btn-Success">Add New</button>
+            <button onclick="addFloor()"  style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn btn-Success">Add New</button>
         </div>
     </div>
 <hr>
 
-<div class="dropdown" style="width:100%; font-family: Times New Roman;">
+<div class="dropdown" style="width:100%; font-family: Open Sans, sans-serif;">
   <button onclick="myFunction()" class="dropbtn " style="height:30px; background-color:#009688;">Select Home&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></button>
-  <div id="myDropdown" class="dropdown-content" style="width:100%; font-family: Times New Roman;">
+  <div id="myDropdown" class="dropdown-content" style="width:100%; font-family: Open Sans, sans-serif;">
   </div>
 </div>
 
@@ -104,7 +105,7 @@
 
 <div class="modal fade" id="AddNewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="font-family: Times New Roman;">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add New Floor</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -181,7 +182,7 @@
 
   <div class="modal fade" id="EditFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content" style="font-family: Times New Roman;">
+      <div class="modal-content" style="font-family: Open Sans, sans-serif;">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Add New Floor</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -264,7 +265,7 @@
 
 <div class="modal fade" id="viewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="font-family: Times New Roman;">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">FLOOR DETAILS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -281,8 +282,8 @@
 </div>
 
 <div class="modal fade bd-example-modal-xl" id="deleteFloor" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
+  <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
         <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -290,8 +291,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="row">
-          <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
+        <div class="row" style="margin-left:10px;">
+          <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Home ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
             <button type="button"  style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>

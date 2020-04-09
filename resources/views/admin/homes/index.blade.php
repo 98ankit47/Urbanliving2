@@ -7,7 +7,7 @@
 }
 .homes-contain {
   margin-left: 45%;
-  font-family: "Times New Roman";
+  font-family: Open Sans, sans-serif;
 }
 </style>
 <div class="container">
@@ -28,17 +28,17 @@
   </div>
 
   <div class="modal fade bd-example-modal-xl" id="deleteHome" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 style="font-family: Times New Roman;">Delete Confirm Action</h5>
+          <h5 style="font-family: Open Sans, sans-serif;">Delete Confirm Action</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true"><i class="fa fa-times"></i></span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="row">
-            <h6 class="delete_heading" style="font-family: Times New Roman;">Are you sure, you want to delete this Home ?</h6>
+          <div class="row" style="margin-left:10px;">
+            <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Home ?</h6>
             <div class="clearfix"></div>
             <div class="m-auto">
               <button type="button" data-dismiss="modal" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100"> No </button>
