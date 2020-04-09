@@ -81,7 +81,7 @@ class CommonController extends Controller
                         <td>
                         <span><a class="a1 click_edit" title="Edit" href="#">
                             <i class="fa fa-edit"></i></a></span>&nbsp;&nbsp;
-                        <span><a href="#" class="a1" data-toggle="modal" data-target="#modal-delete" id=""><i class="fa fa-trash"></i></a></span>
+                        <span><a href="#" class="a1" data-toggle="modal" data-target="#modal-delete" ><i class="fa fa-trash"></i></a></span>
                         </td>
                     </tr>';
             
@@ -103,7 +103,7 @@ class CommonController extends Controller
     {
         $data ='';
         $gallery =[];
-        $homes= Homes::where('id',$id)->get('gallery')->first();
+        $homes= Homes::where('id',$id)->get()->first();
         $gallery=explode(',', $homes->gallery);
         foreach($gallery as $key=> $gal)
         {
@@ -111,12 +111,21 @@ class CommonController extends Controller
             <div class="card">
               <img class="card-img-top" style="height:200px;" src="/uploads/gallery/'.$gal.'">
                 <div class="card-body">
-                  <button data-id="'.$key.'" data-toggle="modal" data-target="#deleteGallery" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w-100">Delete</button>  
+                <button class="btn w-100" onclick="deleteGallery('.$key.','.$homes->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
                 </div>
             </div> 
           </div>';
         }
         return $data; 
+    }
+    public function deleteGallery($home_id,$id)
+    {
+        $homes = Homes::where('id',$home_id)->get()->first();
+        $data = explode(',', $homes->gallery);
+        unset($data[$id]);
+        Homes::where('id',$home_id)->update([
+            'gallery'=>implode(',', $data),    
+                ]);
     }
     
 }

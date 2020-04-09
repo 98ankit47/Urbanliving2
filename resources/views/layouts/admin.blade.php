@@ -118,7 +118,7 @@
                   </li>
               @endguest
           </ul>
-  </div>
+  
 
 
     <!-- SEARCH FORM -->
@@ -127,6 +127,7 @@
     <!-- Right navbar links -->
      
   </nav>
+</div>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
@@ -214,6 +215,8 @@
   <!-- Main Footer -->
   
 </div>
+
+
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
@@ -393,17 +396,7 @@ $('#ys-comm-btn').click(function()
 });
 });
 
-$('#deleteGallery').on('show.bs.modal', function (e) {
-
-var $trigger = $(e.relatedTarget);
-var id=$trigger.data('id');
-$('#ys-gal-btn').click(function()
-{
-  $('#deleteGallery').modal('hide');
-    // deleteCommunity(id);
-
-});
-});
+ 
 </script>
 
 @if(Route::currentRouteName() == 'edit-home')
@@ -620,6 +613,7 @@ $(document).ready(function() {
           }   
         });
       }
+      
       loadGalleryList();
       function loadGalleryList(){
         $.ajax({
@@ -630,15 +624,26 @@ $(document).ready(function() {
           }   
         });
       }
-    function deleteFeature(id)
+
+      function deleteGallery(id,home_id)
     {
       $.ajax({
-              url: APP_URL + '/api/admin/home-feature/'+ id,
+              url: APP_URL + '/api/admin/home-gallery/'+ home_id +'/'+id,
               type: 'DELETE'
             });
-            loadFeatureList();    
-            $('#danger').html('Feature deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+            loadGalleryList();  
+            $('#danger').html('Gallery Image deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
     }
+
+      function deleteFeature(id)
+      {
+        $.ajax({
+                url: APP_URL + '/api/admin/home-feature/'+ id,
+                type: 'DELETE'
+              });
+              loadFeatureList();    
+              $('#danger').html('Feature deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+      }
 
     function addFeature(id)
       {      

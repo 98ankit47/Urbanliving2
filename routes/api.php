@@ -54,5 +54,6 @@ Route::post('admin/logo','CommonController@addLogo');
 
 
 Route::get('admin/home-gallery/{id}','CommonController@showGallery');
+Route::delete('admin/home-gallery/{home_id}/{id}','CommonController@deleteGallery');
 
 
