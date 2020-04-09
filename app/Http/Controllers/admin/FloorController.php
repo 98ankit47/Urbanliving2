@@ -110,7 +110,7 @@ class FloorController extends Controller
       $components = FloorComponent::where('floor_id',$id)->where('type',$type)->get();
       foreach($components as $ky => $component )
       {
-          $data .='<div class="col-md-4" style="font-family: Times New Roman;">
+          $data .='<div class="col-md-4" style="font-family: Open Sans, sans-serif;">
           <div class="card floor-card">
             <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="/uploads/floorcomponent/'.$component->image.'" alt="">
               <div class="card-body">
@@ -143,7 +143,7 @@ class FloorController extends Controller
         $dining = "dining";
         foreach($floors as $ky => $floor )
         {
-            $data .='<div class="row" style="font-family: Times New Roman;">
+            $data .='<div class="row" style="font-family: Open Sans, sans-serif;">
             <div class="col-md-6">
               <span><strong>NO. OF BEDROOMS   :</strong></span>
             </div>
@@ -155,7 +155,7 @@ class FloorController extends Controller
             </div>
           </div><br>
           
-          <div class="row" style="font-family: Times New Roman;">
+          <div class="row" style="font-family: Open Sans, sans-serif;">
             <div class="col-md-6">
               <span><strong>NO. OF BATHROOMS   :</strong></span>
             </div>
@@ -167,7 +167,7 @@ class FloorController extends Controller
             </div>
           </div><br>
         
-          <div class="row" style="font-family: Times New Roman;">
+          <div class="row" style="font-family: Open Sans, sans-serif;">
             <div class="col-md-6">
               <span><strong>NO. OF GARAGE   :</strong></span>
             </div>
@@ -179,7 +179,7 @@ class FloorController extends Controller
             </div>
           </div>
           <br>
-          <div class="row" style="font-family: Times New Roman;">
+          <div class="row" style="font-family: Open Sans, sans-serif;">
             <div class="col-md-6">
               <span><strong>NO. OF DINING   :</strong></span>
             </div>
@@ -191,7 +191,7 @@ class FloorController extends Controller
             </div>
           </div>
           <br>
-          <div class="row" style="font-family: Times New Roman;">
+          <div class="row" style="font-family: Open Sans, sans-serif;">
             <div class="col-md-6">
               <span><strong>NO. OF KITCHEN :</strong></span>
             </div>
@@ -213,7 +213,7 @@ class FloorController extends Controller
         foreach($floors as $ky => $floor )
         {
             $data .='
-            <div class="col-md-4" style="font-family: Times New Roman;">
+            <div class="col-md-4" style="font-family: Open Sans, sans-serif;">
               <div class="card">
                 <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4>
                 <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">

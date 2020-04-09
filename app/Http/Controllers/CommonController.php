@@ -28,13 +28,13 @@ class CommonController extends Controller
         $features= Features::where('home_id',$id)->get();
         foreach($features as $feature)
         {
-            $data.=' <div class="card">
-                    <div class="row" style="margin-left:5px; margin-right:5px; margin-top:15px; margin-bottom:15px;">
+            $data.=' <div class="card" style="text-align: center;">
+                    <div class="row" style=" margin-top:10px; margin-bottom:10px;">
                         <div class="col-md-4">
-                        <img class="card-img-top" style="height:150px; width:200px;" src="/uploads/homeFeature/'.$feature->image.'">
+                        <img class="card-img-top" style="height:150px; width:290px;" src="/uploads/homeFeature/'.$feature->image.'">
                         </div> 
                         <div class="col-md-4">
-                        <span class="card-title" style="font-size: 20px;">'.$feature->title.'</span>
+                        <p class="title" style="font-size: 20px; margin-top:50px;">'.$feature->title.'</p>
                         </div>
                         <div class="col-md-4">
                         <div class="wrapper" style="margin-top:50px;">

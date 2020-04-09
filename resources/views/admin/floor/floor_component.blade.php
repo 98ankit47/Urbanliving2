@@ -29,10 +29,10 @@
 <br>
     <div class="row" style="font-family: Times New Roman;">
         <div class="col-md-2">
-          <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4;" class="btn">Back</a> 
+          <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4;font-family: Open Sans, sans-serif;" class="btn">Back</a> 
         </div>
         <div class="col-md-8 floor-contain">
-            <h4 style="text-align: center"><strong>Floor Component</strong></h4>
+            <h4 style="text-align: center; font-family: Open Sans, sans-serif;"><strong>Floor Component</strong></h4>
         </div>
         <div class="col-md-2">
         <button onclick="addFloorComponent()" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn">Add New</button> 
@@ -50,7 +50,7 @@
 
 <div class="modal fade" id="AddNewFloorComponent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="font-family: Times New Roman;">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Floor Component</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -89,7 +89,7 @@
 
   <div class="modal fade" id="editfloorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content" style="font-family: Times New Roman;">
+      <div class="modal-content" style="font-family: Open Sans, sans-serif;">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Floor Component</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -113,7 +113,7 @@
      </div>
   
     </div>
-    <div class="modal-footer" style="font-family: Times New Roman;">
+    <div class="modal-footer">
       <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
       <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
     </div>
@@ -124,7 +124,7 @@
     </div>
 
   <div class="modal fade bd-example-modal-xl" id="deleteFloorComponent" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content" style="font-family: Times New Roman;">
         <div class="modal-header">
           <h5>Delete Confirm Action</h5>
@@ -133,10 +133,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="row">
-            <h6 class="delete_heading">Are you sure, you want to delete this Home ?</h6>
+          <div class="row" style="margin-left:10px;">
+            <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Home ?</h6>
             <div class="clearfix"></div>
-            <div class="m-auto" style="font-family: Times New Roman;">
+            <div class="m-auto">
               <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
               <button type="submit" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-floor-component-btn"> Yes</button>
              </div>  
