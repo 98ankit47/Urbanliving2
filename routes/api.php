@@ -53,3 +53,6 @@ Route::get('admin/logo','CommonController@logo');
 Route::post('admin/logo','CommonController@addLogo');
 
 
+Route::get('admin/home-gallery/{id}','CommonController@showGallery');
+
+

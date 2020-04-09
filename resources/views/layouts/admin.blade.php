@@ -87,13 +87,6 @@
           <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Left Side Of Navbar -->
-          <ul class="navbar-nav mr-auto">
-
-          </ul>
-
-          <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               @guest
@@ -125,7 +118,6 @@
                   </li>
               @endguest
           </ul>
-      </div>
   </div>
 
 
@@ -613,6 +605,15 @@ $(document).ready(function() {
           url: APP_URL+'/api/admin/home-feature/'+id,
           success: function(result){   
             $('#feature_list').html(result);
+          }   
+        });
+      }
+      loadGalleryList();
+      function loadGalleryList(){
+        $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/home-gallery/'+id,
+          success: function(result){   
           }   
         });
       }

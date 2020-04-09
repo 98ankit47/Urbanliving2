@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\status;
 use App\Models\Features;
 use App\Models\Logos;
+use App\Models\Homes;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -97,6 +98,17 @@ class CommonController extends Controller
         Logos::where('id',1)->update([
              'image'=>$name
         ]);
+    }
+    public function showGallery(Request $request ,$id)
+    {
+        $data =[];
+        $homes= Homes::where('id',$id)->get('gallery')->first();
+        $data=explode(',', $homes->gallery);
+        foreach($data as $feature)
+        {
+            echo "----".$feature;
+        }
+        return ; 
     }
     
 }
