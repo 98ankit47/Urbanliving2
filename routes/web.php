@@ -73,9 +73,9 @@ Route::get('admin/floor-component-gallery/{type}/{id}', function () {
 
 // USER FRONT-END
 
-Route::get('/user',function(){
+Route::get('/',function(){
     return view('user.index');
-})->middleware('auth'); 
+}); 
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 
@@ -84,3 +84,8 @@ Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('home');
+
+
+//user module
+Route::get('/search','user\HomeController@search');
+Route::get('/all','user\HomeController@AllHome');
