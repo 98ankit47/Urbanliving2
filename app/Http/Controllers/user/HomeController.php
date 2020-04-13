@@ -21,20 +21,23 @@ class HomeController extends Controller
                 $rel=HomeCommunity::where('community_id',$community->id)->get()->first();
                 if(HomeCommunity::where('community_id',$community->id)->get()->count()!=0)
                 {
-                     return Homes::where('id',$rel->home_id)->get('title');
+                     $home      = Homes::where('id',$rel->home_id)->get();
+                     return view('user.homeDetail.index')->with('homes',$home);
                 }
             }
             return "No Record Found";
          }
          else
          {
-           return Homes::where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get('title');
+            $home=Homes::where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get();
+            return view('user.homeDetail.index')->with('homes',$home);
          }
 
     }
 
     public function AllHome()
     {
-        return Homes::all();
+        $home = Homes::all();
+        return view('user.homeDetail.index')->with('homes',$home);
     }
 }

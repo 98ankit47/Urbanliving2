@@ -76,6 +76,9 @@ Route::get('admin/floor-component-gallery/{type}/{id}', function () {
 Route::get('/',function(){
     return view('user.index');
 }); 
+Route::get('/homes',function(){
+    return view('user.homeDetail.index');
+});
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 
