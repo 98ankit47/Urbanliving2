@@ -31,11 +31,11 @@ class CommunityController extends Controller
                  <div class="row">
                  <div class="col-md-1"></div>
                  <div class ="col-md-4">
-                 <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</a>    
+                 <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">Edit</a>    
                 </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-1"></div>
                 <div class ="col-md-4">
-                 <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn">Delete</button>
+                 <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w-100">Delete</button>
                   </div>
                   </div>   
                 </div>

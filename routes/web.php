@@ -71,6 +71,12 @@ Route::get('admin/floor-component-gallery/{type}/{id}', function () {
     return view('admin.floor.floor_component');
 })->name('FloorComponent')->middleware('auth');
 
+// USER FRONT-END
+
+Route::get('/user',function(){
+    return view('user.index');
+})->middleware('auth'); 
+
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 
 
