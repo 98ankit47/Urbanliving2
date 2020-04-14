@@ -58,7 +58,6 @@ Route::delete('admin/home-gallery/{home_id}/{id}','CommonController@deleteGaller
 
 
 // User Module
-Route::get('/search','user\HomeController@search');
-Route::get('/all','user\HomeController@AllHome');
+Route::post('enquiry','user\HomeController@schedule');
 
 

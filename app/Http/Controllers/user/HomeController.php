@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 use App\Models\Homes;
 use App\Models\Communities;
 use App\Models\HomeCommunity;
+use App\Models\Enquiry;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -46,5 +47,28 @@ class HomeController extends Controller
         $id = $request['id'];
         $home= Homes::with('communities')->with('feature')->where('id',$request['id'])->get();
         return view('user.homeDetail.singlehome')->with('homes',$home);
+    }
+
+    public function schedule(Request $request)
+    {
+        $this->validate($request,[
+            'date'=>'required',
+            'time'=>'required',
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'message'=>'required',
+            ]);
+
+        Enquiry::create([
+            'date'=>$request['date'],
+            'time'=>$request['time'],
+            'name'=>$request['name'],
+            'email'=>$request['email'],
+            'phone'=>$request['phone'],
+            'message'=>$request['message'],
+        ]);
+        return "ankit";
+
     }
 }

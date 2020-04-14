@@ -23,7 +23,7 @@
 
 <div class="row" id="overview">
         <div class="col-md-8">
-            <div class="card" style="height:45rem; text-align:center;">
+            <div class="card" style="height:47rem; text-align:center;">
                 <div class="row inner">
                     <div class="col-md-8">      
                         <?php
@@ -64,18 +64,17 @@
             </div>
         </div>
         <div class="col-md-4">
-        <div class="card" style="height:45rem;">
+        <div class="card" style="height:47rem;">
             <div class="card-body" style="text-align:center;">
                 <h2>SCHEDULE TOUR</h2><br><br>
-                <form class="details-containerr" style="font-family: Open Sans, sans-serif; text-align:left;">
-                 
+                <form id="enquiry" style="font-family: Open Sans, sans-serif; text-align:left;">                
                         <div class="form-group">
                             <label for="inputTitle">Date</label>
-                            <input type="text" class="form-control" id="date" required>
+                            <input type="date" class="form-control" id="date" required>
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Time</label>
-                            <input type="text" class="form-control" id="time" required>
+                            <input type="time" class="form-control" id="time" required>
                         </div>
                         <div class="form-group">
                             <label for="inputTitle">Name</label>
@@ -83,17 +82,17 @@
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Email</label>
-                            <input type="text" class="form-control" id="email" required>
+                            <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="form-group">
                             <label for="inputTitle">Phone No.</label>
-                            <input type="text" class="form-control" id="number" required>
+                            <input type="text" class="form-control" id="phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="inputDescription">Message</label>
-                            <input type="text" class="form-control" id="message" required>
+                            <label for="inputDescription">Message</label><br>
+                            <textarea name="message" id="message" cols="41" rows="2" class="form-control"></textarea>
                         </div><br>
-                        <a href="#" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">Schedule Tour</a> 
+                        <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">Schedule Tour</button> 
                 </form>
             </div>
         </div>
@@ -102,39 +101,48 @@
 
         <!--FLOOR PLAN-->
 
-        <div class="row" id="floor-plan">
-        <div class="col-md-12">
-            <div class="card" style="height:45rem; text-align:center;">
-                <div class="row inner">
-                    <div class="col-md-4">      
-                        <div class="card" style="height:45rem;">
-                            <div class="card-body" style="text-align:center;">
-                                <h3>FLOOR PLANS</h3><br><br>
-                                <div class="card" style="height:35rem;">
-                                    <div class="card-body">
-                                        <img class="mySlidess" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="height:32.5rem; width:18rem;">
+        <!--FLOOR PLAN-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="height:45rem; text-align:center;">
+                    <div class="row inner">
+                        <div class="col-md-4">      
+                            <div class="card" style="height:45rem;">
+                                <div class="card-body" style="text-align:center;">
+                                    <div class="card" style="height:18rem;">
+                                        <div class="card-body">
+                                            <h3>FLOOR PLANS</h3><br><br>
+                                            <!-- <img class="mySlidess" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="height:14rem; width:18rem;"> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" style="text-align:center;">
+                                    <div class="card" style="height:23rem;">
+                                        <div class="card-body">
+                                            <img class="mySlidess" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="height:20.5rem; width:18rem;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-8"><br><br><br><br><br>
-                      <div class="row">
-                        <div class="col-md-4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)">
+                        <div class="col-md-8"><br><br><br><br><br>
+                          <div class="row">
+                            <div class="col-md-4">
+                                <img class="demo w3-opacity w3-hover-opacity-off" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)">
+                            </div>
+                            <div class="col-md-4">
+                                <img class="demo w3-opacity w3-hover-opacity-off" src="https://i.pinimg.com/originals/a5/67/88/a56788472a77f38b12204034e4aeccde.jpg" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(2)">
+                            </div>
+                            <div class="col-md-4">
+                                <img class="demo w3-opacity w3-hover-opacity-off" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSszWIHyRxlIi_mnuouIChSWfDUtvBc-ycaiMMbZykdceMlERAy&usqp=CAU" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(3)">
+                            </div>
+                          </div>
                         </div>
-                        <div class="col-md-4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="https://i.pinimg.com/originals/a5/67/88/a56788472a77f38b12204034e4aeccde.jpg" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(2)">
-                        </div>
-                        <div class="col-md-4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSszWIHyRxlIi_mnuouIChSWfDUtvBc-ycaiMMbZykdceMlERAy&usqp=CAU" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(3)">
-                        </div>
-                      </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
+            </div>
 <br><br><br>
         <!--FEATURES-->
 

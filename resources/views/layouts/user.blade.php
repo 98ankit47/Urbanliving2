@@ -3,9 +3,9 @@
   <title>Urban Living</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -63,7 +63,35 @@
   @yield('content')
 </div>
 <script>
-    
+   
+        var APP_URL = "{{ url('/') }}";
+         $('#enquiry').on('submit', function (e) {
+           var email,name,time,date,message,phone;
+           e.preventDefault();
+               email            =  document.getElementById("email").value;         
+               name      =  document.getElementById("name").value;         
+               time          =  document.getElementById("time").value;         
+               date         =  document.getElementById("date").value;         
+               message           =  document.getElementById("message").value;         
+               phone          =  document.getElementById("phone").value;         
+               $.ajax({
+                 type: 'post',
+                 url: '/api/enquiry',
+                 data:{
+                   'email'             : email,
+                   'date'              : date,
+                   'time'              : time,
+                   'phone'             : phone,
+                   'name'              : name,
+                   'message'           : message,
+                 },
+                 success: function ( ) {
+                   $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                 }
+               });
+
+         });
+ 
 </script>
 </body>
 
