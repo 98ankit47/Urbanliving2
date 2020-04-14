@@ -80,6 +80,10 @@ Route::get('/homes',function(){
     return view('user.homeDetail.index');
 });
 
+Route::get('/developmentDetail',function(){
+    return view('user.developmentDetail.index');
+});
+
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 
 
