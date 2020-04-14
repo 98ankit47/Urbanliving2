@@ -12,7 +12,7 @@
         <div class="col-md-6">
         <div class="card" style="width: 32rem; height:20rem;">
             <div class="card-body" style="text-align:center;">
-                <h4>CLEVER</h4><br><br>
+                <h4>{{$home->communities->communities->title}}</h4><br><br>
                 <span>$229,990</span><br>
                 <span>{{$home->title}}</span><br><br><br><br>
                 <div class="row">
