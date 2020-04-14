@@ -21,7 +21,7 @@ class HomeController extends Controller
                 $rel=HomeCommunity::where('community_id',$community->id)->get()->first();
                 if(HomeCommunity::where('community_id',$community->id)->get()->count()!=0)
                 {
-                     $home      = Homes::where('id',$rel->home_id)->get();
+                     $home      = Homes::with('communities')->where('id',$rel->home_id)->get();
                      return view('user.homeDetail.index')->with('homes',$home);
                 }
             }
@@ -29,7 +29,7 @@ class HomeController extends Controller
          }
          else
          {
-            $home=Homes::where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get();
+            $home=Homes::with('communities')->where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get();
             return view('user.homeDetail.index')->with('homes',$home);
          }
 
@@ -39,5 +39,12 @@ class HomeController extends Controller
     {
         $home= Homes::with('communities')->get();
         return view('user.homeDetail.index')->with('homes',$home);
+    }
+
+    public function single(Request $request)
+    {
+        $id = $request['id'];
+        $home= Homes::with('communities')->with('feature')->where('id',$request['id'])->get();
+        return view('user.homeDetail.singlehome')->with('homes',$home);
     }
 }

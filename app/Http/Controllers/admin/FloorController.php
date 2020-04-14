@@ -208,7 +208,7 @@ class FloorController extends Controller
     
     public function showHomeFloor($id)
     {
-        $floors = Floors::where('home_id',$id)->get();
+        $floors = Floors::where('home_id',$id)->orderBy('floor_no')-> get();
         $data ='';
         foreach($floors as $ky => $floor )
         {

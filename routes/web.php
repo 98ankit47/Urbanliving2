@@ -80,9 +80,8 @@ Route::get('/homes',function(){
     return view('user.homeDetail.index');
 });
 
-Route::get('/developmentDetail',function(){
-    return view('user.developmentDetail.index');
-});
+Route::get('/development-Detail/{id}','user\HomeController@single');
+ 
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 
@@ -95,4 +94,4 @@ Route::get('/admin', 'HomeController@index')->name('home');
 
 //user module
 Route::get('/search','user\HomeController@search');
-Route::get('/all','user\HomeController@AllHome');
+Route::get('/all-development','user\HomeController@AllHome');

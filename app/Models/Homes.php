@@ -11,4 +11,7 @@ class Homes extends Model
     public function communities(){
     	return $this->hasOne('App\Models\HomeCommunity','home_id')->with('communities');
     }
+    public function feature(){
+    	return $this->hasMany('App\Models\Features','home_id')->with('homes');
+    }
 }

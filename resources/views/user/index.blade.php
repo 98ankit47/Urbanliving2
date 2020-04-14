@@ -12,7 +12,7 @@
             </form>
           </div> 
         </div>
-      <a href="/all" class="btn btn-outline-info">All Development</a>
+      <a href="/all-development" class="btn btn-outline-info">All Development</a>
 
       </div>
     </div>
