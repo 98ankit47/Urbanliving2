@@ -23,7 +23,7 @@
 
 <div class="row" id="overview">
         <div class="col-md-8">
-            <div class="card" style="height:47rem; text-align:center;">
+            <div class="card" style="height:46rem; text-align:center;">
                 <div class="row inner">
                     <div class="col-md-8">      
                         <?php
@@ -64,9 +64,9 @@
             </div>
         </div>
         <div class="col-md-4">
-        <div class="card" style="height:47rem;">
+        <div class="card" style="height:46rem;">
             <div class="card-body" style="text-align:center;">
-                <h2>SCHEDULE TOUR</h2><br><br>
+                <h2>SCHEDULE TOUR</h2><br>
                 <form id="enquiry" style="font-family: Open Sans, sans-serif; text-align:left;">                
                         <div class="form-group">
                             <label for="inputTitle">Date</label>
@@ -98,6 +98,8 @@
         </div>
         </div>
         </div> <br><br><br>
+        <div id="success" style="text-align: center;height:150px;"></div>
+
 
         <!--FLOOR PLAN-->
 
@@ -128,15 +130,13 @@
                         </div>
                         <div class="col-md-8"><br><br><br><br><br>
                           <div class="row">
-                            <div class="col-md-4">
-                                <img class="demo w3-opacity w3-hover-opacity-off" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)">
-                            </div>
-                            <div class="col-md-4">
-                                <img class="demo w3-opacity w3-hover-opacity-off" src="https://i.pinimg.com/originals/a5/67/88/a56788472a77f38b12204034e4aeccde.jpg" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(2)">
-                            </div>
-                            <div class="col-md-4">
-                                <img class="demo w3-opacity w3-hover-opacity-off" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSszWIHyRxlIi_mnuouIChSWfDUtvBc-ycaiMMbZykdceMlERAy&usqp=CAU" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(3)">
-                            </div>
+                            @foreach($homes as $home)
+                                @foreach($home->floor as $floor)
+                                    <div class="col-md-6">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="/uploads/floor/{{$floor->image}}" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)">
+                                    </div>
+                                @endforeach
+                            @endforeach
                           </div>
                         </div>
                     </div>

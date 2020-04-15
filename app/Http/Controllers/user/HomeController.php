@@ -45,7 +45,7 @@ class HomeController extends Controller
     public function single(Request $request)
     {
         $id = $request['id'];
-        $home= Homes::with('communities')->with('feature')->where('id',$request['id'])->get();
+        $home= Homes::with('communities')->with('floor')->with('feature')->where('id',$request['id'])->get();
         return view('user.homeDetail.singlehome')->with('homes',$home);
     }
 

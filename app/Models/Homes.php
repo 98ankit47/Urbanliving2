@@ -14,4 +14,8 @@ class Homes extends Model
     public function feature(){
     	return $this->hasMany('App\Models\Features','home_id')->with('homes');
     }
+
+    public function floor(){
+    	return $this->hasMany('App\Models\Floors','home_id')->with('homes');
+    }
 }

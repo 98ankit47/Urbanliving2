@@ -8,4 +8,9 @@ class Floors extends Model
 {
     protected $fillable = ['home_id','floor_no','bedroom','bathroom','garage','dining','kitchen','image'];
     
+    public function homes()
+    {
+        return $this->belongsTo('App\Models\Homes');
+    }
+    
 }
