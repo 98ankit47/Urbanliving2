@@ -88,7 +88,7 @@ Route::get('/homes',function(){
     return view('user.homeDetail.index');
 });
 
-Route::get('/development-Detail/{id}','user\HomeController@single');
+Route::get('/development-Detail/{id}','user\HomeController@single')->name('developmentDetail');
  
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');

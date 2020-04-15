@@ -61,8 +61,8 @@
 <div class="container">
   @yield('content')
 </div>
-<script>
-   
+@if(Route::currentRouteName() == 'developmentDetail')
+  <script>   
         var APP_URL = "{{ url('/') }}";
          $('#enquiry').on('submit', function (e) {
            var email,name,time,date,message,phone;
@@ -90,8 +90,24 @@
                });
 
          });
+         function floorDetail(id)
+         {
+           alert();
+            var APP_URL = "{{ url('/') }}";
+            loadFloorDetail();
+            function loadFloorDetail(){
+                $.ajax({
+                type: 'GET',
+                url: APP_URL+'/api/admin/floorDetail/'+id,
+                  success: function(result){
+                  $('#floorDetail').html(result);
+                  }   
+               });
+              } 
+         }
  
-</script>
+  </script>
+@endif
 </body>
 
 </html>

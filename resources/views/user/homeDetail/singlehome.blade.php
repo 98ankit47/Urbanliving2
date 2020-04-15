@@ -122,46 +122,10 @@
                                 <div class="card-body" style="text-align:center;">
                                     <div class="card" style="height:19rem;">
                                         <div class="card-body">
-                                            <h4>FLOOR PLANS</h4>
-
                                             <!--First Floor-->
-                                            <div id="firstFloor" class="container first-contain" style="text-align: left;">
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <span>Bedrooms</span>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <a type="button" onClick="firstBed_fun()" class="btn btn-primary"> 1 </a>
-                                                    <a type="button" class="btn btn-primary"> 2 </a>
-                                                    <a type="button" class="btn btn-primary"> 3 </a>
-                                                </div>
-                                            </div>  <br>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <span>Bathrooms</span>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
-                                                    <a type="button" class="btn btn-primary" href=""> 2 </a>
-                                                </div>
-                                            </div>  <br>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <span>Kitchens</span>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
-                                                </div>
-                                            </div>  <br>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <span>Garage</span>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
-                                                </div>
-                                            </div>    
-                                        </div>
+                                            <div id="floorDetail" class="container" style="text-align: left;">
+                                             
+                                            </div>
                             <!-- First Floor Ends -->
 
                                         </div>
@@ -183,8 +147,9 @@
                                 $count=12/($home->floor->count());
                             ?>
                                 @foreach($home->floor as $floor)
-                          <div class="col-md-{{$count}}">
-                          <a type="button" onClick="floor_fun()"><img class="demo w3-opacity w3-hover-opacity-off" id="floor{{$floor->id}}" src="/uploads/floor/{{$floor->image}}" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)"></a>
+                                    <div class="col-md-{{$count}}">
+                                        <a type="button" onclick="floorDetail({{$floor->id}})"><img class="demo w3-opacity w3-hover-opacity-off" id="floor{{$floor->id}}" src="/uploads/floor/{{$floor->image}}" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)"></a>
+                                    <h5 class="text-align:center">Floor No {{$floor->floor_no}}</h5>
                                     </div>
                                 @endforeach
                             @endforeach
@@ -257,30 +222,7 @@ function showDivs(n) {
 }
 
 </script>
-
-{{-- <script>
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlidess");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " w3-opacity-off";
-}
-</script> --}}
-
-<!--First Floor script-->
+ 
 <script> 
        
         function show(divId) { 
@@ -289,12 +231,10 @@ function showDivs(n) {
   
         function floor_fun() { 
             show('firstFloor'); 
-            // $('#GFG_DOWN').text("DIV Box is visible."); 
         } 
 
         function firstBed_fun() { 
            show('floor_componentImage'); 
-           // $('#GFG_DOWN').text("DIV Box is visible."); 
        } 
     </script> 
 

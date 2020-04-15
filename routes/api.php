@@ -61,6 +61,9 @@ Route::get('admin/enquiry/','CommonController@enquiry');
 Route::get('admin/enquiry/{id}','CommonController@enquiryDetail');
 
 
+Route::get('admin/floorDetail/{id}','CommonController@userFloor');
+
+
 
 // User Module
 Route::post('enquiry','user\HomeController@schedule');
