@@ -6,6 +6,14 @@
 .devnav {
     margin-left:25%;
 }
+
+.first-contain {
+    display: none;
+}
+
+.floor-image {
+    display: none;
+}
 </style>
 <?php
 ?>
@@ -112,16 +120,56 @@
                         <div class="col-md-4">      
                             <div class="card" style="height:45rem;">
                                 <div class="card-body" style="text-align:center;">
-                                    <div class="card" style="height:18rem;">
+                                    <div class="card" style="height:19rem;">
                                         <div class="card-body">
-                                            <h3>FLOOR PLANS</h3><br><br>
-                                            <!-- <img class="mySlidess" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="height:14rem; width:18rem;"> -->
+                                            <h4>FLOOR PLANS</h4>
+
+                                            <!--First Floor-->
+                                            <div id="firstFloor" class="container first-contain" style="text-align: left;">
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <span>Bedrooms</span>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <a type="button" onClick="firstBed_fun()" class="btn btn-primary"> 1 </a>
+                                                    <a type="button" class="btn btn-primary"> 2 </a>
+                                                    <a type="button" class="btn btn-primary"> 3 </a>
+                                                </div>
+                                            </div>  <br>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <span>Bathrooms</span>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
+                                                    <a type="button" class="btn btn-primary" href=""> 2 </a>
+                                                </div>
+                                            </div>  <br>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <span>Kitchens</span>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
+                                                </div>
+                                            </div>  <br>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <span>Garage</span>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
+                                                </div>
+                                            </div>    
+                                        </div>
+                            <!-- First Floor Ends -->
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-body" style="text-align:center;">
                                     <div class="card" style="height:23rem;">
-                                        <div class="card-body">
+                                        <div class="card-body floor-image" id="floor_componentImage">
                                             <img class="mySlidess" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="height:20.5rem; width:18rem;">
                                         </div>
                                     </div>
@@ -136,7 +184,7 @@
                             ?>
                                 @foreach($home->floor as $floor)
                           <div class="col-md-{{$count}}">
-                          <img class="demo w3-opacity w3-hover-opacity-off" id="floor{{$floor->id}}" src="/uploads/floor/{{$floor->image}}" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)">
+                          <a type="button" onClick="floor_fun()"><img class="demo w3-opacity w3-hover-opacity-off" id="floor{{$floor->id}}" src="/uploads/floor/{{$floor->image}}" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)"></a>
                                     </div>
                                 @endforeach
                             @endforeach
@@ -175,6 +223,8 @@
                 @endforeach
             @endforeach
  
+
+            
 
 <br><br><br>
 
@@ -229,4 +279,25 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-opacity-off";
 }
 </script> --}}
+
+<!--First Floor script-->
+<script> 
+       
+        function show(divId) { 
+            $("#" + divId).show(); 
+        } 
+  
+        function floor_fun() { 
+            show('firstFloor'); 
+            // $('#GFG_DOWN').text("DIV Box is visible."); 
+        } 
+
+        function firstBed_fun() { 
+           show('floor_componentImage'); 
+           // $('#GFG_DOWN').text("DIV Box is visible."); 
+       } 
+    </script> 
+
+ 
+
 @endsection
