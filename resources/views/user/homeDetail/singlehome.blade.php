@@ -131,9 +131,12 @@
                         <div class="col-md-8"><br><br><br><br><br>
                           <div class="row">
                             @foreach($homes as $home)
+                            <?php  
+                                $count=12/($home->floor->count());
+                            ?>
                                 @foreach($home->floor as $floor)
-                                    <div class="col-md-6">
-                                    <img class="demo w3-opacity w3-hover-opacity-off" src="/uploads/floor/{{$floor->image}}" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)">
+                          <div class="col-md-{{$count}}">
+                          <img class="demo w3-opacity w3-hover-opacity-off" id="floor{{$floor->id}}" src="/uploads/floor/{{$floor->image}}" style="width:100%; height: 32.5rem;cursor:pointer" onclick="currentDiv(1)">
                                     </div>
                                 @endforeach
                             @endforeach

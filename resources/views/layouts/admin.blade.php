@@ -900,14 +900,16 @@ $(document).ready(function() {
             });
             $(function () {
               $('#ComponentAddForm').on('submit', function (e) {
-                var name;
+                var name,cno;
                 e.preventDefault();
                     name      =  document.getElementById("name").value;         
+                    cno      =  document.getElementById("cno").value;         
                     $.ajax({
                       type: 'post',
                       url: '/api/admin/floor-component/',
                       data:{
                         'name'                : name,
+                        'cno'                 : cno,
                         'floor_id'            : id,
                         'type'                : type,
                         'image'               : image,
@@ -935,6 +937,7 @@ $(document).ready(function() {
           success: function(result){    
             $('#editfloorModal').modal('show');
               document.getElementById("edit_name").value = result.name;         
+              document.getElementById("edit_cno").value = result.component_no;         
           }
           });    
             $('input[type=file]').on('change',function(e){
@@ -953,12 +956,14 @@ $(document).ready(function() {
               $('#EditComponentForm').on('submit', function (e) {
                 e.preventDefault();
                       name =  document.getElementById("edit_name").value; 
+                      cno =  document.getElementById("edit_cno").value; 
                     $.ajax({
                       type: 'post',
                       url: '/api/admin/floor-component/'+fid,
                       data:{
                         'name'                : name,
                         'floor_id'            : id,
+                        'cno'                 : cno,
                         'type'                : type,
                         'image'               : image,
                         'image-name'          : image_name,
@@ -1159,6 +1164,41 @@ $(document).ready(function() {
 </script>
 @endif
 
+@if(Route::currentRouteName() == 'enquiry')
+  <script>
+      loadEnquiryList();
+      function loadEnquiryList(){
+    $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/enquiry',
+          success: function(result){
+          $('#enquiry').html(result);
+          }   
+      });
+  } 
+  </script>
+@endif
+
+
+
+@if(Route::currentRouteName() == 'enquiry_detail')
+  <script>
+    $(document).ready(function() {
+      var APP_URL = "{{ url('/') }}";
+      var id = window.location.href.split('/').pop();
+      loadEnquirydetail();
+      function loadEnquirydetail(){
+    $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/enquiry/'+id,
+          success: function(result){
+          $('#enquiry').html(result);
+          }   
+      });
+  }
+    });
+  </script>
+@endif
 
  @if(Route::currentRouteName() == 'communities')
   <script>

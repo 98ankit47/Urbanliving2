@@ -5,6 +5,7 @@ use App\Models\status;
 use App\Models\Features;
 use App\Models\Logos;
 use App\Models\Homes;
+use App\Models\Enquiry;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -126,6 +127,57 @@ class CommonController extends Controller
         Homes::where('id',$home_id)->update([
             'gallery'=>implode(',', $data),    
                 ]);
+    }
+
+    public function enquiry()
+    {
+        $data ='';
+        $enquiries= Enquiry::orderBy('created_at','desc')->get();
+        foreach($enquiries as $key=> $enquiry)
+        {
+            $home= homes::where('id',$enquiry->home_id)->get()->first();
+            $data.='<a class="tablink" style="text-decoration:none" type="button" href="/admin/enquiryDetail/'.$enquiry->id.'">
+            <div class="row">
+              <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
+                <strong>Message from <u style="color:red">'.$enquiry->name.'</u> for Visting home <u style="color:red">'.$home->title.'</u> </strong>
+                <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Visiting Detail !</p>  
+              </div>
+              <div class="column" style="width:2%; padding-top: 20px;">
+                <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
+              </div>
+            </div>
+          </a>';
+        }
+        return $data; 
+    }
+
+    public function enquiryDetail($id)
+    {
+        $data ='';
+        $enquiries= Enquiry::where('id',$id)->get()->first();
+        $home= homes::where('id',$enquiries->home_id)->get()->first();
+            $data.='<table>
+            <tr>
+              <th style="text-align: center;">Name</th>
+              <th style="text-align: center;">Home Name</th>
+              <th style="text-align: center;">Email</th>
+              <th style="text-align: center;">Ph. No.</th>
+              <th style="text-align: center;">Message</th>
+              <th style="text-align: center;">Time</th>
+              <th style="text-align: center;">Date</th>
+            </tr>
+            <tr>
+              <td>'.$enquiries->name.'</td>
+              <td>'.$home->title.'</td>
+              <td>'.$enquiries->email.'</td>
+              <td>'.$enquiries->phone.'</td>
+              <td>'.$enquiries->message.'</td>
+              <td>'.$enquiries->time.'</td>
+              <td>'.$enquiries->date.'</td>
+            </tr>
+          </table>';
+        
+        return $data; 
     }
     
 }

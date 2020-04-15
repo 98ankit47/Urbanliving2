@@ -24,11 +24,6 @@
   border-color: gray;
 }
 
-/* .tablink:hover {
-  background-color: #347AB8;
-} */
-
-/* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
   color: white;
   display: none;
@@ -47,32 +42,7 @@
 <h4><strong>Enquiry</strong></h4>
 </div><hr><br>
 
-<div class="container tabs"> 
-    <a class="tablink" type="button" href="/admin/enquiryDetail">
-      <div class="row">
-        <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
-          <strong>John Rambo</strong>
-          <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Description !</p>  
-        </div>
-        <div class="column" style="width:2%; padding-top: 20px;">
-          <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
-        </div>
-      </div>
-    </a>
+<div class="container tabs" id="enquiry"> 
+     
 </div>
-
-<div class="container tabs"> 
-    <a class="tablink" type="button" href="/admin/enquiryDetail">
-      <div class="row">
-        <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
-          <strong>Ken Miles</strong>
-          <p style="font-size: 14px; color: gray;font-family: Open Sans, sans-serif;">Click for Description !</p>  
-        </div>
-        <div class="column" style="width:2%; padding-top: 20px;">
-          <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
-        </div>
-      </div>
-    </a>
-</div>
-
 @endsection

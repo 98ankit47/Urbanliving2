@@ -71,12 +71,14 @@ class FloorController extends Controller
           'floor_id'=>'required',
           'name'=>'required',
           'type'=>'required',
+          'cno'=>'required',
           ]);
 
       FloorComponent::create([
           'floor_id'=>$request['floor_id'],
           'name'=>$request['name'],
           'type'=>$request['type'],
+          'Component_no'=>$request['cno'],
           'bathroom'=>$request['bathroom'],
           'image'=>$img,
       ]);
@@ -283,10 +285,12 @@ class FloorController extends Controller
             'floor_id'=>'required',
             'name'=>'required',
             'type'=>'required',
+            'cno'=>'required',
             ]);
         FloorComponent::where('id',$id)->update([
             'floor_id'=>$request['floor_id'],
             'name'=>$request['name'],
+            'component_no'=>$request['cno'],
             'type'=>$request['type'],
             'image'=>$img,
         ]);

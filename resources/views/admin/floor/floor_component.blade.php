@@ -63,6 +63,10 @@
       <label for="inputEmail4">Name</label>
       <input type="text" class="form-control" id="name" placeholder="title" required>
     </div>
+    <div class="form-group">
+      <label for="inputEmail4">Component Number</label>
+      <input type="number" class="form-control" id="Cno" placeholder="title" required>
+    </div>
    
   <div class="form-group">
   <div class="image-upload">
@@ -101,6 +105,10 @@
           <div class="form-group">
         <label for="inputEmail4">Name</label>
         <input type="text" class="form-control" id="edit_name" placeholder="title" required>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail4">Component Number</label>
+        <input type="number" class="form-control" id="edit_cno" placeholder="title" required>
       </div>
      
     <div class="form-group">

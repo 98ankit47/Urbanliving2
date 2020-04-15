@@ -24,11 +24,11 @@ Route::get('/admin/floor',function(){
 
 Route::get('/admin/enquiry',function(){
     return view('admin.enquiry.index');
-})->middleware('auth');
+})->name('enquiry')->middleware('auth');
 
-Route::get('/admin/enquiryDetail',function(){
+Route::get('/admin/enquiryDetail/{id}',function(){
     return view('admin.enquiry.enquiryDetail');
-})->middleware('auth');
+})->name('enquiry_detail')->middleware('auth');
 
 Route::get('/admin/settings',function(){
     return view('admin.settings.index');
