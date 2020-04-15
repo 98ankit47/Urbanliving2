@@ -22,6 +22,14 @@ Route::get('/admin/floor',function(){
     return view('admin.floor.floor');
 })->middleware('auth'); 
 
+Route::get('/admin/enquiry',function(){
+    return view('admin.enquiry.index');
+})->middleware('auth');
+
+Route::get('/admin/enquiryDetail',function(){
+    return view('admin.enquiry.enquiryDetail');
+})->middleware('auth');
+
 Route::get('/admin/settings',function(){
     return view('admin.settings.index');
 })->name('settings')->middleware('auth'); 

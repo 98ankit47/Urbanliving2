@@ -183,6 +183,12 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a href="/admin/enquiry" class="nav-link">
+                <i class="fa fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Enquiry</p></span>
+                </a>
+              </li>
+
             </ul>
           </li>
           

@@ -57,7 +57,7 @@
          <div class="col-xl-5 col-lg-6 col-6"> 
             <div class="card pull-up">
                <div class="card-content">
-                  <a href=" ">
+                  <a href="/admin/enquiry">
                      <div class="card-body">
                         <div class="media d-flex">
                               <div class="media-body text-left">
