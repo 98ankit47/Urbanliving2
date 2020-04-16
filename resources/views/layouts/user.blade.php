@@ -64,6 +64,7 @@
 @if(Route::currentRouteName() == 'developmentDetail')
   <script>   
         var APP_URL = "{{ url('/') }}";
+        var id = window.location.href.split('/').pop();
          $('#enquiry').on('submit', function (e) {
            var email,name,time,date,message,phone;
            e.preventDefault();
@@ -83,6 +84,8 @@
                    'phone'             : phone,
                    'name'              : name,
                    'message'           : message,
+                   'seen'              : 0,
+                   'home_id'           : id,
                  },
                  success: function ( ) {
                    $('#success').html('Urban Living receive your Message they will respond you earlier').addClass('alert').addClass('alert-success').delay(4000).fadeOut();

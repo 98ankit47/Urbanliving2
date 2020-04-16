@@ -55,9 +55,11 @@ class HomeController extends Controller
             'date'=>'required',
             'time'=>'required',
             'name'=>'required',
+            'home_id'=>'required',
             'email'=>'required',
             'phone'=>'required',
             'message'=>'required',
+            'seen'   =>'required',
             ]);
 
         Enquiry::create([
@@ -66,9 +68,19 @@ class HomeController extends Controller
             'name'=>$request['name'],
             'email'=>$request['email'],
             'phone'=>$request['phone'],
+            'seen'=>$request['seen'],
+            'home_id'=>$request['home_id'],
             'message'=>$request['message'],
         ]);
         return "ankit";
 
+    }
+
+    public function UpdateEnquirySeen($id)
+    {
+        Enquiry::where('id',$id)->update([
+            'seen'=>1,
+        ]);
+        return redirect()->route('enquiry_detail',$id);
     }
 }

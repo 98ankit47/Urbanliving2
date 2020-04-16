@@ -178,16 +178,19 @@
               </li>
 
               <li class="nav-item">
+                <a href="/admin/enquiry" class="nav-link">
+                <i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Enquiry</p>
+                <span class="badge bg-primary" style="margin-left:10px;" id="notification"></span>
+                </a>
+              </li>
+
+              <li class="nav-item">
                 <a href="/admin/settings" class="nav-link">
                 <i class="fa fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Settings</p></span>
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a href="/admin/enquiry" class="nav-link">
-                <i class="fa fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Enquiry</p></span>
-                </a>
-              </li>
+             
 
             </ul>
           </li>
@@ -243,6 +246,17 @@
       url: APP_URL+'/api/admin/logo',
       success: function(result){   
         $('#logo').html(result);
+      }   
+    });
+  }
+  loadNotification();
+  function loadNotification(){
+    var APP_URL = "{{ url('/') }}";
+    $.ajax({
+      type: 'GET',
+      url: APP_URL+'/api/admin/notification',
+      success: function(result){   
+        $('#notification').html(result);
       }   
     });
   }
@@ -1331,5 +1345,6 @@ $(document).ready(function() {
     }
  </script> 
  @endif
+
 </body>
 </html>

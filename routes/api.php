@@ -62,6 +62,8 @@ Route::get('admin/enquiry/{id}','CommonController@enquiryDetail');
 
 
 Route::get('admin/floorDetail/{id}','CommonController@userFloor');
+Route::get('admin/notification/','CommonController@notification');
+
 
 
 

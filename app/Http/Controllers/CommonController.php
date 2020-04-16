@@ -137,17 +137,34 @@ class CommonController extends Controller
         foreach($enquiries as $key=> $enquiry)
         {
             $home= homes::where('id',$enquiry->home_id)->get()->first();
-            $data.='<a class="tablink" style="text-decoration:none" type="button" href="/admin/enquiryDetail/'.$enquiry->id.'">
-            <div class="row">
-              <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
-                <strong>Message from <u style="color:red">'.$enquiry->name.'</u> for Visting home <u style="color:red">'.$home->title.'</u> </strong>
-                <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Visiting Detail !</p>  
-              </div>
-              <div class="column" style="width:2%; padding-top: 20px;">
-                <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
-              </div>
-            </div>
-          </a>';
+            if(($enquiry->seen)==0)
+            {
+                $data.='<a class="tablink" style="text-decoration:none;background:#CCCCCC" type="button" href="/admin/enquiry/update/'.$enquiry->id.'">
+                    <div class="row">
+                    <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
+                        <strong>Message from <u style="color:red">'.$enquiry->name.'</u> for Visting home <u style="color:red">'.$home->title.'</u> </strong>
+                        <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Visiting Detail !</p>  
+                    </div>
+                    <div class="column" style="width:2%; padding-top: 20px;">
+                        <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
+                    </div>
+                    </div>
+                </a>';
+            }
+            else
+            {
+                $data.='<a class="tablink" style="text-decoration:none" type="button" href="/admin/enquiry/update/'.$enquiry->id.'">
+                    <div class="row">
+                    <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
+                        <strong>Message from <u style="color:red">'.$enquiry->name.'</u> for Visting home <u style="color:red">'.$home->title.'</u> </strong>
+                        <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Visiting Detail !</p>  
+                    </div>
+                    <div class="column" style="width:2%; padding-top: 20px;">
+                        <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
+                    </div>
+                    </div>
+                </a>';
+            }
         }
         return $data; 
     }
@@ -198,7 +215,6 @@ class CommonController extends Controller
                 {
                     <a type="button" onClick="firstBed_fun()" class="btn btn-primary">'.$i.' </a>    
                 }
-                
             </div>
         </div>  <br>
         <div class="row">
@@ -228,5 +244,12 @@ class CommonController extends Controller
         </div> ';
         
         return $data; 
+    }
+
+    public function notification()
+    {
+        $enquiry=Enquiry::where('seen',0)->get()->count();
+        return $enquiry;
+        
     }
 }
