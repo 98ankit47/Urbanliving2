@@ -106,7 +106,7 @@
         </div>
         </div>
         </div> <br><br><br>
-        <div id="success" style="text-align: center;height:150px;"></div>
+        <div id="success" style="text-align: center;"></div>
 
 
         <!--FLOOR PLAN-->
@@ -120,21 +120,16 @@
                         <div class="col-md-4">      
                             <div class="card" style="height:45rem;">
                                 <div class="card-body" style="text-align:center;">
-                                    <div class="card" style="height:19rem;">
+                                    <div class="card" style="height:25rem;">
                                         <div class="card-body">
-                                            <!--First Floor-->
                                             <div id="floorDetail" class="container" style="text-align: left;">
-                                             
                                             </div>
-                            <!-- First Floor Ends -->
-
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-body" style="text-align:center;">
-                                    <div class="card" style="height:23rem;">
-                                        <div class="card-body floor-image" id="floor_componentImage">
-                                            <img class="mySlidess" src="https://methodhomes.net/wp-content/uploads/2019/05/MartisCamp1275_Final.jpg" style="height:20.5rem; width:18rem;">
+                                    <div class="card" style="height:17rem;">
+                                        <div class="card-body" id="componentImage">
                                         </div>
                                     </div>
                                 </div>
@@ -229,12 +224,19 @@ function showDivs(n) {
             $("#" + divId).show(); 
         } 
   
-        function floor_fun() { 
-            show('firstFloor'); 
-        } 
-
-        function firstBed_fun() { 
-           show('floor_componentImage'); 
+        
+        function userFloorComponent(type,floor_id,component_no) { 
+            var APP_URL = "{{ url('/') }}";
+            loadFloorComponent();
+            function loadFloorComponent(){
+                $.ajax({
+                type: 'GET',
+                url: APP_URL+'/api/floorComponent/'+type+'/'+floor_id+'/'+component_no,
+                  success: function(result){
+                    $('#componentImage').html(result);
+                  }   
+               });
+              } 
        } 
     </script> 
 

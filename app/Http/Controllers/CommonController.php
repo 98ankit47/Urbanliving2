@@ -6,6 +6,7 @@ use App\Models\Features;
 use App\Models\Logos;
 use App\Models\Homes;
 use App\Models\Floors;
+use App\Models\FloorComponent;
 use App\Models\Enquiry;
 use App\User;
 use Illuminate\Http\Request;
@@ -201,47 +202,70 @@ class CommonController extends Controller
     public function userFloor($id)
     {
         $data ='';
-        $i=1;
         $floor= Floors::where('id',$id)->get()->first();
-        // $home= homes::where('id',$enquiries->home_id)->get()->first();
-            $data.=' 
-            <h4>FLOOR PLANS '.$floor->floor_no.'</h4>
-            <div class="row">
-            <div class="col-md-5">
-                <span>Bedrooms</span>
-            </div>
-            <div class="col-md-7">
-                 for('.$i.' = 1;'.$i.'<=('.$floor->bedroom.');'.$i++.')
+        $bedroom    =   "bedroom";
+        $bathroom   =   "bathroom";
+        $garage     =   "garage";
+        $dining     =   "dining";
+        $kitchen    =   "kitchen";
+        $data.=' 
+                <h4>FLOOR PLANS '.$floor->floor_no.'</h4>
+                <div class="row">
+                <div class="col-md-5">
+                    <span>Bedrooms</span>
+                </div>
+                <div class="col-md-7">';
+                 for($i = 1;$i<=($floor->bedroom);$i++)
                 {
-                    <a type="button" onClick="firstBed_fun()" class="btn btn-primary">'.$i.' </a>    
+                    $data.='<a type="button" onClick="userFloorComponent(\''. $bedroom . '\','.$floor->id.','.$i.')" class="btn btn-primary">'.$i.' </a>&nbsp';    
                 }
-            </div>
-        </div>  <br>
-        <div class="row">
-            <div class="col-md-5">
-                <span>Bathrooms</span>
-            </div>
-            <div class="col-md-7">
-                <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
-                <a type="button" class="btn btn-primary" href=""> 2 </a>
-            </div>
-        </div>  <br>
-        <div class="row">
-            <div class="col-md-5">
-                <span>Kitchens</span>
-            </div>
-            <div class="col-md-7">
-                <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
-            </div>
-        </div>  <br>
-        <div class="row">
-            <div class="col-md-5">
-                <span>Garage</span>
-            </div>
-            <div class="col-md-7">
-                <a type="button" class="btn btn-primary" href=""> 1 </a>&nbsp;
-            </div>
-        </div> ';
+                $data.='</div>
+                </div>  <br>
+                <div class="row">
+                    <div class="col-md-5">
+                        <span>Bathroom</span>
+                    </div>
+                    <div class="col-md-7">';
+                    for($i = 1;$i<=($floor->bathroom);$i++)
+                    {
+                        $data.='<a type="button" onClick="userFloorComponent(\''. $bathroom . '\','.$floor->id.','.$i.')" class="btn btn-primary">'.$i.' </a>&nbsp';    
+                    }
+                    $data.='</div>
+                    </div>  <br>
+                    <div class="row">
+                    <div class="col-md-5">
+                        <span>Kitchens</span>
+                    </div>
+                    <div class="col-md-7">';
+                    for($i = 1;$i<=($floor->kitchen);$i++)
+                    {
+                        $data.='<a type="button" onClick="userFloorComponent(\''. $kitchen. '\','.$floor->id.','.$i.')" class="btn btn-primary">'.$i.' </a>&nbsp';    
+                    }
+                    $data.='</div>
+                    </div>  <br>
+                    <div class="row">
+                        <div class="col-md-5">
+                        <span>Garage</span>
+                    </div>
+                    <div class="col-md-7">';
+                    for($i = 1;$i<=($floor->garage);$i++)
+                    {
+                        $data.='<a type="button" onClick="userFloorComponent(\''. $garage . '\','.$floor->id.','.$i.')" class="btn btn-primary">'.$i.' </a>&nbsp';    
+                    }   
+                    $data.='</div>
+                    </div> <br>
+                    <div class="row">
+                        <div class="col-md-5">
+                        <span>Dining</span>
+                    </div>
+                    <div class="col-md-7">';
+                    for($i = 1;$i<=($floor->dining);$i++)
+                    {
+                        $data.='<a type="button" onClick="userFloorComponent(\''. $dining . '\','.$floor->id.','.$i.')" class="btn btn-primary">'.$i.' </a>&nbsp';    
+                    }   
+                    $data.='</div>
+                </div> 
+                ';
         
         return $data; 
     }
@@ -249,7 +273,21 @@ class CommonController extends Controller
     public function notification()
     {
         $enquiry=Enquiry::where('seen',0)->get()->count();
-        return $enquiry;
-        
+        if($enquiry==0)
+        {
+            return '';
+        }
+        else
+        {
+            return $enquiry;
+        } 
+    }
+
+    public function userFloorComponent($type,$floor_id,$component_id)
+    {
+        $data='';
+        $com=FloorComponent::where('type',$type)->where('floor_id',$floor_id)->where('component_no',$component_id)->get()->first();
+        $data='<img src="/uploads/floorcomponent/'.$com->image.'" style="height:15rem; width:18rem;">';
+        return $data;
     }
 }

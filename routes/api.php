@@ -69,5 +69,6 @@ Route::get('admin/notification/','CommonController@notification');
 
 // User Module
 Route::post('enquiry','user\HomeController@schedule');
+Route::get('floorComponent/{type}/{floor_id}/{component_id}','CommonController@userFloorComponent');
 
 

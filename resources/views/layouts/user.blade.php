@@ -95,7 +95,6 @@
          });
          function floorDetail(id)
          {
-           alert();
             var APP_URL = "{{ url('/') }}";
             loadFloorDetail();
             function loadFloorDetail(){
