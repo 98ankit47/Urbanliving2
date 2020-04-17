@@ -14,6 +14,7 @@
  
 
     // admin section
+
 Route::get('/admin/dashboard',function(){
     return view('admin.dashboard');
 })->name('dashboard')->middleware('auth');    
@@ -92,6 +93,7 @@ Route::get('/development-Detail/{id}','user\HomeController@single')->name('devel
  
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
+Route::get( 'home', 'HomeController@index');
 
 
 // end of admin section
