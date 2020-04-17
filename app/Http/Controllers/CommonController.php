@@ -154,16 +154,20 @@ class CommonController extends Controller
             else
             {
                 $data.='<a class="tablink" style="text-decoration:none" type="button" href="/admin/enquiry/update/'.$enquiry->id.'">
-                    <div class="row">
-                    <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
-                        <strong>Message from <u style="color:red">'.$enquiry->name.'</u> for Visting home <u style="color:red">'.$home->title.'</u> </strong>
-                        <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Visiting Detail !</p>  
-                    </div>
-                    <div class="column" style="width:2%; padding-top: 20px;">
-                        <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
-                    </div>
-                    </div>
-                </a>';
+                <div class="row">
+                <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
+                    <strong>Message from <u style="color:#1e559e;">'.$enquiry->name.'</u> for Visting home <u style="color:#1e559e;">'.$home->title.'</u> </strong>
+                    <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Visiting Detail !</p>  
+                </div>
+                <div class="column" style="width:2%; padding-top: 20px;">
+                    <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
+                </div>
+                </div><hr>
+                <div class="container activity">
+                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 35%;"> 59 mins </i>
+                    <i class ="fa fa-eye" style="font-size:15px; color:#DC143C; padding-left: 10%;"> Mark as read </i>
+                </div>
+            </a>';
             }
         }
         return $data; 
@@ -174,26 +178,32 @@ class CommonController extends Controller
         $data ='';
         $enquiries= Enquiry::where('id',$id)->get()->first();
         $home= homes::where('id',$enquiries->home_id)->get()->first();
-            $data.='<table>
-            <tr>
-              <th style="text-align: center;">Name</th>
-              <th style="text-align: center;">Home Name</th>
-              <th style="text-align: center;">Email</th>
-              <th style="text-align: center;">Ph. No.</th>
-              <th style="text-align: center;">Message</th>
-              <th style="text-align: center;">Time</th>
-              <th style="text-align: center;">Date</th>
-            </tr>
-            <tr>
-              <td>'.$enquiries->name.'</td>
-              <td>'.$home->title.'</td>
-              <td>'.$enquiries->email.'</td>
-              <td>'.$enquiries->phone.'</td>
-              <td>'.$enquiries->message.'</td>
-              <td>'.$enquiries->time.'</td>
-              <td>'.$enquiries->date.'</td>
-            </tr>
-          </table>';
+            $data.='<div class="container" style="background-color: white;"><br>
+            <h3 style="margin-left: 5px; margin-right:5px;"> '.$home->title.'</h3><hr>
+            <br>
+            <div class="row" style="margin-left: 5px; margin-right:5px;">
+            <div class="col-md-10">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTEZqFt23mGe6hKZMSn0sHUyrKUKKN7sNBQngcHrM5JGL-5adWr&usqp=CAU" alt="Avatar" style="width:100px;border-radius: 50%;">&nbsp;&nbsp;
+            <span><strong> '.$enquiries->name.' </strong></span>&nbsp;<span style="color: gray;"> | </span>&nbsp;
+            <span style="color: gray;"> '.$enquiries->email.' </span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;"> '.$enquiries->phone.' </span>
+            </div>
+            <div class="col-md-2"
+            <span> '.$enquiries->time.' </span>&nbsp;<span> | </span>&nbsp;&nbsp;
+            <span> '.$enquiries->date.' </span>
+            </div>
+            </div><br>
+
+            <span style="margin-left: 10px; margin-right:10px;"> '.$enquiries->message.' ....Message sent by the sender .... agdjsnciohsuic,...gcjsniochuscihscns </span>
+            <br><br>
+            <div class="container">
+            <textarea rows="6" cols="100" name="comment" form="usrform" style="text-align: left;background-color:#F5F5F5;">
+                Enter your reply...
+            </textarea></div>
+            <div class="container" style="text-align: right;">
+            <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Reply</button>
+            <br><br></div>
+            
+        </div>';
         
         return $data; 
     }
