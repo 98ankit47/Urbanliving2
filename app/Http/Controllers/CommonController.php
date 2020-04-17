@@ -13,13 +13,11 @@ use Illuminate\Http\Request;
 
 class CommonController extends Controller
 {
- 
-
     public function status()
     {
         return status::all();
     }
-    
+
     public function featureData(Request $request)
     {
         return Features::where('id',$request['id'])->get()->first();
@@ -67,12 +65,12 @@ class CommonController extends Controller
     public function DashboardUser(Request $request)
     {
         $data ='';
-        $id=$request['id'];
-        $users= User::get();
-        foreach($users as $user)
+        $users= User::where('type','user')->get();
+        foreach($users as $key=>$user)
         {
+            ++$key;
             $data.=' <tr>
-                        <td>'.$user->id.'</td>
+                        <td>'.$key.'</td>
                         <td>'.$user->name.'</td>
                         <td>'.$user->email.'</td>
                         <td>
@@ -87,6 +85,7 @@ class CommonController extends Controller
                         <span><a href="#" class="a1" data-toggle="modal" data-target="#modal-delete" ><i class="fa fa-trash"></i></a></span>
                         </td>
                     </tr>';
+                  --$key;  
             
         }
         return $data;        

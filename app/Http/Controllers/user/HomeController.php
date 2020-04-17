@@ -5,6 +5,7 @@ use App\Models\Homes;
 use App\Models\Communities;
 use App\Models\HomeCommunity;
 use App\Models\Enquiry;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -82,5 +83,21 @@ class HomeController extends Controller
             'seen'=>1,
         ]);
         return redirect()->route('enquiry_detail',$id);
+    }
+    public function signup(Request $request)
+    {
+        $this->validate($request,[
+            'email'=>'required',
+            'name'=>'required',
+            'password'=>'required',
+            ]);
+
+        User::create([
+            'email'     =>  $request['email'],
+            'name'      =>  $request['name'],
+            'password'  =>  bcrypt('secret'),
+            'type'      =>  'user',
+        ]);
+        return "success";
     }
 }

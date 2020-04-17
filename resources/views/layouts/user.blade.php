@@ -1,9 +1,22 @@
 <!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <title>Urban Living</title>
-  <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+	<script src="{{ asset('js/app.js') }}" defer></script>
+
+	<!-- Fonts -->
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+	<!-- Styles -->
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 
@@ -281,22 +294,54 @@
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
 				<ul class="dropdown-menu form-wrapper">					
 					<li>
-						<form action="#" method="post">
-							<p class="hint-text">Sign in with your social media account</p>
-							<div class="form-group social-btn clearfix">
-								<a href="#" class="btn btn-primary pull-left"><i class="fa fa-facebook"></i> Facebook</a>
-								<a href="#" class="btn btn-info pull-right"><i class="fa fa-twitter"></i> Twitter</a>
+						<form method="POST" action="{{ route('login') }}">
+							@csrf
+	
+							<div class="form-group row">
+									<input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+	
+									@error('email')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
 							</div>
-							<div class="or-seperator"><b>or</b></div>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Username" required="required">
+	
+							<div class="form-group row">
+									<input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+	
+									@error('password')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
 							</div>
-							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Password" required="required">
+	
+							<div class="form-group row">
+									<div class="form-check" style="text-align:center">
+										<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+	
+										<label class="form-check-label" for="remember">
+											{{ __('Remember Me') }}
+										</label>
+									</div>
 							</div>
-							<input type="submit" class="btn btn-primary btn-block" value="Login">
-							<div class="form-footer">
-								<a href="#">Forgot Your password?</a>
+	
+							<div class="form-group row mb-0">
+									<button type="submit" class="btn btn-primary btn-block" style="width: 100%;">
+										{{ __('Login') }}
+									</button>
+									@if (Route::has('password.request'))
+										<a class="btn btn-link" href="{{ route('password.request') }}">
+											{{ __('Forgot Your Password?') }}
+										</a>	
+									@endif
+	
+									<!-- @if (Route::has('password.request'))
+										<a class="btn btn-link" href="{{ route('password.request') }}">
+											{{ __('Forgot Your Password?') }}
+										</a>
+									@endif -->
 							</div>
 						</form>
 					</li>
@@ -306,16 +351,19 @@
 				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1">Sign up</a>
 				<ul class="dropdown-menu form-wrapper">					
 					<li>
-						<form action="#" method="post">
+						<form id="userCreate">
 							<p class="hint-text">Fill in this form to create your account!</p>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Username" required="required">
+              				<div class="form-group">
+								<input type="text" class="form-control" id="name" placeholder="username" required="required">
+							</div>
+              				<div class="form-group">
+								<input type="email" class="form-control" id="email" placeholder="Email" required="required">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Password" required="required">
+								<input type="password" class="form-control" id="password" placeholder="Password" required="required">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Confirm Password" required="required">
+								<input type="password" class="form-control" id="confirm" placeholder="Confirm Password" required="required">
 							</div>
 							<div class="form-group">
 								<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
@@ -334,6 +382,40 @@
 <div class="container">
   @yield('content')
 </div>
+
+<script>   
+	var APP_URL = "{{ url('/') }}";
+	 $('#userCreate').on('submit', function (e) {
+	   var email,name,password,confirm;
+	   e.preventDefault();
+		   email            =  document.getElementById("email").value;         
+		   name      		=  document.getElementById("name").value;         
+		   password          =  document.getElementById("password").value;         
+		   confirm         =  document.getElementById("confirm").value;      
+		   if(password==confirm)
+		   {   
+				$.ajax({
+					type: 'post',
+					url: '/api/user',
+					data:{
+					'email'             : email,
+					'name'              : name,
+					'password'          : password,
+					'confirm'           : confirm,
+					},
+					success: function ( ) {
+					$('#success').html("").addClass('alert').addClass('alert-success').delay(4000).fadeOut();
+					}
+				});
+		   }
+		   else
+		   {
+			    alert("Password And Confirm Password is not same");
+		   }
+
+	 });
+</script>
+
 @if(Route::currentRouteName() == 'developmentDetail')
   <script>   
         var APP_URL = "{{ url('/') }}";

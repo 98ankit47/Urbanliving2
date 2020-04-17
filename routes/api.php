@@ -71,4 +71,8 @@ Route::get('admin/notification/','CommonController@notification');
 Route::post('enquiry','user\HomeController@schedule');
 Route::get('floorComponent/{type}/{floor_id}/{component_id}','CommonController@userFloorComponent');
 
+//user create
+Route::post('user','user\HomeController@signup');
+
+
 
