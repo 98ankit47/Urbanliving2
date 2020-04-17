@@ -86,11 +86,11 @@
                         </div>
                         <div class="form-group">
                             <label for="inputTitle">Name</label>
-                            <input type="text" class="form-control" id="name" required>
+                            <input type="text" class="form-control" id="uname" required>
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Email</label>
-                            <input type="email" class="form-control" id="email" required>
+                            <input type="email" class="form-control" id="uemail" required>
                         </div>
                         <div class="form-group">
                             <label for="inputTitle">Phone No.</label>
@@ -107,8 +107,6 @@
         </div>
         </div> <br><br><br>
         <div id="success" style="text-align: center;"></div>
-
-
         <!--FLOOR PLAN-->
 
         <!--FLOOR PLAN-->

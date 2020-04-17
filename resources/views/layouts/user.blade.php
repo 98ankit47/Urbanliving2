@@ -289,7 +289,8 @@
 				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
 			</div>
 		</form>
-		<ul class="nav navbar-nav navbar-right ml-auto">			
+		<ul class="nav navbar-nav navbar-right ml-auto">	
+			@guest
 			<li class="nav-item">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
 				<ul class="dropdown-menu form-wrapper">					
@@ -373,6 +374,27 @@
 					</li>
 				</ul>
 			</li>
+		 
+		@else
+			<li class="nav-item dropdown">
+				<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+					{{ Auth::user()->name }} <span class="caret"></span>
+				</a>
+
+				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="{{ route('logout') }}"
+					   onclick="event.preventDefault();
+									 document.getElementById('logout-form').submit();">
+						{{ __('Logout') }}
+					</a>
+
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+						@csrf
+					</form>
+				</div>
+			</li>
+		@endguest		
+			
 		</ul>
 	</div>
 </nav>
@@ -423,8 +445,8 @@
          $('#enquiry').on('submit', function (e) {
            var email,name,time,date,message,phone;
            e.preventDefault();
-               email            =  document.getElementById("email").value;         
-               name      =  document.getElementById("name").value;         
+               email            =  document.getElementById("uemail").value;         
+               name      =  document.getElementById("uname").value;         
                time          =  document.getElementById("time").value;         
                date         =  document.getElementById("date").value;         
                message           =  document.getElementById("message").value;         
