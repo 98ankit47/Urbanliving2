@@ -2,7 +2,7 @@
 @section('content')
 <style>
     .a_dash {
-        margin-left:20px;
+        margin-left:45%;
         font-family: Open Sans, sans-serif;
     }
     .tabs {
@@ -37,7 +37,7 @@
 </style>
 
 <div class="d-sm-flex align-items-center justify-content-between mb-2">
-         <h4 class="a_dash"><br><strong>Settings</strong></h4>
+         <h4 class="a_dash" style="font-family: Open Sans, sans-serif;"><br><strong>Settings</strong></h4>
       </div>
 <hr><br>
 
