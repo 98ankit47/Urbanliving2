@@ -152,7 +152,7 @@ class FloorController extends Controller
               <span>'.$floor->bedroom.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $bedroom . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $bedroom . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
             </div>
           </div><br>
           
@@ -164,7 +164,7 @@ class FloorController extends Controller
               <span>'.$floor->bathroom.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $bathroom . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $bathroom . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
             </div>
           </div><br>
         
@@ -176,7 +176,7 @@ class FloorController extends Controller
               <span>'.$floor->garage.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $garage . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $garage . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
             </div>
           </div>
           <br>
@@ -188,7 +188,7 @@ class FloorController extends Controller
               <span>'.$floor->dining.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $dining . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $dining . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
             </div>
           </div>
           <br>
@@ -200,7 +200,7 @@ class FloorController extends Controller
               <span>'.$floor->kitchen.'</span>
             </div>
             <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $kitchen . '\','.$floor->id.')" style="background-color:#009688;" class="btn">CLICK HERE</button> 
+              <button type="button" onclick="floorComponent(\''. $kitchen . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
             </div>
           </div>';
         } 

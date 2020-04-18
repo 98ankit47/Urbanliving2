@@ -79,8 +79,8 @@
 
   </div>
   <div class="modal-footer" style="font-family: Times New Roman;">
-    <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-    <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
+    <button type="button" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+    <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
   </div>
 </form>
       </div>
@@ -122,8 +122,8 @@
   
     </div>
     <div class="modal-footer">
-      <button type="button" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-      <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Save changes</button>
+      <button type="button" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+      <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
     </div>
   </form>
         </div>
