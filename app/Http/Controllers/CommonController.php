@@ -161,7 +161,14 @@ class CommonController extends Controller
                 <div class="column" style="width:2%; padding-top: 20px;">
                     <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
                 </div>
+<<<<<<< HEAD
                 <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;"> 59 mins </i>
+=======
+                </div><hr>
+                <div class="container activity">
+                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 35%;"> '.$enquiry->time.' </i>
+                    <i class ="fa fa-eye" style="font-size:15px; color:#DC143C; padding-left: 10%;"> Mark as read </i>
+>>>>>>> c92c97b265cc4ce6b3a8ecb5c392edc87f1859ce
                 </div>
             </a>';
             }
@@ -174,6 +181,7 @@ class CommonController extends Controller
         $data ='';
         $enquiries= Enquiry::where('id',$id)->get()->first();
         $home= homes::where('id',$enquiries->home_id)->get()->first();
+<<<<<<< HEAD
             $data.='<div class="container" style="background-color: white;"><br>
             <h3 style="margin-left: 5px; margin-right:5px;"> '.$home->title.'</h3><hr>
             <br>
@@ -189,14 +197,19 @@ class CommonController extends Controller
             </div><br>
 
             <span style="margin-left: 10px; margin-right:10px;"> '.$enquiries->message.' ....Message sent by the sender .... agdjsnciohsuic,...gcjsniochuscihscns </span>
+=======
+            $data.='<div class="container" style="background-color: white;text-align: center;font-family: Open Sans, sans-serif;"><br>
+            
+            <span>Enquiry For &nbsp;:&nbsp;&nbsp;<span style="color: #71aea5; font-size:20px;"><strong>'.$home->title.'</span></strong></span><br>
+            <span style="color: gray;font-size: 13px;">'.$enquiries->time.'</span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;font-size: 13px;"> '.$enquiries->date.' </span>
             <br><br>
-            <div class="container">
-            <textarea rows="6" cols="100" name="comment" form="usrform" style="text-align: left;background-color:#F5F5F5;">
-                Enter your reply...
-            </textarea></div>
-            <div class="container" style="text-align: right;">
-            <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Reply</button>
-            <br><br></div>
+            <span>From &nbsp;:&nbsp;<span style="color: #71aea5; font-size:20px;"> <strong>'.$enquiries->name.'</span></strong></span><br>
+            <span style="color: gray; font-size: 13px;"> '.$enquiries->email.' </span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;font-size: 13px;"> '.$enquiries->phone.' </span><br><br><br>
+            <span>'.$enquiries->message.'</span>
+           <br><br><br>
+            <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#ff6b56;" class="btn w3-100">Reply</button>
+>>>>>>> c92c97b265cc4ce6b3a8ecb5c392edc87f1859ce
+            <br><br>
             
         </div>';
         
