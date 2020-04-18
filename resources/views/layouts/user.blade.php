@@ -358,10 +358,10 @@
 								<input type="text" class="form-control" id="name" placeholder="username" required="required">
 							</div>
               				<div class="form-group">
-								<input type="email" class="form-control" id="email" placeholder="Email" required="required">
+								<input type="email" class="form-control" id="Cemail" placeholder="Email" required="required">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" id="password" placeholder="Password" required="required">
+								<input type="password" class="form-control" id="Cpassword" placeholder="Password" required="required">
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control" id="confirm" placeholder="Confirm Password" required="required">
@@ -410,10 +410,10 @@
 	 $('#userCreate').on('submit', function (e) {
 	   var email,name,password,confirm;
 	   e.preventDefault();
-		   email            =  document.getElementById("email").value;         
-		   name      		=  document.getElementById("name").value;         
-		   password          =  document.getElementById("password").value;         
-		   confirm         =  document.getElementById("confirm").value;      
+		   	email            =  document.getElementById("Cemail").value;         
+		   	name      		=  document.getElementById("name").value;         
+		   	password          =  document.getElementById("Cpassword").value;         
+		   	confirm        	 =  document.getElementById("confirm").value;      
 		   if(password==confirm)
 		   {   
 				$.ajax({
@@ -434,7 +434,6 @@
 		   {
 			    alert("Password And Confirm Password is not same");
 		   }
-
 	 });
 </script>
 

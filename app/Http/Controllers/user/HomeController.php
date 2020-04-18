@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\user;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Homes;
 use App\Models\Communities;
 use App\Models\HomeCommunity;
@@ -89,13 +91,13 @@ class HomeController extends Controller
         $this->validate($request,[
             'email'=>'required',
             'name'=>'required',
-            'password'=>'required',
+            'password' => ['required', 'string', 'min:8',],
             ]);
 
         User::create([
             'email'     =>  $request['email'],
             'name'      =>  $request['name'],
-            'password'  =>  bcrypt('secret'),
+            'password' => Hash::make($request['password']),
             'type'      =>  'user',
         ]);
         return "success";

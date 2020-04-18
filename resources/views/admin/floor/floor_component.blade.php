@@ -65,7 +65,7 @@
     </div>
     <div class="form-group">
       <label for="inputEmail4">Component Number</label>
-      <input type="number" class="form-control" id="Cno" placeholder="title" required>
+      <input type="number" class="form-control" id="cno" placeholder="title" required>
     </div>
    
   <div class="form-group">

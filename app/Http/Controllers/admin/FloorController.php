@@ -73,12 +73,11 @@ class FloorController extends Controller
           'type'=>'required',
           'cno'=>'required',
           ]);
-
       FloorComponent::create([
           'floor_id'=>$request['floor_id'],
           'name'=>$request['name'],
           'type'=>$request['type'],
-          'Component_no'=>$request['cno'],
+          'component_no'=>$request['cno'],
           'bathroom'=>$request['bathroom'],
           'image'=>$img,
       ]);
@@ -86,7 +85,7 @@ class FloorController extends Controller
       }
       else
       {
-        return ['success'=>'Limit exceed'];
+        return ['danger'=>'Limit exceed'];
       }
     }
 

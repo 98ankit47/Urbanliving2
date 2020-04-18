@@ -19,9 +19,7 @@ Route::get('/admin/dashboard',function(){
     return view('admin.dashboard');
 })->name('dashboard')->middleware('auth');    
 
-Route::get('/admin/floor',function(){
-    return view('admin.floor.floor');
-})->middleware('auth'); 
+  
 
 Route::get('/admin/enquiry',function(){
     return view('admin.enquiry.index');
@@ -75,7 +73,7 @@ Route::get('/availsold', function () {
 
 Route::get('admin/floor', function () {
     return view('admin.floor.index');
-})->name('floorView');
+})->name('floorView')->middleware('auth');;
 Route::get('admin/floor-component-gallery/{type}/{id}', function () {
     return view('admin.floor.floor_component');
 })->name('FloorComponent')->middleware('auth');

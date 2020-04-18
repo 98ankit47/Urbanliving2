@@ -143,11 +143,11 @@ class CommonController extends Controller
                     <div class="row">
                     <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
                         <strong>Message from <u style="color:red">'.$enquiry->name.'</u> for Visting home <u style="color:red">'.$home->title.'</u> </strong>
-                        <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Visiting Detail !</p>  
                     </div>
                     <div class="column" style="width:2%; padding-top: 20px;">
                         <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
                     </div>
+                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;"> 59 mins </i>
                     </div>
                 </a>';
             }
@@ -157,15 +157,11 @@ class CommonController extends Controller
                 <div class="row">
                 <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
                     <strong>Message from <u style="color:#1e559e;">'.$enquiry->name.'</u> for Visting home <u style="color:#1e559e;">'.$home->title.'</u> </strong>
-                    <p style="font-size: 14px; color: gray; font-family: Open Sans, sans-serif;">Click for Visiting Detail !</p>  
                 </div>
                 <div class="column" style="width:2%; padding-top: 20px;">
                     <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
                 </div>
-                </div><hr>
-                <div class="container activity">
-                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 35%;"> 59 mins </i>
-                    <i class ="fa fa-eye" style="font-size:15px; color:#DC143C; padding-left: 10%;"> Mark as read </i>
+                <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;"> 59 mins </i>
                 </div>
             </a>';
             }
@@ -183,7 +179,6 @@ class CommonController extends Controller
             <br>
             <div class="row" style="margin-left: 5px; margin-right:5px;">
             <div class="col-md-10">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTEZqFt23mGe6hKZMSn0sHUyrKUKKN7sNBQngcHrM5JGL-5adWr&usqp=CAU" alt="Avatar" style="width:100px;border-radius: 50%;">&nbsp;&nbsp;
             <span><strong> '.$enquiries->name.' </strong></span>&nbsp;<span style="color: gray;"> | </span>&nbsp;
             <span style="color: gray;"> '.$enquiries->email.' </span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;"> '.$enquiries->phone.' </span>
             </div>

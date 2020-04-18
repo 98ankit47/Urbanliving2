@@ -850,7 +850,7 @@ $(document).ready(function() {
 </script>
 @endif
 
-@if(Route::currentRouteName() == 'dashboard')
+@if(Route::currentRouteName() == 'dashboard'||Route::currentRouteName() == 'home')
   <script>
     LoadUserList();
     function LoadUserList()
@@ -917,7 +917,7 @@ $(document).ready(function() {
                 var name,cno;
                 e.preventDefault();
                     name      =  document.getElementById("name").value;         
-                    cno      =  document.getElementById("cno").value;         
+                    cno      =  document.getElementById("cno").value; 
                     $.ajax({
                       type: 'post',
                       url: '/api/admin/floor-component/',
@@ -936,6 +936,7 @@ $(document).ready(function() {
                       }
                     });
               });
+              
             });
         }
 
