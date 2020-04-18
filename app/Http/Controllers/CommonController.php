@@ -181,37 +181,23 @@ class CommonController extends Controller
         $data ='';
         $enquiries= Enquiry::where('id',$id)->get()->first();
         $home= homes::where('id',$enquiries->home_id)->get()->first();
-<<<<<<< HEAD
-            $data.='<div class="container" style="background-color: white;"><br>
-            <h3 style="margin-left: 5px; margin-right:5px;"> '.$home->title.'</h3><hr>
-            <br>
-            <div class="row" style="margin-left: 5px; margin-right:5px;">
-            <div class="col-md-10">
-            <span><strong> '.$enquiries->name.' </strong></span>&nbsp;<span style="color: gray;"> | </span>&nbsp;
-            <span style="color: gray;"> '.$enquiries->email.' </span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;"> '.$enquiries->phone.' </span>
-            </div>
-            <div class="col-md-2"
-            <span> '.$enquiries->time.' </span>&nbsp;<span> | </span>&nbsp;&nbsp;
-            <span> '.$enquiries->date.' </span>
-            </div>
-            </div><br>
-
-            <span style="margin-left: 10px; margin-right:10px;"> '.$enquiries->message.' ....Message sent by the sender .... agdjsnciohsuic,...gcjsniochuscihscns </span>
-=======
-            $data.='<div class="container" style="background-color: white;text-align: center;font-family: Open Sans, sans-serif;"><br>
+        $data.='
+        <div style="border:2px solid #ff6b56;background-color:white;text-align: center;font-family: Open Sans, sans-serif;width:60%" >
+        <h2 style=" background-color:#ff6b56;color: White;font-weight:bold">Requset For tour</h2>
+        <div class="container" style="background-color: white;text-align: center;font-family: Open Sans, sans-serif;"><br>
             
-            <span>Enquiry For &nbsp;:&nbsp;&nbsp;<span style="color: #71aea5; font-size:20px;"><strong>'.$home->title.'</span></strong></span><br>
-            <span style="color: gray;font-size: 13px;">'.$enquiries->time.'</span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;font-size: 13px;"> '.$enquiries->date.' </span>
-            <br><br>
-            <span>From &nbsp;:&nbsp;<span style="color: #71aea5; font-size:20px;"> <strong>'.$enquiries->name.'</span></strong></span><br>
-            <span style="color: gray; font-size: 13px;"> '.$enquiries->email.' </span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;font-size: 13px;"> '.$enquiries->phone.' </span><br><br><br>
-            <span>'.$enquiries->message.'</span>
-           <br><br><br>
-            <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#ff6b56;" class="btn w3-100">Reply</button>
->>>>>>> c92c97b265cc4ce6b3a8ecb5c392edc87f1859ce
-            <br><br>
-            
-        </div>';
+        <span>Enquiry For &nbsp;:&nbsp;&nbsp;<span style="color: #71aea5; font-size:20px;"><strong>'.$home->title.'</span></strong></span><br>
+        <span style="color: gray;font-size: 13px;">'.$enquiries->time.'</span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;font-size: 13px;"> '.$enquiries->date.' </span>
+        <br><br>
+        <span>From &nbsp;:&nbsp;<span style="color: #71aea5; font-size:20px;"> <strong>'.$enquiries->name.'</span></strong></span><br>
+        <span style="color: gray; font-size: 13px;"> '.$enquiries->email.' </span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;font-size: 13px;"> '.$enquiries->phone.' </span><br><br><br>
+        <span>'.$enquiries->message.'</span>
+       <br><br><br>
+        <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#ff6b56;" class="btn w3-100">Reply</button>
+        <br><br>
+        
+    </div>
+    </div>';
         
         return $data; 
     }
