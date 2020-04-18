@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
 
+use Session;
+
 class LoginController extends Controller
 {
     /*
@@ -49,5 +51,15 @@ class LoginController extends Controller
         }
 
         return redirect('/');
+    }
+    public function showLoginForm()
+    {
+        $intendedURL = \Session::get('url.intended');
+
+        if($intendedURL) {
+            Session::flash('message', 'You must log in to continue');
+        }
+
+        return view('auth.login');
     }
 }

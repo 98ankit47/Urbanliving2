@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<div>
+@if(Session::has('message'))
+    <p class="alert alert-info" style="text-align:center;font-weight:bold;font-size:20px">{{ Session::get('message') }}</p>
+@endif
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

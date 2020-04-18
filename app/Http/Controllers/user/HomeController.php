@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Homes;
 use App\Models\Communities;
 use App\Models\HomeCommunity;
