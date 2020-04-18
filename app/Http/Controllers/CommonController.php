@@ -9,6 +9,7 @@ use App\Models\Floors;
 use App\Models\FloorComponent;
 use App\Models\Enquiry;
 use App\User;
+Use \Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CommonController extends Controller
@@ -133,9 +134,27 @@ class CommonController extends Controller
     public function enquiry()
     {
         $data ='';
+        $display;
         $enquiries= Enquiry::orderBy('created_at','desc')->get();
+        $date = Carbon::now();
+
         foreach($enquiries as $key=> $enquiry)
         {
+            $minute=$date->diffInMinutes($enquiry->created_at);
+            $days=$date->diffInDays($enquiry->created_at);
+            $hours=$date->diffInHours($enquiry->created_at);
+            if($minute<60)
+            {
+                $display=$minute.' minute ago';
+            }
+            else if($minute>59 && $hours<24)
+            {
+                $display=$hours.' hours ago';
+            }
+            else if($minute>59 && $hours>23)
+            {
+                $display=$days.' days ago';
+            }
             $home= homes::where('id',$enquiry->home_id)->get()->first();
             if(($enquiry->seen)==0)
             {
@@ -147,8 +166,12 @@ class CommonController extends Controller
                     <div class="column" style="width:2%; padding-top: 20px;">
                         <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
                     </div>
-                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;"> 59 mins </i>
-                    </div>
+                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;">'.$display.' </i>
+                    </div><hr>
+                    <div class="container activity">
+                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 35%;"> '.$enquiry->created_at->format('d M Y').' </i>
+                    <i class ="fa fa-eye" style="font-size:15px; color:#DC143C; padding-left: 10%;"> Mark as read </i>
+                </div>
                 </a>';
             }
             else
@@ -161,14 +184,11 @@ class CommonController extends Controller
                 <div class="column" style="width:2%; padding-top: 20px;">
                     <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
                 </div>
-<<<<<<< HEAD
-                <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;"> 59 mins </i>
-=======
+                <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;">'.$display.' </i>
                 </div><hr>
                 <div class="container activity">
-                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 35%;"> '.$enquiry->time.' </i>
+                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 35%;"> '.$enquiry->created_at->format('d M Y').' </i>
                     <i class ="fa fa-eye" style="font-size:15px; color:#DC143C; padding-left: 10%;"> Mark as read </i>
->>>>>>> c92c97b265cc4ce6b3a8ecb5c392edc87f1859ce
                 </div>
             </a>';
             }
