@@ -1100,7 +1100,7 @@ function initMap() {
             } else {
               bounds.extend(place.geometry.location);
             }
-            $('#input-latitude').val(place.geometry.location.lat());
+              $('#input-latitude').val(place.geometry.location.lat());
             $('#input-longitude').val(place.geometry.location.lng());
             search_near_locations();
           });
