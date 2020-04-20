@@ -278,7 +278,7 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<ul class="nav navbar-nav">
 			<li class="nav-item"><a href="#" class="nav-link">Development</a></li>&nbsp;&nbsp;
-			<li class="nav-item"><a href="#" class="nav-link">Map</a></li>&nbsp;&nbsp;
+			<li class="nav-item"><a href="/maps" class="nav-link">Map</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="#" class="nav-link">Features</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="#" class="nav-link">About Us</a></li>

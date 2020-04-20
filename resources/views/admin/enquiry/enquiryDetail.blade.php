@@ -2,32 +2,105 @@
 @section('content')
 
 <head>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  background-color: white;
+    <!-- <title>Admin</title> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <style type="text/css">
+   
+   *{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+     /*table */
+     .table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 10px;
+.elements,.row-contain {
+border: 1px solid grey;
+text-align: left;
+color:black;
 }
 
-.enquiry-contain {
-    margin-left: 20px;
+.row-contain:nth-child(even) {
+background-color: rgba(128, 128, 128, 0.301);
+color:black;
 }
 
-</style>
+     /* CLIENT-SPECIFIC STYLES */
+     body,
+     table,
+     td,
+     a {
+         -webkit-text-size-adjust: 100%;
+         -ms-text-size-adjust: 100%;
+         
+     }
+
+     table,
+     td {
+         mso-table-lspace: 0pt;
+         mso-table-rspace: 0pt;
+     }
+
+     img {
+         -ms-interpolation-mode: bicubic;
+     }
+
+     /* RESET STYLES */
+     img {
+         border: 0;
+         height: auto;
+         line-height: 100%;
+         outline: none;
+         text-decoration: none;
+     }
+
+     table {
+         border-collapse: collapse !important;
+     }
+
+     body {
+         height: 100% !important;
+         margin: 0 !important;
+         padding: 0 !important;
+         width: 100% !important;
+     }
+
+     /* iOS #34495E  LINKS */
+     a[x-apple-data-detectors] {
+         color: inherit !important;
+         text-decoration: none !important;
+         font-size: inherit !important;
+         font-family:'Montserrat'sans-serif !important;
+         font-weight: inherit !important;
+         line-height: inherit !important;
+     }
+
+     /* MOBILE STYLES */
+     @media screen and (max-width:600px) {
+         h1 {
+             font-size: 32px !important;
+             line-height: 32px !important;
+         }
+       
+     }
+
+     /* ANDROID CENTER FIX */
+     div[style*="margin: 16px 0;"] {
+         margin: 0 !important;
+     }
+ </style>
 </head>
 <br>
 
 <div class="enquiry-contain">
 <div class="row">
 <div class="col-md-5" style="text-align:left">
-<a type="button" href="http://127.0.0.1:8000/admin/enquiry" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Back</a>
+<a type="button" href="http://127.0.0.1:8000/admin/enquiry" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF; margin-left: 20px;" class="btn">Back</a>
 </div>
 <div class="col-md-7" style="text-align:left">
 <h4><strong>Enquiry Details</strong></h4>
@@ -35,12 +108,14 @@ td, th {
 </div>
 </div><hr><br>
 
-<div class="container" id="enquiry">
 
-</div>
+    <!-- HIDDEN PREHEADER TEXT -->
+    <div id="enquiry">
+    
+      </div>
 
-<script>
-$('textarea').autoResize();
-</script>
+<script rel="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script rel="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script rel="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
 
 @endsection

@@ -132,7 +132,7 @@ function handleFileSelect(evt) {
           // Render thumbnail.
           var span = document.createElement('span');
           span.innerHTML = ['<img class="thumb" width="200px" height="200px" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
+                            '" title="', escape(theFile.name), '"/>&nbsp;&nbsp;&nbsp;&nbsp;'].join('');
           document.getElementById('list').insertBefore(span, null);
         };
       })(f);
