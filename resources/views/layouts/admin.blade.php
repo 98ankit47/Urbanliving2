@@ -292,12 +292,47 @@
                       },
                       success: function () {
                         $('#logoModal').modal('hide');
-                        $('.modal-backdrop').css('display','none'); 
-                         loadLogo();
+                        $('.modal-backdrop').css('display','none');
                         $('#success').html('Logo Updated').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
 
                       }
                     });
+
+              });
+
+          });
+  </script>
+    <script>
+          $(function () {
+              $('#changepass').on('submit', function (e) {
+                e.preventDefault();
+                      current            =  document.getElementById("current").value;         
+                      newpass            =  document.getElementById("newpass").value;         
+                      Confirmpass        =  document.getElementById("Confirmpass").value;  
+                      if(newpass==Confirmpass) 
+                      {
+                          $.ajax({
+                            type: 'post',
+                            url: '/api/admin/changePaas/',
+                              
+                            data:{
+                              'current'      : current,
+                              'newpass'      : newpass,
+                              'Confirmpass'  : Confirmpass
+                            },
+                            success: function () {
+                              $('#changepass').modal('hide');
+                              $('.modal-backdrop').css('display','none');
+                              $('#success').html('Password has been changed').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+
+                            }
+                          });
+                      }
+                      else
+                      {
+                        alert('Password And confirm Password are not same');
+                      }
+                 
 
               });
 

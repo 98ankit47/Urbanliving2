@@ -51,6 +51,7 @@ Route::delete( 'admin/home-feature/{id}', 'admin\HomeFeatureController@destroy')
 
 Route::get('admin/logo','CommonController@logo');
 Route::post('admin/logo','CommonController@addLogo');
+Route::post('admin/changePaas','CommonController@changepass');
 
 
 Route::get('admin/home-gallery/{id}','CommonController@showGallery');

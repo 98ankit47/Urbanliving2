@@ -43,6 +43,16 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+   
+    public function showLoginForm()
+    {
+        $intendedURL = \Session::get('url.intended');
+        if($intendedURL) {
+            Session::flash('message', 'You must log in to continue');
+        }
+
+        return view('auth.login');
+    }
     protected function authenticated(Request $request, $user)
     {
         if ( $user->type=='admin' ) 
@@ -51,15 +61,5 @@ class LoginController extends Controller
         }
 
         return redirect('/');
-    }
-    public function showLoginForm()
-    {
-        $intendedURL = \Session::get('url.intended');
-
-        if($intendedURL) {
-            Session::flash('message', 'You must log in to continue');
-        }
-
-        return view('auth.login');
     }
 }

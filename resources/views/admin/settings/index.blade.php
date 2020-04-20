@@ -56,7 +56,7 @@
 </div>
 
 <div class="container tabs"> 
-    <a class="tablink" type="button" data-toggle="modal" data-target="#passwordModal">
+    <a class="tablink" type="button" data-toggle="modal" data-target="#changepass">
       <div class="row">
         <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
           <strong>Change Password</strong>
@@ -100,7 +100,7 @@
 
 <!--Change Password Modal-->
 
-<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="changepass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
@@ -113,21 +113,19 @@
         <form class="details-containerr" style="font-family: Open Sans, sans-serif;">
             <div class="form-group">
                 <label for="inputTitle">Current Password</label>
-                <input type="text" class="form-control" id="title" required>
+                <input type="password"" class="form-control" id="current" required>
             </div>
             <div class="form-group">
                 <label for="inputTitle">New Password</label>
-                <input type="text" class="form-control" id="title" required>
+                <input type="password" class="form-control" id="newpass" required>
             </div>
             <div class="form-group">
                 <label for="inputTitle">Confirm New Pasword</label>
-                <input type="text" class="form-control" id="title" required>
+                <input type="text" class="form-control" id="Confirmpass" required>
             </div>
-      </form>
-      <div class="modal-footer">
         <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-        <button type="button" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
-      </div>
+        <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+    </form>
     </div>
   </div>
 </div>

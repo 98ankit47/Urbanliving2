@@ -10,6 +10,9 @@ use App\Models\FloorComponent;
 use App\Models\Enquiry;
 use App\User;
 Use \Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class CommonController extends Controller
@@ -312,5 +315,23 @@ class CommonController extends Controller
         $com=FloorComponent::where('type',$type)->where('floor_id',$floor_id)->where('component_no',$component_id)->get()->first();
         $data='<img src="/uploads/floorcomponent/'.$com->image.'" style="height:15rem; width:18rem;">';
         return $data;
+    }
+
+    public function changepass(Request $request)
+    {    
+        $user = User::where('type','admin')->get()->first();
+        $oldpass=$request['current'];
+        if(Hash::check($oldpass, $user->password))
+        {
+            User::where('type','admin')->update([
+                'password'=>Hash::make($request['newpass'])
+            ]);
+            
+        }
+        else
+        {
+            return ["danger" => "Your current Password is not correct" ];
+        }
+        
     }
 }
