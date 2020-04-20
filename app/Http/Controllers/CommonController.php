@@ -205,22 +205,117 @@ class CommonController extends Controller
         $enquiries= Enquiry::where('id',$id)->get()->first();
         $home= homes::where('id',$enquiries->home_id)->get()->first();
         $data.='
-        <div style="border:2px solid #ff6b56;background-color:white;text-align: center;font-family: Open Sans, sans-serif;width:60%" >
-        <h2 style=" background-color:#ff6b56;color: White;font-weight:bold">Requset For tour</h2>
-        <div class="container" style="background-color: white;text-align: center;font-family: Open Sans, sans-serif;"><br>
-            
-        <span>Enquiry For &nbsp;:&nbsp;&nbsp;<span style="color: #71aea5; font-size:20px;"><strong>'.$home->title.'</span></strong></span><br>
-        <span style="color: gray;font-size: 13px;">'.$enquiries->time.'</span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;font-size: 13px;"> '.$enquiries->date.' </span>
-        <br><br>
-        <span>From &nbsp;:&nbsp;<span style="color: #71aea5; font-size:20px;"> <strong>'.$enquiries->name.'</span></strong></span><br>
-        <span style="color: gray; font-size: 13px;"> '.$enquiries->email.' </span>&nbsp;<span style="color: gray;"> | </span>&nbsp;<span style="color: gray;font-size: 13px;"> '.$enquiries->phone.' </span><br><br><br>
-        <span>'.$enquiries->message.'</span>
-       <br><br><br>
-        <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#ff6b56;" class="btn w3-100">Reply</button>
-        <br><br>
         
-    </div>
-    </div>';
+<body style="background-color: white; margin: 0 !important; padding: 0 !important;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+<tr>
+   <td bgcolor="#5962ee" align="center"><p class="text-center" style="color:white;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+            <tr>
+                <td align="center" valign="top" style="padding: 0 0 0 0;"> </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr> 
+    <td bgcolor="#5962ee" align="center" style="padding: 0px 10px 0px 10px; ">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+            <tr>
+                <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 0 0 0; border-radius: 4px 4px 0px 0px; color: #111111; font-size: 44px; font-weight: 400;  line-height: 48px;"><br>
+                    <h1 style="font-size: 44px; font-weight: 400; margin: 2;"><img src="https://urbanliving.com/imgs/82" width="225" height="220" style="display: block; border: 0px;" /><br>
+                    </h1> <h1 style="font-size: 44px; font-weight: 400; margin: 2;"> </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr> 
+    <td bgcolor="#5962ee" align="center" style="padding: 0px 10px 0px 10px; ">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+            <tr>
+                <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 20px 0px 20px; border-radius: 4px 4px 0px 0px; color: #111111;font-size:25px; line-height: 38px;">
+                      <p style="color: #71aea5; margin: 2;text-align: left;">Hi, there is an Enquiry from <b>'.$enquiries->name.'</b> </p>
+                      <p style="margin: 2;text-align: left;font-size:18px;">'.$enquiries->message.'<p>
+                    </td>
+              </tr>
+              
+        </table>
+    </td>
+</tr>
+<br>
+<tr>
+    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+            <tr>
+                <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
+                <p style="font-size: 18px;text-align: left; ">Here are the details of Development !</p>
+                <table class="table" style="font-size: 16px;text-align: left;">
+                    <tr class="row row-contain"  style="color:black; padding-left:4px;">
+                        <th style="padding:8px;font-size:18px; width:164px;"><b>Title</b></th>
+                        <th style="padding:8px;font-size:18px; "><b>Development</b></th>
+                    </tr>
+                    <tr class="row row-contain">
+                        <td style="padding:8px; width:164px;">Home Name</td>
+                        <td style="padding:8px; ">'.$home->title.'</td>
+                    </tr>
+                    <tr class="row row-contain">
+                            <td style="padding:8px; width:164px;">Enquiry Time</td>
+                            <td style="padding:8px;">'.$enquiries->time.'</td>
+                        </tr>
+                        <tr class="row row-contain">
+                            <td style="padding:8px; width:164px;">Enquiry Date</td>
+                            <td style="padding:8px;">'.$enquiries->date.'</td>
+                        </tr>
+                </table>
+                    <p style="font-size: 18px;text-align: left; ">Here are the details of User !</p>
+                    <table class="table" style="font-size: 16px;text-align: left;">
+                        <tr class="row row-contain"  style="color:black; padding-left:4px;">
+                            <th style="padding:8px;font-size:18px; width:164px;"><b>Name</b></th>
+                            <th style="padding:8px;font-size:18px; "><b>'.$enquiries->name.'</b></th>
+                        </tr>
+                        <tr class="row row-contain">
+                            <td style="padding:8px; width:164px;">Email</td>
+                            <td style="padding:8px; ">'.$enquiries->email.'</td>
+                        </tr>
+                        <tr class="row row-contain">
+                            <td style="padding:8px; width:164px;">Contact No.</td>
+                            <td style="padding:8px; ">'.$enquiries->phone.'</td>
+
+                        </tr>
+                    </table>   
+                </td>
+            </tr>
+
+        </table>
+    </td>
+</tr>
+<tr>
+    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px; margin-bottom:50px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+            <tr>
+                <td bgcolor="#484848" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: white;  font-size: 18px; font-weight: 400; line-height: 25px;">
+                    <p style="margin: 0; font-size: 15px;"><a href="#" target="_blank" style="color: white;">Urban Living</a></p>
+                    <h2 style="font-size: 12px; font-weight: 400; color:white; margin: 0;">Copyright 2020 | All Rights Reserved</h2>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td bgcolor="#f4f4f4" align="center" style="padding: 0 10px 0px 10px; margin-bottom:50px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+            <tr>
+                <td bgcolor="white" align="center" style="padding: 10px 20px 10px 10px; border-radius: 4px 4px 4px 4px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
+                    <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;"></h2>
+                    <p style="margin: 0;"><a href="#" target="_blank" style="color: sky#34495E ;"></a></p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+</table>
+</body>';
         
         return $data; 
     }
