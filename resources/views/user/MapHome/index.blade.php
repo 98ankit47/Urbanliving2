@@ -21,35 +21,42 @@
   
         <script>
              var map;
-             var myLatLng={lat: 30.6792786, lng: 76.7269971};;
+             var myLatLng;
             function initMap() {
-               // The location of Uluru 
-            // The map, centered at Uluru
+            var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
+
             var map = new google.maps.Map(
             document.getElementById('map'), {zoom: 15, center: myLatLng});
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({position: myLatLng, map: map});
 
             var request = {
                 location: myLatLng,
                 radius: '500',
-                type: ['store', 'school'],
+                type: ['college'],
             };
-
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });
+            function createmarker(latlng,icn)
+            {
+                console.log(latlng);
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: icn,
+                    title: 'Hello World!'
+                });
+            }
 
                 service = new google.maps.places.PlacesService(map);
                 service.nearbySearch(request, callback);
 
-
                 function callback(results, status) {
-                    console.log(results);
-                }
-               
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            var place=results[i];
+                            latlng=place.geometry.location;
+                            icn=place.icon;
+                            createmarker([latlng,icn]);
+                        }
+                    }
+             }
             }
         </script>  
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I&callback=initMap&libraries=places"
