@@ -83,9 +83,9 @@ Route::get('admin/floor-component-gallery/{type}/{id}', function () {
 Route::get('/',function(){
     return view('user.index');
 }); 
-Route::get('/abc',function(){
+Route::get('/home-map',function(){
     return view('user.MapHome.index');
-}); 
+})->name('homeMap'); 
 Route::get('/homes',function(){
     return view('user.homeDetail.index');
 });

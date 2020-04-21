@@ -76,4 +76,9 @@ Route::get('floorComponent/{type}/{floor_id}/{component_id}','CommonController@u
 Route::post('user','user\HomeController@signup');
 
 
+Route::get('map','user\HomeController@map');
+Route::get('mapHome','user\HomeController@mapHomeView');
+
+
+
 

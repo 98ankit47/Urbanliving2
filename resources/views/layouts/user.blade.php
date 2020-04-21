@@ -487,6 +487,80 @@
   </script>
 @endif
 
+@if(Route::currentRouteName() == 'homeMap')
+
+	<script>
+		var APP_URL = "{{ url('/') }}";
+		loadMapHomeDetail();
+		function loadMapHomeDetail(){
+		$.ajax({
+		type: 'GET',
+		url: APP_URL+'/api/mapHome/',
+			success: function(result){
+				console.log(result);
+				$('#mapHome').html(result);
+			}   
+		});
+		} 
+	</script>
+        <script>
+			loadMap();
+            function loadMap(){
+                $.ajax({
+                type: 'GET',
+                url: APP_URL+'/api/map/',
+                  success: function(result){
+					var ln = Object.keys(result).length;
+					var map;
+					var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
+					var map = new google.maps.Map(
+						document.getElementById('map'), {zoom: 3, center: myLatLng});
+						for(var i=0;i<ln;i++)
+						{	
+							var marker = new google.maps.Marker({
+								position: new google.maps.LatLng(result[i].lat,result[i].lng),
+								map: map,
+								icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZBkyJksKKlffmALRiahKusCdbZPIOnVVuEZyo0YB8GAqSs4wr&usqp=CAU',
+								title: result[i].title,
+							});
+
+							// var request = {
+							// 	location: myLatLng,
+							// 	radius: '500',
+							// 	type: ['college'],
+							// };
+							// function createmarker(latlng,icn,title)
+							// {
+							// 	var marker = new google.maps.Marker({
+							// 		position: latlng,
+							// 		map: map,
+							// 		icon: icn,
+							// 		title: title
+							// 	});
+							// }
+
+								// service = new google.maps.places.PlacesService(map);
+								// service.nearbySearch(request, callback);
+
+								// function callback(results, status) {
+								// 	if (status === google.maps.places.PlacesServiceStatus.OK) {
+								// 		for (var i = 0; i < results.length; i++) {
+								// 			var place=results[i];
+								// 			latlng=place.geometry.location;
+								// 			icn=place.icon;
+								// 			title=place.title;
+								// 			createmarker(latlng,icn,title);
+								// 		}
+								// 	}
+								// }
+						} 
+					}  
+               });
+              } 
+            
+		</script>  
+	@endif
+
 <script type="text/javascript">
 	// Prevent dropdown menu from closing when click inside the form
 	$(document).on("click", ".navbar-right .dropdown-menu", function(e){

@@ -103,4 +103,23 @@ class HomeController extends Controller
         ]);
         return "success";
     }
+    public function map(Request $request)
+    {
+        return Homes::get();
+
+    }
+    public function mapHomeView(Request $request)
+    {
+        $data='';
+        $homes = Homes::all();
+        foreach($homes as $home)
+        {
+            $data.='<div class="card" style="width: 32rem; height:20rem;">
+                    <img style="height:320px;" src="/uploads/homes/'.$home->featured_image.'"/>
+                    <a href="/development-Detail/'.$home->id.'" type="button" class="btn btnss btn-outline-dark">DETAILS</a>
+                    <button type="button" class="btn btns btn-outline-dark">SUMMARY</button>
+                    </div><br>';
+        }
+        return $data;
+    }
 }
