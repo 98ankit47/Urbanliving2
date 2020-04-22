@@ -143,21 +143,14 @@
 <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
-
       <div class="modal-header">
-        <h4 class="modal-title">Add Location</h4>
+        <h4 class="modal-title">Select Location</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-
       <div class="modal-body">
-      <div style="max-width:400px;margin:auto"> 
-        <div class="input-icons"> 
-            <i class="fa fa-arrow-right icon" href=""></i> 
-            <input type="text" class="form-control input-field" id="builder" required>
+        <div id="mapshow"> 
         </div> 
-  </div> 
       </div>
-
       <div class="modal-footer">
         <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
       </div>

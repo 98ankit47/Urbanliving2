@@ -51,22 +51,13 @@
   <link href="{{asset('summernote/summernote.min.css')}}" rel="stylesheet">
   @endif
 
-<link href="{{asset('/admin/cms/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">  
       <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="{{asset('/admin/cms/css/bootstrap.min.css')}}">
-      <link href="{{asset('/admin/cms/css/sb-admin-2.min.css')}}" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="{{asset('/admin/cms/css/bootstrap-extended.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('/admin/cms/css/material-extended.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('/admin/cms/fonts/simple-line-icons/style.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('/admin/cms/css/vendors/datatables.min.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('/urban_project/public/admin/cms/css/components.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('/urban_project/public/admin/cms/css/core/style.css')}}">
-      <link href="{{asset('/admin/cms/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
-      <link href="{{asset('/admin/cms/css/custom2.css')}}" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.css" rel="stylesheet">
 
 </head>
+
+
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
@@ -567,7 +558,15 @@ $(document).ready(function() {
 @endif
 @if(Route::currentRouteName() == 'create-home' )
 <script>
-$(document).ready(function() {
+  $(document).ready(function() {
+    loadmap();
+  function loadmap(){
+    var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
+    var map = new google.maps.Map(
+      document.getElementById('mapshow'), 
+      {zoom: 15, center: myLatLng}
+    );
+  }
   var APP_URL = "{{ url('/') }}";
   var id = window.location.href.split('/').pop();
   var image,image_name;
@@ -652,9 +651,14 @@ $(document).ready(function() {
           });
 
       });
-});
+      
+					
+        });
 </script>
 @endif
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I"
+async defer></script>
 
 <script>
     var APP_URL = "{{ url('/') }}";

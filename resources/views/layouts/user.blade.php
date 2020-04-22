@@ -509,10 +509,15 @@
 			type: 'GET',
 			url: APP_URL+'/api/mapMarkerHome/'+lat +'/' +lng,
 				success: function(result){
-					var request = {
+					$('.homebox').removeClass('homeactive');
+					$('#home'+result.id).addClass('homeactive');
+					$('.results-contain').animate({
+					scrollTop: $('#home'+result.id).offset().top  + 110 }, 1000);
+					
+							var request = {
 								location: new google.maps.LatLng(result.lat,result.lng),
 								radius: '500',
-								type: ['college'],
+								type: ['health'],
 							};
 					service = new google.maps.places.PlacesService(map);
 					service.nearbySearch(request, callback);
@@ -539,7 +544,6 @@
                 url: APP_URL+'/api/map/',
                   success: function(result){
 					var ln = Object.keys(result).length;
-					var map;
 					var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
 					var map = new google.maps.Map(
 						document.getElementById('map'), {zoom: 15, center: myLatLng});
