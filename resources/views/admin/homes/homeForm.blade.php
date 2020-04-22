@@ -9,6 +9,27 @@
 .hm-contain {
   margin-left: 45%;
 }
+
+.input-icons i { 
+            position: absolute; 
+            text-align:right;
+        } 
+          
+        .input-icons { 
+            width: 100%; 
+            margin-bottom: 10px; 
+        } 
+          
+        .icon { 
+            padding: 10px; 
+            min-width: 40px; 
+        } 
+          
+        .input-field { 
+            width: 100%; 
+            padding: 10px; 
+            text-align: center; 
+        } 
 </style>
 
 <div class="container details-container" >
@@ -88,16 +109,20 @@
 </div>
   <br><br>
   <div class="form-row">
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <label for="inputCity">Builder</label>
       <input type="text" class="form-control" id="builder" required>
     </div>
      
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <label for="inputState">Status</label>
       <select id="status" class="form-control">
        
       </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputLocation">Add Location</label><br>
+      <a type="button" data-toggle="modal" data-target="#myModal" style="color: white;width:100%;font-family: Open Sans, sans-serif;" class="btn btn-dark"><i class='fas fa-map-marker-alt'></i>&nbsp;&nbsp;&nbsp;Add</a>
     </div>
   </div>
   <div class="row" style="font-family: Open Sans, sans-serif;">
@@ -111,6 +136,36 @@
 </form>
 <br>
 </div>
+
+
+<!--Add Location Modal-->
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Add Location</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+      <div style="max-width:400px;margin:auto"> 
+        <div class="input-icons"> 
+            <i class="fa fa-arrow-right icon" href=""></i> 
+            <input type="text" class="form-control input-field" id="builder" required>
+        </div> 
+  </div> 
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <script>
 function handleFileSelect(evt) {

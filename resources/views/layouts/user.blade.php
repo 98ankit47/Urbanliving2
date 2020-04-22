@@ -496,7 +496,6 @@
 		type: 'GET',
 		url: APP_URL+'/api/mapHome/',
 			success: function(result){
-				console.log(result);
 				$('#mapHome').html(result);
 			}   
 		});
@@ -510,9 +509,23 @@
 			type: 'GET',
 			url: APP_URL+'/api/mapMarkerHome/'+lat +'/' +lng,
 				success: function(result){
+					var request = {
+								location: new google.maps.LatLng(result.lat,result.lng),
+								radius: '500',
+								type: ['college'],
+							};
+					service = new google.maps.places.PlacesService(map);
+					service.nearbySearch(request, callback);
 
-					$(".home57").toggle();
-					console.log(result);
+								function callback(results, status) {
+									if (status === google.maps.places.PlacesServiceStatus.OK) {
+										for (var i = 0; i < results.length; i++) {
+											var place=results[i];
+											 console.log(place);
+										}
+										loadMap();
+									}
+								}
 				}   
 			});
 			} 

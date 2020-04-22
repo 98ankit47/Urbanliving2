@@ -48,11 +48,11 @@ td, th {
     }
 
     .add-new {
-      margin-left: 70%;
+      text-align:right;
     }
 
     .tabsss {
-      margin-left: 45%;
+      text-align:left;
     }
     /* .w3-bottombar {
       width: 500px;
@@ -71,11 +71,11 @@ td, th {
 <div class="w3-container">
 <br>
 <div class="row" style="font-family: Open Sans, sans-serif;">
-<div class="col-md-4 tabsss">
-<h4 style="color: black;"><strong>Home Detail</strong></h4>
-</div>
-<div class="col-md-2">
+<div class="col-md-5">
 <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4; font-family: Open Sans, sans-serif;" class="btn">Go Back</a>
+</div>
+<div class="col-md-7 tabsss">
+<h4 style="color: black;"><strong>Home Detail</strong></h4>
 </div>
 </div><hr>
 <br>
@@ -196,10 +196,10 @@ td, th {
 
 <div id="features" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
   <div class="container">
-      <div class="col">
-      <a type="button" onclick="addFeature()" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn add-new">Add New Feature</a>
+      <div class="container add-new">
+        <a type="button" onclick="addFeature()" style="color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn">Add Feature</a>
       </div>
-    <br>
+    <br><br>
     <div class="row" style="text-align: center; font-family: Open Sans, sans-serif;">
                         <div class="col-md-4">
                             <span><strong>FEATURE IMAGE</strong></span><br>
@@ -306,7 +306,32 @@ td, th {
 
 <!-- Modal -->
  <!--delet Modal-->
+<!-- Button trigger modal -->
 
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-xl" id="helloo" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+      <div class="modal-header">
+        <h5>Delete Confirm Action</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"><i class="fa fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="margin-left:10px;">
+          <h6 class="delete_heading">Are you sure, you want to delete this Feature ?</h6>
+          <div class="clearfix"></div>
+          <div class="m-auto" style="font-family: Times New Roman;">
+            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-btn"> Yes</button>
+           </div>  
+          </div>    
+        </div>
+     </div>
+   </div>
+ </div>
  
 
 <div class="modal fade bd-example-modal-xl" id="deleteFeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
@@ -333,29 +358,13 @@ td, th {
  </div>
 
 
- <div class="modal fade bd-example-modal-xl" id="deleteGallery" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
-      <div class="modal-header">
-        <h5>Delete Confirm Action</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true"><i class="fa fa-times"></i></span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row" style="margin-left:10px;">
-          <h6 class="delete_heading">Are you sure, you want to delete this Gallery image ?</h6>
-          <div class="clearfix"></div>
-          <div class="m-auto" style="font-family: Times New Roman;">
-            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-            <button type="submit"  style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-btn"> Yes</button>
-           </div>  
-          </div>    
-        </div>
-     </div>
-   </div>
- </div>
+ 
 
+<script>
+$(document).on('click', '#galleryModal' function(ev) {
+  $('#exampleModal').modal('show'); 
+    });   
+</script>
 
 <script>
 // Tabs
@@ -386,5 +395,4 @@ function openCity(evt, cityName) {
 
 
 </script>
-
 @endsection
