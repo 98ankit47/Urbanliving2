@@ -32,13 +32,13 @@
 }
 
 .enquiry-contain {
-    margin-left: 42%;
+    text-align: center;
 }
 </style>
 </head>
 <br>
 
-<div class="enquiry-contain">
+<div class="container enquiry-contain">
 <h4><strong> Manage Enquiry</strong></h4>
 </div><hr><br>
 

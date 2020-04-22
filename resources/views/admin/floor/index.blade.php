@@ -164,10 +164,11 @@
             <div class="image-upload">
               <p><strong>Floor Image</strong></p>
               <p><input type="file"  name="image" id="image"  onchange="loadFile(event)" required></p>
-            </div>
-          </div>            
-              <!-- <p><label for="file" style="cursor: pointer;">Choose File</label></p> -->
               <p><img id="output" width="130px" height="130px" /></p>
+            </div>
+          </div>   
+              <!-- <p><label for="file" style="cursor: pointer;">Choose File</label></p> -->
+              
           </div>
         </div>
         <div class="modal-footer">
@@ -293,10 +294,10 @@
       </div>
       <div class="modal-body">
         <div class="row" style="margin-left:10px;">
-          <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Home ?</h6>
+          <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Floor ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
-            <button type="button"  style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
             <button type="submit" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-floor-btn"> Yes</button>
            </div>  
           </div>    

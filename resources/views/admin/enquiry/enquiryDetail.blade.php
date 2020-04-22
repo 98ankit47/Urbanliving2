@@ -106,7 +106,7 @@ color:black;
 <h4><strong>Enquiry Details</strong></h4>
 </div>
 </div>
-</div><hr><br>
+</div><hr>
 
 
     <!-- HIDDEN PREHEADER TEXT -->
