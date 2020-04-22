@@ -34,9 +34,9 @@ class CommonController extends Controller
         foreach($features as $feature)
         {
             $data.=' <div class="card" style="text-align: center;">
-                    <div class="row" style=" margin-top:10px; margin-bottom:10px;">
-                        <div class="col-md-4">
-                        <img class="card-img-top" style="height:150px; width:290px;" src="/uploads/homeFeature/'.$feature->image.'">
+                    <div class="row">
+                        <div class="col-md-4" style="text-align:center;">
+                        <img class="card-img-top" style="height:150px; width:100%" src="/uploads/homeFeature/'.$feature->image.'">
                         </div> 
                         <div class="col-md-4">
                         <p class="title" style="font-size: 20px; margin-top:50px;">'.$feature->title.'</p>
@@ -117,7 +117,9 @@ class CommonController extends Controller
             <div class="card">
               <img class="card-img-top" style="height:200px;" src="/uploads/gallery/'.$gal.'">
                 <div class="card-body">
-                <button class="btn w-100" onclick="deleteGallery('.$key.','.$homes->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                <div class="wrapper">
+                    <button class="btn w-100" type="button" data-id="'.$homes->id.'" data-toggle="modal" data-target="#helloo" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                </div>
                 </div>
             </div> 
           </div>';
@@ -172,9 +174,15 @@ class CommonController extends Controller
                     <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;">'.$display.' </i>
                     </div><hr>
                     <div class="container activity">
-                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 35%;"> '.$enquiry->created_at->format('d M Y').' </i>
-                    <i class ="fa fa-eye" style="font-size:15px; color:#DC143C; padding-left: 10%;"> Mark as read </i>
-                </div>
+                    <div class="row">
+                        <div class="col-md-6" style="text-align:center;">
+                            <i class ="fa fa-clock" style="font-size:15px; color:#DC143C;"> '.$enquiry->created_at->format('d M Y').' </i>
+                        </div>
+                        <div class="col-md-6" style="text-align:center;">
+                            <i class ="fa fa-eye" style="font-size:15px; color:#DC143C;"> Mark as read </i>
+                        </div>
+                    </div>
+                    </div>
                 </a>';
             }
             else
@@ -190,9 +198,15 @@ class CommonController extends Controller
                 <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;">'.$display.' </i>
                 </div><hr>
                 <div class="container activity">
-                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 35%;"> '.$enquiry->created_at->format('d M Y').' </i>
-                    <i class ="fa fa-eye" style="font-size:15px; color:#DC143C; padding-left: 10%;"> Mark as read </i>
-                </div>
+                    <div class="row">
+                        <div class="col-md-6" style="text-align:center;">
+                            <i class ="fa fa-clock" style="font-size:15px; color:#DC143C;"> '.$enquiry->created_at->format('d M Y').' </i>
+                        </div>
+                        <div class="col-md-6" style="text-align:center;">
+                            <i class ="fa fa-eye" style="font-size:15px; color:#DC143C;"> Mark as read </i>
+                        </div>
+                    </div>
+                    </div>
             </a>';
             }
         }

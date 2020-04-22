@@ -29,7 +29,7 @@
 <br>
     <div class="row" style="font-family: Times New Roman;">
         <div class="col-md-2">
-          <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4;font-family: Open Sans, sans-serif;" class="btn">Back</a> 
+          <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4;font-family: Open Sans, sans-serif; color:white;" class="btn">Back</a> 
         </div>
         <div class="col-md-8 floor-contain">
             <h4 style="text-align: center; font-family: Open Sans, sans-serif;"><strong>Floor Component</strong></h4>
@@ -142,11 +142,11 @@
         </div>
         <div class="modal-body">
           <div class="row" style="margin-left:10px;">
-            <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Home ?</h6>
+            <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Component ?</h6>
             <div class="clearfix"></div>
             <div class="m-auto">
-              <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-              <button type="submit" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-floor-component-btn"> Yes</button>
+              <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" data-dismiss="modal"> No </button>
+              <button type="submit" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-floor-component-btn"> Yes</button>
              </div>  
             </div>    
           </div>
