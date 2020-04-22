@@ -114,12 +114,18 @@ class HomeController extends Controller
         $homes = Homes::all();
         foreach($homes as $home)
         {
-            $data.='<div class="card" style="width: 32rem; height:20rem;">
+            $data.='<div class="card" style="width: 100%; height:15rem; class="home'.$home->id.'">
                     <img style="height:320px;" src="/uploads/homes/'.$home->featured_image.'"/>
                     <a href="/development-Detail/'.$home->id.'" type="button" class="btn btnss btn-outline-dark">DETAILS</a>
                     <button type="button" class="btn btns btn-outline-dark">SUMMARY</button>
                     </div><br>';
         }
         return $data;
+    }
+    
+    public function mapMarkerHome($lat,$lng)
+    {
+        $homes = Homes::where('lat',$lat)->where('lng',$lng)->get()->first();
+        return $homes;
     }
 }

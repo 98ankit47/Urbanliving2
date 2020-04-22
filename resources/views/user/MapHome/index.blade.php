@@ -50,23 +50,9 @@
 
       </style>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active" style="color: white;">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown" style="margin-left: 250%;">
+ 
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-filter" style="color:white;"></i>
+        <i class="fa fa-filter" style="color:blue;"></i>
         </a>
         <div class="dropdown-menu" style="width:350px;" aria-labelledby="navbarDropdown">
         <form class="details-containerr" style="font-family: Open Sans, sans-serif; margin-left: 5px; margin-right: 5px;">
@@ -173,16 +159,12 @@
             <button class="btn btn-outline-success my-2 my-sm-0" style="margin-left:130px;" type="submit">Apply</button>
         </form>
         </div>
-      </li>
-    </ul>
-  </div>
-</nav><br>
 
         <div class="row">
-            <div id="map" class="col-md-6">
+            <div id="map" class="col-md-8">
 
             </div>
-            <div class="col-md-6 maps" id="mapHome">
+            <div class="col-md-4 maps" id="mapHome">
             </div>
         </div>
         

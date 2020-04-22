@@ -399,7 +399,6 @@
 	</div>
 </nav>
                                                                                    
-<br><br>
 
 <div class="container">
   @yield('content')
@@ -502,6 +501,22 @@
 			}   
 		});
 		} 
+		function scrollList(lat,lng)
+		{
+			var APP_URL = "{{ url('/') }}";
+			selectMarkerHome();
+			function selectMarkerHome(){
+			$.ajax({
+			type: 'GET',
+			url: APP_URL+'/api/mapMarkerHome/'+lat +'/' +lng,
+				success: function(result){
+
+					$(".home57").toggle();
+					console.log(result);
+				}   
+			});
+			} 
+		}
 	</script>
         <script>
 			loadMap();
@@ -514,16 +529,21 @@
 					var map;
 					var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
 					var map = new google.maps.Map(
-						document.getElementById('map'), {zoom: 3, center: myLatLng});
+						document.getElementById('map'), {zoom: 15, center: myLatLng});
+						var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 						for(var i=0;i<ln;i++)
 						{	
 							var marker = new google.maps.Marker({
 								position: new google.maps.LatLng(result[i].lat,result[i].lng),
 								map: map,
-								icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZBkyJksKKlffmALRiahKusCdbZPIOnVVuEZyo0YB8GAqSs4wr&usqp=CAU',
+								icon: iconBase + 'library_maps.png',
 								title: result[i].title,
 							});
-
+							google.maps.event.addListener(marker, "click", function (event) {
+                    			var lat=this.position.lat();
+                    			var lng=this.position.lng();
+								scrollList(lat,lng)
+							});
 							// var request = {
 							// 	location: myLatLng,
 							// 	radius: '500',
