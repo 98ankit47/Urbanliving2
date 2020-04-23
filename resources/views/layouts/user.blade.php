@@ -503,24 +503,18 @@
 		function scrollList(lat,lng)
 		{
 			var APP_URL = "{{ url('/') }}";
-			selectMarkerHome();
-			function selectMarkerHome(){
 			$.ajax({
 			type: 'GET',
 			url: APP_URL+'/api/mapMarkerHome/'+lat +'/' +lng,
-				success: function(result){
-					$('.homebox').removeClass('homeactive');
-					$('#home'+result.id).addClass('homeactive');
-					$('.results-contain').animate({
-					scrollTop: $('#home'+result.id).offset().top  + 110 }, 1000);
-					
+				success: function(result){	
+					homeScroll('home'+result.id)
 							var request = {
 								location: new google.maps.LatLng(result.lat,result.lng),
 								radius: '500',
 								type: ['health'],
 							};
-					service = new google.maps.places.PlacesService(map);
-					service.nearbySearch(request, callback);
+						service = new google.maps.places.PlacesService(map);
+						service.nearbySearch(request, callback);
 
 								function callback(results, status) {
 									if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -533,7 +527,24 @@
 								}
 				}   
 			});
-			} 
+			
+
+			function scrollIfNeeded(element, container) {
+            if (element.offsetTop < container.scrollTop) {
+                container.scrollTop = element.offsetTop;
+            } else {
+                const offsetBottom = element.offsetTop + element.offsetHeight;
+                const scrollBottom = container.scrollTop + container.offsetHeight;
+                if (offsetBottom > scrollBottom) {
+                container.scrollTop = offsetBottom - container.offsetHeight;
+                }
+            }
+            }
+            function homeScroll(homeid)
+            {
+                scrollIfNeeded(document.getElementById(homeid), document.getElementById('container'));
+            }   
+
 		}
 	</script>
         <script>
@@ -544,21 +555,45 @@
                 url: APP_URL+'/api/map/',
                   success: function(result){
 					var ln = Object.keys(result).length;
+					var infoWindow = new google.maps.InfoWindow();
 					var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
 					var map = new google.maps.Map(
 						document.getElementById('map'), {zoom: 15, center: myLatLng});
 						var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+						var markers = [];
 						for(var i=0;i<ln;i++)
 						{	
+							var data = markers[result[i].id];
 							var marker = new google.maps.Marker({
 								position: new google.maps.LatLng(result[i].lat,result[i].lng),
 								map: map,
 								icon: iconBase + 'library_maps.png',
 								title: result[i].title,
 							});
+							markers.push(marker);
+							(function (marker, data) {
+								var image=result[i].featured_image;
+								var title=result[i].title;
+								var bed=result[i].bedroom;
+								var bathroom=result[i].bathroom;
+								
+								google.maps.event.addListener(marker, "mouseover", function (e) {
+									infoWindow.setContent('<div id="content" class="map-window"><div class="item">'+
+									'<div class="item-img"><img style="height:100px;width:150px" class="js-mediaFit js-mediaFitCollected landscape-media loaded" src="/uploads/homes/'+image+'">'+
+									'</div><div class="item-body"><div class="item-body-content">'+
+									'<div class="item-header"><h6>'+title+'</h6></div>'+
+									'<ul class="item-details" type="none">'+
+									'<li class="price "><i class="fa fa-price" style="font-size:20px"></i><span>$32,500</span></li>'+
+									'<li class="icon icon-bed"><i class="fa fa-bed" style="font-size:20px"></i><span>'+bed+'</span><i class="fa fa-bath" style="font-size:20px"></i><span>'+bathroom+'</span></li>'+
+									'</ul>'+
+									'</div></div>');
+									infoWindow.open(map, marker);
+									
+								});
+							})(marker, data);
 							google.maps.event.addListener(marker, "click", function (event) {
                     			var lat=this.position.lat();
-                    			var lng=this.position.lng();
+								var lng=this.position.lng();
 								scrollList(lat,lng)
 							});
 							// var request = {

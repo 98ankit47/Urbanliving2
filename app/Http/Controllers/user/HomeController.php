@@ -114,10 +114,10 @@ class HomeController extends Controller
         $homes = Homes::all();
         foreach($homes as $home)
         {
-            $data.='<div class="card homebox" style="width: 100%; height:15rem; id="home'.$home->id.'">
-                    <img style="height:320px;" src="/uploads/homes/'.$home->featured_image.'"/>
-                    <a href="/development-Detail/'.$home->id.'" type="button" class="btn btnss btn-outline-dark">DETAILS</a>
-                    <button type="button" class="btn btns btn-outline-dark">SUMMARY</button>
+            $data.='  <div id="home'.$home->id.'" class="card homebox1" style="width: 100%; height:24rem;" >
+                        <img style="height:100%;" src="uploads/homes/'.$home->featured_image.'"/>
+                        <a href="" type="button" class="btn btnss btn-outline-dark">DETAILS</a>
+                        <button type="button" class="btn btns btn-outline-dark">SUMMARY</button>
                     </div><br>';
         }
         return $data;

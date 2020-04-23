@@ -2,53 +2,73 @@
     @section('content')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
+        Always set the map height explicitly to define the size of the div
+          element that contains the map. /
         #map {
           height: 500px;
           width:50%
         }
 
-        div.maps {
-  width: 110px;
-  height: 520px;
-  overflow: auto;
-}
-    
-.card .btnss {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  
-  color: white;
-  font-size: 22px;
-  padding: 12px 24px;
-  border-color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
+                div.maps {
+        width: 110px;
+        height: 520px;
+        overflow: auto;
+        }
+            
+        .card .btnss {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+        color: white;
+        font-size: 22px;
+        padding: 12px 24px;
+        border-color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        }
+
+        .card .btns {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+        color: white;
+        font-size: 22px;
+        padding: 12px 24px;
+        border-color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        }
+
+        .scrollContainer {
+        overflow-y: auto;
+        position: relative;
+        width: 110px;
+        height: 520px;
+        
+        }
+
+ body {
+  padding: 10px;
 }
 
-.card .btns {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  
-  color: white;
-  font-size: 22px;
-  padding: 12px 24px;
-  border-color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
+.box {
+  margin: 5px;
+  background-color: yellow;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-      </style>
+    </style>
 
  
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -158,16 +178,39 @@
             </div>
             <button class="btn btn-outline-success my-2 my-sm-0" style="margin-left:130px;" type="submit">Apply</button>
         </form>
-        </div>
-
+        </div><br>
         <div class="row">
+        
             <div id="map" class="col-md-8">
-
+               
             </div>
-            <div class="col-md-4 maps" id="mapHome">
+
+            <div class="col-md-4 maps scrollContainer" id="container">
+                <div id="mapHome">
+                        
+                </div>
             </div>
         </div>
         
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I&libraries=places"
           async defer></script>  
+
+          <script>
+            function scrollIfNeeded(element, container) {
+            if (element.offsetTop < container.scrollTop) {
+                container.scrollTop = element.offsetTop;
+            } else {
+                const offsetBottom = element.offsetTop + element.offsetHeight;
+                const scrollBottom = container.scrollTop + container.offsetHeight;
+                if (offsetBottom > scrollBottom) {
+                container.scrollTop = offsetBottom - container.offsetHeight;
+                }
+            }
+            }
+            function homescrollh(homeid)
+            {
+                scrollIfNeeded(document.getElementById(homeid), document.getElementById('container'));
+            }    
+        </script>
+
     @endsection
