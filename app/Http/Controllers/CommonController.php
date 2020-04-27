@@ -218,115 +218,111 @@ class CommonController extends Controller
         $data ='';
         $enquiries= Enquiry::where('id',$id)->get()->first();
         $home= homes::where('id',$enquiries->home_id)->get()->first();
-        $data.='
-        
-<body style="background-color: white; margin: 0 !important; padding: 0 !important;">
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-<tr>
-   <td bgcolor="#5962ee" align="center"><p class="text-center" style="color:white;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-            <tr>
-                <td align="center" valign="top" style="padding: 0 0 0 0;"> </td>
-            </tr>
-        </table>
-    </td>
-</tr>
-<tr> 
-    <td bgcolor="#5962ee" align="center" style="padding: 0px 10px 0px 10px; ">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-            <tr>
-                <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 0 0 0; border-radius: 4px 4px 0px 0px; color: #111111; font-size: 44px; font-weight: 400;  line-height: 48px;">
-                    <img src="https://urbanliving.com/imgs/82" width="100" height="100" style="display: block; border: 0px;" />
+        $data.='<table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                <td bgcolor="#5962ee" align="center"><p class="text-center" style="color:white;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                            <tr>
+                                <td align="center" valign="top" style="padding: 0 0 0 0;"> </td>
+                            </tr>
+                        </table>
                     </td>
-            </tr>
-        </table>
-    </td>
-</tr>
-<tr> 
-    <td bgcolor="#5962ee" align="center" style="padding: 0px 0px 0px 0px; ">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-            <tr>
-                <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 20px 0px 20px; border-radius: 4px 4px 0px 0px; color: #111111;font-size:25px; line-height: 38px;">
-                      <p style="color: #71aea5; margin: 2;text-align: left;">Hi, there is an Enquiry from <b>'.$enquiries->name.'</b> </p>
+                </tr>
+                <tr> 
+                    <td bgcolor="#5962ee" align="center" style="padding: 0px 10px 0px 10px; ">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                            <tr>
+                                <td bgcolor="#ffffff" valign="top" style="padding: 0 0 0 0; border-radius: 4px 4px 0px 0px; color: #111111; font-size: 44px; font-weight: 400;  line-height: 48px;">
+                                    <div class="row">
+                                    <div class="col-md-4"> 
+                                    <img src="https://urbanliving.com/imgs/82" width="100" height="100" style="display: block; border: 0px;" />
+                                    </div>
+                                    <div class="col-md-8">
+                                    <p style="color: #71aea5; margin: 2;text-align: left; font-size:18px;">Hi Admin,<br> There is an Enquiry from <b>'.$enquiries->name.'</b> </p><br>
+                                    </div>
+                                    </div>
+                                    </td>
+                            </tr>
+                        </table>
                     </td>
-              </tr>
-              
-        </table>
-    </td>
-</tr>
-<br>
-<tr>
-    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 0px 0px 0px;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-            <tr>
-                <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
-                <p style="font-size: 18px;text-align: left; ">Here are the details of Timing!</p>
-                <table class="table" style="font-size: 16px;text-align: left;">
-                     
-                    <tr class="row row-contain">
-                        <th style="padding:8px; width:164px;">Home Name</th>
-                        <th style="padding:8px; ">'.$home->title.'</th>
-                    </tr>
-                    <tr class="row row-contain">
-                            <td style="padding:8px; width:164px;">Enquiry Time</td>
-                            <td style="padding:8px;">'.$enquiries->time.'</td>
-                        </tr>
-                        <tr class="row row-contain">
-                            <td style="padding:8px; width:164px;">Enquiry Date</td>
-                            <td style="padding:8px;">'.$enquiries->date.'</td>
-                        </tr>
+                </tr>
+                <br>
+                <tr>
+                    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 0px 0px 0px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                            <tr>
+                                <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
+                                <p style="font-size: 18px;text-align: left; ">Here are the details of Timing!</p>
+                                <table class="table" style="font-size: 16px;text-align: left;">
+                                    
+                                    <tr class="row row-contain">
+                                        <th style="padding:8px; width:164px;">Home Name</th>
+                                        <th style="padding:8px; ">'.$home->title.'</th>
+                                    </tr>
+                                    <tr class="row row-contain">
+                                            <td style="padding:8px; width:164px;">Enquiry Time</td>
+                                            <td style="padding:8px;">'.$enquiries->time.'</td>
+                                        </tr>
+                                        <tr class="row row-contain">
+                                            <td style="padding:8px; width:164px;">Enquiry Date</td>
+                                            <td style="padding:8px;">'.$enquiries->date.'</td>
+                                        </tr>
+                                </table>
+                                    <p style="font-size: 18px;text-align: left; ">Here are the details of User !</p>
+                                    <table class="table" style="font-size: 16px;text-align: left;">
+                                        <tr class="row row-contain"  style="color:black; padding-left:4px;">
+                                            <th style="padding:8px;font-size:18px; width:164px;"><b>Name</b></th>
+                                            <th style="padding:8px;font-size:18px; "><b>'.$enquiries->name.'</b></th>
+                                        </tr>
+                                        <tr class="row row-contain">
+                                            <td style="padding:8px; width:164px;">Email</td>
+                                            <td style="padding:8px; ">'.$enquiries->email.'</td>
+                                        </tr>
+                                        <tr class="row row-contain">
+                                            <td style="padding:8px; width:164px;">Contact No.</td>
+                                            <td style="padding:8px; ">'.$enquiries->phone.'</td>
+                                        </tr>
+                                    </table>   
+                                    <div class="container">
+                                        <span style="color:black;"><strong>Message:</strong></span><br>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <span>'.$enquiries->message.'</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px; margin-bottom:50px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                            <tr>
+                                <td bgcolor="#484848" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: white;  font-size: 18px; font-weight: 400; line-height: 25px;">
+                                    <p style="margin: 0; font-size: 15px;"><a href="#" target="_blank" style="color: white;">Urban Living</a></p>
+                                    <h2 style="font-size: 12px; font-weight: 400; color:white; margin: 0;">Copyright 2020 | All Rights Reserved</h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#f4f4f4" align="center" style="padding: 0 10px 0px 10px; margin-bottom:50px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                            <tr>
+                                <td bgcolor="white" align="center" style="padding: 10px 20px 10px 10px; border-radius: 4px 4px 4px 4px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
+                                    <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;"></h2>
+                                    <p style="margin: 0;"><a href="#" target="_blank" style="color: sky#34495E ;"></a></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
                 </table>
-                    <p style="font-size: 18px;text-align: left; ">Here are the details of User !</p>
-                    <table class="table" style="font-size: 16px;text-align: left;">
-                        <tr class="row row-contain"  style="color:black; padding-left:4px;">
-                            <th style="padding:8px;font-size:18px; width:164px;"><b>Name</b></th>
-                            <th style="padding:8px;font-size:18px; "><b>'.$enquiries->name.'</b></th>
-                        </tr>
-                        <tr class="row row-contain">
-                            <td style="padding:8px; width:164px;">Email</td>
-                            <td style="padding:8px; ">'.$enquiries->email.'</td>
-                        </tr>
-                        <tr class="row row-contain">
-                            <td style="padding:8px; width:164px;">Contact No.</td>
-                            <td style="padding:8px; ">'.$enquiries->phone.'</td>
+        </body>';
 
-                        </tr>
-                    </table>   
-                </td>
-            </tr>
-
-        </table>
-    </td>
-</tr>
-<tr>
-    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px; margin-bottom:50px;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-            <tr>
-                <td bgcolor="#484848" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: white;  font-size: 18px; font-weight: 400; line-height: 25px;">
-                    <p style="margin: 0; font-size: 15px;"><a href="#" target="_blank" style="color: white;">Urban Living</a></p>
-                    <h2 style="font-size: 12px; font-weight: 400; color:white; margin: 0;">Copyright 2020 | All Rights Reserved</h2>
-                </td>
-            </tr>
-        </table>
-    </td>
-</tr>
-<tr>
-    <td bgcolor="#f4f4f4" align="center" style="padding: 0 10px 0px 10px; margin-bottom:50px;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-            <tr>
-                <td bgcolor="white" align="center" style="padding: 10px 20px 10px 10px; border-radius: 4px 4px 4px 4px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
-                    <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;"></h2>
-                    <p style="margin: 0;"><a href="#" target="_blank" style="color: sky#34495E ;"></a></p>
-                </td>
-            </tr>
-        </table>
-    </td>
-</tr>
-
-</table>
-</body>';
-        
         return $data; 
     }
  

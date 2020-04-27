@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Homes;
+use App\Models\Floors;
 use App\Models\Communities;
+use App\Models\FloorComponent;
 use App\Models\HomeCommunity;
 use App\Models\Enquiry;
 use App\User;
@@ -144,24 +146,40 @@ class HomeController extends Controller
     {
         $data='';
         $home=Homes::where('id',$id)->with('communities')->get()->first();
+        $floors=Floors::where('home_id',$id)->get();
+        $floorID=array();
+        foreach($floors as $floor)
+        {
+            array_push($floorID,$floor->id);
+        }
         $data.='<div class="card">
-                    <div class="card-body">
-                    <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYk2PV9aG2lNWRynWfQJA2jfYCmLhjVaKsWz_Z5JP8hWHMrcnY&usqp=CAU"/>
-                    <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ30DsYM6amh92SYeBa_seFvKhfO6DX3ivP46i9280vcrU3I2gP&usqp=CAU"/>
-                    <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRcnRVqoK3RUHZ_pqI_Roop2dpEHVEIjMz9r080C5-VhfZOB0OG&usqp=CAU"/>
-                    <br>
-                    <div class="w3-center" style="text-align:center;">
-                        <div class="w3-section">
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
-                        </div><br>
-                            <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
-                            <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
-                            <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
-                        </div>
-                    </div>
-                </div><br>
-                <div class="container" style= "text-align: center;">
+                    <div class="card-body">';
+
+                    foreach($floorID as $fid)
+                    {
+                        $components=FloorComponent::where('floor_id',$fid)->get();
+                        foreach($components as $component)
+                        {
+                            $data.='<img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="/uploads/floorcomponent/'.$component->image.'"/>';
+                        }
+                    }
+                    $data.=' <br><br> <div class="w3-center" style="text-align:center;">';
+                    foreach($floorID as $fid)
+                    {
+                        $components=FloorComponent::where('floor_id',$fid)->get();
+                        foreach($components as $key=> $component)
+                        { 
+                            $key=$key+1;
+                            $data.='
+                                    <button class="w3-button demo" onclick="currentDiv(1)">'.$key.'</button> 
+                            ';
+                            $key=$key-1;
+
+                        }
+                    }
+
+                    $data.='</diV></div>
+                        </div><br><div class="container" style= "text-align: center;">
                     <span><strong>DETAILS</strong></span><br><br><hr>
                     <span>'.$home->communities->communities->address.','.$home->communities->communities->state .','.$home->communities->communities->county .'</span><br><br>
                     <div class="row">
