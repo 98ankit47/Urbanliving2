@@ -558,32 +558,32 @@ $(document).ready(function() {
 @endif
 @if(Route::currentRouteName() == 'create-home' )
 <script>
+  var latitude,longitude;
   $(document).ready(function() {
     loadmap();
   function loadmap(){
-    var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
+    var myLatLng=new google.maps.LatLng(40.71331,-74.0688);
     var map = new google.maps.Map(
       document.getElementById('mapshow'),
       {zoom: 15, center: myLatLng}
     );
       google.maps.event.addListener(map, "click", function (event) {
-      var latitude = event.latLng.lat();
-      var longitude = event.latLng.lng();
-      console.log( latitude + ', ' + longitude );
-      // radius = new google.maps.Circle({map: map,
-      //     radius: 80,
-      //     center: event.latLng,
-      //     fillColor: '#777',
-      //     fillOpacity: 0.1,
-      //     strokeColor: '#AA0000',
-      //     strokeOpacity: 0.8,
-      //     strokeWeight: 2,
-      //     draggable: true,    // Dragable
-      //     editable: true      // Resizable
-      // });
+       latitude = event.latLng.lat();
+       longitude = event.latLng.lng();
+      radius = new google.maps.Circle({map: map,
+          radius: 100,
+          center: event.latLng,
+          fillColor: '#777',
+          fillOpacity: 0.1,
+          strokeColor: '#AA0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          draggable: true,    // Dragable
+          editable: true      // Resizable
+      });
 
-      // // Center of map
-      // map.panTo(new google.maps.LatLng(latitude,longitude));
+      // Center of map
+      map.panTo(new google.maps.LatLng(latitude,longitude));
       
     });
     
@@ -651,7 +651,7 @@ $(document).ready(function() {
                 area             =  document.getElementById("area").value;         
                 community        =  document.getElementById("community_list").value;         
                 builder          =  document.getElementById("builder").value;         
-                status       =  document.getElementById("status").value;         
+                status           =  document.getElementById("status").value;         
                 $.ajax({
                   type: 'post',
                   url: '/api/admin/home/',
@@ -671,6 +671,8 @@ $(document).ready(function() {
                     'featured-image-name' : image_name,
                     'gallery'             : gal,
                     'gallery_name'        : gal_name,
+                    'lat'                 : latitude,
+                    'lng'                 : longitude,
                   },
                   success: function ( ) {
                     window.location.href = "/admin/homes";

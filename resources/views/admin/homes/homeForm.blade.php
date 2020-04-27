@@ -123,6 +123,8 @@
     <div class="form-group col-md-4">
       <label for="inputLocation">Add Location</label><br>
       <a type="button" data-toggle="modal" data-target="#myModal" style="color: white;width:100%;font-family: Open Sans, sans-serif;" class="btn btn-dark"><i class='fas fa-map-marker-alt'></i>&nbsp;&nbsp;&nbsp;Add</a>
+      <input type="hidden" class="form-control" id="lat" required>
+      <input type="hidden" class="form-control" id="lng" required>
     </div>
   </div>
   <div class="row" style="font-family: Open Sans, sans-serif;">

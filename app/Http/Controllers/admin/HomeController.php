@@ -38,7 +38,7 @@ class HomeController extends Controller
                  </div>
                  <div class="col-md-2"></div>
                  <div class ="col-md-4">
-                 <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHomedeleteHome" class="btn w-100">Delete</button>  
+                 <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn w-100">Delete</button>  
                 </div>
                 </div>
                  </div>
@@ -98,6 +98,8 @@ class HomeController extends Controller
             'mls'=>$request['mls'],
             'builder'=>$request['builder'],
             'area'=>$request['area'],
+            'lat'=>$request['lat'],
+            'lng'=>$request['lng'],
             'featured_image'=>$featured_img,
             'gallery'=>implode(',', $data),
             'slug'=>Str::slug($request['title'], '-'),
