@@ -201,69 +201,13 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class="card">
-                      <div class="card-body">
-                          <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYk2PV9aG2lNWRynWfQJA2jfYCmLhjVaKsWz_Z5JP8hWHMrcnY&usqp=CAU"/>
-                          <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ30DsYM6amh92SYeBa_seFvKhfO6DX3ivP46i9280vcrU3I2gP&usqp=CAU"/>
-                          <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRcnRVqoK3RUHZ_pqI_Roop2dpEHVEIjMz9r080C5-VhfZOB0OG&usqp=CAU"/>
-                          <br>
-                          <div class="w3-center" style="text-align:center;">
-                            <div class="w3-section">
-                                <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                                <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
-                            </div><br>
-                                <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
-                                <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
-                                <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
-                        </div>
-                    </div>
-            </div>
-        </div><br>
-        <div class="container" style= "text-align: center;">
-            <span><strong>DETAILS</strong></span><br><br><hr>
-            <span>1127 17TH ST, UNIT: B, HOUSTON TX 77008</span><br><br>
-            <div class="row">
-                <div class="col-md-3">
-                    <span><b>PRICE</b></span><br><br>
-                    <span>$330,990</span>
-                </div>
-                <div class="col-md-3">
-                    <span><b>BEDS</b></span><br><br>
-                    <span>2</span>
-                </div>
-                <div class="col-md-3">
-                    <span><b>BATHS</b></span><br><br>
-                    <span>2/1</span>
-                </div>
-                <div class="col-md-3">
-                    <span><b>SQ.FT</b></span><br><br>
-                    <span>1,311</span>
-                </div>
-            </div><br><br>
-            <div class="container">
-                <span>STUNNING HOME NESTLED IN A GATED COMMUNITY IN THE HIGHLY 
-                      SOUGHT-AFTER SHADY ACRES COMMUNITY. WALKING DISTANCE TO LOCAL EATERIES, 
-                      SHOPPING, NIGHTLIFE, WHITE OAK BAYOU TRAIL & MORE! THE OPEN CONCEPT LIVING AREA ON THE 
-                      2ND FLOOR FEATURES BEAUTIFUL HARDWOOD FLOORING AND A GOURMET ISLAND KITCHEN PERFECT FOR 
-                      ENTERTAINING! HIGH CEILINGS AND BEAUTIFUL FINISHES WILL MAKE THIS THE PERFECT HOME 
-                </span>
+                <div class="modal-body" id="summarydata">
+                 
                 </div>
             </div>
-            <br>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
         </div>
-      </div>
-    </div>
-    
-
-   
-        
-          
-
+            </div>
+            
           <script>
             function scrollIfNeeded(element, container) {
             if (element.offsetTop < container.scrollTop) {
@@ -281,5 +225,37 @@
                 scrollIfNeeded(document.getElementById(homeid), document.getElementById('container'));
             }    
         </script>
+
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+            
+            function plusDivs(n){
+            showDivs(slideIndex += n);
+            }
+            
+            function currentDiv(n)
+            {
+            showDivs(slideIndex = n);
+            }
+            
+            function showDivs(n)
+            {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-red", "");
+            }
+            x[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " w3-red";
+            }
+            
+            </script>
 
     @endsection

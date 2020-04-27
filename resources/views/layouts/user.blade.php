@@ -480,7 +480,7 @@
                 type: 'GET',
                 url: APP_URL+'/api/admin/floorDetail/'+id,
                   success: function(result){
-                  $('#floorDetail').html(result);
+					summarydata
                   }   
                });
               } 
@@ -578,7 +578,6 @@
   </script>
 @endif
 @if(Route::currentRouteName() == 'homeMap')
-
 	<script>
 		var APP_URL = "{{ url('/') }}";
 		loadMapHomeDetail();
@@ -618,8 +617,19 @@
             {
                 scrollIfNeeded(document.getElementById(homeid), document.getElementById('container'));
             }   
-
 		}
+		function summary(id)
+			{
+				var APP_URL = "{{ url('/') }}";
+				$.ajax({
+				type: 'GET',
+				url: APP_URL+'/api/summary/'+id,
+					success: function(result){
+						$('#summarydata').html(result);
+  						$('#summaryModal').modal('show');
+					}   
+				});
+			}
 	</script>
         <script>
 			loadMap();

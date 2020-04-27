@@ -79,6 +79,7 @@ Route::post('user','user\HomeController@signup');
 Route::get('map','user\HomeController@map');
 Route::get('map/{id}','user\HomeController@mapSingle');
 Route::get('mapHome','user\HomeController@mapHomeView');
+Route::get('summary/{id}','user\HomeController@summary');
 Route::get('mapMarkerHome/{lat}/{lng}','user\HomeController@mapMarkerHome');
 
 

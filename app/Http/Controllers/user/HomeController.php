@@ -128,7 +128,7 @@ class HomeController extends Controller
             $data.='  <div id="home'.$home->id.'" class="card homebox1" style="width: 100%; height:24rem;" >
                         <img style="height:100%;" src="uploads/homes/'.$home->featured_image.'"/>
                         <a href="/map-neighbour/'.$home->id.'" type="button" class="btn btnss btn-outline-dark">DETAILS</a>
-                        <button type="button" class="btn btns btn-outline-dark">SUMMARY</button>
+                        <button type="button" onclick="summary('.$home->id.')" class="btn btns btn-outline-dark">SUMMARY</button>
                     </div><br>';
         }
         return $data;
@@ -139,4 +139,56 @@ class HomeController extends Controller
         $homes = Homes::where('lat',$lat)->where('lng',$lng)->get()->first();
         return $homes;
     }
+
+    public function summary($id)
+    {
+        $data='';
+        $home=Homes::where('id',$id)->with('communities')->get()->first();
+        $data.='<div class="card">
+                    <div class="card-body">
+                    <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYk2PV9aG2lNWRynWfQJA2jfYCmLhjVaKsWz_Z5JP8hWHMrcnY&usqp=CAU"/>
+                    <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ30DsYM6amh92SYeBa_seFvKhfO6DX3ivP46i9280vcrU3I2gP&usqp=CAU"/>
+                    <img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRcnRVqoK3RUHZ_pqI_Roop2dpEHVEIjMz9r080C5-VhfZOB0OG&usqp=CAU"/>
+                    <br>
+                    <div class="w3-center" style="text-align:center;">
+                        <div class="w3-section">
+                            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+                            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+                        </div><br>
+                            <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
+                            <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
+                            <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
+                        </div>
+                    </div>
+                </div><br>
+                <div class="container" style= "text-align: center;">
+                    <span><strong>DETAILS</strong></span><br><br><hr>
+                    <span>'.$home->communities->communities->address.','.$home->communities->communities->state .','.$home->communities->communities->county .'</span><br><br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span><b>PRICE</b></span><br><br>
+                            <span>$330,990</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span><b>BEDS</b></span><br><br>
+                            <span>'.$home->bedroom.'</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span><b>BATHS</b></span><br><br>
+                            <span>'.$home->bathroom.'</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span><b>Garage</b></span><br><br>
+                            <span>'.$home->garage.'</span>
+                        </div>
+                    </div><br><br>
+                    <div class="container">
+                        <span> 
+                        '.$home->communities->communities->description .' 
+                        </span>
+                    </div>
+                </div> ';
+            return $data;
+    }
+
 }

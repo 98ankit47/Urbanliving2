@@ -71,6 +71,8 @@ Route::get('/availsold', function () {
     return view('admin.availsold');
 })->middleware('auth');
 
+
+
 Route::get('admin/floor', function () {
     return view('admin.floor.index');
 })->name('floorView')->middleware('auth');;
