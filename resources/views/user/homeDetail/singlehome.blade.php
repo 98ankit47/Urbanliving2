@@ -121,6 +121,7 @@
                                     <div class="card" style="height:25rem;">
                                         <div class="card-body">
                                             <div id="floorDetail" class="container" style="text-align: left;">
+                                                
                                             </div>
                                         </div>
                                     </div>

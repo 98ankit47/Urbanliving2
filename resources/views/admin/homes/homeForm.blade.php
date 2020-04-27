@@ -148,7 +148,8 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <div id="mapshow"> 
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="mapshow" style="width:450px;height:400px"> 
         </div> 
       </div>
       <div class="modal-footer">

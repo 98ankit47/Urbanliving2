@@ -17,6 +17,9 @@
 	<!-- Styles -->
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I&libraries=places"
+          async defer></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 
@@ -486,6 +489,94 @@
   </script>
 @endif
 
+
+@if(Route::currentRouteName() == 'neighbour')
+  <script>
+	  function Nearby(type,lat,lng)
+	  {			
+		var myLatLng=new google.maps.LatLng(lat,lng);
+		var map = new google.maps.Map(
+		document.getElementById('map'), {zoom:16, center: myLatLng});
+		var request = {
+			location: myLatLng,
+			radius: '300',
+			type: [type],
+		};
+		function createmarker(latlng,icn,title)
+		{
+			var marker = new google.maps.Marker({
+				position: latlng,
+				map: map,
+				icon: icn,
+				title: title
+			});
+		}
+
+		service = new google.maps.places.PlacesService(map);
+		service.nearbySearch(request, callback);
+
+		function callback(results, status) {
+			if (status === google.maps.places.PlacesServiceStatus.OK) {
+				for (var i = 0; i < results.length; i++) {
+					var place=results[i];
+					latlng=place.geometry.location;
+					icn=place.icon;
+					title=place.title;
+					createmarker(latlng,icn,title);
+				}
+			}
+		}
+
+	  }
+			loadMap();
+            function loadMap(){
+				var id = window.location.href.split('/').pop();
+                $.ajax({
+                type: 'GET',
+                url: APP_URL+'/api/map/'+id,
+                  success: function(result){
+					var lat=result.lat;
+					var lng=result.lng;
+					var infoWindow = new google.maps.InfoWindow();
+					var myLatLng=new google.maps.LatLng(lat,lng);
+					var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+					var markers = [];
+					var map = new google.maps.Map(
+						document.getElementById('map'), {zoom:16, center: myLatLng});
+						var data = markers[result.id];
+						var marker = new google.maps.Marker({
+								position:  myLatLng,
+								map: map,
+								icon: iconBase + 'library_maps.png',
+								title: "Home",
+							});
+							markers.push(marker);
+							(function (marker, data) {
+								var image=result.featured_image;
+								var title=result.title;
+								var bed=result.bedroom;
+								var bathroom=result.bathroom;
+								
+								google.maps.event.addListener(marker, "mouseover", function (e) {
+									infoWindow.setContent('<div id="content" class="map-window"><div class="item">'+
+									'<div class="item-img"><img style="height:100px;width:150px" class="js-mediaFit js-mediaFitCollected landscape-media loaded" src="/uploads/homes/'+image+'">'+
+									'</div><div class="item-body"><div class="item-body-content">'+
+									'<div class="item-header"><h6>'+title+'</h6></div>'+
+									'<ul class="item-details" type="none">'+
+									'<li class="price "><i class="fa fa-price" style="font-size:20px"></i><span>$32,500</span></li>'+
+									'<li class="icon icon-bed"><i class="fa fa-bed" style="font-size:20px"></i><span>'+bed+'</span><i class="fa fa-bath" style="font-size:20px"></i><span>'+bathroom+'</span></li>'+
+									'</ul>'+
+									'</div></div>');
+									infoWindow.open(map, marker);
+									
+								});
+							})(marker, data);
+				  }
+               });
+              } 
+            
+  </script>
+@endif
 @if(Route::currentRouteName() == 'homeMap')
 
 	<script>
@@ -508,23 +599,6 @@
 			url: APP_URL+'/api/mapMarkerHome/'+lat +'/' +lng,
 				success: function(result){	
 					homeScroll('home'+result.id)
-							var request = {
-								location: new google.maps.LatLng(result.lat,result.lng),
-								radius: '500',
-								type: ['health'],
-							};
-						service = new google.maps.places.PlacesService(map);
-						service.nearbySearch(request, callback);
-
-								function callback(results, status) {
-									if (status === google.maps.places.PlacesServiceStatus.OK) {
-										for (var i = 0; i < results.length; i++) {
-											var place=results[i];
-											 console.log(place);
-										}
-										loadMap();
-									}
-								}
 				}   
 			});
 			
@@ -556,7 +630,7 @@
                   success: function(result){
 					var ln = Object.keys(result).length;
 					var infoWindow = new google.maps.InfoWindow();
-					var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
+					var myLatLng=new google.maps.LatLng(40.7133,-74.0688);
 					var map = new google.maps.Map(
 						document.getElementById('map'), {zoom: 15, center: myLatLng});
 						var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';

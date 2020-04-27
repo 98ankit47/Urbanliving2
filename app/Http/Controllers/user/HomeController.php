@@ -52,6 +52,12 @@ class HomeController extends Controller
         $home= Homes::with('communities')->with('floor')->with('feature')->where('id',$request['id'])->get();
         return view('user.homeDetail.singlehome')->with('homes',$home);
     }
+    public function singleMap(Request $request)
+    {
+        $id = $request['id'];
+        $home= Homes::with('communities')->with('floor')->with('feature')->where('id',$request['id'])->get();
+        return view('user.MapHome.neighbour')->with('homes',$home);
+    }
 
     public function schedule(Request $request)
     {
@@ -108,6 +114,11 @@ class HomeController extends Controller
         return Homes::get();
 
     }
+    public function mapSingle($id)
+    {
+        return Homes::where('id',$id)->get()->first();
+
+    }
     public function mapHomeView(Request $request)
     {
         $data='';
@@ -116,7 +127,7 @@ class HomeController extends Controller
         {
             $data.='  <div id="home'.$home->id.'" class="card homebox1" style="width: 100%; height:24rem;" >
                         <img style="height:100%;" src="uploads/homes/'.$home->featured_image.'"/>
-                        <a href="" type="button" class="btn btnss btn-outline-dark">DETAILS</a>
+                        <a href="/map-neighbour/'.$home->id.'" type="button" class="btn btnss btn-outline-dark">DETAILS</a>
                         <button type="button" class="btn btns btn-outline-dark">SUMMARY</button>
                     </div><br>';
         }

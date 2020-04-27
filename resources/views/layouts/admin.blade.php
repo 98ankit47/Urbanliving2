@@ -563,9 +563,39 @@ $(document).ready(function() {
   function loadmap(){
     var myLatLng=new google.maps.LatLng(31.3448372,75.555309);
     var map = new google.maps.Map(
-      document.getElementById('mapshow'), 
+      document.getElementById('mapshow'),
       {zoom: 15, center: myLatLng}
     );
+      google.maps.event.addListener(map, "click", function (event) {
+      var latitude = event.latLng.lat();
+      var longitude = event.latLng.lng();
+      console.log( latitude + ', ' + longitude );
+      // radius = new google.maps.Circle({map: map,
+      //     radius: 80,
+      //     center: event.latLng,
+      //     fillColor: '#777',
+      //     fillOpacity: 0.1,
+      //     strokeColor: '#AA0000',
+      //     strokeOpacity: 0.8,
+      //     strokeWeight: 2,
+      //     draggable: true,    // Dragable
+      //     editable: true      // Resizable
+      // });
+
+      // // Center of map
+      // map.panTo(new google.maps.LatLng(latitude,longitude));
+      
+    });
+    
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
   }
   var APP_URL = "{{ url('/') }}";
   var id = window.location.href.split('/').pop();
@@ -657,8 +687,9 @@ $(document).ready(function() {
 </script>
 @endif
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I"
-async defer></script>
+ 
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I&libraries=places"></script>
 
 <script>
     var APP_URL = "{{ url('/') }}";

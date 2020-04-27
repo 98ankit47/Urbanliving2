@@ -236,20 +236,19 @@ class CommonController extends Controller
     <td bgcolor="#5962ee" align="center" style="padding: 0px 10px 0px 10px; ">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
             <tr>
-                <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 0 0 0; border-radius: 4px 4px 0px 0px; color: #111111; font-size: 44px; font-weight: 400;  line-height: 48px;"><br>
-                    <h1 style="font-size: 44px; font-weight: 400; margin: 2;"><img src="https://urbanliving.com/imgs/82" width="225" height="220" style="display: block; border: 0px;" /><br>
-                    </h1> <h1 style="font-size: 44px; font-weight: 400; margin: 2;"> </td>
+                <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 0 0 0; border-radius: 4px 4px 0px 0px; color: #111111; font-size: 44px; font-weight: 400;  line-height: 48px;">
+                    <img src="https://urbanliving.com/imgs/82" width="100" height="100" style="display: block; border: 0px;" />
+                    </td>
             </tr>
         </table>
     </td>
 </tr>
 <tr> 
-    <td bgcolor="#5962ee" align="center" style="padding: 0px 10px 0px 10px; ">
+    <td bgcolor="#5962ee" align="center" style="padding: 0px 0px 0px 0px; ">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
             <tr>
                 <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0 20px 0px 20px; border-radius: 4px 4px 0px 0px; color: #111111;font-size:25px; line-height: 38px;">
                       <p style="color: #71aea5; margin: 2;text-align: left;">Hi, there is an Enquiry from <b>'.$enquiries->name.'</b> </p>
-                      <p style="margin: 2;text-align: left;font-size:18px;">'.$enquiries->message.'<p>
                     </td>
               </tr>
               
@@ -258,19 +257,16 @@ class CommonController extends Controller
 </tr>
 <br>
 <tr>
-    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 0px 0px 0px;">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
             <tr>
                 <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
-                <p style="font-size: 18px;text-align: left; ">Here are the details of Development !</p>
+                <p style="font-size: 18px;text-align: left; ">Here are the details of Timing!</p>
                 <table class="table" style="font-size: 16px;text-align: left;">
-                    <tr class="row row-contain"  style="color:black; padding-left:4px;">
-                        <th style="padding:8px;font-size:18px; width:164px;"><b>Title</b></th>
-                        <th style="padding:8px;font-size:18px; "><b>Development</b></th>
-                    </tr>
+                     
                     <tr class="row row-contain">
-                        <td style="padding:8px; width:164px;">Home Name</td>
-                        <td style="padding:8px; ">'.$home->title.'</td>
+                        <th style="padding:8px; width:164px;">Home Name</th>
+                        <th style="padding:8px; ">'.$home->title.'</th>
                     </tr>
                     <tr class="row row-contain">
                             <td style="padding:8px; width:164px;">Enquiry Time</td>

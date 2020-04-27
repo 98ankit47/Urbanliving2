@@ -86,6 +86,9 @@ Route::get('/',function(){
 Route::get('/home-map',function(){
     return view('user.MapHome.index');
 })->name('homeMap'); 
+
+Route::get('/map-neighbour/{id}','user\HomeController@singleMap')->name('neighbour'); 
+
 Route::get('/homes',function(){
     return view('user.homeDetail.index');
 });
