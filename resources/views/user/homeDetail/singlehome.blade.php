@@ -181,6 +181,17 @@
                     </div>
                 @endforeach
             @endforeach
+        </div>
+
+        <br><br>
+        
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8" id="MapAvailabe" style="height:400px;width:100%">
+
+            </div>
+        </div>
+        
  
 
             

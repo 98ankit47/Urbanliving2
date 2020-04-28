@@ -443,6 +443,36 @@
   <script>   
         var APP_URL = "{{ url('/') }}";
         var id = window.location.href.split('/').pop();
+		loadMap();
+            function loadMap(){
+				var id = window.location.href.split('/').pop();
+                $.ajax({
+                type: 'GET',
+                url: APP_URL+'/api/Avail/'+id,
+                  success: function(result){
+					var ln = Object.keys(result).length;
+					var infoWindow = new google.maps.InfoWindow();
+					var myLatLng=new google.maps.LatLng(40.7133,-74.0688);
+					var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+					var markers = [];
+					var map = new google.maps.Map(
+						document.getElementById('MapAvailabe'), {zoom:16, center: myLatLng});
+						var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+						var markers = [];
+						for(var i=0;i<ln;i++)
+						{	
+							var data = markers[result[i].id];
+							var marker = new google.maps.Marker({
+								position: new google.maps.LatLng(result[i].lat,result[i].lng),
+								map: map,
+								icon: iconBase + 'library_maps.png',
+								title: result[i].title,
+							});
+						}
+							 
+				  }
+               });
+              } 
          $('#enquiry').on('submit', function (e) {
            var email,name,time,date,message,phone;
            e.preventDefault();
