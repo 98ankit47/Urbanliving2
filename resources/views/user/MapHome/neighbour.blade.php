@@ -1,13 +1,62 @@
 @extends('layouts.user')
     @section('content')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .devnav {
     margin-left:25%;
 }
 
-/* .propDetails {
-    display: none;
-} */
+.icon {
+  padding: 10px;
+  background: gray;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* SLIDER */
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+}
+
 </style>
 
 <br><br>
@@ -160,12 +209,119 @@
                 </div>
             </div>
             </div>
-<br><br><br>
+<br><br>
 
+<!--Payment Calculator-->
 
-<!--PROPERTY DETAIL-->
+<div class="row">
+            <div class="col-md-12">
+                <div class="card" style="height:35rem; text-align:center;">
+                    <div class="row inner">
+                        <div class="col-md-4">      
+                            <div class="card" style="height:35rem;">
+                                <div class="card-body" style="text-align:center;">
+                                    <div class="card" style="height:15rem;">
+                                        <div class="card-body">
+                                            <span><strong>PAYMENT CALCULATOR</strong></span><br><br>
+                                            <span><b>HOME PRICE</b></span><br>
+                                            <span>$64667</span><br><br>
+                                            <div class="container" style="text-align:left;">
+                                            <label for="years"><b>LOAN TYPE:</b></label><br>
+                                                <select id="years">
+                                                    <option value="30 YEARS FIXED">30 YEARS FIXED</option>
+                                                    <option value="15 YEARS FIXED">15 YEARS FIXED</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" style="text-align:center;">
+                                    <div class="card" style="height:16rem;">
+                                        <div class="card-body" id="">
+                                           <span><b>SBI LOANS</b></span> 
+                                           <hr><br><br>
+                                           <div class="row">
+                                            <div class="col-md-6">
+                                                <a type="button" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">APPLY NOW</a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a type="button" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">FIND OFF.</a>
+                                            </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8" id=""> 
+                        <div class="container"><br>
+                            <span class="price" style="font-size:22px;">$</span>&nbsp;<input class="input1" value="" style="font-size:22px; border:none; width:15%;">&nbsp;<span style="font-size:14px;color:gray;">PER MONTH</span><br>
+                            <span style="font-size:14px;color:gray;">30 YEARS FIXED</span><br><br>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6" style="text-align:left;">
+                                        <li style="font-size:14px; color:gray;">PRINICIPAL AND INTEREST&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li>
+                                        <li style="font-size:14px; color:gray;">HOA DUES&nbsp;<span style="font-size:18px; color:black;">$</span>&nbsp;<span style="font-size:15px;">99.58</span></li><br>
+                                        
+                                        <label><b>HOME PRICE</b></label>
+                                        <div class="input-container">
+                                            <i class="fa fa-usd icon"></i>
+                                            <input class="input1" value="" style="width:100%" type="text" name="price">
+                                        </div>
+                                        <div class="container slidrr">
+                                            <input type="range" min="480000" max="580000" value="50" class="slider" id="myRange1">
+                                        </div><br>
+                                        
+                                        <label><b>PROPERTY TAXES</b></label>
+                                        <div class="input-container">
+                                            <i class="fa fa-usd icon"></i>
+                                            <input class="input-field" type="text" value="10,859.00" name="price"><input class="input-field" value="2%" style="width:70px;text-align:center;" type="text" name="price">
+                                        </div><br>
+                                        
+                                        <label><b>INTEREST RATE</b></label>
+                                        <div class="input-container">
+                                            <input class="input-field" value="4.25%" style="width:100%" type="text" name="price">
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-md-6" style="text-align:left;">
+                                        <li style="font-size:14px; color:gray;">PROPERTY TAXES&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></span></li>
+                                        <li style="font-size:14px; color:gray;">HOMEOWNER'S INSURANCE&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li><br>
+                                        
+                                        <label><b>DOWN PAYMENT</b></label>
+                                        <div class="input-container">
+                                            <i class="fa fa-usd icon"></i>
+                                            <input class="input2" value="" type="text" name="price"><input class="input-field" style="width:70px;" type="text" name="price">
+                                        </div>
+                                        <div class="container slidrr">
+                                            <input type="range" min="0" max="520000" value="50" class="slider" id="myRange2">
+                                        </div><br>
+                                        
+                                        <label><b>HOA DUES</b></label>
+                                        <div class="input-container">
+                                            <i class="fa fa-usd icon"></i>
+                                            <input class="input-field" value="1,195" type="text" name="price"><input class="input-field" value="ANNUALLY" style="width:70px;background-color:lightgray;font-size:12px;" type="text" name="price">
+                                        </div><br>
+                                        
+                                        <label><b>HOMEOWNER'S INSURANCE</b></label>
+                                        <div class="input-container">
+                                            <i class="fa fa-usd icon"></i>
+                                            <input class="input-field" value="226.25" type="text" name="price"><input class="input-field" value="0.5%" style="width:70px;background-color:lightgray;text-align:center;" type="text" name="price">
+                                        </div>
+                                    </div>
+                                </div>
+                                <a type="button" class="btn btn-secondary btn-block" style="color:white;">APPLY NOW</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 
-        <script>
+<br><br>
+
+<script>
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -194,5 +350,28 @@ function showDivs(n){
 }
 
 </script>
+
+<!-- PAYMENT SLIDER SCRIPT -->
+
+<script>
+
+var slider = document.getElementById("myRange1");
+var output = document.getElementsByClassName("input1");
+output.value = slider.value;
+
+slider.oninput = function() {
+  $(".input1").val(slider.value);
+}
+
+
+var slider1 = document.getElementById("myRange2");
+var output1 = document.getElementsByClassName("input2");
+output1.value = slider1.value;
+
+slider1.oninput = function() {
+  $(".input2").val(slider1.value);
+}
+</script>
+
 
     @endsection
