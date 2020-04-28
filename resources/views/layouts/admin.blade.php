@@ -701,7 +701,7 @@ $(document).ready(function() {
         });
         $(function () {
           $('form').on('submit', function (e) {
-            var title,description,bedroom,bathroom,garage,community,stories,mls,status,area,builder;
+            var title,description,bedroom,bathroom,price,garage,community,stories,mls,status,area,builder;
             e.preventDefault();
                 title            =  document.getElementById("title").value;         
                 description      =  document.getElementById("description").value;         
@@ -714,6 +714,7 @@ $(document).ready(function() {
                 community        =  document.getElementById("community_list").value;         
                 builder          =  document.getElementById("builder").value;         
                 status           =  document.getElementById("status").value;         
+                price           =  document.getElementById("price").value;         
                 $.ajax({
                   type: 'post',
                   url: '/api/admin/home/',
@@ -733,6 +734,7 @@ $(document).ready(function() {
                     'featured-image-name' : image_name,
                     'gallery'             : gal,
                     'gallery_name'        : gal_name,
+                    'price'               : price,
                     'lat'                 : latitude,
                     'lng'                 : longitude,
                   },

@@ -88,6 +88,7 @@ class HomeController extends Controller
             'stories'=>'required',
             'mls'=>'required',
             'area'=>'required',
+            'price'=>'required',
             ]);
         Homes::create([
             'title'=>$request['title'],
@@ -101,6 +102,7 @@ class HomeController extends Controller
             'area'=>$request['area'],
             'lat'=>$request['lat'],
             'lng'=>$request['lng'],
+            'price'=>$request['price'],
             'featured_image'=>$featured_img,
             'gallery'=>implode(',', $data),
             'slug'=>Str::slug($request['title'], '-'),
