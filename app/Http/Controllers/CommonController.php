@@ -458,4 +458,9 @@ class CommonController extends Controller
         }
         return $data; 
     }
+
+    public function AvailableSingleHome($id)
+    {
+        return HomeAvailable::get();
+    }
 }

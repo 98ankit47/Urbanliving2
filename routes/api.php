@@ -84,6 +84,7 @@ Route::get('mapMarkerHome/{lat}/{lng}','user\HomeController@mapMarkerHome');
 
 Route::post('Available','admin\HomeController@Available');
 Route::get('homeAvailable/{id}','CommonController@AvailableShow');
+Route::get('Avail/{id}','CommonController@AvailableSingleHome');
 
 
 
