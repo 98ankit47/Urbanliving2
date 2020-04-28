@@ -89,6 +89,9 @@ td, th {
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'gallery');">
       <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Gallery</b></div>
     </a>
+    <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Availability');">
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Availability</b></div>
+    </a>
   </div>
 
   <div id="homes" class="w3-container city active" style="display:block">
@@ -193,6 +196,43 @@ td, th {
     
 </div> 
 
+
+<div id="Availability" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
+  <div class="container">
+      <div class="container add-new">
+        <a type="button" onclick="loadmap()" style="color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn">Add Location</a>
+      </div>
+    <br><br>
+    <div class="row" style="text-align: center; font-family: Open Sans, sans-serif;" id="homeAvial" >
+                         
+    </div>  
+    </div>
+  </div>
+
+
+  <div class="modal" id="Mapshow">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Select Location</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+          <div id="mapshow" style="width:450px;height:400px"> 
+          </div> 
+        </div>
+        <form id="latlngAvb">
+          <input type="hidden" id="lat">
+          <input type="hidden" id="lng">
+          <div class="modal-footer">
+            <button type="submit" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Sumbit</button>
+            <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 <div id="features" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
   <div class="container">

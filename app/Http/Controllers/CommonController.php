@@ -8,6 +8,7 @@ use App\Models\Homes;
 use App\Models\Floors;
 use App\Models\FloorComponent;
 use App\Models\Enquiry;
+use App\HomeAvailable;
 use App\User;
 Use \Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -434,5 +435,27 @@ class CommonController extends Controller
             return ["danger" => "Your current Password is not correct" ];
         }
         
+    }
+
+    public function AvailableShow($id)
+    {
+        $data ='';
+        $avbs= HomeAvailable::where('home_id',$id)->get();
+        foreach($avbs as $key=> $avb)
+        {
+            $home=Homes::where('id',$avb->home_id)->get()->first();
+            $data.='<div class="col-md-4" >
+            <div class="card">
+              <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
+                <div class="card-body">
+                <div class="wrapper">
+                <h5>Lat='.$avb->lat.' $$ Lng='.$avb->lng.'</h5>
+                    <button class="btn w-100" type="button" data-id="'.$avb->id.'" data-toggle="modal" data-target="#helloo" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                </div>
+                </div>
+            </div> 
+          </div>';
+        }
+        return $data; 
     }
 }

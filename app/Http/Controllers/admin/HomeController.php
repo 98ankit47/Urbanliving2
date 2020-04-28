@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Homes;
 use App\Models\HomeCommunity;
 use App\Models\Communities;
+use App\HomeAvailable;
 use Illuminate\Support\Str;
 use App\Models\status;
 Use DB;
@@ -226,5 +227,20 @@ class HomeController extends Controller
         DB::table('features')->where('home_id',$id)->delete();   
         DB::table('floors')->where('home_id',$id)->delete();   
         return ['success'=>'Home Successfully Deleted'];
+    }
+
+    public function Available(Request $request)
+    { 
+        $this->validate($request,[
+            'home_id'=>'required',
+            'lat'=>'required',
+            'lng'=>'required',
+            ]);
+        HomeAvailable::create([
+            'home_id'=>$request['home_id'],
+            'lat'=>$request['lat'],
+            'lng'=>$request['lng'],
+        ]);
+        return "success";
     }
 }
