@@ -245,4 +245,16 @@ class HomeController extends Controller
         ]);
         return "success";
     }
+    public function Availableupdate(Request $request ,$id)
+    { 
+        $this->validate($request,[
+            'lat'=>'required',
+            'lng'=>'required',
+            ]);
+        HomeAvailable::where('id',$id)->update([
+            'lat'=>$request['lat'],
+            'lng'=>$request['lng'],
+        ]);
+        return "success";
+    }
 }

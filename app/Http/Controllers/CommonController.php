@@ -454,7 +454,7 @@ class CommonController extends Controller
                 <div class="row">
                 <div class="col-md-1"></div>
                 <div class ="col-md-4">
-                <a onclick="loadmap()" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w-100">Edit</a> 
+                <a onclick="Editloadmap('.$avb->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w-100">Edit</a> 
                 </div>
                 <div class="col-md-2"></div>
                 <div class ="col-md-4">

@@ -558,6 +558,64 @@ $(document).ready(function() {
 @endif
 
 <script>
+
+function Editloadmap(aid){
+    var latitude,longitude;
+    var APP_URL = "{{ url('/') }}";
+    $('#Mapshow').modal('show'); 
+    var myLatLng=new google.maps.LatLng(40.71331,-74.0688);
+    var map = new google.maps.Map(
+      document.getElementById('mapshow'),
+      {zoom: 15, center: myLatLng}
+    );
+      google.maps.event.addListener(map, "click", function (event) {
+       latitude = event.latLng.lat();
+       longitude = event.latLng.lng();
+      radius = new google.maps.Circle({map: map,
+          radius: 100,
+          center: event.latLng,
+          fillColor: '#777',
+          fillOpacity: 0.1,
+          strokeColor: '#AA0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          draggable: true,    // Dragable
+          editable: true      // Resizable
+      });
+
+      // Center of map
+      map.panTo(new google.maps.LatLng(latitude,longitude));
+      
+    });
+    
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+              $('#latlngAvb').on('submit', function (e) {
+                e.preventDefault();
+                    $.ajax({
+                      type: 'post',
+                      url: '/api/Available/'+aid,
+                      data:{
+                        'lat'             : latitude,
+                        'lng'             : longitude,
+                      },
+                      success: function () {
+                        $('#Mapshow').modal('hide');
+                          loadAvailableList();
+                        $('#success').html('Home Location Edited').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                      }
+                    });
+              });
+    }
+
   function loadmap(){
     var latitude,longitude;
     var APP_URL = "{{ url('/') }}";

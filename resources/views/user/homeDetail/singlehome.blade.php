@@ -184,30 +184,23 @@
         </div>
 
         <br><br>
-        
         <div class="row">
-        <div class="col-md-4">
-            <div class="card" style="height:30rem; width:25rem; text-align:center;">
-                <div class="card-body">
-                    <h4>AVAILABILITY</h4><br>
-                        <div class="card" style="height:22rem;">
-                            <div class="card-body">
-                                <img style="width:100%;height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZaJIjBNF3kO4CIoQjqq8byvddTYNrxoaaoLQyRDXSrzmkOfdB&usqp=CAU"/>
+            <div class="col-md-4">
+                <div class="card" style="height:30rem; width:25rem; text-align:center;">
+                    <div class="card-body">
+                        <h4>AVAILABILITY</h4><br>
+                            <div class="card" style="height:22rem;">
+                                <div class="card-body">
+                                    <img style="width:100%;height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZaJIjBNF3kO4CIoQjqq8byvddTYNrxoaaoLQyRDXSrzmkOfdB&usqp=CAU"/>
+                                </div>
                             </div>
-                        </div>
-                </div>
-            </div>
-            </div>
-            <div class="col-md-8" id="MapAvailabe">
-            <div class="card" style="height:30rem; width:25rem;">
-                        <div class="card-body">
-                        <img class="img-feature" style="height:27rem; width:22.5rem;" src="/uploads/homeFeature/{{$feature->image}}"/>
-                            <div class="bottom-right">{{$feature->title}}</div>
-                        </div>
                     </div>
-            </div>
+                </div>
+                </div>
+                <div class="col-md-8" id="MapAvailabe">
+                        
+                </div>
         </div>
-        
  
 
             

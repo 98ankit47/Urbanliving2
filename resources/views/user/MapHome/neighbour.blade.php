@@ -178,24 +178,7 @@
                                                 </div>
                                             </div>
                                         </div>
-<!-- 
-                                        <div class="card-body" id="showAmenities">
-                                        <div class="container propDetails" style="text-align:center;">
-                                                <span>PROPERTY DETAIL</span><br><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" style="text-align:right;">
-                                                        <span>Address</span><br>
-                                                        <span>Unit</span><br>
-                                                        <span>Area</span><br>                                                      
-                                                    </div>
-                                                    <div class="col-md-6" style="text-align:left;">
-                                                        <span></span><br>
-                                                        <span></span><br>
-                                                        <span></span><br>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
+ 
 
 
                                     </div>
@@ -261,7 +244,6 @@
                                 <div class="row">
                                     <div class="col-md-6" style="text-align:left;">
                                         <li style="font-size:14px; color:gray;">PRINICIPAL AND INTEREST&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li><br><br>
-                                        <!-- <li style="font-size:14px; color:gray;">HOA DUES&nbsp;<span style="font-size:18px; color:black;">$</span>&nbsp;<span style="font-size:15px;">99.58</span></li><br> -->
                                         
                                         <label><b>HOME INSURANCE</b></label>
                                         <div class="input-container">
@@ -269,14 +251,10 @@
                                             <input style="text-align:center;" class="input1" value="" type="text" name="price"><input class="input-field" value="%&nbsp;/MONTH" style="width:70px; text-align:center;font-size:12px;" type="text" name="price">
                                         </div>
                                         <div class="container slidrr">
-                                            <input type="range" min="0" max="10" value="5" class="slider" id="myRange1">
+                                            <input type="range" min="0" max="10" class="slider" id="myRange1">
                                         </div><br>
                                         
-                                        <!-- <label><b>PROPERTY TAXES</b></label>
-                                        <div class="input-container">
-                                            <i class="fa fa-usd icon"></i>
-                                            <input class="input-field" type="text" value="10,859.00&nbsp;&nbsp;&nbsp;&nbsp;/YEAR" name="price"><input class="input-field" value="2%" style="width:70px;text-align:center;" type="text" name="price">
-                                        </div><br> -->
+                                   
                                         
                                         <label><b>INTEREST RATE</b></label>
                                         <div class="input-container">
@@ -296,11 +274,7 @@
                                             <input type="range" min="0" max="520000" value="260000" class="slider" id="myRange2">
                                         </div><br>
                                         
-                                        <!-- <label><b>HOA DUES</b></label>
-                                        <div class="input-container">
-                                            <i class="fa fa-usd icon"></i>
-                                            <input class="input-field" value="1,195" type="text" name="price"><input class="input-field" value="ANNUALLY" style="width:70px;background-color:lightgray;font-size:12px;" type="text" name="price">
-                                        </div><br> -->
+                                       
                                         
                                         <label><b>Total HOME INSURANCE</b></label>
                                         <div class="input-container">
@@ -309,7 +283,8 @@
                                         </div>
                                     </div>
                                 </div><br>
-                                <a type="button" class="btn btn-secondary btn-block" style="color:white;">APPLY NOW</a>
+                                <a type="button" class="btn btn-secondary btn-info" style="color:white;">CHECK NOW</a>
+                                <a type="button" class="btn btn-secondary btn-dark" style="color:white;">APPLY NOW</a>
                             </div>
                         </div>
                         </div>
