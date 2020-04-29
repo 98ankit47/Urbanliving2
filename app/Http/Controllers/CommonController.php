@@ -450,7 +450,18 @@ class CommonController extends Controller
                 <div class="card-body">
                 <div class="wrapper">
                 <h5>Lat='.$avb->lat.' $$ Lng='.$avb->lng.'</h5>
-                    <button class="btn w-100" type="button" data-id="'.$avb->id.'" data-toggle="modal" data-target="#helloo" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+
+                <div class="row">
+                <div class="col-md-1"></div>
+                <div class ="col-md-4">
+                <a onclick="loadmap()" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w-100">Edit</a> 
+                </div>
+                <div class="col-md-2"></div>
+                <div class ="col-md-4">
+                <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$avb->id.'" class="btn w-100">Delete</button>  
+               </div>
+               </div>
+                </div>
                 </div>
                 </div>
             </div> 

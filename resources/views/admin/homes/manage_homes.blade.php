@@ -54,9 +54,9 @@ td, th {
     .tabsss {
       text-align:left;
     }
-    /* .w3-bottombar {
-      width: 500px;
-    } */
+    .w3-bottombar {
+      width: 25%;
+    }
     .card-details {
       margin-left:10px;
       margin-right:10px;
@@ -79,7 +79,7 @@ td, th {
 </div>
 </div><hr>
 <br>
-<div class="w3-row tabss">
+<div class=" container w3-row tabss">
     <a href="javascript:void(0)" class="tablinks active" onclick="openCity(event, 'homes');">
       <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Home</b></div>
     </a>
@@ -226,13 +226,37 @@ td, th {
           <input type="hidden" id="lat">
           <input type="hidden" id="lng">
           <div class="modal-footer">
-            <button type="submit" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Sumbit</button>
+            <button type="submit" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Sumbit</button>
             <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+
+  <!-- <div class="modal" id="editMap">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Select Location</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+          <div id="mapshow" style="width:450px;height:400px"> 
+          </div> 
+        </div>
+        <form id="latlngAvb">
+          <input type="hidden" id="lat">
+          <input type="hidden" id="lng">
+          <div class="modal-footer">
+            <button type="submit" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Sumbit</button>
+            <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
 
 <div id="features" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
   <div class="container">

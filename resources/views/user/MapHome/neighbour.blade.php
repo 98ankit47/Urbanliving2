@@ -255,28 +255,28 @@
                         </div>
                         <div class="col-md-8" id=""> 
                         <div class="container"><br>
-                            <span class="price" style="font-size:22px;">$</span>&nbsp;<input class="input1" value="" style="font-size:22px; border:none; width:15%;">&nbsp;<span style="font-size:14px;color:gray;">PER MONTH</span><br>
+                            <span class="price" style="font-size:22px;">$237,345</span><span style="font-size:14px;color:gray;">PER MONTH</span><br>
                             <span style="font-size:14px;color:gray;">30 YEARS FIXED</span><br><br>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6" style="text-align:left;">
-                                        <li style="font-size:14px; color:gray;">PRINICIPAL AND INTEREST&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li>
-                                        <li style="font-size:14px; color:gray;">HOA DUES&nbsp;<span style="font-size:18px; color:black;">$</span>&nbsp;<span style="font-size:15px;">99.58</span></li><br>
+                                        <li style="font-size:14px; color:gray;">PRINICIPAL AND INTEREST&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li><br><br>
+                                        <!-- <li style="font-size:14px; color:gray;">HOA DUES&nbsp;<span style="font-size:18px; color:black;">$</span>&nbsp;<span style="font-size:15px;">99.58</span></li><br> -->
                                         
-                                        <label><b>HOME PRICE</b></label>
+                                        <label><b>HOME INSURANCE</b></label>
                                         <div class="input-container">
                                             <i class="fa fa-usd icon"></i>
-                                            <input class="input1" value="" style="width:100%" type="text" name="price">
+                                            <input style="text-align:center;" class="input1" value="" type="text" name="price"><input class="input-field" value="%&nbsp;/MONTH" style="width:70px; text-align:center;font-size:12px;" type="text" name="price">
                                         </div>
                                         <div class="container slidrr">
-                                            <input type="range" min="480000" max="580000" value="50" class="slider" id="myRange1">
+                                            <input type="range" min="0" max="10" value="5" class="slider" id="myRange1">
                                         </div><br>
                                         
-                                        <label><b>PROPERTY TAXES</b></label>
+                                        <!-- <label><b>PROPERTY TAXES</b></label>
                                         <div class="input-container">
                                             <i class="fa fa-usd icon"></i>
-                                            <input class="input-field" type="text" value="10,859.00" name="price"><input class="input-field" value="2%" style="width:70px;text-align:center;" type="text" name="price">
-                                        </div><br>
+                                            <input class="input-field" type="text" value="10,859.00&nbsp;&nbsp;&nbsp;&nbsp;/YEAR" name="price"><input class="input-field" value="2%" style="width:70px;text-align:center;" type="text" name="price">
+                                        </div><br> -->
                                         
                                         <label><b>INTEREST RATE</b></label>
                                         <div class="input-container">
@@ -285,31 +285,30 @@
                                     </div>
                                    
                                     <div class="col-md-6" style="text-align:left;">
-                                        <li style="font-size:14px; color:gray;">PROPERTY TAXES&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></span></li>
-                                        <li style="font-size:14px; color:gray;">HOMEOWNER'S INSURANCE&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li><br>
+                                        <li style="font-size:14px; color:gray;">HOME INSURANCE&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li><br><br>
                                         
                                         <label><b>DOWN PAYMENT</b></label>
                                         <div class="input-container">
                                             <i class="fa fa-usd icon"></i>
-                                            <input class="input2" value="" type="text" name="price"><input class="input-field" style="width:70px;" type="text" name="price">
+                                            <input class="input2" value="" type="text" name="price"><input class="input-field" value="20%" style="width:70px; text-align:center;" type="text" name="price">
                                         </div>
                                         <div class="container slidrr">
-                                            <input type="range" min="0" max="520000" value="50" class="slider" id="myRange2">
+                                            <input type="range" min="0" max="520000" value="260000" class="slider" id="myRange2">
                                         </div><br>
                                         
-                                        <label><b>HOA DUES</b></label>
+                                        <!-- <label><b>HOA DUES</b></label>
                                         <div class="input-container">
                                             <i class="fa fa-usd icon"></i>
                                             <input class="input-field" value="1,195" type="text" name="price"><input class="input-field" value="ANNUALLY" style="width:70px;background-color:lightgray;font-size:12px;" type="text" name="price">
-                                        </div><br>
+                                        </div><br> -->
                                         
-                                        <label><b>HOMEOWNER'S INSURANCE</b></label>
+                                        <label><b>Total HOME INSURANCE</b></label>
                                         <div class="input-container">
                                             <i class="fa fa-usd icon"></i>
                                             <input class="input-field" value="226.25" type="text" name="price"><input class="input-field" value="0.5%" style="width:70px;background-color:lightgray;text-align:center;" type="text" name="price">
                                         </div>
                                     </div>
-                                </div>
+                                </div><br>
                                 <a type="button" class="btn btn-secondary btn-block" style="color:white;">APPLY NOW</a>
                             </div>
                         </div>
