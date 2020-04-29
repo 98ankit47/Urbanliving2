@@ -207,13 +207,21 @@
                                         <div class="card-body">
                                             <span><strong>PAYMENT CALCULATOR</strong></span><br><br>
                                             <span><b>HOME PRICE</b></span><br>
-                                            <span>$64667</span><br><br>
+                                            @foreach($homes as $home)
+                                                <span>{{$home->price}}</span><br><br>
+                                            @endforeach
                                             <div class="container" style="text-align:left;">
                                             <label for="years"><b>LOAN TYPE:</b></label><br>
-                                                <select id="years">
-                                                    <option value="30 YEARS FIXED">30 YEARS FIXED</option>
-                                                    <option value="15 YEARS FIXED">15 YEARS FIXED</option>
-                                                </select>
+                                            <select id="years">
+                                                <option value="10.25">30 YEARS FIXED</option>
+                                                <option value="9.25">25 YEARS FIXED</option>
+                                                <option value="8.25">20 YEARS FIXED</option>
+                                                <option value="7.25">15 YEARS FIXED</option>
+                                                <option value="6.25">10 YEARS FIXED</option>
+                                                <option value="5.25">5 YEARS FIXED</option>
+                                                <option value="4.25">3 YEARS FIXED</option>
+                                                <option value="3.25">2 YEARS FIXED</option>
+                                            </select>
                                             </div>
                                         </div>
                                     </div>
@@ -238,17 +246,20 @@
                         </div>
                         <div class="col-md-8" id=""> 
                         <div class="container"><br>
-                            <span class="price" style="font-size:22px;">$237,345</span><span style="font-size:14px;color:gray;">PER MONTH</span><br>
-                            <span style="font-size:14px;color:gray;">30 YEARS FIXED</span><br><br>
+                            <span class="price" style="font-size:22px;" id="permonth"></span><span style="font-size:14px;color:gray;">PER MONTH</span><br>
+                            <span style="font-size:14px;color:gray;" id="timeyear"></span><br><br>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6" style="text-align:left;">
-                                        <li style="font-size:14px; color:gray;">PRINICIPAL AND INTEREST&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li><br><br>
+                                        <li style="font-size:14px; color:gray;">PRINICIPAL AND INTEREST&nbsp;
+                                            <span style="font-size:18px; color:black;">$</span>
+                                            <input class="principal"  disabled style="font-size:15px; border:none; width:18%;"></li><br><br>
                                         
-                                        <label><b>HOME INSURANCE</b></label>
+                                        <label><b>HOME INSURANCE YEAR</b></label>
                                         <div class="input-container">
                                             <i class="fa fa-usd icon"></i>
-                                            <input style="text-align:center;" class="input1" value="" type="text" name="price"><input class="input-field" value="%&nbsp;/MONTH" style="width:70px; text-align:center;font-size:12px;" type="text" name="price">
+                                            <input style="text-align:center;" disabled class="input1"  type="text" name="time" oninput="insuranceprice(this.value)">
+                                            <input class="input-field" disabled value="year" style="width:70px; text-align:center;font-size:12px;" type="text" name="price">
                                         </div>
                                         <div class="container slidrr">
                                             <input type="range" min="0" max="10" class="slider" id="myRange1">
@@ -258,33 +269,37 @@
                                         
                                         <label><b>INTEREST RATE</b></label>
                                         <div class="input-container">
-                                            <input class="input-field" value="4.25%" style="width:100%" type="text" name="price">
+                                            <input id="interest" disabled class="input-field" value="7.25%" style="width:100%" type="text" name="price">
                                         </div>
                                     </div>
                                    
                                     <div class="col-md-6" style="text-align:left;">
-                                        <li style="font-size:14px; color:gray;">HOME INSURANCE&nbsp;<span style="font-size:18px; color:black;">$</span><input class="input1" value="" style="font-size:15px; border:none; width:18%;"></li><br><br>
+                                        <li style="font-size:14px; color:gray;">HOME INSURANCE&nbsp;
+                                            <span style="font-size:18px; color:black;">$</span><input class="insprice" value="" style="font-size:15px; border:none; width:18%;"></li><br><br>
                                         
                                         <label><b>DOWN PAYMENT</b></label>
                                         <div class="input-container">
                                             <i class="fa fa-usd icon"></i>
-                                            <input class="input2" value="" type="text" name="price"><input class="input-field" value="20%" style="width:70px; text-align:center;" type="text" name="price">
+                                            <input class="input2" value="" type="text" name="price" disabled>
+                                            <input class="input-field" disabled id="percent" style="width:70px; text-align:center;" type="text" name="price">
                                         </div>
                                         <div class="container slidrr">
-                                            <input type="range" min="0" max="520000" value="260000" class="slider" id="myRange2">
+                                            @foreach($homes as $home)
+                                                <input type="range" min="0" max={{$home->price}}  class="slider" id="myRange2">
+                                            @endforeach
                                         </div><br>
                                         
                                        
                                         
-                                        <label><b>Total HOME INSURANCE</b></label>
+                                        <label><b>HOME INSURANCE</b></label>
                                         <div class="input-container">
                                             <i class="fa fa-usd icon"></i>
-                                            <input class="input-field" value="226.25" type="text" name="price"><input class="input-field" value="0.5%" style="width:70px;background-color:lightgray;text-align:center;" type="text" name="price">
+                                            <input class="input-field" id="incpm" disabled type="text" name="price">
+                                            <input class="input-field" value="/Month" style="width:70px;background-color:lightgray;text-align:center;" type="text" name="price">
                                         </div>
                                     </div>
                                 </div><br>
-                                <a type="button" class="btn btn-secondary btn-info" style="color:white;">CHECK NOW</a>
-                                <a type="button" class="btn btn-secondary btn-dark" style="color:white;">APPLY NOW</a>
+                                <a type="button" class="btn btn-secondary btn-block" style="color:white;">APPLY NOW</a>
                             </div>
                         </div>
                         </div>
@@ -326,25 +341,83 @@ function showDivs(n){
 </script>
 
 <!-- PAYMENT SLIDER SCRIPT -->
+ 
 
 <script>
+    var time,monthPrice;
+    $("#years").change(function() {
+        $("#interest").val($(this).val());
+        if($(this).val()==10.25)
+        {
+            time=30;
+        }
+        else if($(this).val()==9.25)
+        {
+            time=25;
+        }
+        else if($(this).val()==8.25)
+        {
+            time=20;
+        }
+        else if($(this).val()==7.25)
+        {
+            time=15;              
+        }
+        else if($(this).val()==6.25)
+        {
+            time=10;
+        }
+        else if($(this).val()==5.25)
+        {
+            time=5;
+        }
+        else if($(this).val()==4.25)
+        {
+            time=3;
+        }
+        else if($(this).val()==3.25)
+        {
+            time=2;
+        }
+        document.getElementById("timeyear").innerHTML = "Fixed Time For " + time +" Year" ;
+    }).change();
+    <?php 
+        foreach($homes as $home)
+        {
+            $price=$home->price;
+        }
+    ?>
+    var price=<?php echo $price ?>;
+    var slider1 = document.getElementById("myRange2");
+    var output1 = document.getElementsByClassName("input2");
+    output1.value = slider1.value;
+    var int=price*Math.pow((1+0.0425),15);
+    var inc=0;
+    slider1.oninput = function() {
+        var dpay=slider1.value;
+        var rem= price-dpay;
+        int= rem*Math.pow((1+0.0425),time);
+        $(".input2").val(dpay);
+        $(".principal").val(parseInt(int+inc));
+        monthPrice=parseInt((int+inc)/(time*12));
+        document.getElementById("permonth").innerHTML = monthPrice ;
+    }
+  
+    var slider = document.getElementById("myRange1");
+    var output = document.getElementsByClassName("input1");
+    output.value = slider.value;
 
-var slider = document.getElementById("myRange1");
-var output = document.getElementsByClassName("input1");
-output.value = slider.value;
-
-slider.oninput = function() {
-  $(".input1").val(slider.value);
-}
-
-
-var slider1 = document.getElementById("myRange2");
-var output1 = document.getElementsByClassName("input2");
-output1.value = slider1.value;
-
-slider1.oninput = function() {
-  $(".input2").val(slider1.value);
-}
+    slider.oninput = function() {
+        inc= slider.value;
+        inc = price*(inc/100);
+        incpm=parseInt(inc/(time*12));
+        $(".insprice").val(inc);
+        $(".input1").val(slider.value);
+        $(".principal").val(parseInt(int+inc));
+        $("#incpm").val(incpm);
+        monthPrice=parseInt((int+inc)/(time*12));
+        document.getElementById("permonth").innerHTML = "$"+ monthPrice +" ";
+    }
 </script>
 
 
