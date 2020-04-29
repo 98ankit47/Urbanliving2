@@ -412,7 +412,8 @@ function showDivs(n){
         inc = price*(inc/100);
         incpm=parseInt(inc/(time*12));
         $(".insprice").val(inc);
-        $(".input1").val(slider.value);
+        $(".input1").val(slider.value); 
+        //adsfghj
         $(".principal").val(parseInt(int+inc));
         $("#incpm").val(incpm);
         monthPrice=parseInt((int+inc)/(time*12));
