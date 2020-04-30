@@ -586,6 +586,7 @@
 								var title=result.title;
 								var bed=result.bedroom;
 								var bathroom=result.bathroom;
+								var price=result.price;
 								
 								google.maps.event.addListener(marker, "mouseover", function (e) {
 									infoWindow.setContent('<div id="content" class="map-window"><div class="item">'+
@@ -593,7 +594,7 @@
 									'</div><div class="item-body"><div class="item-body-content">'+
 									'<div class="item-header"><h6>'+title+'</h6></div>'+
 									'<ul class="item-details" type="none">'+
-									'<li class="price "><i class="fa fa-price" style="font-size:20px"></i><span>$32,500</span></li>'+
+									'<li class="price "><i class="fa fa-price" style="font-size:20px"></i><span>$ '+price+'</span></li>'+
 									'<li class="icon icon-bed"><i class="fa fa-bed" style="font-size:20px"></i><span>'+bed+'</span><i class="fa fa-bath" style="font-size:20px"></i><span>'+bathroom+'</span></li>'+
 									'</ul>'+
 									'</div></div>');
@@ -690,6 +691,7 @@
 								var title=result[i].title;
 								var bed=result[i].bedroom;
 								var bathroom=result[i].bathroom;
+								var price=result[i].price;
 								
 								google.maps.event.addListener(marker, "mouseover", function (e) {
 									infoWindow.setContent('<div id="content" class="map-window"><div class="item">'+
@@ -697,7 +699,7 @@
 									'</div><div class="item-body"><div class="item-body-content">'+
 									'<div class="item-header"><h6>'+title+'</h6></div>'+
 									'<ul class="item-details" type="none">'+
-									'<li class="price "><i class="fa fa-price" style="font-size:20px"></i><span>$32,500</span></li>'+
+									'<li class="price "><i class="fa fa-price" style="font-size:20px"></i><span>$ '+price+'</span></li>'+
 									'<li class="icon icon-bed"><i class="fa fa-bed" style="font-size:20px"></i><span>'+bed+'</span><i class="fa fa-bath" style="font-size:20px"></i><span>'+bathroom+'</span></li>'+
 									'</ul>'+
 									'</div></div>');

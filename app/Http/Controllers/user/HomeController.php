@@ -51,8 +51,10 @@ class HomeController extends Controller
     public function single(Request $request)
     {
         $id = $request['id'];
+        $floors=Floors::where('home_id',$id)->get()->first();
+        $floorComponent=FloorComponent::where('floor_id',$floors->id)->get();
         $home= Homes::with('communities')->with('floor')->with('feature')->where('id',$request['id'])->get();
-        return view('user.homeDetail.singlehome')->with('homes',$home);
+        return view('user.homeDetail.singlehome')->with('homes',$home)->with('floorcomponents',$floorComponent);
     }
     public function singleMap(Request $request)
     {

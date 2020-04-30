@@ -1,16 +1,17 @@
 @extends('layouts.user') 
 
+ 
 @section('content')
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 .devnav {
     margin-left:25%;
 }
-
+ 
 .first-contain {
     display: none;
 }
-
+ 
 .floor-image {
     display: none;
 }
@@ -28,16 +29,16 @@
       <a class="nav-item nav-link devitem" type="button" id='mapClick' href="#map">Map</a>
     </div>
 </nav><br><br>
-
+ 
 <div class="row" id="overview">
         <div class="col-md-8">
             <div class="card" style="height:46rem; text-align:center;">
                 <div class="row inner">
                     <div class="col-md-8">      
                         <?php
+                        $gallery=[];
                         foreach($homes as $home)
                         {
-                            $gallery=[];
                             $gallery = explode(',', $home->gallery);
                         }                 
                             ?>
@@ -108,9 +109,9 @@
         </div> <br><br><br>
         <div id="success" style="text-align: center;"></div>
         <!--FLOOR PLAN-->
-
+ 
         <!--FLOOR PLAN-->
-
+ 
         <div class="row">
             <div class="col-md-12">
                 <div class="card" style="height:45rem; text-align:center;">
@@ -155,7 +156,7 @@
             </div>
 <br><br><br>
         <!--FEATURES-->
-
+ 
         <div class="row" id="feature">
             <div class="col-md-4">
             <div class="card" style="height:30rem; width:25rem; text-align:center;">
@@ -182,44 +183,228 @@
                 @endforeach
             @endforeach
         </div>
-
+ 
         <br><br>
+        
         <div class="row">
-            <div class="col-md-4">
-                <div class="card" style="height:30rem; width:25rem; text-align:center;">
-                    <div class="card-body">
-                        <h4>AVAILABILITY</h4><br>
-                            <div class="card" style="height:22rem;">
-                                <div class="card-body">
-                                    <img style="width:100%;height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZaJIjBNF3kO4CIoQjqq8byvddTYNrxoaaoLQyRDXSrzmkOfdB&usqp=CAU"/>
+        <div class="col-md-4">
+            <div class="card" style="height:30rem; width:25rem; text-align:center;">
+                <div class="card-body">
+                    <h4>AVAILABILITY</h4><br>
+                        <div class="card" style="height:22rem;">
+                            <div class="card-body">
+                                <img style="width:100%;height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZaJIjBNF3kO4CIoQjqq8byvddTYNrxoaaoLQyRDXSrzmkOfdB&usqp=CAU"/>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-8" id="MapAvailabe">
+            <div class="card" style="height:30rem; width:25rem;">
+                        <div class="card-body">
+                        <img class="img-feature" style="height:27rem; width:22.5rem;" src="/uploads/homeFeature/{{$feature->image}}"/>
+                            <div class="bottom-right">{{$feature->title}}</div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <br><br><br>
+ <!-- LOOK BOOK -->
+ 
+ <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="height:45rem; text-align:center;">
+                    <div class="row inner">
+                        <div class="col-md-4">      
+                            <div class="card" style="height:45rem;">
+                                <div class="card-body" style="text-align:center;">
+                                    <div class="card" style="height:25rem;">
+                                        <div class="card-body">
+                                        <span style="font-size:18px;"><b>LOOK BOOK</b></span><br><br><br>
+                                            <div class="container" style="text-align: left;">
+                                                <a type="button" onclick="PrintDiv();" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">PRINT</a><br><br><br>
+                                                <a type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">DOWNLOAD</a><br><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" style="text-align:center;">
+                                    <div class="card" style="height:17rem;">
+                                        <div class="card-body">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="col-md-8"><br>
+                            <div class="card" style="width:700px;height:630px;">
+                                <div class="card-body">
+                                    <div class="mySlides1 container">
+                                        @foreach($homes as $home)
+                                            <img src="/uploads/homes/{{$home->featured_image}}" style="height:320px; width:100%;">
+                                        @endforeach
+                                        <br>
+                                        <div class="row">
+                                            @foreach($gallery as  $key=>$gal)
+                                                @if($key<3)
+                                                    <div class="col-md-4" style="height:250px;"><br>
+                                                        <img src="/uploads/gallery/{{$gal}}" style="height:100%; width:100%;">
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="mySlides1 container">
+                                        <div class="row">
+                                            @foreach($homes as $home)
+                                                @foreach($home->feature as $key=> $features)
+                                                    @if($key<3)
+                                                        @if($key==0)
+                                                            <img src="/uploads/homeFeature/{{$features->image}}" style="height:300px; width:100%;">
+                                                        @endif
+                                                        @if($key%3!=0 && $key!=0)     
+                                                            <div class="col-md-6" style="height:250px;"><br>
+                                                                <img src="/uploads/homeFeature/{{$features->image}}" style="height:100%; width:100%;">
+                                                            </div> 
+                                                        @endif
+                                                    @endif
+                                                @endforeach
+                                            @endforeach
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mySlides1 container">
+                                        <div class="row">
+                                            @foreach($homes as $home)
+                                                @foreach($home->floor as $key=> $floor)
+                                                    @if($key<2)
+                                                    <div class="col-md-6" style="height:522px;"><br>
+                                                       <img src="/uploads/floor/{{$floor->image}}" style="height:100%; width:100%;">
+                                                    </div> 
+                                                    @endif
+                                                @endforeach
+                                            @endforeach
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mySlides1 container">
+                                        <div class="row">
+                                            @foreach($floorcomponents as $key=>$floorcomponent)
+                                                @if($key<3)
+                                                    @if($key==0)
+                                                        <img src="/uploads/floorcomponent/{{$floorcomponent->image}}" style="height:300px; width:100%;">
+                                                    @endif
+                                                    @if($key%3!=0 && $key!=0)     
+                                                        <div class="col-md-6" style="height:250px;"><br>
+                                                            <img src="/uploads/floorcomponent/{{$floorcomponent->image}}" style="height:100%; width:100%;">
+                                                        </div> 
+                                                    @endif
+                                                @endif
+                                            @endforeach
+                                            
+                                        </div>
+                                    </div>
+                                    <br>
+ 
+                                    <div class="w3-center">
+                                        <div class="w3-section">
+                                            <button class="w3-button w3-light-grey" onclick="plusDivss(-1)">❮ Prev</button>
+                                            <button class="w3-button w3-light-grey" onclick="plusDivss(1)">Next ❯</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-                <div class="col-md-8" id="MapAvailabe">
-                        
-                </div>
-        </div>
+            </div>
+            </div>           
  
-
-            
-
 <br><br><br>
-
+ 
+ 
+<!-- CONTNET SHOWED ON CLICK OF PRINT BUTTON -->
+ 
+ 
+<div id="dvContents" class="container" style="display:none;">
+<div class="card" style="height: 770px;">
+<div class="card-body">
+    @foreach($homes as $home)
+        <img src="/uploads/homes/{{$home->featured_image}}" style="height:400px; width:100%;">
+    @endforeach
+    <br>
+    <div class="row">
+        <div class="col-md-6" style="height:300px;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF6Or-9KfbR3eYm8QHwRHaWMpBB4sJTrei3kFhv4cHYpmXuNvq&usqp=CAU" style="height:100%; width:100%;">
+        </div>
+        <div class="col-md-6" style="height:300px;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqLoLhXogfZM5E1_tfyMO-1mJHdlcG8P10h5fBgvt6hGSB_MoP&usqp=CAU" style="height:100%; width:100%;">
+        </div>
+    </div>
+</div>
+</div>
+<br>
+<div class="card" style="height: 770px;">
+<div class="card-body">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhOEpJDxntfxfRI879zNeuG7lfCgbYhGR5_58kP7KhPTLkcmSy&usqp=CAU" style="height:400px; width:100%;">
+    <div class="row">
+        <div class="col-md-6" style="height:300px;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHdWVHWmtVA1BB6zDICrqwDSD3236hQtoUtJff_gbEu0-QEruc&usqp=CAU" style="height:100%; width:100%;">
+        </div>
+        <div class="col-md-6" style="height:300px;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSvz66gb4Du_TY6yhwrgF9W87b2CyIEb0ETxX_-gRlD5g53GoHB&usqp=CAU" style="height:100%; width:100%;">
+        </div>
+    </div>
+</div>
+</div>
+<br>
+<div class="card" style="height: 770px;">
+<div class="card-body">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF6Or-9KfbR3eYm8QHwRHaWMpBB4sJTrei3kFhv4cHYpmXuNvq&usqp=CAU" style="height:400px; width:100%;">
+    <div class="row">
+        <div class="col-md-6" style="height:300px;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE0w9XdiZ_sZyVLaNMQsch-UAUIOo0a0wJ7ieQad6v1X2Y4HOM&usqp=CAU" style="height:100%; width:100%;">
+        </div>
+        <div class="col-md-6" style="height:300px;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqLoLhXogfZM5E1_tfyMO-1mJHdlcG8P10h5fBgvt6hGSB_MoP&usqp=CAU" style="height:100%; width:100%;">
+        </div>
+    </div>
+</div>
+</div>
+<br>
+<div class="card" style="height: 770px;">
+<div class="card-body">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE0w9XdiZ_sZyVLaNMQsch-UAUIOo0a0wJ7ieQad6v1X2Y4HOM&usqp=CAU" style="height:400px; width:100%;">
+    <div class="row">
+        <div class="col-md-6" style="height:300px;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF6Or-9KfbR3eYm8QHwRHaWMpBB4sJTrei3kFhv4cHYpmXuNvq&usqp=CAU" style="height:100%; width:100%;">
+        </div>
+        <div class="col-md-6" style="height:300px;"><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxPky_mLjl_e1vVW2VS1Gm3ZgRtBi1hi2sDOSzi4yfxgvvcRi0&usqp=CAU" style="height:100%; width:100%;">
+        </div>
+    </div>
+</div>
+</div>
+</div>
+ 
+ 
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
-
-function plusDivs(n) {
+ 
+function plusDivs(n)
+ {
   showDivs(slideIndex += n);
 }
-
-function currentDiv(n) {
+ 
+function currentDiv(n)
+ {
   showDivs(slideIndex = n);
 }
-
-function showDivs(n) {
+ 
+function showDivs(n)
+ {
   var i;
   var x = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
@@ -234,7 +419,38 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " w3-red";
 }
-
+ 
+ 
+ 
+var slideIndex1 = 1;
+showDivss(slideIndex1);
+ 
+function plusDivss(n)
+ {
+  showDivss(slideIndex1 += n);
+}
+ 
+function currentDivs(n)
+ {
+  showDivss(slideIndex1 = n);
+}
+ 
+function showDivss(n)
+ {
+  var i;
+  var x = document.getElementsByClassName("mySlides1");
+  var dots = document.getElementsByClassName("demo1");
+  if (n > x.length) {slideIndex1 = 1}    
+  if (n < 1) {slideIndex1 = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex1-1].style.display = "block";  
+  dots[slideIndex1-1].className += " w3-red";
+}
 </script>
  
 <script> 
@@ -258,7 +474,29 @@ function showDivs(n) {
               } 
        } 
     </script> 
-
  
-
+ 
+<script type="text/javascript">
+        function PrintDiv() {
+            var contents = document.getElementById("dvContents").innerHTML;
+            var frame1 = document.createElement('iframe');
+            frame1.name = "frame1";
+            frame1.style.position = "absolute";
+            frame1.style.top = "-1000000px";
+            document.body.appendChild(frame1);
+            var frameDoc = frame1.contentWindow ? frame1.contentWindow : frame1.contentDocument.document ? frame1.contentDocument.document : frame1.contentDocument;
+            frameDoc.document.open();
+            frameDoc.document.write('<html><head><title></title>');
+            frameDoc.document.write('</head><body>');
+            frameDoc.document.write(contents);
+            frameDoc.document.write('</body></html>');
+            frameDoc.document.close();
+            setTimeout(function () {
+                window.frames["frame1"].focus();
+                window.frames["frame1"].print();
+                document.body.removeChild(frame1);
+            }, 500);
+            return false;
+        }
+    </script>
 @endsection
