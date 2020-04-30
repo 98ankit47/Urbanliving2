@@ -285,7 +285,6 @@
                                                     @endif
                                                 @endforeach
                                             @endforeach
-                                            
                                         </div>
                                     </div>
                                     <div class="mySlides1 container">
@@ -302,7 +301,6 @@
                                                     @endif
                                                 @endif
                                             @endforeach
-                                            
                                         </div>
                                     </div>
                                     <br>
@@ -328,61 +326,72 @@
  
  
 <div id="dvContents" class="container" style="display:none;">
+    <div class="card" style="height: 770px;">
+        <div class="card-body">
+            @foreach($homes as $home)
+                <img src="/uploads/homes/{{$home->featured_image}}" style="height:400px; width:100%;">
+            @endforeach
+            <br>
+            <div class="row">
+                @foreach($gallery as  $key=>$gal)
+                    @if($key<3)
+                        <div class="col-md-4" style="height:250px;"><br>
+                            <img src="/uploads/gallery/{{$gal}}" style="height:100%; width:100%;">
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+    </div>
+</div>
+        <br>
 <div class="card" style="height: 770px;">
 <div class="card-body">
-    @foreach($homes as $home)
-        <img src="/uploads/homes/{{$home->featured_image}}" style="height:400px; width:100%;">
-    @endforeach
-    <br>
     <div class="row">
-        <div class="col-md-6" style="height:300px;"><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF6Or-9KfbR3eYm8QHwRHaWMpBB4sJTrei3kFhv4cHYpmXuNvq&usqp=CAU" style="height:100%; width:100%;">
-        </div>
-        <div class="col-md-6" style="height:300px;"><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqLoLhXogfZM5E1_tfyMO-1mJHdlcG8P10h5fBgvt6hGSB_MoP&usqp=CAU" style="height:100%; width:100%;">
-        </div>
+        @foreach($homes as $home)
+            @foreach($home->floor as $key=> $floor)
+                @if($key<2)
+                <div class="col-md-6" style="height:522px;"><br>
+                   <img src="/uploads/floor/{{$floor->image}}" style="height:100%; width:100%;">
+                </div> 
+                @endif
+            @endforeach
+        @endforeach
+        
     </div>
 </div>
 </div>
 <br>
 <div class="card" style="height: 770px;">
 <div class="card-body">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhOEpJDxntfxfRI879zNeuG7lfCgbYhGR5_58kP7KhPTLkcmSy&usqp=CAU" style="height:400px; width:100%;">
     <div class="row">
-        <div class="col-md-6" style="height:300px;"><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHdWVHWmtVA1BB6zDICrqwDSD3236hQtoUtJff_gbEu0-QEruc&usqp=CAU" style="height:100%; width:100%;">
-        </div>
-        <div class="col-md-6" style="height:300px;"><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSvz66gb4Du_TY6yhwrgF9W87b2CyIEb0ETxX_-gRlD5g53GoHB&usqp=CAU" style="height:100%; width:100%;">
-        </div>
+        @foreach($homes as $home)
+            @foreach($home->floor as $key=> $floor)
+                @if($key<2)
+                <div class="col-md-6" style="height:522px;"><br>
+                   <img src="/uploads/floor/{{$floor->image}}" style="height:100%; width:100%;">
+                </div> 
+                @endif
+            @endforeach
+        @endforeach
     </div>
 </div>
 </div>
 <br>
 <div class="card" style="height: 770px;">
 <div class="card-body">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF6Or-9KfbR3eYm8QHwRHaWMpBB4sJTrei3kFhv4cHYpmXuNvq&usqp=CAU" style="height:400px; width:100%;">
     <div class="row">
-        <div class="col-md-6" style="height:300px;"><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE0w9XdiZ_sZyVLaNMQsch-UAUIOo0a0wJ7ieQad6v1X2Y4HOM&usqp=CAU" style="height:100%; width:100%;">
-        </div>
-        <div class="col-md-6" style="height:300px;"><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqLoLhXogfZM5E1_tfyMO-1mJHdlcG8P10h5fBgvt6hGSB_MoP&usqp=CAU" style="height:100%; width:100%;">
-        </div>
-    </div>
-</div>
-</div>
-<br>
-<div class="card" style="height: 770px;">
-<div class="card-body">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE0w9XdiZ_sZyVLaNMQsch-UAUIOo0a0wJ7ieQad6v1X2Y4HOM&usqp=CAU" style="height:400px; width:100%;">
-    <div class="row">
-        <div class="col-md-6" style="height:300px;"><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF6Or-9KfbR3eYm8QHwRHaWMpBB4sJTrei3kFhv4cHYpmXuNvq&usqp=CAU" style="height:100%; width:100%;">
-        </div>
-        <div class="col-md-6" style="height:300px;"><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxPky_mLjl_e1vVW2VS1Gm3ZgRtBi1hi2sDOSzi4yfxgvvcRi0&usqp=CAU" style="height:100%; width:100%;">
-        </div>
+        @foreach($floorcomponents as $key=>$floorcomponent)
+            @if($key<3)
+                @if($key==0)
+                    <img src="/uploads/floorcomponent/{{$floorcomponent->image}}" style="height:300px; width:100%;">
+                @endif
+                @if($key%3!=0 && $key!=0)     
+                    <div class="col-md-6" style="height:250px;"><br>
+                        <img src="/uploads/floorcomponent/{{$floorcomponent->image}}" style="height:100%; width:100%;">
+                    </div> 
+                @endif
+            @endif
+        @endforeach
     </div>
 </div>
 </div>
