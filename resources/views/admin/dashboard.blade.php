@@ -101,7 +101,7 @@
                </div>
             </div>
          </div>
-         <div class="col-xl-5 col-lg-6 col-6"> 
+         <!-- <div class="col-xl-5 col-lg-6 col-6"> 
             <div class="card pull-up" id="card3">
                <div class="card-content">
                   <a href=" ">
@@ -122,8 +122,8 @@
                   </a>
                </div>
             </div>
-         </div>
-         <div class="col-xl-5 col-lg-6 col-6"> 
+         </div> -->
+         <!-- <div class="col-xl-5 col-lg-6 col-6"> 
             <div class="card pull-up" id="card4">
                <div class="card-content">
                   <a href=" ">
@@ -145,9 +145,9 @@
                </div>
             </div>
          </div>
-      </div>   <br>
-
-
+      </div>-->   
+</div>
+<br> <br> 
       <div class="card" style="margin-left:10px; margin-right:10px;">
          
             <div class="table-responsive" id="custom_table">

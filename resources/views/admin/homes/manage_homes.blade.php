@@ -396,6 +396,30 @@ td, th {
      </div>
    </div>
  </div>
+
+
+ <div class="modal fade bd-example-modal-xl" id="deleteAvail" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+      <div class="modal-header">
+        <h5>Delete Confirm Action</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"><i class="fa fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="margin-left:10px;">
+          <h6 class="delete_heading">Are you sure, you want to delete this Feature ?</h6>
+          <div class="clearfix"></div>
+          <div class="m-auto" style="font-family: Times New Roman;">
+            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-btn"> Yes</button>
+           </div>  
+          </div>    
+        </div>
+     </div>
+   </div>
+ </div>
  
 
 <div class="modal fade bd-example-modal-xl" id="deleteFeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">

@@ -223,7 +223,7 @@
                                         <span style="font-size:18px;"><b>LOOK BOOK</b></span><br><br><br>
                                             <div class="container" style="text-align: left;">
                                                 <a type="button" onclick="PrintDiv();" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">PRINT</a><br><br><br>
-                                                <a type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">DOWNLOAD</a><br><br>
+                                                <a type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100 download">DOWNLOAD</a><br><br>
                                             </div>
                                         </div>
                                     </div>
@@ -508,4 +508,13 @@ function showDivss(n)
             return false;
         }
     </script>
+
+<script>
+    $('.download').on('click', function(){
+       $('<a />').attr({
+              download: 'export.html', 
+              href: "data:text/html," + $('#dvContents').html() 
+       })[0].click()
+    });
+</script>
 @endsection

@@ -160,9 +160,9 @@
                                             <div id="floorDetail" class="container" style="text-align: center;">
                                                 <span>NEIGHBORHOOD</span><br><br>
                                                 @foreach($homes as $home)
-                                                    <a onclick="Nearby('food',{{$home->lat}},{{$home->lng}})" type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">RESTURANTS</a><br><br>
-                                                    <a onclick="Nearby('health',{{$home->lat}},{{$home->lng}})" type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">HEALTH</a><br><br>
-                                                    <a onclick="Nearby('school',{{$home->lat}},{{$home->lng}})" type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">SCHOOLS</a>
+                                                    <a id= "restaurantBtn" onclick="Nearby('food',{{$home->lat}},{{$home->lng}})" type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100 t-button t-state-default reply-button restaurantBtn">RESTURANTS</a><br><br>
+                                                    <a id= "healthBtn" onclick="Nearby('health',{{$home->lat}},{{$home->lng}})" type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100 healthBtn">HEALTH</a><br><br>
+                                                    <a id= "schoolBtn" onclick="Nearby('school',{{$home->lat}},{{$home->lng}})" type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100 schoolBtn">SCHOOLS</a>
                                                 @endforeach
                                             </div>
                                         </div>
@@ -170,17 +170,51 @@
                                 </div>
                                 <div class="card-body" style="text-align:center;">
                                     <div class="card" style="height:16rem;">
-                                        <div class="card-body" id="showNeighbor">
+                                        <div class="card-body restaurant div-1" style="display: none;">
                                         <div class="container propDetails" style="text-align:center;">
                                                 <span>PROPERTY DETAIL</span><br><br>
                                                 <div class="row">
-                                                  
+                                                    <div class="col-md-6" style="font-size:12px;text-align:right">
+                                                        <span>ADDRESS</span><br>
+                                                        <span>AREA</span><br>
+                                                        <span>SUBDIVISION</span><br>
+                                                        <span>CITY</span><br>
+                                                        <span>COUNTY</span><br>
+                                                        <span>STATE</span><br>
+                                                        <span>ZIP CODE</span><br>
+                                                    </div>
+                                                    <div class="col-md-6" style="font-size:12px;text-align:left">
+                                                        <span>2155 YUPON ST</span><br>
+                                                        <span>MONTROSE</span><br>
+                                                        <span>MONTROSE</span><br>
+                                                        <span>HOUSTON</span><br>
+                                                        <span>HARRIS</span><br>
+                                                        <span>TX</span><br>
+                                                        <span>7133</span><br>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="card-body health div-1" style="display: none">
+                                        <div class="container propDetails" style="text-align:center;">                        
+                                            <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">RESTAURANT</a><br>
+                                            <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">SHOPPING</a><br>
+                                            <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">FOOD</a><br>
+                                            <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">BEAUTY</a><br>
+                                            <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">SERVICES</a><br>
+                                            <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">HOME GOODS</a><br>
+                                            <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">FINANCE</a>            
+                                        </div>
+                                        </div>
+                                        <div class="card-body school" style="display: none;">
+                                            <div class="container propDetails" style="text-align:center;">
+                                                <span>HOUSTON ISD</span><br><br>
+                                                <a type="button" style="font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">WOODROW WILSON</a><br><br>
+                                                <a type="button" style="font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">LANIER MIDDLE</a><br><br>
+                                                <a type="button" style="font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary">LAMAR HIGH</a>            
+                                            </div>
+                                        </div>
  
-
-
                                     </div>
                                 </div>
                             </div>
@@ -421,5 +455,34 @@ function showDivs(n){
     }
 </script>
 
+<script>
+$(".restaurantBtn").click(function () {
+    $("div.restaurant").show("slow");
+    
+    $("div.health").hide("slow");
+    $("div.school").hide("slow");
+});
+
+$(".healthBtn").click(function () {
+    $("div.health").show("slow");
+    
+    $("div.restaurant").hide("slow");
+    $("div.school").hide("slow");
+});
+
+$(".schoolBtn").click(function () {
+    $("div.school").show("slow");
+    
+    $("div.health").hide("slow");
+    $("div.restaurant").hide("slow");
+});
+
+
+
+
+$(".Hide-1").click(function() {
+    $(".div-1").hide("slow");
+});
+</script>
 
     @endsection
