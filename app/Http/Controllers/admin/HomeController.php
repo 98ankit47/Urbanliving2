@@ -137,6 +137,9 @@ class HomeController extends Controller
                 "area" =>$home->area,
                 "builder" =>$home->builder,
                 "status" =>$home->status_id,
+                "price" =>$home->price,
+                "lat" =>$home->lat,
+                "lng" =>$home->lng,
                 "community_list"=>$community->community_id,
              );
                 return $temp;
@@ -170,7 +173,6 @@ class HomeController extends Controller
         $gallery_name=$request['gallery_name'];
         foreach($gallery as $key => $gal)
         {
-            echo $key;
             $gal_img =  time().explode('.',$gallery_name[$key])[0].'.' . explode('/', explode(':',substr($gal,0,strpos(
                 $gal,';')))[1])[1];  
     
@@ -189,7 +191,9 @@ class HomeController extends Controller
             'area'=>'required',
             'builder'=>'required',
             'status'=>'required',
-
+            'lat'=>'required',
+            'lng'=>'required',
+            'price'=>'required',
             ]);
         Homes::where('id',$id)->update([
             'title'=>$request['title'],
@@ -202,6 +206,9 @@ class HomeController extends Controller
             'area'=>$request['area'],
             'builder'=>$request['builder'],
             'status_id'=>$request['status'],
+            'lat'=>$request['lat'],
+            'lng'=>$request['lng'],
+            'price'=>$request['price'],
             'featured_image'=>$featured_img,
             'gallery'=>implode(',', $data),
             'slug'=>Str::slug($request['title'], '-'),

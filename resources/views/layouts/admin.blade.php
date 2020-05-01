@@ -448,15 +448,56 @@ $('#ys-comm-btn').click(function()
 
 @if(Route::currentRouteName() == 'edit-home')
 <script>
+  var latitude,longitude;
 $(document).ready(function() {
-  var APP_URL = "{{ url('/') }}";
-  var id = window.location.href.split('/').pop();
-  var image,image_name;
-  var gal=[];
-  var gal_name=[];
-  $.ajax({
-      type: 'GET',
-      url: APP_URL+'/api/admin/home/'+id,
+  loadmap();
+  function loadmap(){
+    var myLatLng=new google.maps.LatLng(40.71331,-74.0688);
+    var map = new google.maps.Map(
+      document.getElementById('mapshow'),
+      {zoom: 15, center: myLatLng}
+    );
+      google.maps.event.addListener(map, "click", function (event) {
+       latitude = event.latLng.lat();
+       longitude = event.latLng.lng();
+       document.getElementById("lat").value = latitude;
+       document.getElementById("lng").value = longitude;
+
+      radius = new google.maps.Circle({map: map,
+          radius: 100,
+          center: event.latLng,
+          fillColor: '#777',
+          fillOpacity: 0.1,
+          strokeColor: '#AA0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          draggable: true,    // Dragable
+          editable: true      // Resizable
+      });
+
+      // Center of map
+      map.panTo(new google.maps.LatLng(latitude,longitude));
+      
+    });
+    
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+  }
+      var APP_URL = "{{ url('/') }}";
+      var id = window.location.href.split('/').pop();
+      var image,image_name;
+      var gal=[];
+      var gal_name=[];
+      $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/home/'+id,
 
       success: function(result){     
         document.getElementById("title").value = result.title;
@@ -470,6 +511,9 @@ $(document).ready(function() {
         document.getElementById("community_list").value = result.community;
         document.getElementById("builder").value = result.builder;
         document.getElementById("status").value = result.status;
+        document.getElementById("price").value = result.price;
+        document.getElementById("lat").value = result.lat;
+        document.getElementById("lng").value = result.lng;
         document.getElementById("community_list").value = result.community_list;
       }
       
@@ -511,7 +555,8 @@ $(document).ready(function() {
         });
         $(function () {
           $('form').on('submit', function (e) {
-            var title,description,bedroom,bathroom,garage,status,stories,mls,area,builder,meta_description,meta_title;
+            var title,description,bedroom,bathroom,garage,status,stories,mls,area
+            ,builder,meta_description,meta_title,price;
             e.preventDefault();
                 title              =  document.getElementById("title").value;         
                 description        =  document.getElementById("description").value;         
@@ -522,6 +567,9 @@ $(document).ready(function() {
                 mls                =  document.getElementById("mls").value;         
                 area               =  document.getElementById("area").value;         
                 status             =  document.getElementById("status").value;         
+                longitude          =  document.getElementById("lat").value;         
+                latitude           =  document.getElementById("lng").value;         
+                price              =  document.getElementById("price").value;         
                 builder            =  document.getElementById("builder").value;         
                 community          =  document.getElementById("community_list").value;         
                 $.ajax({
@@ -543,6 +591,9 @@ $(document).ready(function() {
                     'featured-image-name' : image_name,
                     'gallery'             : gal,
                     'gallery_name'        : gal_name,
+                    'lat'                 : latitude,
+                    'lng'                 : longitude,
+                    'price'               : price,
                   },
                   success: function () {
                     window.location.href = "/admin/home/manage/"+id;
