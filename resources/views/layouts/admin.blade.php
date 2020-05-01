@@ -567,8 +567,8 @@ $(document).ready(function() {
                 mls                =  document.getElementById("mls").value;         
                 area               =  document.getElementById("area").value;         
                 status             =  document.getElementById("status").value;         
-                longitude          =  document.getElementById("lat").value;         
-                latitude           =  document.getElementById("lng").value;         
+                latitude           =  document.getElementById("lat").value;         
+                longitude          =  document.getElementById("lng").value;         
                 price              =  document.getElementById("price").value;         
                 builder            =  document.getElementById("builder").value;         
                 community          =  document.getElementById("community_list").value;         

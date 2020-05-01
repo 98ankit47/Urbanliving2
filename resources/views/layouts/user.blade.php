@@ -580,6 +580,23 @@
 								icon: iconBase + 'library_maps.png',
 								title: "Home",
 							});
+							$.ajax({
+								type: 'GET',
+								url: APP_URL+'/api/Avail/'+id,
+								success: function(results){
+									var ln = Object.keys(results).length;
+											for(var i=0;i<ln;i++)
+											{	
+												var data = markers[results[i].id];
+												var marker = new google.maps.Marker({
+												position: new google.maps.LatLng(results[i].lat,results[i].lng),
+												map: map,
+												icon: iconBase + 'library_maps.png',
+												title: "home",
+												});
+											}
+										}
+									}); 
 							markers.push(marker);
 							(function (marker, data) {
 								var image=result.featured_image;
@@ -739,35 +756,7 @@
 								var lng=this.position.lng();
 								scrollList(lat,lng)
 							});
-							// var request = {
-							// 	location: myLatLng,
-							// 	radius: '500',
-							// 	type: ['college'],
-							// };
-							// function createmarker(latlng,icn,title)
-							// {
-							// 	var marker = new google.maps.Marker({
-							// 		position: latlng,
-							// 		map: map,
-							// 		icon: icn,
-							// 		title: title
-							// 	});
-							// }
-
-								// service = new google.maps.places.PlacesService(map);
-								// service.nearbySearch(request, callback);
-
-								// function callback(results, status) {
-								// 	if (status === google.maps.places.PlacesServiceStatus.OK) {
-								// 		for (var i = 0; i < results.length; i++) {
-								// 			var place=results[i];
-								// 			latlng=place.geometry.location;
-								// 			icn=place.icon;
-								// 			title=place.title;
-								// 			createmarker(latlng,icn,title);
-								// 		}
-								// 	}
-								// }
+							 
 						} 
 					}  
                });

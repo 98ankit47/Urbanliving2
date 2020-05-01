@@ -472,6 +472,6 @@ class CommonController extends Controller
 
     public function AvailableSingleHome($id)
     {
-        return HomeAvailable::get();
+        return HomeAvailable::where('home_id',$id)->get();
     }
 }
