@@ -397,7 +397,7 @@
 </div>
 </div>
  
- 
+@if(Route::currentRouteName() == 'developmentDetail')
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -458,7 +458,6 @@ function showDivss(n)
     dots[i].className = dots[i].className.replace(" w3-red", "");
   }
   x[slideIndex1-1].style.display = "block";  
-  dots[slideIndex1-1].className += " w3-red";
 }
 </script>
  
@@ -517,4 +516,5 @@ function showDivss(n)
        })[0].click()
     });
 </script>
+@endif
 @endsection
