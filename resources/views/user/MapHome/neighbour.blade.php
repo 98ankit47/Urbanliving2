@@ -82,16 +82,16 @@
                     }                 
                         ?>
                     @foreach($gallery as $gals)
-                <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:560px; width:100%;">
+                        <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:560px; width:100%;">
                     @endforeach
                         <div class="w3-center">
                         <div class="w3-section">
                             <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+                            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button><br>
                         </div>
-                            <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
-                            <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
-                            <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
+                            @foreach($gallery as $key =>$gal)
+                              <button class="w3-button demo" onclick="currentDiv({{$key+1}})">{{$key+1}}</button> 
+                            @endforeach
                     </div>
                 </div>
                 <div class="col-md-4"><br>
@@ -185,7 +185,7 @@
                                             <div class="container propDetails" style="text-align:center;">                        
                                                 <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary"  onclick="Nearby('doctor',{{$home->lat}},{{$home->lng}})">DOCTOR</a><br>
                                                 <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary"  onclick="Nearby('pharmacy',{{$home->lat}},{{$home->lng}})" >PHARMACY</a><br>
-                                                <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary"  onclick="Nearby('hospital',{{$home->lat}},{{$home->lng}})" >HOSPITAL</a><br>
+                                                <a type="button" style="font-size: 10px;font-family: Open Sans, sans-serif;width:100px;text-align:center;font-weight:bold;" class="btn w-100 btn-outline-primary"  onclick="Nearby('hospital',{{$home->lat}},{{$home->lng}})" >HOSPITALp</a><br>
                                             </div>
                                         </div>
                                         <div class="card-body school" style="display: none;">

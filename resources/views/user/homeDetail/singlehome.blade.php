@@ -43,16 +43,16 @@
                         }                 
                             ?>
                         @foreach($gallery as $gals)
-                    <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:560px; width:100%;">
+                            <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:560px; width:100%;">
                         @endforeach
                             <div class="w3-center">
                             <div class="w3-section">
                                 <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
                                 <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
                             </div>
-                                <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
-                                <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
-                                <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
+                                @foreach($gallery as $key =>$gal)
+                                    <button class="w3-button demo" onclick="currentDiv({{$key+1}})">{{$key+1}}</button> 
+                                @endforeach 
                         </div>
                     </div>
                     <div class="col-md-4"><br>

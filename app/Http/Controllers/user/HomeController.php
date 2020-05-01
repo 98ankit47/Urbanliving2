@@ -147,6 +147,8 @@ class HomeController extends Controller
     public function summary($id)
     {
         $data='';
+        $plus=1;
+        $minus=-1;
         $home=Homes::where('id',$id)->with('communities')->get()->first();
         $floors=Floors::where('home_id',$id)->get();
         $floorID=array();
@@ -165,7 +167,11 @@ class HomeController extends Controller
                             $data.='<img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="/uploads/floorcomponent/'.$component->image.'"/>';
                         }
                     }
-                    $data.=' <br><br> <div class="w3-center" style="text-align:center;">';
+                    $data.=' <br><br> <div class="w3-center" style="text-align:center;">
+                            <div class="w3-section">
+                                <button class="w3-button w3-light-grey" onclick="plusDivs('.$plus.')">❮ Prev</button>
+                                <button class="w3-button w3-light-grey" onclick="plusDivs('.$minus.')">Next ❯</button>
+                            </div>';
                     foreach($floorID as $fid)
                     {
                         $components=FloorComponent::where('floor_id',$fid)->get();
@@ -173,8 +179,7 @@ class HomeController extends Controller
                         { 
                             $key=$key+1;
                             $data.='
-                                    <button class="w3-button demo" onclick="currentDiv(1)">'.$key.'</button> 
-                            ';
+                                    <button class="w3-button demo" onclick="currentDiv('.$key.')">'.$key.'</button> ';
                             $key=$key-1;
 
                         }

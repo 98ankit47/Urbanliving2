@@ -256,6 +256,8 @@
             dots[slideIndex-1].className += " w3-red";
             }
             
+
+            
             </script>
 
     @endsection
