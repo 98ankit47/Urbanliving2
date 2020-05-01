@@ -58,7 +58,7 @@
 </head>
 
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" style="font-family: Open Sans, sans-serif;">
 <div class="wrapper">
 
   <!-- Navbar -->

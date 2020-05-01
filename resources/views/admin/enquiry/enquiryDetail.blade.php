@@ -10,11 +10,11 @@
     <style type="text/css">
    
    *{
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Open Sans, sans-serif;
     }
      /*table */
      .table {
-font-family: arial, sans-serif;
+        font-family: Open Sans, sans-serif;
 border-collapse: collapse;
 width: 100%;
 }

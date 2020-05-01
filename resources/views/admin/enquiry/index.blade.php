@@ -10,6 +10,7 @@
     .tabs {
         margin-left:20px;
         width:90%;
+        font-family: Open Sans, sans-serif;
     }
     .tablink {
   background-color: white;
@@ -33,6 +34,7 @@
 
 .enquiry-contain {
     text-align: center;
+    font-family: Open Sans, sans-serif;
 }
 </style>
 </head>
@@ -45,5 +47,5 @@
 
 <div class="container tabs" id="enquiry"> 
      
-</div>
+</div><br><br>
 @endsection

@@ -2,22 +2,16 @@
 @section('content')
 <style>
 .pull-up{
-   margin-left: 20px;
-   margin-right: 20px;
    width: 100%;
 }
 
 .a_dash {
    margin-left: 40%;
-   font-family: "Times New Roman";
+   font-family: Open Sans, sans-serif;
 }
 
 .cards-row {
-   margin-left: 3%;
-}
-
-.col-6 {
-   margin-left: 40px;
+   text-align:center;
 }
 
 .pull-up:hover {
@@ -26,128 +20,140 @@
 
 #card1 {
    border-radius: 25px;
-  border: 2px solid #29b17f;
+  /* border: 2px solid #29b17f; */
   
 }
 
 #card2 {
    border-radius: 25px;
-  border: 2px solid #fe425f;
+  /* border: 2px solid #fe425f; */
   
 }
 
-#card3 {
-   border-radius: 25px;
-  border: 2px solid #2dc9eb;
-  
-}
-
-#card4 {
-   border-radius: 25px;
-  border: 2px solid #404b77
-
-;
-  
-}
 </style>
+
+<body style="font-family: Open Sans, sans-serif;">
       <div class="d-sm-flex align-items-center justify-content-between mb-2">
          <h4 class="a_dash"><br><strong>Admin Dashboard</strong></h4>
       </div>
 <hr><br>
-      <div id="crypto-stats-3" class="row cards-row" style="font-family: Times New Roman;">
+
+<div class="container" style="text-align:center;">
+   <div class="row">
+      <div class="col-md-4">
+         <div class="card" style="background-color: #ee4f4c; color:white;">
+            <div class="card-body">
+               <div class="row">
+                  <div class="col-md-4" style="text-align:left;">
+                     <div>
+                        <i class="fa fa-address-card" style="font-size: 30px; color: white;"></i>
+                     </div>
+                  </div>
+                  <div class="col-md-8" style="text-align:right;">
+                     <span><b>188</b></span><br>
+                     <span><b>Today's Visits</b></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="card" style="background-color: #7158f1;color:white;">
+            <div class="card-body">
+               <div class="row">
+                  <div class="col-md-6" style="text-align:left;">
+                     <div>
+                        <i class="fa fa-user-plus" style="font-size: 30px; color: white;"></i>
+                     </div>
+                  </div>
+                  <div class="col-md-6" style="text-align:right;">
+                     <span><b>45</b></span><br>
+                     <span><b>New Users</b></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4">
+         <div class="card" style="background-color:#09d99f;color:white;">
+            <div class="card-body">
+               <div class="row">
+                  <div class="col-md-6" style="text-align:left;">
+                     <div>
+                        <i class="fa fa-shopping-bag" style="font-size: 30px; color: white;"></i>
+                     </div>
+                  </div>
+                  <div class="col-md-6" style="text-align:right;">
+                     <span><b>1008</b></span><br>
+                     <span><b>Total sale</b></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<br><br>
+      <div id="crypto-stats-3" class="container">
+         <div class="row">
+         <div class="col-md-4">
          
-         <div class="col-xl-5 col-lg-6 col-6"> 
-            <div class="card pull-up" id="card1" style="background-color: ;">
+            <div class="card pull-up" id="card1" style="background-color:#283949 ;">
                <div class="card-content">
                   <a href="/admin/homes">
                      <div class="card-body">
                         <div class="media d-flex">
                               <div class="media-body text-left">
-                                 <span class="info" style="color:black;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:green;"><b>8</b></span><br><br>
-                                 <h5 style="color:black;"><strong>Homes</strong></h5>
+                                 <span class="info" style="color:white;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:white;"><b>8</b></span><br><br>
+                                 <h5 style="color:white;"><strong>Homes</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-home float-right" style="font-size: 40px; color: #80D6BB;"></i>
+                                 <i class="fa fa-home float-right" style="font-size: 40px; color: white;"></i>
                               </div>
                         </div>
-                        <div class="progress" style="height: 10px;">
-                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                  </a>
+               </div>
+         </div>
+         
+            <div class="card pull-up" id="card2" style="background-color: #855fbd;">
+               <div class="card-content">
+                  <a href="/admin/community">
+                     <div class="card-body">
+                        <div class="media d-flex">
+                              <div class="media-body text-left">
+                                 <span class="danger" style="color:white;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:white;"><b>3</b></span><br><br>
+                                 <h5 style="color:white;"><strong>Community</strong></h5>
+                              </div>
+                              <div>
+                                 <i class="fa fa-home float-right" style="font-size: 40px; color: white;"></i>
+                              </div>
                         </div>
                      </div>
                   </a>
                </div>
             </div>
-         </div>
 
-         <div class="col-xl-5 col-lg-6 col-6"> 
-            <div class="card pull-up" id="card2" style="background-color: ;">
+            <div class="card pull-up" id="card2" style="background-color: #fbb836;">
                <div class="card-content">
-                  <a href="/admin/enquiry">
+                  <a href="/admin/floor">
                      <div class="card-body">
                         <div class="media d-flex">
                               <div class="media-body text-left">
-                                 <span class="danger" style="color:black;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:#DC143C;"><b>3</b></span><br><br>
-                                 <h5 style="color:black;"><strong>Enquiry</strong></h5>
+                                 <span class="danger" style="color:white;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:white;"><b>3</b></span><br><br>
+                                 <h5 style="color:white;"><strong>Floor</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-bell float-right" style="font-size: 40px; color: #E2778B;"></i>
+                                 <i class="fa fa-terminal float-right" style="font-size: 40px; color: white;"></i>
                               </div>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                      </div>
                   </a>
                </div>
             </div>
          </div>
-         <!-- <div class="col-xl-5 col-lg-6 col-6"> 
-            <div class="card pull-up" id="card3">
-               <div class="card-content">
-                  <a href=" ">
-                     <div class="card-body">
-                        <div class="media d-flex">
-                              <div class="media-body text-left">
-                                 <span class="success" style="color:black;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:#4e4eff;"><b>5</b></span><br><br>
-                                 <h5 style="color:black;"><strong>Selling Requests</strong></h5>
-                              </div>
-                              <div>
-                                 <i class="fa fa-check-square float-right" style="font-size: 40px; color:#61A6F1;"></i>
-                              </div>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                           <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 65%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-            </div>
-         </div> -->
-         <!-- <div class="col-xl-5 col-lg-6 col-6"> 
-            <div class="card pull-up" id="card4">
-               <div class="card-content">
-                  <a href=" ">
-                     <div class="card-body">
-                        <div class="media d-flex">
-                              <div class="media-body text-left">
-                                 <span class="danger" style="color:black;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:#0080ff;"><b>7</b></span><br><br>
-                                 <h5 style="color:black;"><strong>Lending Requests</strong></h5>
-                              </div>
-                              <div>
-                                 <i class="fa fa-inbox float-right" style="font-size: 40px; color:#F2C077;"></i>
-                              </div>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                     </div>
-                  </a>
-               </div>
-            </div>
-         </div>
-      </div>-->   
-</div>
-<br> <br> 
+         
+      <div class="col-md-8">
       <div class="card" style="margin-left:10px; margin-right:10px;">
          
             <div class="table-responsive" id="custom_table">
@@ -159,11 +165,11 @@
                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                      <tr>
-                        <th style="width:40px">S.No.</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Status</th>
-                        <th style="width:60px">Action</th>
+                        <th style="width:40px;background-color:#30394c;color:white;">S.No.</th>
+                        <th style="background-color:#30394c;color:white;">Name</th>
+                        <th style="background-color:#30394c;color:white;">Email</th>
+                        <th style="background-color:#30394c;color:white;">Status</th>
+                        <th style="width:60px;background-color:#30394c;color:white;">Action</th>
                      </tr>
                   </thead>
                   <tbody id="userdash">
@@ -171,8 +177,10 @@
                   </tbody>
                </table>
             </div>
-         
+         </div>
+         </div>
       </div>
-
+      </div>
+</body>
 
    @endsection
