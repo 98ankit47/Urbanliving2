@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $data=$request['search'];
-         $count=Homes::where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get('title')->count();
+         $count=Homes::where('block','1')->where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get('title')->count();
          if($count==0)
          {
             $community=Communities::where('title','LIKE','%'.$data.'%')->get()->first();
@@ -28,7 +28,7 @@ class HomeController extends Controller
                 $rel=HomeCommunity::where('community_id',$community->id)->get()->first();
                 if(HomeCommunity::where('community_id',$community->id)->get()->count()!=0)
                 {
-                     $home      = Homes::with('communities')->where('id',$rel->home_id)->get();
+                     $home      = Homes::where('block','1')->with('communities')->where('id',$rel->home_id)->get();
                      return view('user.homeDetail.index')->with('homes',$home);
                 }
             }
@@ -36,7 +36,7 @@ class HomeController extends Controller
          }
          else
          {
-            $home=Homes::with('communities')->where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get();
+            $home=Homes::where('block','1')->with('communities')->where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get();
             return view('user.homeDetail.index')->with('homes',$home);
          }
 
@@ -44,7 +44,7 @@ class HomeController extends Controller
 
     public function AllHome()
     {
-        $home= Homes::with('communities')->get();
+        $home= Homes::where('block','1')->with('communities')->get();
         return view('user.homeDetail.index')->with('homes',$home);
     }
 
@@ -126,7 +126,7 @@ class HomeController extends Controller
     public function mapHomeView(Request $request)
     {
         $data='';
-        $homes = Homes::all();
+        $homes = Homes::where('block','1')->get();
         foreach($homes as $home)
         {
             $data.='  <div id="home'.$home->id.'" class="card homebox1" style="width: 100%; height:24rem;" >
@@ -140,7 +140,7 @@ class HomeController extends Controller
     
     public function mapMarkerHome($lat,$lng)
     {
-        $homes = Homes::where('lat',$lat)->where('lng',$lng)->get()->first();
+        $homes = Homes::where('block','1')->where('lat',$lat)->where('lng',$lng)->get()->first();
         return $homes;
     }
 
