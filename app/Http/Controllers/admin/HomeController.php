@@ -30,15 +30,14 @@ class HomeController extends Controller
             <div class="card">
               <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
-                <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>
-                 ';
+                <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>';
                  if($home->block==0)
                  {
-                    $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" >Deactive</a> ';
+                    $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" >Deactive</a><br>';
                  }
                 else
                 {
-                    $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome">Active</a>';
+                    $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome">Active</a><br>';
                 }
                  $data.='<div class="row">
                  <div class="col-md-1"></div> 
