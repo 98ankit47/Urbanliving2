@@ -33,19 +33,11 @@ class HomeController extends Controller
                 <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>';
                  if($home->block==0)
                  {
-<<<<<<< HEAD
-                    $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" >Deactive</a><br>';
-                 }
-                else
-                {
-                    $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome">Active</a><br>';
-=======
                     $data.='<div class="container" style="text-align:center;"><a type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
                  }
                 else
                 {
                     $data.='<div class="container" style="text-align:center;"><a type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome"><i class="fa fa-check">&nbsp;Active</i></a></div>';
->>>>>>> d9969e2dc1a44d519734e5f31d527fb35d547878
                 }
                  $data.='<br><div class="row">
                   
@@ -118,6 +110,7 @@ class HomeController extends Controller
             'lat'=>$request['lat'],
             'lng'=>$request['lng'],
             'price'=>$request['price'],
+            'block'=>1,
             'featured_image'=>$featured_img,
             'gallery'=>implode(',', $data),
             'slug'=>Str::slug($request['title'], '-'),

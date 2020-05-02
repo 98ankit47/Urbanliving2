@@ -78,17 +78,16 @@ class CommonController extends Controller
                         <td>'.$key.'</td>
                         <td>'.$user->name.'</td>
                         <td>'.$user->email.'</td>
-                        <td>
-                        <select id="community_list" class="form-control">
-                            <option>Active</option>
-                            <option>Deactive</option>
-                        </select>
-                        </td>
-                        <td>
-                        <span><a class="a1 click_edit" title="Edit" href="#">
-                            <i class="fa fa-edit"></i></a></span>&nbsp;&nbsp;
-                        <span><a href="#" class="a1" data-toggle="modal" data-target="#modal-delete" ><i class="fa fa-trash"></i></a></span>
-                        </td>
+                        <td>';
+                        if($user->status==0)
+                        {
+                           $data.='<div class="container" style="text-align:center;"><a type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$user->id.'" data-toggle="modal" data-target="#BlockUser" ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                        }
+                       else
+                       {
+                           $data.='<div class="container" style="text-align:center;"><a type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$user->id.'" data-toggle="modal" data-target="#BlockUser"><i class="fa fa-check">&nbsp;Active</i></a></div>';
+                       }
+                        $data.='</td>
                     </tr>';
                   --$key;  
             
@@ -473,5 +472,21 @@ class CommonController extends Controller
     public function AvailableSingleHome($id)
     {
         return HomeAvailable::where('home_id',$id)->get();
+    }
+    public function UserBlock($id)
+    { 
+        $home = User::where('id',$id)->get()->first();
+        if($home->status==0)
+        {
+            $block=1;
+        }
+        else
+        {
+            $block=0;
+        }
+        User::where('id',$id)->update([
+            'status'=>$block
+        ]);
+        return "success";
     }
 }

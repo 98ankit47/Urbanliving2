@@ -406,6 +406,20 @@
 
  });
 });
+
+$('#BlockUser').on('show.bs.modal', function (e) {
+
+var $trigger = $(e.relatedTarget);
+var id=$trigger.data('id');
+$('#ys-chng-user-btn').click(function()
+{
+  $('#BlockUser').modal('hide');
+ $('.modal-backdrop').css('display','none');
+    BlockUser(id);
+
+});
+});
+
 $('#deleteHome').on('show.bs.modal', function (e) {
 
 var $trigger = $(e.relatedTarget);
@@ -1091,6 +1105,7 @@ function Editloadmap(aid){
 
       }
       
+      
  </script> 
  @endif 
 
@@ -1142,6 +1157,16 @@ function Editloadmap(aid){
               }   
           });
     }
+    function BlockUser(id)
+      {
+             $.ajax({
+              url: APP_URL + '/api/admin/user-block/'+ id,
+              type: 'GET'
+            });
+           LoadUserList();
+           $('#success').html('User Status changed').delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+
+      }
   </script>
 @endif
 

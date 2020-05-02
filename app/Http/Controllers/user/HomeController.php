@@ -110,6 +110,7 @@ class HomeController extends Controller
             'name'      =>  $request['name'],
             'password' => Hash::make($request['password']),
             'type'      =>  'user',
+            'status'    =>  1,
         ]);
         return "success";
     }

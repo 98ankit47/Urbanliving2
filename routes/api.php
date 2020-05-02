@@ -32,6 +32,7 @@ Route::post('admin/community/{id}','admin\CommunityController@update');
 
 Route::get( 'admin/home-status', 'CommonController@status');
 Route::get( 'admin/dashboard/user', 'CommonController@DashboardUser');
+Route::get('admin/user-block/{id}','CommonController@UserBlock');
 
 Route::post( 'admin/floor/{id}', 'admin\FloorController@update');
 Route::get( 'admin/floor-home/{id}', 'admin\FloorController@showHomeFloor');
