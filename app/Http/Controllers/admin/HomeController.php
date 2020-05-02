@@ -31,25 +31,22 @@ class HomeController extends Controller
               <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
                 <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>
-                 <br>
-                 <div class="row">
-                 <div class ="col-md-4">
-                    <a style="font-family: Open 0Sans, sans-serif;color:white;width:80px;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn w-100">Manage</a> 
-                 </div>';
+                 ';
                  if($home->block==0)
                  {
-                    $data.='<div class ="col-md-4">
-                        <a style="font-family: Open Sans,sans-serif;color:white;width:80px;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" class="btn w-100">Deactive</a> 
-                    </div>';
+                    $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" >Deactive</a> ';
                  }
                 else
                 {
-                    $data.='<div class ="col-md-4">
-                        <a style="font-family: Open Sans,sans-serif;color:white;width:80px;text-align:center;font-weight:bold; background-color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" class="btn w-100">Active</a> 
-                    </div>';
+                    $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome">Active</a>';
                 }
-
-                 $data.='<div class ="col-md-4">
+                 $data.='<div class="row">
+                 <div class="col-md-1"></div> 
+                 <div class ="col-md-4">
+                    <a style="font-family: Open 0Sans, sans-serif;color:white;width:80px;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn w-100">Manage</a> 
+                 </div> 
+                 <div class="col-md-2"></div> 
+                 <div class ="col-md-4">
                     <button style="font-family: Open Sans, sans-serif;color:white;width:80px;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn w-100">Delete</button>  
                 </div>
                 </div>

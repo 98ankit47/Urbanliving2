@@ -115,7 +115,7 @@ class HomeController extends Controller
     }
     public function map(Request $request)
     {
-        return Homes::get();
+        return Homes::where('block','1')->get();
 
     }
     public function mapSingle($id)
