@@ -7,13 +7,13 @@
   margin-right: 30px;
 }
 
-.card-body{
+/* .card-body{
   height: 100px;
 }
 
 .card-img-top {
   height: 300px;
-}
+} */
 
 .contain-bath {
     margin-left: 20px;

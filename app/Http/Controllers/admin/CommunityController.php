@@ -29,13 +29,13 @@ class CommunityController extends Controller
               <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$community->title.'</h5>
                  <br>
                  <div class="row">
-                 <div class="col-md-1"></div>
-                 <div class ="col-md-4">
-                 <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">Edit</a>    
+                 
+                 <div class ="col-md-6" style="text-align:center;">
+                 <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn com-but">Edit</a>    
                 </div>
-                <div class="col-md-1"></div>
-                <div class ="col-md-4">
-                 <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w-100">Delete</button>
+                
+                <div class ="col-md-6" style="text-align:center;">
+                 <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn com-but">Delete</button>
                   </div>
                   </div>   
                 </div>
