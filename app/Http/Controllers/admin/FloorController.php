@@ -115,20 +115,21 @@ class FloorController extends Controller
           <div class="card floor-card">
             <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="/uploads/floorcomponent/'.$component->image.'" alt="">
               <div class="card-body">
-                <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$component->name.'</h5>
-                 <div class="row">
-                 <div class="col-md-1"></div>
-                 <div class ="col-md-4">
-                   <button type="button" onclick="editfloorcomponent('.$component->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">Edit</button>  
-                  </div>
-                  <div class="col-md-2"></div>
-                 <div class ="col-md-4">
-                   <button type="button" data-toggle="modal" data-id="'.$component->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloorComponent" class="btn w-100">Delete</button> 
-                  </div>               
-                 </div>
-              </div>
+              <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$component->name.'</h5>
+               <br><div class="row">
+               
+               <div class ="col-md-6" style="text-align:center;">
+                 <button type="button" onclick="editfloorcomponent('.$component->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
+                </div>
+                
+                <div class ="col-md-6" style="text-align:center;">
+                 <button type="button" data-toggle="modal" data-id="'.$component->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloorComponent" class="btn">Delete</button> 
+                </div>
+               </div>
+                </div>
+               
           </div>
-        </div> ';
+        </div>';
       } 
       return $data ;
     }
@@ -220,13 +221,13 @@ class FloorController extends Controller
                 <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">
                   <div class="card-body">
                    <div class="row">
-                   <div class="col-md-1"></div>
-                   <div class ="col-md-4">
-                     <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">Edit</button> 
+                   
+                   <div class ="col-md-6" style="text-align:center;">
+                     <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
                     </div>
-                    <div class="col-md-2"></div>
-                 <div class ="col-md-4">
-                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn w-100">Delete</button> 
+                    
+                 <div class ="col-md-6" style="text-align:center;">
+                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
                     </div>
                    </div>
                     </div>

@@ -33,20 +33,28 @@ class HomeController extends Controller
                 <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>';
                  if($home->block==0)
                  {
+<<<<<<< HEAD
                     $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" >Deactive</a><br>';
                  }
                 else
                 {
                     $data.='<a style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome">Active</a><br>';
+=======
+                    $data.='<div class="container" style="text-align:center;"><a type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome" ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                 }
+                else
+                {
+                    $data.='<div class="container" style="text-align:center;"><a type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome"><i class="fa fa-check">&nbsp;Active</i></a></div>';
+>>>>>>> d9969e2dc1a44d519734e5f31d527fb35d547878
                 }
-                 $data.='<div class="row">
-                 <div class="col-md-1"></div> 
-                 <div class ="col-md-4">
-                    <a style="font-family: Open 0Sans, sans-serif;color:white;width:80px;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn w-100">Manage</a> 
+                 $data.='<br><div class="row">
+                  
+                 <div class ="col-md-6" style="text-align:center;">
+                    <a style="font-family: Open 0Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
                  </div> 
-                 <div class="col-md-2"></div> 
-                 <div class ="col-md-4">
-                    <button style="font-family: Open Sans, sans-serif;color:white;width:80px;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn w-100">Delete</button>  
+                  
+                 <div class ="col-md-6" style="text-align:center;">
+                    <button style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
                 </div>
                 </div>
                  </div>
