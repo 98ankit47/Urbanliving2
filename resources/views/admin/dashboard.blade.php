@@ -5,11 +5,6 @@
    width: 100%;
 }
 
-.a_dash {
-   margin-left: 40%;
-   font-family: Open Sans, sans-serif;
-}
-
 .cards-row {
    text-align:center;
 }
@@ -33,8 +28,8 @@
 </style>
 
 <body style="font-family: Open Sans, sans-serif;">
-      <div class="d-sm-flex align-items-center justify-content-between mb-2">
-         <h4 class="a_dash"><br><strong>Admin Dashboard</strong></h4>
+      <div class="container" style="text-align:center;font-family: Open Sans, sans-serif;">
+         <h4><br><strong>Admin Dashboard</strong></h4>
       </div>
 <hr><br>
 
@@ -93,7 +88,8 @@
       </div>
    </div>
 </div>
-<br><br>
+<br><br><br>
+
       <div id="crypto-stats-3" class="container">
          <div class="row">
          <div class="col-md-4">
@@ -114,8 +110,10 @@
                      </div>
                   </a>
                </div>
+            </div>
          </div>
-         
+
+         <div class="col-md-4">
             <div class="card pull-up" id="card2" style="background-color: #855fbd;">
                <div class="card-content">
                   <a href="/admin/community">
@@ -133,7 +131,9 @@
                   </a>
                </div>
             </div>
+         </div>
 
+         <div class="col-md-4">
             <div class="card pull-up" id="card2" style="background-color: #fbb836;">
                <div class="card-content">
                   <a href="/admin/floor">
@@ -152,8 +152,10 @@
                </div>
             </div>
          </div>
-         
-      <div class="col-md-8">
+         </div>
+
+      <br><br><br>
+
       <div class="card" style="margin-left:10px; margin-right:10px;">
          
             <div class="table-responsive" id="custom_table">
@@ -177,8 +179,6 @@
                   </tbody>
                </table>
             </div>
-         </div>
-         </div>
       </div>
       </div>
 </body>
