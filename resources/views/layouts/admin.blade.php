@@ -394,17 +394,29 @@
 @endif
 
 <script>
-  $('#deleteHome').on('show.bs.modal', function (e) {
+  $('#BlockHome').on('show.bs.modal', function (e) {
 
  var $trigger = $(e.relatedTarget);
  var id=$trigger.data('id');
- $('#ys-home-btn').click(function()
+ $('#ys-chng-btn').click(function()
  {
-   $('#deleteHome').modal('hide');
+   $('#BlockHome').modal('hide');
   $('.modal-backdrop').css('display','none');
-     deleteHome(id);
+     BlockHome(id);
 
  });
+});
+$('#deleteHome').on('show.bs.modal', function (e) {
+
+var $trigger = $(e.relatedTarget);
+var id=$trigger.data('id');
+$('#ys-home-btn').click(function()
+{
+  $('#deleteHome').modal('hide');
+ $('.modal-backdrop').css('display','none');
+    deleteHome(id);
+
+});
 });
 
 $('#deleteFloorComponent').on('show.bs.modal', function (e) {
@@ -1058,7 +1070,7 @@ function Editloadmap(aid){
               $('#home_list').html(result);
               }   
           });
-  }  
+        }  
       function deleteHome(id)
       {       $.ajax({
               url: APP_URL + '/api/admin/home/'+ id,
@@ -1066,6 +1078,16 @@ function Editloadmap(aid){
             });
            loadHomeList();
            $('#danger').html('Home deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+
+      }
+      function BlockHome(id)
+      {
+             $.ajax({
+              url: APP_URL + '/api/admin/home-block/'+ id,
+              type: 'GET'
+            });
+           loadHomeList();
+           $('#success').html('Home Status changed').delay(2000).addClass('alert').addClass('alert-success').fadeOut();
 
       }
       

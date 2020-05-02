@@ -88,7 +88,7 @@
       </div>
    </div>
 </div>
-<br><br><br>
+<br>
 
       <div id="crypto-stats-3" class="container">
          <div class="row">
@@ -154,7 +154,7 @@
          </div>
          </div>
 
-      <br><br><br>
+      <br>
 
       <div class="card" style="margin-left:10px; margin-right:10px;">
          
