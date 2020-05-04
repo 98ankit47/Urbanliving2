@@ -255,8 +255,19 @@
 </script>
 
 @if(Route::currentRouteName() == 'settings')
+
 <script>
   var image_name,image;
+  function loadLogo(){
+    var APP_URL = "{{ url('/') }}";
+    $.ajax({
+      type: 'GET',
+      url: APP_URL+'/api/admin/logo',
+      success: function(result){   
+        $('#logo').html(result);
+      }   
+    });
+  }
    $('#AddLogoModal').modal('show'); 
         $('input[type=file]').on('change',function(e){
                 let files = e.target.files[0];
@@ -285,7 +296,7 @@
                         $('#logoModal').modal('hide');
                         $('.modal-backdrop').css('display','none');
                         $('#success').html('Logo Updated').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
-
+                        loadLogo();
                       }
                     });
 

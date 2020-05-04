@@ -312,7 +312,7 @@ td, th {
              
               <div class="col-md-6">
             <label for="img">Select image:</label>
-            <input type="file" id="featuredimage" name="featured-image" accept="image/*">
+            <input type="file" id="image" name="featured-image" accept="image/*">
             </div>
           </form>
           </div>
