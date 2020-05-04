@@ -241,7 +241,7 @@
             <div class="form-grroup col-md-6">
               <div class="image-upload">
                 <p>Floor Image</p>
-                <p><input type="file"  name="image" id="Edit_image"  onchange="loadFile(event)" required></p>
+                <p><input type="file"  name="image" id="Edit_image"  onchange="loadFile(event)" ></p>
               </div>
             </div>
               <div class="form-group col-md-6">  

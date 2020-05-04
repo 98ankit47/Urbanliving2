@@ -40,7 +40,6 @@ class HomeController extends Controller
                     $data.='<div class="container" style="text-align:center;"><a type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" data-toggle="modal" data-target="#BlockHome"><i class="fa fa-check">&nbsp;Active</i></a></div>';
                 }
                  $data.='<br><div class="row">
-                  
                  <div class ="col-md-6" style="text-align:center;">
                     <a style="font-family: Open 0Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
                  </div> 
@@ -165,17 +164,19 @@ class HomeController extends Controller
     public function update(Request $request, $id)
     {
         $home =  Homes::whereId($id)->first();
-        // if ($request->hasFile('featured-image')) {
+        if($request['featured-image-name']=="a")
+        {
+            $featured_img=$home->featured_image;
+
+        }
+        else 
+        {
             $featured_img =  time().explode('.',$request['featured-image-name'])[0].'.' . explode('/', explode(':',substr($request['featured-image'],0,strpos(
                 $request['featured-image'],';')))[1])[1];  
     
             \Image::make($request['featured-image'])->save(public_path('uploads\homes\\').$featured_img);
            
-        // }
-        // else{
-        //     $featured_image_name=$home->featured_image;
-        // }
-        
+        }
         $data = explode(',', $home->gallery);
         $gallery=$request['gallery'];
         $gallery_name=$request['gallery_name'];

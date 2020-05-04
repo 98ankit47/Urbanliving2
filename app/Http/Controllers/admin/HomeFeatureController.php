@@ -68,10 +68,18 @@ class HomeFeatureController extends Controller
     */
    public function update(Request $request, $id)
    {
-        $featured_img =  explode('.',$request['featured-image-name'])[0].'.' . explode('/', explode(':',substr($request['featured-image'],0,strpos(
-            $request['featured-image'],';')))[1])[1];  
+       if($request['featured-image-name']=="a")
+       {
+           $feature = Features::where('id',$id)->get()->first();
+           $featured_img = $feature->image;
+       }
+       else {
+            $featured_img =  explode('.',$request['featured-image-name'])[0].'.' . explode('/', explode(':',substr($request['featured-image'],0,strpos(
+                $request['featured-image'],';')))[1])[1];  
 
-        \Image::make($request['featured-image'])->save(public_path('uploads').$featured_img);
+            \Image::make($request['featured-image'])->save(public_path('uploads').$featured_img);
+       }
+      
         
        $this->validate($request,[
            'title'=>'required',

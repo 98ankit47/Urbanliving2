@@ -247,11 +247,18 @@ class FloorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+      if($request['image-name']=="a")
+      {
+        $floor=Floors::where('id',$id)->get()->first();
+        $img=$floor->image;
+      }
+      else
+      {
+          $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
             $request['image'],';')))[1])[1];  
 
         \Image::make($request['image'])->save(public_path('uploads\floor\\').$img);
-     
+      }
         $this->validate($request,[
             'home_id'=>'required',
             'floor_no'=>'required',

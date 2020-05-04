@@ -474,6 +474,7 @@ $('#ys-comm-btn').click(function()
 
 @if(Route::currentRouteName() == 'edit-home')
 <script>
+  var image="a",image_name="a";
   var latitude,longitude;
 $(document).ready(function() {
   loadmap();
@@ -518,7 +519,6 @@ $(document).ready(function() {
   }
       var APP_URL = "{{ url('/') }}";
       var id = window.location.href.split('/').pop();
-      var image,image_name;
       var gal=[];
       var gal_name=[];
       $.ajax({
@@ -544,7 +544,7 @@ $(document).ready(function() {
       }
       
     }); 
-    $('#file').on('change',function(e){
+    $('#file').change(function(e){
             let files = e.target.files[0];
             let reader = new FileReader();
             if(files){
@@ -557,7 +557,7 @@ $(document).ready(function() {
           }
         });
 
-        $('#files').on('change',function(evt){
+        $('#files').change(function(evt){
           var files = evt.target.files; 
           for (var i = 0, f; f = files[i]; i++) {
               // Only process image files.
@@ -994,7 +994,7 @@ function Editloadmap(aid){
 
     function editfeature(id)
       {     
-        
+        var image="a",image_name="a";
         var APP_URL = "{{ url('/') }}";
         $.ajax({
       type: 'GET',
@@ -1004,7 +1004,8 @@ function Editloadmap(aid){
         $('#Editfeature').modal('show');
       }
       }); 
-      $('input[type=file]').on('change',function(e){
+
+      $('#featuredimage').change(function(e){
                 let files = e.target.files[0];
                 let reader = new FileReader();
                 if(files){
@@ -1416,6 +1417,7 @@ function Editloadmap(aid){
 
      function editfloor(fid)
     {     
+      var image_name="a",image="a";
       $.ajax({
     type: 'GET',
     url: APP_URL+'/api/admin/floor/'+fid,
@@ -1432,7 +1434,8 @@ function Editloadmap(aid){
         document.getElementById("Edit_kitchen").value = result.kitchen; 
     }
     });    
-      $('input[type=file]').on('change',function(e){
+    
+     $('input[type=file]').change(function(e){
            let files = e.target.files[0];
            let reader = new FileReader();
            if(files){
@@ -1444,6 +1447,7 @@ function Editloadmap(aid){
              reader.readAsDataURL(files); 
          }
        });
+
        $(function () {
          $('#EditForm').on('submit', function (e) {
            var home_id,floor_no,bedroom,bathroom,garage,dining,kitchen;
@@ -1470,7 +1474,7 @@ function Editloadmap(aid){
                    'image-name'          : image_name,
                  },
                  success: function ( ) {
-                   window.location.href = "/admin/floor";
+                  window.location.href = "/admin/floor";
                    $('#success').html('Floor Edited').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
                  }
                });

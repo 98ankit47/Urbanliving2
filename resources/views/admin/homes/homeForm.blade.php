@@ -93,9 +93,8 @@
   <div class="col-md-6">
     <div class="image-upload">
       <p>Featured Image</p>
-      <p><input type="file"  name="image" id="file"  onchange="loadFile(event)" required></p>
-      <p><label for="file" style="cursor: pointer;">Choose File</label></p>
-      <p><img id="output" width="200px" height="200px" /></p>
+      <p><input type="file"  name="image" id="file"  onchange="loadFile(event)"></p>
+      <p><img id="output" /></p>
     </div>
   </div>
 <div class="col-md-6">
@@ -208,6 +207,7 @@ function handleFileSelect(evt) {
   var loadFile = function(event) {
 	var image = document.getElementById('output');
 	image.src = URL.createObjectURL(event.target.files[0]);
+  
 };
 </script>
 
