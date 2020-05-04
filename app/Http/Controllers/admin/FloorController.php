@@ -283,10 +283,19 @@ class FloorController extends Controller
 
     public function Componentupdate(Request $request, $id)
     {
-        $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
-          $request['image'],';')))[1])[1];  
+      if($request['image-name']=="a")
+      {
+          $component=FloorComponent::where('id',$id)->get()->first();
+          $img=$component->image;
+      }
+      else 
+      {
+          $img =  explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+            $request['image'],';')))[1])[1];  
 
-      \Image::make($request['image'])->save(public_path('uploads\floorcomponent\\').$img);
+        \Image::make($request['image'])->save(public_path('uploads\floorcomponent\\').$img);
+      }
+        
           
         $this->validate($request,[
             'floor_id'=>'required',

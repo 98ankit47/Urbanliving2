@@ -1247,6 +1247,7 @@ function Editloadmap(aid){
 
     function editfloorcomponent(fid)
           {  
+            var image="a",image_name="a";
             var data = window.location.href.split('/');
             var id = window.location.href.split('/').pop();
             var type = data[5];

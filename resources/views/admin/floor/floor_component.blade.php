@@ -114,7 +114,7 @@
     <div class="form-group">
     <div class="image-upload">
   <p><strong>Image</strong></p>
-    <input type="file" id="image" name="files[]" multiple required/>
+    <input type="file" id="image" name="file" />
     <br><br>
   <output id="list" width="200px" height="200px"></output>
     </div>
