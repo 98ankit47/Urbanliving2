@@ -88,6 +88,7 @@ Route::post('Available','admin\HomeController@Available');
 Route::post('Available/{id}','admin\HomeController@Availableupdate');
 Route::get('homeAvailable/{id}','CommonController@AvailableShow');
 Route::get('Avail/{id}','CommonController@AvailableSingleHome');
+Route::delete('home-Avail/{id}','CommonController@DeleteAvail');
 
 
 

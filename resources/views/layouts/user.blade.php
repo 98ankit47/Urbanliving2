@@ -474,10 +474,8 @@
                });
               } 
          $('#enquiry').on('submit', function (e) {
-           var email,name,time,date,message,phone;
+           var time,date,message,phone;
            e.preventDefault();
-               email            =  document.getElementById("uemail").value;         
-               name      =  document.getElementById("uname").value;         
                time          =  document.getElementById("time").value;         
                date         =  document.getElementById("date").value;         
                message           =  document.getElementById("message").value;         
@@ -486,11 +484,9 @@
                  type: 'post',
                  url: '/api/enquiry',
                  data:{
-                   'email'             : email,
                    'date'              : date,
                    'time'              : time,
                    'phone'             : phone,
-                   'name'              : name,
                    'message'           : message,
                    'seen'              : 0,
                    'home_id'           : id,

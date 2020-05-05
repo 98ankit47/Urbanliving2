@@ -16,6 +16,15 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+    private $loginuser;
+
+    public function __construct() {
+        if(Auth::check())
+        {
+            $this->loginuser = Auth::user();
+        }
+    }
+
     public function search(Request $request)
     {
         $data=$request['search'];
@@ -65,12 +74,11 @@ class HomeController extends Controller
 
     public function schedule(Request $request)
     {
+        
         $this->validate($request,[
             'date'=>'required',
             'time'=>'required',
-            'name'=>'required',
             'home_id'=>'required',
-            'email'=>'required',
             'phone'=>'required',
             'message'=>'required',
             'seen'   =>'required',
@@ -79,8 +87,8 @@ class HomeController extends Controller
         Enquiry::create([
             'date'=>$request['date'],
             'time'=>$request['time'],
-            'name'=>$request['name'],
-            'email'=>$request['email'],
+            'name'=>$this->loginuser->name,
+            'email'=>$this->loginuser->email,
             'phone'=>$request['phone'],
             'seen'=>$request['seen'],
             'home_id'=>$request['home_id'],

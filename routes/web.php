@@ -19,7 +19,7 @@ Route::get('/admin/dashboard',function(){
     return view('admin.dashboard');
 })->name('dashboard')->middleware('auth');    
 
-  
+// Route::post('Alogin','Auth\LoginController@login')->name('Alogin'); 
 
 Route::get('/admin/enquiry',function(){
     return view('admin.enquiry.index');

@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+
 use Session;
 
 class LoginController extends Controller
@@ -53,13 +56,27 @@ class LoginController extends Controller
 
         return view('auth.login');
     }
-    protected function authenticated(Request $request, $user)
+    public function login(Request $request)
     {
-        if ( $user->type=='admin' ) 
+        $credentials = ['email' => $request->email, 'password' => $request->password,'status'=>1];
+        if ( Auth::attempt($credentials) ) 
         {
-            return redirect()->route('dashboard');
-        }
 
-        return redirect('/');
+            if(Auth::user()->type == 'admin'){
+                // reidirect to danshboard
+                return redirect()->route('dashboard');
+            } 
+            else if(Auth::user()->type == 'user')
+            {
+                 
+                    return redirect('/');
+              
+            }
+        }
+        else{
+            return redirect()->back()->withErrors(['email' => 'Invalid Login ID or password']);
+        }
     }
+   
+    
 }

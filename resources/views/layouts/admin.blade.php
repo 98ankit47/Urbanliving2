@@ -939,15 +939,27 @@ function Editloadmap(aid){
         });
       }
 
-      function deleteGallery(id,home_id)
-    {
-      $.ajax({
-              url: APP_URL + '/api/admin/home-gallery/'+ home_id +'/'+id,
-              type: 'DELETE'
-            });
-            loadGalleryList();  
-            $('#danger').html('Gallery Image deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
-    }
+      function deleteGallery(id)
+      {
+        var home_id = window.location.href.split('/').pop();
+        $.ajax({
+                url: APP_URL + '/api/admin/home-gallery/'+ home_id +'/'+id,
+                type: 'DELETE'
+              });
+              loadGalleryList();  
+              $('#danger').html('Gallery Image deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+      }
+
+      
+      function deleteAvail(id)
+      {
+        $.ajax({
+                url: APP_URL + '/api/home-Avail/'+id,
+                type: 'DELETE'
+              });
+              loadAvailableList();
+              $('#danger').html('Home Availability deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+      }
 
       function deleteFeature(id)
       {

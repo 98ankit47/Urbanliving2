@@ -118,7 +118,7 @@ class CommonController extends Controller
               <img class="card-img-top" style="height:200px;" src="/uploads/gallery/'.$gal.'">
                 <div class="card-body">
                 <div class="wrapper">
-                    <button class="btn w-100" type="button" data-id="'.$homes->id.'" data-toggle="modal" data-target="#helloo" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                    <button class="btn w-100" type="button" data-id="'.$key.'"  data-toggle="modal" data-target="#deleteGallery" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
                 </div>
                 </div>
             </div> 
@@ -457,7 +457,8 @@ class CommonController extends Controller
                 </div>
                 <div class="col-md-2"></div>
                 <div class ="col-md-4">
-                <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$avb->id.'" class="btn w-100">Delete</button>  
+                <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;
+                font-weight:bold; background-color:#F6454F;" data-id="'.$avb->id.'" data-toggle="modal" data-target="#deleteAvail" class="btn w-100">Delete</button>  
                </div>
                </div>
                 </div>
@@ -473,6 +474,12 @@ class CommonController extends Controller
     {
         return HomeAvailable::where('home_id',$id)->get();
     }
+    public function DeleteAvail($id)
+    {
+        $home = HomeAvailable::findOrFail($id);
+        $home->delete(); 
+    }
+
     public function UserBlock($id)
     { 
         $home = User::where('id',$id)->get()->first();
