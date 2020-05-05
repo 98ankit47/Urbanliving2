@@ -295,7 +295,7 @@
                       success: function () {
                         $('#logoModal').modal('hide');
                         $('.modal-backdrop').css('display','none');
-                        $('#success').html('Logo Updated').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                        $('#success').html('Logo Updated').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                         loadLogo();
                       }
                     });
@@ -325,7 +325,7 @@
                             success: function () {
                               $('#changepass').modal('hide');
                               $('.modal-backdrop').css('display','none');
-                              $('#success').html('Password has been changed').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                              $('#success').html('Password has been changed').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
 
                             }
                           });
@@ -405,43 +405,53 @@
 @endif
 
 <script>
-  $('#BlockHome').on('show.bs.modal', function (e) {
-
- var $trigger = $(e.relatedTarget);
- var id=$trigger.data('id');
- $('#ys-chng-btn').click(function()
- {
-   $('#BlockHome').modal('hide');
-  $('.modal-backdrop').css('display','none');
-     BlockHome(id);
-
- });
-});
-
-$('#BlockUser').on('show.bs.modal', function (e) {
-
-var $trigger = $(e.relatedTarget);
-var id=$trigger.data('id');
-$('#ys-chng-user-btn').click(function()
+ 
+  function BlockHomeModal(hid)
+  {
+    
+    $('#BlockHome').modal('show');  
+    $('#ys-chng-btn').attr('data-id', hid);
+  }
+  $('#ys-chng-btn').click(function()
+    {
+      var hid = $(this).attr('data-id');
+      BlockHome(hid);
+      $('#BlockHome').modal('hide');
+      $('.modal-backdrop').css('display','none');
+        
+  });
+ 
+ 
+function BlockUserModal(uid)
 {
-  $('#BlockUser').modal('hide');
- $('.modal-backdrop').css('display','none');
-    BlockUser(id);
-
-});
-});
+  $('#BlockUser').modal('show');  
+  $('#ys-chng-user-btn').attr('data-id', uid);
+ 
+}
+$('#ys-chng-user-btn').click(function()
+  {
+    var uid = $(this).attr('data-id');
+    BlockUser(uid);
+    $('#BlockUser').modal('hide');
+    $('.modal-backdrop').css('display','none');
+      
+  });
+ 
 
 $('#deleteHome').on('show.bs.modal', function (e) {
 
 var $trigger = $(e.relatedTarget);
-var id=$trigger.data('id');
+var Hid=$trigger.data('id');
+$('#ys-home-btn').attr('data-id',Hid);
+});
 $('#ys-home-btn').click(function()
 {
+  var id = $(this).attr('data-id');
+
   $('#deleteHome').modal('hide');
  $('.modal-backdrop').css('display','none');
     deleteHome(id);
 
-});
 });
 
 $('#deleteFloorComponent').on('show.bs.modal', function (e) {
@@ -634,7 +644,7 @@ $(document).ready(function() {
                   },
                   success: function () {
                     window.location.href = "/admin/home/manage/"+id;
-                    $('#success').html('Home Edited').delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                    $('#success').html('Home Edited').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
                   }
                 });
 
@@ -698,7 +708,7 @@ function Editloadmap(aid){
                       success: function () {
                         $('#Mapshow').modal('hide');
                           loadAvailableList();
-                        $('#success').html('Home Location Edited').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                        $('#success').html('Home Location Edited').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                       }
                     });
               });
@@ -757,7 +767,7 @@ function Editloadmap(aid){
                       success: function () {
                         $('#Mapshow').modal('hide');
                           loadAvailableList();
-                        $('#success').html('New Home is Added on Another Location').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                        $('#success').html('New Home is Added on Another Location').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                       }
                     });
               });
@@ -886,7 +896,7 @@ function Editloadmap(aid){
                   },
                   success: function ( ) {
                     window.location.href = "/admin/homes";
-                    $('#success').html('New Home Added').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                    $('#success').html('New Home Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                   }
                 });
 
@@ -947,7 +957,7 @@ function Editloadmap(aid){
                 type: 'DELETE'
               });
               loadGalleryList();  
-              $('#danger').html('Gallery Image deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+              $('#danger').html('Gallery Image deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
       }
 
       
@@ -958,7 +968,7 @@ function Editloadmap(aid){
                 type: 'DELETE'
               });
               loadAvailableList();
-              $('#danger').html('Home Availability deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+              $('#danger').html('Home Availability deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
       }
 
       function deleteFeature(id)
@@ -968,7 +978,7 @@ function Editloadmap(aid){
                 type: 'DELETE'
               });
               loadFeatureList();    
-              $('#danger').html('Feature deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+              $('#danger').html('Feature deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
       }
 
     function addFeature(id)
@@ -1005,7 +1015,7 @@ function Editloadmap(aid){
                       success: function () {
                         $('#AddFeatureModal').modal('hide');
                           loadFeatureList();
-                        $('#success').html('New Feature Added').delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                        $('#success').html('New Feature Added').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
 
                       }
                     });
@@ -1059,7 +1069,7 @@ function Editloadmap(aid){
                       success: function () {
                         $('#Editfeature').modal('hide');
                           loadFeatureList();
-                        $('#success').html('Feature Edited').delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                        $('#success').html('Feature Edited').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
                       }
                     });
 
@@ -1115,7 +1125,7 @@ function Editloadmap(aid){
               type: 'DELETE'
             });
            loadHomeList();
-           $('#danger').html('Home deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+           $('#danger').html('Home deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
 
       }
       function BlockHome(id)
@@ -1125,7 +1135,7 @@ function Editloadmap(aid){
               type: 'GET'
             });
            loadHomeList();
-           $('#success').html('Home Status changed').delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+           $('#success').html('Home Status changed').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
 
       }
       
@@ -1188,7 +1198,7 @@ function Editloadmap(aid){
               type: 'GET'
             });
            LoadUserList();
-           $('#success').html('User Status changed').delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+           $('#success').show().html('User Status changed').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
 
       }
   </script>
@@ -1218,7 +1228,7 @@ function Editloadmap(aid){
             success: function(result){  
               $('.modal-backdrop').css('display','none');
               loadFloorComponent();
-              $('#danger').html('Floor Component Deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+              $('#danger').html('Floor Component Deleted').show().show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
             }   
         });
       }
@@ -1260,7 +1270,7 @@ function Editloadmap(aid){
                       success: function ( ) {
                           $('#AddNewFloorComponent').modal('hide');
                           loadFloorComponent();
-                          $('#success').html('Add New Floor Component').delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                          $('#success').html('Add New Floor Component').show().show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
                       }
                     });
               });
@@ -1315,7 +1325,7 @@ function Editloadmap(aid){
                       success: function ( ) {
                         $('#editfloorModal').modal('hide');
                         loadFloorComponent();
-                      $('#success').html('Floor Component edited').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                      $('#success').html('Floor Component edited').addClass('alert').addClass('alert-success').show().show().delay(2000).fadeOut();
                       }
                     });
 
@@ -1381,7 +1391,7 @@ function Editloadmap(aid){
             url: APP_URL+'/api/admin/floor/'+f_id,
             success: function(result){  
               window.location.href='/admin/floor';
-              $('#danger').html('Floor Deleted').delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+              $('#danger').html('Floor Deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
             }   
         });
       }
@@ -1430,7 +1440,7 @@ function Editloadmap(aid){
                  },
                  success: function ( ) {
                    window.location.href = "/admin/floor";
-                   $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                   $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                  }
                });
 
@@ -1499,7 +1509,7 @@ function Editloadmap(aid){
                  },
                  success: function ( ) {
                   window.location.href = "/admin/floor";
-                   $('#success').html('Floor Edited').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                   $('#success').html('Floor Edited').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                  }
                });
 
@@ -1568,7 +1578,7 @@ function Editloadmap(aid){
                 type: 'DELETE',
             });
             loadCommunityList();
-            $('#danger').append('Community Delete').addClass('alert').addClass('alert-danger').delay(2000).fadeOut();
+            $('#danger').append('Community Delete').addClass('alert').addClass('alert-danger').show().delay(2000).fadeOut();
       }
 
       function editcommunity(cid)
@@ -1624,7 +1634,7 @@ function Editloadmap(aid){
                   success: function () {
                     $('#communityModal').modal('hide');
                     loadCommunityList();
-                    $('#success').html('Community Edit').addClass('alert').addClass('alert-Success').delay(2000).fadeOut();
+                    $('#success').html('Community Edit').addClass('alert').addClass('alert-Success').show().delay(2000).fadeOut();
                   }
                 });
 
@@ -1670,7 +1680,7 @@ function Editloadmap(aid){
                     $('#AddcommunityModal').modal('hide');
                     $('.modal-backdrop').css('display','none');
                     loadCommunityList();
-                    $('#success').html('New Community Added').addClass('alert').addClass('alert-success').delay(2000).fadeOut();
+                    $('#success').html('New Community Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                   }
                 });
           });
