@@ -87,8 +87,8 @@ class HomeController extends Controller
         Enquiry::create([
             'date'=>$request['date'],
             'time'=>$request['time'],
-            'name'=>$this->loginuser->name,
-            'email'=>$this->loginuser->email,
+            'name'=>"Jashan",
+            'email'=>"Jashan@gmail.com",
             'phone'=>$request['phone'],
             'seen'=>$request['seen'],
             'home_id'=>$request['home_id'],
