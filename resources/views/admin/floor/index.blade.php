@@ -4,22 +4,8 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<style>
- .floor-contain {
-    margin-left:45%;
-    font-family: Open Sans, sans-serif;
-}
-/* .floor-card {
-  margin-left: 30px;
-  margin-right: 30px;
-}  */
-/* .card-body{
-  height: 80px;
-} */
-/* .home-contain {
-  margin-left: 40%;
-} */
 
+<style>
 .dropbtn {
   width: 100%;
   border: none;
@@ -71,32 +57,32 @@
 .show {display: block;}
 </style>
 
-<div class="container">
+<div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
     <div class="row">
-        <div class="col-md-4 floor-contain">
+        <div class="col-md-6" style="text-align:left;">
             <h4><strong>Floor</strong></h4>
         </div>
-        <div class="col-md-2">
-            <button onclick="addFloor()"  style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn btn-Success">Add New</button>
+        <div class="col-md-6" style="text-align:right;">
+            <button onclick="addFloor()"  style="font-size: 15px; width:100px;color:white; background-color:#2DCC70;font-weight:bold" class="btn btn-Success">Add New</button>
         </div>
     </div>
 <hr>
 
-<div class="dropdown" style="width:100%; font-family: Open Sans, sans-serif;">
+<div class="dropdown" style="width:100%;">
   <button onclick="myFunction()" class="dropbtn " style="height:30px; background-color:#009688;">Select Home&nbsp;&nbsp;<i class="fa fa-angle-double-down"></i></button>
-  <div id="myDropdown" class="dropdown-content" style="width:100%; font-family: Open Sans, sans-serif;">
+  <div id="myDropdown" class="dropdown-content" style="width:100%;">
   
   </div>
 </div>
 
 <br><br>
 
-  <div id="homeFloor" class="row">
+  <div id="homeFloor" class="row" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 
   </div>
  
-
+</div>
  
  
 
@@ -104,9 +90,9 @@
 <!-- Add NEW FLOOR MODAL -->
 
 
-<div class="modal fade" id="AddNewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="AddNewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add New Floor</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -172,8 +158,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-          <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+          <button type="button" style="color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+          <button type="submit" style="color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
         </div>
       </form>
       </div>
@@ -182,9 +168,9 @@
   </div>
 <!--EDIT FLOOR MODAL-->
 
-  <div class="modal fade" id="EditFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="EditFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+      <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Add New Floor</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -251,8 +237,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" class="btn" data-dismiss="modal">Close</button>
-            <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+            <button type="button" style=" color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" class="btn" data-dismiss="modal">Close</button>
+            <button type="submit" style="color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
           </div>
         </form>
         </div>
@@ -265,9 +251,9 @@
 
 <!--VIEW FLOOR MODAL-->
 
-<div class="modal fade" id="viewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="viewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">FLOOR DETAILS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -283,7 +269,7 @@
 </div>
 </div>
 
-<div class="modal fade bd-example-modal-xl" id="deleteFloor" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteFloor" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
@@ -294,11 +280,11 @@
       </div>
       <div class="modal-body">
         <div class="row" style="margin-left:10px;">
-          <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Floor ?</h6>
+          <h6 class="delete_heading">Are you sure, you want to delete this Floor ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
-            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-            <button type="submit" style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-floor-btn"> Yes</button>
+            <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit" style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100" id="ys-floor-btn"> Yes</button>
            </div>  
           </div>    
         </div>

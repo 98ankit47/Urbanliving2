@@ -111,19 +111,19 @@ class FloorController extends Controller
       $components = FloorComponent::where('floor_id',$id)->where('type',$type)->get();
       foreach($components as $ky => $component )
       {
-          $data .='<div class="col-md-4" style="font-family: Open Sans, sans-serif;">
+          $data .='<div class="col-md-4">
           <div class="card floor-card">
             <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="/uploads/floorcomponent/'.$component->image.'" alt="">
               <div class="card-body">
-              <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$component->name.'</h5>
+              <h5 style="font-size: 16px;text-align:center;">'.$component->name.'</h5>
                <br><div class="row">
                
                <div class ="col-md-6" style="text-align:center;">
-                 <button type="button" onclick="editfloorcomponent('.$component->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
+                 <button type="button" onclick="editfloorcomponent('.$component->id.')" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
                 </div>
                 
                 <div class ="col-md-6" style="text-align:center;">
-                 <button type="button" data-toggle="modal" data-id="'.$component->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloorComponent" class="btn">Delete</button> 
+                 <button type="button" data-toggle="modal" data-id="'.$component->id.'" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloorComponent" class="btn">Delete</button> 
                 </div>
                </div>
                 </div>
@@ -145,7 +145,7 @@ class FloorController extends Controller
         $dining = "dining";
         foreach($floors as $ky => $floor )
         {
-            $data .='<div class="row" style="font-family: Open Sans, sans-serif;">
+            $data .='<div class="row">
             <div class="col-md-6">
               <span><strong>NO. OF BEDROOMS   :</strong></span>
             </div>
@@ -157,7 +157,7 @@ class FloorController extends Controller
             </div>
           </div><br>
           
-          <div class="row" style="font-family: Open Sans, sans-serif;">
+          <div class="row">
             <div class="col-md-6">
               <span><strong>NO. OF BATHROOMS   :</strong></span>
             </div>
@@ -169,7 +169,7 @@ class FloorController extends Controller
             </div>
           </div><br>
         
-          <div class="row" style="font-family: Open Sans, sans-serif;">
+          <div class="row">
             <div class="col-md-6">
               <span><strong>NO. OF GARAGE   :</strong></span>
             </div>
@@ -181,7 +181,7 @@ class FloorController extends Controller
             </div>
           </div>
           <br>
-          <div class="row" style="font-family: Open Sans, sans-serif;">
+          <div class="row">
             <div class="col-md-6">
               <span><strong>NO. OF DINING   :</strong></span>
             </div>
@@ -193,7 +193,7 @@ class FloorController extends Controller
             </div>
           </div>
           <br>
-          <div class="row" style="font-family: Open Sans, sans-serif;">
+          <div class="row">
             <div class="col-md-6">
               <span><strong>NO. OF KITCHEN :</strong></span>
             </div>
@@ -215,7 +215,7 @@ class FloorController extends Controller
         foreach($floors as $ky => $floor )
         {
             $data .='
-            <div class="col-md-4" style="font-family: Open Sans, sans-serif;">
+            <div class="col-md-4">
               <div class="card">
                 <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4>
                 <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">
@@ -223,11 +223,11 @@ class FloorController extends Controller
                    <div class="row">
                    
                    <div class ="col-md-6" style="text-align:center;">
-                     <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
+                     <button type="button" onclick="editfloor('.$floor->id.')" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
                     </div>
                     
                  <div class ="col-md-6" style="text-align:center;">
-                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
+                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
                     </div>
                    </div>
                     </div>

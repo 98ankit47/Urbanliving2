@@ -103,7 +103,7 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" style="background-color:  #F44336;" class="btn" data-dismiss="modal">Close</button>
+    <button type="button" style="background-color:#F44336;" class="btn" data-dismiss="modal">Close</button>
     <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
   </div>
 </form>

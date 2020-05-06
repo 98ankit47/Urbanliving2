@@ -10,11 +10,11 @@
     <style type="text/css">
    
    *{
-    font-family: Open Sans, sans-serif;
+    font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;
     }
      /*table */
      .table {
-        font-family: Open Sans, sans-serif;
+        font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;
 border-collapse: collapse;
 width: 100%;
 }
@@ -97,22 +97,22 @@ color:black;
 </head>
 <br>
 
-<div class="enquiry-contain">
-<div class="row">
-<div class="col-md-5" style="text-align:left">
-<a type="button" href="http://127.0.0.1:8000/admin/enquiry" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF; margin-left: 20px;" class="btn">Back</a>
-</div>
-<div class="col-md-7" style="text-align:left">
-<h4><strong>Enquiry Details</strong></h4>
-</div>
-</div>
-</div>
-
+<div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
+    <div class="row">
+        <div class="col-md-6" style="text-align:left">
+            <h4><strong>Enquiry Details</strong></h4>
+        </div>
+        <div class="col-md-6" style="text-align:right">
+            <a type="button" href="http://127.0.0.1:8000/admin/enquiry" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF; margin-left: 20px;" class="btn">Back</a>
+        </div>
+    </div>
 
     <!-- HIDDEN PREHEADER TEXT -->
-    <div id="enquiry">
+
+    <div id="enquiry" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
     
-      </div>
+    </div>
+</div>
 
 <script rel="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script rel="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

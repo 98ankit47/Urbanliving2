@@ -2,55 +2,38 @@
 @section('content')
 
 <style>
-.floor-card {
+/* .floor-card {
   margin-left: 30px;
   margin-right: 30px;
-}
-
-/* .card-body{
-  height: 100px;
-}
-
-.card-img-top {
-  height: 300px;
-} */
-
-.contain-bath {
-    margin-left: 20px;
-}
-
-/* .floor-contain {
-  margin-left: 20%;
 } */
 </style>
 <br>
 
-<div class="container contain-bath">
+<div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
-    <div class="row" style="font-family: Times New Roman;">
-        <div class="col-md-2">
-          <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4;font-family: Open Sans, sans-serif; color:white;" class="btn">Back</a> 
-        </div>
-        <div class="col-md-8 floor-contain">
-            <h4 style="text-align: center; font-family: Open Sans, sans-serif;"><strong>Floor Component</strong></h4>
-        </div>
-        <div class="col-md-2">
-        <button onclick="addFloorComponent()" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn">Add New</button> 
-        </div>
-    </div>
+    <div class="row">
+      <div class="col-md-6" style="text-align:left;">
+        <h4><strong>Floor Component</strong></h4>
+      </div>
+      <div class="col-md-3" style="text-align:right;">
+        <button onclick="addFloorComponent()" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70;font-weight:bold" class="btn">Add New</button> 
+      </div>
+      <div class="col-md-3" style="text-align:right;">
+        <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4; color:white;" class="btn">Back</a> 
+      </div>
     </div>
 <hr>
 
-<div class="row" id="floorComponent_list">
+<div class="row" id="floorComponent_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
  
 </div>
 
-
+</div>
 <!--MODAL-->
 
-<div class="modal fade" id="AddNewFloorComponent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="AddNewFloorComponent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Floor Component</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -78,9 +61,9 @@
    </div>
 
   </div>
-  <div class="modal-footer" style="font-family: Times New Roman;">
-    <button type="button" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-    <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+  <div class="modal-footer">
+    <button type="button" style=" color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+    <button type="submit" style="color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
   </div>
 </form>
       </div>
@@ -91,9 +74,9 @@
 
   
 
-  <div class="modal fade" id="editfloorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="editfloorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+      <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Edit Floor Component</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -122,8 +105,8 @@
   
     </div>
     <div class="modal-footer">
-      <button type="button" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-      <button type="submit" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+      <button type="button" style=" color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+      <button type="submit" style="color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
     </div>
   </form>
         </div>
@@ -131,9 +114,9 @@
       </div>
     </div>
 
-  <div class="modal fade bd-example-modal-xl" id="deleteFloorComponent" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+  <div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteFloorComponent" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content" style="font-family: Times New Roman;">
+      <div class="modal-content">
         <div class="modal-header">
           <h5>Delete Confirm Action</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -142,11 +125,11 @@
         </div>
         <div class="modal-body">
           <div class="row" style="margin-left:10px;">
-            <h6 class="delete_heading" style="font-family: Open Sans, sans-serif;">Are you sure, you want to delete this Component ?</h6>
+            <h6 class="delete_heading">Are you sure, you want to delete this Component ?</h6>
             <div class="clearfix"></div>
             <div class="m-auto">
-              <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" data-dismiss="modal"> No </button>
-              <button type="submit" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-floor-component-btn"> Yes</button>
+              <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" data-dismiss="modal"> No </button>
+              <button type="submit" style="color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" id="ys-floor-component-btn"> Yes</button>
              </div>  
             </div>    
           </div>

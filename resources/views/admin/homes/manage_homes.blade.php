@@ -22,7 +22,7 @@
 }
 
 table {
-  font-family: Open Sans, sans-serif;
+  font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -58,34 +58,35 @@ td, th {
     }
 </style>
 
-<div class="container">
+<div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
-  <div class="row" style="font-family: Open Sans, sans-serif;">
-    <div class="col-md-5">
-      <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4; font-family: Open Sans, sans-serif;" class="btn">Go Back</a>
+  <div class="row">
+    <div class="col-md-6" style="text-align:left">
+      <h4 style="color: black;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><strong>Home Detail</strong></h4>
     </div>
-    <div class="col-md-7 home-contain">
-      <h4 style="color: black;"><strong>Home Detail</strong></h4>
+    <div class="col-md-6" style="text-align:right;">
+      <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn">Go Back</a>
     </div>
   </div>
 <hr>
 <br>
-<div class=" container w3-row tabss">
+
+<div class=" container w3-row tabss" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
     <a href="javascript:void(0)" class="tablinks active" onclick="openCity(event, 'homes');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Home</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Home</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'features');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Features</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Features</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'gallery');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Gallery</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Gallery</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Availability');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black; font-family: Open Sans, sans-serif;"><b>Availability</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Availability</b></div>
     </a>
 </div>
 
-  <div id="homes" class="w3-container city active" style="display:block"><br><br>
+  <div id="homes" class="w3-container city active" style="display:block;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br><br>
     <div class="card">
       <div class="row card-details" style="font-family: Open Sans, sans-serif;">
        @foreach($homes as $home)
@@ -162,19 +163,19 @@ td, th {
         </div>
       </div>
         @endforeach
-        <div class="column" style="text-align:center; margin-bottom: 20px;">
-          <a type="button" href="/admin/home/edit/{{$home->id}}" style="width: 40%; font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</a>
+        <div class="column" style="text-align:center; margin-bottom: 20px;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
+          <a type="button" href="/admin/home/edit/{{$home->id}}" style="width: 40%;color:white;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</a>
         </div>
     </div>
 </div><br>
 
-<div id="features" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
+<div id="features" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
   <div class="container">
       <div class="container add-new">
-        <a type="button" onclick="addFeature()" style="color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn">Add Feature</a>
+        <a type="button" onclick="addFeature()" style="color:white; background-color:#2DCC70;font-weight:bold" class="btn">Add Feature</a>
       </div>
       <br><br>
-      <div class="row" style="text-align: center; font-family: Open Sans, sans-serif;">
+      <div class="row" style="text-align: center;">
         <div class="col-md-4">
           <span><strong>FEATURE IMAGE</strong></span><br>
           <hr>
@@ -197,18 +198,18 @@ td, th {
 
 <!-- Gallery -->
 
-<div id="gallery" class="w3-container city row" style="display:none; font-family: Open Sans, sans-serif;"><br>
+<div id="gallery" class="w3-container city row" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
     
 </div> 
 
 
-<div id="Availability" class="w3-container city" style="display:none; font-family: Open Sans, sans-serif;"><br>
+<div id="Availability" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
   <div class="container">
     <div class="container add-new">
-      <a type="button" onclick="loadmap()" style="color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;font-weight:bold" class="btn">Add Location</a>
+      <a type="button" onclick="loadmap()" style="color:white; background-color:#2DCC70;font-weight:bold" class="btn">Add Location</a>
     </div>
     <br><br>
-    <div class="row" style="text-align: center; font-family: Open Sans, sans-serif;" id="homeAvial">
+    <div class="row" style="text-align: center;" id="homeAvial">
                          
     </div>  
   </div>
@@ -217,9 +218,9 @@ td, th {
 </div> 
 <!-- EDIT FEATURE MODAL-->
 
-<div class="modal fade" id="Editfeature" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="Editfeature" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+        <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Features</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -244,9 +245,9 @@ td, th {
             </div>
           </form>
           </div>
-          <div class="modal-footer" style="font-family: Open Sans, sans-serif;">
-            <button type="button" style=" color:white; background-color:#F6454F; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-            <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+          <div class="modal-footer">
+            <button type="button" style=" color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
+            <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
           </div>
         </div>
       </div>
@@ -256,9 +257,9 @@ td, th {
 
 <!-- ADD FEATURE Modal -->
 
-<div class="modal fade" id="AddFeatureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="AddFeatureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+      <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Features</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -285,9 +286,9 @@ td, th {
           </div>
         </form>
         </div><br>
-        <div class="modal-footer" style="font-family: Times New Roman;">
-          <button type="button"  style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-          <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+        <div class="modal-footer">
+          <button type="button"  style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+          <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
         </div>
       </div>
     </div>
@@ -297,9 +298,9 @@ td, th {
 
 <!--DELETE FEATURE MODAL--> 
 
-<div class="modal fade bd-example-modal-xl" id="deleteFeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteFeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+    <div class="modal-content">
       <div class="modal-header">
         <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -311,9 +312,9 @@ td, th {
           <h6 class="delete_heading">Are you sure, you want to delete this Feature ?</h6>
             <div class="clearfix">
             </div>
-          <div class="m-auto" style="font-family: Times New Roman;">
-            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-            <button type="submit"  style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-btn"> Yes</button>
+          <div class="m-auto">
+            <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100" id="ys-btn"> Yes</button>
           </div>  
         </div>    
       </div>
@@ -323,9 +324,9 @@ td, th {
 
  <!-- GALLERY Modal -->
 
-<div class="modal fade bd-example-modal-xl" id="deleteGallery" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteGallery" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+    <div class="modal-content">
       <div class="modal-header">
         <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -337,9 +338,9 @@ td, th {
           <h6 class="delete_heading">Are you sure, you want to delete this Gallery Image ?</h6>
             <div class="clearfix">
             </div>
-          <div class="m-auto" style="font-family: Times New Roman;">
-            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-            <button type="submit"  style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-gal-btn"> Yes</button>
+          <div class="m-auto">
+            <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100" id="ys-gal-btn"> Yes</button>
           </div>     
         </div>
       </div>
@@ -349,9 +350,9 @@ td, th {
 
 <!--AVAILABLE DELETE MODAL-->
 
- <div class="modal fade bd-example-modal-xl" id="deleteAvail" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+ <div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteAvail" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="font-family: Open Sans, sans-serif;">
+    <div class="modal-content">
       <div class="modal-header">
         <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -362,9 +363,9 @@ td, th {
         <div class="row" style="margin-left:10px;">
           <h6 class="delete_heading">Are you sure, you want to delete this Home Availability ?</h6>
           <div class="clearfix"></div>
-          <div class="m-auto" style="font-family: Times New Roman;">
-            <button type="button" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-            <button type="submit"  style=" color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" class="btn w3-100" id="ys-Avail-btn"> Yes</button>
+          <div class="m-auto">
+            <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100" id="ys-Avail-btn"> Yes</button>
           </div>  
         </div>    
       </div>
@@ -374,7 +375,7 @@ td, th {
 
 <!--MAP SHOW MODAL-->
 
-  <div class="modal" id="Mapshow">
+  <div class="modal" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="Mapshow">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
