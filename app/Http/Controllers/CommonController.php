@@ -44,9 +44,9 @@ class CommonController extends Controller
                         </div>
                         <div class="col-md-4">
                         <div class="wrapper" style="margin-top:50px;">
-                        <button onclick="editfeature('.$feature->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button>  
+                        <button onclick="editfeature('.$feature->id.')" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button>  
                         
-                        <button class="btn" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                        <button class="btn" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
                         </div>
                         </div>
                         </div>
@@ -82,12 +82,12 @@ class CommonController extends Controller
                         if($user->status==0)
                         {
                            $data.='<div class="container" style="text-align:center;">
-                           <a onclick="BlockUserModal('.$user->id.')" class="change_user_status" type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$user->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                           <a onclick="BlockUserModal('.$user->id.')" class="change_user_status" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$user->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
                         }
                        else
                        {
                            $data.='<div class="container" style="text-align:center;">
-                           <a class="change_user_status" type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" onclick="BlockUserModal('.$user->id.')" >
+                           <a class="change_user_status" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" onclick="BlockUserModal('.$user->id.')" >
                            <i class="fa fa-check">&nbsp;Active</i></a></div>';
                        }
                         $data.='</td>
@@ -121,7 +121,7 @@ class CommonController extends Controller
               <img class="card-img-top" style="height:200px;" src="/uploads/gallery/'.$gal.'">
                 <div class="card-body">
                 <div class="wrapper">
-                    <button class="btn w-100" type="button" data-id="'.$key.'"  data-toggle="modal" data-target="#deleteGallery" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                    <button class="btn w-100" type="button" data-id="'.$key.'"  data-toggle="modal" data-target="#deleteGallery" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
                 </div>
                 </div>
             </div> 
@@ -168,7 +168,7 @@ class CommonController extends Controller
             {
                 $data.='<a class="tablink" style="text-decoration:none;background:#CCCCCC" type="button" href="/admin/enquiry/update/'.$enquiry->id.'">
                     <div class="row">
-                    <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
+                    <div class="column" style="width:98%;">
                         <strong>Message from <u style="color:red">'.$enquiry->name.'</u> for Visting home <u style="color:red">'.$home->title.'</u> </strong>
                     </div>
                     <div class="column" style="width:2%; padding-top: 20px;">
@@ -192,7 +192,7 @@ class CommonController extends Controller
             {
                 $data.='<a class="tablink" style="text-decoration:none" type="button" href="/admin/enquiry/update/'.$enquiry->id.'">
                 <div class="row">
-                <div class="column" style="width:98%;font-family: Open Sans, sans-serif;">
+                <div class="column" style="width:98%;">
                     <strong>Message from <u style="color:#1e559e;">'.$enquiry->name.'</u> for Visting home <u style="color:#1e559e;">'.$home->title.'</u> </strong>
                 </div>
                 <div class="column" style="width:2%; padding-top: 20px;">
@@ -456,11 +456,11 @@ class CommonController extends Controller
                 <div class="row">
                 <div class="col-md-1"></div>
                 <div class ="col-md-4">
-                <a onclick="Editloadmap('.$avb->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w-100">Edit</a> 
+                <a onclick="Editloadmap('.$avb->id.')" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w-100">Edit</a> 
                 </div>
                 <div class="col-md-2"></div>
                 <div class ="col-md-4">
-                <button style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;
+                <button style="color:white;width:100px;text-align:center;
                 font-weight:bold; background-color:#F6454F;" data-id="'.$avb->id.'" data-toggle="modal" data-target="#deleteAvail" class="btn w-100">Delete</button>  
                </div>
                </div>

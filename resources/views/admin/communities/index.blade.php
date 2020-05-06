@@ -1,10 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<style>
-.comm-contain {
-  margin-left:40%;
-}
-</style>
+
 <link rel="stylesheet" type="text/css" href="screen.css" media="screen">
 <link rel="stylesheet" type="text/css" href="print.css"  media="print">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -12,18 +8,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<div class="container">
+<div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
 <div class="row">
-<div class="col-md-4 comm-contain">
-<h4 style="font-family: Open Sans, sans-serif;"><strong>Communities</strong></h4>
+  <div class="col-md-6" style="text-align:left;">
+    <h4><strong>Communities</strong></h4>
+  </div>
+  <div class="col-md-6" style="text-align:right;">
+    <a type="button" data-toggle="modal" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70;font-weight:bold" onclick="Addcommunity()"  data-target="#AddcommunityModal" class="btn btn-info">Add New</a> 
+  </div>
 </div>
-<div class="col-md-2">
-  <a type="button" data-toggle="modal" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70; font-family: Open Sans, sans-serif;;font-weight:bold" onclick="Addcommunity()"  data-target="#AddcommunityModal" class="btn btn-info">Add New</a> 
-</div>
-</div><hr>
+<hr>
 <br>
-    <div class="row" id="community_list">
+
+    <div class="row" id="community_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
      
       
   </div>
@@ -31,17 +29,17 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="communityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="communityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="font-family: Open Sans, sans-serif;">Community Name</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Community Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <form id="Communityform" style="font-family: Open Sans, sans-serif;">
+      <form id="Communityform">
 <div class="form-group">
       <label for="inputEmail4">Title</label>
       <input type="text" class="form-control" id="title" placeholder="title" required>
@@ -84,9 +82,9 @@
     </div>
    
   </div>
-  <div class="modal-footer" style="font-family: Times New Roman;">
-    <button type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-    <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+  <div class="modal-footer">
+    <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+    <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
   </div>
 </form>
       </div>
@@ -97,19 +95,17 @@
 
 <!--Save Moadal-->
 
-
-
-<div class="modal fade" id="AddcommunityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="AddcommunityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="font-family: Times New Roman;">Community Name</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Community Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <form id="Communityaddform" style="font-family: Times New Roman;">
+      <form id="Communityaddform">
 <div class="form-group">
       <label for="inputEmail4">Title</label>
       <input type="text" class="form-control" id="addtitle" placeholder="title" required>
@@ -152,9 +148,9 @@
     </div>
    
   </div>
-  <div class="modal-footer" style="font-family: Times New Roman;">
-  <button type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-    <button type="submit" style="font-family: Open Sans, sans-serif; width: 120px;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+  <div class="modal-footer">
+  <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+    <button type="submit" style="width: 120px;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
   </div>
 </form>
       </div>
@@ -163,22 +159,22 @@
   </div>
 </div>
 
-<div class="modal fade bd-example-modal-xl" id="deleteCommunity" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteCommunity" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="font-family: Times New Roman;">
+      <div class="modal-header">
         <h5>Delete Confirm Action</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true"><i class="fa fa-times"></i></span>
         </button>
       </div>
-      <div class="modal-body" style="font-family: Times New Roman;">
+      <div class="modal-body">
         <div class="row" style="margin-left:10px;">
           <h6 class="delete_heading">Are you sure, you want to delete this Community ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
-            <button type="button" data-dismiss="modal" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" class="btn w3-100"> No </button>
-            <button type="submit" id="ys-comm-btn" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100"> Yes</button>
+            <button type="button" data-dismiss="modal" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" class="btn w3-100"> No </button>
+            <button type="submit" id="ys-comm-btn" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100"> Yes</button>
            </div>  
           </div>    
         </div>

@@ -30,26 +30,26 @@ class HomeController extends Controller
             <div class="card">
               <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
-                <h5 style="font-size: 16px;text-align:center; font-family: Open Sans, sans-serif;">'.$home->title.'</h5>';
+                <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
                  if($home->block==0)
                  {
                     $data.='<div class="container" style="text-align:center;">
-                    <a onclick="BlockHomeModal('.$home->id.')" type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                    <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
                  }
                 else
                 {
                     $data.='<div class="container" style="text-align:center;">
-                    <a onclick="BlockHomeModal('.$home->id.')" type="button" style="font-family: Open Sans,sans-serif;color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="fa fa-check">&nbsp;Active</i></a></div>';
+                    <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="fa fa-check">&nbsp;Active</i></a></div>';
                 }
 
 
                  $data.='<br><div class="row">
                  <div class ="col-md-6" style="text-align:center;">
-                    <a style="font-family: Open 0Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
+                    <a style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
                  </div> 
                   
                  <div class ="col-md-6" style="text-align:center;">
-                    <button style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
+                    <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
                 </div>
                 </div>
                  </div>

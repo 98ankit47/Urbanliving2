@@ -8,9 +8,8 @@
         font-family: Open Sans, sans-serif;
     }
     .tabs {
-        margin-left:20px;
-        width:90%;
-        font-family: Open Sans, sans-serif;
+        
+        font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;
     }
     .tablink {
   background-color: white;
@@ -31,21 +30,18 @@
   padding: 100px 20px;
   height: 100%;
 }
-
-.enquiry-contain {
-    text-align: center;
-    font-family: Open Sans, sans-serif;
-}
 </style>
 </head>
 <br>
 
-<div class="container enquiry-contain">
-<h4><strong> Manage Enquiry</strong></h4>
-</div><hr><br>
+<div class="container enquiry-contain" style="text-aligh:left;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
+  <h4><strong> Manage Enquiry</strong></h4>
+    <hr><br>
 
 
-<div class="container tabs" id="enquiry"> 
+  <div class="tabs" id="enquiry" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"> 
      
-</div><br><br>
+  </div>
+</div>
+<br><br>
 @endsection
