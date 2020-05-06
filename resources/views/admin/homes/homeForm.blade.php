@@ -51,15 +51,18 @@
       <label for="inputTitle">Title</label>
       <input type="text" class="form-control" id="title" required>
     </div>
-  <div class="form-group col-md-4">
-    <label for="inputDescription">Description</label>
-    <input type="text" class="form-control" id="description" required>
-  </div>
+     
+  
   <div class="form-group col-md-4">
     <label for="community">Community</label>
     <select id="community_list" class="form-control">
     </select>
   </div>
+
+  <div class="form-group col-md-4">
+    <label for="inputDescription">Description</label>
+    <textarea name="" id="description" cols="30" rows="2" class="w-100 form-control"></textarea>
+  </div> 
   </div>
   <div class="form-row">
   <div class="form-group col-md-4">
@@ -89,24 +92,7 @@
     <input type="text" class="form-control" id="area" required>
   </div>
   </div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="image-upload">
-      <p>Featured Image</p>
-      <p><input type="file"  name="image" id="file"  onchange="loadFile(event)"></p>
-      <p><img id="output" /></p>
-    </div>
-  </div>
-<div class="col-md-6">
-<div class="image-upload">
-<p>Image Gallery</p>
-  <input type="file" id="files" name="files[]" multiple />
-  <br><br><br><br>
-<output id="list" width="200px" height="200px"></output>
-  </div>
-</div>
-</div>
-  <br><br>
+
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputCity">Builder</label>
@@ -123,7 +109,24 @@
     <div class="form-group col-md-4">
       <label for="inputCity">Price</label>
       <input type="text" class="form-control" id="price" required>
-    </div>  
+    </div> 
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="image-upload">
+        <p>Featured Image</p>
+        <p><input type="file"  name="image" id="file"  onchange="loadFile(event)"></p>
+        <p><img id="output" /></p>
+      </div>
+    </div>
+  <div class="col-md-6">
+  <div class="image-upload">
+  <p>Image Gallery</p>
+    <input type="file" id="files" name="files[]" multiple />
+    <br><br>
+  <output id="list" width="200px" height="200px"></output>
+    </div>
+  </div>
   </div>
   <div class="form-row">
     <div class="col-md-12">
