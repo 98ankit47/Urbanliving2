@@ -454,40 +454,52 @@ $('#ys-home-btn').click(function()
 
 });
 
+
+
 $('#deleteFloorComponent').on('show.bs.modal', function (e) {
 
 var $trigger = $(e.relatedTarget);
 var id=$trigger.data('id');
+$('#ys-floor-component-btn').attr('data-id',id);
+
+});
 $('#ys-floor-component-btn').click(function()
 {
+  var id = $(this).attr('data-id');
   $('#deleteFloorComponent').modal('hide');
   deletefloorcomponent(id);
 });
-});
+
+
 
 $('#deleteFloor').on('show.bs.modal', function (e) {
 
-var $trigger = $(e.relatedTarget);
-var id=$trigger.data('id');
+  var $trigger = $(e.relatedTarget);
+  var id=$trigger.data('id');
+  $('#ys-floor-btn').attr('data-id',id);
+});
 
 $('#ys-floor-btn').click(function()
 {
+  var id = $(this).attr('data-id');
   $('#deleteFloor').modal('hide');
   deleteFloor(id);
 });
-});
+
+
 
 $('#deleteCommunity').on('show.bs.modal', function (e) {
-
-var $trigger = $(e.relatedTarget);
-var id=$trigger.data('id');
+  var $trigger = $(e.relatedTarget);
+  var id=$trigger.data('id');
+  $('#ys-comm-btn').attr('data-id',id);
+});
 $('#ys-comm-btn').click(function()
 {
+  var id = $(this).attr('data-id');
   $('#deleteCommunity').modal('hide');
   $('.modal-backdrop').css('display','none');
     deleteCommunity(id);
 
-});
 });
 
  
