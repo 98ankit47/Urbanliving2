@@ -10,20 +10,9 @@
 }
 
 .pull-up:hover {
-  transform: scale(1.1); 
+  transform: scale(1.03); 
 }
-
-#card1 {
-   border-radius: 25px;
-  /* border: 2px solid #29b17f; */
-  
-}
-
-#card2 {
-   border-radius: 25px;
-  /* border: 2px solid #fe425f; */
-  
-}
+ 
 
 </style>
 
@@ -104,7 +93,7 @@
                                  <h5 style="color:white;"><strong>Homes</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-home float-right" style="font-size: 40px; color: white;"></i>
+                                 <i class="fa fa-home float-right" style="font-size: 30px; color: white;"></i>
                               </div>
                         </div>
                      </div>
@@ -124,7 +113,7 @@
                                  <h5 style="color:white;"><strong>Community</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-home float-right" style="font-size: 40px; color: white;"></i>
+                                 <i class="fa fa-home float-right" style="font-size: 30px; color: white;"></i>
                               </div>
                         </div>
                      </div>
@@ -144,7 +133,7 @@
                                  <h5 style="color:white;"><strong>Floor</strong></h5>
                               </div>
                               <div>
-                                 <i class="fa fa-terminal float-right" style="font-size: 40px; color: white;"></i>
+                                 <i class="fa fa-terminal float-right" style="font-size: 30px; color: white;"></i>
                               </div>
                         </div>
                      </div>

@@ -51,7 +51,7 @@
       <label for="inputTitle">Title</label>
       <input type="text" class="form-control" id="title" required>
     </div>
-     
+    
   
   <div class="form-group col-md-4">
     <label for="community">Community</label>
@@ -109,7 +109,8 @@
     <div class="form-group col-md-4">
       <label for="inputCity">Price</label>
       <input type="text" class="form-control" id="price" required>
-    </div> 
+    </div>  
+  </div>
 
   <div class="row">
     <div class="col-md-6">

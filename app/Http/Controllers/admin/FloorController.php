@@ -17,7 +17,7 @@ class FloorController extends Controller
      
     public function index()
     {
-        return "ankit";
+
     }
 
     /**
@@ -215,23 +215,32 @@ class FloorController extends Controller
         foreach($floors as $ky => $floor )
         {
             $data .='
-            <div class="col-md-4" style="font-family: Open Sans, sans-serif;">
+            <div class="col-md-6" style="font-family: Open Sans, sans-serif;">
               <div class="card">
-                <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4>
-                <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">
-                  <div class="card-body">
-                   <div class="row">
-                   
-                   <div class ="col-md-6" style="text-align:center;">
-                     <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4>
+                    <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class ="col-md-6" style="text-align:center;">
+                          <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
+                        </div>
+                        <div class ="col-md-6" style="text-align:center;">
+                          <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
+                        </div>
+                      </div>
                     </div>
-                    
-                 <div class ="col-md-6" style="text-align:center;">
-                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
-                    </div>
-                   </div>
-                    </div>
-                   
+                  </div> 
+                  <div class="col-md-6">
+                  <h4 style="text-align:center">Floor Detail<h4><br>
+                   <a class="btn btn-info">Bedroom</a>
+                   <a class="btn btn-info">Bedroom</a>
+                   <a class="btn btn-info">Bedroom</a>
+                   <a class="btn btn-info">Bedroom</a>
+                   <a class="btn btn-info">Bedroom</a>
+                  </div> 
+                </div>  
               </div>
             </div>';
         } 
