@@ -125,7 +125,7 @@ class CommonController extends Controller
         $homes= Homes::where('id',$id)->get()->first();
         $gallery=explode(',', $homes->gallery);
         $data.='<div class="col-md-4"  >
-        <a style="text-decoration:none" data-toggle="modal" >
+        <a style="text-decoration:none" data-toggle="modal" data-target="#galleryModal">
             <div class="card addcard" style="border-radius:40px;border:2px black groove;">
                 <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black">ADD NEW GALLERY IMAGE</h4>
             <img class="card-img-top" style="height:170px;" src="https://img.icons8.com/cotton/2x/add.png">

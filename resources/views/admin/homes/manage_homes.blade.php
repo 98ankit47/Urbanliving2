@@ -351,6 +351,34 @@ td, th {
    </div>
  </div>
 
+
+ <div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><strong>Add Gallery</strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <form id="gallery">  
+      <div class="modal-body">
+        <div class="card">
+            <div class="image-upload">
+                <p style="text-align:center; margin-top:10px;"><input type="file"  id="files"  onchange="loadFile(event)" required></p><br>
+                <p style="text-align:center;"><img id="output" width="400px" height="300px" /></p>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+        <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
 <!--MAP SHOW MODAL-->
 
   <div class="modal" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="Mapshow">
