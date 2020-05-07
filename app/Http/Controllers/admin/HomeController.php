@@ -24,6 +24,13 @@ class HomeController extends Controller
     {
         $data ='';
         $homes = Homes::all();
+        $data.='<div class="col-md-4" >
+        <div class="card">
+          <img class="card-img-top" style="height:200px;" src="/add.png">
+          <div class="card-body"> 
+          </div>
+        </div>
+        </div>';
         foreach($homes as $ky => $home )
         {
             $data .=' <div class="col-md-4" >

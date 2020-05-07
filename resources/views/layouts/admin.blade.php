@@ -163,11 +163,7 @@
                 </a>
               </li>
 
-              {{-- <li class="nav-item">
-                <a href="/admin/pages" class="nav-link">
-                <i class="fa fa-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Page</p></span>
-                </a>
-              </li> --}}
+             
 
               <li class="nav-item">
                 <a href="/admin/enquiry" class="nav-link">
@@ -181,7 +177,15 @@
                 <i class="fa fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Settings</p></span>
                 </a>
               </li>
-
+              <li class="nav-item">
+                <a href="{{ route('logout') }}" class="nav-link" data-toggle="modal" data-target="#logout" aria-expanded="true" aria-controls="logout"
+                >
+                  <i class="fa fa-power-off"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Logout</p></span>
+                </a>
+              </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
              
 
             </ul>
@@ -196,6 +200,32 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+
+
+    <div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="logout" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Logout Confirm Action</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="fa fa-times"></i></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row" style="margin-left:10px;">
+              <h6 class="delete_heading">Are you sure, you want's to Logout ?</h6>
+              <div class="clearfix"></div>
+              <div class="m-auto">
+                <button type="button" data-dismiss="modal" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100"> No </button>
+                <button type="submit" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100"> Yes</button>
+               </div>  
+              </div>    
+            </div>
+         </div>
+       </div>
+     </div>
+
+
     <div id="success" style="text-align:center;">
     </div>
     <div id="danger" style="text-align:center">
@@ -405,6 +435,18 @@
 @endif
 
 <script>
+
+  function enqUpdate(id)
+  {
+    var APP_URL = "{{ url('/') }}";
+          $.ajax({
+                  type: 'get',
+                  url: '/api/admin/enquiry/update/'+ id,
+                      success: function () {
+                        loadNotification();
+                  }
+                });
+    }
  
   function BlockHomeModal(hid)
   {
@@ -451,6 +493,29 @@ $('#ys-home-btn').click(function()
   $('#deleteHome').modal('hide');
  $('.modal-backdrop').css('display','none');
     deleteHome(id);
+
+});
+
+
+$('#deleteEnquiry').on('show.bs.modal', function (e) {
+
+var $trigger = $(e.relatedTarget);
+var Hid=$trigger.data('id');
+$('#ys-enq-btn').attr('data-id',Hid);
+});
+$('#ys-enq-btn').click(function()
+{
+  var id = $(this).attr('data-id');
+
+  $('#deleteEnquiry').modal('hide');
+ $('.modal-backdrop').css('display','none');
+    $.ajax({
+              url: APP_URL + '/api/admin/enquiry/'+ id,
+              type: 'DELETE'
+            });
+            loadEnquiryList();
+           $('#danger').html('Enquiry deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+
 
 });
 

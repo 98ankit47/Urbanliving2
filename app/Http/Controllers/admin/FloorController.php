@@ -134,82 +134,14 @@ class FloorController extends Controller
       return $data ;
     }
 
-    public function showModelFloor($id)
+    
+    public function showHomeFloor($id)
     {
-        $floors = Floors::where('id',$id)->get();
-        $data ='';
         $bedroom = 'bedroom';
         $bathroom = "bathroom";
         $garage = "garage";
         $kitchen = "kitchen";
         $dining = "dining";
-        foreach($floors as $ky => $floor )
-        {
-            $data .='<div class="row">
-            <div class="col-md-6">
-              <span><strong>NO. OF BEDROOMS   :</strong></span>
-            </div>
-            <div class="col-md-2">
-              <span>'.$floor->bedroom.'</span>
-            </div>
-            <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $bedroom . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
-            </div>
-          </div><br>
-          
-          <div class="row">
-            <div class="col-md-6">
-              <span><strong>NO. OF BATHROOMS   :</strong></span>
-            </div>
-            <div class="col-md-2">
-              <span>'.$floor->bathroom.'</span>
-            </div>
-            <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $bathroom . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
-            </div>
-          </div><br>
-        
-          <div class="row">
-            <div class="col-md-6">
-              <span><strong>NO. OF GARAGE   :</strong></span>
-            </div>
-            <div class="col-md-2">
-              <span>'.$floor->garage.'</span>
-            </div>
-            <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $garage . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-6">
-              <span><strong>NO. OF DINING   :</strong></span>
-            </div>
-            <div class="col-md-2">
-              <span>'.$floor->dining.'</span>
-            </div>
-            <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $dining . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-6">
-              <span><strong>NO. OF KITCHEN :</strong></span>
-            </div>
-            <div class="col-md-2">
-              <span>'.$floor->kitchen.'</span>
-            </div>
-            <div class="col-md-4">
-              <button type="button" onclick="floorComponent(\''. $kitchen . '\','.$floor->id.')" style="background-color:#ff6b56;" class="btn">CLICK HERE</button> 
-            </div>
-          </div>';
-        } 
-        return $data ;
-    }
-    
-    public function showHomeFloor($id)
-    {
         $floors = Floors::where('home_id',$id)->orderBy('floor_no')-> get();
         $data ='';
         foreach($floors as $ky => $floor )
@@ -220,28 +152,58 @@ class FloorController extends Controller
                 <div class="row">
                   <div class="col-md-6">
                     <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4>
-                    <img class="card-img-top" type="button" onclick="floorinfo('.$floor->id.')"  src="/uploads/floor/'.$floor->image.'" alt="">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class ="col-md-6" style="text-align:center;">
-                          <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
-                        </div>
-                        <div class ="col-md-6" style="text-align:center;">
-                          <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
-                        </div>
-                      </div>
- 
-                    </div>
+                    <img class="card-img-top"  src="/uploads/floor/'.$floor->image.'" alt="">
                   </div> 
                   <div class="col-md-6">
-                  <h4 style="text-align:center">Floor Detail<h4><br>
-                   <a class="btn btn-info">Bedroom</a>
-                   <a class="btn btn-info">Bedroom</a>
-                   <a class="btn btn-info">Bedroom</a>
-                   <a class="btn btn-info">Bedroom</a>
-                   <a class="btn btn-info">Bedroom</a>
+                    <h4 style="text-align:center">Floor Detail<h4><br>
+                    <table class="table table-hover" style="font-size:13px;text-align:center">
+                      <thead>
+                        <tr>
+                          <th scope="col">Type</th>
+                          <th scope="col">Number</th>
+                          <th scope="col">View</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td >Bedroom</td>
+                          <td>'.$floor->bedroom.'</td>
+                          <th scope="col"><small><a type="button" onclick="floorComponent(\''. $bedroom . '\','.$floor->id.')" style="color:#2DCC70">Click Here<a><small></th>
+                        </tr>
+                        <tr>
+                          <td >Bathroom</td>
+                          <td>'.$floor->bathroom.'</td>
+                          <th scope="col"><small><a style="color:#2DCC70" type="button" onclick="floorComponent(\''. $bathroom . '\','.$floor->id.')">Click Here<a><small></th>
+                        </tr>
+                        <tr>
+                          <td >Kitchen</td>
+                          <td>'.$floor->kitchen.'</td>
+                          <th scope="col"><small><a style="color:#2DCC70" type="button" onclick="floorComponent(\''. $kitchen . '\','.$floor->id.')">Click Here<a><small></th>
+                        </tr>
+                        <tr>
+                          <td >Dining</td>
+                          <td>'.$floor->dining.'</td>
+                          <th scope="col"><small><a style="color:#2DCC70" type="button" onclick="floorComponent(\''. $dining . '\','.$floor->id.')">Click Here<a><small></th>
+                        </tr>
+                        <tr>
+                          <td >Garage</td>
+                          <td>'.$floor->garage.'</td>
+                          <th scope="col"><small><a style="color:#2DCC70" type="button" onclick="floorComponent(\''. $garage . '\','.$floor->id.')">Click Here<a><small></th>
+                        </tr>                 
+                      </tbody>
+                    </table>
                   </div> 
                 </div>  
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class ="col-md-3" style="text-align:center;margin-bottom:10px">
+                    <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
+                  </div>
+                  <div class="col-md-2"></div>
+                  <div class ="col-md-3" style="text-align:center;margin-bottom:10px">
+                    <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
+                  </div>
+                </div>
               </div>
             </div>';
         } 

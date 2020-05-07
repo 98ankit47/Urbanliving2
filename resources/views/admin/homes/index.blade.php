@@ -17,7 +17,6 @@
 <hr>
 <br><br>
   <div class="row" id="home_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
-    
   </div>
 
 </div>

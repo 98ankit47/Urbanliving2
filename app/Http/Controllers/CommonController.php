@@ -166,168 +166,72 @@ class CommonController extends Controller
             $home= homes::where('id',$enquiry->home_id)->get()->first();
             if(($enquiry->seen)==0)
             {
-                $data.='<a class="tablink" style="text-decoration:none;background:#CCCCCC" type="button" href="/admin/enquiry/update/'.$enquiry->id.'">
-                    <div class="row">
-                    <div class="column" style="width:98%;">
-                        <strong>Message from <u style="color:red">'.$enquiry->name.'</u> for Visting home <u style="color:red">'.$home->title.'</u> </strong>
-                    </div>
-                    <div class="column" style="width:2%; padding-top: 20px;">
-                        <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
-                    </div>
-                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;">'.$display.' </i>
-                    </div><hr>
-                    <div class="container activity">
-                    <div class="row">
-                        <div class="col-md-6" style="text-align:center;">
-                            <i class ="fa fa-clock" style="font-size:15px; color:#DC143C;"> '.$enquiry->created_at->format('d M Y').' </i>
-                        </div>
-                        <div class="col-md-6" style="text-align:center;">
-                            <i class ="fa fa-eye" style="font-size:15px; color:#DC143C;"> Mark as read </i>
-                        </div>
-                    </div>
-                    </div>
-                </a>';
+                $color="C1C1C1";
             }
             else
             {
-                $data.='<a class="tablink" style="text-decoration:none" type="button" href="/admin/enquiry/update/'.$enquiry->id.'">
-                <div class="row">
-                <div class="column" style="width:98%;">
-                    <strong>Message from <u style="color:#1e559e;">'.$enquiry->name.'</u> for Visting home <u style="color:#1e559e;">'.$home->title.'</u> </strong>
-                </div>
-                <div class="column" style="width:2%; padding-top: 20px;">
-                    <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
-                </div>
-                <i class ="fa fa-clock" style="font-size:15px; color:#DC143C; margin-left: 85%;">'.$display.' </i>
-                </div><hr>
-                <div class="container activity">
-                    <div class="row">
-                        <div class="col-md-6" style="text-align:center;">
-                            <i class ="fa fa-clock" style="font-size:15px; color:#DC143C;"> '.$enquiry->created_at->format('d M Y').' </i>
-                        </div>
-                        <div class="col-md-6" style="text-align:center;">
-                            <i class ="fa fa-eye" style="font-size:15px; color:#DC143C;"> Mark as read </i>
-                        </div>
-                    </div>
-                    </div>
-            </a>';
+                $color="FFFFFF";
             }
+                $data.='<div id="accordion" >
+                <div class="card" style="background-color:#'.$color.';">
+                  <div class="card-header" >
+                      <button class="btn btn-link" onclick="enqUpdate('.$enquiry->id.')" data-toggle="collapse" data-target="#enq'.$enquiry->id.'" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="row" >
+                            <div class="col-md-12" >
+                                <strong style="text-decoration:none;color:black">Message from <i style="color:red;">'.$enquiry->name.'('.$enquiry->email.')</i>
+                                for Visting home <i style="color:red;">'.$home->title.'</i> 
+                                on <b style="color:red;">'.$enquiry->date.'</b> at <b style="color:red;">'.$enquiry->time.'</b>. </strong>
+                            </div>
+                        </div><hr>
+                        <div class="container activity">
+                            <div class="row">
+                                <div class="col-md-6" style="text-align:center;">
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C;"> '.$enquiry->created_at->format('d M Y').' </i>
+                                </div>
+                                
+                                <div class="col-md-6" style="text-align:center;">
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C;">'.$display.' </i>
+                                </div>
+                                
+                            </div>
+                            </div>
+                      </button>
+                  </div>
+              
+                  <div id="enq'.$enquiry->id.'" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="border border-dark">
+                            <h4 style="text-align:center;font-weight:bold">Message<h4><hr>
+                            <p style="margin-left:100px;margin-right:100px;font-size:16px;">
+                            '.$enquiry->message.'
+                            <p>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-3">
+                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target="#deleteFloor" class="btn">Reply</button> 
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-3">
+                                    <button type="button" data-toggle="modal" data-id="'.$enquiry->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+             
         }
         return $data; 
     }
 
-    public function enquiryDetail($id)
+    public function enquiryDelete($id)
     {
-        $data ='';
-        $enquiries= Enquiry::where('id',$id)->get()->first();
-        $home= homes::where('id',$enquiries->home_id)->get()->first();
-        $data.='<table border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                <td bgcolor="#5962ee" align="center"><p class="text-center" style="color:white;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                            <tr>
-                                <td align="center" valign="top" style="padding: 0 0 0 0;"> </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr> 
-                    <td bgcolor="#5962ee" align="center" style="padding: 0px 10px 0px 10px; ">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                            <tr>
-                                <td bgcolor="#ffffff" valign="top" style="padding: 0 0 0 0; border-radius: 4px 4px 0px 0px; color: #111111; font-size: 44px; font-weight: 400;  line-height: 48px;">
-                                    <div class="row">
-                                    <div class="col-md-4"> 
-                                    <img src="https://urbanliving.com/imgs/82" width="100" height="100" style="display: block; border: 0px;" />
-                                    </div>
-                                    <div class="col-md-8">
-                                    <p style="color: #71aea5; margin: 2;text-align: left; font-size:18px;">Hi Admin,<br> There is an Enquiry from <b>'.$enquiries->name.'</b> </p><br>
-                                    </div>
-                                    </div>
-                                    </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <br>
-                <tr>
-                    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 0px 0px 0px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                            <tr>
-                                <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                <p style="font-size: 18px;text-align: left; ">Here are the details of Timing!</p>
-                                <table class="table" style="font-size: 16px;text-align: left;">
-                                    
-                                    <tr class="row row-contain">
-                                        <th style="padding:8px; width:164px;">Home Name</th>
-                                        <th style="padding:8px; ">'.$home->title.'</th>
-                                    </tr>
-                                    <tr class="row row-contain">
-                                            <td style="padding:8px; width:164px;">Enquiry Time</td>
-                                            <td style="padding:8px;">'.$enquiries->time.'</td>
-                                        </tr>
-                                        <tr class="row row-contain">
-                                            <td style="padding:8px; width:164px;">Enquiry Date</td>
-                                            <td style="padding:8px;">'.$enquiries->date.'</td>
-                                        </tr>
-                                </table>
-                                    <p style="font-size: 18px;text-align: left; ">Here are the details of User !</p>
-                                    <table class="table" style="font-size: 16px;text-align: left;">
-                                        <tr class="row row-contain"  style="color:black; padding-left:4px;">
-                                            <th style="padding:8px;font-size:18px; width:164px;"><b>Name</b></th>
-                                            <th style="padding:8px;font-size:18px; "><b>'.$enquiries->name.'</b></th>
-                                        </tr>
-                                        <tr class="row row-contain">
-                                            <td style="padding:8px; width:164px;">Email</td>
-                                            <td style="padding:8px; ">'.$enquiries->email.'</td>
-                                        </tr>
-                                        <tr class="row row-contain">
-                                            <td style="padding:8px; width:164px;">Contact No.</td>
-                                            <td style="padding:8px; ">'.$enquiries->phone.'</td>
-                                        </tr>
-                                    </table>   
-                                    <div class="container">
-                                        <span style="color:black;"><strong>Message:</strong></span><br>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <span>'.$enquiries->message.'</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px; margin-bottom:50px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                            <tr>
-                                <td bgcolor="#484848" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: white;  font-size: 18px; font-weight: 400; line-height: 25px;">
-                                    <p style="margin: 0; font-size: 15px;"><a href="#" target="_blank" style="color: white;">Urban Living</a></p>
-                                    <h2 style="font-size: 12px; font-weight: 400; color:white; margin: 0;">Copyright 2020 | All Rights Reserved</h2>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td bgcolor="#f4f4f4" align="center" style="padding: 0 10px 0px 10px; margin-bottom:50px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                            <tr>
-                                <td bgcolor="white" align="center" style="padding: 10px 20px 10px 10px; border-radius: 4px 4px 4px 4px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                    <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;"></h2>
-                                    <p style="margin: 0;"><a href="#" target="_blank" style="color: sky#34495E ;"></a></p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                </table>
-        </body>';
-
-        return $data; 
+        $enquiry = Enquiry::findOrFail($id);
+        $enquiry->delete(); 
     }
+     
  
     public function userFloor($id)
     {

@@ -106,7 +106,6 @@ Route::get( 'home', 'HomeController@index');
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/admin/enquiry/update/{id}', 'user\HomeController@UpdateEnquirySeen');
 
 
 //user module
