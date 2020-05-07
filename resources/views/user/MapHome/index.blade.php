@@ -63,12 +63,54 @@
   justify-content: center;
 }
 
+
+.modal-body .w3-button7 {
+    position: absolute;
+    top: 50%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: lightgray;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.modal-body .w3-button7:hover {
+    background-color: black;
+}
+
+
+.modal-body .w3-button8 {
+    position: absolute;
+    top: 50%;
+    left: 86%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: lightgray;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.modal-body .w3-button8:hover {
+    background-color: black;
+}
+
     </style>
 
  <div class="container">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-filter" style="color:blue;"></i>
-        </a>
+        <a type="button" style="background-color:darkgray;width:60px;" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        &nbsp;&nbsp;&nbsp;<i class="fa fa-filter" style="color:white;"></i>
+        </a><br>
         <div class="dropdown-menu" style="width:350px;" aria-labelledby="navbarDropdown">
         <form class="details-containerr" style="font-family: Open Sans, sans-serif; margin-left: 5px; margin-right: 5px;">
             <div class="form-row "> 
@@ -174,7 +216,7 @@
             <button class="btn btn-outline-success my-2 my-sm-0" style="margin-left:130px;" type="submit">Apply</button>
         </form>
         </div><br>
-        <div class="row">
+        <div class="row" style="width:1220px;">
         
             <div id="map" class="col-md-8">
                
