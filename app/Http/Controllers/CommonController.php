@@ -36,7 +36,7 @@ class CommonController extends Controller
         <a style="text-decoration:none" data-toggle="modal" onclick="addFeature()">
             <div class="card addcard" style="border-radius:40px;border:2px black groove;">
                 <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD NEW FEATURE</h4>
-            <img class="card-img-top" style="height:220px;" src="/add.png">
+            <img class="card-img-top" style="height:220px;" src="https://img.icons8.com/cotton/2x/add.png">
             <div class="card-body"> 
             </div>
             </div>
@@ -124,6 +124,16 @@ class CommonController extends Controller
         $gallery =[];
         $homes= Homes::where('id',$id)->get()->first();
         $gallery=explode(',', $homes->gallery);
+        $data.='<div class="col-md-4"  >
+        <a style="text-decoration:none" data-toggle="modal" data-target="#galleryModal">
+            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
+                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black">ADD NEW GALLERY IMAGE</h4>
+            <img class="card-img-top" style="height:170px;" src="https://img.icons8.com/cotton/2x/add.png">
+            <div class="card-body"> 
+            </div>
+            </div>
+        </a>
+        </div>';
         foreach($gallery as $key=> $gal)
         {
             $data.='<div class="col-md-4" >
@@ -361,7 +371,7 @@ class CommonController extends Controller
         <a style="text-decoration:none" data-toggle="modal"  onclick="loadmap()"  data-target="#AddcommunityModal">
             <div class="card addcard" style="border-radius:40px;border:2px black groove;">
                 <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD LOCATION</h4>
-            <img class="card-img-top" style="height:220px;" src="/add.png">
+            <img class="card-img-top" style="height:220px;" src="https://img.icons8.com/cotton/2x/add.png"">
             <div class="card-body"> 
             </div>
             </div>

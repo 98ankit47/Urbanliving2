@@ -28,7 +28,7 @@ class HomeController extends Controller
         <a style="text-decoration:none" href="/admin/home/create">
             <div class="card addcard" style="border-radius:40px;border:2px black groove;">
                 <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD NEW HOME</h4>
-            <img class="card-img-top" style="height:245px;" src="/add.png">
+            <img class="card-img-top" style="height:245px;" src="https://img.icons8.com/cotton/2x/add.png">
             <div class="card-body"> 
             </div>
             </div>
@@ -36,11 +36,28 @@ class HomeController extends Controller
         </div>';
         foreach($homes as $ky => $home )
         {
+            if($home->status_id==1)
+            {
+                $color="#9FD802";
+            }
+            else if($home->status_id==2)
+            {
+                $color="#F80000";
+            }
+            else if($home->status_id==3)
+            {
+                $color="#f3c623";
+            }
+            else if($home->status_id==4)
+            {
+                $color="#47A5A6";
+            }
+            $status=status::where('id',$home->status_id)->get()->first();
             $data .=' <div class="col-md-4" >
             <div class="card">
               <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
-              <a type="button" href="#" class="category category__01">AVAILABLE</a>
+                <p class="category category__01 " style="background:'.$color.';">'.$status->status.'</p>
                 <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
                  if($home->block==0)
                  {
