@@ -100,6 +100,40 @@
 }
 
 
+.col-md-4 .share {
+    position: absolute;
+    top: 3%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* .col-md-4 .share:hover {
+    background-color:#DC143C;
+} */
+
+
+.col-md-4 .fav {
+    position: absolute;
+    top: 3%;
+    left: 71%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+/* 
+.col-md-4 .fav:hover {
+    background-color:white;
+} */
+
 .bottom-left {
   position: absolute;
   bottom: 25px;
@@ -112,11 +146,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="navbar-nav devnav" style="text-align:center;">
       <a class="nav-item nav-link active devitem" type="button" id='overClick' href="#overview">Overview<span class="sr-only">(current)</span></a>&nbsp;&nbsp;&nbsp;
-      <a class="nav-item nav-link devitem" type="button" id='floorClick' href="#floor-plan">Floor Plan</a>&nbsp;&nbsp;&nbsp;
+      <a class="nav-item nav-link devitem" type="button" id='floorClick' href="#floorplann">Floor Plan</a>&nbsp;&nbsp;&nbsp;
       <a class="nav-item nav-link devitem" type="button" id='siteClick' href="#site-plan">Site Plan</a>&nbsp;&nbsp;&nbsp;
       <a class="nav-item nav-link devitem" type="button" id='featureClick' href="#feature">Features</a>&nbsp;&nbsp;&nbsp;
-      <a class="nav-item nav-link devitem" type="button" id='availClick' href="#avaliability">Availability</a>&nbsp;&nbsp;&nbsp;
-      <a class="nav-item nav-link devitem" type="button" id='mapClick' href="#map">Map</a>
+      <a class="nav-item nav-link devitem" type="button" id='availClick' href="#availablee">Availability</a>&nbsp;&nbsp;&nbsp;
+      <a class="nav-item nav-link devitem" type="button" id='lookClicks' href="#lookss">Look Book</a>
     </div>
 </nav><br><br>
  
@@ -145,18 +179,20 @@
                                 @endforeach  -->
                             </div>
                     </div>
-                    <div class="col-md-4"><br>
+                    <div class="col-md-4"><br><br>
                         @foreach($homes as $home)
-                        <h4 style="text-align:center">{{$home->title}}</h4><br><br><br>
-                        <span style="text-align:center">$229,990</span><br><br>
+                        <h4 style="text-align:center"><b>{{$home->title}}</b></h4><br><br><br>
+                        <span style="text-align:center;font-size:22px;">$229,990</span><br><br><br>
                         <span style="text-align:center">{{$home->communities->communities->address}},
-                              {{$home->communities->communities->county}},
+                              {{$home->communities->communities->county}},<br>
                               {{$home->communities->communities->state}}</span><br><br><br><br><br>
                         <div class="container" style="text-align:left;">
-                        <span>First Feature</span><br>
-                        <span>Second Feature</span><br>
-                        <span>Third Feature</span><br>
+                        <li>First Feature</li><br>
+                        <li>Second Feature</li><br>
+                        <li>Third Feature</li><br>
                         </div>
+                        <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
+                        <a class="share"><i style="color:black;" class="fa fa-share-alt"></i></a>
                         @endforeach
                     </div>
                 </div>
@@ -195,7 +231,7 @@
  
         <!--FLOOR PLAN-->
  
-        <div class="row">
+        <div class="row" id="floorplann">
             <div class="col-md-12">
                 <div class="card" style="height:50rem; text-align:center;">
                     <div class="row inner">
@@ -270,7 +306,7 @@
  
         <br><br>
         
-        <div class="row">
+        <div class="row" id="availablee">
         <div class="col-md-4">
             <div class="card" style="height:30rem; width:25rem; text-align:center;">
                 <div class="card-body">
@@ -295,7 +331,7 @@
         <br><br><br>
  <!-- LOOK BOOK -->
  
- <div class="row">
+ <div class="row" id="lookss">
             <div class="col-md-12">
                 <div class="card" style="height:45rem; text-align:center;">
                     <div class="row inner">

@@ -178,21 +178,21 @@ class HomeController extends Controller
                     }
                     $data.=' <br><br> <div class="w3-center" style="text-align:center;">
                             <div class="w3-section">
-                                <button class="w3-button w3-light-grey" onclick="plusDivs('.$plus.')">❮ Prev</button>
-                                <button class="w3-button w3-light-grey" onclick="plusDivs('.$minus.')">Next ❯</button>
+                                <button class="w3-button7 w3-light-grey" onclick="plusDivs('.$plus.')"> ❮ </button>
+                                <button class="w3-button8 w3-light-grey" onclick="plusDivs('.$minus.')"> ❯ </button>
                             </div>';
-                    foreach($floorID as $fid)
-                    {
-                        $components=FloorComponent::where('floor_id',$fid)->get();
-                        foreach($components as $key=> $component)
-                        { 
-                            $key=$key+1;
-                            $data.='
-                                    <button class="w3-button demo" onclick="currentDiv('.$key.')">'.$key.'</button> ';
-                            $key=$key-1;
+                    // foreach($floorID as $fid)
+                    // {
+                    //     $components=FloorComponent::where('floor_id',$fid)->get();
+                    //     foreach($components as $key=> $component)
+                    //     { 
+                    //         $key=$key+1;
+                    //         $data.='
+                    //                 <button class="w3-button demo" onclick="currentDiv('.$key.')">'.$key.'</button> ';
+                    //         $key=$key-1;
 
-                        }
-                    }
+                    //     }
+                    // }
 
                     $data.='</diV></div>
                         </div><br><div class="container" style= "text-align: center;">

@@ -57,6 +57,88 @@
   cursor: pointer;
 }
 
+.card .w3-button0 {
+    position: absolute;
+    top: 50%;
+    left: 91%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: lightgray;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card .w3-button0:hover {
+    background-color: black;
+}
+
+
+.card .w3-button9 {
+    position: absolute;
+    top: 50%;
+    left: 9%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: lightgray;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card .w3-button9:hover {
+    background-color: black;
+}
+
+
+.col-md-4 .share {
+    position: absolute;
+    top: 3%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* .col-md-4 .share:hover {
+    background-color:#DC143C;
+} */
+
+
+.col-md-4 .fav {
+    position: absolute;
+    top: 3%;
+    left: 71%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+/* 
+.col-md-4 .fav:hover {
+    background-color:white;
+} */
+
+.bottom-left {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
+
 </style>
 
 <br><br>
@@ -71,7 +153,7 @@
 
 <div class="row" id="overview">
     <div class="col-md-8">
-        <div class="card" style="height:40rem; text-align:center;">
+        <div class="card" style="height:37rem; text-align:center;">
             <div class="row inner">
                 <div class="col-md-8">      
                     <?php
@@ -82,19 +164,19 @@
                     }                 
                         ?>
                     @foreach($gallery as $gals)
-                <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:560px; width:100%;">
+                <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:553px; width:100%;">
                     @endforeach
                     <div class="w3-center">
                         <div class="w3-section">
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+                            <button class="w3-button9 w3-light-grey" onclick="plusDivs(-1)">❮ </button>
+                            <button class="w3-button0 w3-light-grey" onclick="plusDivs(1)"> ❯</button>
                         </div>
-                        @foreach($gallery as $key =>$gal)
+                        <!-- @foreach($gallery as $key =>$gal)
                             <button class="w3-button demo" onclick="currentDiv({{$key+1}})">{{$key+1}}</button> 
-                        @endforeach 
+                        @endforeach  -->
                     </div>
                 </div>
-                <div class="col-md-4"><br>
+                <div class="col-md-4"><br><br>
                     @foreach($homes as $home)
                     <h4 style="text-align:center">{{$home->title}}</h4><br><br><br>
                     <span style="text-align:center">$229,990</span><br><br>
@@ -106,13 +188,15 @@
                     <span>Second Feature</span><br>
                     <span>Third Feature</span><br>
                     </div>
+                    <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
+                    <a class="share"><i style="color:black;" class="fa fa-share-alt"></i></a>
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
     <div class="col-md-4">
-    <div class="card" style="height:40rem;">
+    <div class="card" style="height:37rem;">
         <div class="card-body" style="text-align:center;">
             <h2>SCHEDULE TOUR</h2>
             <form id="enquiry" style="font-family: Open Sans, sans-serif; text-align:left;">                
@@ -147,7 +231,7 @@
     </div>
     </div>
 
-<br>
+<br><br><br>
         <div class="row">
             <div class="col-md-12">
                 <div class="card" style="height:35rem; text-align:center;">
