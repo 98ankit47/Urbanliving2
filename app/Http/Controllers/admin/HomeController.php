@@ -26,7 +26,7 @@ class HomeController extends Controller
         $homes = Homes::all();
         $data.='<div class="col-md-4" >
         <div class="card">
-          <img class="card-img-top" style="height:200px;" src="/add.png">
+          <img class="card-img-top" style="height:240px;" src="/add.png">
           <div class="card-body"> 
           </div>
         </div>
