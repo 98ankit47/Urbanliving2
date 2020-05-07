@@ -15,6 +15,96 @@
 .floor-image {
     display: none;
 }
+
+.card .w3-button {
+    position: absolute;
+    top: 50%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: lightgray;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card .w3-button:hover {
+    background-color: black;
+}
+
+
+.card .w3-button1 {
+    position: absolute;
+    top: 50%;
+    left: 86%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: lightgray;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card .w3-button1:hover {
+    background-color: black;
+}
+
+
+.card .w3-button2 {
+    position: absolute;
+    top: 50%;
+    left: 9%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: lightgray;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card .w3-button2:hover {
+    background-color: black;
+}
+
+
+.card .w3-button3 {
+    position: absolute;
+    top: 50%;
+    left: 91%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: lightgray;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card .w3-button3:hover {
+    background-color: black;
+}
+
+
+.bottom-left {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
 </style>
 <?php
 ?>
@@ -32,7 +122,7 @@
  
 <div class="row" id="overview">
         <div class="col-md-8">
-            <div class="card" style="height:46rem; text-align:center;">
+            <div class="card" style="height:37rem; text-align:center;">
                 <div class="row inner">
                     <div class="col-md-8">      
                         <?php
@@ -43,16 +133,16 @@
                         }                 
                             ?>
                         @foreach($gallery as $gals)
-                            <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:560px; width:100%;">
+                            <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:553px; width:100%;">
                         @endforeach
                             <div class="w3-center">
                                 <div class="w3-section">
-                                    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                                    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+                                    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮</button>
+                                    <button class="w3-button1 w3-light-grey" onclick="plusDivs(1)">❯</button>
                                 </div>
-                                @foreach($gallery as $key =>$gal)
+                                <!-- @foreach($gallery as $key =>$gal)
                                     <button class="w3-button demo" onclick="currentDiv({{$key+1}})">{{$key+1}}</button> 
-                                @endforeach 
+                                @endforeach  -->
                             </div>
                     </div>
                     <div class="col-md-4"><br>
@@ -73,7 +163,7 @@
             </div>
         </div>
         <div class="col-md-4">
-        <div class="card" style="height:46rem;">
+        <div class="card" style="height:37rem;">
             <div class="card-body" style="text-align:center;">
                 <h2>SCHEDULE TOUR</h2><br>
                 <form id="enquiry" style="font-family: Open Sans, sans-serif; text-align:left;">                
@@ -107,26 +197,21 @@
  
         <div class="row">
             <div class="col-md-12">
-                <div class="card" style="height:45rem; text-align:center;">
+                <div class="card" style="height:50rem; text-align:center;">
                     <div class="row inner">
                         <div class="col-md-4">      
-                            <div class="card" style="height:45rem;">
-                                <div class="card-body" style="text-align:center;">
-                                    <div class="card" style="height:25rem;">
-                                        <div class="card-body">
-                                            <div id="floorDetail" class="container" style="text-align: left;">
+                            <div class="card" style="height:25rem;">
+                                <div class="card-body">
+                                    <div id="floorDetail" class="container" style="text-align: left;">
                                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body" style="text-align:center;">
-                                    <div class="card" style="height:17rem;">
-                                        <div class="card-body" id="componentImage">
-                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="card" style="height:25rem;">
+                                <div class="card-body" id="componentImage">
+                                
+                                </div>
+                            </div>        
                         </div>
                         <div class="col-md-8"><br><br><br><br><br>
                           <div class="row">
@@ -175,7 +260,7 @@
                     <div class="card" style="height:30rem; width:25rem;">
                         <div class="card-body">
                         <img class="img-feature" style="height:27rem; width:22.5rem;" src="/uploads/homeFeature/{{$feature->image}}"/>
-                            <div class="bottom-right">{{$feature->title}}</div>
+                            <div class="bottom-left" style="color:white"><b>{{$feature->title}}</b></div>
                         </div>
                     </div>
                     </div>
@@ -306,8 +391,8 @@
  
                                     <div class="w3-center">
                                         <div class="w3-section">
-                                            <button class="w3-button w3-light-grey" onclick="plusDivss(-1)">❮ Prev</button>
-                                            <button class="w3-button w3-light-grey" onclick="plusDivss(1)">Next ❯</button>
+                                            <button class="w3-button2 w3-light-grey" onclick="plusDivss(-1)">❮</button>
+                                            <button class="w3-button3 w3-light-grey" onclick="plusDivss(1)">❯</button>
                                         </div>
                                     </div>
                                 </div>

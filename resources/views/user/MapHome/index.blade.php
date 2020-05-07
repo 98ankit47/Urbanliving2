@@ -2,14 +2,13 @@
     @section('content')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        Always set the map height explicitly to define the size of the div
-          element that contains the map. /
+
         #map {
           height: 500px;
           width:50%
         }
 
-                div.maps {
+    div.maps {
         width: 110px;
         height: 520px;
         overflow: auto;
@@ -55,10 +54,6 @@
         
         }
 
- body {
-  padding: 10px;
-}
-
 .box {
   margin: 5px;
   background-color: yellow;
@@ -70,7 +65,7 @@
 
     </style>
 
- 
+ <div class="container">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-filter" style="color:blue;"></i>
         </a>
@@ -207,7 +202,7 @@
             </div>
         </div>
             </div>
-            
+</div>
           <script>
             function scrollIfNeeded(element, container) {
             if (element.offsetTop < container.scrollTop) {
