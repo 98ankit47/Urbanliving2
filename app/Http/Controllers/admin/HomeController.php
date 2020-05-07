@@ -40,6 +40,7 @@ class HomeController extends Controller
             <div class="card">
               <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
               <div class="card-body">
+              <a type="button" href="#" class="category category__01">AVAILABLE</a>
                 <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
                  if($home->block==0)
                  {

@@ -91,9 +91,10 @@
   bottom: 25px;
   left: 30px;
 }
+
 </style>
 
-<div class="card" style="background-color:#485563;">
+<div class="card" style="background-color:#557A95;">
   <div class="card-body"> 
     <div class="row">
       <div class="col-md-6">
@@ -143,10 +144,10 @@
     <div class="card">
       <div class="card-body">
         <div class="card">
-          <div class="card-body" style="height:258px;"><br>
-            <a type="button" href="/all-development" style="color:black;" class="btn btn-outline-primary w-100"><b>VIEW ALL DEVELOPMENTS</b></a><br><br>
-            <a type="button" href="/home-map" style="color:black;" class="btn btn-outline-primary w-100"><b>VIEW MAP LIST</b></a><br><br>
-            <a type="button" class="btn btn-outline-primary w-100"><b>VIEW ALL</b></a><br>
+          <div class="card-body" style="height:258px;background-color:#557A95;"><br>
+            <a type="button" href="/all-development" style="color:white;border-color:white;" class="btn btn-outline w-100"><b>VIEW ALL DEVELOPMENTS</b></a><br><br>
+            <a type="button" href="/home-map" style="color:white;border-color:white;" class="btn btn-outline w-100"><b>VIEW MAP LIST</b></a><br><br>
+            <a type="button" style="color:white;border-color:white;" class="btn btn-outline w-100"><b>VIEW ALL</b></a><br>
           </div>
         </div>  
       </div>
@@ -242,7 +243,84 @@
   </div>
 </div>
 
-<br>
+<br><br><br><br>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="card" style="background-color:#557A95;">
+          <div class="card-body" style="height:258px;"><br><br><br><br>
+            <a type="button" href="/all-development" style="color:white; border-color:white;" class="btn btn-outline w-100"><b>VIEW ALL NEIGHBORHOOD</b></a><br><br>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body" style="height:300px;">
+        <img style="width:100%;height:100%;" class="nieghbor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdEE9j-X_C7ialRemOei-CbyvE1CU0p3qqxwflSJIYDgU0q8pc&usqp=CAU"/>
+        <div class="w3-center">
+          <div class="w3-section">
+            <div class="bottom-left" style="color:white;"><b>SHADY ACRES</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body" style="height:300px;">
+        <img style="width:100%;height:100%;" class="nieghbor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0SD6h1f2t6g5HreAWg9zv2FV2BIZ-i39EcmfJ9VQCKSz_YgBm&usqp=CAU"/>
+        <div class="w3-center">
+          <div class="w3-section">
+            <div class="bottom-left" style="color:white;"><b>DOWN TOWN</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-4">
+    <div class="card">
+      <div class="card-body" style="height:300px;">
+        <img style="width:100%;height:100%;" class="nieghbor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSx_ls4Ngj8oFtJXtklTCPK8Jvp8qyrv1Q1fZroYGNOQWTaXgN2&usqp=CAU"/>
+        <div class="w3-center">
+          <div class="w3-section">
+            <div class="bottom-left" style="color:white;"><b>UNIVERSITY PLACE</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body" style="height:300px;">
+        <img style="width:100%;height:100%;" class="nieghbor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRfxcwGm1_mxQ_EW5gPWJHDMufRqG_Q2t78dpZZLVenE46MvLvj&usqp=CAU"/>
+        <div class="w3-center">
+          <div class="w3-section">
+            <div class="bottom-left" style="color:white;"><b>MID TOWN</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body" style="height:300px;">
+        <img style="width:100%;height:100%;" class="nieghbor" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSYpTSzQNINfegvHYAS1NU8HXP9zKOKXE37bm_llA1kBUCdtfN8&usqp=CAU"/>
+        <div class="w3-center">
+          <div class="w3-section">
+            <div class="bottom-left" style="color:white;"><b>UNIVERSITY AREA</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 var slideIndex = 1;

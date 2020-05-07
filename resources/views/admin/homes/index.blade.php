@@ -1,7 +1,22 @@
 @extends('layouts.admin')
 @section('content')
 <style>
+.category {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
 
+.category {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    color: white;
+    background: #f3c623;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
 </style>
 
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
