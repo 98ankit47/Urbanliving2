@@ -7,12 +7,10 @@
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
   <div class="row">
-    <div class="col-md-6" style="text-align:left;">
+    <div class="col-md-12" style="text-align:Center;">
       <h4><strong>Homes</strong></h4>
     </div>
-    <div class="col-md-6" style="text-align:right;">
-      <a type="button" class="btn" href="/admin/home/create" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70;font-weight:bold" class="btn">Add New</a>
-    </div>
+     
   </div>
 <hr>
 <br><br>

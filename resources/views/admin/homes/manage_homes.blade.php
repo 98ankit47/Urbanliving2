@@ -170,28 +170,9 @@ td, th {
 </div><br>
 
 <div id="features" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
-  <div class="container">
-      <div class="container add-new">
-        <a type="button" onclick="addFeature()" style="color:white; background-color:#2DCC70;font-weight:bold" class="btn">Add Feature</a>
-      </div>
-      <br><br>
-      <div class="row" style="text-align: center;">
-        <div class="col-md-4">
-          <span><strong>FEATURE IMAGE</strong></span><br>
-          <hr>
-        </div>
-        <div class="col-md-4">
-          <span><strong>FEATURE NAME</strong></span><br>
-          <hr>
-        </div>
-        <div class="col-md-4">
-          <span><strong>ACTIVITY</strong></span>
-          <hr>
-        </div>
-      </div> 
-    </div> 
+  
     <br>
-  <div class="feature-row" id="feature_list">
+  <div class="feature-row row" id="feature_list">
               
   </div>
 </div>
@@ -205,10 +186,7 @@ td, th {
 
 <div id="Availability" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
   <div class="container">
-    <div class="container add-new">
-      <a type="button" onclick="loadmap()" style="color:white; background-color:#2DCC70;font-weight:bold" class="btn">Add Location</a>
-    </div>
-    <br><br>
+    
     <div class="row" style="text-align: center;" id="homeAvial">
                          
     </div>  

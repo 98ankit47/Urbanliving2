@@ -24,12 +24,15 @@ class HomeController extends Controller
     {
         $data ='';
         $homes = Homes::all();
-        $data.='<div class="col-md-4" >
-        <div class="card">
-          <img class="card-img-top" style="height:240px;" src="/add.png">
-          <div class="card-body"> 
-          </div>
-        </div>
+        $data.='<div class="col-md-4"  >
+        <a style="text-decoration:none" href="/admin/home/create">
+            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
+                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD NEW HOME</h4>
+            <img class="card-img-top" style="height:245px;" src="/add.png">
+            <div class="card-body"> 
+            </div>
+            </div>
+        </a>
         </div>';
         foreach($homes as $ky => $home )
         {

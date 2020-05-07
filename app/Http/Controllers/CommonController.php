@@ -32,25 +32,35 @@ class CommonController extends Controller
         $data ='';
         $id=$request['id'];
         $features= Features::where('home_id',$id)->get();
+        $data.='<div class="col-md-4"  >
+        <a style="text-decoration:none" data-toggle="modal" onclick="addFeature()">
+            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
+                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD NEW FEATURE</h4>
+            <img class="card-img-top" style="height:220px;" src="/add.png">
+            <div class="card-body"> 
+            </div>
+            </div>
+        </a>
+        </div>';
         foreach($features as $feature)
         {
-            $data.=' <div class="card" style="text-align: center;">
-                    <div class="row">
-                        <div class="col-md-4" style="text-align:center;">
-                        <img class="card-img-top" style="height:150px; width:100%" src="/uploads/homeFeature/'.$feature->image.'">
-                        </div> 
-                        <div class="col-md-4">
-                        <p class="title" style="font-size: 20px; margin-top:50px;">'.$feature->title.'</p>
-                        </div>
-                        <div class="col-md-4">
-                        <div class="wrapper" style="margin-top:50px;">
+            $data.='<div class="col-md-4" >
+            <div class="card">
+              <img class="card-img-top" height="200px"; src="/uploads/homeFeature/'.$feature->image.'" >
+              <div class="card-body">
+              <h5 style="font-size: 16px;text-align:center;">'.$feature->title.'</h5>
+                 <br>
+                 <div class="row">
+                    <div class ="col-md-6" style="text-align:center;">
                         <button onclick="editfeature('.$feature->id.')" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button>  
-                        
+                    </div>
+                    <div class ="col-md-6" style="text-align:center;">
                         <button class="btn" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
-                        </div>
-                        </div>
-                        </div>
-                    </div>  <br><br> ';
+                    </div>
+                </div>   
+              </div>
+            </div>
+          </div>';
             
         }
         return $data;        
@@ -347,6 +357,16 @@ class CommonController extends Controller
     {
         $data ='';
         $avbs= HomeAvailable::where('home_id',$id)->get();
+        $data.='<div class="col-md-4"  >
+        <a style="text-decoration:none" data-toggle="modal"  onclick="loadmap()"  data-target="#AddcommunityModal">
+            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
+                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD LOCATION</h4>
+            <img class="card-img-top" style="height:220px;" src="/add.png">
+            <div class="card-body"> 
+            </div>
+            </div>
+        </a>
+        </div>';
         foreach($avbs as $key=> $avb)
         {
             $home=Homes::where('id',$avb->home_id)->get()->first();

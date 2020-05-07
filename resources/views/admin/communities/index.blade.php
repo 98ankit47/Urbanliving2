@@ -11,11 +11,8 @@
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
 <div class="row">
-  <div class="col-md-6" style="text-align:left;">
+  <div class="col-md-12" style="text-align:center;">
     <h4><strong>Communities</strong></h4>
-  </div>
-  <div class="col-md-6" style="text-align:right;">
-    <a type="button" data-toggle="modal" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70;font-weight:bold" onclick="Addcommunity()"  data-target="#AddcommunityModal" class="btn btn-info">Add New</a> 
   </div>
 </div>
 <hr>

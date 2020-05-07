@@ -20,6 +20,16 @@ class CommunityController extends Controller
     {
         $data ='';
         $communities = Communities::all();
+        $data.='<div class="col-md-4"  >
+        <a style="text-decoration:none" data-toggle="modal"  onclick="Addcommunity()"  data-target="#AddcommunityModal">
+            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
+                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD NEW COMMUNITY</h4>
+            <img class="card-img-top" style="height:220px;" src="/add.png">
+            <div class="card-body"> 
+            </div>
+            </div>
+        </a>
+        </div>';
         foreach($communities as $ky => $community )
         {
             $data .=' <div class="col-md-4" >

@@ -4,7 +4,9 @@
 .main-sidebar {
   position: fixed;
 }
-
+.addcard:hover {
+  transform: scale(1.03); 
+}
 @media (min-width: 768px) {
         .control-sidebar {
                .tab-content {
