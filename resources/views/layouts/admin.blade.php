@@ -1487,7 +1487,7 @@ function Editloadmap(aid){
           url: APP_URL+'/api/admin/homelist',
           success: function(result){
             $.each(result,function(k){
-              display +='<a class="tablinks" onclick="openHome(event,'+result[k].id+')">'+result[k].title+'</a>';
+              display +='<a class="tablinks"   onclick="openHome(event,'+result[k].id+')">'+result[k].title+'</a>';
             })
           $('#myDropdown').html(display);
           }   

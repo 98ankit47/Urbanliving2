@@ -60,12 +60,10 @@
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
     <div class="row">
-        <div class="col-md-6" style="text-align:left;">
+        <div class="col-md-12" style="text-align:left;">
             <h4><strong>Floor</strong></h4>
         </div>
-        <div class="col-md-6" style="text-align:right;">
-            <button onclick="addFloor()"  style="font-size: 15px; width:100px;color:white; background-color:#2DCC70;font-weight:bold" class="btn btn-Success">Add New</button>
-        </div>
+        
     </div>
 <hr>
 
@@ -78,8 +76,18 @@
 
 <br><br>
 
-  <div id="homeFloor" class="row" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 
+  <div id="homeFloor" class="row" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
+    <div class="col-md-4"><br>
+      <a style="text-decoration:none" data-toggle="modal" data-target="#galleryModal" onclick="addFloor()" >
+        <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:278px;">
+          <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+          <div class="card-body">
+              <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW FLOOR</h4>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
  
 </div>
