@@ -995,6 +995,53 @@ function Editloadmap(aid){
 <script>
     var APP_URL = "{{ url('/') }}";
     var id = window.location.href.split('/').pop();
+    function updategal(){
+      var gal=[];
+      var gal_name=[];
+      $('#files').on('change',function(evt){
+          var files = evt.target.files; 
+          for (var i = 0, f; f = files[i]; i++) {
+              // Only process image files.
+              if (!f.type.match('image.*')) {
+                continue;
+              }
+
+            var reader = new FileReader();
+              // Closure to capture the file information.
+                reader.onload = (function(theFile) {
+                  return function(e) {
+                    // Render thumbnail.
+                    gal.push(e.target.result);
+                    gal_name.push(theFile.name);
+                  };
+                })(f);
+
+            // Read in the image file as a data URL.
+              reader.readAsDataURL(f);
+        }
+        });
+      $('#galleryupdate').on('submit', function (e) {
+          e.preventDefault();
+            $.ajax({
+              type: 'post',
+              url: '/api/admin/update-gal/'+id,
+              data:{
+                    'gallery'      : gal,
+                    'gallery_name' : gal_name,
+                      },
+                      success: function () {
+                        $('#galleryModal').modal('hide');
+                        $('.modal-backdrop').css('display','none');
+                          loadGalleryList();
+                        $('#success').html('Gallery Images Edited').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                      }
+                    });
+
+              });     
+     
+    }
+    
+
     loadFeatureList();
       function loadFeatureList(){
         $.ajax({

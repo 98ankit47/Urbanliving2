@@ -57,6 +57,7 @@ Route::post('admin/changePaas','CommonController@changepass');
 
 
 Route::get('admin/home-gallery/{id}','CommonController@showGallery');
+Route::post('admin/update-gal/{id}','CommonController@updateGallery');
 Route::delete('admin/home-gallery/{home_id}/{id}','CommonController@deleteGallery');
 
 

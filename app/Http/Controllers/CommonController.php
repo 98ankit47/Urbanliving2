@@ -11,6 +11,7 @@ use App\Models\Enquiry;
 use App\HomeAvailable;
 use App\User;
 Use \Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -118,6 +119,26 @@ class CommonController extends Controller
              'image'=>$name
         ]);
     }
+    public function updateGallery(Request $request ,$id)
+    {
+        $home =  Homes::where('id',$id)->first();
+        $data = explode(',', $home->gallery);
+        $gallery=$request['gallery'];
+        $gallery_name=$request['gallery_name'];
+        foreach($gallery as $key => $gal)
+        {
+            $gal_img =  time().explode('.',$gallery_name[$key])[0].'.' . explode('/', explode(':',substr($gal,0,strpos(
+                $gal,';')))[1])[1];  
+    
+            \Image::make($gal)->save(public_path('uploads\gallery\\').$gal_img);
+            array_push($data,$gal_img);
+        }
+        Homes::where('id',$id)->update([
+            'gallery'=>implode(',', $data),
+        ]);
+    }
+
+    
     public function showGallery(Request $request ,$id)
     {
         $data ='';
@@ -125,7 +146,7 @@ class CommonController extends Controller
         $homes= Homes::where('id',$id)->get()->first();
         $gallery=explode(',', $homes->gallery);
         $data.='<div class="col-md-4"><br>
-        <a style="text-decoration:none" data-toggle="modal" data-target="#galleryModal">
+        <a style="text-decoration:none" data-toggle="modal" data-target="#galleryModal" onclick="updategal()">
         <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:278px;">
         <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
         <div class="card-body">
