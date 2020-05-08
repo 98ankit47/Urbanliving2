@@ -63,7 +63,6 @@
     left: 91%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -73,9 +72,6 @@
     text-align: center;
 }
 
-.card .w3-button0:hover {
-    background-color: black;
-}
 
 
 .card .w3-button9 {
@@ -84,7 +80,6 @@
     left: 9%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -94,9 +89,6 @@
     text-align: center;
 }
 
-.card .w3-button9:hover {
-    background-color: black;
-}
 
 
 .col-md-4 .share {
@@ -168,8 +160,8 @@
                     @endforeach
                     <div class="w3-center">
                         <div class="w3-section">
-                            <button class="w3-button9 w3-light-grey" onclick="plusDivs(-1)">❮ </button>
-                            <button class="w3-button0 w3-light-grey" onclick="plusDivs(1)"> ❯</button>
+                            <a class="w3-button9" style="font-size:24px; color:white;" onclick="plusDivs(-1)">❮ </a>
+                            <a class="w3-button0" style="font-size:24px; color:white;" onclick="plusDivs(1)"> ❯</a>
                         </div>
                         <!-- @foreach($gallery as $key =>$gal)
                             <button class="w3-button demo" onclick="currentDiv({{$key+1}})">{{$key+1}}</button> 

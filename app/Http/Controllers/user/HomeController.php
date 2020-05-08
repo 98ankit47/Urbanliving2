@@ -166,20 +166,20 @@ class HomeController extends Controller
             array_push($floorID,$floor->id);
         }
         $data.='<div class="card">
-                    <div class="card-body">';
+                    <div class="card-body" style="height:440px;">';
 
                     foreach($floorID as $fid)
                     {
                         $components=FloorComponent::where('floor_id',$fid)->get();
                         foreach($components as $component)
                         {
-                            $data.='<img class="mySlides" style="width:60%; height:300px; margin-left:20%;" src="/uploads/floorcomponent/'.$component->image.'"/>';
+                            $data.='<img class="mySlides" style="width:100%; height:400px;" src="/uploads/floorcomponent/'.$component->image.'"/>';
                         }
                     }
                     $data.=' <br><br> <div class="w3-center" style="text-align:center;">
                             <div class="w3-section">
-                                <button class="w3-button7 w3-light-grey" onclick="plusDivs('.$plus.')"> ❮ </button>
-                                <button class="w3-button8 w3-light-grey" onclick="plusDivs('.$minus.')"> ❯ </button>
+                                <a class="w3-button7" style="color:white;font-size:24px;" onclick="plusDivs('.$plus.')"> ❮ </a>
+                                <a class="w3-button8" style="color:white;font-size:24px;" onclick="plusDivs('.$minus.')"> ❯ </a>
                             </div>';
                     // foreach($floorID as $fid)
                     // {

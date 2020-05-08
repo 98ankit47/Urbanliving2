@@ -13,7 +13,6 @@
     left: 14%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -23,9 +22,9 @@
     text-align: center;
 }
 
-.card-body .w3-button:hover {
+/* .card-body .w3-button:hover {
     background-color: black;
-}
+} */
 
 
 .card-body .w3-button1 {
@@ -34,7 +33,6 @@
     left: 86%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -44,9 +42,9 @@
     text-align: center;
 }
 
-.card-body .w3-button1:hover {
+/* .card-body .w3-button1:hover {
     background-color: black;
-}
+} */
 
 
 .card-body .share {
@@ -106,7 +104,7 @@
               <div class="container" style="text-align:center; padding-left:22%;">
               <form action="/search" class="form-inline my-2" method="get">
                 <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
-                <button style="background-color:#33CABB; color:#DC143C;" class="btn" type="submit"><i class="fa fa-search"> </i></button>
+                <button style="background-color:#33CABB; color:white;" class="btn" type="submit"><i class="fa fa-search"> </i></button>
               </form>
               </div>
             </div> 
@@ -124,7 +122,7 @@
               <div class="container" style="text-align:center; padding-left:22%;">
               <form action="/search" class="form-inline my-2" method="get">
                 <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
-                <button style="background-color:#33CABB; color:#DC143C;" class="btn my-2 my-sm-0" type="submit"><i class="fa fa-search"> </i></button>
+                <button style="background-color:#33CABB; color:white;" class="btn my-2 my-sm-0" type="submit"><i class="fa fa-search"> </i></button>
               </form>
              </div> 
             </div> 
@@ -160,8 +158,8 @@
         <img style="width:100%;height:100%;" class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU"/>
         <div class="w3-center">
           <div class="w3-section">
-            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮</button>
-            <button class="w3-button1 w3-light-grey" onclick="plusDivs(1)">❯</button>
+            <a class="w3-button" style="font-size:24px;" onclick="plusDivs(-1)">❮</a>
+            <a class="w3-button1" style="font-size:24px;" onclick="plusDivs(1)">❯</a>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
             <a class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></a>
             <div class="bottom-left" style="color:white;"><b>COTTAGE GROVE</b></div>
@@ -177,8 +175,8 @@
         <img style="width:100%;height:100%;" class="mySlides1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTGPbk3me6blsPigoAHLumD5sfYty3qelUQI9c8-RRPcOYqr8CG&usqp=CAU"/>
         <div class="w3-center">
           <div class="w3-section">
-            <button class="w3-button w3-light-grey" onclick="plusDivs1(-1)">❮</button>
-            <button class="w3-button1 w3-light-grey" onclick="plusDivs1(1)">❯</button>
+            <a class="w3-button" style="font-size:24px;" onclick="plusDivs1(-1)">❮</a>
+            <a class="w3-button1" style="font-size:24px;" onclick="plusDivs1(1)">❯</a>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
             <a class="share"><i style="color:white;" class="fa fa-share-alt"></i></a>
             <div class="bottom-left" style="color:white;"><b>MEDICAL CENTRE</b></div>
@@ -197,8 +195,8 @@
         <img style="width:100%;height:100%;" class="mySlides2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTGPbk3me6blsPigoAHLumD5sfYty3qelUQI9c8-RRPcOYqr8CG&usqp=CAU"/>
         <div class="w3-center">
           <div class="w3-section">
-            <button class="w3-button w3-light-grey" onclick="plusDivs2(-1)">❮</button>
-            <button class="w3-button1 w3-light-grey" onclick="plusDivs2(1)">❯</button>
+            <a class="w3-button" style="font-size:24px;" onclick="plusDivs2(-1)">❮</a>
+            <a class="w3-button1" style="font-size:24px;" onclick="plusDivs2(1)">❯</a>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
             <a class="share"><i style="color:white;" class="fa fa-share-alt"></i></a>
             <div class="bottom-left" style="color:white;"><b>EODA</b></div>
@@ -214,8 +212,8 @@
         <img style="width:100%;height:100%;" class="mySlides3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCr3yDTUXyWxWRZBXCcflu6quE2cloqspbc1ZcR-JNRouwjvfs&usqp=CAU"/>
         <div class="w3-center">
           <div class="w3-section">
-            <button class="w3-button w3-light-grey" onclick="plusDivs3(-1)">❮</button>
-            <button class="w3-button1 w3-light-grey" onclick="plusDivs3(1)">❯</button>
+            <a class="w3-button" style="font-size:24px;" onclick="plusDivs3(-1)">❮</a>
+            <a class="w3-button1" style="font-size:24px;" onclick="plusDivs3(1)">❯</a>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
             <a class="share"><i style="color:white;" class="fa fa-share-alt"></i></a>
             <div class="bottom-left" style="color:white;"><b>RIVER OAKS</b></div>
@@ -231,8 +229,8 @@
         <img style="width:100%;height:100%;" class="mySlides4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU"/>
         <div class="w3-center">
           <div class="w3-section">
-            <button class="w3-button w3-light-grey" onclick="plusDivs4(-1)">❮</button>
-            <button class="w3-button1 w3-light-grey" onclick="plusDivs4(1)">❯</button>
+            <a class="w3-button" style="font-size:24px;" onclick="plusDivs4(-1)">❮</a>
+            <a class="w3-button1" style="font-size:24px;" onclick="plusDivs4(1)">❯</a>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
             <a class="share"><i style="color:white;" class="fa fa-share-alt"></i></a>
             <div class="bottom-left" style="color:white;"><b>UNIVERSITY AREA</b></div>

@@ -22,7 +22,6 @@
     left: 14%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -30,10 +29,6 @@
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-}
-
-.card .w3-button:hover {
-    background-color: black;
 }
 
 
@@ -43,7 +38,6 @@
     left: 86%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -53,9 +47,6 @@
     text-align: center;
 }
 
-.card .w3-button1:hover {
-    background-color: black;
-}
 
 
 .card .w3-button2 {
@@ -64,7 +55,6 @@
     left: 9%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -72,10 +62,6 @@
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-}
-
-.card .w3-button2:hover {
-    background-color: black;
 }
 
 
@@ -85,7 +71,6 @@
     left: 91%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -93,10 +78,6 @@
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-}
-
-.card .w3-button3:hover {
-    background-color: black;
 }
 
 
@@ -113,10 +94,6 @@
     text-align: center;
 }
 
-/* .col-md-4 .share:hover {
-    background-color:#DC143C;
-} */
-
 
 .col-md-4 .fav {
     position: absolute;
@@ -129,10 +106,6 @@
     cursor: pointer;
     text-align: center;
 }
-/* 
-.col-md-4 .fav:hover {
-    background-color:white;
-} */
 
 .bottom-left {
   position: absolute;
@@ -171,8 +144,8 @@
                         @endforeach
                             <div class="w3-center">
                                 <div class="w3-section">
-                                    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮</button>
-                                    <button class="w3-button1 w3-light-grey" onclick="plusDivs(1)">❯</button>
+                                    <a style="font-size:24px; color:white;" class="w3-button" onclick="plusDivs(-1)">❮</a>
+                                    <a style="font-size:24px; color:white;" class="w3-button1" onclick="plusDivs(1)">❯</a>
                                 </div>
                                 <!-- @foreach($gallery as $key =>$gal)
                                     <button class="w3-button demo" onclick="currentDiv({{$key+1}})">{{$key+1}}</button> 
@@ -427,8 +400,8 @@
  
                                     <div class="w3-center">
                                         <div class="w3-section">
-                                            <button class="w3-button2 w3-light-grey" onclick="plusDivss(-1)">❮</button>
-                                            <button class="w3-button3 w3-light-grey" onclick="plusDivss(1)">❯</button>
+                                            <a style="font-size:24px;" class="w3-button2" onclick="plusDivss(-1)">❮</a>
+                                            <a style="font-size:24px;" class="w3-button3" onclick="plusDivss(1)">❯</a>
                                         </div>
                                     </div>
                                 </div>

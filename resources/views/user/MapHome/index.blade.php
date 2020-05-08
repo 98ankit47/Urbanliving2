@@ -70,7 +70,6 @@
     left: 14%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -80,9 +79,9 @@
     text-align: center;
 }
 
-.modal-body .w3-button7:hover {
+/* .modal-body .w3-button7:hover {
     background-color: black;
-}
+} */
 
 
 .modal-body .w3-button8 {
@@ -91,7 +90,6 @@
     left: 86%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: lightgray;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
@@ -101,9 +99,9 @@
     text-align: center;
 }
 
-.modal-body .w3-button8:hover {
+/* .modal-body .w3-button8:hover {
     background-color: black;
-}
+} */
 
     </style>
 

@@ -136,6 +136,8 @@ class CommonController extends Controller
         Homes::where('id',$id)->update([
             'gallery'=>implode(',', $data),
         ]);
+        return $data;
+
     }
 
     
