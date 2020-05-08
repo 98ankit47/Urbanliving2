@@ -7,18 +7,14 @@
   margin-right: 30px;
 } */
 </style>
-<br>
 
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
     <div class="row">
-      <div class="col-md-6" style="text-align:left;">
+      <div class="col-md-11" style="text-align:left;">
         <h4><strong>Floor Component</strong></h4>
       </div>
-      <div class="col-md-3" style="text-align:right;">
-        <button onclick="addFloorComponent()" style="font-size: 15px; width:100px;color:white; background-color:#2DCC70;font-weight:bold" class="btn">Add New</button> 
-      </div>
-      <div class="col-md-3" style="text-align:right;">
+      <div class="col-md-1" style="text-align:center;">
         <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4; color:white;" class="btn">Back</a> 
       </div>
     </div>

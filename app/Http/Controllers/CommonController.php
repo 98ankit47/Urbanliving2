@@ -213,25 +213,34 @@ class CommonController extends Controller
             {
                 $color="FFFFFF";
             }
-                $data.='<div id="accordion" >
+                $data.='<div id="accordion" style="width:100%;">
                 <div class="card" style="background-color:#'.$color.';">
-                  <div class="card-header" >
-                      <button class="btn btn-link" onclick="enqUpdate('.$enquiry->id.')" data-toggle="collapse" data-target="#enq'.$enquiry->id.'" aria-expanded="true" aria-controls="collapseOne">
-                        <div class="row" >
-                            <div class="col-md-12" >
-                                <strong style="text-decoration:none;color:black">Message from <i style="color:red;">'.$enquiry->name.'('.$enquiry->email.')</i>
-                                for Visting home <i style="color:red;">'.$home->title.'</i> 
-                                on <b style="color:red;">'.$enquiry->date.'</b> at <b style="color:red;">'.$enquiry->time.'</b>. </strong>
-                            </div>
-                        </div><hr>
+                  <div class="card-header" id="headingOne">
+                      <button class="btn btn-link" onclick="enqUpdate('.$enquiry->id.')" data-toggle="collapse" data-target="#enq'.$enquiry->id.'" aria-expanded="true" aria-controls="#enq'.$enquiry->id.'">
+                      
+                      <table>
+                            <tr style="color:black;">
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile No.</th>
+                                <th>Enquired Home Name</th>
+                            </tr>
+                            <tr style="color:black;">
+                                <td>'.$enquiry->name.'</td>
+                                <td>'.$enquiry->email.'</td>
+                                <td>'.$enquiry->phone.'</td>
+                                <td>'.$home->title.'</td>
+                            </tr>
+                            </table>
+                     <br>
                         <div class="container activity">
                             <div class="row">
-                                <div class="col-md-6" style="text-align:center;">
-                                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C;"> '.$enquiry->created_at->format('d M Y').' </i>
+                                <div class="col-md-7" style="text-align:right;">
+                                    <span><b>Click here to view message</b></span>
                                 </div>
                                 
-                                <div class="col-md-6" style="text-align:center;">
-                                    <i class ="fa fa-clock" style="font-size:15px; color:#DC143C;">'.$display.' </i>
+                                <div class="col-md-5" style="text-align:right;">
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$display.' </i>
                                 </div>
                                 
                             </div>
@@ -241,8 +250,7 @@ class CommonController extends Controller
               
                   <div id="enq'.$enquiry->id.'" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                        <div class="border border-dark">
-                            <h4 style="text-align:center;font-weight:bold">Message<h4><hr>
+                        <div class="messages">
                             <p style="margin-left:100px;margin-right:100px;font-size:16px;">
                             '.$enquiry->message.'
                             <p>
