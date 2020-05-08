@@ -16,8 +16,8 @@
 
 </style>
 
-<body style="font-family: Open Sans, sans-serif;">
-      <div class="container" style="text-align:center;font-family: Open Sans, sans-serif;">
+<body style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
+      <div class="container">
          <h4><br><strong>Admin Dashboard</strong></h4>
       </div>
 <hr><br>

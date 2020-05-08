@@ -34,12 +34,12 @@ class CommonController extends Controller
         $features= Features::where('home_id',$id)->get();
         $data.='<div class="col-md-4"  >
         <a style="text-decoration:none" data-toggle="modal" onclick="addFeature()">
-            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
-                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD NEW FEATURE</h4>
-            <img class="card-img-top" style="height:220px;" src="https://img.icons8.com/cotton/2x/add.png">
-            <div class="card-body"> 
-            </div>
-            </div>
+        <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:326px;">
+        <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+        <div class="card-body"> <br>
+            <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW FEATURE</h4>
+        </div>
+        </div>
         </a>
         </div>';
         foreach($features as $feature)
@@ -124,19 +124,19 @@ class CommonController extends Controller
         $gallery =[];
         $homes= Homes::where('id',$id)->get()->first();
         $gallery=explode(',', $homes->gallery);
-        $data.='<div class="col-md-4"  >
+        $data.='<div class="col-md-4"><br>
         <a style="text-decoration:none" data-toggle="modal" data-target="#galleryModal">
-            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
-                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black">ADD NEW GALLERY IMAGE</h4>
-            <img class="card-img-top" style="height:170px;" src="https://img.icons8.com/cotton/2x/add.png">
-            <div class="card-body"> 
-            </div>
-            </div>
+        <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:278px;">
+        <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+        <div class="card-body">
+            <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW IMAGE</h4>
+        </div>
+        </div>
         </a>
         </div>';
         foreach($gallery as $key=> $gal)
         {
-            $data.='<div class="col-md-4" >
+            $data.='<div class="col-md-4" ><br>
             <div class="card">
               <img class="card-img-top" style="height:200px;" src="/uploads/gallery/'.$gal.'">
                 <div class="card-body">
@@ -369,12 +369,12 @@ class CommonController extends Controller
         $avbs= HomeAvailable::where('home_id',$id)->get();
         $data.='<div class="col-md-4"  >
         <a style="text-decoration:none" data-toggle="modal"  onclick="loadmap()"  data-target="#AddcommunityModal">
-            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
-                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD LOCATION</h4>
-            <img class="card-img-top" style="height:220px;" src="https://img.icons8.com/cotton/2x/add.png"">
-            <div class="card-body"> 
-            </div>
-            </div>
+        <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:327px;">
+        <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+        <div class="card-body"> <br>
+            <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW LOCATION</h4>
+        </div>
+        </div>
         </a>
         </div>';
         foreach($avbs as $key=> $avb)

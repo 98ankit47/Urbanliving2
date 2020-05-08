@@ -26,10 +26,10 @@ class HomeController extends Controller
         $homes = Homes::all();
         $data.='<div class="col-md-4"  >
         <a style="text-decoration:none" href="/admin/home/create">
-            <div class="card addcard" style="border-radius:40px;border:2px black groove;">
-                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:black"> ADD NEW HOME</h4>
-            <img class="card-img-top" style="height:245px;" src="https://img.icons8.com/cotton/2x/add.png">
-            <div class="card-body"> 
+            <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
+            <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+            <div class="card-body"> <br>
+                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW HOME</h4>
             </div>
             </div>
         </a>

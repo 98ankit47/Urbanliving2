@@ -20,12 +20,7 @@
 
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
-  <div class="row">
-    <div class="col-md-12" style="text-align:Center;">
       <h4><strong>Homes</strong></h4>
-    </div>
-     
-  </div>
 <hr>
 <br>
   <div class="row" id="home_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
