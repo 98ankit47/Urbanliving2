@@ -34,7 +34,7 @@
                      </div>
                   </div>
                   <div class="col-md-8" style="text-align:right;">
-                     <span><b>188</b></span><br>
+                     <span><b>188</b></span><br><br>
                      <span><b>Today's Visits</b></span>
                   </div>
                </div>
@@ -51,7 +51,7 @@
                      </div>
                   </div>
                   <div class="col-md-6" style="text-align:right;">
-                     <span><b>45</b></span><br>
+                     <span><b>45</b></span><br><br>
                      <span><b>New Users</b></span>
                   </div>
                </div>
@@ -68,7 +68,7 @@
                      </div>
                   </div>
                   <div class="col-md-6" style="text-align:right;">
-                     <span><b>1008</b></span><br>
+                     <span><b>1008</b></span><br><br>
                      <span><b>Total sale</b></span>
                   </div>
                </div>
@@ -87,14 +87,16 @@
                <div class="card-content">
                   <a href="/admin/homes">
                      <div class="card-body">
-                        <div class="media d-flex">
-                              <div class="media-body text-left">
-                                 <span class="info" style="color:white;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:white;"><b>8</b></span><br><br>
-                                 <h5 style="color:white;"><strong>Homes</strong></h5>
-                              </div>
+                        <div class="row">
+                           <div class="col-md-6" style="text-align:left;">
                               <div>
-                                 <i class="fa fa-home float-right" style="font-size: 30px; color: white;"></i>
+                                 <i class="fa fa-home" style="font-size: 30px; color: white;"></i>
                               </div>
+                           </div>
+                           <div class="col-md-6" style="text-align:right;">
+                              <span style="color:white;"><b>50</b></span><br><br>
+                              <span style="color:white;"><b>Homes</b></span>
+                           </div>            
                         </div>
                      </div>
                   </a>
@@ -107,14 +109,16 @@
                <div class="card-content">
                   <a href="/admin/community">
                      <div class="card-body">
-                        <div class="media d-flex">
-                              <div class="media-body text-left">
-                                 <span class="danger" style="color:white;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:white;"><b>3</b></span><br><br>
-                                 <h5 style="color:white;"><strong>Community</strong></h5>
-                              </div>
+                     <div class="row">
+                           <div class="col-md-6" style="text-align:left;">
                               <div>
-                                 <i class="fa fa-home float-right" style="font-size: 30px; color: white;"></i>
+                                 <i class="fa fa-home" style="font-size: 30px; color: white;"></i>
                               </div>
+                           </div>
+                           <div class="col-md-6" style="text-align:right;">
+                              <span style="color:white;"><b>8</b></span><br><br>
+                              <span style="color:white;"><b>Communities</b></span>
+                           </div>            
                         </div>
                      </div>
                   </a>
@@ -127,14 +131,16 @@
                <div class="card-content">
                   <a href="/admin/floor">
                      <div class="card-body">
-                        <div class="media d-flex">
-                              <div class="media-body text-left">
-                                 <span class="danger" style="color:white;"><strong>counts</strong></span>&nbsp;&nbsp;<span style="color:white;"><b>3</b></span><br><br>
-                                 <h5 style="color:white;"><strong>Floor</strong></h5>
-                              </div>
+                        <div class="row">
+                           <div class="col-md-6" style="text-align:left;">
                               <div>
-                                 <i class="fa fa-terminal float-right" style="font-size: 30px; color: white;"></i>
+                                 <i class="fa fa-terminal" style="font-size: 30px; color: white;"></i>
                               </div>
+                           </div>
+                           <div class="col-md-6" style="text-align:right;">
+                              <span style="color:white;"><b>234</b></span><br><br>
+                              <span style="color:white;"><b>Floor</b></span>
+                           </div>            
                         </div>
                      </div>
                   </a>
