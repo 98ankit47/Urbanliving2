@@ -22,6 +22,7 @@
 <br>
       <h4><strong>Homes</strong></h4>
 <hr>
+
 <br>
   <div class="row" id="home_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
   </div>
