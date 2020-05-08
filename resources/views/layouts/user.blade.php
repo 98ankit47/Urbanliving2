@@ -267,8 +267,8 @@
 </style>
 </head> 
 
-<nav class="navbar navbar-default navbar-expand-lg navbar-light">
-	<div class="navbar-header d-flex col">
+<nav class="navbar navbar-default navbar-expand-lg navbar-light" style="background:#CBCBC6 ">
+	<div class="navbar-header d-flex col" >
 		<a class="navbar-brand" href="#"><img style="height:40px;" src="https://urbanliving.com/imgs/82"/></a>  		
 		<!-- <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
 			<span class="navbar-toggler-icon"></span>
@@ -415,7 +415,7 @@
 
 <!--FOOTER-->
 <hr>
-<footer class="page-footer font-small stylish-color-dark pt-4">
+<footer class="page-footer font-small stylish-color-dark pt-4"  style="background:#e8e8e8">
   <!-- Social buttons -->
   <ul class="list-unstyled list-inline text-center">
     <li class="list-inline-item">
@@ -453,7 +453,7 @@
   <div class="container">
 
     <!--Grid row-->
-    <div class="row">
+    <div class="row" >
 
       <!--Grid column-->
       <div class="col-md-6 mb-4">
@@ -491,7 +491,7 @@
 
 </footer>
 <!-- Footer -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <div class="footer-copyright text-center py-3" style="background:#CBCBC6" >© 2020 Copyright:
     <a href="#" style="color:#DC143C;">Urban Living</a>
   </div>
   <!-- Copyright -->
@@ -713,7 +713,7 @@
             
   </script>
 @endif
-@if(Route::currentRouteName() == 'homeMap')
+@if(Route::currentRouteName() == 'homeMap' || Route::currentRouteName() == 'alldev')
 	<script>
 		var APP_URL = "{{ url('/') }}";
 		loadMapHomeDetail();

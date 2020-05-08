@@ -110,4 +110,4 @@ Route::get('/admin', 'HomeController@index')->name('home');
 
 //user module
 Route::get('/search','user\HomeController@search');
-Route::get('/all-development','user\HomeController@AllHome');
+Route::get('/all-development','user\HomeController@AllHome')->name('alldev');
