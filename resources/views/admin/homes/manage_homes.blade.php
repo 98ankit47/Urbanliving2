@@ -361,7 +361,7 @@ td, th {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-    <form id="gallery">  
+    <form id="galleryupdate">  
       <div class="modal-body">
             <div class="image-upload">
               <input type="file" id="files" name="files[]" multiple />
