@@ -101,11 +101,16 @@ Route::get('/development-Detail/{id}','user\HomeController@single')->name('devel
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 Route::get( 'home', 'HomeController@index');
 
+Route::get('/admin/selling',function(){
+    return view('admin.selling');
+});
+
 
 // end of admin section
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('home');
+
 
 
 //user module

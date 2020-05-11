@@ -59,6 +59,7 @@
          </div>
       </div>
       <div class="col-md-4">
+         <a href="/admin/selling">
          <div class="card" style="background-color:#09d99f;color:white;">
             <div class="card-body">
                <div class="row">
@@ -69,11 +70,12 @@
                   </div>
                   <div class="col-md-6" style="text-align:right;">
                      <span><b>1008</b></span><br><br>
-                     <span><b>Total sale</b></span>
+                     <span><b>Selling Request</b></span>
                   </div>
                </div>
             </div>
          </div>
+      </a>
       </div>
    </div>
 </div>
