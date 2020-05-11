@@ -10,6 +10,7 @@ use App\Models\FloorComponent;
 use App\Models\Enquiry;
 use App\HomeAvailable;
 use App\User;
+use App\SellingHome;
 Use \Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -182,6 +183,68 @@ class CommonController extends Controller
                 ]);
     }
 
+
+    public function sellingEnquiry()
+    {
+        $data ='';
+        $display;
+        $enquiries= SellingHome::orderBy('created_at','desc')->get();
+        $date = Carbon::now();
+
+        foreach($enquiries as $key=> $enquiry)
+        {
+            $minute=$date->diffInMinutes($enquiry->created_at);
+            $days=$date->diffInDays($enquiry->created_at);
+            $hours=$date->diffInHours($enquiry->created_at);
+            if($minute<60)
+            {
+                $display=$minute.' minute ago';
+            }
+            else if($minute>59 && $hours<24)
+            {
+                $display=$hours.' hours ago';
+            }
+            else if($minute>59 && $hours>23)
+            {
+                $display=$days.' days ago';
+            }
+            $home= homes::where('id',$enquiry->home_id)->get()->first();
+            if(($enquiry->seen)==0)
+            {
+                $color="C1C1C1";
+            }
+            else
+            {
+                $color="FFFFFF";
+            }
+                $data.='<div style="width:100%;">
+                <div class="card" style="background-color:#'.$color.';">
+                    <div class="card-header" id="headingOne">
+                        <div class="row" >
+                            <div class="col-md-12" >
+                                <strong style="text-decoration:none;color:black">There is selling Request from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span></strong>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="container activity">
+                            <div class="row">
+                                <div class="col-md-8" style="text-align:right;">
+                                    <span><b>Click here to view message</b></span>
+                                </div>
+                                
+                                <div class="col-md-4" style="text-align:right;">
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$display.' </i>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>';
+             
+        }
+        return $data; 
+    }
+
     public function enquiry()
     {
         $data ='';
@@ -283,6 +346,8 @@ class CommonController extends Controller
         }
         return $data; 
     }
+
+    
 
     public function enquiryDelete($id)
     {
