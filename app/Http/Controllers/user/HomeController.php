@@ -10,6 +10,7 @@ use App\Models\Communities;
 use App\Models\FloorComponent;
 use App\Models\HomeCommunity;
 use App\Models\Enquiry;
+use App\SellingHome;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -51,10 +52,58 @@ class HomeController extends Controller
 
     }
 
-    public function AllHome()
+    public function SellingHome(Request $request)
     {
-        $home= Homes::where('block','1')->with('communities')->get();
-        return view('user.homeDetail.index')->with('homes',$home);
+        $data=[];
+        $featured_img =  time().explode('.',$request['featured-image-name'])[0].'.' . explode('/', explode(':',substr($request['featured-image'],0,strpos(
+            $request['featured-image'],';')))[1])[1];  
+
+        \Image::make($request['featured-image'])->save(public_path('uploads\homes\\').$featured_img);
+       
+        $gallery=$request['gallery'];
+        $gallery_name=$request['gallery_name'];
+        foreach($gallery as $key => $gal)
+        {
+            $gal_img =  time().explode('.',$gallery_name[$key])[0].'.' . explode('/', explode(':',substr($gal,0,strpos(
+                $gal,';')))[1])[1];  
+    
+            \Image::make($gal)->save(public_path('uploads\gallery\\').$gal_img);
+            array_push($data,$gal_img);
+        }
+
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required',
+            'address'=>'required',
+            'bathroom'=>'required',
+            'bedroom'=>'required',
+            'price'   =>'required',
+            'city'   =>'required',
+            'state'   =>'required',
+            'zip'   =>'required',
+            'square'   =>'required',
+            'type'   =>'required',
+            'time'   =>'required',
+            ]);
+            
+            SellingHome::create([
+                "name"=>$request['name'],
+                "email"=>$request['email'],
+                "address"=>$request['address'],
+                "city"=>$request['city'],
+                "state"=>$request['state'],
+                "zip"=>$request['zip'],
+                "bedroom"=>$request['bedroom'],
+                "bathroom"=>$request['bathroom'],
+                "squareft"=>$request['square'],
+                "bathroom"=>$request['bathroom'],
+                "price"=>$request['price'],
+                "type"=>$request['type'],
+                "time"=>$request['time'],
+                "featured_image"=>$featured_img,
+                "gallery"=>implode(',', $data),
+            ]);
+        return "Success";
     }
 
     public function single(Request $request)
@@ -97,6 +146,7 @@ class HomeController extends Controller
         return "ankit";
 
     }
+
 
     public function UpdateEnquirySeen($id)
     {

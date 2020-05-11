@@ -531,6 +531,99 @@
 	 });
 </script>
 
+
+@if(Route::currentRouteName() == 'selling-home')
+<script>
+	var APP_URL = "{{ url('/') }}";
+	var id = window.location.href.split('/').pop();
+	var image,image_name;
+	var gal=[];
+	var gal_name=[];
+	  $('#file').on('change',function(e){
+			  let files = e.target.files[0];
+			  let reader = new FileReader();
+			  if(files){
+				reader.onloadend = ()=>{
+				  $('#chosen_feature_img').attr('src',reader.result);
+				  image = reader.result;
+				  image_name = files.name;
+				}
+				reader.readAsDataURL(files); 
+			}
+		  });
+  
+		  $('#files').on('change',function(evt){
+			var files = evt.target.files; 
+			for (var i = 0, f; f = files[i]; i++) {
+				// Only process image files.
+				if (!f.type.match('image.*')) {
+				  continue;
+				}
+  
+			  var reader = new FileReader();
+				// Closure to capture the file information.
+				  reader.onload = (function(theFile) {
+					return function(e) {
+					  // Render thumbnail.
+					  gal.push(e.target.result);
+					  gal_name.push(theFile.name);
+					};
+				  })(f);
+  
+			  // Read in the image file as a data URL.
+				reader.readAsDataURL(f);
+		  }
+		  });
+		  $(function () {
+			$('#selling').on('submit', function (e) {
+				alert();
+			  var name,email,bedroom,bathroom,price,address,city,state,zip,area,square,time,type;
+			  e.preventDefault();
+				  name            =  document.getElementById("name").value;         
+				  email           =  document.getElementById("mail").value;         
+				  address         =  document.getElementById("address").value;         
+				  city            =  document.getElementById("city").value;         
+				  state           =  document.getElementById("state").value;         
+				  zip             =  document.getElementById("zip").value;         
+				  bedroom         =  document.getElementById("bedroom").value;         
+				  bathroom        =  document.getElementById("bathroom").value;         
+				  square          =  document.getElementById("square").value;         
+				  price           =  document.getElementById("price").value;         
+				  type            =  document.getElementById("type").value;         
+				  time            =  document.getElementById("time").value;         
+				  $.ajax({
+					type: 'post',
+					url: '/api/selling-home/',
+					data:{
+					  'name'                : name,
+					  'email'               : email,
+					  'bedroom'             : bedroom,
+					  'bathroom'            : bathroom,
+					  'city'                : city,
+					  'state'               : state,
+					  'zip'                 : zip,
+					  'address'             : address,
+					  'square'              : square,
+					  'price'               : price,
+					  'type'                : type,
+					  'featured-image'      : image,
+					  'featured-image-name' : image_name,
+					  'gallery'             : gal,
+					  'gallery_name'        : gal_name,
+					  'time'                : time,
+					},
+					success: function ( ) {
+					  $('#success').html('Your Enquiry Has Been Posted').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
+					}
+				  });
+  
+			});
+  
+		});
+		
+  </script>
+  @endif
+
 @if(Route::currentRouteName() == 'developmentDetail')
   <script>   
         var APP_URL = "{{ url('/') }}";
