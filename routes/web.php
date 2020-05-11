@@ -95,6 +95,10 @@ Route::get('/homes',function(){
     return view('user.homeDetail.index');
 });
 
+Route::get('/sellHome',function(){
+    return view('user.sellHome.index');
+});
+
 Route::get('/development-Detail/{id}','user\HomeController@single')->name('developmentDetail');
  
 

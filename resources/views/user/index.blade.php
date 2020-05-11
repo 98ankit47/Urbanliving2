@@ -100,7 +100,7 @@
         <div class="card-body">
           <div class="card" style=" background-color:lightgray; height:350px;">
             <div class="card-body" style="text-align:center;"><br><br><br>
-              <h3 style="color:black;">Seach Development</h3><br>
+              <h3 style="color:black;">Search Development</h3><br>
               <div class="container" style="text-align:center; padding-left:22%;">
               <form action="/search" class="form-inline my-2" method="get">
                 <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
@@ -118,7 +118,7 @@
         <div class="card-body">
           <div class="card" style=" background-color:lightgray;height:350px;">
             <div class="card-body" style="text-align:center;"><br><br><br>
-              <h3 style="color:black;">Seach Map List</h3><br>
+              <h3 style="color:black;">Search Map List</h3><br>
               <div class="container" style="text-align:center; padding-left:22%;">
               <form action="/search" class="form-inline my-2" method="get">
                 <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
