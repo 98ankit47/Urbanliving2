@@ -60,6 +60,9 @@ Route::get('admin/home-gallery/{id}','CommonController@showGallery');
 Route::post('admin/update-gal/{id}','CommonController@updateGallery');
 Route::delete('admin/home-gallery/{home_id}/{id}','CommonController@deleteGallery');
 
+Route::get('admin/AllSelling/','CommonController@sellingEnquiry');
+Route::get('admin/Selling-seen-update/{id}','CommonController@sellingEnquiryUpdate');
+
 
 Route::get('admin/enquiry/','CommonController@enquiry');
 Route::get('admin/enquiry/{id}','CommonController@enquiryDetail');
@@ -69,6 +72,7 @@ Route::get('/admin/enquiry/update/{id}', 'user\HomeController@UpdateEnquirySeen'
 
 Route::get('admin/floorDetail/{id}','CommonController@userFloor');
 Route::get('admin/notification/','CommonController@notification');
+Route::get('admin/sell/notification/','CommonController@Sellnotification');
 
 
 

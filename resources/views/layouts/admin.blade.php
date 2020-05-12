@@ -165,12 +165,18 @@
                 </a>
               </li>
 
-             
-
               <li class="nav-item">
                 <a href="/admin/enquiry" class="nav-link">
-                <i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Enquiry</p>
+                <i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Home Enquiry</p>
                 <span class="badge bg-primary" style="margin-left:10px;" id="notification"></span>
+                </a>
+              </li>
+
+               
+              </li><li class="nav-item">
+                <a href="/admin/selling" class="nav-link">
+                <i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Selling Enquiry</p>
+                <span class="badge bg-primary" style="margin-left:10px;" id="Sellnotification"></span>
                 </a>
               </li>
 
@@ -281,6 +287,17 @@
       url: APP_URL+'/api/admin/notification',
       success: function(result){   
         $('#notification').html(result);
+      }   
+    });
+  }
+  loadSellNotification();
+  function loadSellNotification(){
+    var APP_URL = "{{ url('/') }}";
+    $.ajax({
+      type: 'GET',
+      url: APP_URL+'/api/admin/sell/notification',
+      success: function(result){   
+        $('#Sellnotification').html(result);
       }   
     });
   }
@@ -1661,6 +1678,30 @@ function Editloadmap(aid){
   </script>
 @endif
 
+@if(Route::currentRouteName() == 'selling')
+  <script>
+      loadSellingList();
+      function loadSellingList(){
+    $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/AllSelling',
+          success: function(result){
+          $('#SellingEnquiry').html(result);
+          }   
+      });
+    } 
+
+    function SeenSellingUpdate(id)
+    {
+      $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/Selling-seen-update/'+id,
+          success: function(result){
+          }   
+      });
+    }
+  </script>
+@endif
 
 
 @if(Route::currentRouteName() == 'enquiry_detail')

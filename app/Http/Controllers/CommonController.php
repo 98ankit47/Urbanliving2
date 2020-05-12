@@ -228,13 +228,17 @@ class CommonController extends Controller
                         <br>
                         <div class="container activity">
                             <div class="row">
-                                <div class="col-md-8" style="text-align:right;">
-                                    <span><b>Click here to view message</b></span>
-                                </div>
-                                
+                            <div class="col-md-4" style="text-align:right;">
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$enquiry->created_at.' </i>
+                                </div> 
                                 <div class="col-md-4" style="text-align:right;">
                                     <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$display.' </i>
                                 </div>  
+                                <div class="col-md-4" style="text-align:right;">
+                                    <span><a href="selling/'.$enquiry->id.'" onclick="SeenSellingUpdate('.$enquiry->id.')"><b>Click here to view message</b><a></span>
+                                </div>
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -244,6 +248,21 @@ class CommonController extends Controller
         }
         return $data; 
     }
+
+    public function sellingEnquiryUpdate($id)
+    {
+        SellingHome::where('id',$id)->update([
+            "seen"=>1
+        ]);
+    }
+
+    
+    public function ShowSell($id)
+    {
+        $SellHome=SellingHome::where('id',$id)->get()->first();
+        return view('admin.selling.selling')->with('selling',$SellHome);
+    }
+    
 
     public function enquiry()
     {
@@ -430,6 +449,19 @@ class CommonController extends Controller
     public function notification()
     {
         $enquiry=Enquiry::where('seen',0)->get()->count();
+        if($enquiry==0)
+        {
+            return '';
+        }
+        else
+        {
+            return $enquiry;
+        } 
+    }
+
+    public function Sellnotification()
+    {
+        $enquiry=SellingHome::where('seen',0)->get()->count();
         if($enquiry==0)
         {
             return '';

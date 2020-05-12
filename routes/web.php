@@ -105,9 +105,16 @@ Route::get('/development-Detail/{id}','user\HomeController@single')->name('devel
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
 Route::get( 'home', 'HomeController@index');
 
-Route::get('/admin/selling',function(){
-    return view('admin.selling');
+Route::get('/admin/selling/',function(){
+    return view('admin.selling.selling');
 });
+
+Route::get('/admin/selling/',function(){
+    return view('admin.selling.index');
+})->name('selling');
+
+Route::get('/admin/selling/{id}','CommonController@ShowSell');
+
 
 
 // end of admin section
