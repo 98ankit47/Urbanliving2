@@ -19,7 +19,10 @@
 
 <div class="container" style="font-family: Open Sans, sans-serif;">
 <div class="card">
-    <div class="wrapper avatar-img" style="height:314px;background-color:#fd5e5e;">
+    <div class="wrapper avatar-img" style="height:350px;background-color:#fd5e5e;">
+    <div class="back" style="text-align:left;margin-left:15px;margin-top:15px;" >
+    <a href="#"><i style="font-size:25px;color:white;" class="fa fa-arrow-left"></i></a>
+    </div>
         <img style="margin-top:7%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTloAqJtQ5buNfQE58fMkIhGZJlcoh1cEgHbIIFh13r2TkYNM_E&usqp=CAU" alt="Avatar" class="avatar">
         <br><br><br>
         <div class="w3-row">
@@ -38,18 +41,80 @@
         </div>
     </div>
         
-    <div class="card-body" style="height:500px;">
-        <div id="Recent" class="w3-container city active" style="display:none"><br>
+    <div class="card-body" style="height:600px;">
+        <div id="Recent" class="w3-container city active" style="display:none"><br><br>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card" style="text-align:center;background-color:#91a6f4;">
-                        <span>12</span><br>
-                        <span>YOUR ENQUIRIES</span>
+                <div class="col-md-3">
+                    <div class="card" style="text-align:center;background-color:#91a6f4;color:white;height:70px;">
+                        <span style="font-size:20px;"><b>3</b></span>
+                        <span style="font-size:20px;">MY ENQUIRIES</span>
                     </div>
                 </div>
-                <div class="col-md-8">
-
+                <div class="col-md-9">
+                    <div class="card accordion" id="accordionExample">
+                        <div class="card-header" id="headingOne" style="height:70px;">
+                            <div class="row">
+                                <div class="col-md-12" style="height:28px;">
+                                    <span>Message sent by the user will be displayed here.</span>
+                                </div>
+                            </div>
+                            <div class="row showbtn" style="text-align:center;">
+                                <div class="col-md-12">
+                                    <button class="btn btn-link" style="color:black;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        See More &nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                    </button>
+                                 </div>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card">
+                                <div class="card-body">
+                                    Second Message sent by the user will be displayed here.
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    Third Message sent by the user will be displayed here.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div><br><hr><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" style="text-align:center;background-color:#91a6f4;color:white;height:120px;">
+                        <br><span style="font-size:20px;"><b>3</b></span><br>
+                        <span style="font-size:20px;">MY TOURS</span>
+                    </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="card" style="">
+                        <img class="card-img-top" style="height:120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU">
+                        <div class="card-body">
+                            <span>Forest House</span><br><br>
+                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn">VIEW</button>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="card" style="">
+                        <img class="card-img-top" style="height:120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU">
+                        <div class="card-body">
+                            <span>Houstan House</span><br><br>
+                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn">VIEW</button>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="card" style="">
+                        <img class="card-img-top" style="height:120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0SD6h1f2t6g5HreAWg9zv2FV2BIZ-i39EcmfJ9VQCKSz_YgBm&usqp=CAU">
+                        <div class="card-body">
+                            <span>Any House</span><br><br>
+                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn">VIEW</button>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
 
@@ -103,7 +168,9 @@
                             <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="numberHelp" placeholder="Enter number">
                             <small id="numberHelp" class="form-text text-muted">Change Your Phone No. !</small>
                         </div>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <div class="updatebtn" style="text-align:center;">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
                     </form>
                 </div>
                 <div class="col-md-6">
@@ -116,7 +183,9 @@
                             <label for="exampleInputPassword2">New Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword2" placeholder="New Password">
                         </div>
-                        <button type="submit" class="btn btn-primary">Update Passowrd</button>
+                        <div class="updatebtn" style="text-align:center;">
+                            <button type="submit" class="btn btn-primary">Update Passowrd</button>
+                        </div>
                     </form>
                 </div>  
             </div>
@@ -147,7 +216,9 @@
                     <div class="col-md-6">
                         <label for="exampleInputCity">State</label>
                         <select class="form-control">
-                            <option>Default select</option>
+                            <option>Choose..</option>
+                            <option>Houstan</option>
+                            <option>TX</option>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -155,7 +226,9 @@
                         <input type="text" class="form-control" id="exampleInputZip" aria-describedby="zioHelp" placeholder="Zip">
                     </div>
                 </div><br>
+                <div class="updatebtn" style="text-align:center;">
                     <button type="submit" class="btn btn-primary">Update</button>
+                </div>
             </form>
         </div>
     </div>
