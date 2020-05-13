@@ -22,28 +22,45 @@ class HomeController extends Controller
    
     public function index(Request $request)
     {
-        $status=1;
+        $status=5;
+        $block=5;
         if($request['search'])
         {
-            if($request['seach']=="Available")
+            if($request['search']=="Available" || $request['search']=="available"  )
             {
                 $status=1;           
             }
-            else if($request['seach']=="Hold"||$request['seach']=="hold")
+            else if($request['search']=="Hold"||$request['search']=="hold")
             {
                 $status=3; 
             }
-            else if($request['seach']=="sold" || $request['seach']=="Sold")
+            else if($request['search']=="sold" || $request['search']=="Sold")
             {
                 $status=2; 
             }
-            else if($request['seach']=="under" || $request['seach']=="Under")
+            else if($request['search']=="under" || $request['search']=="Under")
             {
                 $status=4; 
             }
+            else if($request['search']=="active" || $request['search']=="Active")
+            {
+                $block=1; 
+            }
+            else if($request['search']=="Deactive" || $request['search']=="deactive")
+            {
+                $block=0; 
+            }
              
             $data ='';
-            $homes = Homes::where('title','LIKE','%'.$request['search'].'%')->orwhere('status_id',$status)->get();
+            $data1 ='';
+            $homes = Homes::where('title','LIKE','%'.$request['search'].'%')->orWhere('status_id',$status)->orWhere('block',$block)->get();
+            $count = Homes::where('title','LIKE','%'.$request['search'].'%')->orWhere('status_id',$status)->orWhere('block',$block)->get()->count();
+            if($count==0)
+            {
+
+                $data1.='<div style="color:red;font-weight:bold">No Record Found</div>';
+                return $data1;
+            }
             $data.='<div class="col-md-4"  >
             <a style="text-decoration:none" href="/admin/home/create">
                 <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
