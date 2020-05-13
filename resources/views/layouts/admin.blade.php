@@ -1268,7 +1268,6 @@ function Editloadmap(aid){
             var search;
             e.preventDefault();
                 search            =  document.getElementById("search").value;  
-                alert(search);
                 $.ajax({
                   type: 'get',
                   url: '/api/admin/home/',
