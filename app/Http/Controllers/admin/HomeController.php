@@ -20,71 +20,159 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
    
-    public function index()
+    public function index(Request $request)
     {
-        $data ='';
-        $homes = Homes::all();
-        $data.='<div class="col-md-4"  >
-        <a style="text-decoration:none" href="/admin/home/create">
-            <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
-            <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
-            <div class="card-body"> <br>
-                <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW HOME</h4>
-            </div>
-            </div>
-        </a>
-        </div>';
-        foreach($homes as $ky => $home )
+        $status=1;
+        if($request['search'])
         {
-            if($home->status_id==1)
+            if($request['seach']=="Available")
             {
-                $color="#9FD802";
+                $status=1;           
             }
-            else if($home->status_id==2)
+            else if($request['seach']=="Hold"||$request['seach']=="hold")
             {
-                $color="#F80000";
+                $status=3; 
             }
-            else if($home->status_id==3)
+            else if($request['seach']=="sold" || $request['seach']=="Sold")
             {
-                $color="#f3c623";
+                $status=2; 
             }
-            else if($home->status_id==4)
+            else if($request['seach']=="under" || $request['seach']=="Under")
             {
-                $color="#47A5A6";
+                $status=4; 
             }
-            $status=status::where('id',$home->status_id)->get()->first();
-            $data .=' <div class="col-md-4" >
-            <div class="card">
-              <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
-              <div class="card-body">
-                <p class="category category__01 " style="background:'.$color.';">'.$status->status.'</p>
-                <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
-                 if($home->block==0)
-                 {
-                    $data.='<div class="container" style="text-align:center;">
-                    <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
-                 }
-                else
+             
+            $data ='';
+            $homes = Homes::where('title','LIKE','%'.$request['search'].'%')->orwhere('status_id',$status)->get();
+            $data.='<div class="col-md-4"  >
+            <a style="text-decoration:none" href="/admin/home/create">
+                <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
+                <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+                <div class="card-body"> <br>
+                    <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW HOME</h4>
+                </div>
+                </div>
+            </a>
+            </div>';
+            foreach($homes as $ky => $home )
+            {
+                if($home->status_id==1)
                 {
-                    $data.='<div class="container" style="text-align:center;">
-                    <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="fa fa-check">&nbsp;Active</i></a></div>';
+                    $color="#9FD802";
                 }
-
-
-                 $data.='<br><div class="row">
-                 <div class ="col-md-6" style="text-align:center;">
-                    <a style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
-                 </div> 
-                  
-                 <div class ="col-md-6" style="text-align:center;">
-                    <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
+                else if($home->status_id==2)
+                {
+                    $color="#F80000";
+                }
+                else if($home->status_id==3)
+                {
+                    $color="#f3c623";
+                }
+                else if($home->status_id==4)
+                {
+                    $color="#47A5A6";
+                }
+                $status=status::where('id',$home->status_id)->get()->first();
+                $data .=' <div class="col-md-4" >
+                <div class="card">
+                  <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
+                  <div class="card-body">
+                    <p class="category category__01 " style="background:'.$color.';">'.$status->status.'</p>
+                    <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
+                     if($home->block==0)
+                     {
+                        $data.='<div class="container" style="text-align:center;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                     }
+                    else
+                    {
+                        $data.='<div class="container" style="text-align:center;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="fa fa-check">&nbsp;Active</i></a></div>';
+                    }
+    
+    
+                     $data.='<br><div class="row">
+                     <div class ="col-md-6" style="text-align:center;">
+                        <a style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
+                     </div> 
+                      
+                     <div class ="col-md-6" style="text-align:center;">
+                        <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
+                    </div>
+                    </div>
+                     </div>
+                </div>
+              </div>';
+            } 
+            return $data ;
+        }
+        else
+        {
+            $data ='';
+            $homes = Homes::all();
+            $data.='<div class="col-md-4"  >
+            <a style="text-decoration:none" href="/admin/home/create">
+                <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
+                <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+                <div class="card-body"> <br>
+                    <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW HOME</h4>
                 </div>
                 </div>
-                 </div>
-            </div>
-          </div>';
-        } 
-        return $data ;
+            </a>
+            </div>';
+            foreach($homes as $ky => $home )
+            {
+                if($home->status_id==1)
+                {
+                    $color="#9FD802";
+                }
+                else if($home->status_id==2)
+                {
+                    $color="#F80000";
+                }
+                else if($home->status_id==3)
+                {
+                    $color="#f3c623";
+                }
+                else if($home->status_id==4)
+                {
+                    $color="#47A5A6";
+                }
+                $status=status::where('id',$home->status_id)->get()->first();
+                $data .=' <div class="col-md-4" >
+                <div class="card">
+                  <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
+                  <div class="card-body">
+                    <p class="category category__01 " style="background:'.$color.';">'.$status->status.'</p>
+                    <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
+                     if($home->block==0)
+                     {
+                        $data.='<div class="container" style="text-align:center;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                     }
+                    else
+                    {
+                        $data.='<div class="container" style="text-align:center;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="fa fa-check">&nbsp;Active</i></a></div>';
+                    }
+    
+    
+                     $data.='<br><div class="row">
+                     <div class ="col-md-6" style="text-align:center;">
+                        <a style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
+                     </div> 
+                      
+                     <div class ="col-md-6" style="text-align:center;">
+                        <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
+                    </div>
+                    </div>
+                     </div>
+                </div>
+              </div>';
+            } 
+            return $data ;
+        }
+       
     }
 
     public function data()

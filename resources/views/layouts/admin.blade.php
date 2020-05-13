@@ -1261,6 +1261,27 @@ function Editloadmap(aid){
               }   
           });
         }  
+       
+        
+      $(function () {
+          $('#homeSearch').on('submit', function (e) {
+            var search;
+            e.preventDefault();
+                search            =  document.getElementById("search").value;  
+                alert(search);
+                $.ajax({
+                  type: 'get',
+                  url: '/api/admin/home/',
+                  data:{
+                    'search'           : search,
+                  },
+                  success: function(result){   
+                    $('#home_list').html(result);
+                  }  
+                });
+          });
+      });
+
       function deleteHome(id)
       {       $.ajax({
               url: APP_URL + '/api/admin/home/'+ id,

@@ -24,6 +24,16 @@
 <hr>
 
 <br>
+<div class="row">
+  <div class="col-md-8"></div>
+    <div class="col-md-4">
+    <form class="form-inline my-2 my-lg-0" id="homeSearch">
+      <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search Home" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+<br>
   <div class="row" id="home_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
   </div>
 
