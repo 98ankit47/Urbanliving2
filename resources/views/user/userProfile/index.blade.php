@@ -13,7 +13,7 @@
 }
 
 .w3-bottombar {
-      width: 25%;
+      width: 33.33%;
     }
 </style>
 
@@ -34,9 +34,6 @@
             </a>
             <a href="javascript:void(0)" onclick="openActivity(event, 'Account');">
                 <div style="color:white;" class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding"><b>MY ACCOUNT</b></div>
-            </a>
-            <a href="javascript:void(0)" onclick="openActivity(event, 'Address');">
-                <div style="color:white;" class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding"><b>MY ADDRESS</b></div>
             </a>
         </div>
     </div>
@@ -190,47 +187,7 @@
                 </div>  
             </div>
         </div>
-
-        <div id="Address" class="w3-container city" style="display:none"><br>
-            <h3><b>My Address</b></h3><br><br>
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputAddress">Address</label>
-                    <input type="text" class="form-control" id="exampleInputAddress" aria-describedby="addressHelp" placeholder="Street Address1">
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="exampleInputAddress1">Address 2</label>
-                            <input type="text" class="form-control" id="exampleInputAddress1" aria-describedby="addressHelp1" placeholder="Street Address2">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="exampleInputCity">Town/City</label>
-                            <input type="text" class="form-control" id="exampleInputCity" aria-describedby="cityHelp" placeholder="Town/City">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="exampleInputCity">State</label>
-                        <select class="form-control">
-                            <option>Choose..</option>
-                            <option>Houstan</option>
-                            <option>TX</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="exampleInputZip">PostalCode/Zip</label>
-                        <input type="text" class="form-control" id="exampleInputZip" aria-describedby="zioHelp" placeholder="Zip">
-                    </div>
-                </div><br>
-                <div class="updatebtn" style="text-align:center;">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </div>
-            </form>
-        </div>
+ 
     </div>
 </div><br><br>
 
