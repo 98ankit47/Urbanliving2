@@ -52,6 +52,13 @@ class HomeController extends Controller
 
     }
 
+    public function AllHome()
+    {
+        $homes=Homes::all();
+        return view('user.homeDetail.index')->with('homes',$homes);
+    }
+
+
     public function SellingHome(Request $request)
     {
         $data=[];
