@@ -99,6 +99,10 @@ Route::get('/userProfile',function(){
     return view('user.userProfile.index');
 });
 
+Route::get('/neighbor',function(){
+    return view('user.neighbor.index');
+});
+
 Route::get('/sellHome',function(){
     return view('user.sellHome.index');
 })->name('selling-home');
