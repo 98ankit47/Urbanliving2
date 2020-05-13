@@ -282,7 +282,7 @@
 		<ul class="nav navbar-nav">
 			<li class="nav-item"><a href="#" class="nav-link">Development</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="/maps" class="nav-link">Map</a></li>&nbsp;&nbsp;
-			<li class="nav-item"><a href="#" class="nav-link">Features</a></li>&nbsp;&nbsp;
+			<li class="nav-item"><a href="/neighbor" class="nav-link">Neighborhood</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="/sellHome" class="nav-link">Sell Home</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="#" class="nav-link">Lending</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>&nbsp;&nbsp;
