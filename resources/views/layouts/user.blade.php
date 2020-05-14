@@ -280,11 +280,10 @@
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<ul class="nav navbar-nav">
-			<li class="nav-item"><a href="#" class="nav-link">Development</a></li>&nbsp;&nbsp;
-			<li class="nav-item"><a href="/maps" class="nav-link">Map</a></li>&nbsp;&nbsp;
+			<li class="nav-item"><a href="/all-development" class="nav-link">Development</a></li>&nbsp;&nbsp;
+			<li class="nav-item"><a href="/home-map" class="nav-link">Map</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="/neighbor" class="nav-link">Neighborhood</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="/sellHome" class="nav-link">Sell Home</a></li>&nbsp;&nbsp;
-			<li class="nav-item"><a href="#" class="nav-link">Lending</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="/userProfile" class="nav-link">About Us</a></li>
 		</ul>
 		<form class="navbar-form form-inline" style="padding-left:3%;">
@@ -405,7 +404,9 @@
 </div>
                                                                           
 <br><br>
-
+<?php
+	$userid=Auth::user()->id;
+?>
 <div class="container">
   @yield('content')
 </div>
@@ -626,14 +627,23 @@
 
   @if(Route::currentRouteName() == 'profile')
 	<script>
-		alert();
+	loadSellList();
+	function loadSellList(){
+		$.ajax({
+		type: 'GET',
+		url: APP_URL+'/api/userSell/'+<?php echo $userid ?>,
+		success: function(result){   
+			$('#sellrequest').html(result);
+		}   
+		});
+	}
 	loadScheduleList();
 	function loadScheduleList(){
 		$.ajax({
 		type: 'GET',
-		url: APP_URL+'/api/userSchedule/',
+		url: APP_URL+'/api/userSchedule/'+<?php echo $userid ?>,
 		success: function(result){   
-			$('#schedule').html(result);
+			$('#tour').html(result);
 		}   
 		});
 	}

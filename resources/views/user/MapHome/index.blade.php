@@ -105,115 +105,139 @@
 
     </style>
 
- <div class="container">
-        <a type="button" style="background-color:darkgray;width:60px;" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        &nbsp;&nbsp;&nbsp;<i class="fa fa-filter" style="color:white;"></i>
-        </a><br>
-        <div class="dropdown-menu" style="width:350px;" aria-labelledby="navbarDropdown">
-        <form class="details-containerr" style="font-family: Open Sans, sans-serif; margin-left: 5px; margin-right: 5px;">
-            <div class="form-row "> 
-                <div class="form-group col-md-6">
-                    <label for="neighbor">NEIGHBORHOOD</label>
-                        <select id="neighbor" class="form-control">
-                            <option value="">Any Neighborhood</option>
-                            <option value="">Balleir</option>
-                            <option value="">Camp Logan</option>
-                            <option value="">Cottage Grove</option>
-                        </select>
+ <div class="container" style="text-align:left;">
+ <div class="wrapper" style="background-color:#557A95; height:45px; width:108.5%;text-align:left;">
+    <div class="row">
+        <div class="col-md-3">
+            <form class="navbar-form form-inline">
+                <div class="input-group search-box" style="margin-top:4px;">								
+                    <input type="text" id="search" class="form-control" placeholder="Address, Zip, Neighborhood">
+                    <a type="button"><span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span></a>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="beds">BEDS</label>
-                        <select id="beds" class="form-control">
-                            <option value="">Any Beds</option>
-                            <option value="">1+ Bed</option>
-                            <option value="">2+ Bed</option>
-                            <option value="">3+ Bed</option>
-                        </select>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <select class="form-control" style="margin-top:4px;text-align:left;width:170px;">
+                <option>Single Family</option>
+                <option>TownHouse/Condo</option>
+                <option>Mid/HiRise Condo</option>
+                <option>Lot/Land</option>
+                <option>Multi Family</option>
+                <option>Country Homes/Acreage</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <select class="form-control" style="margin-top:4px;text-align:left;width:170px;">
+                <option>Any Price</option>
+                <option>$0 - $50,000</option>
+                <option>$50,000 - $55,000</option>
+                <option>$55,000 - $60,000</option>
+                <option>$60,000 - $65,000</option>
+                <option>$65,000 - $70,000</option>
+            </select>
+        </div>
+        <div class="col-md-5" style="text-align:right;color:white;">
+            <div class="row">
+                <div class="col-md-6" style="margin-top:9px;">
+                    <span>50 of 200 Homes</span>
+                </div>
+                <div class="col-md-3">
+                    <a type="button" style="margin-top:9px;" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    &nbsp;&nbsp;&nbsp;<i class="fa fa-filter" style="color:white;"></i>
+                    <div class="dropdown-menu" style="width:300px;" aria-labelledby="navbarDropdown">
+                        <form class="details-containerr" style="font-family: Open Sans, sans-serif; margin-left: 5px; margin-right: 5px;">
+                            <div class="form-row "> 
+                                <div class="form-group col-md-6">
+                                    <label for="neighbor">NEIGHBORHOOD</label>
+                                        <select id="neighbor" class="form-control">
+                                            <option value="">Any Neighborhood</option>
+                                            <option value="">Balleir</option>
+                                            <option value="">Camp Logan</option>
+                                            <option value="">Cottage Grove</option>
+                                        </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="beds">BEDS</label>
+                                        <select id="beds" class="form-control">
+                                            <option value="">Any Beds</option>
+                                            <option value="">1+ Bed</option>
+                                            <option value="">2+ Bed</option>
+                                            <option value="">3+ Bed</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="form-row "> 
+                                <div class="form-group col-md-6">
+                                    <label for="stories">STORIES</label>
+                                        <select id="stories" class="form-control">
+                                            <option value="">1 Stories</option>
+                                            <option value="">2 Stories</option>
+                                            <option value="">3 Stories</option>
+                                            <option value="">4 Stories</option>
+                                        </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Garage">GARAGES</label>
+                                        <select id="Garage" class="form-control">
+                                            <option value="">1+</option>
+                                            <option value="">2+</option>
+                                            <option value="">3+</option>
+                                            <option value="">4+</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="form-row "> 
+                                <div class="form-group col-md-6">
+                                    <label for="ul">TIME ON UL</label>
+                                        <select id="ul" class="form-control">
+                                            <option value="">7 Days</option>
+                                            <option value="">14 Days</option>
+                                            <option value="">21 Days</option>
+                                            <option value="">28 Days</option>
+                                        </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="built">YEAR BUILT</label>
+                                        <select id="built" class="form-control">
+                                            <option value="">Any</option>
+                                            <option value="">New Constructed</option>
+                                            <option value="">Upto 2020</option>
+                                            <option value="">Upto 2019</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="form-row "> 
+                                <div class="form-group col-md-6">
+                                    <label for="bath">Bath</label>
+                                        <select id="bath" class="form-control">
+                                            <option value="">Any Bath</option>
+                                            <option value="">1 Bath</option>
+                                            <option value="">2 Bath</option>
+                                            <option value="">3 Bath</option>
+                                        </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="sq">SQUARE FEET</label>
+                                        <select id="sq" class="form-control">
+                                            <option value="">1000</option>
+                                            <option value="">2000</option>
+                                            <option value="">3000</option>
+                                            <option value="">4000</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-success my-2 my-sm-0" style="margin-left:130px;" type="submit">Apply</button>
+                        </form>
+                    </div>
+                    </a><br>
+                </div>
+                <div class="col-md-3" style="text-align:left;">
+                    <a type="button" style="margin-top:9px;" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a>
                 </div>
             </div>
-            <div class="form-row "> 
-                <div class="form-group col-md-6">
-                    <label for="stories">STORIES</label>
-                        <select id="stories" class="form-control">
-                            <option value="">1 Stories</option>
-                            <option value="">2 Stories</option>
-                            <option value="">3 Stories</option>
-                            <option value="">4 Stories</option>
-                        </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="Garage">GARAGES</label>
-                        <select id="Garage" class="form-control">
-                            <option value="">1+</option>
-                            <option value="">2+</option>
-                            <option value="">3+</option>
-                            <option value="">4+</option>
-                        </select>
-                </div>
-            </div>
-            <div class="form-row "> 
-                <div class="form-group col-md-6">
-                    <label for="ul">TIME ON UL</label>
-                        <select id="ul" class="form-control">
-                            <option value="">7 Days</option>
-                            <option value="">14 Days</option>
-                            <option value="">21 Days</option>
-                            <option value="">28 Days</option>
-                        </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="built">YEAR BUILT</label>
-                        <select id="built" class="form-control">
-                            <option value="">Any</option>
-                            <option value="">New Constructed</option>
-                            <option value="">Upto 2020</option>
-                            <option value="">Upto 2019</option>
-                        </select>
-                </div>
-            </div>
-            <div class="form-row "> 
-                <div class="form-group col-md-6">
-                    <label for="bath">Bath</label>
-                        <select id="bath" class="form-control">
-                            <option value="">Any Bath</option>
-                            <option value="">1 Bath</option>
-                            <option value="">2 Bath</option>
-                            <option value="">3 Bath</option>
-                        </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="year">YEAR BUILT</label>
-                        <select id="year" class="form-control">
-                            <option value="">Any</option>
-                            <option value="">New Constructed</option>
-                            <option value="">Upto 2020</option>
-                            <option value="">Upto 2019</option>
-                        </select>
-                </div>
-            </div>
-            <div class="form-row "> 
-                <div class="form-group col-md-6">
-                    <label for="sq">SQUARE FEET</label>
-                        <select id="sq" class="form-control">
-                            <option value="">1000</option>
-                            <option value="">2000</option>
-                            <option value="">3000</option>
-                            <option value="">4000</option>
-                        </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="lot">LOT SQ. FOOTAGE</label>
-                        <select id="lot" class="form-control">
-                            <option value="">5000</option>
-                            <option value="">10,000</option>
-                            <option value="">15,000</option>
-                            <option value="">20,000</option>
-                        </select>
-                </div>
-            </div>
-            <button class="btn btn-outline-success my-2 my-sm-0" style="margin-left:130px;" type="submit">Apply</button>
-        </form>
-        </div><br>
+        </div>
+    </div>
+</div>
         <div class="row" style="width:1220px;">
         
             <div id="map" class="col-md-8">
@@ -289,7 +313,12 @@
             x[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " w3-red";
             }
-                        
+                </script>        
+
+<script>
+          $('.dropdown-menu').click(function(e) {
+    e.stopPropagation();
+});
             </script>
 
     @endsection
