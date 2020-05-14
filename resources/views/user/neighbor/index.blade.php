@@ -109,7 +109,7 @@
             </div><br>
             <div id="home3" class="card homebox1" style="width: 100%; height:24rem;" >
                 <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0SD6h1f2t6g5HreAWg9zv2FV2BIZ-i39EcmfJ9VQCKSz_YgBm&usqp=CAU"/>
-                <a href="/neighborDetails" type="button" class="btn detail btn-outline-dark">Details</a>
+                <a href="/neighborDetail" type="button" class="btn detail btn-outline-dark">Details</a>
                 <a href="/neighborHomes" type="button" class="btn single btn-outline-dark">Single Family</a>
                 <a href="/neighborHomes" type="button" class="btn town btn-outline-dark">TownHouse/Condo</a>
                 <a href="/neighborHomes" type="button" class="btn mid btn-outline-dark">Mid/Hi Rise Condo</a>
