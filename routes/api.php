@@ -85,7 +85,8 @@ Route::get('floorComponent/{type}/{floor_id}/{component_id}','CommonController@u
 //user create
 Route::post('user','UserController@signup');
 Route::post('admin/changeUserDeatil','UserController@ChangeDetail');
-Route::get('userSchedule','CommonController@Userscheduleshow');
+Route::get('userSell/{id}','CommonController@Userscheduleshow');
+Route::get('userSchedule/{id}','CommonController@Usertour');
 
 
 

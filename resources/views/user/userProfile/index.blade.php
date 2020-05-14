@@ -50,10 +50,8 @@
                 <div class="col-md-9">
                     <div class="card accordion" id="accordionExample">
                         <div class="card-header" id="headingOne" style="height:70px;">
-                            <div class="row">
-                                <div class="col-md-12" style="height:28px;">
-                                    <span>Message sent by the user will be displayed here.</span>
-                                </div>
+                            <div class="row" id="tour">
+                                
                             </div>
                             <div class="row showbtn" style="text-align:center;">
                                 <div class="col-md-12">
@@ -81,12 +79,12 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="card" style="text-align:center;background-color:#91a6f4;color:white;height:120px;">
-                        <br><span style="font-size:20px;"><b>3</b></span><br>
-                        <span style="font-size:20px;">MY TOURS</span>
+                        <br><span style="font-size:20px;"><b>1</b></span><br>
+                        <span style="font-size:20px;">MY Selling Request</span>
                     </div>
                 </div> 
                 <div class="col-md-9">
-                    <div class="row" id="schedule">
+                    <div class="row" id="sellrequest">
                         <div class="col-md-4">
                             <div class="card" style="">
                                 <img class="card-img-top" style="height:120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU">
@@ -178,7 +176,7 @@
         </div>
  
     </div>
-</div><br><br>
+</div>
 
 </div>
 

@@ -366,10 +366,39 @@ class CommonController extends Controller
         return $data; 
     }
 
-    public function Userscheduleshow()
+    public function Userscheduleshow($id)
     {
-
+        $user=User::where('id',$id)->get()->first();
+        $enquiry = SellingHome::where('email',$user->email)->get();
+        $data='';
+        foreach($enquiry as $key=> $enq)
+        {
+            $data.='<div class="col-md-4">
+                        <div class="card" style="">
+                            <img class="card-img-top" style="height:120px;" src="/uploads/selling/'.$enq->featured_image.'">
+                                <div class="card-body">
+                                <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn">VIEW DETAIL</button>
+                            </div>
+                        </div>
+                    </div>';
+        }
+        return $data;
     }
+
+    public function Usertour($id)
+    {
+        $user=User::where('id',$id)->get()->first();
+        $enquiry = Enquiry::where('email',$user->email)->get();
+        $data='';
+        foreach($enquiry as $key=> $enq)
+        {
+            $data.=' <div class="col-md-12" style="height:28px;">
+                        <span>Message sent by the user will be displayed here.</span>
+                    </div>';
+        }
+        return $data;
+    }
+
     public function enquiryDelete($id)
     {
         $enquiry = Enquiry::findOrFail($id);
