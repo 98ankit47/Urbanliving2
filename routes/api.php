@@ -53,7 +53,7 @@ Route::delete( 'admin/home-feature/{id}', 'admin\HomeFeatureController@destroy')
 
 Route::get('admin/logo','CommonController@logo');
 Route::post('admin/logo','CommonController@addLogo');
-Route::post('admin/changePaas','CommonController@changepass');
+Route::post('admin/changePaas','UserController@changepass');
 
 
 Route::get('admin/home-gallery/{id}','CommonController@showGallery');
@@ -83,7 +83,10 @@ Route::post('selling-home','user\HomeController@SellingHome');
 Route::get('floorComponent/{type}/{floor_id}/{component_id}','CommonController@userFloorComponent');
 
 //user create
-Route::post('user','user\HomeController@signup');
+Route::post('user','UserController@signup');
+Route::post('admin/changeUserDeatil','UserController@ChangeDetail');
+Route::get('userSchedule','CommonController@Userscheduleshow');
+
 
 
 Route::get('map','user\HomeController@map');

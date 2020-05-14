@@ -10,6 +10,7 @@ use App\Models\Communities;
 use App\Models\FloorComponent;
 use App\Models\HomeCommunity;
 use App\Models\Enquiry;
+use App\Models\Favourite;
 use App\SellingHome;
 use App\User;
 use Illuminate\Http\Request;
@@ -162,23 +163,7 @@ class HomeController extends Controller
         ]);
         return redirect()->route('enquiry_detail',$id);
     }
-    public function signup(Request $request)
-    {
-        $this->validate($request,[
-            'email'=>'required',
-            'name'=>'required',
-            'password' => ['required', 'string', 'min:8',],
-            ]);
-
-        User::create([
-            'email'     =>  $request['email'],
-            'name'      =>  $request['name'],
-            'password' => Hash::make($request['password']),
-            'type'      =>  'user',
-            'status'    =>  1,
-        ]);
-        return "success";
-    }
+   
     public function map(Request $request)
     {
         return Homes::where('block','1')->get();

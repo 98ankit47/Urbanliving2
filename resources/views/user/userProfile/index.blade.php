@@ -38,7 +38,7 @@
         </div>
     </div>
         
-    <div class="card-body" style="height:600px;">
+    <div class="card-body" >
         <div id="Recent" class="w3-container city active" style="display:none"><br><br>
             <div class="row">
                 <div class="col-md-3">
@@ -85,30 +85,16 @@
                         <span style="font-size:20px;">MY TOURS</span>
                     </div>
                 </div> 
-                <div class="col-md-3">
-                    <div class="card" style="">
-                        <img class="card-img-top" style="height:120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU">
-                        <div class="card-body">
-                            <span>Forest House</span><br><br>
-                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn">VIEW</button>
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-md-3">
-                    <div class="card" style="">
-                        <img class="card-img-top" style="height:120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU">
-                        <div class="card-body">
-                            <span>Houstan House</span><br><br>
-                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn">VIEW</button>
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-md-3">
-                    <div class="card" style="">
-                        <img class="card-img-top" style="height:120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0SD6h1f2t6g5HreAWg9zv2FV2BIZ-i39EcmfJ9VQCKSz_YgBm&usqp=CAU">
-                        <div class="card-body">
-                            <span>Any House</span><br><br>
-                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn">VIEW</button>
+                <div class="col-md-9">
+                    <div class="row" id="schedule">
+                        <div class="col-md-4">
+                            <div class="card" style="">
+                                <img class="card-img-top" style="height:120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU">
+                                <div class="card-body">
+                                    <span>Forest House</span><br><br>
+                                    <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn">VIEW</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div> 
@@ -146,24 +132,22 @@
         </div>
 
         <div id="Account" class="w3-container city" style="display:none"><br>
-            <h3><b>My Profile</b></h3><br><br>
+            <div id="success"></div>
+            <h3><b>My Profile</b></h3><br>
             <div class="row">
                 <div class="col-md-6">
-                    <form>
+                    <form id="userdetail">
                         <div class="form-group">
                             <label for="exampleInputName">UserName</label>
-                            <input type="text" class="form-control" id="exampleInputName" aria-describedby="NameHelp" placeholder="Enter UserName">
-                            <small id="NameHelp" class="form-text text-muted">Change Your UserName !</small>
+                            <input type="text" class="form-control" id="username" aria-describedby="NameHelp" value="{{ Auth::user()->name }}">
+                            <small id="username" class="form-text text-muted">Change Your UserName !</small>
                         </div>
+                        <input type="hidden" class="form-control" id="id" value="{{Auth::user()->id}}">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control" id="email" 
+                            aria-describedby="emailHelp" value="{{ Auth::user()->email }}">
                             <small id="emailHelp" class="form-text text-muted">Change Your Email !</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPhone">Phone No.</label>
-                            <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="numberHelp" placeholder="Enter number">
-                            <small id="numberHelp" class="form-text text-muted">Change Your Phone No. !</small>
                         </div>
                         <div class="updatebtn" style="text-align:center;">
                             <button type="submit" class="btn btn-primary">Update</button>
@@ -171,14 +155,19 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    <form>
+                    <form id="changepass">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Current Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Current Password">
+                            <input type="password" class="form-control" id="current" placeholder="Current Password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword2">New Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="New Password">
+                            <input type="password" class="form-control" id="newpass" placeholder="New Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword2">New Password</label>
+                            <input type="password" class="form-control" id="Confirmpass" placeholder="Confirm Password">
+                        <input type="hidden" class="form-control" id="id" value="{{Auth::user()->id}}">
                         </div>
                         <div class="updatebtn" style="text-align:center;">
                             <button type="submit" class="btn btn-primary">Update Passowrd</button>

@@ -366,15 +366,15 @@ class CommonController extends Controller
         return $data; 
     }
 
-    
+    public function Userscheduleshow()
+    {
 
+    }
     public function enquiryDelete($id)
     {
         $enquiry = Enquiry::findOrFail($id);
-        $enquiry->delete(); 
+                $enquiry->delete(); 
     }
-     
- 
     public function userFloor($id)
     {
         $data ='';
@@ -480,23 +480,7 @@ class CommonController extends Controller
         return $data;
     }
 
-    public function changepass(Request $request)
-    {    
-        $user = User::where('type','admin')->get()->first();
-        $oldpass=$request['current'];
-        if(Hash::check($oldpass, $user->password))
-        {
-            User::where('type','admin')->update([
-                'password'=>Hash::make($request['newpass'])
-            ]);
-            
-        }
-        else
-        {
-            return ["danger" => "Your current Password is not correct" ];
-        }
-        
-    }
+    
 
     public function AvailableShow($id)
     {

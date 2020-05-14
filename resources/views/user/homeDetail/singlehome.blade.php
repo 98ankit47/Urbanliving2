@@ -153,7 +153,7 @@
                     <div class="col-md-4"><br><br>
                         @foreach($homes as $home)
                         <h4 style="text-align:center"><b>{{$home->title}}</b></h4><br><br><br>
-                        <span style="text-align:center;font-size:22px;">$229,990</span><br><br><br>
+                    <span style="text-align:center;font-size:22px;">${{$home->price}}</span><br><br><br>
                         <span style="text-align:center">{{$home->communities->communities->address}},
                               {{$home->communities->communities->county}},<br>
                               {{$home->communities->communities->state}}</span><br><br><br><br><br>

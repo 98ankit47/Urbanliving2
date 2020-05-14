@@ -97,7 +97,7 @@ Route::get('/homes',function(){
 
 Route::get('/userProfile',function(){
     return view('user.userProfile.index');
-});
+})->name('profile');
 
 Route::get('/neighbor',function(){
     return view('user.neighbor.index');

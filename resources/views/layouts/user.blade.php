@@ -285,7 +285,6 @@
 			<li class="nav-item"><a href="/neighbor" class="nav-link">Neighborhood</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="/sellHome" class="nav-link">Sell Home</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="#" class="nav-link">Lending</a></li>&nbsp;&nbsp;
-			<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>&nbsp;&nbsp;
 			<li class="nav-item"><a href="/userProfile" class="nav-link">About Us</a></li>
 		</ul>
 		<form class="navbar-form form-inline" style="padding-left:3%;">
@@ -624,6 +623,23 @@
   </script>
   @endif
 
+
+  @if(Route::currentRouteName() == 'profile')
+	<script>
+		alert();
+	loadScheduleList();
+	function loadScheduleList(){
+		$.ajax({
+		type: 'GET',
+		url: APP_URL+'/api/userSchedule/',
+		success: function(result){   
+			$('#schedule').html(result);
+		}   
+		});
+	}
+	</script>
+	@endif
+
 @if(Route::currentRouteName() == 'developmentDetail')
   <script>   
         var APP_URL = "{{ url('/') }}";
@@ -945,7 +961,60 @@
             
 		</script>  
 	@endif
+<script>
+	$(function () {
+		$('#changepass').on('submit', function (e) {
+		  e.preventDefault();
+				current            =  document.getElementById("current").value;         
+				newpass            =  document.getElementById("newpass").value;         
+				Confirmpass        =  document.getElementById("Confirmpass").value;  
+				id		           =  document.getElementById("id").value; 
+					$.ajax({
+					  type: 'post',
+					  url: '/api/admin/changePaas',
+					  data:{
+						'current'      : current,
+						'newpass'      : newpass,
+						'Confirmpass'  : Confirmpass,
+						'id'           : id,
+					  },
+					  success: function () {
+						$('#changepass').modal('hide');
+						$('.modal-backdrop').css('display','none');
+						$('#success').html('Password has been changed').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
 
+					  }
+					});
+				 
+
+		});
+
+	});
+
+	$(function () {
+		$('#userdetail').on('submit', function (e) {
+		  e.preventDefault();
+				email            =  document.getElementById("email").value;         
+				username            =  document.getElementById("username").value;         
+				id		           =  document.getElementById("id").value; 
+					$.ajax({
+					  type: 'post',
+					  url: '/api/admin/changeUserDeatil',
+					  data:{
+						'email'         : email,
+						'username'      : username,
+						'id'           : id,
+					  },
+					  success: function () {
+						$('#success').html('Your Detail has been changed').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
+					  }
+					});
+				 
+
+		});
+
+	});
+</script>
 <script type="text/javascript">
 	// Prevent dropdown menu from closing when click inside the form
 	$(document).on("click", ".navbar-right .dropdown-menu", function(e){
