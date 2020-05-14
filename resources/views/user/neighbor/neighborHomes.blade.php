@@ -118,6 +118,41 @@
     background-color:white;
 }
 
+.card .share1 {
+    position: absolute;
+    top: 7%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* .card .share1:hover {
+    background-color:#DC143C;
+} */
+
+.card .fav1 {
+    position: absolute;
+    top: 7%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* .card .fav1:hover {
+    background-color:white;
+} */
+
 .bottom-left {
   position: absolute;
   bottom: 25px;
@@ -378,8 +413,8 @@
                 <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU" style="height:553px; width:100%;">
                 <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0SD6h1f2t6g5HreAWg9zv2FV2BIZ-i39EcmfJ9VQCKSz_YgBm&usqp=CAU" style="height:553px; width:100%;">
                     <div class="w3-section">
-                        <a class="w3-button9" style="font-size:24px; color:white;" onclick="plusDivs(-1)">❮ </a>
-                        <a class="w3-button0" style="font-size:24px; color:white;" onclick="plusDivs(1)"> ❯</a>
+                        <a class="w3-button9" style="font-size:24px; color:white;" onclick="plusDivs(-1)"> ❮ </a>
+                        <a class="w3-button0" style="font-size:24px; color:white;" onclick="plusDivs(1)"> ❯ </a>
                     </div>
             </div>
             <div class="col-md-4" style="text-align:left;"><br><br>
@@ -389,6 +424,10 @@
                     A SUBURBAN FEEL AND MOST RESIDENTS OWN THEIR HOMES. IN BELLAIRE THERE ARE A LOT OF RESTAURANTS, 
                     COFFEE SHOPS, AND PARKS.
                 </span><br><br><br>
+                <div class="w3-center">
+                    <a class="fav1"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
+                    <a class="share1"><i style="color:black;" class="fa fa-share-alt" aria-hidden="true"></i></a>
+                </div>
             </div>
         </div>
     </div>
