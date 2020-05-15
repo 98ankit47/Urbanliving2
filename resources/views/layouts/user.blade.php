@@ -648,6 +648,27 @@
 		}   
 		});
 	}
+
+	$('#deleteFav').on('show.bs.modal', function (e) {
+		var $trigger = $(e.relatedTarget);
+		var Fid=$trigger.data('id');
+		$('#ys-fav-btn').attr('data-id',Fid);
+		});
+		$('#ys-fav-btn').click(function()
+		{
+		var fid = $(this).attr('data-id');
+		$('#deleteFav').modal('hide');
+		$('.modal-backdrop').css('display','none');
+		$.ajax({
+		type: 'DELETE',
+		url: APP_URL+'/api/userFavourite/'+fid,
+			success: function(){  
+				loadFavoriteList();
+			}   
+		});
+		});
+
+
 	loadFavoriteList();
 	function loadFavoriteList(){
 		$.ajax({
@@ -666,7 +687,6 @@
 	loadmap();
 	function loadmap()
 	{
-		alert();
 		var infoWindow = new google.maps.InfoWindow();
 		var myLatLng=new google.maps.LatLng(40.7133,-74.0688);
 		var map = new google.maps.Map(

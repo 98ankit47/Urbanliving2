@@ -21,7 +21,7 @@ class CommunityController extends Controller
         $data ='';
         $communities = Communities::all();
         $data.='<div class="col-md-4"  >
-        <a style="text-decoration:none" data-toggle="modal"  onclick="Addcommunity()"  data-target="#AddcommunityModal">
+        <a style="text-decoration:none"  onclick="Addcommunity()">
         <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:335px;">
         <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
         <div class="card-body"> <br>
@@ -80,6 +80,7 @@ class CommunityController extends Controller
             'subdivission'=>$request['subdivission'],
             'city'=>$request['city'],
             'county'=>$request['county'],
+            'description'=>$request['description'],
             'state'=>$request['state'],
             'zipcode'=>$request['zipcode'],
         ]);
@@ -130,6 +131,7 @@ class CommunityController extends Controller
             'county'=>$request['county'],
             'state'=>$request['state'],
             'zipcode'=>$request['zipcode'],
+            'description'=>$request['description'],
         ]);
         return ['success'=>'Community Successfully Edit'];
     }

@@ -1778,20 +1778,21 @@ function Editloadmap(aid){
       success: function(result){    
         $('#communityModal').modal('show');
 
-        document.getElementById("title").value = result.title;
-        document.getElementById("address").value = result.address;
-        document.getElementById("area").value = result.area;
-        document.getElementById("subdivission").value = result.subdivission;
-        document.getElementById("city").value = result.city;
-        document.getElementById("state").value = result.state;
-        document.getElementById("country").value = result.county;
-        document.getElementById("area").value = result.area;
-        document.getElementById("zipcode").value = result.zipcode;
+          document.getElementById("title").value        = result.title;
+          document.getElementById("address").value      = result.address;
+          document.getElementById("area").value         = result.area;
+          document.getElementById("subdivission").value = result.subdivission;
+          document.getElementById("city").value         = result.city;
+          document.getElementById("state").value        = result.state;
+          document.getElementById("country").value      = result.county;
+          document.getElementById("description").value  = result.description;
+          document.getElementById("area").value         = result.area;
+          document.getElementById("zipcode").value      = result.zipcode;
       }
       }); 
       $(function () {
           $('#Communityform').on('submit', function (e) {
-            var title,address,area,state,country,city,subdivission,zipcode;
+            var title,address,area,state,country,city,description,subdivission,zipcode;
             e.preventDefault();
                 title            =  document.getElementById("title").value;         
                 address           =  document.getElementById("address").value;         
@@ -1801,8 +1802,8 @@ function Editloadmap(aid){
                 subdivission     =  document.getElementById("subdivission").value;         
                 state     =  document.getElementById("state").value;         
                 zipcode          =  document.getElementById("zipcode").value;  
+                description          =  document.getElementById("description").value;  
                         
-
                 $.ajax({
                   type: 'post',
                   url: '/api/admin/community/'+cid,
@@ -1815,6 +1816,7 @@ function Editloadmap(aid){
                     'subdivission'    : subdivission,
                     'state'           : state,
                     'zipcode'         : zipcode,
+                    'description'     : description,
                      
                   },
                   success: function () {
@@ -1836,15 +1838,16 @@ function Editloadmap(aid){
         
       $(function () {
           $('#Communityaddform').on('submit', function (e) {
-            var title,address,area,state,country,city,subdivission,zipcode;
+            var title,address,area,state,description,country,city,subdivission,zipcode;
             e.preventDefault();
                 title            =  document.getElementById("addtitle").value;         
-                address           =  document.getElementById("addaddress").value;         
+                address          =  document.getElementById("addaddress").value;         
                 area             =  document.getElementById("addarea").value;         
                 city             =  document.getElementById("addcity").value;         
-                country     =  document.getElementById("addcountry").value;         
+                country          =  document.getElementById("addcountry").value;         
                 subdivission     =  document.getElementById("addsubdivission").value;         
-                state     =  document.getElementById("addstate").value;         
+                state            =  document.getElementById("addstate").value;         
+                description      =  document.getElementById("description").value;         
                 zipcode          =  document.getElementById("addzipcode").value;  
                         
 
@@ -1860,6 +1863,7 @@ function Editloadmap(aid){
                     'subdivission'    : subdivission,
                     'state'           : state,
                     'zipcode'         : zipcode,
+                    'description'     : description,
                      
                   },
                   success: function () {

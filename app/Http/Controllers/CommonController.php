@@ -367,7 +367,12 @@ class CommonController extends Controller
         return $data; 
     }
 
-    public function UserFavourite($id)
+    public function DeleteFav($id)
+    {
+        $favourite = Favourite::findOrFail($id);
+        $favourite->delete(); 
+    }
+    public function UserFavourite($id) 
     {
         $favourite = Favourite::where('user_id',$id)->get();
         $data='';
@@ -379,7 +384,8 @@ class CommonController extends Controller
                             <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
                             <div class="card-body">
                                 <h6 style="text-align:center">'.$home->title.'</h6>
-                                <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn">Remove From Favorite</button>
+                                <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;"
+                                 class="btn" data-id="'.$fav->id.'" data-toggle="modal"  data-target="#deleteFav">Remove From Favorite</button>
                             </div>
                         </div>
                     </div>';

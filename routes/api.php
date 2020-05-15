@@ -105,6 +105,9 @@ Route::get('homeAvailable/{id}','CommonController@AvailableShow');
 Route::get('Avail/{id}','CommonController@AvailableSingleHome');
 Route::delete('home-Avail/{id}','CommonController@DeleteAvail');
 
+Route::delete('userFavourite/{id}','CommonController@DeleteFav');
+
+
 
 
 
