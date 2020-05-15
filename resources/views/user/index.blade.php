@@ -47,10 +47,10 @@
 } */
 
 
-.card-body .share {
+.card-body .dropdown {
     position: absolute;
     top: 15%;
-    left: 85%;
+    left: 75%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     color: white;
@@ -61,7 +61,7 @@
     text-align: center;
 }
 
-.card-body .share:hover {
+.card-body .dropdown:hover {
     background-color:#DC143C;
 }
 
@@ -69,7 +69,7 @@
 .card-body .fav {
     position: absolute;
     top: 15%;
-    left: 75%;
+    left: 85%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     font-size: 20px;
@@ -88,6 +88,25 @@
   position: absolute;
   bottom: 25px;
   left: 30px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 </style>
@@ -160,8 +179,16 @@
           <div class="w3-section">
             <a class="w3-button" style="font-size:24px;" onclick="plusDivs(-1)">❮</a>
             <a class="w3-button1" style="font-size:24px;" onclick="plusDivs(1)">❯</a>
+            <div class="dropdown">
+              <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
+              <div class="dropdown-content" >
+                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              </div>
+            </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
-            <a class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></a>
             <div class="bottom-left" style="color:white;"><b>COTTAGE GROVE</b></div>
           </div>
         </div>
@@ -177,8 +204,16 @@
           <div class="w3-section">
             <a class="w3-button" style="font-size:24px;" onclick="plusDivs1(-1)">❮</a>
             <a class="w3-button1" style="font-size:24px;" onclick="plusDivs1(1)">❯</a>
+            <div class="dropdown">
+              <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
+              <div class="dropdown-content" >
+                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              </div>
+            </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
-            <a class="share"><i style="color:white;" class="fa fa-share-alt"></i></a>
             <div class="bottom-left" style="color:white;"><b>MEDICAL CENTRE</b></div>
           </div>
         </div>
@@ -197,8 +232,16 @@
           <div class="w3-section">
             <a class="w3-button" style="font-size:24px;" onclick="plusDivs2(-1)">❮</a>
             <a class="w3-button1" style="font-size:24px;" onclick="plusDivs2(1)">❯</a>
+            <div class="dropdown">
+              <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
+              <div class="dropdown-content" >
+                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              </div>
+            </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
-            <a class="share"><i style="color:white;" class="fa fa-share-alt"></i></a>
             <div class="bottom-left" style="color:white;"><b>EODA</b></div>
           </div>
         </div>
@@ -214,8 +257,16 @@
           <div class="w3-section">
             <a class="w3-button" style="font-size:24px;" onclick="plusDivs3(-1)">❮</a>
             <a class="w3-button1" style="font-size:24px;" onclick="plusDivs3(1)">❯</a>
+            <div class="dropdown">
+              <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
+              <div class="dropdown-content" >
+                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              </div>
+            </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
-            <a class="share"><i style="color:white;" class="fa fa-share-alt"></i></a>
             <div class="bottom-left" style="color:white;"><b>RIVER OAKS</b></div>
           </div>
         </div>
@@ -231,8 +282,16 @@
           <div class="w3-section">
             <a class="w3-button" style="font-size:24px;" onclick="plusDivs4(-1)">❮</a>
             <a class="w3-button1" style="font-size:24px;" onclick="plusDivs4(1)">❯</a>
+            <div class="dropdown">
+              <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
+              <div class="dropdown-content" >
+                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              </div>
+            </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
-            <a class="share"><i style="color:white;" class="fa fa-share-alt"></i></a>
             <div class="bottom-left" style="color:white;"><b>UNIVERSITY AREA</b></div>
           </div>
         </div>
