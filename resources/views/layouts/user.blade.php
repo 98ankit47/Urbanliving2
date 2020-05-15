@@ -405,7 +405,10 @@
                                                                           
 <br><br>
 <?php
-	$userid=Auth::user()->id;
+	if(Auth::user())
+	{
+		$userid=Auth::user()->id;
+	}
 ?>
 <div class="container">
   @yield('content')
@@ -616,9 +619,7 @@
 					  $('#success').html('Your Enquiry Has Been Posted').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
 					}
 				  });
-  
 			});
-  
 		});
 		
   </script>
@@ -647,9 +648,33 @@
 		}   
 		});
 	}
+	loadFavoriteList();
+	function loadFavoriteList(){
+		$.ajax({
+		type: 'GET',
+		url: APP_URL+'/api/userFavourite/'+<?php echo $userid ?>,
+		success: function(result){   
+			$('#favouriteList').html(result);
+		}   
+		});
+	}
 	</script>
 	@endif
 
+@if(Route::currentRouteName() == 'neighbor-map')
+<script>
+	loadmap();
+	function loadmap()
+	{
+		alert();
+		var infoWindow = new google.maps.InfoWindow();
+		var myLatLng=new google.maps.LatLng(40.7133,-74.0688);
+		var map = new google.maps.Map(
+						document.getElementById('neighbor-map'),
+						 {zoom:16, center: myLatLng});
+	}
+</script>
+@endif
 @if(Route::currentRouteName() == 'developmentDetail')
   <script>   
         var APP_URL = "{{ url('/') }}";
@@ -722,7 +747,30 @@
                });
               } 
          }
- 
+
+		 function addfavourite()
+		 {
+			$.ajax({
+                type: 'GET',
+                url: APP_URL+'/api/admin/addFav/'+<?php echo $userid?>+'/'+id,
+                  success: function(result){
+					 loadHeart();
+                  }   
+               });
+		 }
+		 
+		 loadHeart();
+		 function loadHeart()
+		 {
+			$.ajax({
+                type: 'GET',
+                url: APP_URL+'/api/admin/showFav/'+<?php echo $userid?>+'/'+id,
+                  success: function(result){
+						$('#heart').html(result);
+                  }   
+               });
+		 }
+		 
   </script>
 @endif
 

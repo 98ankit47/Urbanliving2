@@ -8,6 +8,7 @@ use App\Models\Homes;
 use App\Models\Floors;
 use App\Models\FloorComponent;
 use App\Models\Enquiry;
+use App\Models\Favourite;
 use App\HomeAvailable;
 use App\User;
 use App\SellingHome;
@@ -366,6 +367,25 @@ class CommonController extends Controller
         return $data; 
     }
 
+    public function UserFavourite($id)
+    {
+        $favourite = Favourite::where('user_id',$id)->get();
+        $data='';
+        foreach($favourite as $key=> $fav)
+        {
+            $home=Homes::where('id',$fav->Home_id)->get()->first();
+            $data.='<div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
+                            <div class="card-body">
+                                <h6 style="text-align:center">'.$home->title.'</h6>
+                                <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn">Remove From Favorite</button>
+                            </div>
+                        </div>
+                    </div>';
+        }
+        return $data;
+    }
     public function Userscheduleshow($id)
     {
         $user=User::where('id',$id)->get()->first();
@@ -392,8 +412,9 @@ class CommonController extends Controller
         $data='';
         foreach($enquiry as $key=> $enq)
         {
+            $home=Homes::where('id',$enq->home_id)->get()->first();
             $data.=' <div class="col-md-12" style="height:28px;">
-                        <span>Message sent by the user will be displayed here.</span>
+                        <span>Tour Schedule For '.$home->title.' on '.date($home->created_at).' to visit on '.$enq->date.'</span>
                     </div>';
         }
         return $data;
@@ -461,7 +482,7 @@ class CommonController extends Controller
                     </div> <br>
                     <div class="row">
                         <div class="col-md-5">
-                        <span>Dining</span>
+6                        <span>Dining</span>
                     </div>
                     <div class="col-md-7">';
                     for($i = 1;$i<=($floor->dining);$i++)

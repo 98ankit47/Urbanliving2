@@ -50,18 +50,20 @@
                 <div class="col-md-9">
                     <div class="card accordion" id="accordionExample">
                         <div class="card-header" id="headingOne" style="height:70px;">
-                            <div class="row" id="tour">
-                                
+                            <div class="row" >
+                                <div class="col-md-12" style="height:28px;">
+                                    <span>Message sent by the user will be displayed here.</span>
+                                </div>
                             </div>
                             <div class="row showbtn" style="text-align:center;">
                                 <div class="col-md-12">
-                                    <button class="btn btn-link" style="color:black;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-link" style="color:black;" type="button" data-toggle="collapse" data-target="#tour" aria-expanded="true" aria-controls="collapseOne">
                                         See More &nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>
                                     </button>
                                  </div>
                             </div>
                         </div>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="tour" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card">
                                 <div class="card-body">
                                     Second Message sent by the user will be displayed here.
@@ -101,31 +103,7 @@
 
         <div id="Favorite" class="w3-container city" style="display:none"><br>
         <h3><b>My Favorites</b></h3><br><br>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" style="height:200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU">
-                        <div class="card-body">
-                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn">Remove From Favorite</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" style="height:200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU">
-                        <div class="card-body">
-                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn">Remove From Favorite</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" style="height:200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0SD6h1f2t6g5HreAWg9zv2FV2BIZ-i39EcmfJ9VQCKSz_YgBm&usqp=CAU">
-                        <div class="card-body">
-                            <button style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn">Remove From Favorite</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="favouriteList">
             </div>
         </div>
 

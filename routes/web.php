@@ -109,7 +109,7 @@ Route::get('/neighborHomes',function(){
 
 Route::get('/neighbor',function(){
     return view('user.neighbor.index');
-});
+})->name('neighbor-map');
 
 Route::get('/sellHome',function(){
     return view('user.sellHome.index');

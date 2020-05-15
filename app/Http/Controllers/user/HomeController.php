@@ -53,6 +53,61 @@ class HomeController extends Controller
 
     }
 
+    public function addfavShow($userid,$homeid)
+    {
+        $data='';
+        $count=Favourite::where('home_id',$homeid)->where('user_id',$userid)->get()->count();
+        $fav=Favourite::where('home_id',$homeid)->where('user_id',$userid)->get()->first();
+        if($count==0)
+        {
+            $data.='<i style="color: grey;font-size:30px" class="fa fa-heart" aria-hidden="true"></i>';
+        }
+        else
+        {   
+            if($fav->favourite==1)
+            { 
+                $data.='<i style="color: red;font-size:30px" class="fa fa-heart" aria-hidden="true"></i>';
+            }
+            else{
+                $data.='<i style="color: grey;font-size:30px" class="fa fa-heart" aria-hidden="true"></i>';
+            }
+        }
+        return $data;
+
+    }
+    public function addFav($homeid,$userid)
+    {
+        $count=Favourite::where('home_id',$userid)->where('user_id',$homeid)->get()->count();
+        $fav=Favourite::where('home_id',$userid)->where('user_id',$homeid)->get()->first();
+        if($count==0)
+        {
+            Favourite::create([
+        
+                'home_id'=>$userid,
+                'user_id'=>$homeid,
+                'favourite'=>1,
+    
+            ]);
+        }
+        else
+        {   
+            if($fav->favourite==0)
+            {
+                Favourite::where('id',$fav->id)->update([
+                    'favourite'=>1,
+                ]);
+            }
+            else if($fav->favourite==1)
+            {
+                Favourite::where('id',$fav->id)->update([
+                    'favourite'=>0,
+                ]);   
+            }
+           
+        }
+       
+    }
+
     public function AllHome()
     {
         $homes=Homes::all();

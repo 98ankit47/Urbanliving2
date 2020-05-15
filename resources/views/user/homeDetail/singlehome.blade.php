@@ -162,7 +162,7 @@
                         <li>Second Feature</li><br>
                         <li>Third Feature</li><br>
                         </div>
-                        <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
+                        <a class="fav" class="btn" type="button" onclick="addfavourite({{$home->id}})" id="heart"></a>
                         <a class="share"><i style="color:black;" class="fa fa-share-alt"></i></a>
                         @endforeach
                     </div>

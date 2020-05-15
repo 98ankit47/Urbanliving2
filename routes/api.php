@@ -87,6 +87,9 @@ Route::post('user','UserController@signup');
 Route::post('admin/changeUserDeatil','UserController@ChangeDetail');
 Route::get('userSell/{id}','CommonController@Userscheduleshow');
 Route::get('userSchedule/{id}','CommonController@Usertour');
+Route::get('userFavourite/{id}','CommonController@UserFavourite');
+Route::get('admin/addFav/{userid}/{homeid}','User\HomeController@addfav');
+Route::get('admin/showFav/{userid}/{homeid}','User\HomeController@addfavShow');
 
 
 
