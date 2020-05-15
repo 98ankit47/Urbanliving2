@@ -144,7 +144,7 @@
                 <div class="col-md-3">
                     <a type="button" style="margin-top:9px;" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     &nbsp;&nbsp;&nbsp;<i class="fa fa-filter" style="color:white;"></i>
-                    <div class="dropdown-menu" style="width:300px;" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" style="width:280px;" aria-labelledby="navbarDropdown">
                         <form class="details-containerr" style="font-family: Open Sans, sans-serif; margin-left: 5px; margin-right: 5px;">
                             <div class="form-row "> 
                                 <div class="form-group col-md-6">
@@ -233,6 +233,44 @@
                 </div>
                 <div class="col-md-3" style="text-align:left;">
                     <a type="button" style="margin-top:9px;" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a>
+                    <div class="dropdown-menu" style="width:200px;" aria-labelledby="navbarDropdown">
+                        <form class="details-containerr" style="font-family: Open Sans, sans-serif; margin-left: 5px; margin-right: 5px;">
+                            <div class="form-row "> 
+                                <div class="form-group col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            AscendingPrice
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            DescendingPrice
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios5" value="option5">
+                                        <label class="form-check-label" for="exampleRadios5">
+                                            NewestBuilt
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="option3">
+                                        <label class="form-check-label" for="exampleRadios3">
+                                            OldestBuilt
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios4" value="option4">
+                                        <label class="form-check-label" for="exampleRadios4">
+                                            DaysOnMarket
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        <form>
+                    </div>
                 </div>
             </div>
         </div>
