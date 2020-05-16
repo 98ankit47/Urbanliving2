@@ -182,10 +182,10 @@
             <div class="dropdown">
               <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
               <div class="dropdown-content" >
-                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+                <a href="https://telegr.am/user_mgt/login" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="https://twitter.com/login" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
               </div>
             </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
@@ -207,10 +207,10 @@
             <div class="dropdown">
               <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
               <div class="dropdown-content" >
-                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              <a href="https://telegr.am/user_mgt/login" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="https://twitter.com/login" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
               </div>
             </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
@@ -235,10 +235,10 @@
             <div class="dropdown">
               <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
               <div class="dropdown-content" >
-                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              <a href="https://telegr.am/user_mgt/login" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="https://twitter.com/login" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>    
               </div>
             </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
@@ -260,10 +260,10 @@
             <div class="dropdown">
               <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
               <div class="dropdown-content" >
-                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              <a href="https://telegr.am/user_mgt/login" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="https://twitter.com/login" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>    
               </div>
             </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
@@ -285,10 +285,10 @@
             <div class="dropdown">
               <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
               <div class="dropdown-content" >
-                <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
-                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+              <a href="https://telegr.am/user_mgt/login" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                <a href="https://twitter.com/login" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
               </div>
             </div>
             <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>

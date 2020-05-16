@@ -269,7 +269,7 @@
 
 <nav class="navbar navbar-default navbar-expand-lg navbar-light" style="background:#CBCBC6 ">
 	<div class="navbar-header d-flex col" >
-		<a class="navbar-brand" href="#"><img style="height:40px;" src="https://urbanliving.com/imgs/82"/></a>  		
+		<a class="navbar-brand" href="http://127.0.0.1:8000/"><img style="height:40px;" src="https://urbanliving.com/imgs/82"/></a>  		
 		<!-- <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
 			<span class="navbar-toggler-icon"></span>
 			<span class="icon-bar"></span>
