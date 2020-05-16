@@ -36,7 +36,7 @@ class CommonController extends Controller
         $id=$request['id'];
         $features= Features::where('home_id',$id)->get();
         $data.='<div class="col-md-4"  >
-        <a style="text-decoration:none" data-toggle="modal" onclick="addFeature()">
+        <a href="#" style="text-decoration:none" data-toggle="modal" onclick="addFeature()">
         <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:326px;">
         <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
         <div class="card-body"> <br>
@@ -150,7 +150,7 @@ class CommonController extends Controller
         $homes= Homes::where('id',$id)->get()->first();
         $gallery=explode(',', $homes->gallery);
         $data.='<div class="col-md-4"><br>
-        <a style="text-decoration:none" data-toggle="modal" data-target="#galleryModal" onclick="updategal()">
+        <a href="#" style="text-decoration:none" data-toggle="modal" data-target="#galleryModal" onclick="updategal()">
         <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:278px;">
         <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
         <div class="card-body">
@@ -532,7 +532,7 @@ class CommonController extends Controller
     {
         $data='';
         $com=FloorComponent::where('type',$type)->where('floor_id',$floor_id)->where('component_no',$component_id)->get()->first();
-        $data='<img src="/uploads/floorcomponent/'.$com->image.'" style="height:15rem; width:18rem;">';
+        $data='<img src="/uploads/floorcomponent/'.$com->image.'" style="height:22rem; width:18rem;">';
         return $data;
     }
 
@@ -543,7 +543,7 @@ class CommonController extends Controller
         $data ='';
         $avbs= HomeAvailable::where('home_id',$id)->get();
         $data.='<div class="col-md-4"  >
-        <a style="text-decoration:none" data-toggle="modal"  onclick="loadmap()"  data-target="#AddcommunityModal">
+        <a href="#" style="text-decoration:none" data-toggle="modal"  onclick="loadmap()"  data-target="#AddcommunityModal">
         <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:327px;">
         <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
         <div class="card-body"> <br>
