@@ -79,7 +79,7 @@
 
   <div id="homeFloor" class="row" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
     <div class="col-md-4"><br>
-      <a style="text-decoration:none" data-toggle="modal" data-target="#galleryModal" onclick="addFloor()" >
+      <a href="#" style="text-decoration:none" data-toggle="modal" data-target="#galleryModal" onclick="addFloor()" >
         <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:278px;">
           <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
           <div class="card-body">

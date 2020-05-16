@@ -342,7 +342,8 @@
                                         <span style="font-size:18px;"><b>LOOK BOOK</b></span><br><br><br>
                                             <div class="container" style="text-align: left;">
                                                 <a type="button" onclick="PrintDiv();" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100">PRINT</a><br><br><br>
-                                                <a type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100 download">DOWNLOAD</a><br><br>
+                                                <a type="button" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100 download">DOWNLOAD</a><br><br><br>
+                                                <input type="button" value="COPY URL" onclick="copy_Share_Button();" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn w-100"/>
                                             </div>
                                         </div>
                                     </div>
@@ -634,6 +635,30 @@ function showDivss(n)
               href: "data:text/html," + $('#dvContents').html() 
        })[0].click()
     });
+</script>
+
+<script>
+function copy_Share_Button() {
+
+//----< copy_Share_Button() >----
+
+var sURL = window.location.href;
+
+sTemp = "<input id=\"copy_to_Clipboard\" value=\"" + sURL + "\" />"
+
+$("body").append(sTemp);
+
+$("#copy_to_Clipboard").select();
+
+document.execCommand("copy");
+
+$("#copy_to_Clipboard").remove();        
+
+//----</ copy_Share_Button() >----
+
+}
+
+//
 </script>
 @endif
 @endsection
