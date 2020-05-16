@@ -1048,6 +1048,17 @@ coordsPolygon.setMap(map);
 				  }
                });
               } 
+			  loadCommunityList;
+			  function loadCommunityList()
+			  {
+				$.ajax({
+					type: 'GET',
+					url: APP_URL+'/api/mapHome/',
+					success: function(result){
+					$('#mapHome').html(result);
+					}   
+				});
+			  }
             
   </script>
 @endif
