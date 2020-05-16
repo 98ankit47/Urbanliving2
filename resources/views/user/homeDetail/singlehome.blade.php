@@ -163,6 +163,15 @@
                         <li>Third Feature</li><br>
                         </div>
                         <a class="fav" class="btn" type="button" onclick="addfavourite({{$home->id}})" id="heart"></a>
+                        <div class="dropdown">
+                            <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
+                            <div class="dropdown-content" >
+                              <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                              <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+                            </div>
+                          </div>
                         <a class="share"><i style="color:black;" class="fa fa-share-alt"></i></a>
                         @endforeach
                     </div>

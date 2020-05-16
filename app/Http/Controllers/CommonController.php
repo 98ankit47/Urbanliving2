@@ -374,7 +374,7 @@ class CommonController extends Controller
     }
     public function UserFavourite($id) 
     {
-        $favourite = Favourite::where('user_id',$id)->get();
+        $favourite = Favourite::where('user_id',$id)->Where('favourite',1)->get();
         $data='';
         foreach($favourite as $key=> $fav)
         {
