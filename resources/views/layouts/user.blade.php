@@ -688,18 +688,18 @@
 	function loadmap()
 	{
 		var infoWindow = new google.maps.InfoWindow();
-		var myLatLng=new google.maps.LatLng(40.7133,-74.0688);
-		var map = new google.maps.Map(
-						document.getElementById('neighbor-map'),
-						 {zoom:16, center: myLatLng});
+		// var myLatLng=new google.maps.LatLng(40.7133,-74.0688);
+		// var map = new google.maps.Map(
+		// 				document.getElementById('neighbor-map'),
+		// 				 {zoom:16, center: myLatLng});
 
 
 						 var map = new google.maps.Map(document.getElementById('neighbor-map'), {
     center: {
-        lat: 42.119082288502541,
-        lng: -93.120029012106
+        lng: -85.1836318969726, 
+		lat: 32.8574600219727
     },
-    zoom: 13,
+    zoom: 9,
     mapTypeId: 'roadmap'
 });
 
