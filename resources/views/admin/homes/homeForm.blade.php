@@ -85,7 +85,11 @@
   </div>
   <div class="form-group col-md-4">
     <label for="inputMls">Mls</label>
-    <input type="text" class="form-control" id="mls" required>
+    <select class="form-control" id="mls">
+      <option value="single">Single Family</option>
+      <option value="mid">Mid High Rise</option>
+      <option value="town">Town House</option>
+    </select>
   </div>
   <div class="form-group col-md-4">
     <label for="inputArea">Area</label>

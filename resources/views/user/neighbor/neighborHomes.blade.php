@@ -3,7 +3,7 @@
 
 <style>
 #map {
-          height: 500px;
+          height: 520px;
           width:50%
         }
 
@@ -285,7 +285,7 @@
                             <button class="btn btn-outline-success my-2 my-sm-0" style="margin-left:130px;" type="submit">Apply</button>
                         </form>
                     </div>
-                    </a><br>
+                    </a>
                 </div>
                 <div class="col-md-4" style="text-align:left;">
                     <a type="button" style="margin-top:9px;" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a>
@@ -333,75 +333,15 @@
     </div>
 </div>
 <div class="row" style="width:1220px;">
-    <div class="col-md-8" id="neighbor-map">
+    <div class="col-md-8" id="map">
                
     </div>
     <div class="col-md-4 maps scrollContainer" id="container">
-        <div id="neighborHome">
-            <div id="home1" class="card homebox1" style="width: 100%; height:24rem;" >
-                <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdEE9j-X_C7ialRemOei-CbyvE1CU0p3qqxwflSJIYDgU0q8pc&usqp=CAU"/>
-                <a href="#" type="button" class="btn detail btn-outline-dark">Details</a>
-                <a href="#" type="button" class="btn summary btn-outline-dark">Summary</a>
-                <div class="w3-center">
-                    <div class="w3-section">
-                        <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
-                        <a class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <div class="bottom-left" style="color:white;font-size:16px;">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <span><b>$470,000</b></span><br>
-                                    <span><b>Community DR,</b></span><br>
-                                    <span><b>Houstan,TX,123</b></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><br>
-            <div id="home2" class="card homebox1" style="width: 100%; height:24rem;" >
-                <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU"/>
-                <a href="#" type="button" class="btn detail btn-outline-dark">Details</a>
-                <a href="#" type="button" class="btn summary btn-outline-dark">Summary</a>
-                <div class="w3-center">
-                    <div class="w3-section">
-                        <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
-                        <a class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <div class="bottom-left" style="color:white;font-size:16px;">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <span><b>$475,000</b></span><br>
-                                    <span><b>Community DR,</b></span><br>
-                                    <span><b>Houstan,TX,123</b></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><br>
-            <div id="home3" class="card homebox1" style="width: 100%; height:24rem;" >
-                <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0SD6h1f2t6g5HreAWg9zv2FV2BIZ-i39EcmfJ9VQCKSz_YgBm&usqp=CAU"/>
-                <a href="#" type="button" class="btn detail btn-outline-dark">Details</a>
-                <a href="#" type="button" class="btn summary btn-outline-dark">Summary</a>
-                <div class="w3-center">
-                    <div class="w3-section">
-                        <a class="fav"><i style="color: #DC143C;" class="fa fa-heart" aria-hidden="true"></i></a>
-                        <a class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        <div class="bottom-left" style="color:white;font-size:16px;">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <span><b>$450,000</b></span><br>
-                                    <span><b>Community DR,</b></span><br>
-                                    <span><b>Sidney,AUS,123</b></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><br>
+        <div id="neigTypeHome">
+           
         </div>
     </div>
 </div>
-<br><br>
 
 <!-- SUMMARY SECTION-->
 

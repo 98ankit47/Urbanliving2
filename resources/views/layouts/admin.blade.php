@@ -649,7 +649,7 @@ $(document).ready(function() {
         document.getElementById("bathroom").value = result.bathroom;
         document.getElementById("garage").value = result.garage;
         document.getElementById("stories").value = result.stories;
-        document.getElementById("mls").value = result.mls;
+        document.getElementById("mls").value = result.type;
         document.getElementById("area").value = result.area;
         document.getElementById("community_list").value = result.community;
         document.getElementById("builder").value = result.builder;

@@ -101,9 +101,8 @@ Route::get('/userProfile',function(){
 
 Route::get('/neighborDetail/{id}','user\NeighbourhoodController@showCommunityDetail'); 
 
-Route::get('/neighborHomes',function(){
-    return view('user.neighbor.neighborHomes');
-});
+Route::get('/neighborHome/{type}/{id}','user\NeighbourhoodController@NeighTypeHome')->name('neigTypeHome');
+
 
 Route::get('/neighbor',function(){
     return view('user.neighbor.index');
