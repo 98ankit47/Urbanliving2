@@ -79,13 +79,13 @@
 }
 
 
-.col-md-4 .share {
+.col-md-4 .dropdown {
     position: absolute;
     top: 3%;
     left: 85%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    color: white;
+    color: black;
     font-size: 20px;
     border: none;
     cursor: pointer;
@@ -109,6 +109,25 @@
   position: absolute;
   bottom: 25px;
   left: 30px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 </style>
 <?php
@@ -164,12 +183,12 @@
                         </div>
                         <a class="fav" class="btn" type="button" onclick="addfavourite({{$home->id}})" id="heart"></a>
                         <div class="dropdown">
-                            <span class="share"><i style="color:white;" class="fa fa-share-alt" aria-hidden="true"></i></span>
-                            <div class="dropdown-content" >
-                              <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
-                              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
-                              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
-                              <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>  
+                            <span class="share"><i style="color:black;" class="fa fa-share-alt" aria-hidden="true"></i></span>
+                            <div class="dropdown-content" style="color:blue;">
+                                <a href="https://telegr.am/user_mgt/login" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a><br>
+                                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+                                <a href="https://twitter.com/login" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><br>
+                                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>    
                             </div>
                           </div>
                         <a class="share"><i style="color:black;" class="fa fa-share-alt"></i></a>
