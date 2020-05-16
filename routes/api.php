@@ -27,7 +27,8 @@ Route::post('admin/home/{id}','admin\HomeController@update');
 Route::get('admin/homelist','admin\HomeController@data');
 Route::get('admin/home-block/{id}','admin\HomeController@HomeBlock');
 
-Route::get('admin/communityList','admin\CommunityController@data');
+Route::get('admin/communityList','admin\CommunityController@data'); 
+Route::get('neigh-community-list','user\NeighbourhoodController@ShowCommunityList');
 Route::post('admin/community/{id}','admin\CommunityController@update');
 
 Route::get( 'admin/home-status', 'CommonController@status');

@@ -946,6 +946,19 @@ coordsPolygon.setMap(map);
 @endif
 
 
+<script>
+	loadCommunityList();
+	function loadCommunityList()
+	  {
+		$.ajax({
+		type: 'GET',
+		url: APP_URL+'/api/neigh-community-list/',
+			success: function(result){
+				$('#neighborHome').html(result);
+			}   
+		});
+	  }
+</script>
 @if(Route::currentRouteName() == 'neighbour')
   <script>
 	  function Nearby(type,lat,lng)
@@ -1048,17 +1061,7 @@ coordsPolygon.setMap(map);
 				  }
                });
               } 
-			  loadCommunityList;
-			  function loadCommunityList()
-			  {
-				$.ajax({
-					type: 'GET',
-					url: APP_URL+'/api/mapHome/',
-					success: function(result){
-					$('#mapHome').html(result);
-					}   
-				});
-			  }
+			  
             
   </script>
 @endif

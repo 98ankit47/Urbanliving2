@@ -85,7 +85,6 @@
         }
 </style>
 
-<br>
 <button id="btn">scroll to home 3</button>
 <div class="row" style="width:1220px;">
     <div class="col-md-8" id="neighbor-map">
@@ -93,31 +92,9 @@
     </div>
     <div class="col-md-4 maps scrollContainer" id="container">
         <div id="neighborHome">
-            <div id="home1" class="card homebox1" style="width: 100%; height:24rem;" >
-                <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU"/>
-                <a href="/neighborDetail" type="button" class="btn detail btn-outline-dark">Details</a>
-                <a href="/neighborHomes" type="button" class="btn single btn-outline-dark">Single Family</a>
-                <a href="/neighborHomes" type="button" class="btn town btn-outline-dark">TownHouse/Condo</a>
-                <a href="/neighborHomes" type="button" class="btn mid btn-outline-dark">Mid/Hi Rise Condo</a>
-            </div><br>
-            <div id="home3" class="card homebox1" style="width: 100%; height:24rem;" >
-                <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU"/>
-                <a href="/neighborDetail" type="button" class="btn detail btn-outline-dark">Details</a>
-                <a href="/neighborHomes" type="button" class="btn single btn-outline-dark">Single Family</a>
-                <a href="/neighborHomes" type="button" class="btn town btn-outline-dark">TownHouse/Condo</a>
-                <a href="/neighborHomes" type="button" class="btn mid btn-outline-dark">Mid/Hi Rise Condo</a>
-            </div><br>
-            <div id="home3" class="card homebox1" style="width: 100%; height:24rem;" >
-                <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0SD6h1f2t6g5HreAWg9zv2FV2BIZ-i39EcmfJ9VQCKSz_YgBm&usqp=CAU"/>
-                <a href="/neighborDetail" type="button" class="btn detail btn-outline-dark">Details</a>
-                <a href="/neighborHomes" type="button" class="btn single btn-outline-dark">Single Family</a>
-                <a href="/neighborHomes" type="button" class="btn town btn-outline-dark">TownHouse/Condo</a>
-                <a href="/neighborHomes" type="button" class="btn mid btn-outline-dark">Mid/Hi Rise Condo</a>
-            </div><br>
         </div>
     </div>
 </div>
-<br><br>
 
 <script>
    function scrollIfNeeded(element, container) {
