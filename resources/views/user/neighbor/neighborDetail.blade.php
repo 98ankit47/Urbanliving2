@@ -11,12 +11,9 @@
                         <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU" style="height:553px; width:100%;">
                     </div>
                     <div class="col-md-4" style="text-align:left;"><br><br>
-                        <h4>BALLAIRE</h4><br>
-                        <span style="font-size:15px;color:gray;">BELLAIRE IS A SUBURB OF HOUSTON WITH A POPULATION OF 18,479. BELLAIRE IS 
-                                IN HARRIS COUNTY AND IS ONE OF THE BEST PLACES TO LIVE IN TEXAS. LIVING IN BELLAIRE OFFERS RESIDENTS 
-                                A SUBURBAN FEEL AND MOST RESIDENTS OWN THEIR HOMES. IN BELLAIRE THERE ARE A LOT OF RESTAURANTS, 
-                                COFFEE SHOPS, AND PARKS.
-                        </span><br><br><br>
+                    <h5>{{$community->title}}</h5><br>
+                        <span style="font-size:15px;color:gray;">{{$community->description}}
+                        </span>
                     </div>
                 </div>
             </div>

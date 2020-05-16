@@ -24,4 +24,12 @@ class NeighbourhoodController extends Controller
         }
         return $data;
     }
+
+    function showCommunityDetail($id)
+    {
+        $community=Communities::where('id',$id)->get()->first();
+        return view('user.neighbor.neighborDetail')->with('community',$community);
+
+    }
+
 }

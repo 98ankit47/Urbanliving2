@@ -99,9 +99,7 @@ Route::get('/userProfile',function(){
     return view('user.userProfile.index');
 })->name('profile');
 
-Route::get('/neighborDetail/{id}',function(){
-    return view('user.neighbor.neighborDetail');
-});
+Route::get('/neighborDetail/{id}','user\NeighbourhoodController@showCommunityDetail'); 
 
 Route::get('/neighborHomes',function(){
     return view('user.neighbor.neighborHomes');
