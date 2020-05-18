@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Communities;
 use App\Models\HomeCommunity;
 use App\Models\Homes;
+use DB;
 
 class NeighbourhoodController extends Controller
 {
@@ -45,7 +46,7 @@ class NeighbourhoodController extends Controller
             $home = Homes::Where('id',$rel->home_id)->Where('type',$type)->get()->first();
             if($home)
             {
-                $data.='<div id="home1" class="card homebox1" style="width: 100%; height:24rem;" >
+                $data.='<div id="home'.$home->id.'" class="card homebox1" style="width: 100%; height:24rem;" >
                     <img style="height:100%;" src="/uploads/homes/'.$home->featured_image.'"/>
                     <a href="#" type="button" class="btn detail btn-outline-dark">Details</a>
                     <a href="#" type="button" class="btn summary btn-outline-dark">Summary</a>

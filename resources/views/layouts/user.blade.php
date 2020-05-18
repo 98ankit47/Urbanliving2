@@ -1023,6 +1023,34 @@
 			}   
 		});
 	  }
+	  function scrollList(lat,lng)
+		{
+			var APP_URL = "{{ url('/') }}";
+			$.ajax({
+			type: 'GET',
+			url: APP_URL+'/api/mapMarkerHome/'+lat +'/' +lng,
+				success: function(result){	
+					homeScroll('home'+result.id)
+				}   
+			});
+			
+
+			function scrollIfNeeded(element, container) {
+            if (element.offsetTop < container.scrollTop) {
+                container.scrollTop = element.offsetTop;
+            } else {
+                const offsetBottom = element.offsetTop + element.offsetHeight;
+                const scrollBottom = container.scrollTop + container.offsetHeight;
+                if (offsetBottom > scrollBottom) {
+                container.scrollTop = offsetBottom - container.offsetHeight;
+                }
+            }
+            }
+            function homeScroll(homeid)
+            {
+                scrollIfNeeded(document.getElementById(homeid), document.getElementById('container'));
+            }   
+		}
   </script>
 @endif
 
