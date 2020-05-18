@@ -12,7 +12,7 @@
         height: 520px;
         overflow: auto;
         }
-    
+    llj
         .card .detail {
         position: absolute;
         top: 40%;

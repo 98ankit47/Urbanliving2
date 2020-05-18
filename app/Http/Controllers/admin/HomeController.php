@@ -50,14 +50,12 @@ class HomeController extends Controller
             {
                 $block=0; 
             }
-             
             $data ='';
             $data1 ='';
             $homes = Homes::where('title','LIKE','%'.$request['search'].'%')->orWhere('status_id',$status)->orWhere('block',$block)->get();
             $count = Homes::where('title','LIKE','%'.$request['search'].'%')->orWhere('status_id',$status)->orWhere('block',$block)->get()->count();
             if($count==0)
             {
-
                 $data1.='<div style="color:red;font-weight:bold">No Record Found</div>';
                 return $data1;
             }
