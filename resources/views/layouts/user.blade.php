@@ -951,12 +951,14 @@
 </script>
 @if(Route::currentRouteName() == 'neigTypeHome')
   <script>
-	 
-	loadMap();
+		var data = window.location.href.split('/');
+		var id = window.location.href.split('/').pop();
+      	var type = data[4];
+		loadMap();
             function loadMap(){
                 $.ajax({
                 type: 'GET',
-                url: APP_URL+'/api/map/',
+                url: APP_URL+'/api/neighbour-map/'+type+'/'+id,
                   success: function(result){
 					var ln = Object.keys(result).length;
 					var infoWindow = new google.maps.InfoWindow();

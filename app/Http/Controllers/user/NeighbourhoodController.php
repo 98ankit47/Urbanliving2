@@ -66,6 +66,9 @@ class NeighbourhoodController extends Controller
         }
         return $data;
     }
-
+    public function map(Request $request)
+    { 
+        return Homes::where('block','1')->where('type',$request['type'])->get();
+    }
 
 }
