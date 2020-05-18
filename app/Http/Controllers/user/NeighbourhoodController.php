@@ -54,7 +54,7 @@ class NeighbourhoodController extends Controller
                             <div class="bottom-left" style="color:white;font-size:16px;">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <span><b>$'.$home->price.'/b></span><br>
+                                        <span><b>$'.$home->price.'</b></span><br>
                                         <span><b>'.$home->title.'</b></span><br>
                                         <span><b>Houstan,TX,123</b></span>
                                     </div>
