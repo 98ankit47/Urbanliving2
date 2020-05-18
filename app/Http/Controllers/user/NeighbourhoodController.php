@@ -42,8 +42,10 @@ class NeighbourhoodController extends Controller
         $rel=HomeCommunity::where('community_id',$id)->get();
         foreach($rel as $rel)
         {
-            $home = Homes::where('id',$rel->home_id)->get()->first();
-            $data.='<div id="home1" class="card homebox1" style="width: 100%; height:24rem;" >
+            $home = Homes::Where('id',$rel->home_id)->Where('type',$type)->get()->first();
+            if($home)
+            {
+                $data.='<div id="home1" class="card homebox1" style="width: 100%; height:24rem;" >
                     <img style="height:100%;" src="/uploads/homes/'.$home->featured_image.'"/>
                     <a href="#" type="button" class="btn detail btn-outline-dark">Details</a>
                     <a href="#" type="button" class="btn summary btn-outline-dark">Summary</a>
@@ -63,6 +65,7 @@ class NeighbourhoodController extends Controller
                         </div>
                     </div>
                 </div><br>';
+            }
         }
         return $data;
     }
