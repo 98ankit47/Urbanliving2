@@ -953,6 +953,8 @@ function Editloadmap(aid){
         });
         $(function () {
           $('form').on('submit', function (e) {
+            if(latitude)
+            {
             var title,description,bedroom,bathroom,price,garage,community,stories,mls,status,area,builder;
             e.preventDefault();
                 title            =  document.getElementById("title").value;         
@@ -966,7 +968,7 @@ function Editloadmap(aid){
                 community        =  document.getElementById("community_list").value;         
                 builder          =  document.getElementById("builder").value;         
                 status           =  document.getElementById("status").value;         
-                price           =  document.getElementById("price").value;         
+                price           =  document.getElementById("price").value;     
                 $.ajax({
                   type: 'post',
                   url: '/api/admin/home/',
@@ -995,6 +997,11 @@ function Editloadmap(aid){
                     $('#success').html('New Home Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                   }
                 });
+              }
+            else
+            {
+              alert("Please Select the Location from Google map");
+            }
 
           });
 

@@ -120,14 +120,14 @@
     <div class="col-md-6">
       <div class="image-upload">
         <p>Featured Image</p>
-        <p><input type="file"  name="image" id="file"  onchange="loadFile(event)"></p>
+        <p><input type="file"  name="image" id="file"  onchange="loadFile(event)" required></p>
         <p><img id="output" /></p>
       </div>
     </div>
   <div class="col-md-6">
   <div class="image-upload">
   <p>Image Gallery</p>
-    <input type="file" id="files" name="files[]" multiple />
+    <input type="file" id="files" name="files[]" multiple required />
     <br><br>
   <output id="list" width="200px" height="200px"></output>
     </div>
@@ -144,7 +144,7 @@
   <br><br>
   <div class="row" style="font-family: Open Sans, sans-serif;">
     <div class="col-md-2">
-      <button type="submit" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save</button>
+      <button type="submit" onclick="validate()" style="font-family: Open Sans, sans-serif;color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save</button>
     </div>
     <div class="col-md-2">
       <button style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100">Cancel</button>
