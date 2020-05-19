@@ -16,74 +16,88 @@
     // admin section
 
 
-Route::get('/apna',function(){
-    return view('index');
-})->name('apna');     
+    
 
 Route::get('/admin/dashboard',function(){
     return view('admin.dashboard');
-})->name('dashboard')->middleware('auth');    
+})->name('dashboard')->middleware('role','auth');    
 
 // Route::post('Alogin','Auth\LoginController@login')->name('Alogin'); 
 
 Route::get('/admin/enquiry',function(){
     return view('admin.enquiry.index');
-})->name('enquiry')->middleware('auth');
+})->name('enquiry')->middleware('role','auth');
 
 Route::get('/admin/enquiryDetail/{id}',function(){
     return view('admin.enquiry.enquiryDetail');
-})->name('enquiry_detail')->middleware('auth');
+})->name('enquiry_detail')->middleware('role','auth');
 
 Route::get('/admin/settings',function(){
     return view('admin.settings.index');
-})->name('settings')->middleware('auth'); 
+})->name('settings')->middleware('role','auth'); 
 
 Route::get('/admin/pages',function(){
     return view('admin.page');
-})->name('pages')->middleware('auth'); 
+})->name('pages')->middleware('role','auth'); 
 
 
 Route::get('/admin/pages/edit/{id}',function(){
     return view('admin.edit');
-})->name('edit-page')->middleware('auth');
+})->name('edit-page')->middleware('role');
 
 
 
 Route::get('admin/homes',function(){
     return view('admin.homes.index');
-})->name('homes')->middleware('auth');
+})->name('homes')->middleware('role','auth');
 
 Route::get('admin/home/edit/{id}', function(){
     return view('admin.homes.homeForm');
-})->name('edit-home');
+})->name('edit-home')->middleware('role','auth');
 Route::get('admin/home/manage/{id}', function(){
     return view('admin.homes.manage_homes');
-})->name('manage-homes')->middleware('auth');
+})->name('manage-homes')->middleware('role','auth');
 Route::get('admin/home/create', function(){
     return view('admin.homes.homeForm');
-})->name('create-home')->middleware('auth');
+})->name('create-home')->middleware('auth','auth');
 
 
 Route::get('admin/community',function(){
     return view('admin.communities.index');
-})->name('communities')->middleware('auth');
+})->name('communities')->middleware('role','auth');
 
 Route::get('/undercons', function () {
     return view('admin.undercons');
-})->middleware('auth');
+})->middleware('role','auth');
 
 Route::get('/availsold', function () {
     return view('admin.availsold');
-})->middleware('auth');
+})->middleware('role','auth');
 
 
 
 Route::get('admin/floor', function () {
     return view('admin.floor.index');
-})->name('floorView')->middleware('auth');;
+})->name('floorView')->middleware('role','auth');;
 Route::get('admin/floor-component-gallery/{type}/{id}', function () {
     return view('admin.floor.floor_component');
-})->name('FloorComponent')->middleware('auth');
+})->name('FloorComponent')->middleware('role','auth');
+
+
+Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index')->middleware('role','auth');
+Route::get( 'home', 'HomeController@index')->middleware('role','auth');
+
+Route::get('/admin/selling/',function(){
+    return view('admin.selling.selling');
+})->middleware('role','auth');
+
+Route::get('/admin/selling/',function(){
+    return view('admin.selling.index');
+})->name('selling')->middleware('role','auth');
+
+Route::get('/admin/selling/{id}','CommonController@ShowSell')->middleware('role','auth');
+
+
 
 // USER FRONT-END
 
@@ -120,25 +134,11 @@ Route::get('/sellHome',function(){
 Route::get('/development-Detail/{id}','user\HomeController@single')->name('developmentDetail');
  
 
-Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index');
-Route::get( 'home', 'HomeController@index');
-
-Route::get('/admin/selling/',function(){
-    return view('admin.selling.selling');
-});
-
-Route::get('/admin/selling/',function(){
-    return view('admin.selling.index');
-})->name('selling');
-
-Route::get('/admin/selling/{id}','CommonController@ShowSell');
-
-
 
 // end of admin section
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home')->middleware('role');
 
 
 
