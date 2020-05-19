@@ -268,219 +268,93 @@ class CommonController extends Controller
     public function enquiry()
     {
         $data ='';
-        $data.='
-        <div class="accordion" id="accordionExample">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <div class="row" >
-                <div class="col-md-12" style="height:28px;">
-                    <strong style="text-decoration:none;color:black">Message from <span style="color:#00909e;">Ankit(ankit_tatti@gmail.com)</span>
-                    for Visting home <span style="color:#00909e;">DialpurHome</span> 
-                    on <b style="color:#00909e;">12/10/2020</b> at <b style="color:#00909e;">13:00</b>. </strong>
-                </div>
-            </div>
-            <div class="row showbtn" style="text-align:center;">
-                <div class="col-md-12">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Click here to see message
-                    </button>
-                </div>
-            </div>
-          </div>
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-                <div class="messages">
-                    <table>
-                        <tr style="color:black;">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Mobile No.</th>
-                            <th>Enquired Home Name</th>
-                        </tr>
-                        <tr style="color:black;">
-                            <td>Ankit</td>
-                            <td>Ankit_tatti@gmail.com</td>
-                            <td>897489374</td>
-                            <td>DialpurHome</td>
-                        </tr>
-                    </table><br>
-                    <span><b>MESSAGE :</b></span><br>
-                    <p style="margin-left:100px;margin-right:100px;font-size:16px;">
-                    Chakk de fatte.
-                    <p>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target="#deleteFloor" class="btn">Reply</button> 
-                        </div>
-                        <div class="col-md-6">
-                            <button type="button" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
+        $display;
+        $enquiries= Enquiry::orderBy('created_at','desc')->get();
+        $date = Carbon::now();
 
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <div class="row" >
-                <div class="col-md-12" style="height:28px;">
-                    <strong style="text-decoration:none;color:black">Message from <span style="color:#00909e;">sourav(sourav@gmail.com)</span>
-                    for Visting home <span style="color:#00909e;">JammuHome</span> 
-                    on <b style="color:#00909e;">12/10/2020</b> at <b style="color:#00909e;">13:00</b>. </strong>
-                </div>
-            </div>
-            <div class="row showbtn" style="text-align:center;">
-                <div class="col-md-12">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Click here to see message
-                    </button>
-                </div>
-            </div>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-                <div class="messages">
-                    <table>
-                        <tr style="color:black;">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Mobile No.</th>
-                            <th>Enquired Home Name</th>
-                        </tr>
-                        <tr style="color:black;">
-                            <td>Sourav</td>
-                            <td>sourav@gmail.com</td>
-                            <td>897489644</td>
-                            <td>JammuHome</td>
-                        </tr>
-                    </table><br>
-                    <span><b>MESSAGE :</b></span><br>
-                    <p style="margin-left:100px;margin-right:100px;font-size:16px;">
-                    Chakk de fatte.
-                    <p>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target="#deleteFloor" class="btn">Reply</button> 
-                        </div>
-                        <div class="col-md-6">
-                            <button type="button" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
+        foreach($enquiries as $key=> $enquiry)
+        {
+            $minute=$date->diffInMinutes($enquiry->created_at);
+            $days=$date->diffInDays($enquiry->created_at);
+            $hours=$date->diffInHours($enquiry->created_at);
+            if($minute<60)
+            {
+                $display=$minute.' minute ago';
+            }
+            else if($minute>59 && $hours<24)
+            {
+                $display=$hours.' hours ago';
+            }
+            else if($minute>59 && $hours>23)
+            {
+                $display=$days.' days ago';
+            }
+            $home= homes::where('id',$enquiry->home_id)->get()->first();
+            if($enquiry->seen==0)
+            {
+                $color="C1C1C1";
+            }
+            else
+            {
+                $color="FFFFFF";
+            }
+                $data.='<div class="accordion" id="accordionExample" >
+                <div class="card" style="background:#'.$color.'" >
+                  <div class="card-header" id="headingOne" >
+                    <div class="row" >
+                        <div class="col-md-12" style="height:28px;" >
+                            <strong style="text-decoration:none;color:black">Message from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span>
+                            for Visting '.$home->title.'<span style="color:#00909e;"></span> 
+                            on <b style="color:#00909e;">'.$enquiry->date.'</b> at <b style="color:#00909e;">'.$enquiry->time.'</b>. </strong>
                         </div>
                     </div>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <div class="row" >
-                <div class="col-md-12" style="height:28px;">
-                    <strong style="text-decoration:none;color:black">Message from <span style="color:#00909e;">Ankitaaa(ankitaa@gmail.com)</span>
-                    for Visting home <span style="color:#00909e;">DiyalpuriyaHome</span> 
-                    on <b style="color:#00909e;">12/10/2020</b> at <b style="color:#00909e;">13:00</b>. </strong>
-                </div>
-            </div>
-            <div class="row showbtn" style="text-align:center;">
-                <div class="col-md-12">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Click here to see message
-                    </button>
-                </div>
-            </div>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-                <div class="messages">
-                    <table>
-                        <tr style="color:black;">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Mobile No.</th>
-                            <th>Enquired Home Name</th>
-                        </tr>
-                        <tr style="color:black;">
-                            <td>Ankitaa</td>
-                            <td>Ankitaaa@gmail.com</td>
-                            <td>1267374</td>
-                            <td>DialpuriyaHome</td>
-                        </tr>
-                    </table><br>
-                    <span><b>MESSAGE :</b></span><br>
-                    <p style="margin-left:100px;margin-right:100px;font-size:16px;">
-                    Chakk de fatte.
-                    <p>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target="#deleteFloor" class="btn">Reply</button> 
-                        </div>
-                        <div class="col-md-6">
-                            <button type="button" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
+                    <div class="row showbtn" style="text-align:center;">
+                    <div class="col-md-4" style="color:red;font-weight:bold">'.date($enquiry->created_at).'</div>
+                    <div class="col-md-4" style="color:red;font-weight:bold">'.$display.'</div>
+                        <div class="col-md-4">
+                            <button class="btn btn-link" onclick="enqUpdate('.$enquiry->id.')"  type="button" data-toggle="collapse" data-target="#collapse'.$enquiry->id.'" aria-expanded="true" aria-controls="collapseOne">
+                            Click here to see message
+                            </button>
                         </div>
                     </div>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header" id="headingFour">
-            <div class="row" >
-                <div class="col-md-12" style="height:28px;">
-                    <strong style="text-decoration:none;color:black">Message from <span style="color:#00909e;">Joseph(Joseph@gmail.com)</span>
-                    for Visting home <span style="color:#00909e;">otherHome</span> 
-                    on <b style="color:#00909e;">12/10/2020</b> at <b style="color:#00909e;">13:00</b>. </strong>
-                </div>
-            </div>
-            <div class="row showbtn" style="text-align:center;">
-                <div class="col-md-12">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Click here to see message
-                    </button>
-                </div>
-            </div>
-          </div>
-          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-            <div class="card-body">
-                <div class="messages">
-                    <table>
-                        <tr style="color:black;">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Mobile No.</th>
-                            <th>Enquired Home Name</th>
-                        </tr>
-                        <tr style="color:black;">
-                            <td>Joseph</td>
-                            <td>Joseph@gmail.com</td>
-                            <td>9667387874</td>
-                            <td>otherHome</td>
-                        </tr>
-                    </table><br>
-                    <span><b>MESSAGE :</b></span><br>
-                    <p style="margin-left:100px;margin-right:100px;font-size:16px;">
-                    Chakk de fatte.
-                    <p>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target="#deleteFloor" class="btn">Reply</button> 
-                        </div>
-                        <div class="col-md-6">
-                            <button type="button" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
+                  </div>
+                  <div id="collapse'.$enquiry->id.'" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="messages">
+                            <table>
+                                <tr style="color:black;">
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile No.</th>
+                                    <th>Enquired Home Name</th>
+                                </tr>
+                                <tr style="color:black;">
+                                    <td>'.$enquiry->name.'</td>
+                                    <td>'.$enquiry->email.'</td>
+                                    <td>'.$enquiry->phone.'</td>
+                                    <td>'.$home->title.'</td>
+                                </tr>
+                            </table><br>
+                            <span><b>MESSAGE :</b></span><br>
+                            <p style="margin-left:100px;margin-right:100px;font-size:16px;">
+                             '.$enquiry->message.'
+                            <p>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target="#deleteFloor" class="btn">Reply</button> 
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-            ';
+                  </div>
+                </div>';
              
-        return $data; 
+        }
+        return $data;
     }
 
     public function DeleteFav($id)
