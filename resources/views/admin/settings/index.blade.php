@@ -109,15 +109,15 @@
         <form class="details-containerr">
             <div class="form-group">
                 <label for="inputTitle">Current Password</label>
-                <input type="password" class="form-control" id="current" required>
+                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" id="current" required>
             </div>
             <div class="form-group">
                 <label for="inputTitle">New Password</label>
-                <input type="password" class="form-control" id="newpass" required>
+                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" id="newpass" required>
             </div>
             <div class="form-group">
                 <label for="inputTitle">Confirm New Pasword</label>
-                <input type="text" class="form-control" id="Confirmpass" required>
+                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" id="Confirmpass" required>
             </div>
         <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
         <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>

@@ -40,11 +40,11 @@
       <form id="ComponentAddForm">
         <div class="form-group">
       <label for="inputEmail4">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="title" required>
+      <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="name" placeholder="title" required>
     </div>
     <div class="form-group">
       <label for="inputEmail4">Component Number</label>
-      <input type="number" class="form-control" id="cno" placeholder="title" required>
+      <input type="number" class="form-control" id="cno" onkeydown="javascript: return event.keyCode == 69 ? false : true"  placeholder="title" required>
     </div>
    
   <div class="form-group">
@@ -83,11 +83,11 @@
         <form id="EditComponentForm">
           <div class="form-group">
         <label for="inputEmail4">Name</label>
-        <input type="text" class="form-control" id="edit_name" placeholder="title" required>
+        <input type="text" class="form-control" pattern="^[a-zA-Z][\sa-zA-Z]*" id="edit_name" placeholder="title" required>
       </div>
       <div class="form-group">
         <label for="inputEmail4">Component Number</label>
-        <input type="number" class="form-control" id="edit_cno" placeholder="title" required>
+        <input type="number" class="form-control" id="edit_cno" onkeydown="javascript: return event.keyCode == 69 ? false : true"  placeholder="title" required>
       </div>
      
     <div class="form-group">

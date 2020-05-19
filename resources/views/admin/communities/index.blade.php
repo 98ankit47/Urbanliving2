@@ -36,31 +36,31 @@
       <form id="Communityaddform">
 <div class="form-group">
       <label for="inputEmail4">Title</label>
-      <input type="text" class="form-control" id="addtitle" placeholder="title" required>
+      <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addtitle" placeholder="title" required>
     </div>
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="addaddress" placeholder="Address" required>
+    <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addaddress" placeholder="Address" required>
   </div>
 
   <div class="form-row">
   <div class="form-group col-md-4">
     <label for="inputArea">Area</label>
-    <input type="text" class="form-control" id="addarea" placeholder="Area" required>
+    <input type="number" class="form-control" id="addarea" placeholder="Area" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputDivision">Subdivision</label>
-    <input type="text" class="form-control" id="addsubdivission" placeholder="Subdivision" required>
+    <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addsubdivission" placeholder="Subdivision" required>
   </div>
     <div class="form-group col-md-4">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="addcity" required>
+      <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addcity" required>
     </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="inputCity">state</label>
-        <input type="text" class="form-control" id="addstate" required>
+        <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addstate" required>
       </div>
     <div class="form-group col-md-4">
       <label for="inputState">Country</label>
@@ -72,8 +72,14 @@
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="addzipcode" required>
+      <input type="number" class="form-control" pattern="\d{5,5}(-\d{4,4})?" id="addzipcode" required>
     </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="inputZip">Desciption</label>
+        <textarea class="form-control" pattern="^[a-zA-Z][\sa-zA-Z]*"row="2" id="description" required></textarea>
+      </div>
+    <div>
    
   </div>
   <div class="modal-footer">

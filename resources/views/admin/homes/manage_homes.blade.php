@@ -210,7 +210,7 @@ td, th {
             <div class="form-group">
               @csrf
               <label for="inputProperty">Feature Name</label>
-              <input type="text" class="form-control" id="edit_title" name="title" placeholder="" required>
+              <input type="text" class="form-control" id="edit_title" name="title" placeholder="" pattern="^[a-zA-Z][\sa-zA-Z]*" required>
               @foreach($homes as $home)
               <input type="hidden" class="form-control" id="home_id" name="home_id" placeholder="" value="{{$home->id}}" required>
           @endforeach
@@ -219,7 +219,7 @@ td, th {
             <div class="row">
               <div class="col-md-6">
             <label for="img">Select image:</label>
-            <input type="file" id="image" name="featured-image" accept="image/*">
+            <input type="file" id="image" name="featured-image" required accept="image/*">
             </div>
           </form>
           </div>
@@ -249,7 +249,7 @@ td, th {
           <div class="form-group">
             @csrf
             <label for="inputProperty">Feature Name</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="">
+            <input type="text" class="form-control" id="title" required pattern="^[a-zA-Z][\sa-zA-Z]*" name="title" placeholder="">
             @foreach($homes as $home)
             <input type="hidden" class="form-control" id="home_id" name="home_id" placeholder="" value="{{$home->id}}">
         @endforeach
@@ -259,7 +259,7 @@ td, th {
             <div class="col-md-6">
             <form action="/action_page.php">
           <label for="img">Select image:</label>
-          <input type="file" id="image" name="featured-image" accept="image/*">
+          <input type="file" id="image" name="featured-image" required accept="image/*">
           </form>
           </div>
         </form>
@@ -352,7 +352,9 @@ td, th {
  </div>
 
 
- <div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" style="font-family: 'Quicksand', Georgia,
+  'Times New Roman', Times, serif;" id="galleryModal" tabindex="-1" role="dialog"
+   aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -364,7 +366,7 @@ td, th {
     <form id="galleryupdate">  
       <div class="modal-body">
             <div class="image-upload">
-              <input type="file" id="files" name="files[]" multiple />
+              <input type="file" id="files" name="files[]" multiple  required/>
               <br><br>
               <output id="list" width="220px" height="220px"></output>
             </div>

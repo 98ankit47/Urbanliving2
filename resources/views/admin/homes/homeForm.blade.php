@@ -49,39 +49,39 @@
   <div class="form-row "> 
     <div class="form-group col-md-4">
       <label for="inputTitle">Title</label>
-      <input type="text" class="form-control" id="title" required>
+      <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="title" required>
     </div>
     
   
   <div class="form-group col-md-4">
     <label for="community">Community</label>
-    <select id="community_list" class="form-control" onclick="loadCommunityList()">
+    <select id="community_list"  class="form-control" onclick="loadCommunityList()">
     </select>
   </div>
 
   <div class="form-group col-md-4">
     <label for="inputDescription">Description</label>
-    <textarea name="" id="description" cols="30" rows="2" class="w-100 form-control"></textarea>
+    <textarea name="" pattern="^[a-zA-Z][\sa-zA-Z]*" id="description" cols="30" rows="2" class="w-100 form-control"></textarea>
   </div> 
   </div>
   <div class="form-row">
   <div class="form-group col-md-4">
     <label for="inputBedroom">Bedroom</label>
-    <input type="number" class="form-control" id="bedroom"  onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
+    <input type="number" min="1" max="20" class="form-control" id="bedroom"  onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputBathroom">bathroom</label>
-    <input type="number" class="form-control" id="bathroom" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
+    <input type="number" min="1" max="20" class="form-control" id="bathroom" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputGarage">Garage</label>
-    <input type="number" class="form-control" id="garage" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
+    <input type="number" min="1" max="10" class="form-control" id="garage" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   </div>
   <div class="form-row">
   <div class="form-group col-md-4">
     <label for="inputStories">Stories</label>
-    <input type="number" class="form-control" id="stories" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
+    <input type="number" min="1" max="8" class="form-control" id="stories" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputMls">Type</label>
@@ -100,7 +100,7 @@
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputCity">Builder</label>
-      <input type="text" class="form-control" id="builder" required>
+      <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="builder" required>
     </div>
      
     <div class="form-group col-md-4">
@@ -112,7 +112,7 @@
 
     <div class="form-group col-md-4">
       <label for="inputCity">Price</label>
-      <input type="number" class="form-control" id="price" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
+      <input type="number" min="1" max="100000" class="form-control" id="price" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
     </div>  
   </div>
 

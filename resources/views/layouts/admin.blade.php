@@ -953,10 +953,10 @@ function Editloadmap(aid){
         });
         $(function () {
           $('form').on('submit', function (e) {
+            e.preventDefault();
             if(latitude)
             {
             var title,description,bedroom,bathroom,price,garage,community,stories,mls,status,area,builder;
-            e.preventDefault();
                 title            =  document.getElementById("title").value;         
                 description      =  document.getElementById("description").value;         
                 bedroom          =  document.getElementById("bedroom").value;         
