@@ -55,7 +55,7 @@
   
   <div class="form-group col-md-4">
     <label for="community">Community</label>
-    <select id="community_list" class="form-control">
+    <select id="community_list" class="form-control" onclick="loadCommunityList()">
     </select>
   </div>
 
@@ -84,7 +84,7 @@
     <input type="text" class="form-control" id="stories" required>
   </div>
   <div class="form-group col-md-4">
-    <label for="inputMls">Mls</label>
+    <label for="inputMls">Type</label>
     <select class="form-control" id="mls">
       <option value="single">Single Family</option>
       <option value="mid">Mid High Rise</option>
@@ -105,7 +105,7 @@
      
     <div class="form-group col-md-4">
       <label for="inputState">Status</label>
-      <select id="status" class="form-control">
+      <select id="status" class="form-control" onclick="loadStatusList()">
        
       </select>
     </div>
