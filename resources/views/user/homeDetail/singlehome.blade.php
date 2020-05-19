@@ -313,8 +313,10 @@
                     <h4>AVAILABILITY</h4><br>
                         <div class="card" style="height:22rem;">
                             <div class="card-body">
-                                <img style="width:100%;height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZaJIjBNF3kO4CIoQjqq8byvddTYNrxoaaoLQyRDXSrzmkOfdB&usqp=CAU"/>
-                            </div>
+                                @foreach($homes as $home)
+                                  <img style="width:100%;height:100%;" src="/uploads/homes/{{$home->featured_image}}"/>
+                                @endforeach
+                                </div>
                         </div>
                 </div>
             </div>
