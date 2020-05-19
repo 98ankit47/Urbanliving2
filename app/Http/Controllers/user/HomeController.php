@@ -199,14 +199,14 @@ class HomeController extends Controller
         Enquiry::create([
             'date'=>$request['date'],
             'time'=>$request['time'],
-            'name'=>"Jashan",
-            'email'=>"Jashan@gmail.com",
+            'name'=>$request['name'],
+            'email'=>$request['email'],
             'phone'=>$request['phone'],
             'seen'=>$request['seen'],
             'home_id'=>$request['home_id'],
             'message'=>$request['message'],
         ]);
-        return "ankit";
+        return "Success";
 
     }
 

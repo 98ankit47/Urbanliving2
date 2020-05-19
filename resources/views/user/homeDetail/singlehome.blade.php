@@ -142,11 +142,11 @@
       <a class="nav-item nav-link devitem" type="button" id='availClick' href="#availablee">Availability</a>&nbsp;&nbsp;&nbsp;
       <a class="nav-item nav-link devitem" type="button" id='lookClicks' href="#lookss">Look Book</a>
     </div>
-</nav><br><br>
+</nav><br>
  
 <div class="row" id="overview">
         <div class="col-md-8">
-            <div class="card" style="height:37rem; text-align:center;">
+            <div class="card" style="height:33rem; text-align:center;">
                 <div class="row inner">
                     <div class="col-md-8">      
                         <?php
@@ -157,7 +157,7 @@
                         }                 
                             ?>
                         @foreach($gallery as $gals)
-                            <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:553px; width:100%;">
+                            <img class="mySlides" src="/uploads/gallery/{{$gals}}" style="height:493px; width:100%;">
                         @endforeach
                             <div class="w3-center">
                                 <div class="w3-section">
@@ -191,20 +191,21 @@
                                 <a href="https://web.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>    
                             </div>
                           </div>
-                        <a class="share"><i style="color:black;" class="fa fa-share-alt"></i></a>
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-        <div class="card" style="height:37rem;">
+        <div class="card" style="height:33rem;">
             <div class="card-body" style="text-align:center;">
                 <h2>SCHEDULE TOUR</h2><br>
                 <form id="enquiry" style="font-family: Open Sans, sans-serif; text-align:left;">                
                         <div class="form-group">
                             <label for="inputTitle">Date</label>
                             <input type="date" class="form-control" id="date" required>
+                        <input type="hidden" class="form-control" id="name" required value="{{Auth::user()->name}}">
+                            <input type="hidden" class="form-control" id="email" value="{{Auth::user()->name}}" required>
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Time</label>
@@ -439,7 +440,7 @@
             </div>
             </div>           
  
-<br><br><br>
+
  
  
 <!-- CONTNET SHOWED ON CLICK OF PRINT BUTTON -->
@@ -463,7 +464,7 @@
             </div>
     </div>
 </div>
-        <br>
+        
 <div class="card" style="height: 770px;">
 <div class="card-body">
     <div class="row">

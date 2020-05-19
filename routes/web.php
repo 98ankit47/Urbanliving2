@@ -15,6 +15,11 @@
 
     // admin section
 
+
+Route::get('/apna',function(){
+    return view('index');
+})->name('apna');     
+
 Route::get('/admin/dashboard',function(){
     return view('admin.dashboard');
 })->name('dashboard')->middleware('auth');    

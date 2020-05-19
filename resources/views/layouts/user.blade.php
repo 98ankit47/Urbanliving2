@@ -402,7 +402,7 @@
 </nav>
 </div>
                                                                           
-<br><br>
+<br>
 <?php
 	if(Auth::user())
 	{
@@ -871,10 +871,12 @@
                });
               } 
          $('#enquiry').on('submit', function (e) {
-           var time,date,message,phone;
+           var time,date,message,phone,name,email;
            e.preventDefault();
                time          =  document.getElementById("time").value;         
                date         =  document.getElementById("date").value;         
+               name         =  document.getElementById("name").value;         
+               email         =  document.getElementById("email").value;         
                message           =  document.getElementById("message").value;         
                phone          =  document.getElementById("phone").value;         
                $.ajax({
@@ -883,6 +885,8 @@
                  data:{
                    'date'              : date,
                    'time'              : time,
+                   'name'              : name,
+                   'email'             : email,
                    'phone'             : phone,
                    'message'           : message,
                    'seen'              : 0,

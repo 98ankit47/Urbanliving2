@@ -67,15 +67,15 @@
   <div class="form-row">
   <div class="form-group col-md-4">
     <label for="inputBedroom">Bedroom</label>
-    <input type="text" class="form-control" id="bedroom" required>
+    <input type="number" class="form-control" id="bedroom" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputBathroom">bathroom</label>
-    <input type="text" class="form-control" id="bathroom" required>
+    <input type="number" class="form-control" id="bathroom" required>
   </div>
   <div class="form-group col-md-4">
     <label for="inputGarage">Garage</label>
-    <input type="text" class="form-control" id="garage" required>
+    <input type="number" class="form-control" id="garage" required>
   </div>
   </div>
   <div class="form-row">
@@ -93,7 +93,7 @@
   </div>
   <div class="form-group col-md-4">
     <label for="inputArea">Area</label>
-    <input type="text" class="form-control" id="area" required>
+    <input type="number" class="form-control" id="area" required>
   </div>
   </div>
 
@@ -112,7 +112,7 @@
 
     <div class="form-group col-md-4">
       <label for="inputCity">Price</label>
-      <input type="text" class="form-control" id="price" required>
+      <input type="number" class="form-control" id="price" required>
     </div>  
   </div>
 
