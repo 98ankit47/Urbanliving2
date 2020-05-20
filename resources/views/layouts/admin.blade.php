@@ -1776,6 +1776,8 @@ function Editloadmap(aid){
 
       function editcommunity(cid)
       {        
+        $('#communityModal').modal('show');
+
         var APP_URL = "{{ url('/') }}";
         var id = window.location.href.split('/').pop();
         $.ajax({
@@ -1783,7 +1785,6 @@ function Editloadmap(aid){
       url: APP_URL+'/api/admin/community/'+cid,
 
       success: function(result){    
-        $('#communityModal').modal('show');
 
           document.getElementById("title").value        = result.title;
           document.getElementById("address").value      = result.address;

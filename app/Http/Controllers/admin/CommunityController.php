@@ -41,7 +41,7 @@ class CommunityController extends Controller
                  <div class="row">
                  
                  <div class ="col-md-6" style="text-align:center;">
-                 <a type="button" data-toggle="modal" onclick="editcommunity('.$community->id.')" data-target="#exampleModal" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn com-but">Edit</a>    
+                 <a type="button"  onclick="editcommunity('.$community->id.')"  style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn com-but">Edit</a>    
                 </div>
                 
                 <div class ="col-md-6" style="text-align:center;">

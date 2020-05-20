@@ -20,10 +20,82 @@
   </div>
   </div>
 
+  <div class="modal " style="font-family: 'Quicksand', Georgia, 'Times New Roman', 
+Times, serif;" id="communityModal" tabindex="-1" role="dialog" 
+aria-labelledby="exampleModalLabl" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Community Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form id="Communityform">
+<div class="form-group">
+      <label for="inputEmail4">Title</label>
+      <input type="text" class="form-control" id="title" placeholder="title" required>
+    </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="address" placeholder="Address" required>
+  </div>
+
+  <div class="form-row">
+  <div class="form-group col-md-4">
+    <label for="inputArea">Area</label>
+    <input type="text" class="form-control" id="area" placeholder="Area" required>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputDivision">Subdivision</label>
+    <input type="text" class="form-control" id="subdivission" placeholder="Subdivision" required>
+  </div>
+    <div class="form-group col-md-4">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="city" required>
+    </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputCity">state</label>
+        <input type="text" class="form-control" id="state" required>
+      </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">Country</label>
+      <select id="country" class="form-control">
+        <option selected>Choose...</option>
+        <option>India</option>
+        <option>USA</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="zipcode" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputZip">Desciption</label>
+      <textarea class="form-control" row="2" id="description" required></textarea>
+    </div>
+  <div>
+  <div class="modal-footer">
+    <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+    <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+  </div>
+</form>
+      </div>
+     
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 
-<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="AddcommunityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', 
+Times, serif;" id="AddcommunityModal" tabindex="-1" role="dialog" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -93,74 +165,6 @@
   </div>
 </div>
 
-<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="communityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Community Name</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form id="Communityform">
-<div class="form-group">
-      <label for="inputEmail4">Title</label>
-      <input type="text" class="form-control" id="title" placeholder="title" required>
-    </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="address" placeholder="Address" required>
-  </div>
-
-  <div class="form-row">
-  <div class="form-group col-md-4">
-    <label for="inputArea">Area</label>
-    <input type="text" class="form-control" id="area" placeholder="Area" required>
-  </div>
-  <div class="form-group col-md-4">
-    <label for="inputDivision">Subdivision</label>
-    <input type="text" class="form-control" id="subdivission" placeholder="Subdivision" required>
-  </div>
-    <div class="form-group col-md-4">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="city" required>
-    </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputCity">state</label>
-        <input type="text" class="form-control" id="state" required>
-      </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">Country</label>
-      <select id="country" class="form-control">
-        <option selected>Choose...</option>
-        <option>India</option>
-        <option>USA</option>
-      </select>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="zipcode" required>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <label for="inputZip">Desciption</label>
-      <textarea class="form-control" row="2" id="description" required></textarea>
-    </div>
-  <div>
-  <div class="modal-footer">
-    <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-    <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
-  </div>
-</form>
-      </div>
-     
-    </div>
-  </div>
-</div>
 
 <!--Save Moadal-->
 
