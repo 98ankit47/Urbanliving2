@@ -197,6 +197,7 @@ class CommonController extends Controller
             $minute=$date->diffInMinutes($enquiry->created_at);
             $days=$date->diffInDays($enquiry->created_at);
             $hours=$date->diffInHours($enquiry->created_at);
+            $month=$date->diffInMonths($enquiry->created_at);
             if($minute<60)
             {
                 $display=$minute.' minute ago';
@@ -208,6 +209,10 @@ class CommonController extends Controller
             else if($minute>59 && $hours>23)
             {
                 $display=$days.' days ago';
+            }
+            else if($days>30)
+            {
+                $display=$months.' days ago';
             }
             $home= homes::where('id',$enquiry->home_id)->get()->first();
             if(($enquiry->seen)==0)
@@ -277,6 +282,7 @@ class CommonController extends Controller
             $minute=$date->diffInMinutes($enquiry->created_at);
             $days=$date->diffInDays($enquiry->created_at);
             $hours=$date->diffInHours($enquiry->created_at);
+            $month=$date->diffInMonths($enquiry->created_at);
             if($minute<60)
             {
                 $display=$minute.' minute ago';
@@ -285,9 +291,13 @@ class CommonController extends Controller
             {
                 $display=$hours.' hours ago';
             }
-            else if($minute>59 && $hours>23)
+            else if($hours>23 && $days<30)
             {
                 $display=$days.' days ago';
+            }
+            else if($days>30)
+            {
+                $display=$month.' month ago';
             }
             $home= homes::where('id',$enquiry->home_id)->get()->first();
             if($enquiry->seen==0)
