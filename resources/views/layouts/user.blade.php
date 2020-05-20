@@ -953,6 +953,110 @@
 		});
 	  }
 </script>
+
+@if(Route::currentRouteName() == 'neighbour')
+  <script>
+	  function Nearby(type,lat,lng)
+	  {			
+		var myLatLng=new google.maps.LatLng(lat,lng);
+		var map = new google.maps.Map(
+		document.getElementById('map'), {zoom:16, center: myLatLng});
+		var request = {
+			location: myLatLng,
+			radius: '300',
+			type: [type],
+		};
+		function createmarker(latlng,icn,title)
+		{
+			var marker = new google.maps.Marker({
+				position: latlng,
+				map: map,
+				icon: icn,
+				title: title
+			});
+		}
+		service = new google.maps.places.PlacesService(map);
+		service.nearbySearch(request, callback);
+		function callback(results, status) {
+			if (status === google.maps.places.PlacesServiceStatus.OK) {
+				for (var i = 0; i < results.length; i++) {
+					var place=results[i];
+					latlng=place.geometry.location;
+					icn=place.icon;
+					title=place.title;
+					createmarker(latlng,icn,title);
+				}
+			}
+		}
+	  }
+			loadMap();
+            function loadMap(){
+				var id = window.location.href.split('/').pop();
+                $.ajax({
+                type: 'GET',
+                url: APP_URL+'/api/map/'+id,
+                  success: function(result){
+					var lat=result.lat;
+					var lng=result.lng;
+					var infoWindow = new google.maps.InfoWindow();
+					var myLatLng=new google.maps.LatLng(lat,lng);
+					var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+					var markers = [];
+					var map = new google.maps.Map(
+						document.getElementById('map'), {zoom:16, center: myLatLng});
+						var data = markers[result.id];
+						var marker = new google.maps.Marker({
+								position:  myLatLng,
+								map: map,
+								icon: iconBase + 'library_maps.png',
+								title: "Home",
+							});
+							$.ajax({
+								type: 'GET',
+								url: APP_URL+'/api/Avail/'+id,
+								success: function(results){
+									var ln = Object.keys(results).length;
+											for(var i=0;i<ln;i++)
+											{	
+												var data = markers[results[i].id];
+												var marker = new google.maps.Marker({
+												position: new google.maps.LatLng(results[i].lat,results[i].lng),
+												map: map,
+												icon: iconBase + 'library_maps.png',
+												title: "home",
+												});
+											}
+										}
+									}); 
+							markers.push(marker);
+							(function (marker, data) {
+								var image=result.featured_image;
+								var title=result.title;
+								var bed=result.bedroom;
+								var bathroom=result.bathroom;
+								var price=result.price;
+								
+								google.maps.event.addListener(marker, "mouseover", function (e) {
+									infoWindow.setContent('<div id="content" class="map-window"><div class="item">'+
+									'<div class="item-img"><img style="height:100px;width:150px" class="js-mediaFit js-mediaFitCollected landscape-media loaded" src="/uploads/homes/'+image+'">'+
+									'</div><div class="item-body"><div class="item-body-content">'+
+									'<div class="item-header"><h6>'+title+'</h6></div>'+
+									'<ul class="item-details" type="none">'+
+									'<li class="price "><i class="fa fa-price" style="font-size:20px"></i><span>$ '+price+'</span></li>'+
+									'<li class="icon icon-bed"><i class="fa fa-bed" style="font-size:20px"></i><span>'+bed+'</span><i class="fa fa-bath" style="font-size:20px"></i><span>'+bathroom+'</span></li>'+
+									'</ul>'+
+									'</div></div>');
+									infoWindow.open(map, marker);
+									
+								});
+							})(marker, data);
+				  }
+               });
+              } 
+            
+  </script>
+  @endif
+
 @if(Route::currentRouteName() == 'neigTypeHome')
   <script>
 		var data = window.location.href.split('/');

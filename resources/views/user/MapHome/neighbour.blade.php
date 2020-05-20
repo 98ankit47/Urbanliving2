@@ -228,14 +228,6 @@
                         <input type="time" class="form-control" id="time" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputTitle">Name</label>
-                        <input type="text" class="form-control" id="uname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputDescription">Email</label>
-                        <input type="email" class="form-control" id="uemail" required>
-                    </div>
-                    <div class="form-group">
                         <label for="inputTitle">Phone No.</label>
                         <input type="text" class="form-control" id="phone" required>
                     </div>
