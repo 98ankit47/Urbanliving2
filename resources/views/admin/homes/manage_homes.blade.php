@@ -17,9 +17,9 @@
   transition: 0.3s;
 }
 
-.tabss {
+/* .tabss {
   margin-left: 20px;
-}
+} */
 
 table {
   font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;
@@ -46,7 +46,7 @@ td, th {
       text-align:left;
     }
     .w3-bottombar {
-      width: 25%;
+      width: 20%;
     }
     .card-details {
       margin-left:10px;
@@ -73,16 +73,19 @@ td, th {
 
 <div class=" container w3-row tabss" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
     <a href="javascript:void(0)" class="tablinks active" onclick="openCity(event, 'homes');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Home</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Home</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'features');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Features</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Features</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'gallery');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Gallery</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Gallery</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Availability');">
-      <div class="w3-third tablink w3-bottombar w3-padding" style="text-align: center; color:black;"><b>Availability</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Availability</b></div>
+    </a>
+    <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Broucher');">
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Broucher</b></div>
     </a>
 </div>
 
@@ -190,6 +193,12 @@ td, th {
     <div class="row" style="text-align: center;" id="homeAvial">
                          
     </div>  
+  </div>
+</div>
+
+<div id="Broucher" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
+  <div class="container">
+    <a type="button" href="#" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn" data-toggle="modal" data-target="#myBroucher">Add Broucher</a> 
   </div>
 </div>
 
@@ -405,6 +414,31 @@ td, th {
       </div>
     </div>
   </div>
+
+<!--BROUCHER MODAL-->
+<div class="modal fade" id="myBroucher" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ADD BROUCHER</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span><b>UPLOAD PDF FILE HERE :</b></span><br><br>
+        <form action="">
+          <input type="file" id="myFile" name="filename">
+          <!-- <input type="submit"> -->
+        </form><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 // Tabs
