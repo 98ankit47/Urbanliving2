@@ -36,7 +36,7 @@
     <div id="success"></div>
 <div class="row">
     <div class="col-md-6">
-        <div class="card" style="height:710px;">
+        <div class="card" style="height:605px;">
             <img style="width:100%;height:100%;" class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU"/>
             <img style="width:100%;height:100%;" class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU"/>
             <div class="w3-center">
@@ -52,20 +52,11 @@
             <div class="card-body" style="text-align:center;">
                 <h4>CONTACT US</h4><br>
                 <form id="selling" style="font-family: Open Sans, sans-serif; text-align:left;">
-                <div class="row">
-                <div class="col-md-6">                
-                    <div class="form-group">
-                        <label for="inputTitle">Contact Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Name" required>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="inputEmail">Email</label>
-                        <input type="text" class="form-control" placeholder="Enter Email" id="mail" required>
-                    </div>
-                </div>
-                </div><br>
+                   
+                    <input type="hidden" class="form-control" id="name" value="{{Auth::user()->name}}" required>
+                 
+                    <input type="hidden" class="form-control" value="{{Auth::user()->email}}" required>
+                     
                 <span style="color:darkgray"><b>PROPERTY INFORMATION</b></span><br><br>
                 <div class="row">
                 <div class="col-md-12">
@@ -186,7 +177,6 @@
     </div>
 </div>
 </div>
-<br><br>
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);

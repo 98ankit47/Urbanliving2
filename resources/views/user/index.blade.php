@@ -308,7 +308,7 @@
       <div class="card-body">
         <div class="card" style="background-color:#557A95;">
           <div class="card-body" style="height:258px;"><br><br><br><br>
-            <a type="button" href="/all-development" style="color:white; border-color:white;" class="btn btn-outline w-100"><b>VIEW ALL NEIGHBORHOOD</b></a><br><br>
+            <a type="button" href="/neighbor" style="color:white; border-color:white;" class="btn btn-outline w-100"><b>VIEW ALL NEIGHBORHOOD</b></a><br><br>
           </div>
         </div>  
       </div>
