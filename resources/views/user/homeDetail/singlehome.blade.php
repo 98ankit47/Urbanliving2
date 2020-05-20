@@ -275,6 +275,38 @@
             </div>
             </div>
 <br><br><br>
+
+<!--SITE PLAN-->
+
+        <div class="row" id="siteplann">
+            <div class="col-md-12">
+                <div class="card" style="height:50rem; text-align:center;">
+                    <div class="row inner">
+                        <div class="col-md-4">      
+                            <div class="card" style="height:25rem;">
+                                <div class="card-body" style="background-color:#557A95;">
+                                    <div id="siteDetail" class="container" style="text-align: center;">
+                                        <h3 style="color:white;"><b>SITE PLAN</b></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" style="height:25rem;">
+                                <div class="card-body" id="siteImage">
+                                
+                                </div>
+                            </div>        
+                        </div>
+                        <div class="col-md-8"><br><br><br><br><br>
+                            <div class="row">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+<br><br><br>
+
         <!--FEATURES-->
  
         <div class="row" id="feature">
