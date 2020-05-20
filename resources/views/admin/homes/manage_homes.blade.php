@@ -198,7 +198,7 @@ td, th {
 
 <div id="Broucher" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
   <div class="container">
-    <a type="button" href="#" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn" data-toggle="modal" data-target="#myBroucher">Add Broucher</a> 
+    <a type="button" onclick="UploadPdf()" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn" data-toggle="modal" data-target="#myBroucher">Add Broucher</a> 
   </div>
 </div>
 
@@ -425,16 +425,17 @@ td, th {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <span><b>UPLOAD PDF FILE HERE :</b></span><br><br>
-        <form action="">
-          <input type="file" id="myFile" name="filename">
-          <!-- <input type="submit"> -->
-        </form><br>
-      </div>
+      <form id="pdfUpload">
+        <div class="modal-body">
+          <span><b>UPLOAD PDF FILE HERE :</b></span><br><br>
+            <input type="file" id="pdf" name="pdf">
+            <!-- <input type="submit"> -->
+        </div>
+      <br>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </form>
       </div>
     </div>
   </div>

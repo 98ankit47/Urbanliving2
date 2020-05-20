@@ -63,6 +63,8 @@ Route::get('admin/home-gallery/{id}','CommonController@showGallery');
 Route::post('admin/update-gal/{id}','CommonController@updateGallery');
 Route::delete('admin/home-gallery/{home_id}/{id}','CommonController@deleteGallery');
 
+Route::post('admin/pdfUpload/{id}','admin\HomeController@uploadPdf');
+
 Route::get('admin/AllSelling/','CommonController@sellingEnquiry');
 Route::get('admin/Selling-seen-update/{id}','CommonController@sellingEnquiryUpdate');
 

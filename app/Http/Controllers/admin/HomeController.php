@@ -264,6 +264,20 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    public function uploadPdf(Request $request)
+    {
+        $pdf_name =  time().explode('.',$request['pdf_name'])[0].'.' . explode('/', explode(':',substr($request['pdf'],0,strpos(
+            $request['pdf'],';')))[1])[1];  
+
+        \Image::make($request['pdf'])->save(public_path('uploads\homes\broucher\\').$pdf_name);
+       
+        return $request['pdf_name'];
+    }
+    
+
+
     public function show($id)
     {
         $home= Homes::where('id',$id)->get()->first();

@@ -589,7 +589,42 @@ $('#ys-comm-btn').click(function()
  
 </script>
 
-@if(Route::currentRouteName() == 'edit-home')
+
+  <Script>
+    function UploadPdf()
+    {
+      var id = window.location.href.split('/').pop();
+      $('#pdf').change(function(e){
+              let files = e.target.files[0];
+              let reader = new FileReader();
+              if(files){
+                reader.onloadend = ()=>{
+                  $('#chosen_feature_img').attr('src',reader.result);
+                  pdf = reader.result;
+                  pdf_name = files.name;
+                }
+                reader.readAsDataURL(files); 
+            }
+          });
+          
+      $('#pdfUpload').on('submit', function (e) {
+          e.preventDefault();
+              $.ajax({
+                type: 'post',
+                url: '/api/admin/pdfUpload/'+id,
+                data:{
+                  'pdf'        : pdf,
+                  'pdf_name'   : pdf_name,
+                },
+                success: function () {
+                }
+              });
+        });  
+    }
+  </Script>
+
+
+@if(Route::currentRouteName() == 'edit-home') 
 <script>
   var image="a",image_name="a";
   var latitude,longitude;
