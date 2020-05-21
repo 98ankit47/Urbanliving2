@@ -61,7 +61,9 @@
                 <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <textarea name="message" id="address" required cols="41" rows="2" placeholder="Address1" class="form-control"></textarea>
+ 
+                        <label>Address 1</label>
+                        <textarea name="message" id="address" cols="41" rows="2" placeholder="Address1" class="form-control"></textarea>
                     </div>
                 </div><br>
                 
@@ -69,22 +71,29 @@
                 <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input name="message" id="city" required cols="41" rows="2" placeholder="City" class="form-control"></input>
+ 
+                        <label>City</label>
+                        <input name="message" id="city" cols="41" rows="2" placeholder="City" class="form-control"></input>
                     </div>
                 </div><br>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input name="message" id="state" required cols="41" rows="2" placeholder="State" class="form-control"></input>
+ 
+                        <label>State</label>
+                        <input name="message" id="state" cols="41" rows="2" placeholder="State" class="form-control"></input>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input name="message" id="zip" cols="41" required rows="2" placeholder="ZIP" class="form-control"></input>
+ 
+                        <label>Zip</label>
+                        <input name="message" id="zip" cols="41" rows="2" placeholder="ZIP" class="form-control"></input>
                     </div>
                 </div>
                 </div>
                 <div class="row">
                 <div class="col-md-6">
+                    <label>Beds</label>
                     <select id="bedroom" class="form-control">
                         <option selected>Beds</option>
                         <option value="1">1 Beds</option>
@@ -95,6 +104,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
+                    <label>Baths</label>
                     <select id="bathroom" class="form-control">
                         <option selected>Baths</option>
                         <option value="1">1 Baths</option>
@@ -107,6 +117,7 @@
                 </div><br>
                 <div class="row">
                 <div class="col-md-6">
+                    <label>Square feet</label>
                     <select id="square" class="form-control">
                         <option selected>Square Ft.</option>
                         <option value="0 - 1,000">0 - 1,000</option>
@@ -118,6 +129,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
+                    <label>Price Range</label>
                     <select id="price" class="form-control">
                         <option selected>Price Range</option>
                         <option value="$100,000 - $150,000">$100,000 - $150,000</option>
@@ -131,6 +143,7 @@
                 </div><br>
                 <div class="row">
                 <div class="col-md-6">
+                    <label>Proprty Type</label>
                     <select id="type" class="form-control">
                         <option selected>Property type</option>
                         <option value="Single Family">Single Family</option>
@@ -141,6 +154,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
+                    <label>Plan</label>
                     <select id="time" class="form-control">
                         <option selected>When do you Plan to sell ?</option>
                         <option value="1">1 Mpnth</option>
