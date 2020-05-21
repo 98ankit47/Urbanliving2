@@ -163,6 +163,16 @@
         }
 </style>
 <?php
+if(Auth::user())
+{
+    $name=Auth::user()->name;
+    $email=Auth::user()->email;
+}
+else
+{
+    $name="noname";
+    $email="noemail";
+}
 ?>
  
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -232,12 +242,12 @@
         <div class="card" style="height:33rem;">
             <div class="card-body" style="text-align:center;">
                 <h2>SCHEDULE TOUR</h2><br>
-                <form id="enquiry" style="font-family: Open Sans, sans-serif; text-align:left;">                
+                <form id="enquiry" name="enquiryName" style="font-family: Open Sans, sans-serif; text-align:left;">                
                         <div class="form-group">
                             <label for="inputTitle">Date</label>
                             <input type="date" class="form-control" id="date" required>
-                        <input type="hidden" class="form-control" id="name" required value="{{Auth::user()->name}}">
-                            <input type="hidden" class="form-control" id="email" value="{{Auth::user()->name}}" required>
+                        <input type="hidden" class="form-control" id="name" required value="{{$name}}">
+                            <input type="hidden" class="form-control" id="email" value="{{$email}}" required>
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Time</label>

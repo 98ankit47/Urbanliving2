@@ -251,17 +251,24 @@ class CommonController extends Controller
                 </div>
               </div>';
              
-        }
+
+            }
         return $data; 
     }
 
-    public function sellingEnquiryUpdate($id)
+    public function sellingEnquiryUpdate($id) 
     {
         SellingHome::where('id',$id)->update([
             "seen"=>1
         ]);
     }
 
+    public function UpdateEnquirySeen($id)
+    {
+         Enquiry::where('id',$id)->update([
+            "seen"=>1
+        ]);
+    }
     
     public function ShowSell($id)
     {
@@ -352,10 +359,10 @@ class CommonController extends Controller
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target="#deleteFloor" class="btn">Reply</button> 
+                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target=" class="btn">Reply</button> 
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="button" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
+                                    <button type="button" data-id="'.$enquiry->id.'" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
                                 </div>
                             </div>
                         </div>

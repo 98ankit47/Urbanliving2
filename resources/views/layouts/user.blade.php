@@ -407,6 +407,10 @@
 	if(Auth::user())
 	{
 		$userid=Auth::user()->id;
+	}                                                                                                                                                                                                                                                                                                                                                                                                                                           
+	else
+	{
+		$userid=0;
 	}
 ?>
 <div class="container">
@@ -530,7 +534,7 @@
 		   {
 			    alert("Password And Confirm Password is not same");
 		   }
-	 });
+	 })
 </script>
 
 
@@ -578,7 +582,7 @@
 		  });
 		  $(function () {
 			$('#selling').on('submit', function (e) {
-				alert();
+				
 			  var name,email,bedroom,bathroom,price,address,city,state,zip,area,square,time,type;
 			  e.preventDefault();
 				  name            =  document.getElementById("name").value;         
@@ -871,14 +875,20 @@
                });
               } 
          $('#enquiry').on('submit', function (e) {
-           var time,date,message,phone,name,email;
-           e.preventDefault();
-               time          =  document.getElementById("time").value;         
+			e.preventDefault();
+			if(document.getElementById("name").value=="noname")
+			{
+				alert("Please Login First");
+			}
+			else
+			{
+				var time,date,message,phone,name,email;
+               time         =  document.getElementById("time").value;         
                date         =  document.getElementById("date").value;         
                name         =  document.getElementById("name").value;         
-               email         =  document.getElementById("email").value;         
-               message           =  document.getElementById("message").value;         
-               phone          =  document.getElementById("phone").value;         
+               email        =  document.getElementById("email").value;         
+               message      =  document.getElementById("message").value;         
+               phone        =  document.getElementById("phone").value;         
                $.ajax({
                  type: 'post',
                  url: '/api/enquiry',
@@ -893,10 +903,11 @@
                    'home_id'           : id,
                  },
                  success: function ( ) {
+					document.enquiryName.reset();
                    $('#success').html('Urban Living receive your Message they will respond you earlier').addClass('alert').addClass('alert-success').delay(4000).fadeOut();
                  }
                });
-
+			}
          });
          function floorDetail(id)
          {

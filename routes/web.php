@@ -18,7 +18,7 @@
 
     
 
-Route::get('/admin/dashboard',function(){
+Route::get('/admin',function(){
     return view('admin.dashboard');
 })->name('dashboard')->middleware('role','auth');    
 
@@ -116,7 +116,7 @@ Route::get('/homes',function(){
 
 Route::get('/userProfile',function(){
     return view('user.userProfile.index');
-})->name('profile');
+})->name('profile')->middleware('auth');
 
 Route::get('/neighborDetail/{id}','user\NeighbourhoodController@showCommunityDetail'); 
 
@@ -129,7 +129,7 @@ Route::get('/neighbor',function(){
 
 Route::get('/sellHome',function(){
     return view('user.sellHome.index');
-})->name('selling-home');
+})->name('selling-home')->middleware('auth');
 
 Route::get('/development-Detail/{id}','user\HomeController@single')->name('developmentDetail');
  
@@ -138,10 +138,9 @@ Route::get('/development-Detail/{id}','user\HomeController@single')->name('devel
 // end of admin section
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home')->middleware('role');
 
 
 
 //user module
-Route::get('/search','user\HomeController@search');
+Route::get('/search','user\HomeController@search')->name('alldev');
 Route::get('/all-development','user\HomeController@AllHome')->name('alldev');

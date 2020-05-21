@@ -61,7 +61,7 @@
                 <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <textarea name="message" id="address" cols="41" rows="2" placeholder="Address1" class="form-control"></textarea>
+                        <textarea name="message" id="address" required cols="41" rows="2" placeholder="Address1" class="form-control"></textarea>
                     </div>
                 </div><br>
                 
@@ -69,17 +69,17 @@
                 <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input name="message" id="city" cols="41" rows="2" placeholder="City" class="form-control"></input>
+                        <input name="message" id="city" required cols="41" rows="2" placeholder="City" class="form-control"></input>
                     </div>
                 </div><br>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input name="message" id="state" cols="41" rows="2" placeholder="State" class="form-control"></input>
+                        <input name="message" id="state" required cols="41" rows="2" placeholder="State" class="form-control"></input>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input name="message" id="zip" cols="41" rows="2" placeholder="ZIP" class="form-control"></input>
+                        <input name="message" id="zip" cols="41" required rows="2" placeholder="ZIP" class="form-control"></input>
                     </div>
                 </div>
                 </div>

@@ -254,7 +254,7 @@ td, th {
           </button>
         </div>
         <div class="modal-body">
-        <form id="addFeature">
+        <form id="addFeature" name="AddFeature" >
           <div class="form-group">
             @csrf
             <label for="inputProperty">Feature Name</label>
@@ -372,7 +372,7 @@ td, th {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-    <form id="galleryupdate">  
+    <form id="galleryupdate" name="gallery1">  
       <div class="modal-body">
             <div class="image-upload">
               <input type="file" id="files" name="files[]" multiple  required/>

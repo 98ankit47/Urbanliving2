@@ -130,7 +130,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           
               <li class="nav-item">
-                <a href="/admin/dashboard" class="nav-link">
+                <a href="/admin" class="nav-link">
  
                 <i class="fa fa-address-card"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Dashboard</p></span>
 
@@ -347,6 +347,7 @@
               $('#changepass').on('submit', function (e) {
                 e.preventDefault();
                       current            =  document.getElementById("current").value;         
+                      id                 =  document.getElementById("id").value;         
                       newpass            =  document.getElementById("newpass").value;         
                       Confirmpass        =  document.getElementById("Confirmpass").value;  
                       if(newpass==Confirmpass) 
@@ -358,6 +359,7 @@
                             data:{
                               'current'      : current,
                               'newpass'      : newpass,
+                              'id'           : id,
                               'Confirmpass'  : Confirmpass
                             },
                             success: function () {
@@ -1080,7 +1082,8 @@ function Editloadmap(aid){
                         $('#galleryModal').modal('hide');
                         $('.modal-backdrop').css('display','none');
                           loadGalleryList();
-                        $('#success').html('Gallery Images Edited').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                          document.gallery1.reset();
+                        $('#success').html('Gallery Images Added').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
                       }
                     });
 
@@ -1188,6 +1191,7 @@ function Editloadmap(aid){
                       success: function () {
                         $('#AddFeatureModal').modal('hide');
                           loadFeatureList();
+                          document.AddFeature.reset();
                         $('#success').html('New Feature Added').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
 
                       }
@@ -1754,25 +1758,7 @@ function Editloadmap(aid){
   </script>
 @endif
 
-
-@if(Route::currentRouteName() == 'enquiry_detail')
-  <script>
-    $(document).ready(function() {
-      var APP_URL = "{{ url('/') }}";
-      var id = window.location.href.split('/').pop();
-      loadEnquirydetail();
-      function loadEnquirydetail(){
-    $.ajax({
-          type: 'GET',
-          url: APP_URL+'/api/admin/enquiry/'+id,
-          success: function(result){
-          $('#enquiry').html(result);
-          }   
-      });
-  }
-    });
-  </script>
-@endif
+ 
 
  @if(Route::currentRouteName() == 'communities')
   <script>
@@ -1879,7 +1865,7 @@ function Editloadmap(aid){
                 country          =  document.getElementById("addcountry").value;         
                 subdivission     =  document.getElementById("addsubdivission").value;         
                 state            =  document.getElementById("addstate").value;         
-                description      =  document.getElementById("description").value;         
+                description      =  document.getElementById("Adddescription").value;         
                 zipcode          =  document.getElementById("addzipcode").value;  
                         
 
@@ -1901,6 +1887,7 @@ function Editloadmap(aid){
                   success: function () {
                     $('#AddcommunityModal').modal('hide');
                     $('.modal-backdrop').css('display','none');
+                    document.AddCommunity.reset();
                     loadCommunityList();
                     $('#success').html('New Community Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                   }

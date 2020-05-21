@@ -29,7 +29,8 @@ th, td {
 <br>
 
 
-<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteEnquiry" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" 
+id="deleteEnquiry" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">

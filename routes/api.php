@@ -72,7 +72,7 @@ Route::get('admin/Selling-seen-update/{id}','CommonController@sellingEnquiryUpda
 Route::get('admin/enquiry/','CommonController@enquiry');
 Route::get('admin/enquiry/{id}','CommonController@enquiryDetail');
 Route::delete('admin/enquiry/{id}','CommonController@enquiryDelete');
-Route::get('/admin/enquiry/update/{id}', 'user\HomeController@UpdateEnquirySeen');
+Route::get('/admin/enquiry/update/{id}', 'CommonController@UpdateEnquirySeen');
 
 
 Route::get('admin/floorDetail/{id}','CommonController@userFloor');

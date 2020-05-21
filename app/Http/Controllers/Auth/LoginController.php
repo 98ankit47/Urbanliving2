@@ -69,7 +69,7 @@ class LoginController extends Controller
             else if(Auth::user()->type == 'user')
             {
                  
-                    return redirect('/');
+                    return redirect('/userProfile');
               
             }
         }

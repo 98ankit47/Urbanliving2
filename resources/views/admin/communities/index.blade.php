@@ -97,7 +97,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="Communityaddform">
+        <form id="Communityaddform" name="AddCommunity">
           <div class="form-group">
             <label for="inputEmail4">Title</label>
             <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addtitle" placeholder="title" required>
@@ -141,7 +141,7 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="inputZip">Desciption</label>
-              <textarea class="form-control" pattern="^[a-zA-Z][\sa-zA-Z]*"row="2" id="description" required></textarea>
+              <textarea class="form-control" pattern="^[a-zA-Z][\sa-zA-Z]*"row="2" id="Adddescription" required></textarea>
             </div>
           </div>
           <div class="modal-footer">
