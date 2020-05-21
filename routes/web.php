@@ -52,7 +52,7 @@ Route::get('admin/homes',function(){
 })->name('homes')->middleware('role','auth');
 
 Route::get('admin/home/edit/{id}', function(){
-    return view('admin.homes.homeForm');
+    return view('admin.homes.EditHomeForm');
 })->name('edit-home')->middleware('role','auth');
 Route::get('admin/home/manage/{id}', function(){
     return view('admin.homes.manage_homes');

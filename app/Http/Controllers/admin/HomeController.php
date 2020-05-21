@@ -52,11 +52,20 @@ class HomeController extends Controller
             }
             $data ='';
             $data1 ='';
-            $homes = Homes::where('title','LIKE','%'.$request['search'].'%')->orWhere('status_id',$status)->orWhere('block',$block)->get();
+            $homes = Homes::where('title','LIKE','%'.$request['search'].'%')->orWhere('status_id',$status)->orWhere('block',$block)->orderBy('id','desc')->get();
             $count = Homes::where('title','LIKE','%'.$request['search'].'%')->orWhere('status_id',$status)->orWhere('block',$block)->get()->count();
             if($count==0)
             {
-                $data1.='<div style="color:red;font-weight:bold">No Record Found</div>';
+                $data1.='<div class="col-md-4"  >
+                <a style="text-decoration:none" href="/admin/home/create">
+                    <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
+                    <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+                    <div class="card-body"> <br>
+                        <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW HOME</h4>
+                    </div>
+                    </div>
+                </a>
+                </div>';
                 return $data1;
             }
             $data.='<div class="col-md-4"  >
@@ -124,7 +133,7 @@ class HomeController extends Controller
         else
         {
             $data ='';
-            $homes = Homes::all();
+            $homes = Homes::orderBy('id','desc')->get();
             $data.='<div class="col-md-4"  >
             <a style="text-decoration:none" href="/admin/home/create">
                 <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
@@ -326,18 +335,7 @@ class HomeController extends Controller
             \Image::make($request['featured-image'])->save(public_path('uploads\homes\\').$featured_img);
            
         }
-        $data = explode(',', $home->gallery);
-        $gallery=$request['gallery'];
-        $gallery_name=$request['gallery_name'];
-        foreach($gallery as $key => $gal)
-        {
-            $gal_img =  time().explode('.',$gallery_name[$key])[0].'.' . explode('/', explode(':',substr($gal,0,strpos(
-                $gal,';')))[1])[1];  
-    
-            \Image::make($gal)->save(public_path('uploads\gallery\\').$gal_img);
-            array_push($data,$gal_img);
-        }
-         
+        
         $this->validate($request,[
             'title'=>'required',
             'description'=>'required',
@@ -368,7 +366,6 @@ class HomeController extends Controller
             'lng'=>$request['lng'],
             'price'=>$request['price'],
             'featured_image'=>$featured_img,
-            'gallery'=>implode(',', $data),
             'slug'=>Str::slug($request['title'], '-'),
         ]);
 

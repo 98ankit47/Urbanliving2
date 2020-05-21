@@ -73,19 +73,19 @@ td, th {
 
 <div class=" container w3-row tabss" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
     <a href="javascript:void(0)" class="tablinks active" onclick="openCity(event, 'homes');">
-      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Home</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:15px;"><b>Home</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'features');">
-      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Features</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:15px;"><b>Features</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'gallery');">
-      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Gallery</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:15px;"><b>Gallery</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Availability');">
-      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Availability</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:15px;"><b>Availability</b></div>
     </a>
     <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Broucher');">
-      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:12px;"><b>Broucher</b></div>
+      <div class="w3-third tablink w3-bottombar w3-padding" type="button" style="text-align: left; color:black; font-size:15px;"><b>Broucher</b></div>
     </a>
 </div>
 
@@ -228,7 +228,7 @@ td, th {
             <div class="row">
               <div class="col-md-6">
             <label for="img">Select image:</label>
-            <input type="file" id="image" name="featured-image" required accept="image/*">
+            <input type="file" id="image" name="featured-image"  accept="image/*">
             </div>
           </form>
           </div>

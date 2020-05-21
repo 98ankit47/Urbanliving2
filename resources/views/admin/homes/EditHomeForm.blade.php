@@ -120,18 +120,11 @@
     <div class="col-md-6">
       <div class="image-upload">
         <p>Featured Image</p>
-        <p><input type="file"  name="image" id="file"  onchange="loadFile(event)" required></p>
+        <p><input type="file"  name="image" id="file"  onchange="loadFile(event)"></p>
         <p><img id="output" /></p>
       </div>
     </div>
-  <div class="col-md-6">
-  <div class="image-upload">
-  <p>Image Gallery</p>
-    <input type="file" id="files" name="files[]" multiple required />
-    <br><br>
-  <output id="list" width="200px" height="200px"></output>
-    </div>
-  </div>
+   
   </div>
   <div class="form-row">
     <div class="col-md-12">
