@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Homes extends Model
-{
+{ 
     protected $fillable = ['title','price','block','status_id','lat','lng',
     'description','bedroom','bathroom','garage','stories','type','featured_image','gallery','builder','area','builder','slug'];
     
