@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="media-body text-right">
                                             <h5 class="text-muted text-bold-500">New Users</h5>
-                                            <h3 class="text-bold-600">34</h3>
+                                        <h3 class="text-bold-600">{{$user}}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -62,8 +62,8 @@
                                             <i class="la la-calendar-check-o font-large-2 info"></i>
                                         </div>
                                         <div class="media-body text-right">
-                                            <h5 class="text-muted text-bold-500">Today's Inquiry</h5>
-                                            <h3 class="text-bold-600">3.5K</h3>
+                                            <h5 class="text-muted text-bold-500">New Inquiry</h5>
+                                        <h3 class="text-bold-600">{{$notification}}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                         </div>
                                         <div class="media-body text-right">
                                             <h5 class="text-muted text-bold-500">Selling Requests</h5>
-                                            <h3 class="text-bold-600">179</h3>
+                                        <h3 class="text-bold-600">{{$sqs->count()}}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                              </div>
                                           </div>
                                           <div class="col-md-6" style="text-align:right;">
-                                             <span style="color:white;"><b>50</b></span><br><br>
+                                             <span style="color:white;"><b>{{$homes->count()}}</b></span><br><br>
                                              <span style="color:white;"><b>Home</b></span>
                                           </div>            
                                        </div>
@@ -147,7 +147,7 @@
                                              </div>
                                           </div>
                                           <div class="col-md-6" style="text-align:right;">
-                                             <span style="color:white;"><b>23</b></span><br><br>
+                                          <span style="color:white;"><b>{{$communities->count()}}</b></span><br><br>
                                              <span style="color:white;"><b>Community</b></span>
                                           </div>            
                                        </div>
@@ -164,7 +164,7 @@
                                              </div>
                                           </div>
                                           <div class="col-md-6" style="text-align:right;">
-                                             <span style="color:white;"><b>12</b></span><br><br>
+                                          <span style="color:white;"><b>{{$floors->count()}}</b></span><br><br>
                                              <span style="color:white;"><b>Floor</b></span>
                                           </div>            
                                        </div>

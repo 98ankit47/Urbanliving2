@@ -18,9 +18,10 @@
 
     
 
-Route::get('/admin',function(){
-    return view('admin.dashboard');
-})->name('dashboard')->middleware('role','auth');    
+Route::get('/admin','CommonController@Dashboard')->name('dashboard')->middleware('role','auth');
+Route::get( 'home', 'CommonController@Dashboard')->name('dashboard')->middleware('role','auth');
+
+   
 
 // Route::post('Alogin','Auth\LoginController@login')->name('Alogin'); 
 
@@ -85,7 +86,6 @@ Route::get('admin/floor-component-gallery/{type}/{id}', function () {
 
 
 Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index')->middleware('role','auth');
-Route::get( 'home', 'HomeController@index')->middleware('role','auth');
 
 Route::get('/admin/selling/',function(){
     return view('admin.selling.selling');

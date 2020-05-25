@@ -5,6 +5,7 @@ use App\Models\status;
 use App\Models\Features;
 use App\Models\Logos;
 use App\Models\Homes;
+use App\Models\Communities;
 use App\Models\Floors;
 use App\Models\FloorComponent;
 use App\Models\Enquiry;
@@ -79,6 +80,20 @@ class CommonController extends Controller
     }
 
 
+    public function Dashboard()
+    {
+        $date = Carbon::now();
+        $home=Homes::all();
+        $communities=Communities::all();
+        $floor=Floors::all();
+        $sellenq=SellingHome::all();
+        $sellenqToday=SellingHome::where('seen',0)->get()->count();
+        $enq=Enquiry::where('seen',0)->get()->count();
+        $notification = $sellenqToday + $enq;
+        $user = User::whereDate('created_at',$date)->get()->count();
+        return view('admin.dashboard')->with('homes',$home)->with('communities',$communities)
+        ->with('floors',$floor)->with('sqs',$sellenq)->with('notification',$notification)->with('user',$user);
+    }
     public function DashboardUser(Request $request)
     {
         $data ='';
@@ -518,6 +533,21 @@ class CommonController extends Controller
         else
         {
             return $enquiry;
+        } 
+    }
+
+    public function LoadNotification()
+    {
+        $enquiry=Enquiry::where('seen',0)->get()->count();
+        $enquiry2=SellingHome::where('seen',0)->get()->count();
+        $total=$enquiry+$enquiry2;
+        if($enquiry==0)
+        {
+            return '';
+        }
+        else
+        {
+            return $total;
         } 
     }
 
