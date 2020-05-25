@@ -1,33 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<style>
-.main-sidebar {
-  position: fixed;
-}
-.addcard:hover {
-  transform: scale(1.03); 
-}
-@media (min-width: 768px) {
-        .control-sidebar {
-               .tab-content {
-                       height: calc(100vh - 85px);
-                }
-        }
-}
-</style>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+    <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+    <meta name="author" content="PIXINVENT">
+    <title>Admin | Urban</title>
+    <link rel="apple-touch-icon" href="/bower_components/admin-lte/dist/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/bower_components/admin-lte/dist/app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
 
-  <title>Admin | Urban</title>
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/app-assets/vendors/css/vendors.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/app-assets/css/components.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/app-assets/css/pages/hospital.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="/bower_components/admin-lte/dist/assets/css/style.css">
+    <!-- END: Custom CSS-->
+
 
   <!-- Font Awesome Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/bower_components/admin-lte/plugins/fontawesome-free/css/all.min.css">
+  
   <!-- Theme style -->
-  <link rel="stylesheet" href="/bower_components/admin-lte/dist/css/adminlte.min.css">
+ 
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}" defer></script>
@@ -37,15 +50,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
   
    
      <!-- custom style sheet -->
-  <link rel="stylesheet" href="/css/style.css" class="rel">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   @if(Route::currentRouteName() == 'edit-page') 
@@ -57,32 +66,41 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.css" rel="stylesheet">
 
+
 </head>
+<!-- END: Head-->
 
+<!-- BEGIN: Body-->
 
-<body class="hold-transition sidebar-mini" style="font-family: Open Sans, sans-serif;">
-<div class="wrapper">
+<body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/admin/home" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-
-          <ul class="navbar-nav ml-auto">
-              <!-- Authentication Links -->
+    <!-- BEGIN: Header-->
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-info navbar-shadow">
+        <div class="navbar-wrapper">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav flex-row">
+                    <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
+                    <li class="nav-item"><a class="navbar-brand" href="index.html"><img class="brand-logo" alt="modern admin logo" src="/bower_components/admin-lte/dist/app-assets/images/logo/logo.png">
+                            <h3 class="brand-text">Urban Living</h3>
+                        </a></li>
+                    <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a></li>
+                </ul>
+            </div>
+            <div class="navbar-container content">
+                <div class="collapse navbar-collapse" id="navbar-mobile">
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
+                        <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
+                        <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
+                            <div class="search-input">
+                                <input class="input" type="text" placeholder="Explore UrbanLiving" tabindex="0" data-search="template-list">
+                                <div class="search-input-close"><i class="ft-x"></i></div>
+                                <ul class="search-list"></ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav float-right ml-auto" style="color:white;font-size:20px;">
+                        <!-- Authentication Links -->
               @guest
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -100,103 +118,53 @@
  
                   </li>
               @endguest
-          </ul>
-  
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END: Header-->
 
 
-    <!-- SEARCH FORM -->
-     
+    <!-- BEGIN: Main Menu-->
 
-    <!-- Right navbar links -->
-     
-  </nav>
-</div>
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position: fixed;">
-    <!-- Brand Logo -->
-    <div  class="brand-link" id="logo">
-      
-    </div>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          
-              <li class="nav-item">
-                <a href="/admin" class="nav-link">
- 
-                <i class="fa fa-address-card"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Dashboard</p></span>
-
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/admin/homes" class="nav-link">
-                <i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Homes</p></span>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="/admin/community" class="nav-link">
-                <i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Communities</p></span>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="/admin/floor" class="nav-link">
-                <i class="fa fa-terminal"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Floor</p></span>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="/admin/enquiry" class="nav-link">
-                <i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Home Enquiry</p>
-                <span class="badge bg-primary" style="margin-left:10px;" id="notification"></span>
-                </a>
-              </li>
-
-               
-              </li><li class="nav-item">
-                <a href="/admin/selling" class="nav-link">
-                <i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Selling Enquiry</p>
-                <span class="badge bg-primary" style="margin-left:10px;" id="Sellnotification"></span>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="/admin/settings" class="nav-link">
-                <i class="fa fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Settings</p></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('logout') }}" class="nav-link" data-toggle="modal" data-target="#logout" aria-expanded="true" aria-controls="logout"
-                >
-                  <i class="fa fa-power-off"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span><p>Logout</p></span>
-                </a>
-              </li>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-             
-
+    <div class="main-menu menu-fixed menu-dark menu-accordion    menu-shadow " data-scroll-to-active="true">
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class="active"><a href="/admin"><i class="la la-home"></i><span class="menu-title" data-i18n="Dashboard Hospital">Dashboard Urban</span></a>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Professional">Components</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Components"></i>
+                </li>
+                <li class=" nav-item"><a href="/admin/homes"><i class="la la-home"></i><span class="menu-title" data-i18n="Home">Home</span></a>
+                </li>
+                <li class=" nav-item"><a href="/admin/community"><i class="la la-home"></i><span class="menu-title" data-i18n="Community">Community</span></a>
+                </li>
+                <li class=" nav-item"><a href="/admin/floor"><i class="la la-bars"></i><span class="menu-title" data-i18n="Floor">Floor</span></a>
+                </li>
+                <li class=" nav-item"><a href="/admin/pages"><i class="la la-bar-chart"></i><span class="menu-title" data-i18n="Pages">Pages</span></a>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="/admin/enquiry"><i></i><span>Home Enquiry</span></a>
+                        </li>
+                        <li><a class="menu-item" href="/admin/selling"><i></i><span>Selling Enquiry</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Professional">Others</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Others"></i>
+                </li>
+                <li class=" nav-item"><a href="/admin/settings"><i class="la la-cogs"></i><span class="menu-title" data-i18n="Settings">Settings</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{ route('logout') }}" class="nav-link" data-toggle="modal" data-target="#logout" aria-expanded="true" aria-controls="logout"><i class="la la-level-up"></i><span class="menu-title" data-i18n="Logout">Logout</span></a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
             </ul>
-          </li>
-          
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
+        </div>
     </div>
-    <!-- /.sidebar -->
-  </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+    <div class="content-wrapper">
 
 
     <div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="logout" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
@@ -222,39 +190,46 @@
        </div>
      </div>
 
-
-    <div id="success" style="text-align:center">
+     <div id="success" style="text-align:center;">
     </div>
     <div id="danger" style="text-align:center">
     </div>
-    @yield('content')
-        
+    <!-- END: Main Menu-->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-  
-</div>
-
-
-<!-- ./wrapper -->
+    <!-- BEGIN: Content-->
+     <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+              @yield('content')
+            </div>
+        </div>
+      </div>
+               
+    <!-- END: Content-->
 
 <!-- REQUIRED SCRIPTS -->
 
-<!-- jQuery -->
-<script src="/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/dist/js/adminlte.min.js"></script>
+<!-- BEGIN: Vendor JS-->
+<script src="/bower_components/admin-lte/dist/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="/bower_components/admin-lte/dist/app-assets/vendors/js/charts/chart.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="/bower_components/admin-lte/dist/app-assets/js/core/app-menu.js"></script>
+    <script src="/bower_components/admin-lte/dist/app-assets/js/core/app.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="/bower_components/admin-lte/dist/app-assets/js/scripts/pages/appointment.js"></script>
+    <!-- END: Page JS-->
+
+
 
 <script>
   loadLogo();
@@ -558,10 +533,7 @@ $('#ys-floor-btn').click(function()
 {
   var id = $(this).attr('data-id');
   $('#deleteFloor').modal('hide');
-  $('.modal-backdrop').css('display','none');
   deleteFloor(id);
-
-
 });
 
 
@@ -1590,7 +1562,7 @@ function Editloadmap(aid){
             type: 'DELETE',
             url: APP_URL+'/api/admin/floor/'+f_id,
             success: function(result){  
-              openHome(event,f_id);
+              window.location.href='/admin/floor';
               $('#danger').html('Floor Deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
             }   
         });
@@ -1639,7 +1611,7 @@ function Editloadmap(aid){
                    'image-name'          : image_name,
                  },
                  success: function ( ) {
-                    $('#AddNewFloor').modal('hide');
+                   window.location.href = "/admin/floor";
                    $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                  }
                });
@@ -1708,7 +1680,7 @@ function Editloadmap(aid){
                    'image-name'          : image_name,
                  },
                  success: function ( ) {
-                  $('#EditFloor').modal('hide');
+                  window.location.href = "/admin/floor";
                    $('#success').html('Floor Edited').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                  }
                });
@@ -1901,5 +1873,6 @@ function Editloadmap(aid){
  </script> 
  @endif
 
-</body>
+ </body>
+<!-- END: Body-->
 </html>
