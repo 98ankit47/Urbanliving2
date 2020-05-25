@@ -152,8 +152,8 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/settings"><i class="la la-cogs"></i><span class="menu-title" data-i18n="Settings">Settings</span></a>
                 </li>
-                <li class=" nav-item">  <a class="nav-link" data-toggle="modal" data-target="#logout1" aria-expanded="true" aria-controls="logout">
-                    <i class="fa fa-power-off"></i><span><p>Logout</p></span>
+                <li class=" nav-item"><a class="nav-link" data-toggle="modal" data-target="#logout1" aria-expanded="true" aria-controls="logout">
+                    <i class="la la-power-off"></i><span>Logout</span>
                   </a>
                 </li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
