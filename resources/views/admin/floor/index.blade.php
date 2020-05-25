@@ -107,7 +107,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="FloorAddForm">
+      <form id="FloorAddForm" name="AddFloor">
         <div class="modal-body">
           <div class="form-row">
             <div class="form-group col-md-12">

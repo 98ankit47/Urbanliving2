@@ -80,8 +80,7 @@
             <div class="navbar-header">
                 <ul class="nav navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
-                    <li class="nav-item"><a class="navbar-brand" href="index.html"><img class="brand-logo" alt="modern admin logo" src="/bower_components/admin-lte/dist/app-assets/images/logo/logo.png">
-                            <h3 class="brand-text">Urban Living</h3>
+                    <li class="nav-item"><a class="navbar-brand" href="index.html"><div  class="brand-link" style="width:30px;height:30px" id="logo"></div>
                         </a></li>
                     <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a></li>
                 </ul>
@@ -141,13 +140,11 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/floor"><i class="la la-bars"></i><span class="menu-title" data-i18n="Floor">Floor</span></a>
                 </li>
-                <li class=" nav-item"><a href="/admin/pages"><i class="la la-bar-chart"></i><span class="menu-title" data-i18n="Pages">Pages</span></a>
-                </li>
                 <li class=" nav-item"><a href="#"><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span></a>
                     <ul class="menu-content">
-                        <li><a class="menu-item" href="/admin/enquiry"><i></i><span>Home Enquiry</span></a>
+                        <li><a class="menu-item" href="/admin/enquiry"><i></i><span>Home Enquiry</span><span class="badge bg-primary" style="margin-left:10px;" id="notification"></span></a>
                         </li>
-                        <li><a class="menu-item" href="/admin/selling"><i></i><span>Selling Enquiry</span></a>
+                        <li><a class="menu-item" href="/admin/selling"><i></i><span>Selling Enquiry</span><span class="badge bg-primary" style="margin-left:10px;" id="Sellnotification"></span></a>
                         </li>
                     </ul>
                 </li>
@@ -522,20 +519,19 @@ $('#ys-floor-component-btn').click(function()
 
 
 
-$('#deleteFloor').on('show.bs.modal', function (e) {
 
+$('#deleteFloor').on('show.bs.modal', function (e) {
   var $trigger = $(e.relatedTarget);
   var id=$trigger.data('id');
   $('#ys-floor-btn').attr('data-id',id);
 });
-
 $('#ys-floor-btn').click(function()
 {
   var id = $(this).attr('data-id');
   $('#deleteFloor').modal('hide');
+  $('.modal-backdrop').css('display','none');
   deleteFloor(id);
 });
-
 
 
 $('#deleteCommunity').on('show.bs.modal', function (e) {
@@ -1556,81 +1552,80 @@ function Editloadmap(aid){
           }   
       });
   } 
-      function deleteFloor(f_id)
+  function deleteFloor(f_id)
       {
         $.ajax({
             type: 'DELETE',
             url: APP_URL+'/api/admin/floor/'+f_id,
             success: function(result){  
-              window.location.href='/admin/floor';
+              openHome(event,f_id);
               $('#danger').html('Floor Deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
             }   
         });
       }
-  function addFloor()
-  {
-    var APP_URL = "{{ url('/') }}";
-    var id = window.location.href.split('/').pop();
-    $('#AddNewFloor').modal('show');
-   $('input[type=file]').on('change',function(e){
-           let files = e.target.files[0];
-           let reader = new FileReader();
-           if(files){
-             reader.onloadend = ()=>{
-               $('#image').attr('src',reader.result);
-               image = reader.result;
-               image_name = files.name;
-              // document.getElementById("featured_img").value  = reader.result;
-             }
-             reader.readAsDataURL(files); 
-         }
-       });
-       $(function () {
-         $('#FloorAddForm').on('submit', function (e) {
-           var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
-           e.preventDefault();
-               home_id            =  document.getElementById("home_id").value;         
-               floor_no      =  document.getElementById("floor_no").value;         
-               bedroom          =  document.getElementById("bedroom").value;         
-               bathroom         =  document.getElementById("bathroom").value;         
-               garage           =  document.getElementById("garage").value;         
-               dining          =  document.getElementById("dining").value;         
-               kitchen              =  document.getElementById("kitchen").value;         
-               $.ajax({
-                 type: 'post',
-                 url: '/api/admin/floor/',
-                 data:{
-                   'home_id'             : home_id,
-                   'floor_no'            : floor_no,
-                   'bedroom'             : bedroom,
-                   'bathroom'            : bathroom,
-                   'garage'              : garage,
-                   'dining'             : dining,
-                   'kitchen'             : kitchen,
-                   'image'               : image,
-                   'image-name'          : image_name,
-                 },
-                 success: function ( ) {
-                   window.location.href = "/admin/floor";
-                   $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
-                 }
-               });
+  
+      function addFloor()
+      {
+        var APP_URL = "{{ url('/') }}";
+        var id = window.location.href.split('/').pop();
+        $('#AddNewFloor').modal('show');
+      $('input[type=file]').on('change',function(e){
+              let files = e.target.files[0];
+              let reader = new FileReader();
+              if(files){
+                reader.onloadend = ()=>{
+                  $('#image').attr('src',reader.result);
+                  image = reader.result;
+                  image_name = files.name;
+                  // document.getElementById("featured_img").value  = reader.result;
+                }
+                reader.readAsDataURL(files); 
+            }
+          });
+          $(function () {
+            $('#FloorAddForm').on('submit', function (e) {
+              var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
+              e.preventDefault();
+                  home_id            =  document.getElementById("home_id").value;         
+                  floor_no      =  document.getElementById("floor_no").value;         
+                  bedroom          =  document.getElementById("bedroom").value;         
+                  bathroom         =  document.getElementById("bathroom").value;         
+                  garage           =  document.getElementById("garage").value;         
+                  dining          =  document.getElementById("dining").value;         
+                  kitchen              =  document.getElementById("kitchen").value;         
+                  $.ajax({
+                    type: 'post',
+                    url: '/api/admin/floor/',
+                    data:{
+                      'home_id'             : home_id,
+                      'floor_no'            : floor_no,
+                      'bedroom'             : bedroom,
+                      'bathroom'            : bathroom,
+                      'garage'              : garage,
+                      'dining'             : dining,
+                      'kitchen'             : kitchen,
+                      'image'               : image,
+                      'image-name'          : image_name,
+                    },
+                    success: function ( ) {
+                        $('#AddNewFloor').modal('hide');
+                    document.AddFloor.reset();
+                      $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
+                    }
+                  });
+            });
+        });
+      }
 
-         });
 
-     });
-  }
-
-     function editfloor(fid)
+      function editfloor(fid)
     {     
       var image_name="a",image="a";
       $.ajax({
     type: 'GET',
     url: APP_URL+'/api/admin/floor/'+fid,
-
     success: function(result){    
       $('#EditFloor').modal('show');
-
         document.getElementById("Edit_home_id").value = result.home_id;         
         document.getElementById("Edit_floor_no").value = result.floor_no;         
         document.getElementById("Edit_bedroom").value = result.bedroom;         
@@ -1653,7 +1648,6 @@ function Editloadmap(aid){
              reader.readAsDataURL(files); 
          }
        });
-
        $(function () {
          $('#EditForm').on('submit', function (e) {
            var home_id,floor_no,bedroom,bathroom,garage,dining,kitchen;
@@ -1680,15 +1674,13 @@ function Editloadmap(aid){
                    'image-name'          : image_name,
                  },
                  success: function ( ) {
-                  window.location.href = "/admin/floor";
+                  $('#EditFloor').modal('hide');
+                  
                    $('#success').html('Floor Edited').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                  }
                });
-
          });
-
      });
-
     }
 </script>
 @endif
