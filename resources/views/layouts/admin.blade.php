@@ -140,7 +140,7 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/floor"><i class="la la-bars"></i><span class="menu-title" data-i18n="Floor">Floor</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span><span class="badge bg-primary" style="margin-right:30px;" id="totalNotification"></span></a>
+                <li class=" nav-item"><a href="#"><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span><span class="badge bg-primary" style="margin-left:10px;" id="totalNotification"></span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="/admin/enquiry"><i></i><span>Home Enquiry</span><span class="badge bg-primary" style="margin-left:10px;" id="notification"></span></a>
                         </li>
@@ -152,19 +152,23 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/settings"><i class="la la-cogs"></i><span class="menu-title" data-i18n="Settings">Settings</span></a>
                 </li>
-                <li class=" nav-item"><a href="{{ route('logout') }}" class="nav-link" data-toggle="modal" data-target="#logout" aria-expanded="true" aria-controls="logout"><i class="la la-level-up"></i><span class="menu-title" data-i18n="Logout">Logout</span></a>
+                <li class=" nav-item">  <a class="nav-link" data-toggle="modal" data-target="#logout1" aria-expanded="true" aria-controls="logout">
+                    <i class="fa fa-power-off"></i><span><p>Logout</p></span>
+                  </a>
                 </li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf
-                </form>
+              </form>
+               
             </ul>
         </div>
     </div>
 
-    <div class="content-wrapper">
-
-
-    <div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="logout" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+    
+    <div class="modal fade bd-example-modal-xl" 
+    style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" 
+    id="logout1" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" 
+    aria-hidden="true">
       <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -186,6 +190,8 @@
          </div>
        </div>
      </div>
+
+
 
      <div id="success" style="text-align:center;">
     </div>
