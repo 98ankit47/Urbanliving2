@@ -140,7 +140,7 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/floor"><i class="la la-bars"></i><span class="menu-title" data-i18n="Floor">Floor</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span></a>
+                <li class=" nav-item"><a href="#"><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span><span class="badge bg-primary" style="margin-right:30px;" id="totalNotification"></span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="/admin/enquiry"><i></i><span>Home Enquiry</span><span class="badge bg-primary" style="margin-left:10px;" id="notification"></span></a>
                         </li>
@@ -251,6 +251,19 @@
       }   
     });
   }
+
+  loadTotalNotification();
+  function loadTotalNotification(){
+    var APP_URL = "{{ url('/') }}";
+    $.ajax({
+      type: 'GET',
+      url: APP_URL+'/api/admin/totalnotification',
+      success: function(result){   
+        $('#totalNotification').html(result);
+      }   
+    });
+  }
+
   loadSellNotification();
   function loadSellNotification(){
     var APP_URL = "{{ url('/') }}";

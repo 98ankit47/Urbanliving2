@@ -78,6 +78,7 @@ Route::get('/admin/enquiry/update/{id}', 'CommonController@UpdateEnquirySeen');
 Route::get('admin/floorDetail/{id}','CommonController@userFloor');
 Route::get('admin/notification/','CommonController@notification');
 Route::get('admin/sell/notification/','CommonController@Sellnotification');
+Route::get('admin/totalnotification/','CommonController@LoadNotification');
 
 
 
