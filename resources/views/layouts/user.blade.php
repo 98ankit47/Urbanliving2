@@ -582,11 +582,16 @@
 		  });
 		  $(function () {
 			$('#selling').on('submit', function (e) {
-				
-			  var name,email,bedroom,bathroom,price,address,city,state,zip,area,square,time,type;
-			  e.preventDefault();
-				  name            =  document.getElementById("name").value;         
-				  email           =  document.getElementById("mail").value;         
+				e.preventDefault();
+				if(document.getElementById("uname").value=="noname")
+				{
+					alert("Please Login First");
+				}
+				else
+				{
+					var name,email,bedroom,bathroom,price,address,city,state,zip,area,square,time,type;
+				  name            =  document.getElementById("uname").value;         
+				  email           =  document.getElementById("uemail").value;         
 				  address         =  document.getElementById("address").value;         
 				  city            =  document.getElementById("city").value;         
 				  state           =  document.getElementById("state").value;         
@@ -619,9 +624,10 @@
 					  'time'                : time,
 					},
 					success: function ( ) {
-					  $('#success').html('Your Enquiry Has Been Posted').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
+					  $('#success').html('Your Selling Enquiry Has Been Posted').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
 					}
 				  });
+				}
 			});
 		});
 		

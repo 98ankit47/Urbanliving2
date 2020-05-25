@@ -32,11 +32,22 @@
 }
 
 </style>
+<?php
+    if(Auth::user())
+    {
+        $username=Auth::user()->name;
+        $useremail=Auth::user()->email;
+    }
+    else
+    {
+        $username="noname";
+        $useremail="noemail";
+    }
+?>
 <div class="container">
-    <div id="success"></div>
 <div class="row">
     <div class="col-md-6">
-        <div class="card" style="height:605px;">
+        <div class="card" style="height:752px;">
             <img style="width:100%;height:100%;" class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6FKg7LOZ32716WR_CzKNDh-DtZSKHNnWFwTxoxYjxms-SbBhU&usqp=CAU"/>
             <img style="width:100%;height:100%;" class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQkTHBpAyICO-H7DH0a6kYjGznn5y2WWRLuAw6PRn7QEkqfsuXt&usqp=CAU"/>
             <div class="w3-center">
@@ -53,14 +64,14 @@
                 <h4>CONTACT US</h4><br>
                 <form id="selling" style="font-family: Open Sans, sans-serif; text-align:left;">
                    
-                    <input type="hidden" class="form-control" id="name" value="{{Auth::user()->name}}" required>
-                 
-                    <input type="hidden" class="form-control" value="{{Auth::user()->email}}" required>
-                     
+                   
                 <span style="color:darkgray"><b>PROPERTY INFORMATION</b></span><br><br>
                 <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
+                        <input type="hidden" readonly class="form-control" id="uname" value="{{$username}}" required>
+                 
+                        <input type="hidden" readonly class="form-control"  id="uemail" value="{{$useremail}}" required>
  
                         <label>Address 1</label>
                         <textarea required name="message" id="address" cols="41" rows="2" placeholder="Address1" class="form-control"></textarea>
@@ -73,21 +84,21 @@
                     <div class="form-group">
  
                         <label>City</label>
-                        <input required name="message" id="city" cols="41" rows="2" placeholder="City" class="form-control"></input>
+                        <input required pattern="^[a-zA-Z][\sa-zA-Z]*" name="message" id="city" cols="41" rows="2" placeholder="City" class="form-control"></input>
                     </div>
                 </div><br>
                 <div class="col-md-4">
                     <div class="form-group">
  
                         <label>State</label>
-                        <input required name="message" id="state" cols="41" rows="2" placeholder="State" class="form-control"></input>
+                        <input required pattern="^[a-zA-Z][\sa-zA-Z]*" name="message" id="state" cols="41" rows="2" placeholder="State" class="form-control"></input>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
  
                         <label>Zip</label>
-                        <input  type="number" required name="message" id="zip" cols="41" rows="2" placeholder="ZIP" class="form-control"></input>
+                        <input  type="number" pattern="[0-9]{5}"  required name="message" id="zip" cols="41" rows="2" placeholder="ZIP" class="form-control"></input>
                     </div>
                 </div>
                 </div>
@@ -185,6 +196,7 @@
     </div>
 </div>
 </div>
+<div id="success" style="text-align:center"></div>
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);

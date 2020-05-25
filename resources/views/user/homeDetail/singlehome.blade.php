@@ -281,13 +281,13 @@ else
                             <div class="card" style="height:25rem;">
                                 <div class="card-body">
                                     <div id="floorDetail" class="container" style="text-align: left;">
-                                                
+                                           <strong>Click on the floor to see its detail</strong>     
                                     </div>
                                 </div>
                             </div>
                             <div class="card" style="height:25rem;">
                                 <div class="card-body" id="componentImage">
-                                
+                                    <strong>Click on the floor to see its component Image</strong> 
                                 </div>
                             </div>        
                         </div>
@@ -322,10 +322,10 @@ else
 
         <div class="row" id="siteplann">
             <div class="col-md-12">
-                <div class="card" style="height:50rem; text-align:center;">
+                <div class="card" style="height:30rem; text-align:center;">
                     <div class="row inner">
                         <div class="col-md-4">      
-                            <div class="card" style="height:25rem;">
+                            <div class="card" style="height:5rem;">
                                 <div class="card-body" style="background-color:#557A95;">
                                     <div id="siteDetail" class="container" style="text-align: center;">
                                         <h3 style="color:white;"><b>SITE PLAN</b></h3>
@@ -336,38 +336,44 @@ else
                                 <div class="card-body" id="siteImage">
                                     <div style="display:none;" class="site1-div div-1">
                                         <div id="" class="card homebox1" style="width: 100%; height:22rem;" >
-                                            <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQLsVhJ-SYtkpB5WP7zA15GV_90te892oMsBM8I_zWsvpy9bOdm&usqp=CAU"/>
-                                            <a href="#" type="button" style="width:160px;" class="btn btnss btn-outline-dark">DETAILS</a>
-                                            <button type="button" style="width:160px;" class="btn btns btn-outline-dark">SUMMARY</button>
+                                            @foreach($homes as $home)
+                                        <img style="height:100%;" src="/uploads/homes/{{$home->featured_image}}"/>
+                                            @endforeach
+                                            <a href="#floorplann" type="button" style="width:160px;" class="btn btnss btn-outline-dark">FLOOR PLAN</a>
+                                            <a  href="#overview" type="button" style="width:160px;" class="btn btns btn-outline-dark">OVERVIEW</a>
                                         </div>
                                     </div>
                                     <div style="display:none;" class="site2-div div-1">
                                         <div id="" class="card homebox1" style="width: 100%; height:22rem;" >
-                                            <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSA1iOWkR_nvfjiIyvOy983dmZYc7wXNvpTfYQwBR9n-O9h5zxm&usqp=CAU"/>
-                                            <a href="#" type="button" style="width:160px;" class="btn btnss btn-outline-dark">DETAILS</a>
-                                            <button type="button" style="width:160px;" class="btn btns btn-outline-dark">SUMMARY</button>
+                                            @foreach($homes as $home)
+                                                <img style="height:100%;" src="/uploads/homes/{{$home->featured_image}}"/>
+                                            @endforeach
+                                                <a href="#floorplann" type="button" style="width:160px;" class="btn btnss btn-outline-dark">FLOOR PLAN</a>
+                                                <a  href="#overview" type="button" style="width:160px;" class="btn btns btn-outline-dark">OVERVIEW</a>
                                         </div>
                                     </div>
                                     <div style="display:none;" class="site3-div div-1">
                                         <div id="" class="card homebox1" style="width: 100%; height:22rem;" >
-                                            <img style="height:100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRfGU9EFHN7IDMbLY-sZWwKUu45F2LOZDa0ABJS08fsoouX2IFc&usqp=CAU"/>
-                                            <a href="#" type="button" style="width:160px;" class="btn btnss btn-outline-dark">DETAILS</a>
-                                            <button type="button" style="width:160px;" class="btn btns btn-outline-dark">SUMMARY</button>
+                                            @foreach($homes as $home)
+                                                <img style="height:100%;" src="/uploads/homes/{{$home->featured_image}}"/>
+                                            @endforeach
+                                                <a href="#floorplann" type="button" style="width:160px;" class="btn btnss btn-outline-dark">FLOOR PLAN</a>
+                                                <a  href="#overview" type="button" style="width:160px;" class="btn btns btn-outline-dark">OVERVIEW</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>        
                         </div>
-                        <div class="col-md-8"><br><br><br><br><br>
+                        <div class="col-md-8"><br>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <button id="site1"><img class="demo w3-opacity w3-hover-opacity-off t-button t-state-default reply-button site1" src="https://www.kindpng.com/picc/m/218-2185407_bldg-fence-plan-color-fence-site-plan-example.png" style="width:100%; height: 32.5rem;cursor:pointer"/></button>
+                                    <button id="site1"><img class="demo w3-opacity w3-hover-opacity-off t-button t-state-default reply-button site1" src="https://www.kindpng.com/picc/m/218-2185407_bldg-fence-plan-color-fence-site-plan-example.png" style="width:100%; height: 27rem;cursor:pointer"/></button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button id="site2"><img class="demo w3-opacity w3-hover-opacity-off site2" src=" https://5.imimg.com/data5/HD/RU/FJ/ANDROID-5286907/product-jpeg-500x500.jpg" style="width:100%; height: 32.5rem;cursor:pointer"/></button>
+                                    <button id="site2"><img class="demo w3-opacity w3-hover-opacity-off site2" src=" https://5.imimg.com/data5/HD/RU/FJ/ANDROID-5286907/product-jpeg-500x500.jpg" style="width:100%; height: 27rem;cursor:pointer"/></button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button id="site3"><img class="demo w3-opacity w3-hover-opacity-off site3" src="https://www.kindpng.com/picc/m/218-2185407_bldg-fence-plan-color-fence-site-plan-example.png" style="width:100%; height: 32.5rem;cursor:pointer"/></button>
+                                    <button id="site3"><img class="demo w3-opacity w3-hover-opacity-off site3" src="https://www.kindpng.com/picc/m/218-2185407_bldg-fence-plan-color-fence-site-plan-example.png" style="width:100%; height: 27rem;cursor:pointer"/></button>
                                 </div>
                             </div>
                         </div>

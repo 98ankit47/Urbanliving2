@@ -163,6 +163,7 @@ class HomeController extends Controller
                 "price"=>$request['price'],
                 "type"=>$request['type'],
                 "time"=>$request['time'],
+                "seen"=>0,
                 "featured_image"=>$featured_img,
                 "gallery"=>implode(',', $data),
             ]);
@@ -202,7 +203,7 @@ class HomeController extends Controller
             'name'=>$request['name'],
             'email'=>$request['email'],
             'phone'=>$request['phone'],
-            'seen'=>$request['seen'],
+            'seen'=>0,
             'home_id'=>$request['home_id'],
             'message'=>$request['message'],
         ]);

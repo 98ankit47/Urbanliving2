@@ -223,7 +223,7 @@
      </div>
 
 
-    <div id="success" style="text-align:center;">
+    <div id="success" style="text-align:center">
     </div>
     <div id="danger" style="text-align:center">
     </div>
@@ -558,7 +558,10 @@ $('#ys-floor-btn').click(function()
 {
   var id = $(this).attr('data-id');
   $('#deleteFloor').modal('hide');
+  $('.modal-backdrop').css('display','none');
   deleteFloor(id);
+
+
 });
 
 
@@ -1587,7 +1590,7 @@ function Editloadmap(aid){
             type: 'DELETE',
             url: APP_URL+'/api/admin/floor/'+f_id,
             success: function(result){  
-              window.location.href='/admin/floor';
+              openHome(event,f_id);
               $('#danger').html('Floor Deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
             }   
         });
@@ -1636,7 +1639,7 @@ function Editloadmap(aid){
                    'image-name'          : image_name,
                  },
                  success: function ( ) {
-                   window.location.href = "/admin/floor";
+                    $('#AddNewFloor').modal('hide');
                    $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                  }
                });
@@ -1705,7 +1708,7 @@ function Editloadmap(aid){
                    'image-name'          : image_name,
                  },
                  success: function ( ) {
-                  window.location.href = "/admin/floor";
+                  $('#EditFloor').modal('hide');
                    $('#success').html('Floor Edited').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
                  }
                });

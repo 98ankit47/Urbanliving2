@@ -129,7 +129,7 @@ Route::get('/neighbor',function(){
 
 Route::get('/sellHome',function(){
     return view('user.sellHome.index');
-})->name('selling-home')->middleware('auth');
+})->name('selling-home');
 
 Route::get('/development-Detail/{id}','user\HomeController@single')->name('developmentDetail');
  
