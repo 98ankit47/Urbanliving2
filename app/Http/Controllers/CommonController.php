@@ -87,12 +87,13 @@ class CommonController extends Controller
         foreach($users as $key=>$user)
         {
             ++$key;
-            $data.=' <tr>
-                        <td>'.$key.'</td>
-                        <td>'.$user->name.'</td>
-                        <td>'.$user->email.'</td>
-                        <td>';
-                        if($user->status==0)
+            $data.=' 
+            <tr class="pull-up">
+            <td class="text-truncate">'.$key.'</td>
+            <td class="text-truncate p-1">'.$user->name.'</td>
+            <td>'.$user->email.'</td>
+            <td class="text-truncate">';
+            if($user->status==0)
                         {
                            $data.='<div class="container" style="text-align:center;">
                            <a onclick="BlockUserModal('.$user->id.')" class="change_user_status" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$user->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
@@ -103,10 +104,9 @@ class CommonController extends Controller
                            <a class="change_user_status" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" onclick="BlockUserModal('.$user->id.')" >
                            <i class="fa fa-check">&nbsp;Active</i></a></div>';
                        }
-                        $data.='</td>
-                    </tr>';
-                  --$key;  
-            
+                       $data.='</td>
+                       </tr>';
+                     --$key;     
         }
         return $data;        
     }
