@@ -36,27 +36,31 @@
 
 <div class="container tabs"> 
     <a class="tablink" type="button" data-toggle="modal" data-target="#logoModal">
-      <div class="row">
-        <div class="column" style="width:98%;">
-          <strong>Change Logo</strong>
-          <p style="font-size: 14px; color: gray;">Change your Logo, and set new Logo.</p>  
+    <div class="bs-callout-danger callout-transparent mt-1">
+      <div class="media align-items-stretch">
+        <div class="media-left media-middle bg-danger position-relative callout-arrow-left p-2  d-flex align-items-center">
+          <i class="la la-hand-o-right white font-medium-5"></i>
         </div>
-        <div class="column" style="width:2%; padding-top: 20px;">
-          <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
+        <div class="media-body p-1">
+          <strong>Click Here!</strong>
+          <p>Change your Logo and set new Logo</p>
         </div>
       </div>
+    </div>
     </a>
 </div>
 
 <div class="container tabs"> 
     <a class="tablink" type="button" data-toggle="modal" data-target="#changepass">
-      <div class="row">
-        <div class="column" style="width:98%;">
-          <strong>Change Password</strong>
-          <p style="font-size: 14px; color: gray;">Change your Password, and set new password.</p>  
-        </div>
-        <div class="column" style="width:2%; padding-top: 20px;">
-          <i class ="fa fa-angle-right" style="font-size:25px; color:gray;"></i>
+      <div class="bs-callout-primary callout-transparent">
+        <div class="media align-items-stretch">
+          <div class="media-left media-middle bg-primary position-relative callout-arrow-left p-2  d-flex align-items-center">
+            <i class="la la-send-o fa-lg white font-medium-5"></i>
+          </div>
+          <div class="media-body p-1">
+            <strong>Click Here!</strong>
+            <p>Change your Password, and set new password.</p>
+          </div>
         </div>
       </div>
     </a>

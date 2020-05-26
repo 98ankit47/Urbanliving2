@@ -106,22 +106,22 @@ class HomeController extends Controller
                      if($home->block==0)
                      {
                         $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
                      }
                     else
                     {
                         $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="fa fa-check">&nbsp;Active</i></a></div>';
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
                     }
     
     
                      $data.='<br><div class="row">
                      <div class ="col-md-6" style="text-align:center;">
-                        <a style="color:white;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
+                        <a style="color:white;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn mr-1 mb-1 btn-block">Manage</a> 
                      </div> 
                       
                      <div class ="col-md-6" style="text-align:center;">
-                        <button style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
+                        <button style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn mr-1 mb-1 btn-block">Delete</button>  
                     </div>
                     </div>
                      </div>
@@ -172,22 +172,22 @@ class HomeController extends Controller
                      if($home->block==0)
                      {
                         $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
                      }
                     else
                     {
                         $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="fa fa-check">&nbsp;Active</i></a></div>';
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
                     }
     
     
                      $data.='<br><div class="row">
                      <div class ="col-md-6" style="text-align:center;">
-                        <a style="color:white;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn">Manage</a> 
+                        <a style="color:white;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn mr-1 mb-1 btn-block">Manage</a> 
                      </div> 
                       
                      <div class ="col-md-6" style="text-align:center;">
-                        <button style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn">Delete</button>  
+                        <button style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn mr-1 mb-1 btn-block">Delete</button>  
                     </div>
                     </div>
                      </div>
