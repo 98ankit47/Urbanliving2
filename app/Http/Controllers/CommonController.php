@@ -452,6 +452,14 @@ class CommonController extends Controller
         $enquiry = Enquiry::findOrFail($id);
                 $enquiry->delete(); 
     }
+
+    public function getFloor($hid,$fno)
+    {
+        $floor=Floors::where('home_id',$hid)->where('floor_no',$fno)->get()->count();
+        return $floor;
+    }
+
+
     public function userFloor($id)
     {
         $data ='';

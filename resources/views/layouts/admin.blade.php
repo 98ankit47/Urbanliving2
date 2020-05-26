@@ -142,7 +142,7 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/site"><i class="la la-table"></i><span class="menu-title" data-i18n="Site">Site Plan</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span><span class="badge bg-primary" style="margin-left:10px;" id="totalNotification"></span></a>
+                <li class=" nav-item"><a><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span><span class="badge bg-primary" style="margin-right:30px;" id="totalNotification"></span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="/admin/enquiry"><i></i><span>Home Enquiry</span><span class="badge bg-primary" style="margin-left:10px;" id="notification"></span></a>
                         </li>
@@ -206,6 +206,7 @@
     </div>
     <div id="danger" style="text-align:center">
     </div>
+     
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
@@ -1612,35 +1613,51 @@ function Editloadmap(aid){
           });
           $(function () {
             $('#FloorAddForm').on('submit', function (e) {
-              var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
               e.preventDefault();
-                  home_id            =  document.getElementById("home_id").value;         
-                  floor_no      =  document.getElementById("floor_no").value;         
-                  bedroom          =  document.getElementById("bedroom").value;         
-                  bathroom         =  document.getElementById("bathroom").value;         
-                  garage           =  document.getElementById("garage").value;         
-                  dining          =  document.getElementById("dining").value;         
-                  kitchen              =  document.getElementById("kitchen").value;         
-                  $.ajax({
-                    type: 'post',
-                    url: '/api/admin/floor/',
-                    data:{
-                      'home_id'             : home_id,
-                      'floor_no'            : floor_no,
-                      'bedroom'             : bedroom,
-                      'bathroom'            : bathroom,
-                      'garage'              : garage,
-                      'dining'             : dining,
-                      'kitchen'             : kitchen,
-                      'image'               : image,
-                      'image-name'          : image_name,
-                    },
-                    success: function ( ) {
-                        $('#AddNewFloor').modal('hide');
-                    document.AddFloor.reset();
-                      $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
+              home_id            =  document.getElementById("home_id").value;    
+              floor_no      =  document.getElementById("floor_no").value;         
+              $.ajax({
+                    type: 'get',
+                    url: '/api/admin/floorNo/'+home_id+'/'+floor_no,
+                    success: function (result) {
+                      if(result==0)
+                      {
+                        var home_id,floor_no,bedroom,bathroom,garage,dinning,kitchen;
+                        home_id            =  document.getElementById("home_id").value;         
+                        floor_no      =  document.getElementById("floor_no").value;         
+                        bedroom          =  document.getElementById("bedroom").value;         
+                        bathroom         =  document.getElementById("bathroom").value;         
+                        garage           =  document.getElementById("garage").value;         
+                        dining          =  document.getElementById("dining").value;         
+                        kitchen              =  document.getElementById("kitchen").value;         
+                        $.ajax({
+                          type: 'post',
+                          url: '/api/admin/floor/',
+                          data:{
+                            'home_id'             : home_id,
+                            'floor_no'            : floor_no,
+                            'bedroom'             : bedroom,
+                            'bathroom'            : bathroom,
+                            'garage'              : garage,
+                            'dining'             : dining,
+                            'kitchen'             : kitchen,
+                            'image'               : image,
+                            'image-name'          : image_name,
+                          },
+                          success: function ( ) {
+                              $('#AddNewFloor').modal('hide');
+                          document.AddFloor.reset();
+                            $('#success').html('New Floor Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
+                          }
+                        });
+                      }
+                      else
+                      {
+                        alert("Floor No already exist for this house ");
+                      }
                     }
                   });
+            
             });
         });
       }

@@ -38,6 +38,7 @@ Route::get( 'admin/dashboard/user', 'CommonController@DashboardUser');
 Route::get('admin/user-block/{id}','CommonController@UserBlock');
 
 Route::post( 'admin/floor/{id}', 'admin\FloorController@update');
+Route::get( 'admin/floorNo/{hid}/{fno}', 'CommonController@getFloor');
 Route::get( 'admin/floor-home/{id}', 'admin\FloorController@showHomeFloor');
 Route::get( 'admin/floor-data/{id}', 'admin\FloorController@showModelFloor');
 Route::get( 'admin/floor-component-gallery/{type}/{home_id}', 'admin\FloorController@showFloorComponent');
