@@ -110,13 +110,13 @@ class CommonController extends Controller
             if($user->status==0)
                         {
                            $data.='<div class="container" style="text-align:center;">
-                           <a onclick="BlockUserModal('.$user->id.')" class="change_user_status" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$user->id.'"  ><i class="fa fa-ban">&nbsp;Deactive</i></a></div> ';
+                           <a onclick="BlockUserModal('.$user->id.')" class="change_user_status" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$user->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
                         }
                        else
                        {
                            $data.='<div class="container" style="text-align:center;">
                            <a class="change_user_status" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" onclick="BlockUserModal('.$user->id.')" >
-                           <i class="fa fa-check">&nbsp;Active</i></a></div>';
+                           <i class="la la-check">&nbsp;Active</i></a></div>';
                        }
                        $data.='</td>
                        </tr>';
