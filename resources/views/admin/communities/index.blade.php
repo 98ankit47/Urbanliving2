@@ -76,8 +76,8 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-              <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+              <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+              <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
             </div>
           </form>
         </div>   
@@ -145,8 +145,8 @@
             </div>
           </div>
           <div class="modal-footer">
-          <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-            <button type="submit" style="width: 120px;color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+          <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+            <button type="submit" style="width: 120px;color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
           </div>
         </form>
       </div> 
@@ -171,8 +171,8 @@
           <h6 class="delete_heading">Are you sure, you want to delete this Community ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
-            <button type="button" data-dismiss="modal" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" class="btn w3-100"> No </button>
-            <button type="submit" id="ys-comm-btn" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100"> Yes</button>
+            <button type="button" data-dismiss="modal" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"> No </button>
+            <button type="submit" id="ys-comm-btn" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1"> Yes</button>
           </div>  
         </div>    
       </div>

@@ -57,10 +57,10 @@ td, th {
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
   <div class="row">
-    <div class="col-md-10" style="text-align:center">
-      <h4 style="color: black;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><strong>Home Detail</strong></h4>
+    <div class="col-md-6" style="text-align:left">
+      <h4 style="color: black;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><strong>Home Details</strong></h4>
     </div>
-    <div class="col-md-2" style="text-align:right;">
+    <div class="col-md-6" style="text-align:right;">
       <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn">Go Back</a>
     </div>
   </div>
@@ -194,7 +194,12 @@ td, th {
 
 <div id="Broucher" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
   <div class="container">
-    <a type="button" onclick="UploadPdf()" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn" data-toggle="modal" data-target="#myBroucher">Add Broucher</a> 
+    <!-- <a type="button" onclick="UploadPdf()" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn" data-toggle="modal" data-target="#myBroucher">Add Broucher</a>  -->
+    <div class="heading-elements">
+      <a type="button" onclick="UploadPdf()" class="btn btn-danger round btn-sm" style="color:white;" data-toggle="modal" data-target="#myBroucher"><i class="la la-plus font-small-2"></i>
+        Add Broucher
+      </a>
+    </div>
   </div>
 </div>
 
@@ -229,8 +234,8 @@ td, th {
           </form>
           </div>
           <div class="modal-footer">
-            <button type="button" style=" color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-            <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+            <button type="button" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+            <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
           </div>
         </div>
       </div>
@@ -270,8 +275,8 @@ td, th {
         </form>
         </div><br>
         <div class="modal-footer">
-          <button type="button"  style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-          <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+          <button type="button"  style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+          <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
         </div>
       </div>
     </div>
@@ -296,8 +301,8 @@ td, th {
             <div class="clearfix">
             </div>
           <div class="m-auto">
-            <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-            <button type="submit"  style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100" id="ys-btn"> Yes</button>
+            <button type="button" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" id="ys-btn"> Yes</button>
           </div>  
         </div>    
       </div>
@@ -322,8 +327,8 @@ td, th {
             <div class="clearfix">
             </div>
           <div class="m-auto">
-            <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-            <button type="submit"  style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100" id="ys-gal-btn"> Yes</button>
+            <button type="button" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" id="ys-gal-btn"> Yes</button>
           </div>     
         </div>
       </div>
@@ -347,8 +352,8 @@ td, th {
           <h6 class="delete_heading">Are you sure, you want to delete this Home Availability ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
-            <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal"> No </button>
-            <button type="submit"  style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100" id="ys-Avail-btn"> Yes</button>
+            <button type="button" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" id="ys-Avail-btn"> Yes</button>
           </div>  
         </div>    
       </div>
@@ -377,8 +382,8 @@ td, th {
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
-        <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+        <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+        <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
       </div>
     </form>
     </div>
@@ -403,8 +408,8 @@ td, th {
           <input type="hidden" id="lat">
           <input type="hidden" id="lng">
           <div class="modal-footer">
-            <button type="submit" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Sumbit</button>
-            <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100" data-dismiss="modal">Close</button>
+            <button type="submit" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
+            <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
           </div>
         </form>
       </div>
@@ -429,8 +434,8 @@ td, th {
         </div>
       <br>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+        <button type="submit" class="btn btn-primary"><i class="la la-check-square-o"></i> Save</button>
       </form>
       </div>
     </div>
