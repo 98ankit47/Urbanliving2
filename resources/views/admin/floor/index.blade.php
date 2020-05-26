@@ -188,28 +188,11 @@
         <form id="EditForm">
           <div class="modal-body">
             <div class="form-row">
-              <div class="form-group col-md-12">
-                <label for="inputEmail4">Select Home</label>
-                <select id="Edit_home_id" class="form-control">
-                </select>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-4">
-                <label for="inputEmail4">Floor No</label>
-                <select id="Edit_floor_no" class="form-control">
-                  <option selected>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label for="inputEmail4">Bedroom</label>
                 <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true"  class="form-control" id="Edit_bedroom" placeholder="No Of Bedroom" required>
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label for="inputAddress">Bathroom</label>
                 <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_bathroom" placeholder="No Of Bedroom" required>
               </div>

@@ -1451,29 +1451,44 @@ function Editloadmap(aid){
               $('#ComponentAddForm').on('submit', function (e) {
                 var name,cno;
                 e.preventDefault();
-                    name      =  document.getElementById("name").value;         
-                    cno      =  document.getElementById("cno").value; 
-                    $.ajax({
-                      type: 'post',
-                      url: '/api/admin/floor-component/',
-                      data:{
-                        'name'                : name,
-                        'cno'                 : cno,
-                        'floor_id'            : id,
-                        'type'                : type,
-                        'image'               : image,
-                        'image-name'          : image_name,
-                      },
-                      success: function ( ) {
-                          $('#AddNewFloorComponent').modal('hide');
-                          loadFloorComponent();
-                          $('#success').html('Add New Floor Component').show().show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                $.ajax({
+                  type: 'get',
+                  url: APP_URL+'/api/admin/floorCom/'+id+'/'+type,
+                  success: function(result){  
+                    if(result==1)
+                    {
+                          name      =  document.getElementById("name").value;         
+                          cno      =  document.getElementById("cno").value; 
+                          $.ajax({
+                            type: 'post',
+                            url: '/api/admin/floor-component/',
+                            data:{
+                              'name'                : name,
+                              'cno'                 : cno,
+                              'floor_id'            : id,
+                              'type'                : type,
+                              'image'               : image,
+                              'image-name'          : image_name,
+                            },
+                            success: function ( ) {
+                                $('#AddNewFloorComponent').modal('hide');
+                                loadFloorComponent();
+                                $('#success').html('Add New Floor Component').show().show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                            }
+                          });
                       }
-                    });
+                      else
+                      {
+                        $('#AddNewFloorComponent').modal('hide');
+                        loadFloorComponent();
+                        $('#success').html('Add New Floor Component').show().show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                           
+                      }
+                    }
+                  });
+                });
               });
-              
-            });
-        }
+            }
 
     function editfloorcomponent(fid)
           {  
@@ -1671,8 +1686,6 @@ function Editloadmap(aid){
     url: APP_URL+'/api/admin/floor/'+fid,
     success: function(result){    
       $('#EditFloor').modal('show');
-        document.getElementById("Edit_home_id").value = result.home_id;         
-        document.getElementById("Edit_floor_no").value = result.floor_no;         
         document.getElementById("Edit_bedroom").value = result.bedroom;         
         document.getElementById("Edit_bathroom").value = result.bathroom;         
         document.getElementById("Edit_garage").value = result.garage;         
@@ -1697,8 +1710,6 @@ function Editloadmap(aid){
          $('#EditForm').on('submit', function (e) {
            var home_id,floor_no,bedroom,bathroom,garage,dining,kitchen;
            e.preventDefault();
-               home_id            =  document.getElementById("Edit_home_id").value;         
-               floor_no           =  document.getElementById("Edit_floor_no").value;         
                bedroom            =  document.getElementById("Edit_bedroom").value;         
                bathroom           =  document.getElementById("Edit_bathroom").value;         
                garage             =  document.getElementById("Edit_garage").value;         
@@ -1708,8 +1719,6 @@ function Editloadmap(aid){
                  type: 'post',
                  url: '/api/admin/floor/'+fid,
                  data:{
-                   'home_id'             : home_id,
-                   'floor_no'            : floor_no,
                    'bedroom'             : bedroom,
                    'bathroom'            : bathroom,
                    'garage'              : garage,

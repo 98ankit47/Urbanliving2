@@ -626,6 +626,12 @@ class CommonController extends Controller
         return $data; 
     }
 
+    public function CheckFloor($id,$type)
+    {
+        return 0;
+    }
+
+
     public function AvailableSingleHome($id)
     {
         return HomeAvailable::where('home_id',$id)->get();

@@ -46,6 +46,7 @@ Route::delete( 'admin/floor-component/delete/{id}', 'admin\FloorController@delet
 Route::post( 'admin/floor-component', 'admin\FloorController@componentstore');
 Route::post( 'admin/floor-component/{id}', 'admin\FloorController@componentupdate');
 Route::get( 'admin/floor-component/{id}', 'admin\FloorController@componentshow');
+Route::get( 'admin/floorCom/{id}/{type}', 'CommonController@CheckFloor');
 
 
 Route::get( 'admin/home-feature/{id}', 'CommonController@features');
