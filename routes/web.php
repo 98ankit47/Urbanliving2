@@ -97,7 +97,9 @@ Route::get('/admin/selling/',function(){
 
 Route::get('/admin/selling/{id}','CommonController@ShowSell')->middleware('role','auth');
 
-
+Route::get('/admin/site',function(){
+    return view('admin.sitePlan/index');
+}); 
 
 // USER FRONT-END
 
