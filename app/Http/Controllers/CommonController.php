@@ -628,7 +628,18 @@ class CommonController extends Controller
 
     public function CheckFloor($id,$type)
     {
-        return 0;
+        $floor= Floors::where('id',$id)->get()->first();
+        $floorComponent= FloorComponent::where('floor_id',$id)->where('type',$type)->get()->count();
+        $fl=$floor->$type;
+        return $floorComponent;
+        if($floorComponent==$fl)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
     }
 
 

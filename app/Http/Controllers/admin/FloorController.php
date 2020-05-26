@@ -110,7 +110,7 @@ class FloorController extends Controller
       $data='';
       $components = FloorComponent::where('floor_id',$id)->where('type',$type)->get();
       $data.='<div class="col-md-4">
-        <a href="#" style="text-decoration:none" onclick="addFloorComponent()">
+        <a  style="text-decoration:none" onclick="addFloorComponent()">
             <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:352px;">
             <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
             <div class="card-body"> <br>
@@ -240,8 +240,6 @@ class FloorController extends Controller
         \Image::make($request['image'])->save(public_path('uploads\floor\\').$img);
       }
         $this->validate($request,[
-            'home_id'=>'required',
-            'floor_no'=>'required',
             'bedroom'=>'required',
             'bathroom'=>'required',
             'garage'=>'required',
@@ -249,8 +247,6 @@ class FloorController extends Controller
             'dining'=>'required',
             ]);
         Floors::where('id',$request['id'])->update([
-            'home_id'=>$request['home_id'],
-            'floor_no'=>$request['floor_no'],
             'bedroom'=>$request['bedroom'],
             'bathroom'=>$request['bathroom'],
             'garage'=>$request['garage'],

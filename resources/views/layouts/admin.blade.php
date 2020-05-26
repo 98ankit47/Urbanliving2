@@ -1473,7 +1473,7 @@ function Editloadmap(aid){
                             success: function ( ) {
                                 $('#AddNewFloorComponent').modal('hide');
                                 loadFloorComponent();
-                                $('#success').html('Add New Floor Component').show().show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                                $('#success').html('Add New Floor Component').show().show().delay(4000).addClass('alert').addClass('alert-success').fadeOut();
                             }
                           });
                       }
@@ -1481,7 +1481,7 @@ function Editloadmap(aid){
                       {
                         $('#AddNewFloorComponent').modal('hide');
                         loadFloorComponent();
-                        $('#success').html('Add New Floor Component').show().show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+                        $('#danger').html('Limit Exceed You Cannot Enter Any More Component').show().show().delay(8000).addClass('alert').addClass('alert-danger').fadeOut();
                            
                       }
                     }
