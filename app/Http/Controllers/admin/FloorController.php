@@ -109,9 +109,9 @@ class FloorController extends Controller
     {
       $data='';
       $components = FloorComponent::where('floor_id',$id)->where('type',$type)->get();
-      $data.='<div class="col-md-4"  >
+      $data.='<div class="col-md-4">
         <a href="#" style="text-decoration:none" onclick="addFloorComponent()">
-            <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:375px;">
+            <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:352px;">
             <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
             <div class="card-body"> <br>
                 <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW '.$type.'</h4>
@@ -157,16 +157,15 @@ class FloorController extends Controller
         foreach($floors as $ky => $floor )
         {
             $data .='
-            <div class="col-md-6" style="font-family: Open Sans, sans-serif;">
-              <div class="card">
+              <div class="card" style="font-family: Open Sans, sans-serif;">
                 <div class="row">
-                  <div class="col-md-6">
-                    <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4>
+                  <div class="col-md-4"><br>
+                    <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4><br>
                     <img class="card-img-top"  src="/uploads/floor/'.$floor->image.'" alt="">
                   </div> 
-                  <div class="col-md-6">
+                  <div class="col-md-8"><br>
                     <h4 style="text-align:center">Floor Detail<h4><br>
-                    <table class="table table-hover" style="font-size:13px;text-align:center">
+                    <table class="table table-hover" style="font-size:13px;text-align:left;">
                       <thead>
                         <tr>
                           <th scope="col">Type</th>
@@ -214,8 +213,7 @@ class FloorController extends Controller
                     <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
                   </div>
                 </div>
-              </div>
-            </div>';
+              </div>';
         } 
         return $data ;
     }
