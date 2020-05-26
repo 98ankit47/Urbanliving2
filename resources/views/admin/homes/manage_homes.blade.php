@@ -61,7 +61,7 @@ td, th {
       <h4 style="color: black;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><strong>Home Details</strong></h4>
     </div>
     <div class="col-md-6" style="text-align:right;">
-      <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn">Go Back</a>
+      <a type="button" href="/admin/homes" style="color: white;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn btn-secondary"><i class="la la-chevron-circle-left"></i> Go Back</a>
     </div>
   </div>
 <hr>

@@ -117,11 +117,11 @@ class HomeController extends Controller
     
                      $data.='<br><div class="row">
                      <div class ="col-md-6" style="text-align:center;">
-                        <a style="color:white;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn mr-1 mb-1 btn-block">Manage</a> 
+                        <a style="color:white;text-align:center;font-weight:bold;"  href="/admin/home/manage/'.$home->id.'" class="btn mr-1 mb-1 btn-block btn-primary"><i class="la la-check-circle"></i> Manage</a> 
                      </div> 
                       
                      <div class ="col-md-6" style="text-align:center;">
-                        <button style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn mr-1 mb-1 btn-block">Delete</button>  
+                        <button style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn mr-1 mb-1 btn-block"><i class="ft-x"></i> Delete</button>  
                     </div>
                     </div>
                      </div>
@@ -183,11 +183,11 @@ class HomeController extends Controller
     
                      $data.='<br><div class="row">
                      <div class ="col-md-6" style="text-align:center;">
-                        <a style="color:white;text-align:center;font-weight:bold; background-color:#60ACEF;"  href="/admin/home/manage/'.$home->id.'" class="btn mr-1 mb-1 btn-block">Manage</a> 
+                        <a style="color:white;text-align:center;font-weight:bold;"  href="/admin/home/manage/'.$home->id.'" class="btn mr-1 mb-1 btn-block btn-primary"><i class="la la-check-circle"></i> Manage</a> 
                      </div> 
                       
                      <div class ="col-md-6" style="text-align:center;">
-                        <button style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn mr-1 mb-1 btn-block">Delete</button>  
+                        <button style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$home->id.'" data-toggle="modal" data-target="#deleteHome" class="btn mr-1 mb-1 btn-block"><i class="ft-x"></i> Delete</button>  
                     </div>
                     </div>
                      </div>
