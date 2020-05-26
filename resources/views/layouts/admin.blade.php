@@ -152,7 +152,7 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/settings"><i class="la la-cogs"></i><span class="menu-title" data-i18n="Settings">Settings</span></a>
                 </li>
-                <li class=" nav-item"><a class="nav-link" data-toggle="modal" data-target="#logout1" aria-expanded="true" aria-controls="logout">
+                <li class=" nav-item"><a  data-toggle="modal" onclick="logout1()">
                     <i class="la la-power-off"></i><span>Logout</span>
                   </a>
                 </li>
@@ -163,6 +163,13 @@
             </ul>
         </div>
     </div>
+
+    <script>
+      function logout1()
+      {
+          $('#logout1').modal('show'); 
+      }
+    </script>
 
     
     <div class="modal fade bd-example-modal-xl" 
