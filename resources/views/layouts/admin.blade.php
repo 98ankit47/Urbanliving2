@@ -140,6 +140,8 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/floor"><i class="la la-bars"></i><span class="menu-title" data-i18n="Floor">Floor</span></a>
                 </li>
+                <li class=" nav-item"><a href="/admin/site"><i class="la la-table"></i><span class="menu-title" data-i18n="Site">Site Plan</span></a>
+                </li>
                 <li class=" nav-item"><a href="#"><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span><span class="badge bg-primary" style="margin-left:10px;" id="totalNotification"></span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="/admin/enquiry"><i></i><span>Home Enquiry</span><span class="badge bg-primary" style="margin-left:10px;" id="notification"></span></a>

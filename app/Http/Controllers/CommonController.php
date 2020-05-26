@@ -74,7 +74,7 @@ class CommonController extends Controller
     {
         $data ='';
         $logo= Logos::get()->first();
-        $data.='<img src="/uploads/logo/'.$logo->image.'"  width="70px; style="border-radius:20px;">
+        $data.='<img src="/uploads/logo/'.$logo->image.'"  width="40px; style="border-radius:20px;">
                 <span class="brand-text" style="font-weight:bold;font-size:23px;" >Urban Living</span>';     
         return $data;        
     }
