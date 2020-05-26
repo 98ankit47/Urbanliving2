@@ -44,8 +44,8 @@ id="deleteEnquiry" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityT
           <h6 class="delete_heading">Are you sure, you want to Delete this Enquiry?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
-            <button type="button" data-dismiss="modal" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn w3-100"> No </button>
-            <button type="submit" id="ys-enq-btn" style=" color:white; background-color:#2DCC70;font-weight:bold" class="btn w3-100"> Yes</button>
+            <button type="button" data-dismiss="modal" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"> No </button>
+            <button type="submit" id="ys-enq-btn" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1"> Yes</button>
            </div>  
           </div>    
         </div>

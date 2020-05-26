@@ -58,8 +58,8 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" style=" color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-    <button type="submit" style="color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+    <button type="button" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+    <button type="submit" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
   </div>
 </form>
       </div>
@@ -101,8 +101,8 @@
   
     </div>
     <div class="modal-footer">
-      <button type="button" style=" color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" data-dismiss="modal">Close</button>
-      <button type="submit" style="color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100">Save changes</button>
+      <button type="button" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+      <button type="submit" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary">Save</button>
     </div>
   </form>
         </div>
@@ -124,8 +124,8 @@
             <h6 class="delete_heading">Are you sure, you want to delete this Component ?</h6>
             <div class="clearfix"></div>
             <div class="m-auto">
-              <button type="button" style="color:white;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w3-100" data-dismiss="modal"> No </button>
-              <button type="submit" style="color:white; background-color:#F6454F;font-weight:bold" class="btn w3-100" id="ys-floor-component-btn"> Yes</button>
+              <button type="button" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary" data-dismiss="modal"> No </button>
+              <button type="submit" style="color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" id="ys-floor-component-btn"> Yes</button>
              </div>  
             </div>    
           </div>

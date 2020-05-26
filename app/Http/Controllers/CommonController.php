@@ -607,12 +607,12 @@ class CommonController extends Controller
                 <h5>Lat='.$avb->lat.' $$ Lng='.$avb->lng.'</h5>
 
                 <div class="row">
-                <div class="col-md-1"></div>
-                <div class ="col-md-4">
+                
+                <div class ="col-md-6">
                 <a onclick="Editloadmap('.$avb->id.')" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w-100">Edit</a> 
                 </div>
-                <div class="col-md-2"></div>
-                <div class ="col-md-4">
+                
+                <div class ="col-md-6">
                 <button style="color:white;width:100px;text-align:center;
                 font-weight:bold; background-color:#F6454F;" data-id="'.$avb->id.'" data-toggle="modal" data-target="#deleteAvail" class="btn w-100">Delete</button>  
                </div>
