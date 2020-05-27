@@ -1426,6 +1426,97 @@ function Editloadmap(aid){
   </script>
 @endif
 
+@if(Route::currentRouteName() == 'site-plan')
+  <script>
+          loadHomeList();
+          function loadHomeList(){
+            var display='';
+        $.ajax({
+              type: 'GET',
+              url: APP_URL+'/api/admin/homelist',
+              success: function(result){
+                $.each(result,function(k){
+                  display += '<option value="'+result[k].id+'">'+result[k].title+'</option>';
+                })
+              $('#home_id').html(display);
+              $('#Edit_home_id').html(display);
+              }   
+          });
+      }
+     function addSite()
+      {
+        var APP_URL = "{{ url('/') }}";
+        var id = window.location.href.split('/').pop();
+        $('#AddNewSite').modal('show');
+      $('input[type=file]').on('change',function(e){
+              let files = e.target.files[0];
+              let reader = new FileReader();
+              if(files){
+                reader.onloadend = ()=>{
+                  $('#image').attr('src',reader.result);
+                  image = reader.result;
+                  image_name = files.name;
+                  // document.getElementById("featured_img").value  = reader.result;
+                }
+                reader.readAsDataURL(files); 
+            }
+          });
+          $(function () {
+            $('#SiteAddForm').on('submit', function (e) {
+              e.preventDefault();
+              home_id            =  document.getElementById("home_id").value;    
+              $.ajax({
+                    type: 'get',
+                    url: '/api/admin/SiteNo/'+home_id,
+                    success: function (result) {
+                      if(result==0)
+                      {
+                        var home_id;
+                        home_id            =  document.getElementById("home_id").value;         
+                        $.ajax({
+                          type: 'post',
+                          url: '/api/admin/Site/',
+                          data:{
+                            'home_id'             : home_id,
+                            'image'               : image,
+                            'image-name'          : image_name,
+                          },
+                          success: function ( ) {
+                              $('#AddNewSite').modal('hide');
+                          document.AddFloor.reset();
+                            $('#success').html('New Site Plan Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
+                          }
+                        });
+                      }
+                      else
+                      {
+                        alert("Site Plan already exist for this house ");
+                      }
+                    }
+                  });
+            
+            });
+        });
+      }
+
+
+    loadHomeListDrop();
+      function loadHomeListDrop(){
+        var display='';
+          $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/homelist',
+          success: function(result){
+            $.each(result,function(k){
+              display +='<a class="tablinks"   onclick="openHome(event,'+result[k].id+')">'+result[k].title+'</a>';
+            })
+          $('#myDropdown').html(display);
+          }   
+      });
+    } 
+  </script>
+@endif
+
 @if(Route::currentRouteName() == 'FloorComponent')
   <script>
     loadFloorComponent();
@@ -1577,7 +1668,7 @@ function Editloadmap(aid){
 <script> 
     loadHomeList();
       function loadHomeList(){
-        var display;
+        var display='';
     $.ajax({
           type: 'GET',
           url: APP_URL+'/api/admin/homelist',

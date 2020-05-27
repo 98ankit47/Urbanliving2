@@ -11,6 +11,7 @@ use App\Models\FloorComponent;
 use App\Models\Enquiry;
 use App\Models\Favourite;
 use App\Models\pdf;
+use App\Models\SitePlan;
 use App\HomeAvailable;
 use App\User;
 use App\SellingHome;
@@ -493,6 +494,27 @@ class CommonController extends Controller
     {
         $floor=Floors::where('home_id',$hid)->where('floor_no',$fno)->get()->count();
         return $floor;
+    }
+
+
+    public function Addsite(Request $request)
+    {
+        $featured_img =  time().explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
+            $request['image'],';')))[1])[1];  
+
+        \Image::make($request['image'])->save(public_path('uploads\homes\\').$featured_img);
+       
+        SitePlan::create([
+            'home_id'=>$request['home_id'],
+            'image'=>$featured_img,
+        ]);
+    }
+
+
+    public function getSite($hid)
+    {
+        $site=SitePlan::where('home_id',$hid)->get()->count();
+        return $site;
     }
 
 

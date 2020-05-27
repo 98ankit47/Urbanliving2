@@ -117,6 +117,10 @@ Route::delete('userFavourite/{id}','CommonController@DeleteFav');
 
 Route::get('admin/home-pdf/{id}','CommonController@PdfShow');
 
+Route::get( 'admin/SiteNo/{hid}', 'CommonController@getSite');
+Route::post( 'admin/Site', 'CommonController@Addsite');
+
+
 
 
 

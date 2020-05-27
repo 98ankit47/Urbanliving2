@@ -99,7 +99,7 @@ Route::get('/admin/selling/{id}','CommonController@ShowSell')->middleware('role'
 
 Route::get('/admin/site',function(){
     return view('admin.sitePlan/index');
-}); 
+})->name('site-plan')->middleware('auth','role'); 
 
 // USER FRONT-END
 
