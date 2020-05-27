@@ -17,7 +17,7 @@ th, td {
 </style>
 
 <br>
-<h4><strong>&nbsp;Selling Enquiry</strong></h4>
+<h2><strong>&nbsp;Selling Enquiry</strong></h2>
 <?php
     $gallery = explode(',',$selling->gallery);
 ?>

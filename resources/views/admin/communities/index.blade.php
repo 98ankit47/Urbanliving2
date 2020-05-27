@@ -8,7 +8,7 @@
 
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
     <br>
-    <h4><strong>Communities</strong></h4>
+    <h2><strong>Communities</strong></h2>
     <hr>
     <br>
   <div class="row" id="community_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">

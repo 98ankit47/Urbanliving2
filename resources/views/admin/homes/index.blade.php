@@ -20,7 +20,7 @@
 
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
-      <h4><strong>Homes</strong></h4>
+      <h2><strong>Homes</strong></h2>
 <hr>
 
 <br>

@@ -111,7 +111,7 @@ class FloorController extends Controller
       $components = FloorComponent::where('floor_id',$id)->where('type',$type)->get();
       $data.='<div class="col-md-4">
         <a  style="text-decoration:none" onclick="addFloorComponent()">
-            <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:352px;">
+            <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:330px;">
             <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
             <div class="card-body"> <br>
                 <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW '.$type.'</h4>
@@ -123,7 +123,7 @@ class FloorController extends Controller
       {
           $data .='<div class="col-md-4">
           <div class="card floor-card">
-            <img class="card-img-top" type="button" data-toggle="modal" data-target="#viewFloor" src="/uploads/floorcomponent/'.$component->image.'" alt="">
+            <img class="card-img-top" type="button" style="height:200px;" data-toggle="modal" data-target="#viewFloor" src="/uploads/floorcomponent/'.$component->image.'" alt="">
               <div class="card-body">
               <h5 style="font-size: 16px;text-align:center;">'.$component->name.'</h5>
                <br><div class="row">

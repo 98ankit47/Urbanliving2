@@ -35,11 +35,11 @@
 <div class="container details-container" >
 <br>
   <div class="row" style="font-family: Open Sans, sans-serif;">
-  <div class="col-md-4 hm-contain">
-  <h4 style="color: black;"><strong>Home</strong></h4>
+  <div class="col-md-6" style="text-align:left;">
+  <h2 style="color: black;"><strong>Home</strong></h2>
   </div>
-  <div class="col-md-2">
-  <a type="button" href="/admin/homes" style="color: white; background-color:#00BCD4;font-family: Open Sans, sans-serif;" class="btn">Go Back</a>
+  <div class="col-md-6" style="text-align:right;">
+  <a type="button" href="/admin/homes" style="color: white;font-family: Open Sans, sans-serif;" class="btn btn-secondary"><i class="la la-chevron-circle-left"></i> Go Back</a>
   </div>
   </div><hr>
   <br>

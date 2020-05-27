@@ -16,7 +16,9 @@
 
 </style>
 
-
+<div class="container">
+    <h2><strong>Admin Dashboard</strong></h2>
+    <hr><br>
 
                   <div class="row">
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
@@ -206,7 +208,7 @@
                         </div>
                     </div>
                   </div>
-                
+</div>
         
       <div class="modal fade bd-example-modal-xl" id="BlockUser" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">

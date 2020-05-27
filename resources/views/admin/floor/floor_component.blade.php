@@ -12,7 +12,7 @@
 <br>
     <div class="row">
       <div class="col-md-6" style="text-align:left;">
-        <h4><strong>Floor Component</strong></h4>
+        <h2><strong>Floor Components</strong></h2>
       </div>
       <div class="col-md-6" style="text-align:right;">
         <a href="http://127.0.0.1:8000/admin/floor" style="color:white;" class="btn btn-secondary"><i class="la la-chevron-circle-left"></i> Go Back</a> 
@@ -102,7 +102,7 @@
     </div>
     <div class="modal-footer">
       <button type="button" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
-      <button type="submit" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary">Save</button>
+      <button type="submit" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
     </div>
   </form>
         </div>

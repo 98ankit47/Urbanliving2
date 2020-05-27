@@ -61,7 +61,7 @@
 <br>
     <div class="row">
         <div class="col-md-12" style="text-align:left;">
-            <h4><strong>Floor</strong></h4>
+            <h2><strong>Floor</strong></h2>
         </div>
         
     </div>

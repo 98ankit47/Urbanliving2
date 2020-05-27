@@ -31,7 +31,7 @@
 </style>
 
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
-  <h4 class="a_dash"><br><strong>Settings</strong></h4>
+  <h2 class="a_dash"><br><strong>Settings</strong></h2>
 <hr><br>
 
 <div class="container tabs"> 
