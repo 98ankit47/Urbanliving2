@@ -129,11 +129,11 @@ class FloorController extends Controller
                <br><div class="row">
                
                <div class ="col-md-6" style="text-align:center;">
-                 <button type="button" onclick="editfloorcomponent('.$component->id.')" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
+                 <button type="button" onclick="editfloorcomponent('.$component->id.')" style="color:white;text-align:center;font-weight:bold;" class="btn btn-block btn-info"><i class="la la-pencil-square"></i> Edit</button> 
                 </div>
                 
                 <div class ="col-md-6" style="text-align:center;">
-                 <button type="button" data-toggle="modal" data-id="'.$component->id.'" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloorComponent" class="btn">Delete</button> 
+                 <button type="button" data-toggle="modal" data-id="'.$component->id.'" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloorComponent" class="btn btn-block"><i class="ft-x"></i> Delete</button> 
                 </div>
                </div>
                 </div>
@@ -206,11 +206,11 @@ class FloorController extends Controller
                 <div class="row">
                   <div class="col-md-2"></div>
                   <div class ="col-md-3" style="text-align:center;margin-bottom:10px">
-                    <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button> 
+                    <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold;" class="btn btn-block btn-info"><i class="la la-pencil-square"></i> Edit</button> 
                   </div>
                   <div class="col-md-2"></div>
                   <div class ="col-md-3" style="text-align:center;margin-bottom:10px">
-                    <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn">Delete</button> 
+                    <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn btn-block"><i class="ft-x"></i> Delete</button> 
                   </div>
                 </div>
               </div>';

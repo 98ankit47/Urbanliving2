@@ -56,10 +56,10 @@ class CommonController extends Controller
                  <br>
                  <div class="row">
                     <div class ="col-md-6" style="text-align:center;">
-                        <button onclick="editfeature('.$feature->id.')" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn">Edit</button>  
+                        <button onclick="editfeature('.$feature->id.')" style="color:white;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn btn-info mr-1 mb-1 btn-block"><i class="la la-pencil-square"></i> Edit</button>  
                     </div>
                     <div class ="col-md-6" style="text-align:center;">
-                        <button class="btn" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                        <button class="btn mr-1 mb-1 btn-block" data-id="'.$feature->id.'" data-toggle="modal" data-target="#deleteFeature" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" ><i class="ft-x"></i> Delete</button>
                     </div>
                 </div>   
               </div>
@@ -180,7 +180,7 @@ class CommonController extends Controller
               <img class="card-img-top" style="height:200px;" src="/uploads/gallery/'.$gal.'">
                 <div class="card-body">
                 <div class="wrapper">
-                    <button class="btn w-100" type="button" data-id="'.$key.'"  data-toggle="modal" data-target="#deleteGallery" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" >Delete</button>
+                    <button class="btn w-100" type="button" data-id="'.$key.'"  data-toggle="modal" data-target="#deleteGallery" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" ><i class="ft-x"></i> Delete</button>
                 </div>
                 </div>
             </div> 
@@ -374,10 +374,10 @@ class CommonController extends Controller
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" data-target=" class="btn">Reply</button> 
+                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold;" data-target=" class="btn btn-primary"><i class="la la-reply"></i> Reply</button> 
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="button" data-id="'.$enquiry->id.'" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn">Delete</button> 
+                                    <button type="button" data-id="'.$enquiry->id.'" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn"><i class="ft-x"></i> Delete</button> 
                                 </div>
                             </div>
                         </div>
@@ -610,12 +610,12 @@ class CommonController extends Controller
                 <div class="row">
                 
                 <div class ="col-md-6">
-                <a onclick="Editloadmap('.$avb->id.')" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#2DCC70;" class="btn w-100">Edit</a> 
+                <a onclick="Editloadmap('.$avb->id.')" style="color:white;text-align:center;font-weight:bold;" class="btn btn-block btn-info"><i class="la la-pencil-square"></i> Edit</a> 
                 </div>
                 
                 <div class ="col-md-6">
-                <button style="color:white;width:100px;text-align:center;
-                font-weight:bold; background-color:#F6454F;" data-id="'.$avb->id.'" data-toggle="modal" data-target="#deleteAvail" class="btn w-100">Delete</button>  
+                <button style="color:white;text-align:center;
+                font-weight:bold; background-color:#F6454F;" data-id="'.$avb->id.'" data-toggle="modal" data-target="#deleteAvail" class="btn btn-block"><i class="ft-x"></i> Delete</button>  
                </div>
                </div>
                 </div>

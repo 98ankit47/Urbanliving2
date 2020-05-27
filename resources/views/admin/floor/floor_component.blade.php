@@ -11,11 +11,11 @@
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
     <div class="row">
-      <div class="col-md-11" style="text-align:left;">
+      <div class="col-md-6" style="text-align:left;">
         <h4><strong>Floor Component</strong></h4>
       </div>
-      <div class="col-md-1" style="text-align:center;">
-        <a href="http://127.0.0.1:8000/admin/floor" style="background-color:#00BCD4; color:white;" class="btn">Back</a> 
+      <div class="col-md-6" style="text-align:right;">
+        <a href="http://127.0.0.1:8000/admin/floor" style="color:white;" class="btn btn-secondary"><i class="la la-chevron-circle-left"></i> Go Back</a> 
       </div>
     </div>
 <hr>

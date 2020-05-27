@@ -59,7 +59,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="align-self-center">
-                                            <i class="la la-calendar-check-o font-large-2 info"></i>
+                                            <i class="la la-check-square font-large-2 info"></i>
                                         </div>
                                         <div class="media-body text-right">
                                             <h5 class="text-muted text-bold-500">New Inquiry</h5>
@@ -76,7 +76,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="align-self-center">
-                                            <i class="la la-bed font-large-2 danger"></i>
+                                            <i class="la la-list-ul font-large-2 danger"></i>
                                         </div>
                                         <div class="media-body text-right">
                                             <h5 class="text-muted text-bold-500">Selling Requests</h5>
@@ -179,12 +179,12 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Users</h4>
-                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                                <!-- <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
                                         <li><a class="btn btn-sm btn-danger box-shadow-2 round btn-min-width pull-right" href="#" target="_blank">View all</a></li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="card-content mt-1">
                                 <div class="table-responsive" id="custom_table">

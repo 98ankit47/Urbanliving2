@@ -40,10 +40,10 @@ class CommunityController extends Controller
                                 <br>
                                 <div class="row">
                                     <div class ="col-md-6" style="text-align:center;">
-                                        <a type="button"  onclick="editcommunity('.$community->id.')"  style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#60ACEF;" class="btn com-but">Edit</a>    
+                                        <a type="button"  onclick="editcommunity('.$community->id.')"  style="color:white;width:100%;text-align:center;font-weight:bold;" class="btn com-but btn-info mr-1 mb-1 btn-block"><i class="la la-pencil-square"></i> Edit</a>    
                                     </div>
                                     <div class ="col-md-6" style="text-align:center;">
-                                        <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn com-but">Delete</button>
+                                        <button type ="button" data-id="'.$community->id.'" data-toggle="modal" data-target="#deleteCommunity" style="color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" class="btn com-but mr-1 mb-1 btn-block"><i class="ft-x"></i> Delete</button>
                                     </div>
                                 </div>   
                             </div>
