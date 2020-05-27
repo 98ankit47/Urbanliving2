@@ -24,14 +24,19 @@
 <hr>
 
 <br>
-<div class="row">
-  <div class="col-md-8"></div>
-    <div class="col-md-4">
+<div class="searchh" style="text-align:right;">
+    
+
+    <!-- <form class="form-inline" id="homeSearch" style="width:50%;">
+          <input class="form-control form-control-sm mr-3 w-75" type="search" placeholder="Search"
+            aria-label="Search" id="search">
+          <a type="submit" style="margin-left:-30px;"><i style="color:#DC143C;" class="la la-search" aria-hidden="true"></i></a>
+        </form> -->
+
     <form class="form-inline my-2 my-lg-0" id="homeSearch">
       <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search Home" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success" type="submit"><i style="color:#DC143C;" class="la la-search" aria-hidden="true"></i></button>
     </form>
-  </div>
 </div>
 <br>
   <div class="row" id="home_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
