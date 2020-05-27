@@ -78,15 +78,15 @@
     <!-- BEGIN: Header-->
     <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-info navbar-shadow">
         <div class="navbar-wrapper">
-            <div class="navbar-header">
+            <div class="navbar-header" style="background-color:#424e58;">
                 <ul class="nav navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
-                    <li class="nav-item"><a class="navbar-brand" href="index.html"><div  class="brand-link" style="width:30px;height:30px" id="logo"></div>
+                    <li class="nav-item"><a class="navbar-brand brand-link" href="http://127.0.0.1:8000/admin" id="logo">
                         </a></li>
                     <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a></li>
                 </ul>
             </div>
-            <div class="navbar-container content">
+            <div class="navbar-container content" style="background-color:#3C4858;">
                 <div class="collapse navbar-collapse" id="navbar-mobile">
                     <ul class="nav navbar-nav mr-auto float-left">
                         <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
