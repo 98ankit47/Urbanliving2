@@ -195,10 +195,11 @@ td, th {
 <div id="Broucher" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
   <div class="container">
     <div class="heading-elements">
-      <a type="button" onclick="UploadPdf()" class="btn btn-danger round btn-sm" style="color:white;" data-toggle="modal" data-target="#myBroucher"><i class="la la-plus font-small-2"></i>
-        Add Broucher
-      </a>
+     
     </div>
+    <div class="row" style="text-align: center;" id="pdfShow">
+                         
+    </div>  
   </div>
 </div>
 
@@ -442,6 +443,13 @@ td, th {
 </div>
 
 <script>
+
+
+$("#pdf").change(function() {
+    processPdf(this);
+  });
+
+
 // Tabs
 $('#deleteFeature').on('show.bs.modal', function (e) {
     var $trigger = $(e.relatedTarget);

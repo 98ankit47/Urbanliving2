@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Homes;
 use App\Models\HomeCommunity;
 use App\Models\Communities;
+use App\Models\pdf;
 use App\HomeAvailable;
 use Illuminate\Support\Str;
 use App\Models\status;
@@ -275,14 +276,20 @@ class HomeController extends Controller
      */
 
 
-    public function uploadPdf(Request $request)
-    {
-        $pdf_name =  time().explode('.',$request['pdf_name'])[0].'.' . explode('/', explode(':',substr($request['pdf'],0,strpos(
-            $request['pdf'],';')))[1])[1];  
+    public function uploadPdf(Request $request,$id)
+    {   
+         
+          $file = $request->file('file');
+          $name = $file->getClientOriginalName(); // getting image extension
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename =time().$name.'.'.$extension;
+          $file->move('uploads/Broucher/', $filename);
 
-        \Image::make($request['pdf'])->save(public_path('uploads\homes\broucher\\').$pdf_name);
-       
-        return $request['pdf_name'];
+        pdf::create([
+            'home_id'=>$id,
+            'pdf'=>$filename,
+        ]);
+        return ['uploaded'];
     }
     
 
@@ -319,6 +326,10 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
+
+
+
     public function update(Request $request, $id)
     {
         $home =  Homes::whereId($id)->first();

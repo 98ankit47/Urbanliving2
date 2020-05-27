@@ -115,6 +115,9 @@ Route::delete('home-Avail/{id}','CommonController@DeleteAvail');
 
 Route::delete('userFavourite/{id}','CommonController@DeleteFav');
 
+Route::get('admin/home-pdf/{id}','CommonController@PdfShow');
+
+
 
 
 

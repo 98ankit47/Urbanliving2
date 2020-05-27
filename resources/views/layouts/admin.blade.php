@@ -5,6 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
     <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
@@ -587,32 +588,41 @@ $('#ys-comm-btn').click(function()
     function UploadPdf()
     {
       var id = window.location.href.split('/').pop();
-      $('#pdf').change(function(e){
-              let files = e.target.files[0];
-              let reader = new FileReader();
-              if(files){
-                reader.onloadend = ()=>{
-                  $('#chosen_feature_img').attr('src',reader.result);
-                  pdf = reader.result;
-                  pdf_name = files.name;
-                }
-                reader.readAsDataURL(files); 
-            }
-          });
-          
-      $('#pdfUpload').on('submit', function (e) {
-          e.preventDefault();
-              $.ajax({
-                type: 'post',
-                url: '/api/admin/pdfUpload/'+id,
-                data:{
-                  'pdf'        : pdf,
-                  'pdf_name'   : pdf_name,
-                },
-                success: function () {
-                }
-              });
-        });  
+      function processPdf(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+            console.log(e.target.result);
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      $("#pdfUpload").submit(function(e) {
+        e.preventDefault();
+        var frm = $('#pdfUpload');
+        var formData = new FormData(frm[0]);
+        formData.append('file', $('#pdf')[0].files[0]);
+        var id = window.location.href.split('/').pop();
+        $.ajax({
+          type: 'post',
+          url: "/api/admin/pdfUpload/"+id,
+          data: formData,
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+          processData: false,
+          contentType: false,
+
+          success: function(result) {
+            $('#myBroucher').modal('hide');
+            $('.modal-backdrop').css('display','none');
+            loadpdfList();
+            $('#success').html('Broucher Added for this home').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+          }
+
+        });
+      }) 
     }
   </Script>
 
@@ -1043,6 +1053,8 @@ function Editloadmap(aid){
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I&libraries=places"></script>
 
+
+@if(Route::currentRouteName() == 'manage_home')
 <script>
     var APP_URL = "{{ url('/') }}";
     var id = window.location.href.split('/').pop();
@@ -1101,6 +1113,17 @@ function Editloadmap(aid){
           url: APP_URL+'/api/admin/home-feature/'+id,
           success: function(result){   
             $('#feature_list').html(result);
+          }   
+        });
+      }
+
+      loadpdfList();
+      function loadpdfList(){
+        $.ajax({
+          type: 'GET',
+          url: APP_URL+'/api/admin/home-pdf/'+id,
+          success: function(result){   
+            $('#pdfShow').html(result);
           }   
         });
       }
@@ -1257,7 +1280,7 @@ function Editloadmap(aid){
           });
       }
 </script>
-   
+@endif
     {{-- // $.ajax({
     //     type: 'GET',
     //     url: APP_URL+'/api/admin/home/'+id,

@@ -55,9 +55,9 @@ Route::get('admin/homes',function(){
 Route::get('admin/home/edit/{id}', function(){
     return view('admin.homes.EditHomeForm');
 })->name('edit-home')->middleware('role','auth');
-Route::get('admin/home/manage/{id}', function(){
-    return view('admin.homes.manage_homes');
-})->name('manage-homes')->middleware('role','auth');
+
+ 
+
 Route::get('admin/home/create', function(){
     return view('admin.homes.homeForm');
 })->name('create-home')->middleware('auth','auth');
@@ -85,7 +85,7 @@ Route::get('admin/floor-component-gallery/{type}/{id}', function () {
 })->name('FloorComponent')->middleware('role','auth');
 
 
-Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index')->middleware('role','auth');
+Route::get( 'admin/home/manage/{id}', 'admin\HomeFeatureController@index')->middleware('role','auth')->name('manage_home');
 
 Route::get('/admin/selling/',function(){
     return view('admin.selling.selling');

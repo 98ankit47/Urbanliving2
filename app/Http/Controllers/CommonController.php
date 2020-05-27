@@ -10,6 +10,7 @@ use App\Models\Floors;
 use App\Models\FloorComponent;
 use App\Models\Enquiry;
 use App\Models\Favourite;
+use App\Models\pdf;
 use App\HomeAvailable;
 use App\User;
 use App\SellingHome;
@@ -267,6 +268,37 @@ class CommonController extends Controller
 
             }
         return $data; 
+    }
+
+    public function PdfShow($id) 
+    {
+        $data='';
+        $pdf = pdf::where('home_id',$id)->get()->count();
+        if($pdf==0)
+        {
+            $data.='<div class="col-md-4"  >
+            <a type="button" onclick="UploadPdf()"   data-toggle="modal" data-target="#myBroucher">
+                    <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:270px;">
+                    <img class="card-img-top" style="height:100px;margin-top:20%;width:100px;margin-left:21%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+                    <div class="card-body"> <br>
+                        <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD BROUCHER</h4>
+                    </div>
+                    </div>
+                    </a>
+                    </div>';
+        }
+        else
+        {
+            $data.='<div class="col-md-4"  >
+                    <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:270px;">
+                    <img class="card-img-top" style="height:100px;margin-top:20%;width:100px;margin-left:21%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
+                    <div class="card-body"> <br>
+                        <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray">BROUCHER UPLOADED</h4>
+                    </div>
+                    </div>
+                    </div>';
+        }
+        return $data;
     }
 
     public function sellingEnquiryUpdate($id) 
