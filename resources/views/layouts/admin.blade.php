@@ -455,6 +455,8 @@
                   url: '/api/admin/enquiry/update/'+ id,
                       success: function () {
                         loadNotification();
+                        loadTotalNotification();
+                        
                   }
                 });
     }
@@ -1773,6 +1775,7 @@ function Editloadmap(aid){
           type: 'GET',
           url: APP_URL+'/api/admin/Selling-seen-update/'+id,
           success: function(result){
+            loadTotalNotification();
           }   
       });
     }

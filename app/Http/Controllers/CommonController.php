@@ -229,6 +229,7 @@ class CommonController extends Controller
                 $display=$months.' days ago';
             }
             $home= homes::where('id',$enquiry->home_id)->get()->first();
+            
             if(($enquiry->seen)==0)
             {
                 $color="C1C1C1";
@@ -238,8 +239,8 @@ class CommonController extends Controller
                 $color="FFFFFF";
             }
                 $data.='<div style="width:100%;">
-                <div class="card" style="background-color:#'.$color.';">
-                    <div class="card-header" id="headingOne">
+                <div class="card" >
+                    <div class="card-header" id="headingOne" style="background-color:#'.$color.';">
                         <div class="row" >
                             <div class="col-md-12" >
                                 <strong style="text-decoration:none;color:black">There is selling Request from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span></strong>
@@ -248,17 +249,15 @@ class CommonController extends Controller
                         <br>
                         <div class="container activity">
                             <div class="row">
-                            <div class="col-md-4" style="text-align:right;">
+                                <div class="col-md-4" style="text-align:right;">
                                     <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$enquiry->created_at.' </i>
                                 </div> 
                                 <div class="col-md-4" style="text-align:right;">
                                     <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$display.' </i>
                                 </div>  
                                 <div class="col-md-4" style="text-align:right;">
-                                    <span><a href="selling/'.$enquiry->id.'" onclick="SeenSellingUpdate('.$enquiry->id.')"><b>Click here to view message</b><a></span>
-                                </div>
-                                
-                                
+                                    <span><a href="selling/'.$enquiry->id.'" onclick="SeenSellingUpdate('.$enquiry->id.')"><b>Click here to view message</b></a></span>
+                                </div>    
                             </div>
                         </div>
                     </div>
@@ -323,15 +322,17 @@ class CommonController extends Controller
             $home= homes::where('id',$enquiry->home_id)->get()->first();
             if($enquiry->seen==0)
             {
+                
                 $color="C1C1C1";
             }
             else
             {
+                
                 $color="FFFFFF";
             }
                 $data.='<div class="accordion" id="accordionExample" >
-                <div class="card" style="background:#'.$color.'" >
-                  <div class="card-header" id="headingOne" >
+                <div class="card"  >
+                  <div class="card-header" id="headingOne" style="background:#'.$color.'" >
                     <div class="row" >
                         <div class="col-md-12" style="height:28px;" >
                             <strong style="text-decoration:none;color:black">Message from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span>
