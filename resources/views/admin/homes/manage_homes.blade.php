@@ -194,7 +194,6 @@ td, th {
 
 <div id="Broucher" class="w3-container city" style="display:none;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;"><br>
   <div class="container">
-    <!-- <a type="button" onclick="UploadPdf()" style="color: white; background-color:#00BCD4;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" class="btn" data-toggle="modal" data-target="#myBroucher">Add Broucher</a>  -->
     <div class="heading-elements">
       <a type="button" onclick="UploadPdf()" class="btn btn-danger round btn-sm" style="color:white;" data-toggle="modal" data-target="#myBroucher"><i class="la la-plus font-small-2"></i>
         Add Broucher
