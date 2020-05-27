@@ -166,10 +166,10 @@ class CommonController extends Controller
         $gallery=explode(',', $homes->gallery);
         $data.='<div class="col-md-4"><br>
         <a href="#" style="text-decoration:none" data-toggle="modal" data-target="#galleryModal" onclick="updategal()">
-        <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:285px;">
+        <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:250px;">
         <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
         <div class="card-body">
-            <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW IMAGE</h4>
+            <h4 style="text-align:center;margin-top:15px;font-weight:bold;color:darkgray"> ADD NEW IMAGE</h4>
         </div>
         </div>
         </a>
@@ -177,13 +177,15 @@ class CommonController extends Controller
         foreach($gallery as $key=> $gal)
         {
             $data.='<div class="col-md-4" ><br>
-            <div class="card">
-              <img class="card-img-top" style="height:200px;" src="/uploads/gallery/'.$gal.'">
-                <div class="card-body">
-                <div class="wrapper">
-                    <button class="btn w-100" type="button" data-id="'.$key.'"  data-toggle="modal" data-target="#deleteGallery" style="color:white;width:100px;text-align:center;font-weight:bold; background-color:#F6454F;" ><i class="ft-x"></i> Delete</button>
-                </div>
-                </div>
+            <div class="card gall-card">
+            <div class="container-gall">
+              <img class="card-img-top image" style="height:250px;" src="/uploads/gallery/'.$gal.'">
+              <div class="overlay">
+                <a type="button" class="icon" data-id="'.$key.'"  data-toggle="modal" data-target="#deleteGallery">
+                    <i class="la la-trash" style="font-size:60px;"></i>
+                </a>
+              </div>
+            </div>
             </div> 
           </div>';
         }
