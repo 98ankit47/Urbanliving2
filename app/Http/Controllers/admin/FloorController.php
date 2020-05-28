@@ -125,7 +125,7 @@ class FloorController extends Controller
           <div class="card floor-card">
             <img class="card-img-top" type="button" style="height:200px;" data-toggle="modal" data-target="#viewFloor" src="/uploads/floorcomponent/'.$component->image.'" alt="">
               <div class="card-body">
-              <h5 style="font-size: 16px;text-align:left;color:#003a8b;"><b>'.$component->name.'</b></h5>
+              <h5 style="font-size: 16px;text-align:center;color:#003a8b;"><b>'.$component->name.'</b></h5>
                <br><div class="row">
                
                <div class ="col-md-6" style="text-align:center;">
@@ -165,7 +165,7 @@ class FloorController extends Controller
                   </div> 
                   <div class="col-md-8"><br>
                     <h4 style="text-align:center">Floor Detail<h4><br>
-                    <table class="table table-hover" style="font-size:13px;text-align:left;">
+                    <table class="table table-hover" style="font-size:13px;text-align:center;">
                       <thead>
                         <tr>
                           <th scope="col">Type</th>
