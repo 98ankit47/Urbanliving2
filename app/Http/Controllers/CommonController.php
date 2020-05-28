@@ -298,7 +298,7 @@ class CommonController extends Controller
             <div class="card-content collapse show">
             <div class="card-body" style="text-align:center;">
                 <div class="bs-callout-success callout-border-right callout-square callout-right p-1">
-                    <strong>Hi, There!</strong>
+                    <strong>Hi, There!</strong><br><br>
                     <p>BROUCHER HAS BEEN UPLOADED BY YOU.</p>
                 </div>
                 </div>
@@ -407,14 +407,14 @@ class CommonController extends Controller
                   <div class="card-body">
                   <div class="bs-callout-primary callout-border-left callout-round p-2 py-1">
                       <strong>Message From!</strong>
-                      <p><b>Message from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</b></span>
-                      for Visting '.$home->title.'<span style="color:#00909e;"></span> 
-                      on <b style="color:#00909e;">'.$enquiry->date.'</b> at <b style="color:#00909e;">'.$enquiry->time.'</b>.</p>
+                      <p><span style="color:#00909e;"><b>'.$enquiry->name.'('.$enquiry->email.')</b></span>
+                      <b>for Visting '.$home->title.'<span style="color:#00909e;"></span> 
+                      on</b> <b style="color:#00909e;">'.$enquiry->date.' </b><b>at</b> <b style="color:#00909e;">'.$enquiry->time.'</b>.</p>
                   </div>
 
                     <div class="row showbtn" style="text-align:center;">
-                    <div class="col-md-4" style="color:#424e58;font-weight:bold">'.date($enquiry->created_at).'</div>
-                    <div class="col-md-4" style="color:#424e58;font-weight:bold">'.$display.'</div>
+                    <div class="col-md-4" style="color:#424e58;font-weight:bold"><b><i>'.date($enquiry->created_at).'</i></b></div>
+                    <div class="col-md-4" style="color:#424e58;font-weight:bold"><b><i>'.$display.'</i></b></div>
                         <div class="col-md-4">
                             <button class="btn btn-link" onclick="enqUpdate('.$enquiry->id.')"  type="button" data-toggle="collapse" data-target="#collapse'.$enquiry->id.'" aria-expanded="true" aria-controls="collapseOne">
                             <b>Click here to see message<b>
