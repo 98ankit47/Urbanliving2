@@ -9,7 +9,7 @@ table, td, th {
 
 table {
   border-collapse: collapse;
-  width: 1000px;
+  width: 100%;
 }
 
 th, td {

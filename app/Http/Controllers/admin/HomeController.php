@@ -59,7 +59,7 @@ class HomeController extends Controller
             {
                 $data1.='<div class="col-md-4"  >
                 <a style="text-decoration:none" href="/admin/home/create">
-                    <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
+                    <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:360px;">
                     <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
                     <div class="card-body"> <br>
                         <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW HOME</h4>
@@ -103,16 +103,16 @@ class HomeController extends Controller
                   <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
                   <div class="card-body">
                     <p class="category category__01 " style="background:'.$color.';">'.$status->status.'</p>
-                    <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
+                    <h5 style="font-size: 16px;text-align:left;color:#003a8b;"><b>'.$home->title.'</b></h5>';
                      if($home->block==0)
                      {
-                        $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
+                        $data.='<div class="container" style="text-align:left;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:left;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
                      }
                     else
                     {
-                        $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
+                        $data.='<div class="container" style="text-align:left;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:left;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
                     }
     
     
@@ -137,7 +137,7 @@ class HomeController extends Controller
             $homes = Homes::orderBy('id','desc')->get();
             $data.='<div class="col-md-4"  >
             <a style="text-decoration:none" href="/admin/home/create">
-                <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:353px;">
+                <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:360px;">
                 <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
                 <div class="card-body"> <br>
                     <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW HOME</h4>
@@ -169,16 +169,16 @@ class HomeController extends Controller
                   <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
                   <div class="card-body">
                     <p class="category category__01 " style="background:'.$color.';">'.$status->status.'</p>
-                    <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
+                    <h5 style="font-size: 16px;text-align:left;color:#003a8b;"><b>'.$home->title.'</b></h5>';
                      if($home->block==0)
                      {
-                        $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
+                        $data.='<div class="container" style="text-align:left;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:left;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
                      }
                     else
                     {
-                        $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
+                        $data.='<div class="container" style="text-align:left;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:left;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
                     }
     
     

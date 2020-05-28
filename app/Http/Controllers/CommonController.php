@@ -54,7 +54,7 @@ class CommonController extends Controller
             <div class="card">
               <img class="card-img-top" height="200px"; src="/uploads/homeFeature/'.$feature->image.'" >
               <div class="card-body">
-              <h5 style="font-size: 16px;text-align:center;">'.$feature->title.'</h5>
+              <h5 style="font-size: 16px;text-align:left;color:#003a8b;"><b>'.$feature->title.'</b></h5>
                  <br>
                  <div class="row">
                     <div class ="col-md-6" style="text-align:center;">
@@ -246,19 +246,20 @@ class CommonController extends Controller
                 $data.='<div style="width:100%;">
                 <div class="card" >
                     <div class="card-header" id="headingOne" style="background-color:#'.$color.';">
-                        <div class="row" >
-                            <div class="col-md-12" >
-                                <strong style="text-decoration:none;color:black">There is selling Request from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span></strong>
-                            </div>
-                        </div>
-                        <br>
+
+                    <div class="card-body">
+                                        <div class="bs-callout-primary callout-border-left callout-round p-2 py-1">
+                                            <p><b>There is selling Request from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span></b></p>
+                                        </div>
+                                        </div>
+
                         <div class="container activity">
                             <div class="row">
                                 <div class="col-md-4" style="text-align:right;">
-                                    <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$enquiry->created_at.' </i>
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#424e58;"> <b>'.$enquiry->created_at.'</b> </i>
                                 </div> 
                                 <div class="col-md-4" style="text-align:right;">
-                                    <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$display.' </i>
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#424e58;"> <b>'.$display.'</b> </i>
                                 </div>  
                                 <div class="col-md-4" style="text-align:right;">
                                     <span><a href="selling/'.$enquiry->id.'" onclick="SeenSellingUpdate('.$enquiry->id.')"><b>Click here to view message</b></a></span>
@@ -280,7 +281,7 @@ class CommonController extends Controller
         $pdf = pdf::where('home_id',$id)->get()->count();
         if($pdf==0)
         {
-            $data.='<div class="col-md-4"  >
+            $data.='<div class="col-md-12" style="text-align:center;">
             <a type="button" onclick="UploadPdf()"   data-toggle="modal" data-target="#myBroucher">
                     <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:270px;">
                     <img class="card-img-top" style="height:100px;margin-top:20%;width:100px;margin-left:21%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
@@ -293,14 +294,16 @@ class CommonController extends Controller
         }
         else
         {
-            $data.='<div class="col-md-4"  >
-                    <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:270px;">
-                    <img class="card-img-top" style="height:100px;margin-top:20%;width:100px;margin-left:21%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
-                    <div class="card-body"> <br>
-                        <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray">BROUCHER UPLOADED</h4>
-                    </div>
-                    </div>
-                    </div>';
+            $data.='<div class="container" style="text-align:center;">
+            <div class="card-content collapse show">
+            <div class="card-body" style="text-align:center;">
+                <div class="bs-callout-success callout-border-right callout-square callout-right p-1">
+                    <strong>Hi, There!</strong><br><br>
+                    <p>BROUCHER HAS BEEN UPLOADED BY YOU.</p>
+                </div>
+                </div>
+                </div>
+                </div>';
         }
         return $data;
     }
@@ -395,19 +398,21 @@ class CommonController extends Controller
                 $data.='<div class="accordion" id="accordionExample" >
                 <div class="card"  >
                   <div class="card-header" id="headingOne" style="background:#'.$color.'" >
-                    <div class="row" >
-                        <div class="col-md-12" style="height:28px;" >
-                            <strong style="text-decoration:none;color:black">Message from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span>
-                            for Visting '.$home->title.'<span style="color:#00909e;"></span> 
-                            on <b style="color:#00909e;">'.$enquiry->date.'</b> at <b style="color:#00909e;">'.$enquiry->time.'</b>. </strong>
-                        </div>
-                    </div>
+
+                  <div class="card-body">
+                  <div class="bs-callout-primary callout-border-left callout-round p-2 py-1">
+                      <strong>Message From!</strong>
+                      <p><span style="color:#00909e;"><b>'.$enquiry->name.'('.$enquiry->email.')</b></span>
+                      <b>for Visting '.$home->title.'<span style="color:#00909e;"></span> 
+                      on</b> <b style="color:#00909e;">'.$enquiry->date.' </b><b>at</b> <b style="color:#00909e;">'.$enquiry->time.'</b>.</p>
+                  </div>
+
                     <div class="row showbtn" style="text-align:center;">
-                    <div class="col-md-4" style="color:red;font-weight:bold">'.date($enquiry->created_at).'</div>
-                    <div class="col-md-4" style="color:red;font-weight:bold">'.$display.'</div>
+                    <div class="col-md-4" style="color:#424e58;font-weight:bold"><b><i>'.date($enquiry->created_at).'</i></b></div>
+                    <div class="col-md-4" style="color:#424e58;font-weight:bold"><b><i>'.$display.'</i></b></div>
                         <div class="col-md-4">
                             <button class="btn btn-link" onclick="enqUpdate('.$enquiry->id.')"  type="button" data-toggle="collapse" data-target="#collapse'.$enquiry->id.'" aria-expanded="true" aria-controls="collapseOne">
-                            Click here to see message
+                            <b>Click here to see message<b>
                             </button>
                         </div>
                     </div>
@@ -436,7 +441,7 @@ class CommonController extends Controller
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold;" data-target=" class="btn btn-primary"><i class="la la-reply"></i> Reply</button> 
+                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold;" data-target="" class="btn btn-primary"><i class="la la-reply"></i> Reply</button> 
                                 </div>
                                 <div class="col-md-6">
                                     <button type="button" data-id="'.$enquiry->id.'" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn"><i class="ft-x"></i> Delete</button> 
@@ -688,7 +693,7 @@ class CommonController extends Controller
               <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
                 <div class="card-body">
                 <div class="wrapper">
-                <h5>Lat='.$avb->lat.' $$ Lng='.$avb->lng.'</h5>
+                <h5 style="text-align:left;color:#003a8b;"><b>Lat='.$avb->lat.' Lng='.$avb->lng.'</b></h5>
 
                 <div class="row">
                 
