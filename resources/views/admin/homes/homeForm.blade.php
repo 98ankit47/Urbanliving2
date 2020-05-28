@@ -36,7 +36,7 @@
 <br>
   <div class="row" style="font-family: Open Sans, sans-serif;">
   <div class="col-md-6" style="text-align:left;">
-  <h2 style="color: black;"><strong>Home</strong></h2>
+  <h2><strong>Home</strong></h2>
   </div>
   <div class="col-md-6" style="text-align:right;">
   <a type="button" href="/admin/homes" style="color: white;font-family: Open Sans, sans-serif;" class="btn btn-secondary"><i class="la la-chevron-circle-left"></i> Go Back</a>
@@ -54,7 +54,7 @@
     
   
   <div class="form-group col-md-4">
-    <label for="community">Community</label>
+    <label for="community">Location</label>
     <select id="community_list"  class="form-control" >
     </select>
   </div>

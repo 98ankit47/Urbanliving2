@@ -137,7 +137,7 @@
                 </li>
                 <li class=" nav-item"><a href="/admin/homes"><i class="la la-home"></i><span class="menu-title" data-i18n="Home"><b>Home</b></span></a>
                 </li>
-                <li class=" nav-item"><a href="/admin/community"><i class="la la-home"></i><span class="menu-title" data-i18n="Community"><b>Community</b></span></a>
+                <li class=" nav-item"><a href="/admin/community"><i class="la la-map-signs"></i><span class="menu-title" data-i18n="Location"><b>Location</b></span></a>
                 </li>
                 <li class=" nav-item"><a href="/admin/floor"><i class="la la-bars"></i><span class="menu-title" data-i18n="Floor"><b>Floor</b></span></a>
                 </li>

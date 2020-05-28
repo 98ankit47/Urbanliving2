@@ -145,12 +145,12 @@
                                        <div class="row">
                                           <div class="col-md-6" style="text-align:left;">
                                              <div>
-                                                <i class="la la-home" style="font-size: 30px; color: white;"></i>
+                                                <i class="la la-map-signs" style="font-size: 30px; color: white;"></i>
                                              </div>
                                           </div>
                                           <div class="col-md-6" style="text-align:right;">
                                           <span style="color:white;"><b>{{$communities->count()}}</b></span><br><br>
-                                             <span style="color:white;"><b>Community</b></span>
+                                             <span style="color:white;"><b>Location</b></span>
                                           </div>            
                                        </div>
                                     </div>
