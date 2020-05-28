@@ -135,92 +135,11 @@
     </div>
   </div>
 <!--EDIT FLOOR MODAL-->
+ 
 
-  <div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="EditFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add New Floor</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form id="EditForm">
-          <div class="modal-body">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Bedroom</label>
-                <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true"  class="form-control" id="Edit_bedroom" placeholder="No Of Bedroom" required>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputAddress">Bathroom</label>
-                <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_bathroom" placeholder="No Of Bedroom" required>
-              </div>
-              
-            </div>
-  
-          <div class="form-row">
-            
-            <div class="form-group col-md-4">
-              <label for="inputDivision">Dinning</label>
-              <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_dining" placeholder="No Of Dining" required>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputCity">Kitchen</label>
-              <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_kitchen" placeholder="No Of Kitchen" required>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputArea">Garage</label>
-              <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_garage" placeholder="No Of Garage" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-grroup col-md-6">
-              <div class="image-upload">
-                <p>Floor Image</p>
-                <p><input type="file"  name="image" id="Edit_image"  onchange="loadFile(event)" ></p>
-              </div>
-            </div>
-              <div class="form-group col-md-6">  
-                <p><label for="file" style="cursor: pointer;">Choose File</label></p>
-                <p><img id="output"/></p>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" class="btn" data-dismiss="modal"><i class="ft-x"></i> Close</button>
-            <button type="submit" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
-          </div>
-        </form>
-        </div>
-       
-      </div>
-    </div>
-</div>
-</div>
+ 
 
-
-<!--VIEW FLOOR MODAL-->
-
-<div class="modal fade" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="viewFloor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">FLOOR DETAILS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="floorContent">
-         
-      </div>
-
-      
-  </div>
-</div>
-</div>
-
-<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteFloor" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteSite" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content" style="font-family: Open Sans, sans-serif;">
       <div class="modal-header">
@@ -231,11 +150,11 @@
       </div>
       <div class="modal-body">
         <div class="row" style="margin-left:10px;">
-          <h6 class="delete_heading">Are you sure, you want to delete this Floor ?</h6>
+          <h6 class="delete_heading">Are you sure, you want to delete this Site ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
             <button type="button" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary" data-dismiss="modal"> No </button>
-            <button type="submit" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" id="ys-floor-btn"> Yes</button>
+            <button type="submit" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" id="ys-site-btn"> Yes</button>
            </div>  
           </div>    
         </div>

@@ -322,29 +322,24 @@ class CommonController extends Controller
     public function showHomeSite($id)
     {
          
-        $sites = SitePlans::where('home_id',$id)-> get();
+        $sites = SitePlan::where('home_id',$id)-> get();
         $data ='';
         foreach($sites as $ky => $site )
         {
-            $data .='
-              <div class="card" style="font-family: Open Sans, sans-serif;">
-                <div class="row">
-                  <div class="col-md-4"><br>
-                    <h4 style="text-align:center">Floor No :: '.$floor->floor_no.'<h4><br>
-                    <img class="card-img-top"  src="/uploads/floor/'.$floor->image.'" alt="">
-                  </div> 
-                </div>  
-                <div class="row">
-                  <div class="col-md-2"></div>
-                  <div class ="col-md-3" style="text-align:center;margin-bottom:10px">
-                    <button type="button" onclick="editfloor('.$floor->id.')" style="font-family: Open Sans, sans-serif;color:white;text-align:center;font-weight:bold;" class="btn btn-block btn-info"><i class="la la-pencil-square"></i> Edit</button> 
-                  </div>
-                  <div class="col-md-2"></div>
-                  <div class ="col-md-3" style="text-align:center;margin-bottom:10px">
-                    <button type="button" data-toggle="modal" data-id="'.$floor->id.'" style="font-family: Open Sans, sans-serif;color:white;;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteFloor" class="btn btn-block"><i class="ft-x"></i> Delete</button> 
-                  </div>
+            $home = Homes::where('id',$id)->get()->first();
+            $data.='<div class="col-md-4" >
+            <div class="card">
+              <img class="card-img-top" style="height:200px;" src="/uploads/site/'.$site->image.'">
+                <div class="card-body">
+                 <h5 style="text-align:center">'.$home->title.'</h5>
+                    <div class="row">
+                        <div class ="col-md-12" style="text-align:center;margin-bottom:10px">
+                        <button type="button" data-toggle="modal" data-id="'.$site->id.'" style="font-family: Open Sans, sans-serif;color:white;;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteSite" class="btn btn-block"><i class="ft-x"></i> Delete</button> 
+                        </div>
+                    </div>
                 </div>
-              </div>';
+            </div>
+          </div>';
         } 
         return $data ;
 
@@ -533,7 +528,7 @@ class CommonController extends Controller
         $featured_img =  time().explode('.',$request['image-name'])[0].'.' . explode('/', explode(':',substr($request['image'],0,strpos(
             $request['image'],';')))[1])[1];  
 
-        \Image::make($request['image'])->save(public_path('uploads\homes\\').$featured_img);
+        \Image::make($request['image'])->save(public_path('uploads\site\\').$featured_img);
        
         SitePlan::create([
             'home_id'=>$request['home_id'],
