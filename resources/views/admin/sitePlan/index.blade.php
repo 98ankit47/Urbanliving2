@@ -309,7 +309,7 @@ function openHome(evt, homeid) {
       function loadFloorList(){
     $.ajax({
           type: 'GET',
-          url: APP_URL+'/api/admin/floor-home/'+homeid,
+          url: APP_URL+'/api/admin/site-home/'+homeid,
           success: function(result){
           $('#homeFloor').html(result);
           }   
