@@ -103,16 +103,16 @@ class HomeController extends Controller
                   <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
                   <div class="card-body">
                     <p class="category category__01 " style="background:'.$color.';">'.$status->status.'</p>
-                    <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
+                    <h5 style="font-size: 16px;text-align:left;color:#003a8b;"><b>'.$home->title.'</b></h5>';
                      if($home->block==0)
                      {
-                        $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
+                        $data.='<div class="container" style="text-align:left;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:left;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
                      }
                     else
                     {
-                        $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
+                        $data.='<div class="container" style="text-align:left;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:left;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
                     }
     
     
@@ -169,16 +169,16 @@ class HomeController extends Controller
                   <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
                   <div class="card-body">
                     <p class="category category__01 " style="background:'.$color.';">'.$status->status.'</p>
-                    <h5 style="font-size: 16px;text-align:center;">'.$home->title.'</h5>';
+                    <h5 style="font-size: 16px;text-align:left;color:#003a8b;"><b>'.$home->title.'</b></h5>';
                      if($home->block==0)
                      {
-                        $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
+                        $data.='<div class="container" style="text-align:left;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:left;font-weight:bold; color:#F6454F;" data-id="'.$home->id.'"  ><i class="la la-ban">&nbsp;Deactive</i></a></div> ';
                      }
                     else
                     {
-                        $data.='<div class="container" style="text-align:center;">
-                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:center;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
+                        $data.='<div class="container" style="text-align:left;">
+                        <a onclick="BlockHomeModal('.$home->id.')" type="button" style="color:white;text-align:left;font-weight:bold; color:#2DCC70;" data-id="'.$home->id.'" ><i class="la la-check">&nbsp;Active</i></a></div>';
                     }
     
     

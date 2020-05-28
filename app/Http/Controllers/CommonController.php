@@ -54,7 +54,7 @@ class CommonController extends Controller
             <div class="card">
               <img class="card-img-top" height="200px"; src="/uploads/homeFeature/'.$feature->image.'" >
               <div class="card-body">
-              <h5 style="font-size: 16px;text-align:center;">'.$feature->title.'</h5>
+              <h5 style="font-size: 16px;text-align:left;color:#003a8b;"><b>'.$feature->title.'</b></h5>
                  <br>
                  <div class="row">
                     <div class ="col-md-6" style="text-align:center;">
@@ -693,7 +693,7 @@ class CommonController extends Controller
               <img class="card-img-top" style="height:200px;" src="/uploads/homes/'.$home->featured_image.'">
                 <div class="card-body">
                 <div class="wrapper">
-                <h5>Lat='.$avb->lat.' $$ Lng='.$avb->lng.'</h5>
+                <h5 style="text-align:left;color:#003a8b;"><b>Lat='.$avb->lat.' Lng='.$avb->lng.'</b></h5>
 
                 <div class="row">
                 

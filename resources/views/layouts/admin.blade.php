@@ -113,7 +113,7 @@
               @else
                   <li class="nav-item dropdown">
                       <a style="margin-right: 20px;">
-                          {{ Auth::user()->name }} <span class="caret"></span>
+                          <b>{{ Auth::user()->name }}</b> <span class="caret"></span>
                       </a>
  
                   </li>
@@ -133,30 +133,30 @@
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class="active"><a href="/admin"><i class="la la-home"></i><span class="menu-title" data-i18n="Dashboard Hospital">Dashboard Urban</span></a>
                 </li>
-                <li class=" navigation-header"><span data-i18n="Professional">Components</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Components"></i>
+                <li class=" navigation-header"><span data-i18n="Professional"><b>Components</b></span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Components"></i>
                 </li>
-                <li class=" nav-item"><a href="/admin/homes"><i class="la la-home"></i><span class="menu-title" data-i18n="Home">Home</span></a>
+                <li class=" nav-item"><a href="/admin/homes"><i class="la la-home"></i><span class="menu-title" data-i18n="Home"><b>Home</b></span></a>
                 </li>
-                <li class=" nav-item"><a href="/admin/community"><i class="la la-home"></i><span class="menu-title" data-i18n="Community">Community</span></a>
+                <li class=" nav-item"><a href="/admin/community"><i class="la la-home"></i><span class="menu-title" data-i18n="Community"><b>Community</b></span></a>
                 </li>
-                <li class=" nav-item"><a href="/admin/floor"><i class="la la-bars"></i><span class="menu-title" data-i18n="Floor">Floor</span></a>
+                <li class=" nav-item"><a href="/admin/floor"><i class="la la-bars"></i><span class="menu-title" data-i18n="Floor"><b>Floor</b></span></a>
                 </li>
-                <li class=" nav-item"><a href="/admin/site"><i class="la la-table"></i><span class="menu-title" data-i18n="Site">Site Plan</span></a>
+                <li class=" nav-item"><a href="/admin/site"><i class="la la-table"></i><span class="menu-title" data-i18n="Site"><b>Site Plan</b></span></a>
                 </li>
-                <li class=" nav-item"><a><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries">Enquiries</span><span class="badge bg-primary" style="margin-right:30px;" id="totalNotification"></span></a>
+                <li class=" nav-item"><a><i class="la la-envelope-o"></i><span class="menu-title" data-i18n="Enquiries"><b>Enquiries</b></span><span class="badge bg-primary" style="margin-right:30px;" id="totalNotification"></span></a>
                     <ul class="menu-content">
-                        <li><a class="menu-item" href="/admin/enquiry"><i></i><span>Home Enquiry</span><span class="badge bg-primary" style="margin-left:10px;" id="notification"></span></a>
+                        <li><a class="menu-item" href="/admin/enquiry"><i></i><span><b>Home Enquiry</b></span><span class="badge bg-primary" style="margin-left:10px;" id="notification"></span></a>
                         </li>
-                        <li><a class="menu-item" href="/admin/selling"><i></i><span>Selling Enquiry</span><span class="badge bg-primary" style="margin-left:10px;" id="Sellnotification"></span></a>
+                        <li><a class="menu-item" href="/admin/selling"><i></i><span><b>Selling Enquiry</b></span><span class="badge bg-primary" style="margin-left:10px;" id="Sellnotification"></span></a>
                         </li>
                     </ul>
                 </li>
-                <li class=" navigation-header"><span data-i18n="Professional">Others</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Others"></i>
+                <li class=" navigation-header"><span data-i18n="Professional"><b>Others</b></span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Others"></i>
                 </li>
-                <li class=" nav-item"><a href="/admin/settings"><i class="la la-cogs"></i><span class="menu-title" data-i18n="Settings">Settings</span></a>
+                <li class=" nav-item"><a href="/admin/settings"><i class="la la-cogs"></i><span class="menu-title" data-i18n="Settings"><b>Settings</b></span></a>
                 </li>
                 <li class=" nav-item"><a  data-toggle="modal" onclick="logout1()">
-                    <i class="la la-power-off"></i><span>Logout</span>
+                    <i class="la la-power-off"></i><span><b>Logout</b></span>
                   </a>
                 </li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
