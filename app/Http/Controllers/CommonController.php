@@ -282,7 +282,7 @@ class CommonController extends Controller
         $pdf = pdf::where('home_id',$id)->get()->first();
         if($pdfcount==0)
         {
-            $data.='<div class="col-md-12" style="text-align:center;">
+            $data.='<div class="col-md-12" style="text-align:left;">
             <a type="button" onclick="UploadPdf()"   data-toggle="modal" data-target="#myBroucher">
                     <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:270px;">
                     <img class="card-img-top" style="height:100px;margin-top:20%;width:100px;margin-left:21%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
