@@ -566,6 +566,21 @@ $('#ys-floor-btn').click(function()
 });
 
 
+
+$('#deleteSite').on('show.bs.modal', function (e) {
+  var $trigger = $(e.relatedTarget);
+  var id=$trigger.data('id');
+  $('#ys-site-btn').attr('data-id',id);
+});
+$('#ys-site-btn').click(function()
+{
+  var id = $(this).attr('data-id');
+  $('#deleteSite').modal('hide');
+  $('.modal-backdrop').css('display','none');
+  deleteSite(id);
+});
+
+
 $('#deleteCommunity').on('show.bs.modal', function (e) {
   var $trigger = $(e.relatedTarget);
   var id=$trigger.data('id');
@@ -1428,6 +1443,18 @@ function Editloadmap(aid){
 
 @if(Route::currentRouteName() == 'site-plan')
   <script>
+      function deleteSite(s_id)
+      {
+        $.ajax({
+            type: 'DELETE',
+            url: APP_URL+'/api/admin/site/'+s_id,
+            success: function(result){  
+              openHome(event,s_id);
+              $('#danger').html('Site Plan Deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+            }   
+        });
+      }
+
           loadHomeList();
           function loadHomeList(){
             var display='';

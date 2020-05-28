@@ -322,11 +322,19 @@ class CommonController extends Controller
         ]);
     }
     
-    public function showHomeSite($id)
+    public function DeleteSite($id)
+    {
+        $site= SitePlan::where('id',$id);
+        $site->delete();
+    }
+
+
+    public function showHomeSite($id) 
     {
          
         $sites = SitePlan::where('home_id',$id)-> get();
         $data ='';
+       
         foreach($sites as $ky => $site )
         {
             $home = Homes::where('id',$id)->get()->first();

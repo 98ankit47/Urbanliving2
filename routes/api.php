@@ -120,6 +120,7 @@ Route::get('admin/home-pdf/{id}','CommonController@PdfShow');
 Route::get( 'admin/SiteNo/{hid}', 'CommonController@getSite');
 Route::post( 'admin/Site', 'CommonController@Addsite');
 Route::get( 'admin/site-home/{id}', 'CommonController@showHomeSite');
+Route::delete( 'admin/site/{id}', 'CommonController@DeleteSite');
 
 
 
