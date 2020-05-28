@@ -281,7 +281,7 @@ class CommonController extends Controller
         $pdf = pdf::where('home_id',$id)->get()->count();
         if($pdf==0)
         {
-            $data.='<div class="col-md-4"  >
+            $data.='<div class="col-md-12" style="text-align:center;">
             <a type="button" onclick="UploadPdf()"   data-toggle="modal" data-target="#myBroucher">
                     <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:270px;">
                     <img class="card-img-top" style="height:100px;margin-top:20%;width:100px;margin-left:21%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
@@ -294,14 +294,16 @@ class CommonController extends Controller
         }
         else
         {
-            $data.='<div class="col-md-4"  >
-                    <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:270px;">
-                    <img class="card-img-top" style="height:100px;margin-top:20%;width:100px;margin-left:21%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
-                    <div class="card-body"> <br>
-                        <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray">BROUCHER UPLOADED</h4>
-                    </div>
-                    </div>
-                    </div>';
+            $data.='<div class="container" style="text-align:center;">
+            <div class="card-content collapse show">
+            <div class="card-body" style="text-align:center;">
+                <div class="bs-callout-success callout-border-right callout-square callout-right p-1">
+                    <strong>Hi, There!</strong>
+                    <p>BROUCHER HAS BEEN UPLOADED BY YOU.</p>
+                </div>
+                </div>
+                </div>
+                </div>';
         }
         return $data;
     }
