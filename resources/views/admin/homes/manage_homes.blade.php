@@ -333,6 +333,33 @@ td, th {
 
 <!--DELETE FEATURE MODAL--> 
 
+<div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 
+'Times New Roman', Times, serif;" id="deletePdf" tabindex="-1" role="dialog" 
+aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Delete Confirm Action</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fa fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="margin-left:10px;">
+          <h6 class="delete_heading">Are you sure, you want to delete this Pdf ?</h6>
+            <div class="clearfix">
+            </div>
+          <div class="m-auto">
+            <button type="button" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary" data-dismiss="modal"> No </button>
+            <button type="submit"  style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" id="ys-pdf"> Yes</button>
+          </div>  
+        </div>    
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="modal fade bd-example-modal-xl" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;" id="deleteFeature" tabindex="-1" role="dialog" aria-labelledby="addNewCommunityTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
