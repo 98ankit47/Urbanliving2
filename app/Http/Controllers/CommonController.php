@@ -299,7 +299,8 @@ class CommonController extends Controller
             <div class="card-body" style="text-align:center;">
                 <div class="bs-callout-success callout-border-right callout-square callout-right p-1">
                     <strong>Hi, There!</strong><br><br>
-                    <p>BROUCHER HAS BEEN UPLOADED BY YOU.</p>
+                    <p>BROUCHER HAS BEEN UPLOADED BY YOU.</p><br>
+                    <button class="btn mr-1 mb-1" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" ><i class="ft-x"></i> Delete</button>
                 </div>
                 </div>
                 </div>
