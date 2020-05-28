@@ -246,19 +246,20 @@ class CommonController extends Controller
                 $data.='<div style="width:100%;">
                 <div class="card" >
                     <div class="card-header" id="headingOne" style="background-color:#'.$color.';">
-                        <div class="row" >
-                            <div class="col-md-12" >
-                                <strong style="text-decoration:none;color:black">There is selling Request from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span></strong>
-                            </div>
-                        </div>
-                        <br>
+
+                    <div class="card-body">
+                                        <div class="bs-callout-primary callout-border-left callout-round p-2 py-1">
+                                            <p><b>There is selling Request from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span></b></p>
+                                        </div>
+                                        </div>
+
                         <div class="container activity">
                             <div class="row">
                                 <div class="col-md-4" style="text-align:right;">
-                                    <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$enquiry->created_at.' </i>
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#424e58;"> <b>'.$enquiry->created_at.'</b> </i>
                                 </div> 
                                 <div class="col-md-4" style="text-align:right;">
-                                    <i class ="fa fa-clock" style="font-size:15px; color:#e43f5a;"> '.$display.' </i>
+                                    <i class ="fa fa-clock" style="font-size:15px; color:#424e58;"> <b>'.$display.'</b> </i>
                                 </div>  
                                 <div class="col-md-4" style="text-align:right;">
                                     <span><a href="selling/'.$enquiry->id.'" onclick="SeenSellingUpdate('.$enquiry->id.')"><b>Click here to view message</b></a></span>
@@ -400,19 +401,21 @@ class CommonController extends Controller
                 $data.='<div class="accordion" id="accordionExample" >
                 <div class="card"  >
                   <div class="card-header" id="headingOne" style="background:#'.$color.'" >
-                    <div class="row" >
-                        <div class="col-md-12" style="height:28px;" >
-                            <strong style="text-decoration:none;color:black">Message from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</span>
-                            for Visting '.$home->title.'<span style="color:#00909e;"></span> 
-                            on <b style="color:#00909e;">'.$enquiry->date.'</b> at <b style="color:#00909e;">'.$enquiry->time.'</b>. </strong>
-                        </div>
-                    </div>
+
+                  <div class="card-body">
+                  <div class="bs-callout-primary callout-border-left callout-round p-2 py-1">
+                      <strong>Message From!</strong>
+                      <p><b>Message from <span style="color:#00909e;">'.$enquiry->name.'('.$enquiry->email.')</b></span>
+                      for Visting '.$home->title.'<span style="color:#00909e;"></span> 
+                      on <b style="color:#00909e;">'.$enquiry->date.'</b> at <b style="color:#00909e;">'.$enquiry->time.'</b>.</p>
+                  </div>
+
                     <div class="row showbtn" style="text-align:center;">
-                    <div class="col-md-4" style="color:red;font-weight:bold">'.date($enquiry->created_at).'</div>
-                    <div class="col-md-4" style="color:red;font-weight:bold">'.$display.'</div>
+                    <div class="col-md-4" style="color:#424e58;font-weight:bold">'.date($enquiry->created_at).'</div>
+                    <div class="col-md-4" style="color:#424e58;font-weight:bold">'.$display.'</div>
                         <div class="col-md-4">
                             <button class="btn btn-link" onclick="enqUpdate('.$enquiry->id.')"  type="button" data-toggle="collapse" data-target="#collapse'.$enquiry->id.'" aria-expanded="true" aria-controls="collapseOne">
-                            Click here to see message
+                            <b>Click here to see message<b>
                             </button>
                         </div>
                     </div>
@@ -441,7 +444,7 @@ class CommonController extends Controller
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold;" data-target=" class="btn btn-primary"><i class="la la-reply"></i> Reply</button> 
+                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold;" data-target="" class="btn btn-primary"><i class="la la-reply"></i> Reply</button> 
                                 </div>
                                 <div class="col-md-6">
                                     <button type="button" data-id="'.$enquiry->id.'" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn"><i class="ft-x"></i> Delete</button> 
