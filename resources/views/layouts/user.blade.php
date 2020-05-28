@@ -1109,7 +1109,7 @@
 								var bathroom=result[i].bathroom;
 								var price=result[i].price;
 								
-								google.maps.event.addListener(marker, "mouseover", function (e) {
+							google.maps.event.addListener(marker, "mouseover", function (e) {
 									infoWindow.setContent('<div id="content" class="map-window"><div class="item">'+
 									'<div class="item-img"><img style="height:100px;width:150px" class="js-mediaFit js-mediaFitCollected landscape-media loaded" src="/uploads/homes/'+image+'">'+
 									'</div><div class="item-body"><div class="item-body-content">'+
