@@ -511,6 +511,24 @@ $('#ys-home-btn').click(function()
 });
 
 
+
+$('#deletePdf').on('show.bs.modal', function (e) {
+
+var $trigger = $(e.relatedTarget);
+var Pid=$trigger.data('id');
+$('#ys-pdf').attr('data-id',Pid);
+});
+$('#ys-pdf').click(function()
+{
+  var id = $(this).attr('data-id');
+
+  $('#deletePdf').modal('hide');
+ $('.modal-backdrop').css('display','none');
+    deletePdf(id);
+
+});
+
+
 $('#deleteEnquiry').on('show.bs.modal', function (e) {
 
 var $trigger = $(e.relatedTarget);
@@ -1164,6 +1182,19 @@ function Editloadmap(aid){
           }   
         });
       }
+
+      function deletePdf(id)
+      {
+        $.ajax({
+                url: APP_URL + '/api/admin/pdf/'+id,
+                type: 'DELETE',
+                success: function(result){
+                  loadpdfList();  
+                  $('#danger').html('Pdf deleted').show().delay(2000).addClass('alert').addClass('alert-danger').fadeOut();
+                }
+              });
+              }
+
 
       function deleteGallery(id)
       {

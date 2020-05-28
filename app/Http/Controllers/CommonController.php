@@ -278,14 +278,16 @@ class CommonController extends Controller
     public function PdfShow($id) 
     {
         $data='';
-        $pdf = pdf::where('home_id',$id)->get()->count();
-        if($pdf==0)
+        $pdfcount = pdf::where('home_id',$id)->get()->count();
+        $pdf = pdf::where('home_id',$id)->get()->first();
+        if($pdfcount==0)
         {
             $data.='<div class="col-md-12" style="text-align:center;">
             <a type="button" onclick="UploadPdf()"   data-toggle="modal" data-target="#myBroucher">
                     <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:270px;">
                     <img class="card-img-top" style="height:100px;margin-top:20%;width:100px;margin-left:21%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
                     <div class="card-body"> <br>
+                    
                         <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD BROUCHER</h4>
                     </div>
                     </div>
@@ -300,7 +302,7 @@ class CommonController extends Controller
                 <div class="bs-callout-success callout-border-right callout-square callout-right p-1">
                     <strong>Hi, There!</strong><br><br>
                     <p>BROUCHER HAS BEEN UPLOADED BY YOU.</p><br>
-                    <button class="btn mr-1 mb-1" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" ><i class="ft-x"></i> Delete</button>
+                    <button class="btn mr-1 mb-1" style="color:white;text-align:center;font-weight:bold; background-color:#F6454F;" data-id="'.$pdf->id.'" data-toggle="modal" data-target="#deletePdf" class="btn mr-1 mb-1 btn-block" ><i class="ft-x"></i> Delete</button>
                 </div>
                 </div>
                 </div>
@@ -327,6 +329,12 @@ class CommonController extends Controller
     {
         $site= SitePlan::where('id',$id);
         $site->delete();
+    }
+
+    public function DeletePdf($id)
+    {
+        $pdf= pdf::where('id',$id);
+        $pdf->delete();
     }
 
 
