@@ -172,7 +172,7 @@ td, th {
               <td id="garage">{{$home->garage}}</td> 
             </tr>
             <tr>
-              <td><strong>Community Name</strong></td>
+              <td><strong>Location Name</strong></td>
               @foreach ($community as $com)
               <td id="community">{{$com->title}}</td>
               @endforeach  

@@ -8,7 +8,7 @@
 
 <div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
     <br>
-    <h2><strong>Communities</strong></h2>
+    <h2><strong>Locations</strong></h2>
     <hr>
     <br>
   <div class="row" id="community_list" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
@@ -22,7 +22,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Community Name</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Location Name</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -91,7 +91,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Community Name</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Location Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -168,7 +168,7 @@
       </div>
       <div class="modal-body">
         <div class="row" style="margin-left:10px;">
-          <h6 class="delete_heading">Are you sure, you want to delete this Community ?</h6>
+          <h6 class="delete_heading">Are you sure, you want to delete this Location ?</h6>
           <div class="clearfix"></div>
           <div class="m-auto">
             <button type="button" data-dismiss="modal" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"> No </button>
