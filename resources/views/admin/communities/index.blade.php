@@ -43,6 +43,7 @@
               <div class="form-group col-md-4">
                 <label for="inputArea">Area</label>
                 <input type="text" class="form-control" id="area" placeholder="Area" required>
+                <input type="hidden" class="form-control" id="editcomid" placeholder="Area" required>
               </div>
               <div class="form-group col-md-4">
                 <label for="inputDivision">Subdivision</label>

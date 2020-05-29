@@ -1995,28 +1995,27 @@ function Editloadmap(aid){
         var APP_URL = "{{ url('/') }}";
         var id = window.location.href.split('/').pop();
         $.ajax({
-      type: 'GET',
-      url: APP_URL+'/api/admin/community/'+cid,
+            type: 'GET',
+            url: APP_URL+'/api/admin/community/'+cid,
 
-      success: function(result){    
-          document.getElementById("title").value        = result.title;
-          document.getElementById("address").value      = result.address;
-          document.getElementById("area").value         = result.area;
-          document.getElementById("subdivission").value = result.subdivission;
-          document.getElementById("city").value         = result.city;
-          document.getElementById("state").value        = result.state;
-          document.getElementById("country").value      = result.county;
-          document.getElementById("description").value  = result.description;
-          document.getElementById("area").value         = result.area;
-          document.getElementById("zipcode").value      = result.zipcode;
-          EditCommunitySubmit(cid);
-      }
-      }); 
+          success: function(result){    
+              document.getElementById("title").value        = result.title;
+              document.getElementById("address").value      = result.address;
+              document.getElementById("area").value         = result.area;
+              document.getElementById("subdivission").value = result.subdivission;
+              document.getElementById("city").value         = result.city;
+              document.getElementById("state").value        = result.state;
+              document.getElementById("country").value      = result.county;
+              document.getElementById("description").value  = result.description;
+              document.getElementById("area").value         = result.area;
+              document.getElementById("zipcode").value      = result.zipcode;
+              document.getElementById("editcomid").value      = result.id;
+          }
+          }); 
       
       }
 
-      function EditCommunitySubmit(cid)
-      {
+     
           $('#Communityform').on('submit', function (e) {
             var title,address,area,state,country,city,description,subdivission,zipcode;
             e.preventDefault();
@@ -2028,7 +2027,8 @@ function Editloadmap(aid){
                 subdivission     =  document.getElementById("subdivission").value;         
                 state     =  document.getElementById("state").value;         
                 zipcode          =  document.getElementById("zipcode").value;  
-                description          =  document.getElementById("description").value;  
+                description     =  document.getElementById("description").value;  
+                cid             =  document.getElementById("editcomid").value;  
                         
                 $.ajax({
                   type: 'post',
@@ -2053,8 +2053,6 @@ function Editloadmap(aid){
                 });
 
           });
-
-      }
 
       function Addcommunity()
       {        
