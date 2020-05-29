@@ -29,13 +29,15 @@
         </div>
         <div class="modal-body">
           <form id="Communityform">
-            <div class="form-group">
-              <label for="inputEmail4">Title</label>
-              <input type="text" class="form-control" id="title" placeholder="title" required>
-            </div>
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="Address" required>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Title</label>
+                <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addtitle" placeholder="title" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress ">Address</label>
+                <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addaddress" placeholder="Address" required>
+              </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-4">
@@ -75,6 +77,12 @@
                 <textarea class="form-control" row="2" id="description" required></textarea>
               </div>
             </div>
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="inputLocation">Add Location</label><br>
+                <a type="button" data-toggle="modal" data-target="#myMap" style="color: white;width:100%;font-family: Open Sans, sans-serif;" class="btn btn-dark"><i class='fas fa-map-marker-alt'></i>&nbsp;&nbsp;&nbsp;Add</a>
+              </div>
+            </div>
             <div class="modal-footer">
               <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
               <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
@@ -98,13 +106,15 @@
       </div>
       <div class="modal-body">
         <form id="Communityaddform" name="AddCommunity">
-          <div class="form-group">
-            <label for="inputEmail4">Title</label>
-            <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addtitle" placeholder="title" required>
-          </div>
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addaddress" placeholder="Address" required>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Title</label>
+              <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addtitle" placeholder="title" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress ">Address</label>
+              <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addaddress" placeholder="Address" required>
+            </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
@@ -133,7 +143,7 @@
                 <option>USA</option>
               </select>
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
               <label for="inputZip">Zip</label>
               <input type="number" class="form-control" pattern="\d{5,5}(-\d{4,4})?" id="addzipcode" required>
             </div>
@@ -144,12 +154,39 @@
               <textarea class="form-control" pattern="^[a-zA-Z][\sa-zA-Z]*"row="2" id="Adddescription" required></textarea>
             </div>
           </div>
+          <div class="form-row">
+            <div class="col-md-12">
+              <label for="inputLocation">Add Location</label><br>
+              <a type="button" data-toggle="modal" data-target="#myMap" style="color: white;width:100%;font-family: Open Sans, sans-serif;" class="btn btn-dark"><i class='fas fa-map-marker-alt'></i>&nbsp;&nbsp;&nbsp;Add</a>
+            </div>
+          </div>
           <div class="modal-footer">
           <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
             <button type="submit" style="width: 120px;color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
           </div>
         </form>
       </div> 
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="myMap">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Select Location</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="mapshow" style="width:450px;height:400px"> 
+        </div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+      </div>
+
     </div>
   </div>
 </div>

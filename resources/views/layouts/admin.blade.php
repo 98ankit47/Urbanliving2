@@ -1970,7 +1970,14 @@ function Editloadmap(aid){
           }   
       });
   }  
-       
+  loadmap();
+  function loadmap(){
+    var myLatLng=new google.maps.LatLng(40.71331,-74.0688);
+    var map = new google.maps.Map(
+      document.getElementById('mapshow'),
+      {zoom: 15, center: myLatLng}
+    );
+  }
       function deleteCommunity(id)
       {         $.ajax({
                 url: APP_URL + '/api/admin/community/'+ id,
