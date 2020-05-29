@@ -56,7 +56,7 @@
 <br>
     <div class="row">
         <div class="col-md-12" style="text-align:left;">
-            <h2><strong>Floor</strong></h2>
+            <h2><strong>SITE PLANS</strong></h2>
         </div>
         
     </div>

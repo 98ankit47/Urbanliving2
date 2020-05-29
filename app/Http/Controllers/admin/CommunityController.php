@@ -25,7 +25,7 @@ class CommunityController extends Controller
         <div class="card addcard" style="border:2px dotted #666666; background-color:#e4e4e4; height:321px;">
         <img class="card-img-top" style="height:120px;margin-top:20%;width:120px;margin-left:31%;" src="https://cdn3.iconfinder.com/data/icons/houses-11/64/131-Houses-Original_house-home-new-add-512.png">
         <div class="card-body"> <br>
-            <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW COMMUNITY</h4>
+            <h4 style="text-align:center;margin-top:30px;font-weight:bold;color:darkgray"> ADD NEW LOCATION<h4>
         </div>
         </div>
         </a>

@@ -2002,9 +2002,14 @@ function Editloadmap(aid){
           document.getElementById("description").value  = result.description;
           document.getElementById("area").value         = result.area;
           document.getElementById("zipcode").value      = result.zipcode;
+          EditCommunitySubmit(cid);
       }
       }); 
-      $(function () {
+      
+      }
+
+      function EditCommunitySubmit(cid)
+      {
           $('#Communityform').on('submit', function (e) {
             var title,address,area,state,country,city,description,subdivission,zipcode;
             e.preventDefault();
@@ -2042,7 +2047,6 @@ function Editloadmap(aid){
 
           });
 
-      });
       }
 
       function Addcommunity()
