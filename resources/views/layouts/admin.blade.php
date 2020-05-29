@@ -1969,6 +1969,7 @@ function Editloadmap(aid){
           $('#community_list').html(result);
           }   
       });
+      
   }  
   loadmap();
   function loadmap(){
@@ -1998,7 +1999,6 @@ function Editloadmap(aid){
       url: APP_URL+'/api/admin/community/'+cid,
 
       success: function(result){    
-
           document.getElementById("title").value        = result.title;
           document.getElementById("address").value      = result.address;
           document.getElementById("area").value         = result.area;

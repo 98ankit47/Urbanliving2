@@ -32,11 +32,11 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Title</label>
-                <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addtitle" placeholder="title" required>
+                <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="title" placeholder="title" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputAddress ">Address</label>
-                <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addaddress" placeholder="Address" required>
+                <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="address" placeholder="Address" required>
               </div>
             </div>
             <div class="form-row">
@@ -169,7 +169,7 @@
     </div>
   </div>
 </div>
-
+ 
 
 <div class="modal" id="myMap">
   <div class="modal-dialog">
