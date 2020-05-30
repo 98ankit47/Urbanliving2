@@ -2001,6 +2001,7 @@ function Editloadmap(aid){
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
     for (let point of event.overlay.getPath().getArray()) {
       coordinates.push([point.lng(), point.lat()])}
+    });
   }
       function deleteCommunity(id)
       {         $.ajax({
