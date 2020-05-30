@@ -1084,7 +1084,7 @@ function Editloadmap(aid){
 @endif
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZAdsxYc_U1xxyA3ga9gcmG260tW783I&libraries=places,drawing"></script>
 
 
 @if(Route::currentRouteName() == 'manage_home')
@@ -1958,6 +1958,7 @@ function Editloadmap(aid){
 
  @if(Route::currentRouteName() == 'communities')
   <script>
+    coordinates = []
     var APP_URL = "{{ url('/') }}";
     var id = window.location.href.split('/').pop();
     loadCommunityList();
@@ -1973,11 +1974,33 @@ function Editloadmap(aid){
   }  
   loadmap();
   function loadmap(){
-    var myLatLng=new google.maps.LatLng(40.71331,-74.0688);
+    var myLatLng=new google.maps.LatLng(29.716681, -95.458145);
     var map = new google.maps.Map(
       document.getElementById('mapshow'),
       {zoom: 15, center: myLatLng}
     );
+      var drawingManager = new google.maps.drawing.DrawingManager({
+      drawingMode: google.maps.drawing.OverlayType.MARKER,
+      drawingControl: true,
+      drawingControlOptions: {
+        position: google.maps.ControlPosition.TOP_CENTER,
+        drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+      },
+      markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
+      circleOptions: {
+        fillColor: '#ffff00',
+        fillOpacity: 1,
+        strokeWeight: 5,
+        clickable: false,
+        editable: true,
+        zIndex: 1
+      }
+    });
+    
+    drawingManager.setMap(map);
+    google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+    for (let point of event.overlay.getPath().getArray()) {
+      coordinates.push([point.lng(), point.lat()])}
   }
       function deleteCommunity(id)
       {         $.ajax({
@@ -2043,6 +2066,7 @@ function Editloadmap(aid){
                     'state'           : state,
                     'zipcode'         : zipcode,
                     'description'     : description,
+                    'boundary'        : coordinates
                      
                   },
                   success: function () {
@@ -2087,6 +2111,7 @@ function Editloadmap(aid){
                     'state'           : state,
                     'zipcode'         : zipcode,
                     'description'     : description,
+                    'boundary'        : coordinates
                      
                   },
                   success: function () {
