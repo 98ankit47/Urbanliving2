@@ -185,7 +185,8 @@
         </div> 
       </div>
       <div class="modal-footer">
-        <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
+        <button type="button" id="closeLocationModal" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1"><i class="ft-x"></i> Reset</button>
+        <button type="button"  style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-success mr-1" data-dismiss="modal" ><i class="la la-check-square-o"></i> Done</button>
       </div>
 
     </div>

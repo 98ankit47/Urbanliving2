@@ -702,7 +702,7 @@
 			});
 		map = new google.maps.Map(document.getElementById('neighbor-map'), {
 		center: new google.maps.LatLng(29.716681, -95.458145),
-		zoom: 11,
+		zoom: 15,
 		mapTypeId: 'roadmap'
 	});
 	map.data.loadGeoJson(

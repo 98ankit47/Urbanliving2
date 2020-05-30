@@ -1959,6 +1959,7 @@ function Editloadmap(aid){
  @if(Route::currentRouteName() == 'communities')
   <script>
     coordinates = []
+    all_overlays = []
     var APP_URL = "{{ url('/') }}";
     var id = window.location.href.split('/').pop();
     loadCommunityList();
@@ -1980,29 +1981,31 @@ function Editloadmap(aid){
       {zoom: 15, center: myLatLng}
     );
       var drawingManager = new google.maps.drawing.DrawingManager({
-      drawingMode: google.maps.drawing.OverlayType.MARKER,
       drawingControl: true,
       drawingControlOptions: {
         position: google.maps.ControlPosition.TOP_CENTER,
-        drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+        drawingModes: ['polygon']
       },
-      markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
-      circleOptions: {
-        fillColor: '#ffff00',
-        fillOpacity: 1,
-        strokeWeight: 5,
-        clickable: false,
-        editable: true,
-        zIndex: 1
-      }
+      
     });
     
     drawingManager.setMap(map);
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+      all_overlays.push(event);
     for (let point of event.overlay.getPath().getArray()) {
       coordinates.push([point.lng(), point.lat()])}
     });
+   
+    $('#closeLocationModal').click(() =>{
+
+      for (var i=0; i < all_overlays.length; i++)
+      {
+        all_overlays[i].overlay.setMap(null);
+      }
+      coordinates = [];
+    })
   }
+   
       function deleteCommunity(id)
       {         $.ajax({
                 url: APP_URL + '/api/admin/community/'+ id,
@@ -2074,6 +2077,11 @@ function Editloadmap(aid){
                     $('#communityModal').modal('hide');
                     loadCommunityList();
                     $('#success').html('Community Edit').addClass('alert').addClass('alert-Success').show().delay(2000).fadeOut();
+                    for (var i=0; i < all_overlays.length; i++)
+                      {
+                        all_overlays[i].overlay.setMap(null);
+                      }
+                      coordinates = [];
                   }
                 });
 
@@ -2121,6 +2129,11 @@ function Editloadmap(aid){
                     document.AddCommunity.reset();
                     loadCommunityList();
                     $('#success').html('New Community Added').addClass('alert').addClass('alert-success').show().delay(2000).fadeOut();
+                    for (var i=0; i < all_overlays.length; i++)
+                      {
+                        all_overlays[i].overlay.setMap(null);
+                      }
+                      coordinates = [];
                   }
                 });
           });

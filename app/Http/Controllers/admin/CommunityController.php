@@ -70,6 +70,7 @@ class CommunityController extends Controller
             'county'=>'required',
             'state'=>'required',
             'zipcode'=>'required',
+            'boundary' => 'required'
             ]);
         Communities::create([
             'title'=>$request['title'],
@@ -120,6 +121,7 @@ class CommunityController extends Controller
             'county'=>'required',
             'state'=>'required',
             'zipcode'=>'required',
+            'boundary' => 'required'
             ]);
         Communities::where('id',$id)->update([
             'title'=>$request['title'],
