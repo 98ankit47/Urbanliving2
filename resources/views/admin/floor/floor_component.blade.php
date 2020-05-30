@@ -15,7 +15,7 @@
         <h2><strong>Floor Components</strong></h2>
       </div>
       <div class="col-md-6" style="text-align:right;">
-        <a href="http://127.0.0.1:8000/admin/floor" style="color:white;" class="btn btn-secondary"><i class="la la-chevron-circle-left"></i> Go Back</a> 
+        <a href="/admin/floor" style="color:white;" class="btn btn-secondary"><i class="la la-chevron-circle-left"></i> Go Back</a> 
       </div>
     </div>
 <hr>
