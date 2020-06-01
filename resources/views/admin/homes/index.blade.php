@@ -18,7 +18,7 @@
 }
 </style>
 
-<div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
+<div class="container-fluid" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <br>
       <h2><strong>Homes</strong></h2>
 <hr>

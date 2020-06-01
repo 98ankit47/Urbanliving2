@@ -21,7 +21,7 @@ th, td {
 <?php
     $gallery = explode(',',$selling->gallery);
 ?>
-<div class="container" style="text-align:center;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
+<div class="container-fluid" style="text-align:center;font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
 <hr><br>
 <div class="card" style="margin-left:15%;margin-right:15%;background:#E8E8E8">
 <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails"

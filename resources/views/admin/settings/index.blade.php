@@ -30,7 +30,7 @@
 
 </style>
 
-<div class="container" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
+<div class="container-fluid" style="font-family: 'Quicksand', Georgia, 'Times New Roman', Times, serif;">
   <h2 class="a_dash"><br><strong>Settings</strong></h2>
 <hr><br>
 
@@ -113,7 +113,7 @@
         <form class="details-containerr">
             <div class="form-group">
                 <label for="inputTitle">Current Password</label>
-            <input type="id"  class="form-control" id="id" value="{{Auth::user()->id}}" required>
+            <input type="hidden"  class="form-control" id="id" value="{{Auth::user()->id}}" required>
                 <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" id="current" required>
             </div>
             <div class="form-group">

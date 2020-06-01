@@ -351,7 +351,7 @@ class CommonController extends Controller
             <div class="card">
               <img class="card-img-top" style="height:200px;" src="/uploads/site/'.$site->image.'">
                 <div class="card-body">
-                 <h5 style="text-align:center">'.$home->title.'</h5>
+                 <h5 style="text-align:center;color:#003a8b;"><b>'.$home->title.'</b></h5>
                     <div class="row">
                         <div class ="col-md-12" style="text-align:center;margin-bottom:10px">
                         <button type="button" data-toggle="modal" data-id="'.$site->id.'" style="font-family: Open Sans, sans-serif;color:white;;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteSite" class="btn btn-block"><i class="ft-x"></i> Delete</button> 

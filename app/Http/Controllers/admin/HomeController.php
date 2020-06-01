@@ -332,6 +332,7 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
+        
         $home =  Homes::whereId($id)->first();
         if($request['featured-image-name']=="a")
         {
@@ -344,8 +345,10 @@ class HomeController extends Controller
                 $request['featured-image'],';')))[1])[1];  
     
             \Image::make($request['featured-image'])->save(public_path('uploads\homes\\').$featured_img);
+       
            
         }
+
         
         $this->validate($request,[
             'title'=>'required',

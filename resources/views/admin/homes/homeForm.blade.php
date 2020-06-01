@@ -32,7 +32,7 @@
         } 
 </style>
 
-<div class="container details-container" >
+<div class="container-fluid details-container" >
 <br>
   <div class="row" style="font-family: Open Sans, sans-serif;">
   <div class="col-md-6" style="text-align:left;">
@@ -120,8 +120,8 @@
     <div class="col-md-6">
       <div class="image-upload">
         <p>Featured Image</p>
-        <p><input type="file"  name="image" id="file" accept="image/*"  onchange="loadFile(event)" required></p>
-        <p><img id="output" /></p>
+        <p><input type="file" name="image" id="file" accept="image/*"  onchange="loadFile(event)" required></p>
+        <p><img id="output" width="200px" height="200px"/></p>
       </div>
     </div>
   <div class="col-md-6">
