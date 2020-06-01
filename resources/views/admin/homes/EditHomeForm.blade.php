@@ -32,7 +32,7 @@
         } 
 </style>
 
-<div class="container details-container" >
+<div class="container-fluid details-container" >
 <br>
   <div class="row" style="font-family: Open Sans, sans-serif;">
   <div class="col-md-6" style="text-align:left;">

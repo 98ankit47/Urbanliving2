@@ -17,10 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::resources([
-    'page'              => 'Admin\PageController',
-    'admin/home'        => 'Admin\HomeController',
-    'admin/community'   => 'Admin\CommunityController',
-    'admin/floor'       => 'Admin\FloorController',
+    'page'              => 'admin\PageController',
+    'admin/home'        => 'admin\HomeController',
+    'admin/community'   => 'admin\CommunityController',
+    'admin/floor'       => 'admin\FloorController',
 ]);
 
 Route::post('admin/home/{id}','admin\HomeController@update');

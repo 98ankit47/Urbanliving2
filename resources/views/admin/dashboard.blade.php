@@ -16,7 +16,7 @@
 
 </style>
 
-<div class="container">
+<div class="container-fluid">
     <h2><strong>Admin Dashboard</strong></h2>
     <hr><br>
 
