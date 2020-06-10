@@ -109,35 +109,35 @@
         <form id="Communityaddform" name="AddCommunity">
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">Title</label>
+              <label class="custom-required" for="inputEmail4">Title:</label>
               <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addtitle" placeholder="title" required>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputAddress ">Address</label>
+              <label class="custom-required" for="inputAddress ">Address:</label>
               <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addaddress" placeholder="Address" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label for="inputArea">Area</label>
+              <label class="custom-required" for="inputArea">Area:</label>
               <input type="number" class="form-control" id="addarea" placeholder="Area" required>
             </div>
             <div class="form-group col-md-4">
-              <label for="inputDivision">Subdivision</label>
+              <label class="custom-required" for="inputDivision">Subdivision:</label>
               <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addsubdivission" placeholder="Subdivision" required>
             </div>
             <div class="form-group col-md-4">
-              <label for="inputCity">City</label>
+              <label class="custom-required" for="inputCity">City:</label>
               <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addcity" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label for="inputCity">state</label>
+              <label class="custom-required" for="inputCity">state:</label>
               <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="addstate" required>
             </div>
             <div class="form-group col-md-4">
-              <label for="inputState">Country</label>
+              <label class="custom-required" for="inputState">Country:</label>
               <select id="addcountry" class="form-control">
                 <option selected>Choose...</option>
                 <option>India</option>
@@ -145,21 +145,24 @@
               </select>
             </div>
             <div class="form-group col-md-4">
-              <label for="inputZip">Zip</label>
+              <label class="custom-required" for="inputZip">Zip</label>
               <input type="number" class="form-control" pattern="\d{5,5}(-\d{4,4})?" id="addzipcode" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="inputZip">Desciption</label>
+              <label class="custom-required" for="inputZip">Desciption:</label>
               <textarea class="form-control" pattern="^[a-zA-Z][\sa-zA-Z]*"row="2" id="Adddescription" required></textarea>
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-12">
-              <label for="inputLocation">Add Location</label><br>
+              <label class="custom-required" for="inputLocation">Add Location</label><br>
               <a type="button" data-toggle="modal" data-target="#myMap" style="color: white;width:100%;font-family: Open Sans, sans-serif;" class="btn btn-dark"><i class='fas fa-map-marker-alt'></i>&nbsp;&nbsp;&nbsp;Add</a>
             </div>
+          </div>
+          <div class="mt-2 mb-1">
+            <span class="custom-required"></span><span>- All are mandatory fields.</span>
           </div>
           <div class="modal-footer">
           <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
