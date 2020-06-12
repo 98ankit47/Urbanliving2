@@ -165,7 +165,7 @@
           </div>
         </div>
         <div class="ml-1 mt-2 mb-1">
-            <span class="custom-required"></span><span>- All are mandatory fields.</span>
+            <span class="custom-required"></span><span> All are mandatory fields.</span>
           </div>
         <div class="modal-footer">
           <button type="button" style="color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
@@ -191,11 +191,11 @@
           <div class="modal-body">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Bedroom</label>
+                <label class="custom-required"for="inputEmail4">Bedroom:</label>
                 <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true"  class="form-control" id="Edit_bedroom" placeholder="No Of Bedroom" required>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputAddress">Bathroom</label>
+                <label class="custom-required" for="inputAddress">Bathroom:</label>
                 <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_bathroom" placeholder="No Of Bedroom" required>
               </div>
               
@@ -204,22 +204,22 @@
           <div class="form-row">
             
             <div class="form-group col-md-4">
-              <label for="inputDivision">Dinning</label>
+              <label class="custom-required"for="inputDivision">Dinning:</label>
               <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_dining" placeholder="No Of Dining" required>
             </div>
             <div class="form-group col-md-4">
-              <label for="inputCity">Kitchen</label>
+              <label class="custom-required"for="inputCity">Kitchen:</label>
               <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_kitchen" placeholder="No Of Kitchen" required>
             </div>
             <div class="form-group col-md-4">
-              <label for="inputArea">Garage</label>
+              <label class="custom-required" for="inputArea">Garage:</label>
               <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="Edit_garage" placeholder="No Of Garage" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-grroup col-md-6">
               <div class="image-upload">
-                <p>Floor Image</p>
+                <p class="custom-required">Floor Image:</p>
                 <p><input type="file"  name="image" id="Edit_image"  onchange="loadFile(event)" ></p>
               </div>
             </div>
@@ -228,6 +228,9 @@
                 <p><img id="output"/></p>
               </div>
             </div>
+          </div>
+          <div class="ml-2 mt-2 mb-1">
+            <span class="custom-required"></span><span>All are mandatory fields.</span>
           </div>
           <div class="modal-footer">
             <button type="button" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" class="btn" data-dismiss="modal"><i class="ft-x"></i> Close</button>

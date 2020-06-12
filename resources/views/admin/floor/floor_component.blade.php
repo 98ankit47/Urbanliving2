@@ -39,17 +39,17 @@
       <div class="modal-body">
       <form id="ComponentAddForm">
         <div class="form-group">
-      <label for="inputEmail4">Name</label>
+      <label class="custom-required"for="inputEmail4">Name:</label>
       <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="name" placeholder="title" required>
     </div>
     <div class="form-group">
-      <label for="inputEmail4">Component Number</label>
+      <label class="custom-required" for="inputEmail4">Component Number:</label>
       <input type="number" class="form-control" id="cno" onkeydown="javascript: return event.keyCode == 69 ? false : true"  placeholder="title" required>
     </div>
    
   <div class="form-group">
   <div class="image-upload">
-<p><strong>Image</strong></p>
+<p class="custom-required"><strong>Image</strong></p>
   <input type="file" id="image" name="files[]" multiple required/>
   <br><br>
 <output id="list" width="200px" height="200px"></output>
@@ -57,6 +57,9 @@
    </div>
 
   </div>
+  <div class="ml-2 mt-2 mb-1">
+    <span class="custom-required"></span><span>All are mandatory fields.</span>
+   </div>
   <div class="modal-footer">
     <button type="button" style=" color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
     <button type="submit" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
@@ -82,17 +85,17 @@
         <div class="modal-body">
         <form id="EditComponentForm">
           <div class="form-group">
-        <label for="inputEmail4">Name</label>
+        <label class="custom-required for="inputEmail4">Name:</label>
         <input type="text" class="form-control" pattern="^[a-zA-Z][\sa-zA-Z]*" id="edit_name" placeholder="title" required>
       </div>
       <div class="form-group">
-        <label for="inputEmail4">Component Number</label>
+        <label class="custom-required"for="inputEmail4">Component Number:</label>
         <input type="number" class="form-control" id="edit_cno" onkeydown="javascript: return event.keyCode == 69 ? false : true"  placeholder="title" required>
       </div>
      
     <div class="form-group">
     <div class="image-upload">
-  <p><strong>Image</strong></p>
+      <p class="custom-required"><strong>Image</strong></p>
     <input type="file" id="image" name="file" />
     <br><br>
   <output id="list" width="200px" height="200px"></output>

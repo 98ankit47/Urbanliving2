@@ -79,11 +79,11 @@
       <div class="modal-body">
       <form id="Communityform">
 <div class="form-group">
-      <label for="inputEmail4">Name</label>
+      <label class="custom-required"for="inputEmail4">Name:</label>
       <input type="text" class="form-control" id="name" placeholder="title">
     </div>
   <div class="form-group">
-  <label for="inputState">Type</label>
+  <label class="custom-required" for="inputState">Type:</label>
       <select id="country" class="form-control">
         <option selected>Choose...</option>
         <option>Bedroom</option>
@@ -94,7 +94,7 @@
   </div>
   <div class="form-group">
   <div class="image-upload">
-<p><strong>Image</strong></p>
+<p class="custom-required"><strong>Image</strong></p>
   <input type="file" id="files" name="files[]" multiple />
   <br><br>
 <output id="list" width="200px" height="200px"></output>
@@ -102,6 +102,9 @@
    </div>
 
   </div>
+  <div class="ml-2 mt-2 mb-1">
+            <span class="custom-required"></span><span>All are mandatory fields.</span>
+          </div>
   <div class="modal-footer">
     <button type="button" style="background-color:#F44336;" class="btn" data-dismiss="modal">Close</button>
     <button type="submit" style="background-color:#00BCD4;" class="btn">Save changes</button>
