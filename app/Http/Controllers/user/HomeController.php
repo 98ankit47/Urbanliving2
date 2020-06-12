@@ -9,7 +9,9 @@ use App\Models\Floors;
 use App\Models\Communities;
 use App\Models\FloorComponent;
 use App\Models\HomeCommunity;
+use App\Models\NewsLetter;
 use App\Models\Enquiry;
+use App\Models\ContactUs;
 use App\Models\Favourite;
 use App\SellingHome;
 use App\User;
@@ -27,6 +29,286 @@ class HomeController extends Controller
         }
     }
 
+    public function HomeHouseList()
+    {
+        $count=Homes::where('block',1)->count();
+        if($count>=3 and $count<6)
+        {
+            $num=3;
+        }
+        else if($count>=6 and $count<9)
+        {
+            $num=6;
+
+        }
+        else if($count>9)
+        {
+            $num=9;
+        }
+        else if($count<3)
+        {
+            $num=0;
+        }
+        $home=Homes::where('block',1)->take($num)->get();
+        return $home;
+    }
+
+    public function HomeMapHouseList()
+    {
+        $home=Homes::where('block',1)->with('communities')->get();
+        return $home;
+    }
+
+
+    public function HomeHouseListFilter(Request $request)
+    {
+        $type     = $request['type'];
+        $address  = $request['address'];
+        $bedroom  = $request['bedroom'];
+        $bathroom = $request['bathroom'];
+        $minprice = $request['minprice'];
+        $maxprice = $request['maxprice'];
+        $minarea  = $request['minarea'];
+        $maxarea  = $request['maxarea'];
+        
+        if($address)
+        { 
+
+        }
+        else
+        {
+            $address="aaaaaaa";
+        }
+        if($minprice and $maxprice)
+        { 
+
+        }
+        else
+        {
+            $minprice=Homes::where('block',1)->min('price');
+            $maxprice=Homes::where('block',1)->max('price');
+        }
+        if($minarea and $maxarea)
+        { 
+            
+        }
+        else
+        {
+            $minarea=Homes::where('block',1)->min('area');
+            $maxarea=Homes::where('block',1)->max('area');
+        }
+        if($request['title'])
+        {
+            return Homes::where('title','like','%'.$request['title'].'%')->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+        }
+        $home_id=[];
+        $homes=[];
+        if((Communities::with('homes')->where('state','LIKE','%'.$address.'%')->orWhere('area',$address)->orWhere('county','LIKE','%'.$address.'%')->count())==0)
+        {    
+            if($bedroom and $bathroom and $type)
+            {
+                $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('bathroom',$bathroom)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                return $homes;
+            }
+            else if($bedroom and $bathroom and $type='')
+            {
+                $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                return $homes;
+            }
+            else if($bedroom and $type and $bathroom='')
+            {
+                $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                return $homes;
+            }
+            else if($type and $bathroom and $bedroom='')
+            {
+                $homes=Homes::where('block',1)->where('type',$type)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                return $homes;
+            }
+            else if($type)
+            {
+                $homes=Homes::where('block',1)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                return $homes;
+            }
+            else if($bedroom)
+            {
+                $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                return $homes;
+            } 
+            else if($bathroom)
+            {
+                $homes=Homes::where('block',1)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                return $homes;
+            }
+            else 
+            {
+                $homes=Homes::where('block',1)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                return $homes;
+            }
+        }
+        else
+        {
+            $comm=Communities::with('homes')->where('state','LIKE','%'.$address.'%')->orWhere('area','LIKE','%'.$address.'%')
+            ->orWhere('county','LIKE','%'.$address.'%')->get();
+            foreach($comm as $community)
+            {
+                foreach($community->homes as $key=>$rel)
+                {
+                    $home_id[$key]=$rel->home_id;
+                }
+            }
+            $i=0;
+            foreach($home_id as $key=>$home)
+            {
+                
+                if(Homes::where('id',$home)->where('block',1)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->count()!=0)
+                {
+                    if($bedroom and $bathroom and $type)
+                    {
+                        $homes[$i]=Homes::where('id',$home)->where('block',1)->where('bedroom',$bedroom)->where('bathroom',$bathroom)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get()->first();
+                        $i++;
+                    }
+                    else if($bedroom and $bathroom and $type='')
+                    {
+                        $homes[$i]=Homes::where('id',$home)->where('block',1)->where('bedroom',$bedroom)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get()->first();
+                        $i++;
+                    }
+                    else if($bedroom and $type and $bathroom='')
+                    {
+                        $homes[$i]=Homes::where('id',$home)->where('block',1)->where('bedroom',$bedroom)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get()->first();
+                        $i++;
+                    }
+                    else if($type and $bathroom and $bedroom='')
+                    {
+                        $homes[$i]=Homes::where('id',$home)->where('block',1)->where('type',$type)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get()->first();
+                        $i++;
+                    }
+                    else if($type and $bathroom='' and $bedroom='')
+                    {
+                        $homes[$i]=Homes::where('id',$home)->where('block',1)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get()->first();
+                        $i++;
+                    }
+                    else if($bedroom and $type='' and $bathroom='' )
+                    {
+                        $homes[$i]=Homes::where('id',$home)->where('block',1)->where('bedroom',$bedroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get()->first();
+                        $i++;
+                    } 
+                    else if($bathroom and $type='' and $bedroom='')
+                    {
+                        $homes[$i]=Homes::where('id',$home)->where('block',1)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get()->first();
+                        $i++;
+                    }
+                    else 
+                    {
+                        $homes[$i]=Homes::where('id',$home)->where('block',1)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get()->first();
+                        
+                    }
+                }
+            }
+
+            return $homes;
+        }
+        return Homes::all();
+    }
+    
+    public function HomeNeighbour()
+    {
+        return communities::inRandomOrder()->take(4)->get();
+    }
+
+    public function NewsLetter(Request $request)
+    {
+        if(User::where('email',$request['email'])->get()->count()==0)
+        {
+            // NewsLetter::create([
+            //     "email"=>$request['email'],
+            //     ]);
+        }
+        else
+        {
+            $user=User::where('email',$request['email'])->get()->first();
+            NewsLetter::create([
+                "email"=>$request['email'],
+                "name"=>$user->name,
+                ]);
+        }
+       
+        return "success";
+    }
+
+    public function ContactUs(Request $request)
+    {
+        if(User::where('email',$request['email'])->get()->count()==0)
+        {
+            // ContactUs::create([
+            //     "email"=>$request['email'],
+            //     "message"=>$request['message']
+            //     ]);
+        }
+        else
+        {
+            $user=User::where('email',$request['email'])->get()->first();
+            ContactUs::create([
+                "email"=>$request['email'],
+                "message"=>$request['message'],
+                "name"=>$user->name,
+                ]);
+        }
+       
+        return "success";
+    }
+
+
+    public function HomeMapHouseListFilter(Request $request)
+    {
+        $home_id=[];
+        $homes=[];
+        $address=$request['address'];
+        if((Communities::with('homes')->where('state','LIKE','%'.$address.'%')->orWhere('area','LIKE','%'.$address.'%')->orWhere('county','LIKE','%'.$address.'%')->orWhere('zipcode','LIKE','%'.$address.'%')->count())==0||$request['address']=='')
+        {
+
+            if($request['type'] && $request['price'])
+            {
+                return Homes::where('block',1)->with('communities')->where('price','<=',$request['price'])->where('type',$request['type'])->get();
+            }
+            else if($request['type']=='' && $request['price'])
+            {
+                return Homes::where('block',1)->with('communities')->where('price','<',$request['price'])->get();
+            }
+            else if($request['price']=='' && $request['type'])
+            {
+                return Homes::where('block',1)->with('communities')->where('type',$request['type'])->get();
+            }
+            else
+            {
+                return Homes::where('block',1)->with('communities')->get();
+            }
+             
+        }
+        else
+        {
+            $comm=Communities::with('homes')->where('state','LIKE','%'.$address.'%')->orWhere('area','LIKE','%'.$address.'%')
+            ->orWhere('county','LIKE','%'.$address.'%')->orWhere('zipcode','LIKE','%'.$address.'%')->get();
+            foreach($comm as $community)
+            {
+                foreach($community->homes as $key=>$rel)
+                {
+                    $home_id[$key]=$rel->home_id;
+                }
+            }
+            $i=0;
+            foreach($home_id as $key=>$home)
+            {
+                if(Homes::where('id',$home)->where('block',1)->count()!=0)
+                {
+                    $homes[$i]=Homes::where('id',$home)->where('block',1)->with('communities')->get()->first();
+                    $i++;
+                }
+            }
+            return $homes;
+        }
+    }
+
     public function search(Request $request)
     {
         $data=$request['search'];
@@ -39,20 +321,54 @@ class HomeController extends Controller
                 $rel=HomeCommunity::where('community_id',$community->id)->get()->first();
                 if(HomeCommunity::where('community_id',$community->id)->get()->count()!=0)
                 {
-                     $home      = Homes::where('block','1')->with('communities')->where('id',$rel->home_id)->get();
-                     return view('user.homeDetail.index')->with('homes',$home);
+                     $home = Homes::where('block','1')->with('communities')->where('id',$rel->home_id)->get();
+                     foreach($home as $home)
+                     {
+                         $home->gallery=explode(',',$home->gallery);
+                     }
+                     return $home;
                 }
             }
             return "No Record Found";
          }
          else
          {
-            $home=Homes::where('block','1')->with('communities')->where('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get();
-            return view('user.homeDetail.index')->with('homes',$home);
+            $homes=Homes::where('block','1')->with('communities')->orwhere('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get();
+            foreach($homes as $home)
+            {
+                $home->gallery=explode(',',$home->gallery);
+            }
+            return $homes;
          }
 
     }
 
+    public function searchMls(Request $request)
+    {
+        $home_id=[];
+        $homes=[];
+        $address=$request['search'];
+        $comm=Communities::with('homes')->where('state','LIKE','%'.$address.'%')->orWhere('area','LIKE','%'.$address.'%')
+        ->orWhere('county','LIKE','%'.$address.'%')->orWhere('zipcode','LIKE','%'.$address.'%')->get();
+        foreach($comm as $community)
+        {
+            foreach($community->homes as $key=>$rel)
+            {
+                $home_id[$key]=$rel->home_id;
+            }
+        }
+        $i=0;
+        foreach($home_id as $k=>$home)
+        {
+            if(Homes::where('id',$home)->where('block',1)->count()!=0)
+            {
+                $homes[$i]=Homes::where('id',$home)->where('block',1)->get()->first();
+                $i++;
+            }
+        }
+        return $homes;
+    }
+    
     public function addfavShow($userid,$homeid)
     {
         $data='';

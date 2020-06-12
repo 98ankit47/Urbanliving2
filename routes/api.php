@@ -120,6 +120,8 @@ Route::get('HomeMapHouseList','user\HomeController@HomeMapHouseList');
 Route::post('HomeMapHouseListFilter','user\HomeController@HomeMapHouseListFilter');
 Route::post('HomeHouseListFilter','user\HomeController@HomeHouseListFilter');
 Route::post('user','UserController@signup');
+Route::post('NewsLetter','user\HomeController@NewsLetter');
+Route::post('ContactUs','user\HomeController@ContactUs');
 
 
 
