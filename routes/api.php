@@ -17,10 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::resources([
-    'page'              => 'admin\PageController',
-    'admin/home'        => 'admin\HomeController',
-    'admin/community'   => 'admin\CommunityController',
-    'admin/floor'       => 'admin\FloorController',
+    'page'              => 'Admin\PageController',
+    'admin/home'        => 'Admin\HomeController',
+    'admin/community'   => 'Admin\CommunityController',
+    'admin/floor'       => 'Admin\FloorController',
 ]);
 
 Route::post('admin/home/{id}','admin\HomeController@update');
@@ -38,7 +38,6 @@ Route::get( 'admin/dashboard/user', 'CommonController@DashboardUser');
 Route::get('admin/user-block/{id}','CommonController@UserBlock');
 
 Route::post( 'admin/floor/{id}', 'admin\FloorController@update');
-Route::get( 'admin/floorNo/{hid}/{fno}', 'CommonController@getFloor');
 Route::get( 'admin/floor-home/{id}', 'admin\FloorController@showHomeFloor');
 Route::get( 'admin/floor-data/{id}', 'admin\FloorController@showModelFloor');
 Route::get( 'admin/floor-component-gallery/{type}/{home_id}', 'admin\FloorController@showFloorComponent');
@@ -46,7 +45,6 @@ Route::delete( 'admin/floor-component/delete/{id}', 'admin\FloorController@delet
 Route::post( 'admin/floor-component', 'admin\FloorController@componentstore');
 Route::post( 'admin/floor-component/{id}', 'admin\FloorController@componentupdate');
 Route::get( 'admin/floor-component/{id}', 'admin\FloorController@componentshow');
-Route::get( 'admin/floorCom/{id}/{type}', 'CommonController@CheckFloor');
 
 
 Route::get( 'admin/home-feature/{id}', 'CommonController@features');
@@ -80,7 +78,6 @@ Route::get('/admin/enquiry/update/{id}', 'CommonController@UpdateEnquirySeen');
 Route::get('admin/floorDetail/{id}','CommonController@userFloor');
 Route::get('admin/notification/','CommonController@notification');
 Route::get('admin/sell/notification/','CommonController@Sellnotification');
-Route::get('admin/totalnotification/','CommonController@LoadNotification');
 
 
 
@@ -88,10 +85,9 @@ Route::get('admin/totalnotification/','CommonController@LoadNotification');
 // User Module
 Route::post('enquiry','user\HomeController@schedule');
 Route::post('selling-home','user\HomeController@SellingHome');
-Route::get('floorComponent/{type}/{floor_id}/{component_id}','CommonController@userFloorComponent');
+Route::get('floorComponent/{type}/{floor_id}/{component_id}','CommcdonController@userFloorComponent');
 
 //user create
-Route::post('user','UserController@signup');
 Route::post('admin/changeUserDeatil','UserController@ChangeDetail');
 Route::get('userSell/{id}','CommonController@Userscheduleshow');
 Route::get('userSchedule/{id}','CommonController@Usertour');
@@ -112,18 +108,18 @@ Route::post('Available/{id}','admin\HomeController@Availableupdate');
 Route::get('homeAvailable/{id}','CommonController@AvailableShow');
 Route::get('Avail/{id}','CommonController@AvailableSingleHome');
 Route::delete('home-Avail/{id}','CommonController@DeleteAvail');
-
 Route::delete('userFavourite/{id}','CommonController@DeleteFav');
 
-Route::get('admin/home-pdf/{id}','CommonController@PdfShow');
-Route::delete('admin/pdf/{id}', 'CommonController@DeletePdf');
 
-
-Route::get( 'admin/SiteNo/{hid}', 'CommonController@getSite');
-Route::post( 'admin/Site', 'CommonController@Addsite');
-Route::get( 'admin/site-home/{id}', 'CommonController@showHomeSite');
-Route::delete( 'admin/site/{id}', 'CommonController@DeleteSite');
-Route::get('boundry','admin\CommunityController@boundary');
+//angular user module
+Route::get('HomeHouseList','user\HomeController@HomeHouseList');
+Route::post('DevelopmentSearch','user\HomeController@search');
+Route::post('MlsSearch','user\HomeController@searchMls');
+Route::get('HomeNeighbour','user\HomeController@HomeNeighbour');
+Route::get('HomeMapHouseList','user\HomeController@HomeMapHouseList');
+Route::post('HomeMapHouseListFilter','user\HomeController@HomeMapHouseListFilter');
+Route::post('HomeHouseListFilter','user\HomeController@HomeHouseListFilter');
+Route::post('user','UserController@signup');
 
 
 
