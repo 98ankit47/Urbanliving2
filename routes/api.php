@@ -123,10 +123,10 @@ Route::post('home-house-list-filter','user\HomeController@HomeHouseListFilter');
 Route::post('user','UserController@signup');
 Route::post('news-letter','user\HomeController@NewsLetter');
 Route::post('contact-us','user\HomeController@ContactUs');
-
-//home detail pages
-Route::get('add-fav/{userid}/{homeid}','User\HomeController@AddFavourite');
-
+Route::post('user/register','Auth\UserController@signup');
+Route::post('user/login','Auth\UserController@login'); 
+Route::get('add-fav/{userid}/{homeid}','User\HomeController@addfav');
+  
 
 
 
