@@ -124,7 +124,8 @@ Route::post('user','UserController@signup');
 Route::post('news-letter','user\HomeController@NewsLetter');
 Route::post('contact-us','user\HomeController@ContactUs');
 Route::get('add-fav/{userid}/{homeid}','User\HomeController@addfav');
-
+Route::post('user/register','Auth\UserController@signup');
+Route::post('user/login','Auth\UserController@login');
 
 
 
