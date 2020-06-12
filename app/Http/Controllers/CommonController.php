@@ -14,6 +14,8 @@ use App\Models\pdf;
 use App\Models\SitePlan;
 use App\HomeAvailable;
 use App\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 use App\SellingHome;
 Use \Carbon\Carbon;
 use Illuminate\Support\Str;
@@ -458,7 +460,7 @@ class CommonController extends Controller
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="button" data-toggle="modal" data-id="" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold;" data-target="" class="btn btn-primary"><i class="la la-reply"></i> Reply</button> 
+                                    <button type="button" data-toggle="modal" data-target="#replyEnquiry" data-id="'.$enquiry->id.'" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold;" class="btn btn-primary"><i class="la la-reply"></i> Reply</button> 
                                 </div>
                                 <div class="col-md-6">
                                     <button type="button" data-id="'.$enquiry->id.'" data-toggle="modal" style="font-family: Open Sans, sans-serif;color:white;width:100%;text-align:center;font-weight:bold; background-color:#F6454F;" data-target="#deleteEnquiry" class="btn"><i class="ft-x"></i> Delete</button> 
@@ -774,5 +776,16 @@ class CommonController extends Controller
             'status'=>$block
         ]);
         return "success";
+    }
+     public function replyToMail(Request $request)
+    {
+        # code...
+        $mail = 'k2caher@gmail.com';
+        $data = ['subject'=> 'Cristo Homes - Reset Your Login Password',
+        'view' => 'reply',
+        'msg' => $request->msg,
+        ];
+        Mail::to($mail)->send(new SendMail($data));
+        return ['status' => 'success', 'message' =>  'Replied successfully'];
     }
 }

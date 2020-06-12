@@ -48,43 +48,43 @@
 <form class="details-containerr" style="font-family: Open Sans, sans-serif;">
   <div class="form-row "> 
     <div class="form-group col-md-4">
-      <label for="inputTitle">Title</label>
+      <label class="custom-required"for="inputTitle">Title:</label>
       <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="title" required>
     </div>
     
   
   <div class="form-group col-md-4">
-    <label for="community">Location</label>
+    <label class="custom-required" for="community">Location:</label>
     <select id="community_list"  class="form-control" >
     </select>
   </div>
 
   <div class="form-group col-md-4">
-    <label for="inputDescription">Description</label>
+    <label class="custom-required" for="inputDescription">Description:</label>
     <textarea name="" pattern="^[a-zA-Z][\sa-zA-Z]*" required id="description" cols="30" rows="2" class="w-100 form-control"></textarea>
   </div> 
   </div>
   <div class="form-row">
   <div class="form-group col-md-4">
-    <label for="inputBedroom">Bedroom</label>
+    <label class="custom-required" for="inputBedroom">Bedroom:</label>
     <input type="number" min="1" max="20" class="form-control" id="bedroom"  onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   <div class="form-group col-md-4">
-    <label for="inputBathroom">bathroom</label>
+    <label class="custom-required" for="inputBathroom">Bathroom:</label>
     <input type="number" min="1" max="20" class="form-control" id="bathroom" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   <div class="form-group col-md-4">
-    <label for="inputGarage">Garage</label>
+    <label class="custom-required" for="inputGarage">Garage:</label>
     <input type="number" min="1" max="10" class="form-control" id="garage" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   </div>
   <div class="form-row">
   <div class="form-group col-md-4">
-    <label for="inputStories">Stories</label>
+    <label class="custom-required" for="inputStories">Stories:</label>
     <input type="number" min="1" max="8" class="form-control" id="stories" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   <div class="form-group col-md-4">
-    <label for="inputMls">Type</label>
+    <label class="custom-required" for="inputMls">Type:</label>
     <select class="form-control" id="mls">
       <option value="single">Single Family</option>
       <option value="mid">Mid High Rise</option>
@@ -92,26 +92,26 @@
     </select>
   </div>
   <div class="form-group col-md-4">
-    <label for="inputArea">Area</label>
+    <label class="custom-required" for="inputArea">Area:</label>
     <input type="number" class="form-control" id="area"  onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-4">
-      <label for="inputCity">Builder</label>
+      <label class="custom-required" for="inputCity">Builder:</label>
       <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="builder" required>
     </div>
      
     <div class="form-group col-md-4">
-      <label for="inputState">Status</label>
+      <label class="custom-required" for="inputState">Status:</label>
       <select id="status" class="form-control" >
        
       </select>
     </div>
 
     <div class="form-group col-md-4">
-      <label for="inputCity">Price</label>
+      <label class="custom-required" for="inputCity">Price:</label>
       <input type="number" min="1" max="100000" class="form-control" id="price" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
     </div>  
   </div>
@@ -119,7 +119,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="image-upload">
-        <p>Featured Image</p>
+        <p class="custom-required">Featured Image:</p>
         <p><input type="file"  name="image" id="file"  onchange="loadFile(event)"></p>
         <p><img id="output" /></p>
       </div>
@@ -128,11 +128,14 @@
   </div>
   <div class="form-row">
     <div class="col-md-12">
-    <label for="inputLocation">Add Location</label><br>
+    <label class="custom-required" for="inputLocation">Add Location on google map.</label><br>
     <a type="button" data-toggle="modal" data-target="#myModal" style="color: white;width:100%;font-family: Open Sans, sans-serif;" class="btn btn-dark"><i class='fas fa-map-marker-alt'></i>&nbsp;&nbsp;&nbsp;Add</a>
     <input type="hidden" class="form-control" id="lat" required>
     <input type="hidden" class="form-control" id="lng" required>
   </div>
+  <div class="mt-2 mb-1">
+    <span class="custom-required"></span><span>All are mandatory fields.</span>
+   </div>
   </div>
   <br><br>
   <div class="row" style="font-family: Open Sans, sans-serif;">

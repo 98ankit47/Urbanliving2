@@ -550,8 +550,29 @@ $('#ys-enq-btn').click(function()
 
 
 });
+$('#replyEnquiry').on('show.bs.modal', function (e) {
 
-
+var $trigger = $(e.relatedTarget);
+var Hid=$trigger.data('id');
+$('#reply-btn').attr('data-id',Hid);
+});
+$('#reply-btn').click(function()
+{
+  var id = $(this).attr('data-id');
+  var msg = document.getElementById('replyMsg').value;
+  $('#replyEnquiry').modal('hide');
+  $('.modal-backdrop').css('display','none');
+    $.ajax({
+            url: APP_URL + '/api/admin/email/reply',
+            type: 'post',
+            data: {
+              'msg': msg,
+              'id' : id
+            }
+            });
+            loadEnquiryList();
+           $('#sucess').html('Mail Sent').show().delay(2000).addClass('alert').addClass('alert-success').fadeOut();
+});
 
 $('#deleteFloorComponent').on('show.bs.modal', function (e) {
 

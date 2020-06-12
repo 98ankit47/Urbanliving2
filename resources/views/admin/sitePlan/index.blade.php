@@ -108,7 +108,7 @@
         <div class="modal-body">
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="inputEmail4">Select Home</label>
+              <label class="custom-required" for="inputEmail4">Select Home:</label>
               <select id="home_id" class="form-control">
               </select>
             </div>
@@ -116,7 +116,7 @@
         <div class="form-row">
           <div class="form-group col-md-12">
             <div class="image-upload">
-              <p><strong>Floor Image</strong></p>
+              <p class="custom-required"><strong>Floor Image:</strong></p>
               <p><input type="file"  name="image" id="image"  onchange="loadFile(event)" required></p>
               <p><img id="output" width="100%" height="240px" /></p>
             </div>
@@ -125,6 +125,9 @@
               
           </div>
         </div>
+        <div class="ml-2 mt-2 mb-1">
+            <span class="custom-required"></span><span>All are mandatory fields.</span>
+          </div>
         <div class="modal-footer">
           <button type="button" style="color:white;font-weight:bold" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
           <button type="submit" style="color:white;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>

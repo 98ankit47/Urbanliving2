@@ -31,36 +31,36 @@
           <form id="Communityform">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Title</label>
+                <label class="custom-required" for="inputEmail4">Title:</label>
                 <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="title" placeholder="title" required>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputAddress ">Address</label>
+                <label class="custom-required" for="inputAddress ">Address:</label>
                 <input type="text" pattern="^[a-zA-Z][\sa-zA-Z]*" class="form-control" id="address" placeholder="Address" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-4">
-                <label for="inputArea">Area</label>
+                <label class="custom-required" for="inputArea">Area:</label>
                 <input type="text" class="form-control" id="area" placeholder="Area" required>
                 <input type="hidden" class="form-control" id="editcomid" placeholder="Area" required>
               </div>
               <div class="form-group col-md-4">
-                <label for="inputDivision">Subdivision</label>
+                <label class="custom-required" for="inputDivision">Subdivision:</label>
                 <input type="text" class="form-control" id="subdivission" placeholder="Subdivision" required>
               </div>
               <div class="form-group col-md-4">
-                <label for="inputCity">City</label>
+                <label class="custom-required" for="inputCity">City:</label>
                 <input type="text" class="form-control" id="city" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-4">
-                <label for="inputCity">state</label>
+                <label class="custom-required" for="inputCity">state:</label>
                 <input type="text" class="form-control" id="state" required>
               </div>
               <div class="form-group col-md-4">
-                <label for="inputState">Country</label>
+                <label class="custom-required" for="inputState">Country:</label>
                 <select id="country" class="form-control">
                   <option selected>Choose...</option>
                   <option>India</option>
@@ -68,22 +68,25 @@
                 </select>
               </div>
               <div class="form-group col-md-4">
-                <label for="inputZip">Zip</label>
+                <label class="custom-required" for="inputZip">Zip:</label>
                 <input type="text" class="form-control" id="zipcode" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-12">
-                <label for="inputZip">Desciption</label>
+                <label class="custom-required" for="inputZip">Desciption:</label>
                 <textarea class="form-control" row="2" id="description" required></textarea>
               </div>
             </div>
             <div class="form-row">
               <div class="col-md-12">
-                <label for="inputLocation">Add Location</label><br>
+                <label class="custom-required" for="inputLocation">Add Location on google map.</label><br>
                 <a type="button" data-toggle="modal" data-target="#myMap" style="color: white;width:100%;font-family: Open Sans, sans-serif;" class="btn btn-dark"><i class='fas fa-map-marker-alt'></i>&nbsp;&nbsp;&nbsp;Add</a>
               </div>
             </div>
+            <div class="mt-2 mb-1">
+            <span class="custom-required"></span><span>All are mandatory fields.</span>
+          </div>
             <div class="modal-footer">
               <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>
               <button type="submit" style="color:white;width:120px;text-align:center;font-weight:bold;" class="btn w3-100 btn-primary"><i class="la la-check-square-o"></i> Save</button>
@@ -157,12 +160,12 @@
           </div>
           <div class="form-row">
             <div class="col-md-12">
-              <label class="custom-required" for="inputLocation">Add Location</label><br>
+              <label class="custom-required" for="inputLocation">Add Location on google map.</label><br>
               <a type="button" data-toggle="modal" data-target="#myMap" style="color: white;width:100%;font-family: Open Sans, sans-serif;" class="btn btn-dark"><i class='fas fa-map-marker-alt'></i>&nbsp;&nbsp;&nbsp;Add</a>
             </div>
           </div>
           <div class="mt-2 mb-1">
-            <span class="custom-required"></span><span>- All are mandatory fields.</span>
+            <span class="custom-required"></span><span>All are mandatory fields.</span>
           </div>
           <div class="modal-footer">
           <button type="button" style="color:white;width:100px;text-align:center;font-weight:bold;" class="btn w3-100 btn-warning mr-1" data-dismiss="modal"><i class="ft-x"></i> Close</button>

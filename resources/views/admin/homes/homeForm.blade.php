@@ -70,7 +70,7 @@
     <input type="number" min="1" max="20" class="form-control" id="bedroom"  onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   <div class="form-group col-md-4">
-    <label class="custcustom-requiredomRequired" for="inputBathroom">Bathroom:</label>
+    <label class="custom-required" for="inputBathroom">Bathroom:</label>
     <input type="number" min="1" max="20" class="form-control" id="bathroom" onkeydown="javascript: return event.keyCode == 69 ? false : true" required>
   </div>
   <div class="form-group col-md-4">
@@ -104,7 +104,7 @@
     </div>
      
     <div class="form-group col-md-4">
-      <label class="customRequired" for="inputState">Status:</label>
+      <label class="custom-required" for="inputState">Status:</label>
       <select id="status" class="form-control" >
        
       </select>
@@ -140,7 +140,7 @@
     <input type="hidden" class="form-control" id="lat" required>
     <input type="hidden" class="form-control" id="lng" required>
   </div>
-  <div class="mt-2"><span class="custom-required"></span><span>- All are mandatory fields.</span></div>
+  <div class="mt-2"><span class="custom-required"></span><span> All are mandatory fields.</span></div>
   </div>
   <br><br>
   <div class="row" style="font-family: Open Sans, sans-serif;">

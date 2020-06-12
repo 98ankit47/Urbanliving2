@@ -109,7 +109,8 @@ Route::get('homeAvailable/{id}','CommonController@AvailableShow');
 Route::get('Avail/{id}','CommonController@AvailableSingleHome');
 Route::delete('home-Avail/{id}','CommonController@DeleteAvail');
 Route::delete('userFavourite/{id}','CommonController@DeleteFav');
-
+Route::post('admin/email/reply','CommonController@replyToMail');
+Route::get('/boundary','admin\CommunityController@boundary');
 
 //angular user module
 Route::get('HomeHouseList','user\HomeController@HomeHouseList');
