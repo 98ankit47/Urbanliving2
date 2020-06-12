@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Communities extends Model
 {
+    protected $hidden = array('created_at', 'updated_at');
+    
     protected $fillable = ['title','address','description','area','subdivission','city','county','zipcode','state','boundry'];
 
     public function homes(){

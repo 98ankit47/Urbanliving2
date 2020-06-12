@@ -114,7 +114,7 @@ Route::get('/boundary','admin\CommunityController@boundary');
 
 //angular user module
 Route::get('HomeHouseList','user\HomeController@HomeHouseList');
-Route::post('DevelopmentSearch','user\HomeController@search');
+Route::post('development-search','user\HomeController@search');
 Route::post('MlsSearch','user\HomeController@searchMls');
 Route::get('HomeNeighbour','user\HomeController@HomeNeighbour');
 Route::get('HomeMapHouseList','user\HomeController@HomeMapHouseList');
