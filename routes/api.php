@@ -112,7 +112,7 @@ Route::delete('userFavourite/{id}','CommonController@DeleteFav');
 Route::post('admin/email/reply','CommonController@replyToMail');
 Route::get('/boundary','admin\CommunityController@boundary');
 
-//angular user module
+//home page user module
 Route::get('home-house-list','user\HomeController@HomeHouseList');
 Route::post('development-search','user\HomeController@search');
 Route::post('mls-search','user\HomeController@searchMls');
@@ -123,7 +123,9 @@ Route::post('home-house-list-filter','user\HomeController@HomeHouseListFilter');
 Route::post('user','UserController@signup');
 Route::post('news-letter','user\HomeController@NewsLetter');
 Route::post('contact-us','user\HomeController@ContactUs');
-Route::get('add-fav/{userid}/{homeid}','User\HomeController@addfav');
+
+//home detail pages
+Route::get('add-fav/{userid}/{homeid}','User\HomeController@AddFavourite');
 
 
 

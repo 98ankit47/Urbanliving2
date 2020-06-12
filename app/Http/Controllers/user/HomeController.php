@@ -236,6 +236,38 @@ class HomeController extends Controller
         return "success";
     }
 
+    public function AddFavourite($userid,$homeid)
+    {
+        $count=Favourite::where('home_id',$userid)->where('user_id',$homeid)->get()->count();
+        $fav=Favourite::where('home_id',$userid)->where('user_id',$homeid)->get()->first();
+        if($count==0)
+        {
+            Favourite::create([
+        
+                'home_id'=>$userid,
+                'user_id'=>$homeid,
+                'favourite'=>1,
+    
+            ]);
+        }
+        else
+        {   
+            if($fav->favourite==0)
+            {
+                Favourite::where('id',$fav->id)->update([
+                    'favourite'=>1,
+                ]);
+            }
+            else if($fav->favourite==1)
+            {
+                Favourite::where('id',$fav->id)->update([
+                    'favourite'=>0,
+                ]);   
+            }
+           
+        }
+    }
+
     public function ContactUs(Request $request)
     {
         if(User::where('email',$request['email'])->get()->count()==0)
