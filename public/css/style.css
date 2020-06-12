@@ -2,3 +2,7 @@
 .note-editable{
     height:400px 
 }
+.custom-required::after{
+    content:' *';
+    color:red;
+  }
