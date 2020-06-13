@@ -103,46 +103,79 @@ class HomeController extends Controller
         }
         $home_id=[];
         $homes=[];
+        $gallery=[];
         if((Communities::with('homes')->where('state','LIKE','%'.$address.'%')->orWhere('area',$address)->orWhere('county','LIKE','%'.$address.'%')->count())==0)
         {    
             if($bedroom and $bathroom and $type)
             {
                 $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('bathroom',$bathroom)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                foreach($homes as $house)
+                {
+                    $home->gallery=explode(',',$home->gallery);
+                }
                 return $homes;
             }
             else if($bedroom and $bathroom and $type='')
             {
                 $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                foreach($homes as $house)
+                {
+                    $home->gallery=explode(',',$home->gallery);
+                }
                 return $homes;
             }
             else if($bedroom and $type and $bathroom='')
             {
                 $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                foreach($homes as $house)
+                {
+                    $home->gallery=explode(',',$home->gallery);
+                }
                 return $homes;
             }
             else if($type and $bathroom and $bedroom='')
             {
                 $homes=Homes::where('block',1)->where('type',$type)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                foreach($homes as $house)
+                {
+                    $home->gallery=explode(',',$home->gallery);
+                }
                 return $homes;
             }
             else if($type)
             {
                 $homes=Homes::where('block',1)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                foreach($homes as $house)
+                {
+                    $home->gallery=explode(',',$home->gallery);
+                }
                 return $homes;
             }
             else if($bedroom)
             {
                 $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                foreach($homes as $house)
+                {
+                    $home->gallery=explode(',',$home->gallery);
+                }
                 return $homes;
             } 
             else if($bathroom)
             {
                 $homes=Homes::where('block',1)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                foreach($homes as $house)
+                {
+                    $home->gallery=explode(',',$home->gallery);
+                }
                 return $homes;
             }
             else 
             {
                 $homes=Homes::where('block',1)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
+                foreach($homes as $house)
+                {
+                    $home->gallery=explode(',',$home->gallery);
+                }
                 return $homes;
             }
         }
@@ -205,10 +238,18 @@ class HomeController extends Controller
                     }
                 }
             }
-
+            foreach($homes as $house)
+            {
+                $home->gallery=explode(',',$home->gallery);
+            }
             return $homes;
         }
-        return Homes::all();
+        $homesall=Homes::get();
+        foreach($homesall as $house)
+        {
+            $home->gallery=explode(',',$home->gallery);
+        }
+        return $homesall;
     }
     
     public function HomeNeighbour()
