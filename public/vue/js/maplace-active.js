@@ -16,7 +16,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -30,7 +30,7 @@ $(function() {
                             '<p>450 E 1st Ave, New Jersey</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -44,7 +44,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -58,7 +58,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -72,7 +72,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -86,7 +86,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -100,7 +100,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -114,7 +114,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -128,7 +128,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -142,7 +142,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 },
                 {
@@ -156,7 +156,7 @@ $(function() {
                             '<p>568 E 1st Ave, Miami</p>',
                             '</div>'
                         ].join(''),
-                    icon: 'images/icons/map-marker-2.png',
+                    icon: 'vue/images/icons/map-marker-2.png',
                     animation: google.maps.Animation.BOUNCE
                 }
 
