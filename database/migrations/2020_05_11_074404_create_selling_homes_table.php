@@ -25,8 +25,11 @@ class CreateSellingHomesTable extends Migration
             $table->integer('bathroom');
             $table->integer('sqaureft');
             $table->integer('type');
+            $table->string('time');
+            $table->integer('price');
             $table->string('featured_image');
             $table->integer('gallery');
+            $table->integer('seen');
             $table->timestamps();
         });
     }

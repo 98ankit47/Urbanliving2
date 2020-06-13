@@ -19,6 +19,8 @@ class CreateFavouritesTable extends Migration
             $table->integer('Home_id');
             $table->integer('favourite');
             $table->timestamps();
+
+            $table->unique(array('User_id', 'Home_id'));
         });
     }
 

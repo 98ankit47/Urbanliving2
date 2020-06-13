@@ -15,13 +15,17 @@ class CreateEnquiriesTable extends Migration
     {
         Schema::create('enquiries', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('home_id');
             $table->date('date');
             $table->time('time');
             $table->string('name');
             $table->string('email');
             $table->string('phone');
             $table->string('message');
+            $table->integer('seen');
             $table->timestamps();
+
+            
         });
     }
 

@@ -111,7 +111,7 @@ class HomeController extends Controller
                 $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('bathroom',$bathroom)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
                 foreach($homes as $house)
                 {
-                    $home->gallery=explode(',',$home->gallery);
+                    $house->gallery=explode(',',$house->gallery);
                 }
                 return $homes;
             }
@@ -120,7 +120,7 @@ class HomeController extends Controller
                 $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
                 foreach($homes as $house)
                 {
-                    $home->gallery=explode(',',$home->gallery);
+                    $house->gallery=explode(',',$house->gallery);
                 }
                 return $homes;
             }
@@ -129,7 +129,7 @@ class HomeController extends Controller
                 $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
                 foreach($homes as $house)
                 {
-                    $home->gallery=explode(',',$home->gallery);
+                    $house->gallery=explode(',',$house->gallery);
                 }
                 return $homes;
             }
@@ -138,7 +138,7 @@ class HomeController extends Controller
                 $homes=Homes::where('block',1)->where('type',$type)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
                 foreach($homes as $house)
                 {
-                    $home->gallery=explode(',',$home->gallery);
+                    $house->gallery=explode(',',$house->gallery);
                 }
                 return $homes;
             }
@@ -147,7 +147,7 @@ class HomeController extends Controller
                 $homes=Homes::where('block',1)->where('type',$type)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
                 foreach($homes as $house)
                 {
-                    $home->gallery=explode(',',$home->gallery);
+                    $house->gallery=explode(',',$house->gallery);
                 }
                 return $homes;
             }
@@ -156,7 +156,7 @@ class HomeController extends Controller
                 $homes=Homes::where('block',1)->where('bedroom',$bedroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
                 foreach($homes as $house)
                 {
-                    $home->gallery=explode(',',$home->gallery);
+                    $house->gallery=explode(',',$house->gallery);
                 }
                 return $homes;
             } 
@@ -165,7 +165,7 @@ class HomeController extends Controller
                 $homes=Homes::where('block',1)->where('bathroom',$bathroom)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
                 foreach($homes as $house)
                 {
-                    $home->gallery=explode(',',$home->gallery);
+                    $house->gallery=explode(',',$house->gallery);
                 }
                 return $homes;
             }
@@ -174,7 +174,7 @@ class HomeController extends Controller
                 $homes=Homes::where('block',1)->where('price','>=',$minprice)->where('price','<=',$maxprice)->where('area','>=',$minarea)->where('area','<=',$maxarea)->get();
                 foreach($homes as $house)
                 {
-                    $home->gallery=explode(',',$home->gallery);
+                    $house->gallery=explode(',',$house->gallery);
                 }
                 return $homes;
             }
@@ -240,14 +240,14 @@ class HomeController extends Controller
             }
             foreach($homes as $house)
             {
-                $home->gallery=explode(',',$home->gallery);
+                $house->gallery=explode(',',$house->gallery);
             }
             return $homes;
         }
         $homesall=Homes::get();
         foreach($homesall as $house)
         {
-            $home->gallery=explode(',',$home->gallery);
+            $house->gallery=explode(',',$house->gallery);
         }
         return $homesall;
     }
@@ -395,9 +395,9 @@ class HomeController extends Controller
                 if(HomeCommunity::where('community_id',$community->id)->get()->count()!=0)
                 {
                      $home = Homes::where('block','1')->with('communities')->where('id',$rel->home_id)->get();
-                     foreach($home as $home)
+                     foreach($home as $house)
                      {
-                         $home->gallery=explode(',',$home->gallery);
+                         $house->gallery=explode(',',$house->gallery);
                      }
                      return $home;
                 }
@@ -407,9 +407,9 @@ class HomeController extends Controller
          else
          {
             $homes=Homes::where('block','1')->with('communities')->orwhere('title','LIKE','%'.$data.'%')->orWhere('builder','LIKE','%'.$data.'%')->get();
-            foreach($homes as $home)
+            foreach($homes as $house)
             {
-                $home->gallery=explode(',',$home->gallery);
+                $house->gallery=explode(',',$house->gallery);
             }
             return $homes;
          }

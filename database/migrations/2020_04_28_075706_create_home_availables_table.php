@@ -19,6 +19,9 @@ class CreateHomeAvailablesTable extends Migration
             $table->string('lat');
             $table->string('lng');
             $table->timestamps();
+
+            $table->unique(array('lat', 'lng'));
+
         });
     }
 

@@ -16,10 +16,12 @@ class CreateFloorComponentsTable extends Migration
         Schema::create('floor_components', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('floor_id');
+            $table->integer('component_no');
             $table->integer('name');
             $table->integer('type');
             $table->integer('image');
             $table->timestamps();
+            
         });
     }
 

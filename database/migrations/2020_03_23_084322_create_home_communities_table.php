@@ -18,6 +18,8 @@ class CreateHomeCommunitiesTable extends Migration
             $table->integer('home_id');
             $table->integer('community_id');
             $table->timestamps();
+
+            $table->unique(array('home_id', 'community_id'));
         });
     }
 

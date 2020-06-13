@@ -23,8 +23,8 @@ class CreateCommunitiesTable extends Migration
             $table->string('county');
             $table->string('state');
             $table->string('zipcode');
-            $table->string('slug');
-            $table->integer('status');
+            $table->longText('description');
+            $table->longText('boundry');
             $table->timestamps();
         });
     }

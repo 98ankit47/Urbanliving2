@@ -15,8 +15,11 @@ class CreateFeaturesTable extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('home_id');
             $table->string('title');
+            $table->string('image');
             $table->timestamps();
+
         });
     }
 

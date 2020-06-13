@@ -15,16 +15,17 @@ class CreateFloorsTable extends Migration
     {
         Schema::create('floors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('community_id');
             $table->integer('home_id');
-            $table->integer('plot_no');
             $table->integer('floor_no');
             $table->integer('bedroom');
             $table->integer('bathroom');
             $table->integer('dining');
             $table->integer('kitchen');
             $table->integer('garage');
+            $table->string('image');
             $table->timestamps();
+
+            $table->unique(array('home_id', 'floor_no'));
         });
     }
 

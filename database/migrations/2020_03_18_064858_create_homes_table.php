@@ -21,14 +21,19 @@ class CreateHomesTable extends Migration
             $table->string('bathroom');
             $table->string('garage');
             $table->string('stories');
-            $table->string('mls');
             $table->integer('area');
             $table->string('builder');
             $table->string('featured_image');
-            $table->string('slug');
-            $table->string('meta_description');
-            $table->string('meta_title');
+            $table->string('gallery');
+            $table->string('lat');
+            $table->string('lng');
+            $table->integer('price');
+            $table->string('slug')->unique();
+            $table->integer('block');
+            $table->integer('status_id');
             $table->timestamps();
+
+            $table->unique(array('lat', 'lng'));
         });
     }
 

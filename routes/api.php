@@ -114,7 +114,7 @@ Route::get('/boundary','admin\CommunityController@boundary');
 
 //home page user module
 Route::get('home-house-list','user\HomeController@HomeHouseList');
-Route::post('development-search','user\HomeController@search');
+Route::post('development-search','user\HomeController@search'); 
 Route::post('mls-search','user\HomeController@searchMls');
 Route::get('home-neighbour','user\HomeController@HomeNeighbour');
 Route::get('home-map-houseList','user\HomeController@HomeMapHouseList');
