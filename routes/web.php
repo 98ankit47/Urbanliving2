@@ -104,7 +104,7 @@ Route::get('/admin/site',function(){
 // USER FRONT-END
 
 Route::get('/',function(){
-    return view('user.index');
+    return view('vueFront.index');
 }); 
 Route::get('/home-map',function(){
     return view('user.MapHome.index');

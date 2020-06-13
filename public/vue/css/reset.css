@@ -1,0 +1,32 @@
+.light-border{border:1px solid #706e6d !important;}
+::-webkit-input-placeholder { /* Edge */
+  opacity: 0.5;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  opacity: 0.5;
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+.text-theme-primary{color: #ff7f00 !important;}
+.text-theme-secondary{color: #1e225e !important;}
+.bg-theme-primary{background: #ff7f00 !important;}
+.bg-thene-secondary{background: #1e225e !important;}
+.contact-title-gap{padding: 45px 22px !important;}
+.iframe-box{min-height: 380px !important; height: 380px !important;}
+.outline-light-btn-sm{border: 1px solid #eee; background: transparent; font-weight: 300; font-size: 10px; padding: 5px 2px;    width: 100%;    display: block;}
+.outline-dark-btn-sm{}
+.input-btn{margin: 3px;
+    padding: 6px 12px;
+    border-radius: 4px;}
+.input-btn:hover{background: #fff; color: #FF7F00; border-color: #fff;}
+.breadcrumb-search form .input-group-btn{position: absolute;
+    right: 0;}
+   .fs-20{font-style: 20px;}
+   .box-title{text-transform: uppercase;
+    background: #FF7F00;
+    color: #fff;
+    padding: 0px 10px;}
+  .btn-half-design{text-transform: uppercase; padding: 5px 10px !important; background: #1e225f !important; cursor: pointer; border: none !important;}
