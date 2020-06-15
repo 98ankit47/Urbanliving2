@@ -722,6 +722,7 @@
               <h2>VIEW ALL NEIGHBORHOODS</h2>
             </div>
           </div>
+<<<<<<< Updated upstream
         </div>
         <div class="row">
           <div class="col-12">
@@ -797,35 +798,39 @@
               </div>
               <!-- blog-item -->
               <div class="col">
+=======
+        </div> 
+          <div class="blog-carousel row">
+              <!-- blog-item -->
+              <div class="col-md-4" v-for="neighbours in neighbour" :key="neighbours.id">
+>>>>>>> Stashed changes
                 <article class="blog-item bg-gray">
                   <div class="blog-image">
                     <a href="#">
-                      <img src="vue/images/nbrhoods/2.jpg" alt />
+                      <img src="vue/images/nbrhoods/1.jpg" alt />
                     </a>
                   </div>
                   <div class="blog-info">
                     <div class="post-title-time">
                       <h5>
-                        <a href="#">Latest Design House</a>
+                        <a href="#"><b>{{neighbours.title}}</b></a>
+                        <a>{{key}}</a>
                       </h5>
-                      <p>July 30, 2017 / 10 am</p>
+                      <p>{{neighbours.subdivission}}, {{neighbours.state}}, {{neighbours.county}}</p>
                     </div>
                     <p>
-                      Lorem must explain to you how all this mistaolt denouncing pleasure and
-                      praising pain wasnad I will give you a complete pain was praising
+                       {{neighbours.description}}
                     </p>
                     <a class="read-more" href="#">Read more</a>
                   </div>
                 </article>
-              </div>
-            </div>
+              </div>   
           </div>
-        </div>
-      </div>
+          </div>
     </div>
     <!-- NEIGHBORHOOD AREA END -->
     <!-- BRAND AREA START -->
-    <div class="brand-area pb-115">
+     <div class="brand-area pb-115">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -833,52 +838,47 @@
               <h2>AUSTIN'S DEVELOPERS</h2>
             </div>
           </div>
-          <div class="col-12">
-            <div class="brand-carousel">
+            <div class="brand-carousel row">
               <!-- brand-item -->
-              <div class="col">
+              <div class="col-2">
                 <div class="brand-item">
                   <img src="vue/images/1.png" alt />
                 </div>
               </div>
               <!-- brand-item -->
-              <div class="col">
+              <div class="col-2">
                 <div class="brand-item">
                   <img src="vue/images/2.png" alt />
                 </div>
               </div>
               <!-- brand-item -->
-              <div class="col">
+              <div class="col-2">
                 <div class="brand-item">
                   <img src="vue/images/3.png" alt />
                 </div>
               </div>
               <!-- brand-item -->
-              <div class="col">
+              <div class="col-2">
                 <div class="brand-item">
                   <img src="vue/images/4.png" alt />
                 </div>
               </div>
               <!-- brand-item -->
-              <div class="col">
+              <div class="col-2">
                 <div class="brand-item">
                   <img src="vue/images/5.png" alt />
                 </div>
               </div>
               <!-- brand-item -->
-              <div class="col">
+              <div class="col-2">
                 <div class="brand-item">
                   <img src="vue/images/1.png" alt />
                 </div>
               </div>
               <!-- brand-item -->
-              <div class="col">
-                <div class="brand-item">
-                  <img src="vue/images/4.png" alt />
-                </div>
-              </div>
+              
             </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -910,8 +910,24 @@
 
 <script>
 export default {
+  data(){
+    return{
+      neighbour:{},
+      form: new Form({
+        email:''
+      })
+    }
+  },
+  methods:  {
+   loadHomeNeighbour()
+    {
+      console.log('Test');
+      axios.get("api/home-neighbour").then(({data})=>(this.neighbour = data)); 
+    }
+  },
   mounted() {
     console.log("Component mounted.");
+    this.loadHomeNeighbour();
   }
 };
 </script>
