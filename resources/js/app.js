@@ -9,11 +9,16 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import { Form, HasError, AlertError } from 'vform'
+
+window.form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)    
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
- *
+ * 
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 

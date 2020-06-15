@@ -2562,87 +2562,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      neighbour: {},
+      form: new Form({
+        email: ''
+      })
+    };
+  },
+  methods: {
+    loadHomeNeighbour: function loadHomeNeighbour() {
+      var _this = this;
+
+      console.log('Test');
+      axios.get("api/home-neighbour").then(function (_ref) {
+        var data = _ref.data;
+        return _this.neighbour = data;
+      });
+    }
+  },
   mounted: function mounted() {
     console.log("Component mounted.");
+    this.loadHomeNeighbour();
   }
 });
 
@@ -38299,6 +38241,1028 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vform/dist/vform.common.js":
+/*!*************************************************!*\
+  !*** ./node_modules/vform/dist/vform.common.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "1eb2":
+/***/ (function(module, exports, __webpack_require__) {
+
+// This file is imported into lib/wc client bundles.
+
+if (typeof window !== 'undefined') {
+  var i
+  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js$/))) {
+    __webpack_require__.p = i[1] // eslint-disable-line
+  }
+}
+
+
+/***/ }),
+
+/***/ "cebe":
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+/***/ }),
+
+/***/ "fb15":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
+var setPublicPath = __webpack_require__("1eb2");
+
+// EXTERNAL MODULE: external "axios"
+var external_axios_ = __webpack_require__("cebe");
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
+
+// CONCATENATED MODULE: ./src/util.js
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/**
+ * Deep copy the given object.
+ *
+ * @param  {Object} obj
+ * @return {Object}
+ */
+function deepCopy(obj) {
+  if (obj === null || _typeof(obj) !== 'object') {
+    return obj;
+  }
+
+  var copy = Array.isArray(obj) ? [] : {};
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = deepCopy(obj[key]);
+  });
+  return copy;
+}
+/**
+ * If the given value is not an array, wrap it in one.
+ *
+ * @param  {Any} value
+ * @return {Array}
+ */
+
+function arrayWrap(value) {
+  return Array.isArray(value) ? value : [value];
+}
+// CONCATENATED MODULE: ./src/Errors.js
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function Errors_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Errors_typeof = function _typeof(obj) { return typeof obj; }; } else { Errors_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Errors_typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Errors_Errors =
+/*#__PURE__*/
+function () {
+  /**
+   * Create a new error bag instance.
+   */
+  function Errors() {
+    _classCallCheck(this, Errors);
+
+    this.errors = {};
+  }
+  /**
+   * Set the errors object or field error messages.
+   *
+   * @param {Object|String} field
+   * @param {Array|String|undefined} messages
+   */
+
+
+  _createClass(Errors, [{
+    key: "set",
+    value: function set(field, messages) {
+      if (Errors_typeof(field) === 'object') {
+        this.errors = field;
+      } else {
+        this.set(_objectSpread({}, this.errors, _defineProperty({}, field, arrayWrap(messages))));
+      }
+    }
+    /**
+     * Get all the errors.
+     *
+     * @return {Object}
+     */
+
+  }, {
+    key: "all",
+    value: function all() {
+      return this.errors;
+    }
+    /**
+     * Determine if there is an error for the given field.
+     *
+     * @param  {String} field
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "has",
+    value: function has(field) {
+      return this.errors.hasOwnProperty(field);
+    }
+    /**
+     * Determine if there are any errors for the given fields.
+     *
+     * @param  {...String} fields
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "hasAny",
+    value: function hasAny() {
+      var _this = this;
+
+      for (var _len = arguments.length, fields = new Array(_len), _key = 0; _key < _len; _key++) {
+        fields[_key] = arguments[_key];
+      }
+
+      return fields.some(function (field) {
+        return _this.has(field);
+      });
+    }
+    /**
+     * Determine if there are any errors.
+     *
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "any",
+    value: function any() {
+      return Object.keys(this.errors).length > 0;
+    }
+    /**
+     * Get the first error message for the given field.
+     *
+     * @param  String} field
+     * @return {String|undefined}
+     */
+
+  }, {
+    key: "get",
+    value: function get(field) {
+      if (this.has(field)) {
+        return this.getAll(field)[0];
+      }
+    }
+    /**
+     * Get all the error messages for the given field.
+     *
+     * @param  {String} field
+     * @return {Array}
+     */
+
+  }, {
+    key: "getAll",
+    value: function getAll(field) {
+      return arrayWrap(this.errors[field] || []);
+    }
+    /**
+     * Get the error message for the given fields.
+     *
+     * @param  {...String} fields
+     * @return {Array}
+     */
+
+  }, {
+    key: "only",
+    value: function only() {
+      var _this2 = this;
+
+      var messages = [];
+
+      for (var _len2 = arguments.length, fields = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        fields[_key2] = arguments[_key2];
+      }
+
+      fields.forEach(function (field) {
+        var message = _this2.get(field);
+
+        if (message) {
+          messages.push(message);
+        }
+      });
+      return messages;
+    }
+    /**
+     * Get all the errors in a flat array.
+     *
+     * @return {Array}
+     */
+
+  }, {
+    key: "flatten",
+    value: function flatten() {
+      return Object.values(this.errors).reduce(function (a, b) {
+        return a.concat(b);
+      }, []);
+    }
+    /**
+     * Clear one or all error fields.
+     *
+     * @param {String|undefined} field
+     */
+
+  }, {
+    key: "clear",
+    value: function clear(field) {
+      var _this3 = this;
+
+      var errors = {};
+
+      if (field) {
+        Object.keys(this.errors).forEach(function (key) {
+          if (key !== field) {
+            errors[key] = _this3.errors[key];
+          }
+        });
+      }
+
+      this.set(errors);
+    }
+  }]);
+
+  return Errors;
+}();
+
+
+// CONCATENATED MODULE: ./src/Form.js
+function Form_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Form_typeof = function _typeof(obj) { return typeof obj; }; } else { Form_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Form_typeof(obj); }
+
+function Form_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { Form_defineProperty(target, key, source[key]); }); } return target; }
+
+function Form_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function Form_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Form_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Form_createClass(Constructor, protoProps, staticProps) { if (protoProps) Form_defineProperties(Constructor.prototype, protoProps); if (staticProps) Form_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+var Form_Form =
+/*#__PURE__*/
+function () {
+  /**
+   * Create a new form instance.
+   *
+   * @param {Object} data
+   */
+  function Form() {
+    var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    Form_classCallCheck(this, Form);
+
+    this.busy = false;
+    this.successful = false;
+    this.errors = new Errors_Errors();
+    this.originalData = deepCopy(data);
+    Object.assign(this, data);
+  }
+  /**
+   * Fill form data.
+   *
+   * @param {Object} data
+   */
+
+
+  Form_createClass(Form, [{
+    key: "fill",
+    value: function fill(data) {
+      var _this = this;
+
+      this.keys().forEach(function (key) {
+        _this[key] = data[key];
+      });
+    }
+    /**
+     * Get the form data.
+     *
+     * @return {Object}
+     */
+
+  }, {
+    key: "data",
+    value: function data() {
+      var _this2 = this;
+
+      return this.keys().reduce(function (data, key) {
+        return Form_objectSpread({}, data, Form_defineProperty({}, key, _this2[key]));
+      }, {});
+    }
+    /**
+     * Get the form data keys.
+     *
+     * @return {Array}
+     */
+
+  }, {
+    key: "keys",
+    value: function keys() {
+      return Object.keys(this).filter(function (key) {
+        return !Form.ignore.includes(key);
+      });
+    }
+    /**
+     * Start processing the form.
+     */
+
+  }, {
+    key: "startProcessing",
+    value: function startProcessing() {
+      this.errors.clear();
+      this.busy = true;
+      this.successful = false;
+    }
+    /**
+     * Finish processing the form.
+     */
+
+  }, {
+    key: "finishProcessing",
+    value: function finishProcessing() {
+      this.busy = false;
+      this.successful = true;
+    }
+    /**
+     * Clear the form errors.
+     */
+
+  }, {
+    key: "clear",
+    value: function clear() {
+      this.errors.clear();
+      this.successful = false;
+    }
+    /**
+     * Reset the form fields.
+     */
+
+  }, {
+    key: "reset",
+    value: function reset() {
+      var _this3 = this;
+
+      Object.keys(this).filter(function (key) {
+        return !Form.ignore.includes(key);
+      }).forEach(function (key) {
+        _this3[key] = deepCopy(_this3.originalData[key]);
+      });
+    }
+    /**
+     * Submit the form via a GET request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "get",
+    value: function get(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('get', url, config);
+    }
+    /**
+     * Submit the form via a POST request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "post",
+    value: function post(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('post', url, config);
+    }
+    /**
+     * Submit the form via a PATCH request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "patch",
+    value: function patch(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('patch', url, config);
+    }
+    /**
+     * Submit the form via a PUT request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "put",
+    value: function put(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('put', url, config);
+    }
+    /**
+     * Submit the form via a DELETE request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "delete",
+    value: function _delete(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('delete', url, config);
+    }
+    /**
+     * Submit the form data via an HTTP request.
+     *
+     * @param  {String} method (get, post, patch, put)
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "submit",
+    value: function submit(method, url) {
+      var _this4 = this;
+
+      var config = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      this.startProcessing();
+      var data = method === 'get' ? {
+        params: this.data()
+      } : this.data();
+      return new Promise(function (resolve, reject) {
+        (Form.axios || external_axios_default.a).request(Form_objectSpread({
+          url: _this4.route(url),
+          method: method,
+          data: data
+        }, config)).then(function (response) {
+          _this4.finishProcessing();
+
+          resolve(response);
+        }).catch(function (error) {
+          _this4.busy = false;
+
+          if (error.response) {
+            _this4.errors.set(_this4.extractErrors(error.response));
+          }
+
+          reject(error);
+        });
+      });
+    }
+    /**
+     * Extract the errors from the response object.
+     *
+     * @param  {Object} response
+     * @return {Object}
+     */
+
+  }, {
+    key: "extractErrors",
+    value: function extractErrors(response) {
+      if (!response.data || Form_typeof(response.data) !== 'object') {
+        return {
+          error: Form.errorMessage
+        };
+      }
+
+      if (response.data.errors) {
+        return Form_objectSpread({}, response.data.errors);
+      }
+
+      if (response.data.message) {
+        return {
+          error: response.data.message
+        };
+      }
+
+      return Form_objectSpread({}, response.data);
+    }
+    /**
+     * Get a named route.
+     *
+     * @param  {String} name
+     * @return {Object} parameters
+     * @return {String}
+     */
+
+  }, {
+    key: "route",
+    value: function route(name) {
+      var parameters = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var url = name;
+
+      if (Form.routes.hasOwnProperty(name)) {
+        url = decodeURI(Form.routes[name]);
+      }
+
+      if (Form_typeof(parameters) !== 'object') {
+        parameters = {
+          id: parameters
+        };
+      }
+
+      Object.keys(parameters).forEach(function (key) {
+        url = url.replace("{".concat(key, "}"), parameters[key]);
+      });
+      return url;
+    }
+    /**
+     * Clear errors on keydown.
+     *
+     * @param {KeyboardEvent} event
+     */
+
+  }, {
+    key: "onKeydown",
+    value: function onKeydown(event) {
+      if (event.target.name) {
+        this.errors.clear(event.target.name);
+      }
+    }
+  }]);
+
+  return Form;
+}();
+
+Form_Form.routes = {};
+Form_Form.errorMessage = 'Something went wrong. Please try again.';
+Form_Form.ignore = ['busy', 'successful', 'errors', 'originalData'];
+/* harmony default export */ var src_Form = (Form_Form);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HasError.vue?vue&type=template&id=fcc9e406&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.has(_vm.field))?_c('div',{staticClass:"help-block invalid-feedback",domProps:{"innerHTML":_vm._s(_vm.form.errors.get(_vm.field))}}):_vm._e()}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/HasError.vue?vue&type=template&id=fcc9e406&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HasError.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+/* harmony default export */ var HasErrorvue_type_script_lang_js_ = ({
+  name: 'has-error',
+  props: {
+    form: {
+      type: Object,
+      required: true
+    },
+    field: {
+      type: String,
+      required: true
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/HasError.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_HasErrorvue_type_script_lang_js_ = (HasErrorvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+// CONCATENATED MODULE: ./src/components/HasError.vue
+
+
+
+
+
+/* normalize component */
+
+var component = normalizeComponent(
+  components_HasErrorvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "HasError.vue"
+/* harmony default export */ var HasError = (component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertError.vue?vue&type=template&id=5610eddd&
+var AlertErrorvue_type_template_id_5610eddd_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.any())?_c('div',{staticClass:"alert alert-danger alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),_vm._t("default",[(_vm.form.errors.has('error'))?_c('div',{domProps:{"innerHTML":_vm._s(_vm.form.errors.get('error'))}}):_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}})])],2):_vm._e()}
+var AlertErrorvue_type_template_id_5610eddd_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertError.vue?vue&type=template&id=5610eddd&
+
+// CONCATENATED MODULE: ./src/components/Alert.js
+/* harmony default export */ var Alert = ({
+  props: {
+    form: {
+      type: Object,
+      required: true
+    },
+    dismissible: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    dismiss: function dismiss() {
+      if (this.dismissible) {
+        this.form.clear();
+      }
+    }
+  }
+});
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertError.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertErrorvue_type_script_lang_js_ = ({
+  name: 'alert-error',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: 'There were some problems with your input.'
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertError.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertErrorvue_type_script_lang_js_ = (AlertErrorvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertError.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertError_component = normalizeComponent(
+  components_AlertErrorvue_type_script_lang_js_,
+  AlertErrorvue_type_template_id_5610eddd_render,
+  AlertErrorvue_type_template_id_5610eddd_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertError_component.options.__file = "AlertError.vue"
+/* harmony default export */ var AlertError = (AlertError_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertErrors.vue?vue&type=template&id=40d77fd7&
+var AlertErrorsvue_type_template_id_40d77fd7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.any())?_c('div',{staticClass:"alert alert-danger alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),(_vm.message)?_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}}):_vm._e(),_c('ul',_vm._l((_vm.form.errors.flatten()),function(error){return _c('li',{domProps:{"innerHTML":_vm._s(error)}})}))]):_vm._e()}
+var AlertErrorsvue_type_template_id_40d77fd7_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue?vue&type=template&id=40d77fd7&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertErrors.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertErrorsvue_type_script_lang_js_ = ({
+  name: 'alert-errors',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: 'There were some problems with your input.'
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertErrorsvue_type_script_lang_js_ = (AlertErrorsvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertErrors_component = normalizeComponent(
+  components_AlertErrorsvue_type_script_lang_js_,
+  AlertErrorsvue_type_template_id_40d77fd7_render,
+  AlertErrorsvue_type_template_id_40d77fd7_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertErrors_component.options.__file = "AlertErrors.vue"
+/* harmony default export */ var AlertErrors = (AlertErrors_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertSuccess.vue?vue&type=template&id=fd18e236&
+var AlertSuccessvue_type_template_id_fd18e236_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.successful)?_c('div',{staticClass:"alert alert-success alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),_vm._t("default",[_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}})])],2):_vm._e()}
+var AlertSuccessvue_type_template_id_fd18e236_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue?vue&type=template&id=fd18e236&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertSuccess.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertSuccessvue_type_script_lang_js_ = ({
+  name: 'alert-success',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: ''
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertSuccessvue_type_script_lang_js_ = (AlertSuccessvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertSuccess_component = normalizeComponent(
+  components_AlertSuccessvue_type_script_lang_js_,
+  AlertSuccessvue_type_template_id_fd18e236_render,
+  AlertSuccessvue_type_template_id_fd18e236_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertSuccess_component.options.__file = "AlertSuccess.vue"
+/* harmony default export */ var AlertSuccess = (AlertSuccess_component.exports);
+// CONCATENATED MODULE: ./src/index.js
+
+
+
+
+
+
+
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport Form */__webpack_require__.d(__webpack_exports__, "Form", function() { return src_Form; });
+/* concated harmony reexport Errors */__webpack_require__.d(__webpack_exports__, "Errors", function() { return Errors_Errors; });
+/* concated harmony reexport HasError */__webpack_require__.d(__webpack_exports__, "HasError", function() { return HasError; });
+/* concated harmony reexport AlertError */__webpack_require__.d(__webpack_exports__, "AlertError", function() { return AlertError; });
+/* concated harmony reexport AlertErrors */__webpack_require__.d(__webpack_exports__, "AlertErrors", function() { return AlertErrors; });
+/* concated harmony reexport AlertSuccess */__webpack_require__.d(__webpack_exports__, "AlertSuccess", function() { return AlertSuccess; });
+
+
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src_Form);
+
+
+
+/***/ })
+
+/******/ });
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
@@ -38361,2086 +39325,237 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "vc_row-full-width vc_clearfix" }),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("div", { staticClass: "vc_row-full-width vc_clearfix" }),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3),
+    _vm._v(" "),
+    _vm._m(4),
+    _vm._v(" "),
+    _c("div", { staticClass: "blog-area pb-60 pt-115" }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(5),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "blog-carousel row" },
+          _vm._l(_vm.neighbour, function(neighbours) {
+            return _c("div", { key: neighbours.id, staticClass: "col-md-4" }, [
+              _c("article", { staticClass: "blog-item bg-gray" }, [
+                _vm._m(6, true),
+                _vm._v(" "),
+                _c("div", { staticClass: "blog-info" }, [
+                  _c("div", { staticClass: "post-title-time" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("b", [_vm._v(_vm._s(neighbours.title))])
+                      ]),
+                      _vm._v(" "),
+                      _c("a", [_vm._v(_vm._s(_vm.key))])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        _vm._s(neighbours.subdivission) +
+                          ", " +
+                          _vm._s(neighbours.state) +
+                          ", " +
+                          _vm._s(neighbours.county)
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n                     " +
+                        _vm._s(neighbours.description) +
+                        "\n                  "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { staticClass: "read-more", attrs: { href: "#" } }, [
+                    _vm._v("Read more")
+                  ])
+                ])
+              ])
+            ])
+          }),
+          0
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(7),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "subscribe-area bg-blue call-to-bg plr-140 ptb-50" },
+      [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c("div", { staticClass: "row" }, [
+            _vm._m(8),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-9 col-md-8 col-12" }, [
+              _c("div", { staticClass: "subscribe" }, [
+                _c("form", { attrs: { action: "#" } }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.email,
+                        expression: "form.email"
+                      }
+                    ],
+                    class: { "is-invalid": _vm.form.errors.has("email") },
+                    attrs: {
+                      type: "text",
+                      name: "email",
+                      placeholder: "Enter your email here..."
+                    },
+                    domProps: { value: _vm.form.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "email", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { attrs: { type: "submit", value: "send" } }, [
+                    _vm._v("Send")
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "slider-2 bg-3" }, [
-        _c(
-          "div",
-          {
-            staticClass: "wow fadeInUp",
-            attrs: { "data-wow-duration": "1s", "data-wow-delay": "0.5s" }
-          },
-          [
-            _c("div", { staticClass: "row search-boxes" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "find-home-box box-left1" }, [
-                  _c("div", { staticClass: "section-title text-white" }, [
-                    _c("h2", { staticClass: "h1" }, [_vm._v("SEARCH MLS")])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "find-homes" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c(
-                        "div",
-                        { staticClass: "col-md-12 col-sm-12 col-xs-12" },
-                        [
-                          _c("div", { staticClass: "find-home-item" }, [
-                            _c("input", {
-                              attrs: {
-                                type: "text",
-                                name: "mls",
-                                placeholder:
-                                  "ADDRESS, ZIP, NEIGHBORHOOD, PROPERTY TYPE"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "prevent-default search-standard",
-                                attrs: { href: "#" }
-                              },
-                              [_c("i", { staticClass: "icon-search2" })]
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-12 col-xs-12" }, [
-                        _c("div", { staticClass: "find-home-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "button-1 btn-block btn-hover-1",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("VIEW ALL MLS")]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "find-home-box box-right1" }, [
-                  _c("div", { staticClass: "section-title text-white" }, [
-                    _c("h2", { staticClass: "h1" }, [
-                      _vm._v("SEARCH DEVELOPMENTS")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "find-homes" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _c(
-                        "div",
-                        { staticClass: "col-md-12 col-sm-12 col-xs-12" },
-                        [
-                          _c("div", { staticClass: "find-home-item" }, [
-                            _c("input", {
-                              attrs: {
-                                type: "text",
-                                name: "developments",
-                                placeholder:
-                                  "DEVELOPMENT, BUILDER, ADDRESS, ZIP, NEIGHBORHOOD, STYLE"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "prevent-default search-standard",
-                                attrs: { href: "#" }
-                              },
-                              [_c("i", { staticClass: "icon-search2" })]
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm-12 col-xs-12" }, [
-                        _c("div", { staticClass: "find-home-item" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "button-1 btn-block btn-hover-1",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("VIEW ALL DEVELOPMENTS")]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vc_row-full-width vc_clearfix" }),
-      _vm._v(" "),
+    return _c("div", { staticClass: "slider-2 bg-3" }, [
       _c(
         "div",
         {
-          staticClass:
-            "vc_row wpb_row vc_row-fluid vc_custom_1485139818778 vc_row-has-fill",
-          attrs: {
-            "data-vc-full-width": "true",
-            "data-vc-full-width-init": "false"
-          }
+          staticClass: "wow fadeInUp",
+          attrs: { "data-wow-duration": "1s", "data-wow-delay": "0.5s" }
         },
         [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              { staticClass: "wpb_column vc_column_container vc_col-sm-12" },
-              [
-                _c("div", { staticClass: "vc_column-inner" }, [
-                  _c("div", { staticClass: "wpb_wrapper" }, [
+          _c("div", { staticClass: "row search-boxes" }, [
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "find-home-box box-left1" }, [
+                _c("div", { staticClass: "section-title text-white" }, [
+                  _c("h2", { staticClass: "h1" }, [_vm._v("SEARCH MLS")])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "find-homes" }, [
+                  _c("div", { staticClass: "row" }, [
                     _c(
                       "div",
-                      {
-                        staticClass:
-                          "vc_row wpb_row vc_inner vc_row-fluid vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"
-                      },
+                      { staticClass: "col-md-12 col-sm-12 col-xs-12" },
                       [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "wpb_column vc_column_container vc_col-sm-3"
-                          },
-                          [
-                            _c("div", { staticClass: "vc_column-inner" }, [
-                              _c("div", { staticClass: "wpb_wrapper" }, [
-                                _c("div", {
-                                  staticClass: "g5plus-space space",
-                                  staticStyle: {
-                                    clear: "both",
-                                    display: "block",
-                                    height: "90px"
-                                  },
-                                  attrs: {
-                                    "data-id": "5ed1ab7fd11ff",
-                                    "data-tablet": "70",
-                                    "data-tablet-portrait": "60",
-                                    "data-mobile": "40",
-                                    "data-mobile-landscape": "50"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "wpb_text_column wpb_content_element"
-                                  },
-                                  [
-                                    _c("div", { staticClass: "wpb_wrapper" }, [
-                                      _c(
-                                        "p",
-                                        { staticClass: "hd-subtitle-spec" },
-                                        [_vm._v("DISCOVER YOUR")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "h2",
-                                        { staticClass: "hd-title-spec" },
-                                        [
-                                          _c(
-                                            "span",
-                                            { staticClass: "fl-accent" },
-                                            [_vm._v("DREAM")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            { staticClass: "fl-accent" },
-                                            [_vm._v("HOUSE")]
-                                          )
-                                        ]
-                                      )
-                                    ])
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("div", {
-                                  staticClass: "g5plus-space space",
-                                  staticStyle: {
-                                    clear: "both",
-                                    display: "block",
-                                    height: "90px"
-                                  },
-                                  attrs: {
-                                    "data-id": "5ed1ab7fd1652",
-                                    "data-tablet": "70",
-                                    "data-tablet-portrait": "60",
-                                    "data-mobile": "40",
-                                    "data-mobile-landscape": "50"
-                                  }
-                                })
-                              ])
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "bg-dark-left wpb_column vc_column_container vc_col-sm-9 vc_col-has-fill"
-                          },
-                          [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "column-inner vc_custom_1485091686429"
-                              },
-                              [
-                                _c("div", { staticClass: "wpb_wrapper" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "search-properties clearfix show-status-tab style-default-small color-light"
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "form-search-wrap" },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass: "form-search-inner"
-                                            },
-                                            [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass: "search-content"
-                                                },
-                                                [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "search-properties-form",
-                                                      attrs: {
-                                                        "data-href": "#"
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "search-status-tab"
-                                                        },
-                                                        [
-                                                          _c("input", {
-                                                            staticClass:
-                                                              "search-field",
-                                                            attrs: {
-                                                              type: "hidden",
-                                                              name: "status",
-                                                              value: "for-rent",
-                                                              "data-default-value":
-                                                                ""
-                                                            }
-                                                          }),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "button",
-                                                            {
-                                                              staticClass:
-                                                                "btn-status-filter active",
-                                                              attrs: {
-                                                                type: "button",
-                                                                "data-value":
-                                                                  "for-rent"
-                                                              }
-                                                            },
-                                                            [_vm._v("For Rent")]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "button",
-                                                            {
-                                                              staticClass:
-                                                                "btn-status-filter",
-                                                              attrs: {
-                                                                type: "button",
-                                                                "data-value":
-                                                                  "for-sale"
-                                                              }
-                                                            },
-                                                            [_vm._v("For Sale")]
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        { staticClass: "row" },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "select",
-                                                                {
-                                                                  staticClass:
-                                                                    "search-field form-control",
-                                                                  attrs: {
-                                                                    name:
-                                                                      "type",
-                                                                    title:
-                                                                      "Property Types",
-                                                                    "data-default-value":
-                                                                      ""
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "apartment"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Apartment"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "bar"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Bar"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "cafe"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Cafe"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "car-wash"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Car Wash"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "casino"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Casino"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "farm"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Farm"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "hotel"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Hotel"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "house"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "House"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "land"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Land"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "lodging"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Lodging"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "restaurant"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Restaurant"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "spa"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Spa"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "store"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Store"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "villa"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Villa"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "",
-                                                                        selected:
-                                                                          ""
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "All Types"
-                                                                      )
-                                                                    ]
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c("input", {
-                                                                staticClass:
-                                                                  "form-control search-field",
-                                                                attrs: {
-                                                                  type: "text",
-                                                                  "data-default-value":
-                                                                    "",
-                                                                  value: "",
-                                                                  name: "title",
-                                                                  placeholder:
-                                                                    "Title"
-                                                                }
-                                                              })
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c("input", {
-                                                                staticClass:
-                                                                  "ere-location form-control search-field",
-                                                                attrs: {
-                                                                  type: "text",
-                                                                  "data-default-value":
-                                                                    "",
-                                                                  value: "",
-                                                                  name:
-                                                                    "address",
-                                                                  placeholder:
-                                                                    "Address"
-                                                                }
-                                                              })
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "select",
-                                                                {
-                                                                  staticClass:
-                                                                    "search-field form-control",
-                                                                  attrs: {
-                                                                    name:
-                                                                      "bedrooms",
-                                                                    title:
-                                                                      "Property Bedrooms",
-                                                                    "data-default-value":
-                                                                      ""
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          ""
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Any Bedrooms"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "1"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "1"
-                                                                      )
-                                                                    ]
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "select",
-                                                                {
-                                                                  staticClass:
-                                                                    "search-field form-control",
-                                                                  attrs: {
-                                                                    name:
-                                                                      "bathrooms",
-                                                                    title:
-                                                                      "Property Bathrooms",
-                                                                    "data-default-value":
-                                                                      ""
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          ""
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Any Bathrooms"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "1"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "1"
-                                                                      )
-                                                                    ]
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-2 col-sm-3 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "select",
-                                                                {
-                                                                  staticClass:
-                                                                    "search-field form-control",
-                                                                  attrs: {
-                                                                    name:
-                                                                      "min-price",
-                                                                    title:
-                                                                      "Min Price",
-                                                                    "data-default-value":
-                                                                      ""
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          ""
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Min Price"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "0"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "$0"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "100"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "$100"
-                                                                      )
-                                                                    ]
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-2 col-sm-3 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "select",
-                                                                {
-                                                                  staticClass:
-                                                                    "search-field form-control",
-                                                                  attrs: {
-                                                                    name:
-                                                                      "max-price",
-                                                                    title:
-                                                                      "Max Price",
-                                                                    "data-default-value":
-                                                                      ""
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          ""
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Max Price"
-                                                                      )
-                                                                    ]
-                                                                  ),
-                                                                  _vm._v(" "),
-                                                                  _c(
-                                                                    "option",
-                                                                    {
-                                                                      attrs: {
-                                                                        value:
-                                                                          "200"
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "$200"
-                                                                      )
-                                                                    ]
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "find-home-item"
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "div",
-                                                                    {
-                                                                      staticClass:
-                                                                        "shop-filter"
-                                                                    },
-                                                                    [
-                                                                      _c(
-                                                                        "div",
-                                                                        {
-                                                                          staticClass:
-                                                                            "price_filter"
-                                                                        },
-                                                                        [
-                                                                          _c(
-                                                                            "div",
-                                                                            {
-                                                                              staticClass:
-                                                                                "price_slider_amount"
-                                                                            },
-                                                                            [
-                                                                              _c(
-                                                                                "input",
-                                                                                {
-                                                                                  attrs: {
-                                                                                    type:
-                                                                                      "submit",
-                                                                                    value:
-                                                                                      "Price range :"
-                                                                                  }
-                                                                                }
-                                                                              ),
-                                                                              _vm._v(
-                                                                                " "
-                                                                              ),
-                                                                              _c(
-                                                                                "input",
-                                                                                {
-                                                                                  attrs: {
-                                                                                    type:
-                                                                                      "text",
-                                                                                    id:
-                                                                                      "amount",
-                                                                                    name:
-                                                                                      "price",
-                                                                                    placeholder:
-                                                                                      "Add Your Price"
-                                                                                  }
-                                                                                }
-                                                                              )
-                                                                            ]
-                                                                          ),
-                                                                          _vm._v(
-                                                                            " "
-                                                                          ),
-                                                                          _c(
-                                                                            "div",
-                                                                            {
-                                                                              attrs: {
-                                                                                id:
-                                                                                  "slider-range1"
-                                                                              }
-                                                                            }
-                                                                          )
-                                                                        ]
-                                                                      )
-                                                                    ]
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "find-home-item"
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "div",
-                                                                    {
-                                                                      staticClass:
-                                                                        "shop-filter"
-                                                                    },
-                                                                    [
-                                                                      _c(
-                                                                        "div",
-                                                                        {
-                                                                          staticClass:
-                                                                            "price_filter"
-                                                                        },
-                                                                        [
-                                                                          _c(
-                                                                            "div",
-                                                                            {
-                                                                              staticClass:
-                                                                                "price_slider_amount"
-                                                                            },
-                                                                            [
-                                                                              _c(
-                                                                                "input",
-                                                                                {
-                                                                                  attrs: {
-                                                                                    type:
-                                                                                      "submit",
-                                                                                    value:
-                                                                                      "Land Area :"
-                                                                                  }
-                                                                                }
-                                                                              ),
-                                                                              _vm._v(
-                                                                                " "
-                                                                              ),
-                                                                              _c(
-                                                                                "input",
-                                                                                {
-                                                                                  attrs: {
-                                                                                    type:
-                                                                                      "text",
-                                                                                    id:
-                                                                                      "sqft",
-                                                                                    name:
-                                                                                      "area",
-                                                                                    placeholder:
-                                                                                      "Add Your Area"
-                                                                                  }
-                                                                                }
-                                                                              )
-                                                                            ]
-                                                                          ),
-                                                                          _vm._v(
-                                                                            " "
-                                                                          ),
-                                                                          _c(
-                                                                            "div",
-                                                                            {
-                                                                              attrs: {
-                                                                                id:
-                                                                                  "slider-range2"
-                                                                              }
-                                                                            }
-                                                                          )
-                                                                        ]
-                                                                      )
-                                                                    ]
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                            },
-                                                            [
-                                                              _c("input", {
-                                                                staticClass:
-                                                                  "ere-property-identity form-control search-field",
-                                                                attrs: {
-                                                                  type: "text",
-                                                                  "data-default-value":
-                                                                    "",
-                                                                  value: "",
-                                                                  name:
-                                                                    "property_identity",
-                                                                  placeholder:
-                                                                    "Property ID"
-                                                                }
-                                                              })
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "col-md-12 col-sm-6 col-xs-12 form-group submit-search-form pull-right"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "button",
-                                                                {
-                                                                  staticClass:
-                                                                    "ere-advanced-search-btn",
-                                                                  attrs: {
-                                                                    type:
-                                                                      "button"
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c("i", {
-                                                                    staticClass:
-                                                                      "fa fa-search"
-                                                                  }),
-                                                                  _vm._v(
-                                                                    " Search\n                                  "
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ])
-                              ]
-                            )
-                          ]
-                        )
+                        _c("div", { staticClass: "find-home-item" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "text",
+                              name: "mls",
+                              placeholder:
+                                "ADDRESS, ZIP, NEIGHBORHOOD, PROPERTY TYPE"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "prevent-default search-standard",
+                              attrs: { href: "#" }
+                            },
+                            [_c("i", { staticClass: "icon-search2" })]
+                          )
+                        ])
                       ]
-                    )
-                  ])
-                ])
-              ]
-            )
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "vc_row-full-width vc_clearfix" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "featured-flat-area pt-115 pb-80" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "featured-flat" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("span", { staticClass: "for-sale" }, [
-                      _vm._v("For Sale")
-                    ]),
+                    ),
                     _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/1.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/2.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("span", { staticClass: "for-sale rent" }, [
-                      _vm._v("For rent")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/3.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/4.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("span", { staticClass: "for-sale" }, [
-                      _vm._v("For Sale")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "properties-details.html" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/5.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/6.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("span", { staticClass: "for-sale rent" }, [
-                      _vm._v("For rent")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/7.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/8.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-12 d-none d-lg-block" }, [
-                _c("div", { staticClass: "flat-item" }, [
-                  _c("div", { staticClass: "flat-item-image" }, [
-                    _c("span", { staticClass: "for-sale" }, [
-                      _vm._v("For Sale")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        attrs: { src: "vue/images/flat/9.jpg", alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flat-link" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("More Details")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "flat-desc" }, [
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("450 sqft")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/5.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("5")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("img", {
-                          attrs: { src: "vue/images/icons/6.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("3")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flat-item-info" }, [
-                    _c("div", { staticClass: "flat-title-price" }, [
-                      _c("h5", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Masons de Villa")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c("img", {
-                        attrs: { src: "vue/images/icons/location.png", alt: "" }
-                      }),
-                      _vm._v("568 E 1st Ave, Ney Jersey\n                ")
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mapsearch-area bg-blue plr-140 ptb-50" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col-md-3 col-sm-6 col-xs-12 form-group" },
-              [
-                _c("input", {
-                  staticClass: "form-control search-field",
-                  attrs: {
-                    type: "text",
-                    "data-default-value": "",
-                    value: "",
-                    name: "title",
-                    placeholder: "Address, Zip, Neighborhood"
-                  }
-                }),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "icon-search2" })
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-md-3 col-sm-6 col-xs-12 form-group" },
-              [
-                _c(
-                  "select",
-                  {
-                    staticClass: "search-field form-control",
-                    attrs: {
-                      name: "type",
-                      title: "Property Types",
-                      "data-default-value": ""
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "apartment" } }, [
-                      _vm._v("Apartment")
-                    ]),
-                    _vm._v(">\n            "),
-                    _c("option", { attrs: { value: "", selected: "" } }, [
-                      _vm._v("Property Types")
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-md-3 col-sm-6 col-xs-12 form-group" },
-              [
-                _c(
-                  "select",
-                  {
-                    staticClass: "search-field form-control",
-                    attrs: {
-                      name: "neighborhoods",
-                      title: "Neighborhoods",
-                      "data-default-value": ""
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "" } }, [
-                      _vm._v("Any Neighborhoods")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "1" } }, [_vm._v("Schools")])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-md-3 col-sm-6 col-xs-12 form-group" },
-              [
-                _c(
-                  "select",
-                  {
-                    staticClass: "search-field form-control",
-                    attrs: {
-                      name: "price",
-                      title: "Price",
-                      "data-default-value": ""
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "" } }, [
-                      _vm._v("Any Price")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "1000" } }, [
-                      _vm._v("$1,000")
-                    ])
-                  ]
-                )
-              ]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "directory-listing-google-map-area" }, [
-        _c("div", { attrs: { id: "gmap" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "blog-area pb-60 pt-115" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12" }, [
-              _c("div", { staticClass: "section-title-2 text-center" }, [
-                _c("h2", [_vm._v("VIEW ALL NEIGHBORHOODS")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12" }, [
-              _c("div", { staticClass: "blog-carousel" }, [
-                _c("div", { staticClass: "col" }, [
-                  _c("article", { staticClass: "blog-item bg-gray" }, [
-                    _c("div", { staticClass: "blog-image" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("img", {
-                          attrs: { src: "vue/images/nbrhoods/1.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "blog-info" }, [
-                      _c("div", { staticClass: "post-title-time" }, [
-                        _c("h5", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _vm._v("Maridland de Villa")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("July 30, 2017 / 10 am")])
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    Lorem must explain to you how all this mistaolt denouncing pleasure and\n                    praising pain wasnad I will give you a complete pain was praising\n                  "
+                    _c("div", { staticClass: "col-sm-12 col-xs-12" }, [
+                      _c("div", { staticClass: "find-home-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "button-1 btn-block btn-hover-1",
+                            attrs: { href: "#" }
+                          },
+                          [_vm._v("VIEW ALL MLS")]
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        { staticClass: "read-more", attrs: { href: "#" } },
-                        [_vm._v("Read more")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("article", { staticClass: "blog-item bg-gray" }, [
-                    _c("div", { staticClass: "blog-image" }, [
-                      _c("a", { attrs: { href: "single-blog.html" } }, [
-                        _c("img", {
-                          attrs: { src: "vue/images/nbrhoods/2.jpg", alt: "" }
-                        })
                       ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "blog-info" }, [
-                      _c("div", { staticClass: "post-title-time" }, [
-                        _c("h5", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _vm._v("Latest Design House")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("July 30, 2017 / 10 am")])
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    Lorem must explain to you how all this mistaolt denouncing pleasure and\n                    praising pain wasnad I will give you a complete pain was praising\n                  "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        { staticClass: "read-more", attrs: { href: "#" } },
-                        [_vm._v("Read more")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("article", { staticClass: "blog-item bg-gray" }, [
-                    _c("div", { staticClass: "blog-image" }, [
-                      _c("a", { attrs: { href: "single-blog.html" } }, [
-                        _c("img", {
-                          attrs: { src: "vue/images/nbrhoods/3.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "blog-info" }, [
-                      _c("div", { staticClass: "post-title-time" }, [
-                        _c("h5", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _vm._v("Duplex Villa House")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("July 30, 2017 / 10 am")])
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    Lorem must explain to you how all this mistaolt denouncing pleasure and\n                    praising pain wasnad I will give you a complete pain was praising\n                  "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        { staticClass: "read-more", attrs: { href: "#" } },
-                        [_vm._v("Read more")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("article", { staticClass: "blog-item bg-gray" }, [
-                    _c("div", { staticClass: "blog-image" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _c("img", {
-                          attrs: { src: "vue/images/nbrhoods/2.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "blog-info" }, [
-                      _c("div", { staticClass: "post-title-time" }, [
-                        _c("h5", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _vm._v("Latest Design House")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("July 30, 2017 / 10 am")])
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    Lorem must explain to you how all this mistaolt denouncing pleasure and\n                    praising pain wasnad I will give you a complete pain was praising\n                  "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        { staticClass: "read-more", attrs: { href: "#" } },
-                        [_vm._v("Read more")]
-                      )
                     ])
                   ])
                 ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "brand-area pb-115" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12" }, [
-              _c("div", { staticClass: "section-title-2 text-center" }, [
-                _c("h2", [_vm._v("AUSTIN'S DEVELOPERS")])
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-12" }, [
-              _c("div", { staticClass: "brand-carousel" }, [
-                _c("div", { staticClass: "col" }, [
-                  _c("div", { staticClass: "brand-item" }, [
-                    _c("img", { attrs: { src: "vue/images/1.png", alt: "" } })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("div", { staticClass: "brand-item" }, [
-                    _c("img", { attrs: { src: "vue/images/2.png", alt: "" } })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("div", { staticClass: "brand-item" }, [
-                    _c("img", { attrs: { src: "vue/images/3.png", alt: "" } })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("div", { staticClass: "brand-item" }, [
-                    _c("img", { attrs: { src: "vue/images/4.png", alt: "" } })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("div", { staticClass: "brand-item" }, [
-                    _c("img", { attrs: { src: "vue/images/5.png", alt: "" } })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("div", { staticClass: "brand-item" }, [
-                    _c("img", { attrs: { src: "vue/images/1.png", alt: "" } })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("div", { staticClass: "brand-item" }, [
-                    _c("img", { attrs: { src: "vue/images/4.png", alt: "" } })
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "subscribe-area bg-blue call-to-bg plr-140 ptb-50" },
-        [
-          _c("div", { staticClass: "container-fluid" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-3 col-md-4 col-12" }, [
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "find-home-box box-right1" }, [
                 _c("div", { staticClass: "section-title text-white" }, [
-                  _c("h3", [_vm._v("SUBSCRIBE")]),
-                  _vm._v(" "),
-                  _c("h2", { staticClass: "h1" }, [_vm._v("NEWSLETTER")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-9 col-md-8 col-12" }, [
-                _c("div", { staticClass: "subscribe" }, [
-                  _c("form", { attrs: { action: "#" } }, [
-                    _c("input", {
-                      attrs: {
-                        type: "text",
-                        name: "subscribe",
-                        placeholder: "Enter your email here..."
-                      }
-                    }),
+                  _c("h2", { staticClass: "h1" }, [
+                    _vm._v("SEARCH DEVELOPMENTS")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "find-homes" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12 col-sm-12 col-xs-12" },
+                      [
+                        _c("div", { staticClass: "find-home-item" }, [
+                          _c("input", {
+                            attrs: {
+                              type: "text",
+                              name: "developments",
+                              placeholder:
+                                "DEVELOPMENT, BUILDER, ADDRESS, ZIP, NEIGHBORHOOD, STYLE"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "prevent-default search-standard",
+                              attrs: { href: "#" }
+                            },
+                            [_c("i", { staticClass: "icon-search2" })]
+                          )
+                        ])
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("button", { attrs: { type: "submit", value: "send" } }, [
-                      _vm._v("Send")
+                    _c("div", { staticClass: "col-sm-12 col-xs-12" }, [
+                      _c("div", { staticClass: "find-home-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "button-1 btn-block btn-hover-1",
+                            attrs: { href: "#" }
+                          },
+                          [_vm._v("VIEW ALL DEVELOPMENTS")]
+                        )
+                      ])
                     ])
                   ])
                 ])
@@ -40449,6 +39564,1733 @@ var staticRenderFns = [
           ])
         ]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "vc_row wpb_row vc_row-fluid vc_custom_1485139818778 vc_row-has-fill",
+        attrs: {
+          "data-vc-full-width": "true",
+          "data-vc-full-width-init": "false"
+        }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "div",
+            { staticClass: "wpb_column vc_column_container vc_col-sm-12" },
+            [
+              _c("div", { staticClass: "vc_column-inner" }, [
+                _c("div", { staticClass: "wpb_wrapper" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "vc_row wpb_row vc_inner vc_row-fluid vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "wpb_column vc_column_container vc_col-sm-3"
+                        },
+                        [
+                          _c("div", { staticClass: "vc_column-inner" }, [
+                            _c("div", { staticClass: "wpb_wrapper" }, [
+                              _c("div", {
+                                staticClass: "g5plus-space space",
+                                staticStyle: {
+                                  clear: "both",
+                                  display: "block",
+                                  height: "90px"
+                                },
+                                attrs: {
+                                  "data-id": "5ed1ab7fd11ff",
+                                  "data-tablet": "70",
+                                  "data-tablet-portrait": "60",
+                                  "data-mobile": "40",
+                                  "data-mobile-landscape": "50"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "wpb_text_column wpb_content_element"
+                                },
+                                [
+                                  _c("div", { staticClass: "wpb_wrapper" }, [
+                                    _c(
+                                      "p",
+                                      { staticClass: "hd-subtitle-spec" },
+                                      [_vm._v("DISCOVER YOUR")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("h2", { staticClass: "hd-title-spec" }, [
+                                      _c("span", { staticClass: "fl-accent" }, [
+                                        _vm._v("DREAM")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "fl-accent" }, [
+                                        _vm._v("HOUSE")
+                                      ])
+                                    ])
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", {
+                                staticClass: "g5plus-space space",
+                                staticStyle: {
+                                  clear: "both",
+                                  display: "block",
+                                  height: "90px"
+                                },
+                                attrs: {
+                                  "data-id": "5ed1ab7fd1652",
+                                  "data-tablet": "70",
+                                  "data-tablet-portrait": "60",
+                                  "data-mobile": "40",
+                                  "data-mobile-landscape": "50"
+                                }
+                              })
+                            ])
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "bg-dark-left wpb_column vc_column_container vc_col-sm-9 vc_col-has-fill"
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "column-inner vc_custom_1485091686429"
+                            },
+                            [
+                              _c("div", { staticClass: "wpb_wrapper" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "search-properties clearfix show-status-tab style-default-small color-light"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "form-search-wrap" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form-search-inner" },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "search-content" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "search-properties-form",
+                                                    attrs: { "data-href": "#" }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "search-status-tab"
+                                                      },
+                                                      [
+                                                        _c("input", {
+                                                          staticClass:
+                                                            "search-field",
+                                                          attrs: {
+                                                            type: "hidden",
+                                                            name: "status",
+                                                            value: "for-rent",
+                                                            "data-default-value":
+                                                              ""
+                                                          }
+                                                        }),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "button",
+                                                          {
+                                                            staticClass:
+                                                              "btn-status-filter active",
+                                                            attrs: {
+                                                              type: "button",
+                                                              "data-value":
+                                                                "for-rent"
+                                                            }
+                                                          },
+                                                          [_vm._v("For Rent")]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "button",
+                                                          {
+                                                            staticClass:
+                                                              "btn-status-filter",
+                                                            attrs: {
+                                                              type: "button",
+                                                              "data-value":
+                                                                "for-sale"
+                                                            }
+                                                          },
+                                                          [_vm._v("For Sale")]
+                                                        )
+                                                      ]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "div",
+                                                      { staticClass: "row" },
+                                                      [
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name: "type",
+                                                                  title:
+                                                                    "Property Types",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "apartment"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Apartment"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "bar"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Bar"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "cafe"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Cafe"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "car-wash"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Car Wash"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "casino"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Casino"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "farm"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Farm"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "hotel"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Hotel"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "house"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "House"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "land"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Land"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "lodging"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Lodging"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "restaurant"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Restaurant"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "spa"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Spa"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "store"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Store"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "villa"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Villa"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: "",
+                                                                      selected:
+                                                                        ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "All Types"
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c("input", {
+                                                              staticClass:
+                                                                "form-control search-field",
+                                                              attrs: {
+                                                                type: "text",
+                                                                "data-default-value":
+                                                                  "",
+                                                                value: "",
+                                                                name: "title",
+                                                                placeholder:
+                                                                  "Title"
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c("input", {
+                                                              staticClass:
+                                                                "ere-location form-control search-field",
+                                                              attrs: {
+                                                                type: "text",
+                                                                "data-default-value":
+                                                                  "",
+                                                                value: "",
+                                                                name: "address",
+                                                                placeholder:
+                                                                  "Address"
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name:
+                                                                    "bedrooms",
+                                                                  title:
+                                                                    "Property Bedrooms",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Any Bedrooms"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: "1"
+                                                                    }
+                                                                  },
+                                                                  [_vm._v("1")]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name:
+                                                                    "bathrooms",
+                                                                  title:
+                                                                    "Property Bathrooms",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Any Bathrooms"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: "1"
+                                                                    }
+                                                                  },
+                                                                  [_vm._v("1")]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-2 col-sm-3 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name:
+                                                                    "min-price",
+                                                                  title:
+                                                                    "Min Price",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Min Price"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: "0"
+                                                                    }
+                                                                  },
+                                                                  [_vm._v("$0")]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "100"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "$100"
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-2 col-sm-3 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name:
+                                                                    "max-price",
+                                                                  title:
+                                                                    "Max Price",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Max Price"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "200"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "$200"
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "div",
+                                                              {
+                                                                staticClass:
+                                                                  "find-home-item"
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "div",
+                                                                  {
+                                                                    staticClass:
+                                                                      "shop-filter"
+                                                                  },
+                                                                  [
+                                                                    _c(
+                                                                      "div",
+                                                                      {
+                                                                        staticClass:
+                                                                          "price_filter"
+                                                                      },
+                                                                      [
+                                                                        _c(
+                                                                          "div",
+                                                                          {
+                                                                            staticClass:
+                                                                              "price_slider_amount"
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "input",
+                                                                              {
+                                                                                attrs: {
+                                                                                  type:
+                                                                                    "submit",
+                                                                                  value:
+                                                                                    "Price range :"
+                                                                                }
+                                                                              }
+                                                                            ),
+                                                                            _vm._v(
+                                                                              " "
+                                                                            ),
+                                                                            _c(
+                                                                              "input",
+                                                                              {
+                                                                                attrs: {
+                                                                                  type:
+                                                                                    "text",
+                                                                                  id:
+                                                                                    "amount",
+                                                                                  name:
+                                                                                    "price",
+                                                                                  placeholder:
+                                                                                    "Add Your Price"
+                                                                                }
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        ),
+                                                                        _vm._v(
+                                                                          " "
+                                                                        ),
+                                                                        _c(
+                                                                          "div",
+                                                                          {
+                                                                            attrs: {
+                                                                              id:
+                                                                                "slider-range1"
+                                                                            }
+                                                                          }
+                                                                        )
+                                                                      ]
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "div",
+                                                              {
+                                                                staticClass:
+                                                                  "find-home-item"
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "div",
+                                                                  {
+                                                                    staticClass:
+                                                                      "shop-filter"
+                                                                  },
+                                                                  [
+                                                                    _c(
+                                                                      "div",
+                                                                      {
+                                                                        staticClass:
+                                                                          "price_filter"
+                                                                      },
+                                                                      [
+                                                                        _c(
+                                                                          "div",
+                                                                          {
+                                                                            staticClass:
+                                                                              "price_slider_amount"
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "input",
+                                                                              {
+                                                                                attrs: {
+                                                                                  type:
+                                                                                    "submit",
+                                                                                  value:
+                                                                                    "Land Area :"
+                                                                                }
+                                                                              }
+                                                                            ),
+                                                                            _vm._v(
+                                                                              " "
+                                                                            ),
+                                                                            _c(
+                                                                              "input",
+                                                                              {
+                                                                                attrs: {
+                                                                                  type:
+                                                                                    "text",
+                                                                                  id:
+                                                                                    "sqft",
+                                                                                  name:
+                                                                                    "area",
+                                                                                  placeholder:
+                                                                                    "Add Your Area"
+                                                                                }
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        ),
+                                                                        _vm._v(
+                                                                          " "
+                                                                        ),
+                                                                        _c(
+                                                                          "div",
+                                                                          {
+                                                                            attrs: {
+                                                                              id:
+                                                                                "slider-range2"
+                                                                            }
+                                                                          }
+                                                                        )
+                                                                      ]
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c("input", {
+                                                              staticClass:
+                                                                "ere-property-identity form-control search-field",
+                                                              attrs: {
+                                                                type: "text",
+                                                                "data-default-value":
+                                                                  "",
+                                                                value: "",
+                                                                name:
+                                                                  "property_identity",
+                                                                placeholder:
+                                                                  "Property ID"
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-12 col-sm-6 col-xs-12 form-group submit-search-form pull-right"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "button",
+                                                              {
+                                                                staticClass:
+                                                                  "ere-advanced-search-btn",
+                                                                attrs: {
+                                                                  type: "button"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c("i", {
+                                                                  staticClass:
+                                                                    "fa fa-search"
+                                                                }),
+                                                                _vm._v(
+                                                                  " Search\n                                  "
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "featured-flat-area pt-115 pb-80" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "featured-flat" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("span", { staticClass: "for-sale" }, [_vm._v("For Sale")]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/1.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/2.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("span", { staticClass: "for-sale rent" }, [
+                    _vm._v("For rent")
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/3.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/4.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("span", { staticClass: "for-sale" }, [_vm._v("For Sale")]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "properties-details.html" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/5.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/6.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("span", { staticClass: "for-sale rent" }, [
+                    _vm._v("For rent")
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/7.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-md-6 col-12" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/8.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-12 d-none d-lg-block" }, [
+              _c("div", { staticClass: "flat-item" }, [
+                _c("div", { staticClass: "flat-item-image" }, [
+                  _c("span", { staticClass: "for-sale" }, [_vm._v("For Sale")]),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "vue/images/flat/9.jpg", alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flat-link" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "flat-desc" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/4.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("450 sqft")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("5")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "vue/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("3")])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flat-item-info" }, [
+                  _c("div", { staticClass: "flat-title-price" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Masons de Villa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: { src: "vue/images/icons/location.png", alt: "" }
+                    }),
+                    _vm._v("568 E 1st Ave, Ney Jersey\n                ")
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mapsearch-area bg-blue plr-140 ptb-50" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3 col-sm-6 col-xs-12 form-group" }, [
+            _c("input", {
+              staticClass: "form-control search-field",
+              attrs: {
+                type: "text",
+                "data-default-value": "",
+                value: "",
+                name: "title",
+                placeholder: "Address, Zip, Neighborhood"
+              }
+            }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "icon-search2" })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-6 col-xs-12 form-group" }, [
+            _c(
+              "select",
+              {
+                staticClass: "search-field form-control",
+                attrs: {
+                  name: "type",
+                  title: "Property Types",
+                  "data-default-value": ""
+                }
+              },
+              [
+                _c("option", { attrs: { value: "apartment" } }, [
+                  _vm._v("Apartment")
+                ]),
+                _vm._v(">\n            "),
+                _c("option", { attrs: { value: "", selected: "" } }, [
+                  _vm._v("Property Types")
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-6 col-xs-12 form-group" }, [
+            _c(
+              "select",
+              {
+                staticClass: "search-field form-control",
+                attrs: {
+                  name: "neighborhoods",
+                  title: "Neighborhoods",
+                  "data-default-value": ""
+                }
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("Any Neighborhoods")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "1" } }, [_vm._v("Schools")])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-6 col-xs-12 form-group" }, [
+            _c(
+              "select",
+              {
+                staticClass: "search-field form-control",
+                attrs: {
+                  name: "price",
+                  title: "Price",
+                  "data-default-value": ""
+                }
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [_vm._v("Any Price")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "1000" } }, [_vm._v("$1,000")])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "directory-listing-google-map-area" }, [
+      _c("div", { attrs: { id: "gmap" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "section-title-2 text-center" }, [
+          _c("h2", [_vm._v("VIEW ALL NEIGHBORHOODS")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "blog-image" }, [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("img", { attrs: { src: "vue/images/nbrhoods/1.jpg", alt: "" } })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "brand-area pb-115" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("div", { staticClass: "section-title-2 text-center" }, [
+              _c("h2", [_vm._v("AUSTIN'S DEVELOPERS")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "brand-carousel row" }, [
+            _c("div", { staticClass: "col-2" }, [
+              _c("div", { staticClass: "brand-item" }, [
+                _c("img", { attrs: { src: "vue/images/1.png", alt: "" } })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-2" }, [
+              _c("div", { staticClass: "brand-item" }, [
+                _c("img", { attrs: { src: "vue/images/2.png", alt: "" } })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-2" }, [
+              _c("div", { staticClass: "brand-item" }, [
+                _c("img", { attrs: { src: "vue/images/3.png", alt: "" } })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-2" }, [
+              _c("div", { staticClass: "brand-item" }, [
+                _c("img", { attrs: { src: "vue/images/4.png", alt: "" } })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-2" }, [
+              _c("div", { staticClass: "brand-item" }, [
+                _c("img", { attrs: { src: "vue/images/5.png", alt: "" } })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-2" }, [
+              _c("div", { staticClass: "brand-item" }, [
+                _c("img", { attrs: { src: "vue/images/1.png", alt: "" } })
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-3 col-md-4 col-12" }, [
+      _c("div", { staticClass: "section-title text-white" }, [
+        _c("h3", [_vm._v("SUBSCRIBE")]),
+        _vm._v(" "),
+        _c("h2", { staticClass: "h1" }, [_vm._v("NEWSLETTER")])
+      ])
     ])
   }
 ]
@@ -52619,9 +53461,13 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.common.js");
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vform__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -52630,11 +53476,15 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+
+window.form = vform__WEBPACK_IMPORTED_MODULE_0__["Form"];
+Vue.component(vform__WEBPACK_IMPORTED_MODULE_0__["HasError"].name, vform__WEBPACK_IMPORTED_MODULE_0__["HasError"]);
+Vue.component(vform__WEBPACK_IMPORTED_MODULE_0__["AlertError"].name, vform__WEBPACK_IMPORTED_MODULE_0__["AlertError"]);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
- *
+ * 
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 // const files = require.context('./', true, /\.vue$/i);
@@ -52868,8 +53718,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\HP\Documents\GitHub\Urbanliving2\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\HP\Documents\GitHub\Urbanliving2\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\UrbanLiving\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\UrbanLiving\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

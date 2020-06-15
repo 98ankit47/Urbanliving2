@@ -254,16 +254,16 @@ class HomeController extends Controller
     
     public function HomeNeighbour()
     {
-        return communities::inRandomOrder()->take(4)->get();
+        return communities::inRandomOrder()->take(3)->get();
     }
 
     public function NewsLetter(Request $request)
     {
         if(User::where('email',$request['email'])->get()->count()==0)
         {
-            // NewsLetter::create([
-            //     "email"=>$request['email'],
-            //     ]);
+            NewsLetter::create([
+                "email"=>$request['email'],
+                ]);
         }
         else
         {
