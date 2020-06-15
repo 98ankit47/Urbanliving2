@@ -8,7 +8,11 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
+/** 
+ * @import vform 
+*/
+import { Form, HasError, AlertError } from 'vform';
+window.Form = Form;
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,7 +26,10 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('home-component', require('./components/HomeComponent.vue').default);
-
+Vue.component('nav-component', require('./components/header/NavComponent.vue').default);
+Vue.component('footer-component', require('./components/footer/FooterComponent.vue').default);
+Vue.component(HasError.name, HasError);
+Vue.component(AlertError.name, AlertError);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

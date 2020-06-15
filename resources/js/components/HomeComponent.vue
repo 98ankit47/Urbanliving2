@@ -724,10 +724,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
-            <div class="blog-carousel">
-              <!-- blog-item -->
-              <div class="col">
+          <div class="blog-carousel">
+            <!-- blog-item -->
+            <div class="row">
+              <div class="col-md-4">
                 <article class="blog-item bg-gray">
                   <div class="blog-image">
                     <a href="#">
@@ -750,7 +750,7 @@
                 </article>
               </div>
               <!-- blog-item -->
-              <div class="col">
+              <div class="col-md-4">
                 <article class="blog-item bg-gray">
                   <div class="blog-image">
                     <a href="single-blog.html">
@@ -773,7 +773,7 @@
                 </article>
               </div>
               <!-- blog-item -->
-              <div class="col">
+              <div class="col-md-4">
                 <article class="blog-item bg-gray">
                   <div class="blog-image">
                     <a href="single-blog.html">
@@ -796,7 +796,7 @@
                 </article>
               </div>
               <!-- blog-item -->
-              <div class="col">
+              <div class="col-md-4">
                 <article class="blog-item bg-gray">
                   <div class="blog-image">
                     <a href="#">
