@@ -189,7 +189,8 @@
                       type="text"
                       autocomplete="off"
                       v-model="form.email"
-                      :class="{ 'is-invalid': form.errors.has('email') }"/>
+                      :class="{ 'is-invalid': form.errors.has('email') }">
+                       <has-error :form="form" field="email"></has-error>
                   </div>
                   <div class="form-group control-password">
                     <input
@@ -215,7 +216,6 @@
                   </div>
                   <button
                     type="submit"
-                    data-redirect-url
                     class="ere-login-button btn btn-primary btn-block"
                   >Login</button>
                 </form>
@@ -305,7 +305,9 @@
                       type="text"
                       placeholder="Username"
                       v-model="form.username"
-                    />
+                      :class="{ 'is-invalid': form.errors.has('username') }"
+                    >
+                     <has-error :form="form" field="username"></has-error>
                   </div>
                   <div class="form-group control-email">
                     <input
@@ -314,7 +316,9 @@
                       class="form-control control-icon"
                       placeholder="Email"
                       v-model="form.email"
-                    />
+                      :class="{ 'is-invalid': form.errors.has('email') }"
+                    >
+                    <has-error :form="form" field="email"></has-error>
                   </div>
                   <div class="form-group control-password">
                     <input
@@ -323,27 +327,26 @@
                       placeholder="Password"
                       type="password"
                       v-model="form.password"
-                    />
+                      :class="{ 'is-invalid': form.errors.has('password') }"
+                    >
+                    <has-error :form="form" field="password"></has-error>
                   </div>
                   <div class="form-group control-ere-password">
                     <input
-                      name="c_password"
+                      name="confirm_password"
                       class="form-control control-icon"
                       placeholder="Retype Password"
                       type="password"
-                    />
+                      v-model="form.c_password"
+                      :class="{'is-invalid':form.errors.has('confirm_password')}"
+                    >
+                    <has-error :form="form" field="confirm_password"></has-error>
                   </div>
                   <select name="user_register_role" id="user_register_role">
                     <option value="owner">Owner/Buyer/Tenant</option>
                     <option value="agent">Agent</option>
                     <option value="agency">Agency</option>
                   </select>
-
-                  <div class="ere-recaptcha-wrap clearfix">
-                    <div class="ere-google-recaptcha"></div>
-                  </div>
-                  <input type="hidden" name="ere_register_security" value="e27333aa4c" />
-                  <input type="hidden" name="action" value="ere_register_ajax" />
                   <button
                     type="submit"
                     class="ere-register-button btn btn-primary btn-block"

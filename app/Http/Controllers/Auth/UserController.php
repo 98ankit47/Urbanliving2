@@ -42,16 +42,16 @@ class UserController extends Controller
     public function signup(Request $request)
     {
         $this->validate($request, [ 
-            'name' => 'required', 
+            'username' => ['required','regex:/^[a-zA-Z\s]*$/'], 
             'email' => 'required|email', 
             'password' => 'required', 
-            'c_password' => 'required|same:password', 
+            'confirm_password' => 'required|same:password', 
         ]);
         $emailExist = User::where('email', $request['email'])->get()->first();
         if(!$emailExist):
             $user = User::create([
                 'email'     =>  $request['email'],
-                'name'      =>  $request['name'],
+                'name'      =>  $request['username'],
                 'password' => Hash::make($request['password']),
                 'type'      =>  'user',
                 'status'    =>  1,

@@ -3157,6 +3157,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42430,8 +42433,13 @@ var render = function() {
                                     )
                                   }
                                 }
+                              }),
+                              _vm._v(" "),
+                              _c("has-error", {
+                                attrs: { form: _vm.form, field: "email" }
                               })
-                            ]
+                            ],
+                            1
                           ),
                           _vm._v(" "),
                           _c(
@@ -42512,7 +42520,7 @@ var render = function() {
                             {
                               staticClass:
                                 "ere-login-button btn btn-primary btn-block",
-                              attrs: { type: "submit", "data-redirect-url": "" }
+                              attrs: { type: "submit" }
                             },
                             [_vm._v("Login")]
                           )
@@ -42561,6 +42569,9 @@ var render = function() {
                                   }
                                 ],
                                 staticClass: "form-control control-icon",
+                                class: {
+                                  "is-invalid": _vm.form.errors.has("username")
+                                },
                                 attrs: {
                                   name: "username",
                                   type: "text",
@@ -42579,8 +42590,13 @@ var render = function() {
                                     )
                                   }
                                 }
+                              }),
+                              _vm._v(" "),
+                              _c("has-error", {
+                                attrs: { form: _vm.form, field: "username" }
                               })
-                            ]
+                            ],
+                            1
                           ),
                           _vm._v(" "),
                           _c(
@@ -42597,6 +42613,9 @@ var render = function() {
                                   }
                                 ],
                                 staticClass: "form-control control-icon",
+                                class: {
+                                  "is-invalid": _vm.form.errors.has("email")
+                                },
                                 attrs: {
                                   name: "email",
                                   type: "email",
@@ -42615,8 +42634,13 @@ var render = function() {
                                     )
                                   }
                                 }
+                              }),
+                              _vm._v(" "),
+                              _c("has-error", {
+                                attrs: { form: _vm.form, field: "email" }
                               })
-                            ]
+                            ],
+                            1
                           ),
                           _vm._v(" "),
                           _c(
@@ -42633,6 +42657,9 @@ var render = function() {
                                   }
                                 ],
                                 staticClass: "form-control control-icon",
+                                class: {
+                                  "is-invalid": _vm.form.errors.has("password")
+                                },
                                 attrs: {
                                   name: "password",
                                   placeholder: "Password",
@@ -42651,31 +42678,65 @@ var render = function() {
                                     )
                                   }
                                 }
+                              }),
+                              _vm._v(" "),
+                              _c("has-error", {
+                                attrs: { form: _vm.form, field: "password" }
                               })
-                            ]
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "form-group control-ere-password" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.c_password,
+                                    expression: "form.c_password"
+                                  }
+                                ],
+                                staticClass: "form-control control-icon",
+                                class: {
+                                  "is-invalid": _vm.form.errors.has(
+                                    "confirm_password"
+                                  )
+                                },
+                                attrs: {
+                                  name: "confirm_password",
+                                  placeholder: "Retype Password",
+                                  type: "password"
+                                },
+                                domProps: { value: _vm.form.c_password },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.form,
+                                      "c_password",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("has-error", {
+                                attrs: {
+                                  form: _vm.form,
+                                  field: "confirm_password"
+                                }
+                              })
+                            ],
+                            1
                           ),
                           _vm._v(" "),
                           _vm._m(8),
-                          _vm._v(" "),
-                          _vm._m(9),
-                          _vm._v(" "),
-                          _vm._m(10),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: {
-                              type: "hidden",
-                              name: "ere_register_security",
-                              value: "e27333aa4c"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: {
-                              type: "hidden",
-                              name: "action",
-                              value: "ere_register_ajax"
-                            }
-                          }),
                           _vm._v(" "),
                           _c(
                             "button",
@@ -43272,21 +43333,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group control-ere-password" }, [
-      _c("input", {
-        staticClass: "form-control control-icon",
-        attrs: {
-          name: "c_password",
-          placeholder: "Retype Password",
-          type: "password"
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "select",
       { attrs: { name: "user_register_role", id: "user_register_role" } },
@@ -43300,14 +43346,6 @@ var staticRenderFns = [
         _c("option", { attrs: { value: "agency" } }, [_vm._v("Agency")])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ere-recaptcha-wrap clearfix" }, [
-      _c("div", { staticClass: "ere-google-recaptcha" })
-    ])
   }
 ]
 render._withStripped = true
