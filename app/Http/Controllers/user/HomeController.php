@@ -261,9 +261,9 @@ class HomeController extends Controller
     {
         if(User::where('email',$request['email'])->get()->count()==0)
         {
-            // NewsLetter::create([
-            //     "email"=>$request['email'],
-            //     ]);
+            NewsLetter::create([
+                "email"=>$request['email'],
+                ]);
         }
         else
         {

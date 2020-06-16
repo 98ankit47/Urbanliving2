@@ -123,9 +123,25 @@
 </template>
 
 <script>
-export default {
+   export default {
+  data(){
+    return{
+      form: new Form({
+        email:'',
+        message:''
+      })
+    }
+  },
+  methods:  {
+      subscribe () {
+      // Submit the form via a POST request
+      this.form.post('/api/news-letter')
+        .then(({ data }) => { console.log(data) })
+        }
+      },
   mounted() {
     console.log("Component mounted.");
+    this.loadHomeNeighbour();
   }
 };
 </script>

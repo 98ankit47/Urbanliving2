@@ -28,6 +28,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('home-component', require('./components/HomeComponent.vue').default);
 Vue.component('nav-component', require('./components/header/NavComponent.vue').default);
 Vue.component('neighbour-component', require('./components/homepage/NeighbourComponent.vue').default);
+Vue.component('subscribe-component', require('./components/homepage/NewLetterComponent.vue').default);
 Vue.component('footer-component', require('./components/footer/FooterComponent.vue').default);
 Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
