@@ -714,7 +714,7 @@
       <div id="gmap"></div>
     </div>
     <!-- NEIGHBORHOOD AREA START -->
-    <div class="blog-area pb-60 pt-115">
+ <div class="blog-area pb-60 pt-115">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -722,88 +722,10 @@
               <h2>VIEW ALL NEIGHBORHOODS</h2>
             </div>
           </div>
-<<<<<<< Updated upstream
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="blog-carousel">
-              <!-- blog-item -->
-              <div class="col">
-                <article class="blog-item bg-gray">
-                  <div class="blog-image">
-                    <a href="#">
-                      <img src="vue/images/nbrhoods/1.jpg" alt />
-                    </a>
-                  </div>
-                  <div class="blog-info">
-                    <div class="post-title-time">
-                      <h5>
-                        <a href="#">Maridland de Villa</a>
-                      </h5>
-                      <p>July 30, 2017 / 10 am</p>
-                    </div>
-                    <p>
-                      Lorem must explain to you how all this mistaolt denouncing pleasure and
-                      praising pain wasnad I will give you a complete pain was praising
-                    </p>
-                    <a class="read-more" href="#">Read more</a>
-                  </div>
-                </article>
-              </div>
-              <!-- blog-item -->
-              <div class="col">
-                <article class="blog-item bg-gray">
-                  <div class="blog-image">
-                    <a href="single-blog.html">
-                      <img src="vue/images/nbrhoods/2.jpg" alt />
-                    </a>
-                  </div>
-                  <div class="blog-info">
-                    <div class="post-title-time">
-                      <h5>
-                        <a href="#">Latest Design House</a>
-                      </h5>
-                      <p>July 30, 2017 / 10 am</p>
-                    </div>
-                    <p>
-                      Lorem must explain to you how all this mistaolt denouncing pleasure and
-                      praising pain wasnad I will give you a complete pain was praising
-                    </p>
-                    <a class="read-more" href="#">Read more</a>
-                  </div>
-                </article>
-              </div>
-              <!-- blog-item -->
-              <div class="col">
-                <article class="blog-item bg-gray">
-                  <div class="blog-image">
-                    <a href="single-blog.html">
-                      <img src="vue/images/nbrhoods/3.jpg" alt />
-                    </a>
-                  </div>
-                  <div class="blog-info">
-                    <div class="post-title-time">
-                      <h5>
-                        <a href="#">Duplex Villa House</a>
-                      </h5>
-                      <p>July 30, 2017 / 10 am</p>
-                    </div>
-                    <p>
-                      Lorem must explain to you how all this mistaolt denouncing pleasure and
-                      praising pain wasnad I will give you a complete pain was praising
-                    </p>
-                    <a class="read-more" href="#">Read more</a>
-                  </div>
-                </article>
-              </div>
-              <!-- blog-item -->
-              <div class="col">
-=======
         </div> 
           <div class="blog-carousel row">
               <!-- blog-item -->
               <div class="col-md-4" v-for="neighbours in neighbour" :key="neighbours.id">
->>>>>>> Stashed changes
                 <article class="blog-item bg-gray">
                   <div class="blog-image">
                     <a href="#">
@@ -830,7 +752,7 @@
     </div>
     <!-- NEIGHBORHOOD AREA END -->
     <!-- BRAND AREA START -->
-     <div class="brand-area pb-115">
+    <div class="brand-area pb-115">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -884,7 +806,7 @@
     </div>
     <!-- BRAND AREA END -->
     <!-- SUBSCRIBE AREA START -->
-    <div class="subscribe-area bg-blue call-to-bg plr-140 ptb-50">
+      <div class="subscribe-area bg-blue call-to-bg plr-140 ptb-50">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-3 col-md-4 col-12">
@@ -896,12 +818,12 @@
           <div class="col-lg-9 col-md-8 col-12">
             <div class="subscribe">
               <form action="#">
-                <input type="text" name="subscribe" placeholder="Enter your email here..." />
+                <input type="text" v-model="form.email" name="email" :class="{ 'is-invalid': form.errors.has('email') }" placeholder="Enter your email here..." />
                 <button type="submit" value="send">Send</button>
               </form>
             </div>
           </div>
-        </div>
+         </div>
       </div>
     </div>
     <!-- SUBSCRIBE AREA END -->
