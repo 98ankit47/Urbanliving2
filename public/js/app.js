@@ -3155,45 +3155,66 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.status == "not_authorized" || response.status == "unknown") {
           FB.login(function (response) {
+            this.isLoggedIn = true;
             console.log(response);
-          });
+          }), {
+            scope: "public_profile,email"
+          };
         } else {
+          this.isLoggedIn = true;
           console.log("user already logged in");
         }
       });
     },
     logout: function logout() {
+      var _this2 = this;
+
+      // FB.logout(function(response) {
+      //   // Person is now logged out
+      // });
       axios.get("api/user/logout").then(function (res) {
         console.log(res);
+        _this2.isLoggedIn = false;
       });
     },
     showLoginModal: function showLoginModal() {
-      var _this2 = this;
+      var _this3 = this;
 
       $("#ere_signin_modal").modal("show");
       axios.get("api/roles").then(function (res) {
-        _this2.roles = res.data;
+        _this3.roles = res.data;
       });
     },
     loginUser: function loginUser() {
-      var _this3 = this;
+      var _this4 = this;
 
       // Submit the form via a POST request
       this.form.post("api/user/login").then(function (_ref) {
         var data = _ref.data;
-        _this3.userName = data.data.user.name;
-        _this3.isLoggedIn = true;
+        _this4.userName = data.user.name;
+        _this4.isLoggedIn = true;
         $("#ere_signin_modal").modal("hide");
       });
     },
     register: function register() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.form.post("api/user/register").then(function (_ref2) {
         var data = _ref2.data;
-        _this4.userName = data.data.user.name;
-        _this4.isLoggedIn = true;
-        $("#ere_signin_modal").modal("hide");
+
+        if (!data.status) {
+          swal({
+            title: data.msg,
+            text: "Please log in",
+            icon: "error",
+            button: "Ok"
+          });
+          $("#ere_signin_modal").modal("hide");
+        } else {
+          _this5.userName = data.user.name;
+          _this5.isLoggedIn = true;
+          $("#ere_signin_modal").modal("hide");
+        }
       });
     }
   }

@@ -125,6 +125,7 @@ Route::post('news-letter','user\HomeController@NewsLetter');
 Route::post('contact-us','user\HomeController@ContactUs');
 Route::post('user/register','Auth\UserController@signup');
 Route::post('user/login','Auth\UserController@login'); 
+Route::post('user/login/fb','Auth\UserController@loginWithFacebook'); 
 Route::get('user/login/status','Auth\UserController@loginStatus');  
 Route::get('user/logout','Auth\UserController@logout'); 
 Route::get('roles','CommonController@getRoles'); 

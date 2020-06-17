@@ -440,16 +440,23 @@ export default {
           response.status == "unknown"
         ) {
           FB.login(function(response) {
+            this.isLoggedIn = true;
             console.log(response);
-          });
+          }),
+            { scope: "public_profile,email" };
         } else {
+          this.isLoggedIn = true;
           console.log("user already logged in");
         }
       });
     },
     logout() {
+      // FB.logout(function(response) {
+      //   // Person is now logged out
+      // });
       axios.get("api/user/logout").then(res => {
         console.log(res);
+        this.isLoggedIn = false;
       });
     },
     showLoginModal() {
@@ -461,16 +468,26 @@ export default {
     loginUser() {
       // Submit the form via a POST request
       this.form.post("api/user/login").then(({ data }) => {
-        this.userName = data.data.user.name;
+        this.userName = data.user.name;
         this.isLoggedIn = true;
         $("#ere_signin_modal").modal("hide");
       });
     },
     register() {
       this.form.post("api/user/register").then(({ data }) => {
-        this.userName = data.data.user.name;
-        this.isLoggedIn = true;
-        $("#ere_signin_modal").modal("hide");
+        if (!data.status) {
+          swal({
+            title: data.msg,
+            text: "Please log in",
+            icon: "error",
+            button: "Ok"
+          });
+          $("#ere_signin_modal").modal("hide");
+        } else {
+          this.userName = data.user.name;
+          this.isLoggedIn = true;
+          $("#ere_signin_modal").modal("hide");
+        }
       });
     }
   }

@@ -44,7 +44,7 @@ class UserController extends Controller
         $this->validate($request, [ 
             'username' => ['required','regex:/^[a-zA-Z\s]*$/'], 
             'email' => 'required|email', 
-            'password' => 'required', 
+            'password' => 'required|min:8', 
             'confirm_password' => 'required|same:password', 
             'type' => 'required'
         ]);
@@ -60,11 +60,11 @@ class UserController extends Controller
             Auth::login($user);
             $success['status'] = true;
             $success['user'] =  $user;
-            return response()->json(['data'=>$success]);
+            return response()->json($success);
         else:
             $fail['status'] = false;
             $fail['msg'] = "Email Already Exists.";
-            return response()->json(['data'=>$fail]);
+            return response()->json($fail);
         endif;         
 
     }
@@ -106,6 +106,24 @@ class UserController extends Controller
         Auth::logout();
         $success['status'] = true;
         return response()->json( $success);
+    }
+    public function loginWithFacebook(Request $request)
+    {
+        # code...
+        $user = User::where('fb_id', $request->fb_id)->get()->first();
+        if(!$user){
+            $user = User::create([
+                'email'     =>  $request['email'],
+                'name'      =>  $request['username'],
+                'password' => Hash::make($request['password']),
+                'role_id'      =>  $request['type'],
+                'status'    =>  1,
+            ]);
+        }
+        Auth::login($user);
+        $success['status'] = true;
+        $success['user'] =  $user;
+        return response()->json($success);
     }
 
 }
