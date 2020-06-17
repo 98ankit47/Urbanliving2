@@ -2278,9 +2278,245 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      home: {}
+    };
+  },
+  methods: {
+    loadHome: function loadHome() {
+      var _this = this;
+
+      axios.get("api/home-house-list").then(function (_ref) {
+        var data = _ref.data;
+        return _this.home = data;
+      });
+    }
+  },
   mounted: function mounted() {
-    console.log("Component mounted.");
+    this.loadHome();
   }
 });
 
@@ -2825,293 +3061,129 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "facebookLogin",
   data: function data() {
     return {
+      roles: {},
+      isLoggedIn: false,
+      userName: "",
       form: new Form({
-        email: '',
-        password: '',
+        email: "",
+        password: "",
         remember: false,
-        username: '',
-        c_password: ''
+        username: "",
+        confirm_password: "",
+        type: ""
       })
     };
   },
   mounted: function mounted() {
     console.log("Component mounted.");
   },
+  created: function created() {
+    window.fbAsyncInit = function () {
+      window.FB.init({
+        appId: "285694432841018",
+        //You will need to change this
+        cookie: true,
+        // This is important, it's not enabled by default
+        version: "v7.0"
+      });
+    };
+
+    (function (d, s, id) {
+      var js,
+          fjs = d.getElementsByTagName(s)[0];
+
+      if (d.getElementById(id)) {
+        return;
+      }
+
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
+  },
+  beforeMount: function beforeMount() {
+    var _this = this;
+
+    axios.get("api/user/login/status").then(function (data) {
+      console.log(data);
+
+      if (data.data.status) {
+        _this.userName = data.data.user.name;
+        _this.isLoggedIn = true;
+      }
+    });
+  },
   methods: {
+    logInWithFacebook: function logInWithFacebook() {
+      FB.getLoginStatus(function (response) {
+        console.log(response);
+
+        if (response.status == "not_authorized" || response.status == "unknown") {
+          FB.login(function (response) {
+            console.log(response);
+          });
+        } else {
+          console.log("user already logged in");
+        }
+      });
+    },
+    logout: function logout() {
+      axios.get("api/user/logout").then(function (res) {
+        console.log(res);
+      });
+    },
     showLoginModal: function showLoginModal() {
-      $('#ere_signin_modal').modal('show');
+      var _this2 = this;
+
+      $("#ere_signin_modal").modal("show");
+      axios.get("api/roles").then(function (res) {
+        _this2.roles = res.data;
+      });
     },
     loginUser: function loginUser() {
+      var _this3 = this;
+
       // Submit the form via a POST request
-      this.form.post('api/user/login').then(function (_ref) {
+      this.form.post("api/user/login").then(function (_ref) {
         var data = _ref.data;
-        console.log(data);
+        _this3.userName = data.data.user.name;
+        _this3.isLoggedIn = true;
+        $("#ere_signin_modal").modal("hide");
       });
     },
     register: function register() {
-      this.form.post('api/user/register').then(function (_ref2) {
+      this.form.post("api/user/register").then(function (_ref2) {
         var data = _ref2.data;
         console.log(data);
+        $("#ere_signin_modal").modal("hide");
       });
     }
   }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/homepage/HomefilterComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/homepage/HomefilterComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -3174,7 +3246,6 @@ __webpack_require__.r(__webpack_exports__);
     loadHomeNeighbour: function loadHomeNeighbour() {
       var _this = this;
 
-      console.log('Test');
       axios.get("api/home-neighbour").then(function (_ref) {
         var data = _ref.data;
         return _this.neighbour = data;
@@ -40015,19 +40086,19 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "vc_row-full-width vc_clearfix" }),
       _vm._v(" "),
-      _c("home-filter-component"),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "vc_row-full-width vc_clearfix" }),
-      _vm._v(" "),
-      _vm._m(1),
       _vm._v(" "),
       _vm._m(2),
       _vm._v(" "),
       _vm._m(3),
       _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
       _c("neighbour-component"),
       _vm._v(" "),
-      _vm._m(4),
+      _vm._m(5),
       _vm._v(" "),
       _c("subscribe-component")
     ],
@@ -40155,6 +40226,752 @@ var staticRenderFns = [
         ]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "vc_row wpb_row vc_row-fluid vc_custom_1485139818778 vc_row-has-fill",
+        attrs: {
+          "data-vc-full-width": "true",
+          "data-vc-full-width-init": "false"
+        }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "div",
+            { staticClass: "wpb_column vc_column_container vc_col-sm-12" },
+            [
+              _c("div", { staticClass: "vc_column-inner" }, [
+                _c("div", { staticClass: "wpb_wrapper" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "vc_row wpb_row vc_inner vc_row-fluid vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "wpb_column vc_column_container vc_col-sm-3"
+                        },
+                        [
+                          _c("div", { staticClass: "vc_column-inner" }, [
+                            _c("div", { staticClass: "wpb_wrapper" }, [
+                              _c("div", {
+                                staticClass: "g5plus-space space",
+                                staticStyle: {
+                                  clear: "both",
+                                  display: "block",
+                                  height: "90px"
+                                },
+                                attrs: {
+                                  "data-id": "5ed1ab7fd11ff",
+                                  "data-tablet": "70",
+                                  "data-tablet-portrait": "60",
+                                  "data-mobile": "40",
+                                  "data-mobile-landscape": "50"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "wpb_text_column wpb_content_element"
+                                },
+                                [
+                                  _c("div", { staticClass: "wpb_wrapper" }, [
+                                    _c(
+                                      "p",
+                                      { staticClass: "hd-subtitle-spec" },
+                                      [_vm._v("DISCOVER YOUR")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("h2", { staticClass: "hd-title-spec" }, [
+                                      _c("span", { staticClass: "fl-accent" }, [
+                                        _vm._v("DREAM")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "fl-accent" }, [
+                                        _vm._v("HOUSE")
+                                      ])
+                                    ])
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", {
+                                staticClass: "g5plus-space space",
+                                staticStyle: {
+                                  clear: "both",
+                                  display: "block",
+                                  height: "90px"
+                                },
+                                attrs: {
+                                  "data-id": "5ed1ab7fd1652",
+                                  "data-tablet": "70",
+                                  "data-tablet-portrait": "60",
+                                  "data-mobile": "40",
+                                  "data-mobile-landscape": "50"
+                                }
+                              })
+                            ])
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "bg-dark-left wpb_column vc_column_container vc_col-sm-9 vc_col-has-fill"
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "column-inner vc_custom_1485091686429"
+                            },
+                            [
+                              _c("div", { staticClass: "wpb_wrapper" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "search-properties clearfix show-status-tab style-default-small color-light"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "form-search-wrap" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form-search-inner" },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "search-content" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "search-properties-form",
+                                                    attrs: { "data-href": "#" }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "search-status-tab"
+                                                      },
+                                                      [
+                                                        _c("input", {
+                                                          staticClass:
+                                                            "search-field",
+                                                          attrs: {
+                                                            type: "hidden",
+                                                            name: "status",
+                                                            value: "for-rent",
+                                                            "data-default-value":
+                                                              ""
+                                                          }
+                                                        }),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "button",
+                                                          {
+                                                            staticClass:
+                                                              "btn-status-filter active",
+                                                            attrs: {
+                                                              type: "button",
+                                                              "data-value":
+                                                                "for-rent"
+                                                            }
+                                                          },
+                                                          [_vm._v("For Rent")]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "button",
+                                                          {
+                                                            staticClass:
+                                                              "btn-status-filter",
+                                                            attrs: {
+                                                              type: "button",
+                                                              "data-value":
+                                                                "for-sale"
+                                                            }
+                                                          },
+                                                          [_vm._v("For Sale")]
+                                                        )
+                                                      ]
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "div",
+                                                      { staticClass: "row" },
+                                                      [
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name: "type",
+                                                                  title:
+                                                                    "Property Types",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c("option", [
+                                                                  _vm._v(
+                                                                    "Mid House"
+                                                                  )
+                                                                ])
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c("input", {
+                                                              staticClass:
+                                                                "form-control search-field",
+                                                              attrs: {
+                                                                type: "text",
+                                                                "data-default-value":
+                                                                  "",
+                                                                value: "",
+                                                                name: "title",
+                                                                placeholder:
+                                                                  "Title"
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c("input", {
+                                                              staticClass:
+                                                                "ere-location form-control search-field",
+                                                              attrs: {
+                                                                type: "text",
+                                                                "data-default-value":
+                                                                  "",
+                                                                value: "",
+                                                                name: "address",
+                                                                placeholder:
+                                                                  "Address"
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name:
+                                                                    "bedrooms",
+                                                                  title:
+                                                                    "Property Bedrooms",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Any Bedrooms"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: "1"
+                                                                    }
+                                                                  },
+                                                                  [_vm._v("1")]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name:
+                                                                    "bathrooms",
+                                                                  title:
+                                                                    "Property Bathrooms",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Any Bathrooms"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: "1"
+                                                                    }
+                                                                  },
+                                                                  [_vm._v("1")]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-2 col-sm-3 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name:
+                                                                    "min-price",
+                                                                  title:
+                                                                    "Min Price",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Min Price"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: "0"
+                                                                    }
+                                                                  },
+                                                                  [_vm._v("$0")]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "100"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "$100"
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-2 col-sm-3 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "select",
+                                                              {
+                                                                staticClass:
+                                                                  "search-field form-control",
+                                                                attrs: {
+                                                                  name:
+                                                                    "max-price",
+                                                                  title:
+                                                                    "Max Price",
+                                                                  "data-default-value":
+                                                                    ""
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value: ""
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "Max Price"
+                                                                    )
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "option",
+                                                                  {
+                                                                    attrs: {
+                                                                      value:
+                                                                        "200"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _vm._v(
+                                                                      "$200"
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "div",
+                                                              {
+                                                                staticClass:
+                                                                  "find-home-item"
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "div",
+                                                                  {
+                                                                    staticClass:
+                                                                      "shop-filter"
+                                                                  },
+                                                                  [
+                                                                    _c(
+                                                                      "div",
+                                                                      {
+                                                                        staticClass:
+                                                                          "price_filter"
+                                                                      },
+                                                                      [
+                                                                        _c(
+                                                                          "div",
+                                                                          {
+                                                                            staticClass:
+                                                                              "price_slider_amount"
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "input",
+                                                                              {
+                                                                                attrs: {
+                                                                                  type:
+                                                                                    "submit",
+                                                                                  value:
+                                                                                    "Price range :"
+                                                                                }
+                                                                              }
+                                                                            ),
+                                                                            _vm._v(
+                                                                              " "
+                                                                            ),
+                                                                            _c(
+                                                                              "input",
+                                                                              {
+                                                                                attrs: {
+                                                                                  type:
+                                                                                    "text",
+                                                                                  id:
+                                                                                    "amount",
+                                                                                  name:
+                                                                                    "price",
+                                                                                  placeholder:
+                                                                                    "Add Your Price"
+                                                                                }
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        ),
+                                                                        _vm._v(
+                                                                          " "
+                                                                        ),
+                                                                        _c(
+                                                                          "div",
+                                                                          {
+                                                                            attrs: {
+                                                                              id:
+                                                                                "slider-range1"
+                                                                            }
+                                                                          }
+                                                                        )
+                                                                      ]
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "div",
+                                                              {
+                                                                staticClass:
+                                                                  "find-home-item"
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "div",
+                                                                  {
+                                                                    staticClass:
+                                                                      "shop-filter"
+                                                                  },
+                                                                  [
+                                                                    _c(
+                                                                      "div",
+                                                                      {
+                                                                        staticClass:
+                                                                          "price_filter"
+                                                                      },
+                                                                      [
+                                                                        _c(
+                                                                          "div",
+                                                                          {
+                                                                            staticClass:
+                                                                              "price_slider_amount"
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "input",
+                                                                              {
+                                                                                attrs: {
+                                                                                  type:
+                                                                                    "submit",
+                                                                                  value:
+                                                                                    "Land Area :"
+                                                                                }
+                                                                              }
+                                                                            ),
+                                                                            _vm._v(
+                                                                              " "
+                                                                            ),
+                                                                            _c(
+                                                                              "input",
+                                                                              {
+                                                                                attrs: {
+                                                                                  type:
+                                                                                    "text",
+                                                                                  id:
+                                                                                    "sqft",
+                                                                                  name:
+                                                                                    "area",
+                                                                                  placeholder:
+                                                                                    "Add Your Area"
+                                                                                }
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        ),
+                                                                        _vm._v(
+                                                                          " "
+                                                                        ),
+                                                                        _c(
+                                                                          "div",
+                                                                          {
+                                                                            attrs: {
+                                                                              id:
+                                                                                "slider-range2"
+                                                                            }
+                                                                          }
+                                                                        )
+                                                                      ]
+                                                                    )
+                                                                  ]
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
+                                                          },
+                                                          [
+                                                            _c("input", {
+                                                              staticClass:
+                                                                "ere-property-identity form-control search-field",
+                                                              attrs: {
+                                                                type: "text",
+                                                                "data-default-value":
+                                                                  "",
+                                                                value: "",
+                                                                name:
+                                                                  "property_identity",
+                                                                placeholder:
+                                                                  "Property ID"
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "col-md-12 col-sm-6 col-xs-12 form-group submit-search-form pull-right"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "button",
+                                                              {
+                                                                staticClass:
+                                                                  "ere-advanced-search-btn",
+                                                                attrs: {
+                                                                  type: "button"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c("i", {
+                                                                  staticClass:
+                                                                    "fa fa-search"
+                                                                }),
+                                                                _vm._v(
+                                                                  " Search\n                                    "
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -41234,29 +42051,49 @@ var render = function() {
                     attrs: { id: "ere_widget_login_menu-2" }
                   },
                   [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "login-link topbar-link",
-                        attrs: {
-                          href: "javascript:void(0)",
-                          "data-toggle": "modal",
-                          "data-target": "#ere_signin_modal"
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "fa fa-user" }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
+                    !this.isLoggedIn
+                      ? _c(
+                          "a",
                           {
-                            staticClass: "hidden-xs",
-                            on: { click: _vm.showLoginModal }
+                            staticClass: "login-link topbar-link",
+                            attrs: {
+                              href: "javascript:void(0)",
+                              "data-toggle": "modal",
+                              "data-target": "#ere_signin_modal"
+                            }
                           },
-                          [_vm._v("Login or Register")]
+                          [
+                            _c("i", { staticClass: "fa fa-user" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "hidden-xs",
+                                on: { click: _vm.showLoginModal }
+                              },
+                              [_vm._v("Login or Register")]
+                            )
+                          ]
                         )
-                      ]
-                    )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    this.isLoggedIn
+                      ? _c(
+                          "a",
+                          {
+                            staticClass: "login-link topbar-link",
+                            attrs: { href: "javascript:void(0)" },
+                            on: { click: _vm.logout }
+                          },
+                          [
+                            _c("i", { staticClass: "fa fa-user" }),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "hidden-xs" }, [
+                              _vm._v("Hi " + _vm._s(_vm.userName))
+                            ])
+                          ]
+                        )
+                      : _vm._e()
                   ]
                 ),
                 _vm._v(" "),
@@ -41439,10 +42276,58 @@ var render = function() {
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
-                      _vm._m(6)
+                      _c("div", { staticClass: "wp-social-login-widget" }, [
+                        _c(
+                          "div",
+                          { staticClass: "wp-social-login-connect-with" },
+                          [_vm._v("or Connect with Social Networks")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "wp-social-login-provider-list" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "wp-social-login-provider wp-social-login-provider-facebook",
+                                attrs: {
+                                  rel: "nofollow",
+                                  href: "void:javascript(0)",
+                                  title: "Login with Facebook",
+                                  "data-provider": "Facebook"
+                                },
+                                on: { click: _vm.logInWithFacebook }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "Facebook",
+                                    title: "Login with Facebook",
+                                    src: "vue/images/facebook.svg"
+                                  }
+                                })
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _vm._m(6),
+                            _vm._v(" "),
+                            _vm._m(7),
+                            _vm._v(" "),
+                            _vm._m(8)
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm._m(9),
+                        _vm._v(" "),
+                        _c("div", {
+                          staticClass: "wp-social-login-widget-clearing"
+                        })
+                      ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(7)
+                    _vm._m(10)
                   ]
                 ),
                 _vm._v(" "),
@@ -41606,8 +42491,8 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: _vm.form.c_password,
-                                    expression: "form.c_password"
+                                    value: _vm.form.confirm_password,
+                                    expression: "form.confirm_password"
                                   }
                                 ],
                                 staticClass: "form-control control-icon",
@@ -41618,10 +42503,10 @@ var render = function() {
                                 },
                                 attrs: {
                                   name: "confirm_password",
-                                  placeholder: "Retype Password",
+                                  placeholder: "Confirm Password",
                                   type: "password"
                                 },
-                                domProps: { value: _vm.form.c_password },
+                                domProps: { value: _vm.form.confirm_password },
                                 on: {
                                   input: function($event) {
                                     if ($event.target.composing) {
@@ -41629,7 +42514,7 @@ var render = function() {
                                     }
                                     _vm.$set(
                                       _vm.form,
-                                      "c_password",
+                                      "confirm_password",
                                       $event.target.value
                                     )
                                   }
@@ -41646,7 +42531,71 @@ var render = function() {
                             1
                           ),
                           _vm._v(" "),
-                          _vm._m(8),
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.type,
+                                      expression: "form.type"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  class: {
+                                    "is-invalid": _vm.form.errors.has("type")
+                                  },
+                                  attrs: {
+                                    name: "user_register_role",
+                                    id: "user_register_role"
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.form,
+                                        "type",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
+                                },
+                                _vm._l(_vm.roles, function(role) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: role.id,
+                                      domProps: { value: role.id }
+                                    },
+                                    [_vm._v(_vm._s(role.role))]
+                                  )
+                                }),
+                                0
+                              ),
+                              _vm._v(" "),
+                              _c("has-error", {
+                                attrs: { form: _vm.form, field: "type" }
+                              })
+                            ],
+                            1
+                          ),
                           _vm._v(" "),
                           _c(
                             "button",
@@ -42059,113 +43008,91 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "wp-social-login-widget" }, [
-      _c("div", { staticClass: "wp-social-login-connect-with" }, [
-        _vm._v("or Connect with Social Networks")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "wp-social-login-provider-list" }, [
-        _c(
-          "a",
-          {
-            staticClass:
-              "wp-social-login-provider wp-social-login-provider-facebook",
-            attrs: {
-              rel: "nofollow",
-              href: "#",
-              title: "Login with Facebook",
-              "data-provider": "Facebook"
-            }
-          },
-          [
-            _c("img", {
-              attrs: {
-                alt: "Facebook",
-                title: "Login with Facebook",
-                src: "vue/images/facebook.svg"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "wp-social-login-provider wp-social-login-provider-twitter",
-            attrs: {
-              rel: "nofollow",
-              href: "#",
-              title: "Login with Twitter",
-              "data-provider": "Twitter"
-            }
-          },
-          [
-            _c("img", {
-              attrs: {
-                alt: "Twitter",
-                title: "Login with Twitter",
-                src: "vue/images/twitter.svg"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "wp-social-login-provider wp-social-login-provider-instagram",
-            attrs: {
-              rel: "nofollow",
-              href: "#",
-              title: "Login with Instagram",
-              "data-provider": "Instagram"
-            }
-          },
-          [
-            _c("img", {
-              attrs: {
-                alt: "Instagram",
-                title: "Login with Instagram",
-                src: "vue/images/instagram.svg"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "wp-social-login-provider wp-social-login-provider-tiktok",
-            attrs: {
-              rel: "nofollow",
-              href: "#",
-              title: "Login with Tiktok",
-              "data-provider": "Tiktok"
-            }
-          },
-          [
-            _c("img", {
-              attrs: {
-                alt: "Tiktok",
-                title: "Login with Tiktok",
-                src: "vue/images/tiktok2.svg"
-              }
-            })
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("h6", { staticClass: "login-terms" }, [
-        _vm._v(
-          "\n                  By creating an account you are accepting our\n                  "
-        ),
-        _c("a", { attrs: { href: "" } }, [_vm._v("Terms & Conditions")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "wp-social-login-widget-clearing" })
+    return _c(
+      "a",
+      {
+        staticClass:
+          "wp-social-login-provider wp-social-login-provider-twitter",
+        attrs: {
+          rel: "nofollow",
+          href: "#",
+          title: "Login with Twitter",
+          "data-provider": "Twitter"
+        }
+      },
+      [
+        _c("img", {
+          attrs: {
+            alt: "Twitter",
+            title: "Login with Twitter",
+            src: "vue/images/twitter.svg"
+          }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass:
+          "wp-social-login-provider wp-social-login-provider-instagram",
+        attrs: {
+          rel: "nofollow",
+          href: "#",
+          title: "Login with Instagram",
+          "data-provider": "Instagram"
+        }
+      },
+      [
+        _c("img", {
+          attrs: {
+            alt: "Instagram",
+            title: "Login with Instagram",
+            src: "vue/images/instagram.svg"
+          }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "wp-social-login-provider wp-social-login-provider-tiktok",
+        attrs: {
+          rel: "nofollow",
+          href: "#",
+          title: "Login with Tiktok",
+          "data-provider": "Tiktok"
+        }
+      },
+      [
+        _c("img", {
+          attrs: {
+            alt: "Tiktok",
+            title: "Login with Tiktok",
+            src: "vue/images/tiktok2.svg"
+          }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h6", { staticClass: "login-terms" }, [
+      _vm._v(
+        "\n                  By creating an account you are accepting our\n                  "
+      ),
+      _c("a", { attrs: { href: "" } }, [_vm._v("Terms & Conditions")])
     ])
   },
   function() {
@@ -42236,1015 +43163,6 @@ var staticRenderFns = [
           },
           [_vm._v("Back to Login")]
         )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      { attrs: { name: "user_register_role", id: "user_register_role" } },
-      [
-        _c("option", { attrs: { value: "owner" } }, [
-          _vm._v("Owner/Buyer/Tenant")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "agent" } }, [_vm._v("Agent")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "agency" } }, [_vm._v("Agency")])
-      ]
-    )
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/homepage/HomefilterComponent.vue?vue&type=template&id=06d84930&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/homepage/HomefilterComponent.vue?vue&type=template&id=06d84930& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "vc_row wpb_row vc_row-fluid vc_custom_1485139818778 vc_row-has-fill",
-        attrs: {
-          "data-vc-full-width": "true",
-          "data-vc-full-width-init": "false"
-        }
-      },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            { staticClass: "wpb_column vc_column_container vc_col-sm-12" },
-            [
-              _c("div", { staticClass: "vc_column-inner" }, [
-                _c("div", { staticClass: "wpb_wrapper" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "vc_row wpb_row vc_inner vc_row-fluid vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "wpb_column vc_column_container vc_col-sm-3"
-                        },
-                        [
-                          _c("div", { staticClass: "vc_column-inner" }, [
-                            _c("div", { staticClass: "wpb_wrapper" }, [
-                              _c("div", {
-                                staticClass: "g5plus-space space",
-                                staticStyle: {
-                                  clear: "both",
-                                  display: "block",
-                                  height: "90px"
-                                },
-                                attrs: {
-                                  "data-id": "5ed1ab7fd11ff",
-                                  "data-tablet": "70",
-                                  "data-tablet-portrait": "60",
-                                  "data-mobile": "40",
-                                  "data-mobile-landscape": "50"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "wpb_text_column wpb_content_element"
-                                },
-                                [
-                                  _c("div", { staticClass: "wpb_wrapper" }, [
-                                    _c(
-                                      "p",
-                                      { staticClass: "hd-subtitle-spec" },
-                                      [_vm._v("DISCOVER YOUR")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("h2", { staticClass: "hd-title-spec" }, [
-                                      _c("span", { staticClass: "fl-accent" }, [
-                                        _vm._v("DREAM")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "fl-accent" }, [
-                                        _vm._v("HOUSE")
-                                      ])
-                                    ])
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", {
-                                staticClass: "g5plus-space space",
-                                staticStyle: {
-                                  clear: "both",
-                                  display: "block",
-                                  height: "90px"
-                                },
-                                attrs: {
-                                  "data-id": "5ed1ab7fd1652",
-                                  "data-tablet": "70",
-                                  "data-tablet-portrait": "60",
-                                  "data-mobile": "40",
-                                  "data-mobile-landscape": "50"
-                                }
-                              })
-                            ])
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-dark-left wpb_column vc_column_container vc_col-sm-9 vc_col-has-fill"
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "column-inner vc_custom_1485091686429"
-                            },
-                            [
-                              _c("div", { staticClass: "wpb_wrapper" }, [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "search-properties clearfix show-status-tab style-default-small color-light"
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "form-search-wrap" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "form-search-inner" },
-                                          [
-                                            _c(
-                                              "div",
-                                              { staticClass: "search-content" },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "search-properties-form",
-                                                    attrs: { "data-href": "#" }
-                                                  },
-                                                  [
-                                                    _c(
-                                                      "div",
-                                                      {
-                                                        staticClass:
-                                                          "search-status-tab"
-                                                      },
-                                                      [
-                                                        _c("input", {
-                                                          staticClass:
-                                                            "search-field",
-                                                          attrs: {
-                                                            type: "hidden",
-                                                            name: "status",
-                                                            value: "for-rent",
-                                                            "data-default-value":
-                                                              ""
-                                                          }
-                                                        }),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "button",
-                                                          {
-                                                            staticClass:
-                                                              "btn-status-filter active",
-                                                            attrs: {
-                                                              type: "button",
-                                                              "data-value":
-                                                                "for-rent"
-                                                            }
-                                                          },
-                                                          [_vm._v("For Rent")]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "button",
-                                                          {
-                                                            staticClass:
-                                                              "btn-status-filter",
-                                                            attrs: {
-                                                              type: "button",
-                                                              "data-value":
-                                                                "for-sale"
-                                                            }
-                                                          },
-                                                          [_vm._v("For Sale")]
-                                                        )
-                                                      ]
-                                                    ),
-                                                    _vm._v(" "),
-                                                    _c(
-                                                      "div",
-                                                      { staticClass: "row" },
-                                                      [
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "select",
-                                                              {
-                                                                staticClass:
-                                                                  "search-field form-control",
-                                                                attrs: {
-                                                                  name: "type",
-                                                                  title:
-                                                                    "Property Types",
-                                                                  "data-default-value":
-                                                                    ""
-                                                                }
-                                                              },
-                                                              [
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "apartment"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Apartment"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "bar"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Bar"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "cafe"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Cafe"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "car-wash"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Car Wash"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "casino"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Casino"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "farm"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Farm"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "hotel"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Hotel"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "house"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "House"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "land"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Land"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "lodging"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Lodging"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "restaurant"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Restaurant"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "spa"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Spa"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "store"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Store"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "villa"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Villa"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value: "",
-                                                                      selected:
-                                                                        ""
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "All Types"
-                                                                    )
-                                                                  ]
-                                                                )
-                                                              ]
-                                                            )
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c("input", {
-                                                              staticClass:
-                                                                "form-control search-field",
-                                                              attrs: {
-                                                                type: "text",
-                                                                "data-default-value":
-                                                                  "",
-                                                                value: "",
-                                                                name: "title",
-                                                                placeholder:
-                                                                  "Title"
-                                                              }
-                                                            })
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c("input", {
-                                                              staticClass:
-                                                                "ere-location form-control search-field",
-                                                              attrs: {
-                                                                type: "text",
-                                                                "data-default-value":
-                                                                  "",
-                                                                value: "",
-                                                                name: "address",
-                                                                placeholder:
-                                                                  "Address"
-                                                              }
-                                                            })
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "select",
-                                                              {
-                                                                staticClass:
-                                                                  "search-field form-control",
-                                                                attrs: {
-                                                                  name:
-                                                                    "bedrooms",
-                                                                  title:
-                                                                    "Property Bedrooms",
-                                                                  "data-default-value":
-                                                                    ""
-                                                                }
-                                                              },
-                                                              [
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value: ""
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Any Bedrooms"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value: "1"
-                                                                    }
-                                                                  },
-                                                                  [_vm._v("1")]
-                                                                )
-                                                              ]
-                                                            )
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "select",
-                                                              {
-                                                                staticClass:
-                                                                  "search-field form-control",
-                                                                attrs: {
-                                                                  name:
-                                                                    "bathrooms",
-                                                                  title:
-                                                                    "Property Bathrooms",
-                                                                  "data-default-value":
-                                                                    ""
-                                                                }
-                                                              },
-                                                              [
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value: ""
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Any Bathrooms"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value: "1"
-                                                                    }
-                                                                  },
-                                                                  [_vm._v("1")]
-                                                                )
-                                                              ]
-                                                            )
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-2 col-sm-3 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "select",
-                                                              {
-                                                                staticClass:
-                                                                  "search-field form-control",
-                                                                attrs: {
-                                                                  name:
-                                                                    "min-price",
-                                                                  title:
-                                                                    "Min Price",
-                                                                  "data-default-value":
-                                                                    ""
-                                                                }
-                                                              },
-                                                              [
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value: ""
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Min Price"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value: "0"
-                                                                    }
-                                                                  },
-                                                                  [_vm._v("$0")]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "100"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "$100"
-                                                                    )
-                                                                  ]
-                                                                )
-                                                              ]
-                                                            )
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-2 col-sm-3 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "select",
-                                                              {
-                                                                staticClass:
-                                                                  "search-field form-control",
-                                                                attrs: {
-                                                                  name:
-                                                                    "max-price",
-                                                                  title:
-                                                                    "Max Price",
-                                                                  "data-default-value":
-                                                                    ""
-                                                                }
-                                                              },
-                                                              [
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value: ""
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "Max Price"
-                                                                    )
-                                                                  ]
-                                                                ),
-                                                                _vm._v(" "),
-                                                                _c(
-                                                                  "option",
-                                                                  {
-                                                                    attrs: {
-                                                                      value:
-                                                                        "200"
-                                                                    }
-                                                                  },
-                                                                  [
-                                                                    _vm._v(
-                                                                      "$200"
-                                                                    )
-                                                                  ]
-                                                                )
-                                                              ]
-                                                            )
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "div",
-                                                              {
-                                                                staticClass:
-                                                                  "find-home-item"
-                                                              },
-                                                              [
-                                                                _c(
-                                                                  "div",
-                                                                  {
-                                                                    staticClass:
-                                                                      "shop-filter"
-                                                                  },
-                                                                  [
-                                                                    _c(
-                                                                      "div",
-                                                                      {
-                                                                        staticClass:
-                                                                          "price_filter"
-                                                                      },
-                                                                      [
-                                                                        _c(
-                                                                          "div",
-                                                                          {
-                                                                            staticClass:
-                                                                              "price_slider_amount"
-                                                                          },
-                                                                          [
-                                                                            _c(
-                                                                              "input",
-                                                                              {
-                                                                                attrs: {
-                                                                                  type:
-                                                                                    "submit",
-                                                                                  value:
-                                                                                    "Price range :"
-                                                                                }
-                                                                              }
-                                                                            ),
-                                                                            _vm._v(
-                                                                              " "
-                                                                            ),
-                                                                            _c(
-                                                                              "input",
-                                                                              {
-                                                                                attrs: {
-                                                                                  type:
-                                                                                    "text",
-                                                                                  id:
-                                                                                    "amount",
-                                                                                  name:
-                                                                                    "price",
-                                                                                  placeholder:
-                                                                                    "Add Your Price"
-                                                                                }
-                                                                              }
-                                                                            )
-                                                                          ]
-                                                                        ),
-                                                                        _vm._v(
-                                                                          " "
-                                                                        ),
-                                                                        _c(
-                                                                          "div",
-                                                                          {
-                                                                            attrs: {
-                                                                              id:
-                                                                                "slider-range1"
-                                                                            }
-                                                                          }
-                                                                        )
-                                                                      ]
-                                                                    )
-                                                                  ]
-                                                                )
-                                                              ]
-                                                            )
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "div",
-                                                              {
-                                                                staticClass:
-                                                                  "find-home-item"
-                                                              },
-                                                              [
-                                                                _c(
-                                                                  "div",
-                                                                  {
-                                                                    staticClass:
-                                                                      "shop-filter"
-                                                                  },
-                                                                  [
-                                                                    _c(
-                                                                      "div",
-                                                                      {
-                                                                        staticClass:
-                                                                          "price_filter"
-                                                                      },
-                                                                      [
-                                                                        _c(
-                                                                          "div",
-                                                                          {
-                                                                            staticClass:
-                                                                              "price_slider_amount"
-                                                                          },
-                                                                          [
-                                                                            _c(
-                                                                              "input",
-                                                                              {
-                                                                                attrs: {
-                                                                                  type:
-                                                                                    "submit",
-                                                                                  value:
-                                                                                    "Land Area :"
-                                                                                }
-                                                                              }
-                                                                            ),
-                                                                            _vm._v(
-                                                                              " "
-                                                                            ),
-                                                                            _c(
-                                                                              "input",
-                                                                              {
-                                                                                attrs: {
-                                                                                  type:
-                                                                                    "text",
-                                                                                  id:
-                                                                                    "sqft",
-                                                                                  name:
-                                                                                    "area",
-                                                                                  placeholder:
-                                                                                    "Add Your Area"
-                                                                                }
-                                                                              }
-                                                                            )
-                                                                          ]
-                                                                        ),
-                                                                        _vm._v(
-                                                                          " "
-                                                                        ),
-                                                                        _c(
-                                                                          "div",
-                                                                          {
-                                                                            attrs: {
-                                                                              id:
-                                                                                "slider-range2"
-                                                                            }
-                                                                          }
-                                                                        )
-                                                                      ]
-                                                                    )
-                                                                  ]
-                                                                )
-                                                              ]
-                                                            )
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-4 col-sm-6 col-xs-12 form-group"
-                                                          },
-                                                          [
-                                                            _c("input", {
-                                                              staticClass:
-                                                                "ere-property-identity form-control search-field",
-                                                              attrs: {
-                                                                type: "text",
-                                                                "data-default-value":
-                                                                  "",
-                                                                value: "",
-                                                                name:
-                                                                  "property_identity",
-                                                                placeholder:
-                                                                  "Property ID"
-                                                              }
-                                                            })
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-12 col-sm-6 col-xs-12 form-group submit-search-form pull-right"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "button",
-                                                              {
-                                                                staticClass:
-                                                                  "ere-advanced-search-btn",
-                                                                attrs: {
-                                                                  type: "button"
-                                                                }
-                                                              },
-                                                              [
-                                                                _c("i", {
-                                                                  staticClass:
-                                                                    "fa fa-search"
-                                                                }),
-                                                                _vm._v(
-                                                                  " Search\n                                "
-                                                                )
-                                                              ]
-                                                            )
-                                                          ]
-                                                        )
-                                                      ]
-                                                    )
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ])
-            ]
-          )
-        ])
       ]
     )
   }
@@ -55649,7 +55567,6 @@ window.swal = sweetalert__WEBPACK_IMPORTED_MODULE_1___default.a;
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('home-component', __webpack_require__(/*! ./components/HomeComponent.vue */ "./resources/js/components/HomeComponent.vue")["default"]);
 Vue.component('nav-component', __webpack_require__(/*! ./components/header/NavComponent.vue */ "./resources/js/components/header/NavComponent.vue")["default"]);
-Vue.component('home-filter-component', __webpack_require__(/*! ./components/homepage/HomefilterComponent.vue */ "./resources/js/components/homepage/HomefilterComponent.vue")["default"]);
 Vue.component('neighbour-component', __webpack_require__(/*! ./components/homepage/NeighbourComponent.vue */ "./resources/js/components/homepage/NeighbourComponent.vue")["default"]);
 Vue.component('subscribe-component', __webpack_require__(/*! ./components/homepage/NewLetterComponent.vue */ "./resources/js/components/homepage/NewLetterComponent.vue")["default"]);
 Vue.component('footer-component', __webpack_require__(/*! ./components/footer/FooterComponent.vue */ "./resources/js/components/footer/FooterComponent.vue")["default"]);
@@ -55996,75 +55913,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavComponent_vue_vue_type_template_id_09358381___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavComponent_vue_vue_type_template_id_09358381___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/homepage/HomefilterComponent.vue":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/homepage/HomefilterComponent.vue ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _HomefilterComponent_vue_vue_type_template_id_06d84930___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomefilterComponent.vue?vue&type=template&id=06d84930& */ "./resources/js/components/homepage/HomefilterComponent.vue?vue&type=template&id=06d84930&");
-/* harmony import */ var _HomefilterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HomefilterComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/homepage/HomefilterComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _HomefilterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _HomefilterComponent_vue_vue_type_template_id_06d84930___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _HomefilterComponent_vue_vue_type_template_id_06d84930___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/homepage/HomefilterComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/homepage/HomefilterComponent.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/components/homepage/HomefilterComponent.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomefilterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./HomefilterComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/homepage/HomefilterComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomefilterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/homepage/HomefilterComponent.vue?vue&type=template&id=06d84930&":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/components/homepage/HomefilterComponent.vue?vue&type=template&id=06d84930& ***!
-  \*************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomefilterComponent_vue_vue_type_template_id_06d84930___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./HomefilterComponent.vue?vue&type=template&id=06d84930& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/homepage/HomefilterComponent.vue?vue&type=template&id=06d84930&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomefilterComponent_vue_vue_type_template_id_06d84930___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomefilterComponent_vue_vue_type_template_id_06d84930___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

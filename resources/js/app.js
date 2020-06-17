@@ -31,7 +31,6 @@ window.swal = swal;
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('home-component', require('./components/HomeComponent.vue').default);
 Vue.component('nav-component', require('./components/header/NavComponent.vue').default);
-Vue.component('home-filter-component', require('./components/homepage/HomefilterComponent.vue').default);
 Vue.component('neighbour-component', require('./components/homepage/NeighbourComponent.vue').default);
 Vue.component('subscribe-component', require('./components/homepage/NewLetterComponent.vue').default);
 Vue.component('footer-component', require('./components/footer/FooterComponent.vue').default);

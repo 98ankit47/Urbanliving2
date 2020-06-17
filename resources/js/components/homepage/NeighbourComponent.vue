@@ -48,10 +48,10 @@
   methods:  {
    loadHomeNeighbour()
     {
-      console.log('Test');
       axios.get("api/home-neighbour").then(({data})=>(this.neighbour = data)); 
     }
   },
+
   mounted() {
     console.log("Component mounted.");
     this.loadHomeNeighbour();
