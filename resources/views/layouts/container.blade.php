@@ -74,11 +74,5 @@
     </div>
 </div>
 </body>
-    <!-- jquery latest version -->
-    <script src="vue/js/jquery-3.1.1.js"></script>
-    <!-- Google Map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeeHDCOXmUMja1CFg96RbtyKgx381yoBU"></script>
-    <script src="vue/js/google-map.js"></script>
-    <!-- All js plugins included in this file. -->
-    <script src="vue/js/plugins.js"></script>
+
 </html>
