@@ -238,11 +238,20 @@ class HomeController extends Controller
                     }
                 }
             }
-            foreach($homes as $house)
+            if($homes)
             {
-                $house->gallery=explode(',',$house->gallery);
+                foreach($homes as $house)
+                {
+                    return $house;
+                    $house->gallery=explode(',',$house->gallery);
+                }
+                return $homes;
             }
-            return $homes;
+            else
+            {
+                return "no Record found";
+            } 
+           
         }
         $homesall=Homes::get();
         foreach($homesall as $house)
@@ -250,6 +259,19 @@ class HomeController extends Controller
             $house->gallery=explode(',',$house->gallery);
         }
         return $homesall;
+    }
+
+    public function HomeFilterData()
+    {
+        $data=[
+            'maxbedroom'=>(int)Homes::where('block',1)->max('bedroom'),
+            'maxbathroom'=>(int)Homes::where('block',1)->max('bathroom'),
+            'minarea'=>Homes::where('block',1)->min('area'),
+            'maxarea'=>Homes::where('block',1)->max('area'),
+            'minprice'=>Homes::where('block',1)->min('price'),
+            'maxprice'=>Homes::where('block',1)->max('price'),
+        ];
+        return $data;        
     }
     
     public function HomeNeighbour()

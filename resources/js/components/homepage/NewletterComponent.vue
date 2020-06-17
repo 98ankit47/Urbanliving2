@@ -14,8 +14,8 @@
               <input
                 type="email"
                 required
-                v-model="form.email"
                 name="email"
+                v-model="form.email"
                 :class="{ 'is-invalid': form.errors.has('email') }"
                 placeholder="Enter your email here..."
               />

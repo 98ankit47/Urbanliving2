@@ -142,6 +142,7 @@
                                       class="btn-status-filter"
                                     >For Sale</button>
                                   </div>
+                                  <form @submit.prevent="HomeFilter" @keydown="form.onKeydown($event)">
                                   <div class="row">
                                     <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                       <select
@@ -149,8 +150,13 @@
                                         title="Property Types"
                                         class="search-field form-control"
                                         data-default-value
+                                         v-model="form.type"
+                                        :class="{ 'is-invalid': form.errors.has('type') }"
                                       >
-                                        <option >Mid House</option>
+                                        <option value>Any Type</option>
+                                        <option  value="single" >Single House</option>
+                                        <option  value="mid" >Mid Town</option>
+                                        <option  value="town" >Town Condo</option>
                                       </select>
                                     </div>
                                     <div class="col-md-4 col-sm-6 col-xs-12 form-group">
@@ -161,6 +167,8 @@
                                         value
                                         name="title"
                                         placeholder="Title"
+                                        v-model="form.title"
+                                        :class="{ 'is-invalid': form.errors.has('title') }"
                                       />
                                     </div>
                                     <div class="col-md-4 col-sm-6 col-xs-12 form-group">
@@ -171,92 +179,37 @@
                                         value
                                         name="address"
                                         placeholder="Address"
+                                        v-model="form.address"
+                                        :class="{ 'is-invalid': form.errors.has('address') }"
                                       />
                                     </div>
                                     <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                       <select
-                                        name="bedrooms"
+                                        name="bedroom"
                                         title="Property Bedrooms"
                                         class="search-field form-control"
                                         data-default-value
+                                        v-model="form.bedroom"
+                                        :class="{ 'is-invalid': form.errors.has('bedroom') }"
                                       >
                                         <option value>Any Bedrooms</option>
-                                        <option value="1">1</option>
+                                        <option  v-for="index in home.maxbedroom" :key="index" :value="index">{{index}}</option>
                                       </select>
                                     </div>
                                     <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                       <select
-                                        name="bathrooms"
+                                        name="bathroom"
                                         title="Property Bathrooms"
                                         class="search-field form-control"
                                         data-default-value
+                                        v-model="form.bathroom"
+                                        :class="{ 'is-invalid': form.errors.has('bthroom') }"
                                       >
-                                        <option value>Any Bathrooms</option>
-                                        <option value="1">1</option>
+                                        <option value>Any Bathroom</option>
+                                        <option  v-for="index in home.maxbathroom" :key="index" :value="index">{{index}}</option>
                                       </select>
                                     </div>
-                                    <div class="col-md-2 col-sm-3 col-xs-12 form-group">
-                                      <select
-                                        name="min-price"
-                                        title="Min Price"
-                                        class="search-field form-control"
-                                        data-default-value
-                                      >
-                                        <option value>Min Price</option>
-                                        <option value="0">$0</option>
-                                        <option value="100">$100</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-2 col-sm-3 col-xs-12 form-group">
-                                      <select
-                                        name="max-price"
-                                        title="Max Price"
-                                        class="search-field form-control"
-                                        data-default-value
-                                      >
-                                        <option value>Max Price</option>
-                                        <option value="200">$200</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                      <div class="find-home-item">
-                                        <!-- shop-filter -->
-                                        <div class="shop-filter">
-                                          <div class="price_filter">
-                                            <div class="price_slider_amount">
-                                              <input type="submit" value="Price range :" />
-                                              <input
-                                                type="text"
-                                                id="amount"
-                                                name="price"
-                                                placeholder="Add Your Price"
-                                              />
-                                            </div>
-                                            <div id="slider-range1"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 col-xs-12 form-group">
-                                      <div class="find-home-item">
-                                        <!-- shop-filter -->
-                                        <div class="shop-filter">
-                                          <div class="price_filter">
-                                            <div class="price_slider_amount">
-                                              <input type="submit" value="Land Area :" />
-                                              <input
-                                                type="text"
-                                                id="sqft"
-                                                name="area"
-                                                placeholder="Add Your Area"
-                                              />
-                                            </div>
-                                            <div id="slider-range2"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                                      <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                       <input
                                         type="text"
                                         class="ere-property-identity form-control search-field"
@@ -266,14 +219,21 @@
                                         placeholder="Property ID"
                                       />
                                     </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                                      
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12 form-group">
+                                    </div>
+                                  
                                     <div
                                       class="col-md-12 col-sm-6 col-xs-12 form-group submit-search-form pull-right"
                                     >
-                                      <button type="button" class="ere-advanced-search-btn">
+                                      <button type="submit" class="ere-advanced-search-btn">
                                         <i class="fa fa-search"></i> Search
                                       </button>
                                     </div>
                                   </div>
+                                  </form>
                                 </div>
                               </div>
                             </div>
@@ -772,16 +732,35 @@
   data(){
     return{
       home:{},
-       
+      form: new Form({
+        address: "",
+        bedroom: "",
+        bathroom: "",
+        type: "",
+        title: "",
+        minarea: "",
+        maxarea: "",
+        minprice: "",
+        maxprice: "",
+
+      })
     }
   },
   methods:  {
    loadHome()
     {
-      axios.get("api/home-house-list").then(({data})=>(this.home = data)); 
+      axios.get("api/home-filter-data").then(({data})=>(this.home = data)); 
+    },
+    HomeFilter() {
+      // Submit the form via a POST request
+      this.form
+        .post("/api/home-house-list-filter")
+        .then(({ data }) => {
+          console.log(data);})
     }
   },
 
+  
   mounted() {
     this.loadHome();
   }
