@@ -468,7 +468,8 @@ export default {
     },
     register() {
       this.form.post("api/user/register").then(({ data }) => {
-        console.log(data);
+        this.userName = data.data.user.name;
+        this.isLoggedIn = true;
         $("#ere_signin_modal").modal("hide");
       });
     }

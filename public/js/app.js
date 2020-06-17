@@ -2655,19 +2655,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       form: new Form({
-        email: '',
-        message: ''
+        email: "",
+        message: ""
       })
     };
   },
   methods: {
     ContactUs: function ContactUs() {
       // Submit the form via a POST request
-      this.form.post('/api/contact-us').then(function (_ref) {
+      this.form.post("/api/contact-us").then(function (_ref) {
         var data = _ref.data;
         console.log(data);
 
@@ -2682,10 +2695,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  mounted: function mounted() {
-    console.log("Component mounted.");
-    this.loadHomeNeighbour();
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -3177,9 +3187,12 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     register: function register() {
+      var _this4 = this;
+
       this.form.post("api/user/register").then(function (_ref2) {
         var data = _ref2.data;
-        console.log(data);
+        _this4.userName = data.data.user.name;
+        _this4.isLoggedIn = true;
         $("#ere_signin_modal").modal("hide");
       });
     }
@@ -3235,7 +3248,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3253,7 +3265,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    console.log("Component mounted.");
     this.loadHomeNeighbour();
   }
 });
@@ -3292,18 +3303,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       form: new Form({
-        email: ''
+        email: ""
       })
     };
   },
   methods: {
     subscribe: function subscribe() {
       // Submit the form via a POST request
-      this.form.post('/api/news-letter').then(function (_ref) {
+      this.form.post("/api/news-letter").then(function (_ref) {
         var data = _ref.data;
         console.log(data);
 
@@ -3325,9 +3343,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"]();
     }
   },
-  mounted: function mounted() {
-    this.loadHomeNeighbour();
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -43214,9 +43230,7 @@ var render = function() {
                   _c("h5", [
                     _c("a", { attrs: { href: "#" } }, [
                       _c("b", [_vm._v(_vm._s(neighbours.title))])
-                    ]),
-                    _vm._v(" "),
-                    _c("a", [_vm._v(_vm._s(_vm.key))])
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("p", [
@@ -56074,8 +56088,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\UrbanLiving\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\UrbanLiving\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\HP\Documents\GitHub\Urbanliving2\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\HP\Documents\GitHub\Urbanliving2\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

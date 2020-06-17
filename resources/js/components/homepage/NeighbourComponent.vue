@@ -21,7 +21,6 @@
                     <div class="post-title-time">
                       <h5>
                         <a href="#"><b>{{neighbours.title}}</b></a>
-                        <a>{{key}}</a>
                       </h5>
                       <p>{{neighbours.subdivission}}, {{neighbours.state}}, {{neighbours.county}}</p>
                     </div>
@@ -53,7 +52,6 @@
   },
 
   mounted() {
-    console.log("Component mounted.");
     this.loadHomeNeighbour();
   }
 };
