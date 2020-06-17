@@ -11,8 +11,12 @@ window.Vue = require('vue');
 /** 
  * @import vform 
 */
+
 import { Form, HasError, AlertError } from 'vform';
 window.Form = Form;
+
+import swal from 'sweetalert';
+window.swal = swal;
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,6 +31,7 @@ window.Form = Form;
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('home-component', require('./components/HomeComponent.vue').default);
 Vue.component('nav-component', require('./components/header/NavComponent.vue').default);
+Vue.component('home-filter-component', require('./components/homepage/HomefilterComponent.vue').default);
 Vue.component('neighbour-component', require('./components/homepage/NeighbourComponent.vue').default);
 Vue.component('subscribe-component', require('./components/homepage/NewLetterComponent.vue').default);
 Vue.component('footer-component', require('./components/footer/FooterComponent.vue').default);

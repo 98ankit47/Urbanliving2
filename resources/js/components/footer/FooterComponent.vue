@@ -81,9 +81,9 @@
                 <h6 class="footer-titel">QUICK CONTACT</h6>
                 <div class="footer-contact">
                   <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor</p>
-                  <form id="contact-form-2" action="mail_footer.php" method="post">
-                    <input type="email" name="email2" placeholder="Type your E-mail address..." />
-                    <textarea name="message2" placeholder="Write here..."></textarea>
+                  <form @submit.prevent="ContactUs" @keydown="form.onKeydown($event)">
+                    <input type="email" name="email" required v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }" placeholder="Type your E-mail address..." />
+                    <textarea name="message"  v-model="form.message"  :class="{ 'is-invalid': form.errors.has('message') }" required placeholder="Write here..."></textarea>
                     <button type="submit" value="send">Send</button>
                   </form>
                   <p class="form-messege"></p>
@@ -133,15 +133,26 @@
     }
   },
   methods:  {
-      subscribe () {
+      ContactUs() {
       // Submit the form via a POST request
-      this.form.post('/api/news-letter')
-        .then(({ data }) => { console.log(data) })
+      this.form.post('/api/contact-us')
+        .then(({ data }) => { console.log(data)
+                if(data=="success")
+                {
+                    swal({
+                    title: "Enquiry Posted Succesfully!",
+                    text: "You Enquiry has been sended to Admin",
+                    icon: "success",
+                    button: "Done",
+                    });
+                }
+        })
         }
       },
-  mounted() {
+       mounted() {
     console.log("Component mounted.");
     this.loadHomeNeighbour();
   }
+   
 };
 </script>

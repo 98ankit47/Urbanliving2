@@ -14,7 +14,7 @@
                 <article class="blog-item bg-gray">
                   <div class="blog-image">
                     <a href="#">
-                      <img src="vue/images/nbrhoods/1.jpg" alt />
+                      <img :src="'uploads/locations/'+neighbours.image" alt />
                     </a>
                   </div>
                   <div class="blog-info">

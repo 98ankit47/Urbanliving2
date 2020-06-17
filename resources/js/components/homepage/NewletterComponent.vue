@@ -34,11 +34,37 @@
       subscribe () {
       // Submit the form via a POST request
       this.form.post('/api/news-letter')
-        .then(({ data }) => { console.log(data) })
+        .then(({ data }) => {
+             console.log(data) 
+                if(data=="success")
+                {
+                    swal({
+                    title: "Subscribed Succesfully!",
+                    text: "You have Subscibe Us",
+                    icon: "success",
+                    button: "Done",
+                    });
+                }
+                else
+                {
+                    swal({
+                    title: "Already Subscribed!",
+                    text: "You have Already Subscibe Us",
+                    icon: "success",
+                    button: "Done",
+                    });
+                }
+             })
+             
+            
+
+            .catch(
+                
+            )
+           
         }
       },
   mounted() {
-    console.log("Component mounted.");
     this.loadHomeNeighbour();
   }
 };

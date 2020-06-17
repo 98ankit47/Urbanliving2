@@ -8,7 +8,7 @@ class Communities extends Model
 {
     protected $hidden = array('created_at', 'updated_at');
     
-    protected $fillable = ['title','address','description','area','subdivission','city','county','zipcode','state','boundry'];
+    protected $fillable = ['title','address','image','description','area','subdivission','city','county','zipcode','state','boundry'];
 
     public function homes(){
     	return $this->hasMany('App\Models\HomeCommunity','community_id')->with('homes');

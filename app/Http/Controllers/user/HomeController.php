@@ -259,21 +259,27 @@ class HomeController extends Controller
 
     public function NewsLetter(Request $request)
     {
-        if(User::where('email',$request['email'])->get()->count()==0)
+        if(NewsLetter::where('email',$request['email'])->get()->count()==0)
         {
-            NewsLetter::create([
-                "email"=>$request['email'],
-                ]);
+            if(User::where('email',$request['email'])->get()->count()==0)
+            {
+                NewsLetter::create([
+                    "email"=>$request['email'],
+                    ]);
+            }
+            else
+            {
+                $user=User::where('email',$request['email'])->get()->first();
+                NewsLetter::create([
+                    "email"=>$request['email'],
+                    "name"=>$user->name,
+                    ]);
+            }
         }
         else
         {
-            $user=User::where('email',$request['email'])->get()->first();
-            NewsLetter::create([
-                "email"=>$request['email'],
-                "name"=>$user->name,
-                ]);
+            return ['email'=>"already exist"];
         }
-       
         return "success";
     }
 
@@ -313,10 +319,10 @@ class HomeController extends Controller
     {
         if(User::where('email',$request['email'])->get()->count()==0)
         {
-            // ContactUs::create([
-            //     "email"=>$request['email'],
-            //     "message"=>$request['message']
-            //     ]);
+            ContactUs::create([
+                "email"=>$request['email'],
+                "message"=>$request['message']
+                ]);
         }
         else
         {
