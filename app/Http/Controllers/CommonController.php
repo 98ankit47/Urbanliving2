@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\status;
 use App\Models\Features;
 use App\Models\Logos;
+use App\Models\Roles;
 use App\Models\Homes;
 use App\Models\Communities;
 use App\Models\Floors;
@@ -102,7 +103,7 @@ class CommonController extends Controller
     public function DashboardUser(Request $request)
     {
         $data ='';
-        $users= User::where('type','user')->get();
+        $users= User::where('role_id','!=',1)->get();
         foreach($users as $key=>$user)
         {
             ++$key;
@@ -787,5 +788,10 @@ class CommonController extends Controller
         ];
         Mail::to($mail)->send(new SendMail($data));
         return ['status' => 'success', 'message' =>  'Replied successfully'];
+    }
+    public function getRoles()
+    {
+        # code...
+        return Roles::where('id','!=',1)->get();
     }
 }

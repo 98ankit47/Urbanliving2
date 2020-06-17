@@ -17,7 +17,7 @@ class Role
     {
         $user = Auth::user();
 
-        if($user->type=="admin")
+        if($user->role_id==1)
            return $next($request);
 
          return redirect('/');

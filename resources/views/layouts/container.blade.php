@@ -19,7 +19,6 @@
         <link rel="stylesheet" href="vue/css/light-gallery.css" data-minify="1" />
         <link rel="stylesheet" href="vue/css/login.css" data-minify="1" />
         <link rel="stylesheet" href="vue/css/animate.css" data-minify="1" />
-        <link rel="stylesheet" href="vue/css/core.css" data-minify="1" />
         <link rel="stylesheet" href="vue/css/style3.css" data-minify="1" />
         <link rel="stylesheet" href="vue/css/style.css" data-minify="1" />
         <link rel="stylesheet" href="vue/css/default.css" data-minify="1" />

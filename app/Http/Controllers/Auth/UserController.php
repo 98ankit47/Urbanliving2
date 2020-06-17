@@ -46,6 +46,7 @@ class UserController extends Controller
             'email' => 'required|email', 
             'password' => 'required', 
             'confirm_password' => 'required|same:password', 
+            'type' => 'required'
         ]);
         $emailExist = User::where('email', $request['email'])->get()->first();
         if(!$emailExist):
@@ -53,12 +54,12 @@ class UserController extends Controller
                 'email'     =>  $request['email'],
                 'name'      =>  $request['username'],
                 'password' => Hash::make($request['password']),
-                'type'      =>  'user',
+                'role_id'      =>  $request['type'],
                 'status'    =>  1,
             ]);
+            Auth::login($user);
             $success['status'] = true;
-            $success['token'] =  $user->createToken('exposer_media')->accessToken; 
-            $success['name'] =  $user->name;
+            $success['user'] =  $user;
             return response()->json(['data'=>$success]);
         else:
             $fail['status'] = false;
@@ -74,15 +75,37 @@ class UserController extends Controller
             ]);
         
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 
-            $user = Auth::user(); 
+            $user = Auth::user();
+            Auth::login($user); 
             $success['status'] = true;
-            $success['token'] =  $user->createToken('MyApp')-> accessToken; 
-            return response()->json(['data' => $success]); 
+            $success['user'] =  $user; 
+            return response()->json($success); 
         } 
         else{ 
             return response()->json(['error'=>'Invalid Credentials'], 401); 
         } 
     }
-
+    public function loginStatus()
+    {
+        # code...
+        if (Auth::check()) {
+            // The user is logged in...
+            $user = Auth::user();
+            $success['status'] = true;
+            $success['user'] =  $user; 
+            return response()->json( $success);
+        }
+        else{
+            $success['status'] = false;
+            return response()->json( $success);
+        }
+    }
+    public function logout()
+    {
+        # code...
+        Auth::logout();
+        $success['status'] = true;
+        return response()->json( $success);
+    }
 
 }

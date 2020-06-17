@@ -8,6 +8,7 @@
               <div class="top-bar-left bar-left col-md-6">
                 <aside id="ere_widget_login_menu-2" class="widget ere_widget ere_widget_login_menu">
                   <a
+                    v-if="!this.isLoggedIn"
                     href="javascript:void(0)"
                     class="login-link topbar-link"
                     data-toggle="modal"
@@ -15,6 +16,15 @@
                   >
                     <i class="fa fa-user"></i>
                     <span class="hidden-xs" @click="showLoginModal">Login or Register</span>
+                  </a>
+                  <a
+                    class="login-link topbar-link"
+                    v-if="this.isLoggedIn"
+                    href="javascript:void(0)"
+                    @click="logout"
+                  >
+                    <i class="fa fa-user"></i>
+                    <span class="hidden-xs">Hi {{userName}}</span>
                   </a>
                 </aside>
                 <aside id="text-9" class="submit-property-language widget widget_text">
@@ -163,7 +173,7 @@
         </div>
       </div>
     </header>
-        <!-- Register and login modal begin -->
+    <!-- Register and login modal begin -->
     <div class="modal modal-login fade" id="ere_signin_modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -189,8 +199,9 @@
                       type="text"
                       autocomplete="off"
                       v-model="form.email"
-                      :class="{ 'is-invalid': form.errors.has('email') }">
-                       <has-error :form="form" field="email"></has-error>
+                      :class="{ 'is-invalid': form.errors.has('email') }"
+                    />
+                    <has-error :form="form" field="email"></has-error>
                   </div>
                   <div class="form-group control-password">
                     <input
@@ -200,7 +211,7 @@
                       type="password"
                       v-model="form.password"
                       :class="{ 'is-invalid': form.errors.has('password') }"
-                    >
+                    />
                     <has-error :form="form" field="password"></has-error>
                   </div>
                   <div class="checkbox">
@@ -214,10 +225,7 @@
                   <div class="ere-recaptcha-wrap clearfix">
                     <div class="ere-google-recaptcha"></div>
                   </div>
-                  <button
-                    type="submit"
-                    class="ere-login-button btn btn-primary btn-block"
-                  >Login</button>
+                  <button type="submit" class="ere-login-button btn btn-primary btn-block">Login</button>
                 </form>
                 <hr />
                 <div class="wp-social-login-widget">
@@ -225,10 +233,11 @@
                   <div class="wp-social-login-provider-list">
                     <a
                       rel="nofollow"
-                      href="#"
+                      href="void:javascript(0)"
                       title="Login with Facebook"
                       class="wp-social-login-provider wp-social-login-provider-facebook"
                       data-provider="Facebook"
+                      @click="logInWithFacebook"
                     >
                       <img alt="Facebook" title="Login with Facebook" src="vue/images/facebook.svg" />
                     </a>
@@ -248,7 +257,11 @@
                       class="wp-social-login-provider wp-social-login-provider-instagram"
                       data-provider="Instagram"
                     >
-                      <img alt="Instagram" title="Login with Instagram" src="vue/images/instagram.svg" />
+                      <img
+                        alt="Instagram"
+                        title="Login with Instagram"
+                        src="vue/images/instagram.svg"
+                      />
                     </a>
                     <a
                       rel="nofollow"
@@ -306,8 +319,8 @@
                       placeholder="Username"
                       v-model="form.username"
                       :class="{ 'is-invalid': form.errors.has('username') }"
-                    >
-                     <has-error :form="form" field="username"></has-error>
+                    />
+                    <has-error :form="form" field="username"></has-error>
                   </div>
                   <div class="form-group control-email">
                     <input
@@ -317,7 +330,7 @@
                       placeholder="Email"
                       v-model="form.email"
                       :class="{ 'is-invalid': form.errors.has('email') }"
-                    >
+                    />
                     <has-error :form="form" field="email"></has-error>
                   </div>
                   <div class="form-group control-password">
@@ -328,25 +341,32 @@
                       type="password"
                       v-model="form.password"
                       :class="{ 'is-invalid': form.errors.has('password') }"
-                    >
+                    />
                     <has-error :form="form" field="password"></has-error>
                   </div>
                   <div class="form-group control-ere-password">
                     <input
                       name="confirm_password"
                       class="form-control control-icon"
-                      placeholder="Retype Password"
+                      placeholder="Confirm Password"
                       type="password"
-                      v-model="form.c_password"
+                      v-model="form.confirm_password"
                       :class="{'is-invalid':form.errors.has('confirm_password')}"
-                    >
+                    />
                     <has-error :form="form" field="confirm_password"></has-error>
                   </div>
-                  <select name="user_register_role" id="user_register_role">
-                    <option value="owner">Owner/Buyer/Tenant</option>
-                    <option value="agent">Agent</option>
-                    <option value="agency">Agency</option>
-                  </select>
+                  <div class="form-group">
+                    <select
+                      v-model="form.type"
+                      name="user_register_role"
+                      id="user_register_role"
+                      class="form-control"
+                      :class="{ 'is-invalid': form.errors.has('type') }"
+                    >
+                      <option v-for="role in roles" :key="role.id" :value="role.id">{{ role.role }}</option>
+                    </select>
+                    <has-error :form="form" field="type"></has-error>
+                  </div>
                   <button
                     type="submit"
                     class="ere-register-button btn btn-primary btn-block"
@@ -362,33 +382,95 @@
 </template>
 <script>
 export default {
-  data(){
-    return{
+  name: "facebookLogin",
+  data() {
+    return {
+      roles: {},
+      isLoggedIn: false,
+      userName: "",
       form: new Form({
-        email: '',
-        password: '',
+        email: "",
+        password: "",
         remember: false,
-        username:'',
-        c_password:''
+        username: "",
+        confirm_password: "",
+        type: ""
       })
-    }
+    };
   },
   mounted() {
     console.log("Component mounted.");
   },
+  created() {
+    window.fbAsyncInit = function() {
+      window.FB.init({
+        appId: "285694432841018", //You will need to change this
+        cookie: true, // This is important, it's not enabled by default
+        version: "v7.0"
+      });
+    };
+
+    (function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
+  },
+  beforeMount() {
+    axios.get("api/user/login/status").then(data => {
+      console.log(data);
+      if (data.data.status) {
+        this.userName = data.data.user.name;
+        this.isLoggedIn = true;
+      }
+    });
+  },
   methods: {
+    logInWithFacebook() {
+      FB.getLoginStatus(function(response) {
+        console.log(response);
+        if (
+          response.status == "not_authorized" ||
+          response.status == "unknown"
+        ) {
+          FB.login(function(response) {
+            console.log(response);
+          });
+        } else {
+          console.log("user already logged in");
+        }
+      });
+    },
+    logout() {
+      axios.get("api/user/logout").then(res => {
+        console.log(res);
+      });
+    },
     showLoginModal() {
-      $('#ere_signin_modal').modal('show');
+      $("#ere_signin_modal").modal("show");
+      axios.get("api/roles").then(res => {
+        this.roles = res.data;
+      });
     },
-    loginUser(){
+    loginUser() {
       // Submit the form via a POST request
-      this.form.post('api/user/login')
-        .then(({ data }) => { console.log(data) }) 
+      this.form.post("api/user/login").then(({ data }) => {
+        this.userName = data.data.user.name;
+        this.isLoggedIn = true;
+        $("#ere_signin_modal").modal("hide");
+      });
     },
-    register(){
-      this.form.post('api/user/register').then(({data})=>{
+    register() {
+      this.form.post("api/user/register").then(({ data }) => {
         console.log(data);
-      })
+        $("#ere_signin_modal").modal("hide");
+      });
     }
   }
 };
